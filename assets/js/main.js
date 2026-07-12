@@ -551,3 +551,115 @@ async function initializeNewsPage() {
 }
 
 initializeNewsPage();
+
+
+// ------------------------------------------------------------------
+// Get Involved inquiry builder
+// ------------------------------------------------------------------
+function buildInvolvementMessage() {
+  const read = name => {
+    const field = document.querySelector(`[data-save="${name}"]`);
+    if (!field) return '';
+    return field.type === 'checkbox' ? field.checked : field.value.trim();
+  };
+
+  const roles = [...document.querySelectorAll('[data-involvement-role]:checked')]
+    .map(field => field.value);
+
+  const name = read('involve-name');
+  const organization = read('involve-organization');
+  const email = read('involve-email');
+  const location = read('involve-location');
+  const contribution = read('involve-contribution');
+  const audience = read('involve-audience');
+  const timeframe = read('involve-timeframe');
+  const nextStep = read('involve-next-step');
+  const additional = read('involve-message');
+
+  const lines = [
+    'Hello Family PD,',
+    '',
+    'I am interested in getting involved with Family Personal Development.',
+    '',
+    `Name: ${name || 'Not provided'}`,
+    `Organization or group: ${organization || 'Not provided'}`,
+    `Email: ${email || 'Not provided'}`,
+    `City / community: ${location || 'Not provided'}`,
+    '',
+    'Areas of interest:',
+    roles.length ? roles.map(role => `- ${role}`).join('\n') : '- Not selected',
+    '',
+    'Possible contribution, resource, connection, or opportunity:',
+    contribution || 'Not provided',
+    '',
+    'Families or community served:',
+    audience || 'Not provided',
+    '',
+    `Preferred timeframe: ${timeframe || 'Not provided'}`,
+    `Best next step: ${nextStep || 'Not provided'}`,
+    '',
+    'Additional message:',
+    additional || 'Not provided',
+    '',
+    'Thank you.'
+  ];
+
+  return lines.join('\n');
+}
+
+function updateInvolvementPreview() {
+  const preview = document.getElementById('involvement-preview');
+  if (!preview) return;
+  preview.textContent = buildInvolvementMessage();
+}
+
+const involvementPreview = document.getElementById('involvement-preview');
+if (involvementPreview) {
+  updateInvolvementPreview();
+
+  document.querySelectorAll('[data-save^="involve-"]').forEach(field => {
+    field.addEventListener(field.type === 'checkbox' ? 'change' : 'input', updateInvolvementPreview);
+  });
+
+  const refreshButton = document.getElementById('refresh-involvement-preview');
+  if (refreshButton) refreshButton.addEventListener('click', updateInvolvementPreview);
+
+  const status = document.getElementById('involvement-action-status');
+
+  const emailButton = document.getElementById('open-involvement-email');
+  if (emailButton) {
+    emailButton.addEventListener('click', () => {
+      const subject = encodeURIComponent('Family PD Get Involved Inquiry');
+      const body = encodeURIComponent(buildInvolvementMessage());
+      window.location.href = `mailto:info@familypd.org?subject=${subject}&body=${body}`;
+      if (status) status.textContent = 'Opening your email application…';
+    });
+  }
+
+  const copyButton = document.getElementById('copy-involvement-message');
+  if (copyButton) {
+    copyButton.addEventListener('click', async () => {
+      const message = buildInvolvementMessage();
+
+      try {
+        await navigator.clipboard.writeText(message);
+        if (status) status.textContent = 'Message copied ✓';
+      } catch {
+        const temporary = document.createElement('textarea');
+        temporary.value = message;
+        temporary.setAttribute('readonly', '');
+        temporary.style.position = 'fixed';
+        temporary.style.opacity = '0';
+        document.body.appendChild(temporary);
+        temporary.select();
+        document.execCommand('copy');
+        temporary.remove();
+        if (status) status.textContent = 'Message copied ✓';
+      }
+
+      window.setTimeout(() => {
+        if (status) status.textContent = '';
+      }, 2200);
+    });
+  }
+}

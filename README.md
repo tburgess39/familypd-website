@@ -17,6 +17,7 @@ Starter static website for Family Personal Development.
 - `assets/data/family-news.json` — curated story collection
 - `programs/index.html` — Programs & Services page
 - `impact/index.html` — Impact & Accountability page
+- `get-involved/index.html` — Get Involved page and inquiry builder
 - `assets/css/styles.css` — shared design system and responsive layout
 - `assets/js/main.js` — mobile navigation and dynamic copyright year
 - `404.html` — GitHub Pages fallback page
@@ -57,3 +58,10 @@ Each story must include:
 - the original article URL.
 
 The website automatically sorts stories newest-first and hides stories older than seven years.
+
+
+## Get Involved inquiry privacy
+
+The inquiry builder saves entries only in the visitor's browser.
+The user must choose to copy the message or open it in their email application.
+The website does not submit or store inquiry responses on a server.
