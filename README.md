@@ -9,6 +9,7 @@ Starter static website for Family Personal Development.
 - `approach/index.html` — Our Approach page
 - `toolkit/index.html` — interactive Family Toolkit page
 - `programs/index.html` — Programs & Services page
+- `impact/index.html` — Impact & Accountability page
 - `assets/css/styles.css` — shared design system and responsive layout
 - `assets/js/main.js` — mobile navigation and dynamic copyright year
 - `404.html` — GitHub Pages fallback page
