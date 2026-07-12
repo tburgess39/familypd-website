@@ -7,6 +7,7 @@ Starter static website for Family Personal Development.
 - `index.html` — homepage
 - `about/index.html` — About page
 - `approach/index.html` — Our Approach page
+- `toolkit/index.html` — interactive Family Toolkit page
 - `assets/css/styles.css` — shared design system and responsive layout
 - `assets/js/main.js` — mobile navigation and dynamic copyright year
 - `404.html` — GitHub Pages fallback page
@@ -25,3 +26,9 @@ Open `index.html` in a browser.
 6. GitHub will provide a preview URL.
 
 Do not point `familypd.org` to GitHub Pages until the replacement site has been reviewed.
+
+
+## Toolkit privacy
+
+Toolkit entries are saved only in the visitor's browser using `localStorage`.
+The static website does not transmit or store worksheet responses on a server.
