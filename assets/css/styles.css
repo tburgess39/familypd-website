@@ -1161,46 +1161,6 @@ h3 { font-size: 1.25rem; }
   font-size: .86rem;
 }
 
-.safe-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 17px;
-}
-
-.safe-card {
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-top-width: 6px;
-  border-radius: 18px;
-  background: white;
-}
-
-.safe-card > span {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-bottom: 15px;
-  border-radius: 14px;
-  color: white;
-  font-size: 1.22rem;
-  font-weight: 900;
-}
-
-.safe-card p {
-  min-height: 116px;
-  color: var(--muted);
-  font-size: .94rem;
-}
-
-.safe-share { border-top-color: #c86632; }
-.safe-share > span { background: #c86632; }
-.safe-ask { border-top-color: #d4a22c; }
-.safe-ask > span { background: #d4a22c; color: var(--navy-2); }
-.safe-feel { border-top-color: #6e8f3e; }
-.safe-feel > span { background: #6e8f3e; }
-.safe-encourage { border-top-color: var(--teal); }
-.safe-encourage > span { background: var(--teal); }
 
 label {
   display: grid;
@@ -1634,10 +1594,6 @@ select:focus {
 }
 
 @media (max-width: 1100px) {
-  .safe-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-  }
-
   .tool-menu-grid {
     grid-template-columns: repeat(2, minmax(0,1fr));
   }
@@ -1714,14 +1670,9 @@ select:focus {
 
 @media (max-width: 680px) {
   .privacy-card,
-  .safe-grid,
   .tool-menu-grid,
   .value-checkbox-grid {
     grid-template-columns: 1fr;
-  }
-
-  .safe-card p {
-    min-height: 0;
   }
 
   .worksheet-card {
