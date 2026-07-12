@@ -1,0 +1,82 @@
+{
+  "last_verified": "2026-07-12",
+  "policy": {
+    "max_age_years": 7,
+    "criteria": [
+      "Published by a recognized news organization or official public agency",
+      "Connected to at least one Family PD pillar",
+      "Offers a practical prevention, preparation, or family-learning opportunity",
+      "Links to the original source"
+    ]
+  },
+  "stories": [
+    {
+      "id": "storm-boating-safety-2026",
+      "title": "Sudden severe storm turns a holiday boat trip into a tragedy",
+      "source": "Associated Press",
+      "published": "2026-07-04",
+      "pillar": "Health",
+      "secondary_pillar": "Goals",
+      "url": "https://apnews.com/article/lake-geneva-storm-capsized-boat-4142639443688fecd6a880477020e9f7",
+      "summary": "A sudden severe storm overwhelmed a recreational boat on Geneva Lake. Three children died even though the children were wearing life jackets, showing how quickly weather conditions can exceed a family\u2019s ability to react.",
+      "prevention": [
+        "Check forecasts and active alerts immediately before outdoor or water activities.",
+        "Decide in advance which weather conditions mean the activity stops or the family returns to shore.",
+        "Use life jackets, but do not treat safety equipment as a replacement for weather decisions and evacuation timing.",
+        "Create a communication and reunification plan for outings."
+      ],
+      "prompts": "What warning signs or weather alerts would make our family cancel or leave an activity? Who checks the forecast? What is our emergency communication and meeting plan during an outing?"
+    },
+    {
+      "id": "summer-screen-plan-2026",
+      "title": "Making a family plan for summer screen time",
+      "source": "Federal Trade Commission",
+      "published": "2026-06-22",
+      "pillar": "Health",
+      "secondary_pillar": "Relationships",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/06/making-family-plan-summer-screen-time",
+      "summary": "The FTC encouraged families to discuss online rules and expectations and consider parental controls for content, time limits, communication, purchases, location sharing, and separate device profiles.",
+      "prevention": [
+        "Agree on screen-time expectations before conflict occurs.",
+        "Review who children can communicate with through games and social platforms.",
+        "Use device profiles, passcodes, privacy settings, and age-appropriate parental controls.",
+        "Discuss how online activity affects sleep, mood, school, safety, and family relationships."
+      ],
+      "prompts": "What are our current screen-time expectations? Which apps, games, chats, purchases, or location settings need review? What should children do when an unknown person contacts them?"
+    },
+    {
+      "id": "canvas-cyberattack-2026",
+      "title": "What families should know after the Canvas cyberattack",
+      "source": "Federal Trade Commission",
+      "published": "2026-05-12",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Finances",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/05/what-know-after-canvas-cyberattack",
+      "summary": "The FTC warned that after a school technology breach, scammers may impersonate schools or companies. Families were advised not to trust links or contact information in unexpected messages and to use known school or company channels.",
+      "prevention": [
+        "Do not click links or call numbers in unexpected breach-related messages.",
+        "Contact the school or company through a known website, phone number, or email address.",
+        "Review account passwords and use multifactor authentication where available.",
+        "Know where to find identity-theft and data-breach guidance before it is needed."
+      ],
+      "prompts": "How would we verify a message claiming our school account or personal information was exposed? Which family accounts need stronger passwords or multifactor authentication? Who should children ask before responding?"
+    },
+    {
+      "id": "job-offer-text-scam-2026",
+      "title": "That unexpected job-offer text is probably a scam",
+      "source": "Federal Trade Commission",
+      "published": "2026-04-30",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Finances",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/04/job-offer-text-probably-scam",
+      "summary": "The FTC reported fake recruiters sending generic texts about remote jobs, then asking people to send money, deposit fake checks, or put personal money into online tasks.",
+      "prevention": [
+        "Do not engage with generic, unexpected job texts or messaging-app offers.",
+        "Never pay money to get paid or secure a job.",
+        "Verify employers through the organization\u2019s official website and published contact information.",
+        "Ask a trusted adult or experienced job seeker to review unfamiliar offers."
+      ],
+      "prompts": "What signs make a job offer suspicious? How will our family verify recruiters and employers? What information or money should never be provided during an unexpected job conversation?"
+    }
+  ]
+}

@@ -7,7 +7,14 @@ Starter static website for Family Personal Development.
 - `index.html` — homepage
 - `about/index.html` — About page
 - `approach/index.html` — Our Approach page
-- `toolkit/index.html` — interactive Family Toolkit page
+- `toolkit/index.html` — Family Toolkit directory
+- `toolkit/meeting-planner/index.html` — selectable-topic meeting planner and print document
+- `toolkit/pillar-check/index.html` — Five-Pillar Check-In
+- `toolkit/mission-vision/index.html` — Mission & Vision Builder
+- `toolkit/roles-responsibilities/index.html` — Roles & Responsibilities
+- `toolkit/goal-planner/index.html` — Family Goal Planner
+- `toolkit/news-discussion/index.html` — verified current-news discussion tool
+- `assets/data/family-news.json` — curated story collection
 - `programs/index.html` — Programs & Services page
 - `impact/index.html` — Impact & Accountability page
 - `assets/css/styles.css` — shared design system and responsive layout
@@ -34,3 +41,19 @@ Do not point `familypd.org` to GitHub Pages until the replacement site has been 
 
 Toolkit entries are saved only in the visitor's browser using `localStorage`.
 The static website does not transmit or store worksheet responses on a server.
+
+
+## Updating the verified news collection
+
+Edit `assets/data/family-news.json`.
+
+Each story must include:
+- a reliable original source;
+- a publication date within seven years;
+- at least one Family PD pillar;
+- a short factual summary;
+- proactive family actions;
+- discussion prompts;
+- the original article URL.
+
+The website automatically sorts stories newest-first and hides stories older than seven years.

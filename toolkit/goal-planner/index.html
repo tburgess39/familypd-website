@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Use the Family PD goal planner to turn a household goal into clear steps, support, review, and accountability.">
+  <title>Family Goal Planner | Family Personal Development</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="goal-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="Family Personal Development home">
+        <span class="brand-mark">FPD</span>
+        <span class="brand-text">
+          <strong>Family Personal Development</strong>
+          <small>Growth starts at home.</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../../about/">About</a>
+        <a href="../../approach/">Our Approach</a>
+        <a href="../" aria-current="page">Family Toolkit</a>
+        <a href="../../programs/">Programs</a>
+        <a href="../../impact/">Impact</a>
+        <a class="button button-small" href="../../index.html#contact">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero compact-tool-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../">Family Toolkit</a>
+          <span aria-hidden="true">/</span>
+          <span>Family Goal Planner</span>
+        </nav>
+        <p class="eyebrow">Interactive Family PD tool</p>
+        <h1>Turn one meaningful goal into clear family action.</h1>
+        <p class="page-lead">Define the goal, why it matters, the next three steps, support needs, review dates, and ways to celebrate progress.</p>
+      </div>
+    </section>
+
+    <section class="section tool-section" id="goal-planner">
+<div class="container">
+<div class="tool-heading-row">
+<div class="section-heading">
+<p class="eyebrow">Interactive worksheet</p>
+<h2>Family Goal Planner</h2>
+<p>
+              Choose one meaningful goal. Make it specific, break it into steps,
+              and decide how the family will review progress.
+            </p>
+</div>
+<span class="time-badge">15–30 minutes</span>
+</div>
+<form autocomplete="off" class="worksheet-card goal-worksheet" data-tool-form="goal">
+<div class="form-grid form-grid-two">
+<label>
+              Our goal
+              <textarea data-save="goal-name" placeholder="What specific result are we working toward?" rows="3"></textarea>
+</label>
+<label>
+              Why this matters
+              <textarea data-save="goal-why" placeholder="What will improve if we reach it?" rows="3"></textarea>
+</label>
+</div>
+<div class="form-grid form-grid-three">
+<label>
+              Related pillar
+              <select data-save="goal-pillar">
+<option value="">Choose a pillar</option>
+<option>Health</option>
+<option>Relationships</option>
+<option>Education &amp; Skills</option>
+<option>Finances</option>
+<option>Goals / Life Vision</option>
+</select>
+</label>
+<label>
+              Target date
+              <input data-save="goal-date" type="date"/>
+</label>
+<label>
+              Progress check-in
+              <input data-save="goal-checkin" placeholder="Example: Sunday family meeting" type="text"/>
+</label>
+</div>
+<div class="goal-steps">
+<h3>Break the goal into the next three steps.</h3>
+<label>
+<span>Step 1</span>
+<input data-save="goal-step-1" placeholder="The smallest useful first action" type="text"/>
+</label>
+<label>
+<span>Step 2</span>
+<input data-save="goal-step-2" type="text"/>
+</label>
+<label>
+<span>Step 3</span>
+<input data-save="goal-step-3" type="text"/>
+</label>
+</div>
+<div class="form-grid form-grid-two">
+<label>
+              Support or resources we need
+              <textarea data-save="goal-support" placeholder="People, information, money, time, transportation, tools…" rows="4"></textarea>
+</label>
+<label>
+              How we will celebrate progress
+              <textarea data-save="goal-celebrate" placeholder="Recognize effort and small wins." rows="4"></textarea>
+</label>
+</div>
+<div class="goal-review-strip">
+<strong>Review questions:</strong>
+<span>What worked?</span>
+<span>What was hard?</span>
+<span>What needs to change?</span>
+<span>What is our next step?</span>
+</div>
+<div class="tool-actions">
+<button class="button tool-save" data-save-status="" type="button">Save in this browser</button>
+<button class="button button-secondary" data-print="" type="button">Print this page</button>
+<button class="text-button" data-reset-scope="goal" type="button">Clear goal plan</button>
+</div>
+</form>
+</div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Family Personal Development</strong>
+        <p>Growth starts at home.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <a href="../../about/">About</a>
+        <a href="../../approach/">Our Approach</a>
+        <a href="../">Toolkit</a>
+        <a href="../../programs/">Programs</a>
+        <a href="../../impact/">Impact</a>
+      </div>
+      <div>
+        <strong>Connect</strong>
+        <a href="mailto:info@familypd.org">info@familypd.org</a>
+        <a href="../../programs/#partner">Partner with us</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Family Personal Development. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
