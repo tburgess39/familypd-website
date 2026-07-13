@@ -1,0 +1,22 @@
+Section,RecordID,Field,Value,Version,UpdatedAt
+PackageInfo,PACKAGE,PackageType,FAMILYPD_HOUSEHOLD_UPDATE,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,SchemaVersion,2.0.0,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,IssuerID,FPD-ISSUER-ba324f2c-bbd6-4568-abe5-dc916f9377ce,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,HouseholdID,HOUSEHOLD-af227514-9694-443d-876e-fee0a0189156,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,PackageVersion,1,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,GeneratedAt,2026-07-13T08:02:45.275Z,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,SignatureAlgorithm,HMAC-SHA256,1,2026-07-13T08:02:45.275Z
+PackageInfo,PACKAGE,Signature,i5Ij6AJ8NsEAoxPdn1uPGAEdhNGaKMPNCVfgCoiWf2U,1,2026-07-13T08:02:45.275Z
+Shared,SHARED,assignments,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,commitments,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,householdId,"""HOUSEHOLD-af227514-9694-443d-876e-fee0a0189156""",1,2026-07-13T08:02:45.275Z
+Shared,SHARED,identity,"{""label"":""My Household"",""mission"":"""",""vision"":"""",""motto"":"""",""version"":0,""updatedAt"":""""}",1,2026-07-13T08:02:45.275Z
+Shared,SHARED,meetings,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,memberRoles,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,policies,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,resources,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,safety,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,sharedGoals,[],1,2026-07-13T08:02:45.275Z
+Shared,SHARED,values,[],1,2026-07-13T08:02:45.275Z
+SourceBundle,SOURCES,contentCitations,[],1,2026-07-13T08:02:45.275Z
+SourceBundle,SOURCES,sources,[],1,2026-07-13T08:02:45.275Z

@@ -1,28 +1,83 @@
-# FamilyPD Privacy-First Foundation v2
+# FamilyPD Household Identity & Profiles v3.0.0
 
-This package replaces the earlier broad-permission prototype.
+This is the complete privacy-first Apps Script package. It replaces the v2.0.1 project files and upgrades an existing FamilyPD workspace in place.
 
-## Critical permission correction
+## What this build adds
 
-This version does **not** use:
+### Household Lead
 
-- `DriveApp`
-- `SpreadsheetApp`
-- `https://www.googleapis.com/auth/drive`
-- `https://www.googleapis.com/auth/spreadsheets`
+- Draft and publish a household label, vision, mission, and optional motto
+- Create three-to-five recommended household values with daily-life definitions
+- Create household commitments
+- Add a symbolic household image, limited to PNG, JPEG, or WebP files of 1 MB or less
+- Maintain a general household role roster without names or contact information
+- Designate Lead, Co-Lead, and Member responsibility labels
+- Save general profile and learning preferences
+- Preserve published identity version history
+- Restore an earlier published version into the draft area
+- Generate a print-ready household identity PDF
+- Include an in-text guidebook citation and References page in the PDF
+- Create signed Household Update Packs containing only published shared information
 
-It uses:
+### Family Member
+
+- Review the published household identity in read-only form
+- Review published values, commitments, and general household roles
+- Receive the symbolic household image through a signed update pack
+- Save general profile and learning preferences
+- Save private identity suggestions that are not automatically sent to the Household Lead
+- Import and verify a signed Household Update Pack
+
+## Privacy-first rules
+
+This build does not require:
+
+- legal names;
+- family member names;
+- exact ages or birth dates;
+- email addresses;
+- phone numbers;
+- schools or employers;
+- exact addresses;
+- financial account information;
+- medical records;
+- confidential school information;
+- government identification information.
+
+A server-side privacy guard blocks common patterns that resemble email addresses, phone numbers, Social Security numbers, long financial account numbers, passwords, authentication codes, exact street addresses, and other information FamilyPD does not need.
+
+The symbolic image feature is for a logo, icon, drawing, or other non-personal symbol. The interface tells users not to upload faces, identification, addresses, documents, or private information.
+
+## FamilyPD guidebook alignment
+
+The identity workspace follows the current Family Personal Development guidebook:
+
+- vision describes where the household is going;
+- mission describes what the household practices to move there;
+- values describe how members agree to treat one another;
+- roles make responsibilities visible and shared;
+- simple, honest language is preferred over formal or complicated wording.
+
+The app cites the guidebook in the identity guidance and includes the reference in generated identity PDFs.
+
+## Permission model
+
+This build continues to use:
 
 - `https://www.googleapis.com/auth/drive.file`
 - `https://www.googleapis.com/auth/script.external_request`
 
-FamilyPD therefore uses the Drive REST API only for files it creates for the workspace or files a user explicitly shares with the app.
+It does not use:
 
-## Replace the earlier project files
+- full Google Drive scope;
+- Google Sheets scope;
+- `DriveApp`;
+- `SpreadsheetApp`;
+- Drive-wide file searches.
 
-Replace every earlier FamilyPD `.gs`, `.html`, and `appsscript.json` file with the files in this package.
+Workspace records remain in FamilyPD-created JSON files.
 
-Final Apps Script file list:
+## Complete Apps Script file list
 
 ### Script files
 
@@ -32,6 +87,9 @@ Final Apps Script file list:
 - `DataStoreService.gs`
 - `WorkspaceService.gs`
 - `SecurityService.gs`
+- `PrivacyGuardService.gs`
+- `IdentityService.gs`
+- `IdentityDocumentService.gs`
 - `UpdatePackService.gs`
 - `CitationService.gs`
 
@@ -45,125 +103,40 @@ Final Apps Script file list:
 
 - `appsscript.json`
 
-Do not combine `appsscript.json` with `Code.gs`.
+## Install or upgrade
 
-## Redeploy
+1. Download and extract this package.
+2. In Apps Script, replace the contents of every matching `.gs` and `.html` file.
+3. Add the three new script files:
+   - `PrivacyGuardService.gs`
+   - `IdentityService.gs`
+   - `IdentityDocumentService.gs`
+4. Keep `appsscript.json` as a separate manifest file.
+5. Save all files.
+6. Open **Deploy → Manage deployments**.
+7. Edit the current web-app deployment.
+8. Select **New version**.
+9. Keep **Execute as: User accessing the web app**.
+10. Deploy and open the `/exec` URL.
 
-1. Save every file.
-2. Open **Deploy → Manage deployments**.
-3. Edit the web app deployment.
-4. Choose **New version**.
-5. Execute as **User accessing the web app**.
-6. Set access to the signed-in users you are testing with.
-7. Deploy.
-8. Use the `/exec` URL.
+An existing v2 workspace is migrated in place when identity data is first opened or when **Repair FamilyPD Structure** is selected. The app reuses the saved root folder, JSON data file, source file, and folder IDs instead of creating a duplicate workspace.
 
-## Remove the old broad authorization before testing
+## Recommended testing order
 
-Changing the code does not always make an old permission grant disappear from the Google Account connection list.
+1. Open the Household Lead workspace.
+2. Open **Household Identity**.
+3. Save the vision, mission, motto, values, commitments, and role roster separately.
+4. Add an optional non-personal household symbol.
+5. Publish identity version 1.
+6. Generate the published identity PDF.
+7. Create a Household Update Pack.
+8. Open a Family Member workspace in a separate approved test account.
+9. Import the update pack.
+10. Confirm the member sees the published identity, roles, and symbol.
+11. Confirm personal profile preferences and identity suggestions remain private.
+12. Edit the lead identity and publish version 2.
+13. Restore version 1 to the draft area and confirm the currently published version does not change until republished.
 
-Before testing the new consent screen:
+## Important limitation about Co-Lead
 
-1. Open the Google Account security settings for the testing account.
-2. Open connections to third-party apps and services.
-3. Find the earlier FamilyPD Apps Script connection.
-4. Remove its access.
-5. Open the new `/exec` deployment URL and authorize again.
-
-The new authorization should not request access to everything in Google Drive or all Google Sheets.
-
-## Data architecture
-
-The workspace now stores its records in two app-created JSON files:
-
-- `FamilyPD_Data.json`
-- `FamilyPD_Sources.json`
-
-The Sources file supports:
-
-- source metadata;
-- in-text citations;
-- References sections;
-- data years;
-- verification dates;
-- citation requirements for research, learning, news, community data, videos, and reports.
-
-## Privacy rule
-
-FamilyPD is for non-sensitive planning information.
-
-Do not enter or upload:
-
-- passwords or authentication codes;
-- Social Security or government identification numbers;
-- bank, card, routing, or account numbers;
-- exact home addresses;
-- exact birth dates;
-- medical records or diagnoses;
-- confidential school records or student identifiers;
-- tax records;
-- security-system codes;
-- detailed legal records;
-- information that could be used for identity theft.
-
-The system should be redesigned rather than adding a field that requires exact sensitive information.
-
-## Names and examples
-
-Templates, examples, test records, screenshots, and demonstrations must use generic labels only:
-
-- Household Lead
-- Co-Lead
-- Family Member
-- Adult Member
-- Young Adult Member
-- Teen Member
-- Child Member
-- Older Adult Member
-- Sample Household
-
-Do not use the developer's name or any family member's name in examples.
-
-## Household Update Packs
-
-Household Update Packs are now signed CSV files.
-
-Why CSV:
-
-- It opens in Google Sheets and Excel.
-- It can be downloaded and shared without granting FamilyPD access to all spreadsheets.
-- Members select the file from their device.
-- FamilyPD verifies the pack before applying it.
-- The import replaces only shared household mirrors.
-- Personal goals, reflections, progress, and files remain separate.
-
-## Security and authenticity
-
-The app now:
-
-- requires HTTPS;
-- allows only exact approved FamilyPD or Google Apps Script prototype hosts;
-- blocks workspace actions on an unrecognized hostname;
-- shows a first-use security verification modal;
-- clearly labels the current Apps Script version as a prototype;
-- reminds users to start from `familypd.org`;
-- reminds users that Google passwords are never entered into a FamilyPD form;
-- signs Household Update Packs and rejects altered or unverified packs;
-- retains the default Apps Script framing protection instead of allowing unrestricted embedding.
-
-A popup alone cannot prove authenticity. The hostname and official FamilyPD entry point remain the primary user check.
-
-## Current prototype versus public launch
-
-The Apps Script prototype is expected to run on:
-
-- `script.google.com`
-- `script.googleusercontent.com`
-
-The public website should send users to the authorized prototype link during testing.
-
-For the eventual public application, the production host should be:
-
-- `app.familypd.org`
-
-The production app should add server-side CSP, HSTS, secure cookies, CSRF protection, rate limiting, audit logging, and phishing-resistant authentication.
+The Co-Lead setting in this build is a household responsibility designation. It does not grant another Google account direct editing access to the Household Lead workspace. True multi-account collaborative editing requires a later authenticated synchronization architecture and should not be simulated by collecting email addresses or sharing passwords.

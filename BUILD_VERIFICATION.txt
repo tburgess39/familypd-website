@@ -1,0 +1,20 @@
+FamilyPD Household Identity & Profiles v3.0.0
+Build verification completed: 2026-07-13
+
+PASS - All .gs files passed JavaScript syntax checking.
+PASS - Scripts.html client JavaScript passed syntax checking.
+PASS - All client getElementById references match IDs in Index.html.
+PASS - No duplicate HTML IDs were found.
+PASS - appsscript.json is valid JSON.
+PASS - Manifest uses drive.file and script.external_request only.
+PASS - No DriveApp or SpreadsheetApp calls are present.
+PASS - No personal or family-member names were found in examples or sample data.
+PASS - Existing v2 JSON data is migrated in place.
+PASS - Identity guidance includes an in-text guidebook citation.
+PASS - Generated identity PDF includes a References page.
+
+Runtime items to test after Apps Script deployment:
+- Google Drive multipart image upload
+- HTML-to-PDF conversion quota and rendering
+- Household Update Pack signature round trip between approved test accounts
+- Symbol transfer through an update pack
