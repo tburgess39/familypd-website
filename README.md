@@ -1,142 +1,100 @@
-# FamilyPD Household Identity & Profiles v3.0.0
+# FamilyPD Guided Identity, Accessibility, and Bilingual Help v4.0.0
 
-This is the complete privacy-first Apps Script package. It replaces the v2.0.1 project files and upgrades an existing FamilyPD workspace in place.
+This is the complete current package and the single source of truth for the Apps Script project.
+
+Do not combine it with the v2 or v3 ZIP files. Replace the matching project files with the files in this package and add the one new script file listed below.
 
 ## What this build adds
 
-### Household Lead
+- Guided mission, vision, and motto generator
+- Plain-language dropdown questions instead of an empty writing screen
+- Three editable suggestions for each generated statement
+- English and Spanish guided content
+- A library of 14 selectable values with simple meanings and household examples
+- Editable prepopulated value descriptions
+- Custom values
+- Simplified role builder with one main role dropdown
+- Prepopulated, editable role responsibilities
+- Custom roles and custom responsibilities
+- Edit and remove controls for the household role list
+- Clear message that capable teens, young adults, and other members may lead
+- Information icons and short italicized guidance under fields
+- First-use tutorial and restartable Help & Tutorials page
+- Browser spellcheck support on writing fields
+- Read-aloud button using the browser’s speech tools
+- Larger-text and simple-language preferences
+- Copy-ready AI brainstorming prompt with privacy warnings and step-by-step directions
+- Updated official guidebook resource link
+- English/Spanish structural headings in generated Household Identity PDFs
+- Existing privacy-first Drive permissions and signed Update Packs
 
-- Draft and publish a household label, vision, mission, and optional motto
-- Create three-to-five recommended household values with daily-life definitions
-- Create household commitments
-- Add a symbolic household image, limited to PNG, JPEG, or WebP files of 1 MB or less
-- Maintain a general household role roster without names or contact information
-- Designate Lead, Co-Lead, and Member responsibility labels
-- Save general profile and learning preferences
-- Preserve published identity version history
-- Restore an earlier published version into the draft area
-- Generate a print-ready household identity PDF
-- Include an in-text guidebook citation and References page in the PDF
-- Create signed Household Update Packs containing only published shared information
+## Files to place in Apps Script
 
-### Family Member
+### Script files
 
-- Review the published household identity in read-only form
-- Review published values, commitments, and general household roles
-- Receive the symbolic household image through a signed update pack
-- Save general profile and learning preferences
-- Save private identity suggestions that are not automatically sent to the Household Lead
-- Import and verify a signed Household Update Pack
+- `Code.gs`
+- `Config.gs`
+- `CitationService.gs`
+- `DataStoreService.gs`
+- `DriveApiService.gs`
+- `GuidanceService.gs` **new in v4**
+- `IdentityDocumentService.gs`
+- `IdentityService.gs`
+- `PrivacyGuardService.gs`
+- `SecurityService.gs`
+- `UpdatePackService.gs`
+- `WorkspaceService.gs`
 
-## Privacy-first rules
+### HTML files
 
-This build does not require:
+- `Index.html`
+- `Scripts.html`
+- `Styles.html`
 
-- legal names;
-- family member names;
-- exact ages or birth dates;
-- email addresses;
-- phone numbers;
-- schools or employers;
-- exact addresses;
-- financial account information;
-- medical records;
-- confidential school information;
-- government identification information.
+### Manifest
 
-A server-side privacy guard blocks common patterns that resemble email addresses, phone numbers, Social Security numbers, long financial account numbers, passwords, authentication codes, exact street addresses, and other information FamilyPD does not need.
+- `appsscript.json`
 
-The symbolic image feature is for a logo, icon, drawing, or other non-personal symbol. The interface tells users not to upload faces, identification, addresses, documents, or private information.
+The `.md` and `.txt` files are documentation only. Do not add them to Apps Script.
 
-## FamilyPD guidebook alignment
+## Upgrade from v3
 
-The identity workspace follows the current Family Personal Development guidebook:
+1. Keep the current FamilyPD workspace and Drive files.
+2. Replace every existing `.gs` and `.html` file with the matching file from this package.
+3. Add a new Apps Script **Script** file named `GuidanceService` and paste in `GuidanceService.gs`.
+4. Replace the manifest contents with `appsscript.json`.
+5. Save the project.
+6. Open **Deploy → Manage deployments**.
+7. Edit the current web-app deployment.
+8. Select **New version**.
+9. Deploy and open the `/exec` URL.
+10. Open **Workspace → Repair FamilyPD Structure** once.
 
-- vision describes where the household is going;
-- mission describes what the household practices to move there;
-- values describe how members agree to treat one another;
-- roles make responsibilities visible and shared;
-- simple, honest language is preferred over formal or complicated wording.
+Repair migrates the existing JSON data and source file in place. It does not create a duplicate root workspace when the saved Drive IDs are still valid.
 
-The app cites the guidebook in the identity guidance and includes the reference in generated identity PDFs.
-
-## Permission model
+## Permissions
 
 This build continues to use:
 
 - `https://www.googleapis.com/auth/drive.file`
 - `https://www.googleapis.com/auth/script.external_request`
 
-It does not use:
+It does not add full Drive access or Google Sheets access.
 
-- full Google Drive scope;
-- Google Sheets scope;
-- `DriveApp`;
-- `SpreadsheetApp`;
-- Drive-wide file searches.
+## Language behavior
 
-Workspace records remain in FamilyPD-created JSON files.
+- The app checks the browser language on first use.
+- Users may choose **English** or **Español** in the header.
+- The selected language is stored as a workspace preference.
+- Menus, guided builders, values, role guidance, tutorials, AI-help instructions, and PDF structure support English and Spanish.
+- User-entered mission, vision, values, responsibilities, and other custom text are not silently translated or overwritten.
 
-## Complete Apps Script file list
+## Privacy rule
 
-### Script files
+FamilyPD does not require exact personal or sensitive information. Do not enter or upload passwords, account numbers, exact addresses, exact birth dates, identification numbers, medical records, confidential school records, security codes, or similar information.
 
-- `Code.gs`
-- `Config.gs`
-- `DriveApiService.gs`
-- `DataStoreService.gs`
-- `WorkspaceService.gs`
-- `SecurityService.gs`
-- `PrivacyGuardService.gs`
-- `IdentityService.gs`
-- `IdentityDocumentService.gs`
-- `UpdatePackService.gs`
-- `CitationService.gs`
+Examples and sample content use generic labels only.
 
-### HTML files
+## Update Pack compatibility
 
-- `Index.html`
-- `Styles.html`
-- `Scripts.html`
-
-### Manifest
-
-- `appsscript.json`
-
-## Install or upgrade
-
-1. Download and extract this package.
-2. In Apps Script, replace the contents of every matching `.gs` and `.html` file.
-3. Add the three new script files:
-   - `PrivacyGuardService.gs`
-   - `IdentityService.gs`
-   - `IdentityDocumentService.gs`
-4. Keep `appsscript.json` as a separate manifest file.
-5. Save all files.
-6. Open **Deploy → Manage deployments**.
-7. Edit the current web-app deployment.
-8. Select **New version**.
-9. Keep **Execute as: User accessing the web app**.
-10. Deploy and open the `/exec` URL.
-
-An existing v2 workspace is migrated in place when identity data is first opened or when **Repair FamilyPD Structure** is selected. The app reuses the saved root folder, JSON data file, source file, and folder IDs instead of creating a duplicate workspace.
-
-## Recommended testing order
-
-1. Open the Household Lead workspace.
-2. Open **Household Identity**.
-3. Save the vision, mission, motto, values, commitments, and role roster separately.
-4. Add an optional non-personal household symbol.
-5. Publish identity version 1.
-6. Generate the published identity PDF.
-7. Create a Household Update Pack.
-8. Open a Family Member workspace in a separate approved test account.
-9. Import the update pack.
-10. Confirm the member sees the published identity, roles, and symbol.
-11. Confirm personal profile preferences and identity suggestions remain private.
-12. Edit the lead identity and publish version 2.
-13. Restore version 1 to the draft area and confirm the currently published version does not change until republished.
-
-## Important limitation about Co-Lead
-
-The Co-Lead setting in this build is a household responsibility designation. It does not grant another Google account direct editing access to the Household Lead workspace. True multi-account collaborative editing requires a later authenticated synchronization architecture and should not be simulated by collecting email addresses or sharing passwords.
+Because v4 adds new identity fields and a new schema version, create new Update Packs after the upgrade. A v4 member workspace should import a v4 pack.

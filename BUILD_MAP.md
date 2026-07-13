@@ -2,49 +2,40 @@
 
 ## Completed foundation
 
-- Narrow `drive.file` permission
-- No Google Sheets database permission
-- FamilyPD-created JSON data store
-- Role-based Household Lead and Family Member workspaces
-- Approved-host security check
-- First-use authenticity notice
-- Data-minimization rules
+- Privacy-first Drive access
+- Separate Household Lead and Family Member roles
 - Signed Household Update Packs
-- Citation and References infrastructure
-
-## Completed in v3.0.0 — Household Identity & Profiles
-
-- Vision, mission, motto, and household label
-- Values and daily-life definitions
-- Household commitments
-- Non-personal symbolic image
-- General household role roster
-- Lead, Co-Lead, and Member responsibility labels
-- General profile and learning preferences
-- Published identity version history
-- Restore-to-draft workflow
-- Read-only member household-information view
-- Private member suggestions
-- Identity PDF with citation and References
-- Identity synchronization through signed update packs
+- Household Identity and version history
+- General member profiles
+- Guided mission, vision, and motto generation
+- Prepopulated values library
+- Simplified guided role builder
+- English/Spanish guidance architecture
+- First-use tutorial and Help Center foundation
+- Read-aloud, larger text, browser spellcheck, and AI-use guidance
 
 ## Next build — Goals and Checkpoints
 
-- Family and personal goals
-- Weekly, monthly, quarterly, yearly, and multiyear timeframes
+- Shared household goals
+- Private personal goals
 - Five-pillar alignment
-- General baseline and target descriptions
-- Percent complete and status
-- Barriers, support, and next actions
-- Non-sensitive evidence
-- Member-selected sharing
-- Draft, publish, and version history for family goals
-- Goal-plan PDFs with references when outside evidence is used
+- Short-, medium-, and long-term timeframes
+- Guided goal generator
+- Selectable example goals
+- Small steps and checkpoints
+- Progress percentage and status
+- Barriers and support needed
+- Non-sensitive evidence guidance
+- Member-controlled sharing
+- English/Spanish guidance
+- Tutorial and accessible field explanations
+- Goal-plan PDF with citations and References when external guidance is used
 
 ## Later builds
 
-- Meetings and agendas
-- Learning, research, news, videos, and discussions
-- Community Opportunity and socioeconomic mobility data
-- Policies, systems, and general safety planning
-- FamilyPD public content manager
+1. Meeting Planner and printable agenda/minutes
+2. Learning, research, videos, and discussions
+3. Community Opportunity and socioeconomic-mobility tools
+4. Policies, systems, and general safety planning
+5. Public FamilyPD Content Manager
+6. Main website integration, visual refresh, tutorial library, and asset audit
