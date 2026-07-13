@@ -1,25 +1,37 @@
-FamilyPD v5.0.0 BUILD VERIFICATION
+FamilyPD v6.0.0 BUILD VERIFICATION
 
-PASS - Complete package contains all v4 files
-PASS - Added GoalsService.gs
-PASS - Added GoalDocumentService.gs
-PASS - App version and schema updated to 5.0.0
-PASS - Existing v4 JSON schema migrates without deleting data
-PASS - Guidebook goals citation is seeded and migrated
-PASS - Household goals are available only for Household Lead editing
-PASS - Personal goals remain separate from shared update packs
-PASS - Shared goal steps and checkpoints are privacy-filtered for update packs
-PASS - Goal-plan PDF includes citation and References
-PASS - English/Spanish frame translator covers static interface content
-PASS - Browser-selected language is used for the initial goals view
-PASS - All getElementById references match an HTML element
-PASS - All client server-call names match an Apps Script entry function
-PASS - JavaScript syntax checks passed for every .gs file and Scripts.html
+PASS - Built on the corrected v5.0.1 English/Spanish round-trip architecture
+PASS - App and schema versions updated to 6.0.0
+PASS - Added MeetingService.gs
+PASS - Added MeetingDocumentService.gs
+PASS - Added NewsService.gs
+PASS - Added MeetingClient.html
+PASS - Household Lead can create, edit, duplicate, complete, and archive meetings
+PASS - Any general household role may be selected as facilitator
+PASS - Family Member meetings are read-only
+PASS - Family Members can save private preparation
+PASS - Topic libraries are available in English and Spanish
+PASS - Custom and recent-news topics are supported
+PASS - News results require title, source, date, and HTTPS/HTTP link
+PASS - News age check enforces the seven-year maximum
+PASS - News search uses a stricter one-year window
+PASS - Agenda and minutes PDFs include guidebook citation and References
+PASS - Selected news sources are included in meeting PDF References
+PASS - Structured meetings are included in signed Update Packs
+PASS - Personal meeting preparation is excluded from Update Packs
+PASS - No broad Drive or Spreadsheet scopes were added
+PASS - Existing external-request scope supports the optional news search
+PASS - No legal names or real family data appear in samples
+PASS - All HTML IDs referenced by client code exist
+PASS - No duplicate HTML IDs
+PASS - Client-to-server entry points match Apps Script functions
+PASS - JavaScript syntax checks passed
 
 LIVE TESTING STILL REQUIRED
 
-- Google Apps Script authorization and deployment
-- English/Spanish switching in the deployed iframe
-- PDF conversion in Apps Script
+- GDELT availability and response shape from Apps Script
+- English and Spanish news search
+- PDF conversion and page layout
 - Two-account Update Pack transfer
-- Browser speech synthesis and spellcheck behavior
+- Repeated English/Spanish switching in the deployed app
+- Mobile layout

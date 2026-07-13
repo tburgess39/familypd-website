@@ -96,3 +96,19 @@ Research content should support:
 - Archived
 
 Corrections should preserve the prior version and explain what changed.
+
+
+## Meeting and news content
+
+Meeting guidance cites the Family Personal Development Guidebook in text and in References.
+
+When a news article is selected for a meeting, store and display:
+
+- article title;
+- publisher or source domain;
+- publication date;
+- article URL;
+- date FamilyPD verified the metadata;
+- associated FamilyPD pillar.
+
+The meeting agenda or minutes must include the selected article in References. The interface must state that metadata verification is not the same as fact-checking every claim.

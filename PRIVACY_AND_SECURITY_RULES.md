@@ -131,3 +131,20 @@ Never use the developer's name or the names of any family members in:
 - generated documents.
 
 Use generic household and member labels.
+
+
+## Meeting-planner privacy
+
+Use general labels for facilitators, participants, and responsible roles.
+
+Do not store:
+
+- private meeting links or access codes;
+- exact street addresses;
+- phone numbers or email addresses;
+- diagnoses or medical records;
+- confidential school records;
+- financial account details or exact balances;
+- passwords, IDs, or legal documents.
+
+Private Family Member preparation remains in the member workspace and is not included in Household Update Packs.

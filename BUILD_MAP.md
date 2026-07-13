@@ -1,36 +1,39 @@
-# FamilyPD Build Map After v5
+# FamilyPD Build Map After v6
 
-## Completed foundation
+## Completed
 
-- Privacy-first Drive access
-- Security and authenticity checks
-- Household Lead and Family Member workspaces
+- Privacy-first Drive workspace
+- Household Lead and Family Member roles
 - Household Identity
-- Guided mission, vision, motto, values, commitments, and roles
-- English and Spanish support
-- Tutorials and accessibility guidance
+- Guided mission, vision, values, commitments, and roles
+- English/Spanish interface and tutorials
 - Household and personal goals
-- Steps, checkpoints, progress tracking, and goal-plan PDFs
+- Goal steps, checkpoints, and PDFs
+- Guided Family Meeting Planner
+- Suggested and custom meeting topics
+- Recent-news meeting discussions
+- Meeting decisions, action items, carry-forward, and PDFs
+- Private member meeting preparation
 - Signed Household Update Packs
 
-## Next build — Meetings
+## Next major build — Learning, Research, and Discussions
 
-- Draft, scheduled, completed, and archived meetings
-- Guided topic selector
-- Five-pillar topic ideas
-- Editable discussion boxes
-- Current-news discussion option with verified sources and seven-year limit
-- Agenda, materials, meal, attendees by general label, decisions, and action items
-- Carry unfinished items forward
-- Duplicate and revisit meetings
-- Printable agenda and minutes PDFs
+- Guided learning-plan builder
+- Five-pillar topic library
+- Videos, readings, activities, and reflection prompts
+- Skill and career learning
+- Safe AI-use guidance and copy-ready prompts
+- Household and private member learning records
+- Discussion and action steps
+- Source verification, in-text citations, and References
 - English/Spanish guidance
-- In-text citations and References for learning, research, news, and data content
+- Printable learning and discussion documents
 
 ## Later builds
 
-- Learning and discussions
 - Community opportunity and socioeconomic mobility
 - Policies, systems, and safety
 - Public content manager
-- Main website integration, help center, visual refresh, and asset audit
+- Main website integration
+- Full Help Center
+- Website visual refresh and existing-asset audit

@@ -1,40 +1,59 @@
-# FamilyPD Goals, Checkpoints, and Complete Bilingual Frame v5.0.0
+# FamilyPD Guided Meeting Planner v6.0.0
 
-Use this complete package as the single source of truth. Do not mix files from v3 or v4 into this project.
+Use this complete package as the single source of truth. Do not combine older v5 files with this build.
 
-## What v5 adds
+## What v6 adds
 
-- Complete English/Spanish switching across the workspace frame, navigation, cards, settings, update-pack instructions, field guidance, information icons, and tutorials
-- Guided household and personal goal builder
-- Five-pillar goal ideas in English and Spanish
-- Prepopulated, editable titles, descriptions, and steps
-- Household goals for Household Lead workspaces
-- Private personal goals for both roles
-- Read-only imported household goals for Family Member workspaces
-- Step completion tracking
-- Progress checkpoints
-- Barriers, support needed, and next-action fields
-- Progress percentage and status
-- Privacy-first goal-plan PDFs with in-text citation and References
-- Shared goal steps and checkpoints in signed Household Update Packs
-- Updated first-use tutorial
+- Guided bilingual Family Meeting Planner
+- Draft, Scheduled, Completed, and Archived meeting states
+- Meeting date, time, duration, format, general location note, facilitator role, and participant labels
+- Any capable household role may be selected to facilitate, including a teen or young adult
+- Prewritten English/Spanish topic libraries for:
+  - Health
+  - Relationships
+  - Education
+  - Finances
+  - Goals
+  - Household Organization
+- Editable purpose, discussion questions, desired outcome, and planned time for every topic
+- Custom topics
+- Optional recent-news discussion search
+- Article title, source, publication date, and link validation
+- One-year news search window, which is newer than FamilyPD’s seven-year maximum
+- Article links visible to Household Lead and Family Member workspaces
+- Previous-meeting recap and carry-forward of unfinished action items
+- Opening message, materials, optional meal/refreshment plan, and closing message
+- Meeting notes, decisions, action items, responsible role, target date, and completion status
+- Private Family Member meeting preparation
+- Agenda and minutes PDFs
+- Guidebook in-text citation and References
+- Selected news articles listed in the meeting document References
+- Structured shared meetings in signed Household Update Packs
+- Updated English/Spanish tutorial and Meeting Planner quick guide
 
-The goal guidance follows the Family Personal Development Guidebook’s recommendation to use a few clear goals, connect them to a timeframe, break them into small steps, revisit them in family meetings, recognize progress, and adjust the plan when needed.
+## Privacy
 
-## Apps Script file list
+Use general participant and facilitator labels. FamilyPD does not require legal names, phone numbers, email addresses, exact addresses, confidential school records, medical information, account balances, passwords, or identification numbers.
+
+Recent-news results are suggestions for discussion. FamilyPD verifies that a selected result contains basic source metadata and a usable link. It does not certify every claim made by the publisher. Users must open and review the article before using it.
+
+## Apps Script project files
 
 ### Script files
 
+- `CitationService.gs`
 - `Code.gs`
 - `Config.gs`
-- `CitationService.gs`
 - `DataStoreService.gs`
 - `DriveApiService.gs`
-- `GoalDocumentService.gs` **new**
-- `GoalsService.gs` **new**
+- `GoalDocumentService.gs`
+- `GoalsService.gs`
 - `GuidanceService.gs`
 - `IdentityDocumentService.gs`
 - `IdentityService.gs`
+- `MeetingDocumentService.gs` **new**
+- `MeetingService.gs` **new**
+- `NewsService.gs` **new**
 - `PrivacyGuardService.gs`
 - `SecurityService.gs`
 - `UpdatePackService.gs`
@@ -43,6 +62,7 @@ The goal guidance follows the Family Personal Development Guidebook’s recommen
 ### HTML files
 
 - `Index.html`
+- `MeetingClient.html` **new**
 - `Scripts.html`
 - `Styles.html`
 
@@ -50,45 +70,22 @@ The goal guidance follows the Family Personal Development Guidebook’s recommen
 
 - `appsscript.json`
 
-The Markdown and text files are documentation only and are not added to Apps Script.
+Markdown and text files are documentation only and are not added to Apps Script.
 
-## Upgrade from v4
+## Upgrade from v5.0.1
 
-1. Keep the current Google Drive workspace and JSON files.
-2. Replace every matching Apps Script file with the v5 version.
-3. Add `GoalsService.gs` as a new Script file.
-4. Add `GoalDocumentService.gs` as a new Script file.
-5. Save the project.
-6. Open **Deploy → Manage deployments**.
-7. Edit the web-app deployment.
-8. Select **New version**.
-9. Deploy.
-10. Open the `/exec` URL.
-11. Open **Workspace → Repair FamilyPD Structure** once.
+1. Keep the current FamilyPD Drive workspace and JSON files.
+2. Replace every matching Apps Script file with the v6 version.
+3. Add the four new Apps Script files:
+   - `MeetingService`
+   - `MeetingDocumentService`
+   - `NewsService`
+   - `MeetingClient` as an HTML file
+4. Save.
+5. Open **Deploy → Manage deployments**.
+6. Edit the deployment and choose **New version**.
+7. Deploy.
+8. Open the `/exec` link.
+9. Open **Workspace → Repair FamilyPD Structure** once.
 
-The schema migrates from v4 to v5 automatically.
-
-## Language test
-
-Switch to **Español** and verify that the following change:
-
-- header controls;
-- workspace heading;
-- left navigation;
-- overview cards;
-- identity and profile instructions;
-- role-builder guidance;
-- Goals & Checkpoints;
-- Update Packs;
-- Help & Tutorials;
-- Workspace settings;
-- information-icon help;
-- tutorial steps.
-
-Switch back to English and verify that the entire frame returns to English without reloading.
-
-## Privacy
-
-Do not enter exact sensitive information into goals. Use general descriptions, progress percentages, status, steps, and non-sensitive summaries.
-
-Personal goals are never included in Household Update Packs.
+The v5 data migrates without deleting household identity, goals, personal goals, or other saved information.
