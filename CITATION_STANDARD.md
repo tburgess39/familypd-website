@@ -1,62 +1,62 @@
 # FamilyPD Citation and Reference Standard
 
-## Required use
+## Required content
 
-In-text citations and a References section are required for FamilyPD content that presents factual, research-based, statistical, medical, financial, legal, educational, labor-market, school, community, or socioeconomic-mobility information.
+Visible in-text citations and a complete References section are required whenever FamilyPD presents:
 
-This includes:
-
-- learning modules;
-- research summaries;
-- news and awareness briefs;
+- research findings;
+- statistics;
+- health information;
+- financial or consumer guidance;
+- legal or regulatory information;
+- education and school data;
+- workforce or labor-market information;
+- socioeconomic-mobility information;
 - Opportunity Atlas explanations;
-- school and district report data;
-- community opportunity profiles;
-- charts and data stories;
-- YouTube learning pages and transcripts when factual claims are made;
-- discussion guides created from research or news;
-- generated PDFs and reports;
-- FamilyPD grant, impact, and needs-assessment materials.
-
-Personal reflections, household-authored mission statements, original meeting notes, and clearly labeled opinion do not require citations unless they include outside claims.
+- community indicators;
+- news or awareness summaries;
+- factual claims in videos, transcripts, or learning pages;
+- generated reports based on outside sources.
 
 ## In-text citation pattern
 
-Use an APA-style author-date pattern:
+Use an author-date pattern near the supported claim.
 
-- Parenthetical: `(Opportunity Insights, 2024)`
-- Narrative: `Opportunity Insights (2024) found…`
-- Organization abbreviation after first use:
-  - First: `(Centers for Disease Control and Prevention [CDC], 2025)`
-  - Later: `(CDC, 2025)`
-- Specific page or table when available: `(Author, 2024, p. 17)`
-- Data table or dashboard locator: `(Nevada Department of Education, 2025, Chronic Absenteeism table)`
+Examples:
 
-Place the citation immediately after the claim, statistic, or summarized idea it supports.
+- Parenthetical: `(Issuing Organization, 2026)`
+- Narrative: `Issuing Organization (2026) reports…`
+- Specific locator: `(Author, 2026, p. 12)`
+- Dashboard locator: `(Agency, 2026, Attendance table)`
 
-## References section
+A citation should appear immediately after the statistic, summarized finding, or factual claim it supports.
 
-Every published learning/research page and generated report must end with:
+## References
 
-# References
+Every published learning, research, community-data, or awareness page must end with a References section.
 
-Entries should be alphabetized by author or organization.
+Generated PDFs must also include References. References must not be silently dropped to shorten a document.
 
-The `Sources` sheet stores:
+## Source records
 
+A source record should include:
+
+- source identifier;
 - source type;
 - author or issuing organization;
 - year;
 - title;
-- publication or publisher;
+- publisher or publication;
 - publication date;
 - URL or DOI;
-- access date when appropriate;
+- access date when relevant;
 - last verification date;
-- an optional complete APA reference override;
-- source status and notes.
+- data year when statistics are used;
+- optional APA reference override;
+- status;
+- correction notes.
 
-## Source quality order
+## Source priority
 
 Prefer:
 
@@ -67,32 +67,11 @@ Prefer:
 5. Official school, district, college, workforce, and health sources
 6. Carefully verified journalism for recent events
 
-Opinion pieces must be labeled as opinion and must not be presented as research.
-
-## News and current events
-
-A news item should record:
-
-- original publisher;
-- author;
-- publication date;
-- direct URL;
-- date FamilyPD verified it;
-- supporting source when the central claim can be independently confirmed;
-- whether the item is news, analysis, research, guidance, or opinion;
-- age/sensitivity notes;
-- correction or update history.
-
-FamilyPD discussion pages should distinguish:
-
-- verified facts;
-- allegations or developing information;
-- interpretation;
-- FamilyPD's suggested household discussion or action.
+Label opinion as opinion.
 
 ## Community and school data
 
-Every displayed number should include or make available:
+Every displayed number should make the following available:
 
 - source;
 - data year;
@@ -100,28 +79,20 @@ Every displayed number should include or make available:
 - measure definition;
 - whether it is an estimate;
 - margin of error when relevant;
-- suppression/privacy notes;
-- last update or retrieval date.
+- privacy suppression notes;
+- last retrieved or verified date.
 
-Do not compare unlike years, definitions, populations, or geographies without a visible warning.
-
-## Generated PDFs
-
-PDF generation must pull citations connected to the selected content and automatically add a References page. A PDF should not silently omit references because of page length.
-
-## FamilyPD guidebook use
-
-When FamilyPD's own guidebook is the source, cite the relevant edition and page/chapter. Do not copy long sections into the public website. Summarize and link to or identify the official guidebook source as appropriate.
+Do not compare mismatched years, definitions, populations, or geographies without a visible warning.
 
 ## Corrections
 
-Published research content should support:
+Research content should support:
 
-- `Draft`
-- `Under Review`
-- `Published`
-- `Needs Reverification`
-- `Corrected`
-- `Archived`
+- Draft
+- Under Review
+- Published
+- Needs Reverification
+- Corrected
+- Archived
 
-Corrections should preserve the prior version, record the correction date, and explain what changed.
+Corrections should preserve the prior version and explain what changed.

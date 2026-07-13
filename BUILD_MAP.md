@@ -1,108 +1,106 @@
-# FamilyPD Build Map
+# FamilyPD Build Map After Privacy-First Foundation
 
-## Build 1 — Workspace foundation (included)
-
-- Role selection
-- Google permission explanation
-- Lead/member Drive structures
-- Lead/member workbook structures
-- Reconnect and repair
-- Update Pack export/import
-- Citation/reference data model
-- Responsive starter dashboard
-
-## Build 2 — Identity and member roster
+## Build 2 — Household Identity and Member Profile
 
 ### Household Lead
-- Household profile
-- Mission editor
-- Vision editor
+
+- Household label
+- Mission
+- Vision
 - Motto
 - Values
 - Commitments
-- Logo/image
+- Logo or symbolic image
 - Version history
-- Restore prior version
+- Compare and restore
 - Publish shared identity
-- Family-member roster
-- Co-lead designation
+- General member-role roster
+- Co-lead role
+
+No legal names, exact ages, phone numbers, emails, addresses, schools, or employers are required.
 
 ### Family Member
-- Read-only shared household identity
+
+- Read-only shared identity
 - Suggest a change
-- Personal profile
-- Household update status
-- Last imported package/version
+- General role label
+- Personal workspace preferences
+- Last verified update pack version
 
-## Build 3 — Goals and checkpoints
+## Build 3 — Goals and Checkpoints
 
-- Weekly, monthly, quarterly, yearly, and multi-year goals
-- Family and personal goal types
+- Family and personal goals
+- Weekly, monthly, quarterly, yearly, and multiyear timeframes
 - Pillar alignment
-- Goal steps
-- Evidence
-- Checkpoint schedules
-- Progress timeline
-- At-risk flags
-- Revisions and archived goals
-- Goal PDFs and progress reports
-- Member-selected sharing with household lead
+- General baseline and target descriptions
+- Percent complete
+- Status
+- Barriers
+- Support needed
+- Next actions
+- Non-sensitive evidence
+- Member-selected sharing
+
+No exact account balances, medical details, confidential school records, or legal information.
 
 ## Build 4 — Meetings
 
-- Draft/scheduled/completed archive
-- Revisit and duplicate agendas
-- Carry unfinished items forward
-- Meal/materials
-- Facilitator and roles
+- Draft, scheduled, completed, archived
+- Revisit and duplicate
+- Carry forward unfinished items
+- General meal and materials
 - Agenda topics
-- Video/article/research items
-- Notes, decisions, action items
-- Meeting feedback
-- Agenda, minutes, and combined PDF packets
+- Learning and research content
+- Decisions
+- Action items
+- Feedback
+- Agenda and minutes PDFs
 
-## Build 5 — Learning, videos, news, and research
+## Build 5 — Learning, News, Research, and Video
 
 - FamilyPD modules
-- YouTube catalog
-- STEM, CTE, AI, Linux, and cybersecurity learning paths
-- News and research library
-- Create discussion from content
-- Add content to a meeting
-- Assign before a meeting
-- Reflections and actions
+- STEM, CTE, AI, Linux, and cybersecurity paths
+- YouTube content
+- Research summaries
+- News and awareness briefs
+- Family discussions
+- Actions and follow-ups
 - Mandatory in-text citations
-- Automatically generated References section
+- Mandatory References sections
+- Reverification and correction history
 
-## Build 6 — Community opportunity and socioeconomic mobility
+## Build 6 — Community Opportunity and Socioeconomic Mobility
 
-- Definition and explainer
+- Plain-language definitions
 - Opportunity Atlas resources
-- School report data
-- Census/ACS
-- Health and labor data
+- School and district reports
+- Census and ACS indicators
+- Labor and health data
 - Community profiles
-- Data-to-discussion
-- Community Opportunity Snapshot PDFs
-- Source years, definitions, limitations, and references
+- Data-to-discussion tools
+- Community Opportunity Snapshot reports
+- Sources, years, definitions, limitations, and references
 
-## Build 7 — Policies, systems, and safety
+## Build 7 — Policies, Systems, and Safety
 
-- Policy builder and versions
-- Household system builder
+- General household policies
+- Household systems
 - Review schedules
-- Safety categories and drills
-- Printable safety packet
-- Shared versus restricted information
+- Safety procedures
+- Drill completion
+- Preparedness checklists
+- Printable general safety packet
 
-## Build 8 — Content manager for FamilyPD administration
+No exact addresses, phone lists, alarm codes, medical details, or confidential routines.
 
-- Add/edit pages without HTML
-- Add YouTube videos
-- Add articles/research/data
-- Reusable page blocks
-- Draft/preview/publish/archive
+## Build 8 — FamilyPD Public Content Manager
+
+- Reusable content blocks
+- Add and edit videos, images, resources, articles, and research
+- Draft, preview, publish, schedule, unpublish, archive
 - Source manager
 - Citation manager
-- Reverification dates
-- Corrections and version history
+- Reference builder
+- Verification dates
+- Corrections
+- Security notice management
