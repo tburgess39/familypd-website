@@ -1,0 +1,29 @@
+{
+  "version": "7.0.0",
+  "packageType": "CHANGED_NEW_FILES_ONLY",
+  "replaceExisting": [
+    "Code.gs",
+    "Config.gs",
+    "DataStoreService.gs",
+    "GoalDocumentService.gs",
+    "GoalsService.gs",
+    "GuidanceService.gs",
+    "IdentityDocumentService.gs",
+    "IdentityService.gs",
+    "Index.html",
+    "MeetingClient.html",
+    "MeetingDocumentService.gs",
+    "MeetingService.gs",
+    "PrivacyGuardService.gs",
+    "Scripts.html",
+    "Styles.html",
+    "UpdatePackService.gs"
+  ],
+  "addNew": [
+    "LearningClient.html",
+    "LearningDocumentService.gs",
+    "LearningService.gs",
+    "ResourceVerificationService.gs"
+  ],
+  "unchangedManifest": "appsscript.json"
+}
