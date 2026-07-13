@@ -1,29 +1,25 @@
-FamilyPD v4.0.0 BUILD VERIFICATION
+FamilyPD v5.0.0 BUILD VERIFICATION
 
-PASS - Apps Script and browser JavaScript syntax checks
-PASS - Valid appsscript.json JSON
-PASS - No duplicate HTML element IDs
-PASS - All static JavaScript getElementById references resolve
-PASS - All workspace navigation targets exist
-PASS - Guidance generator returns English and Spanish options
-PASS - 14 bilingual value templates available
-PASS - 9 bilingual role templates available
-PASS - Five tutorial steps available in both languages
-PASS - No broad Drive or Google Sheets scopes added
-PASS - Existing v3 data schema migrates to v4 fields
-PASS - Guidebook source URL updated
-PASS - Generic sample labels used; no household member names included
-PASS - PDF service supports English/Spanish structural headings
+PASS - Complete package contains all v4 files
+PASS - Added GoalsService.gs
+PASS - Added GoalDocumentService.gs
+PASS - App version and schema updated to 5.0.0
+PASS - Existing v4 JSON schema migrates without deleting data
+PASS - Guidebook goals citation is seeded and migrated
+PASS - Household goals are available only for Household Lead editing
+PASS - Personal goals remain separate from shared update packs
+PASS - Shared goal steps and checkpoints are privacy-filtered for update packs
+PASS - Goal-plan PDF includes citation and References
+PASS - English/Spanish frame translator covers static interface content
+PASS - Browser-selected language is used for the initial goals view
+PASS - All getElementById references match an HTML element
+PASS - All client server-call names match an Apps Script entry function
+PASS - JavaScript syntax checks passed for every .gs file and Scripts.html
 
-LIVE DEPLOYMENT TESTS STILL REQUIRED
+LIVE TESTING STILL REQUIRED
 
-- Authorize and open the deployed /exec URL
-- Run Repair FamilyPD Structure once
-- Generate and save mission/vision suggestions
-- Add, edit, remove, and save values
-- Add, edit, remove, and save roles
-- Switch English/Spanish and reload
-- Test read-aloud in supported browsers
-- Generate English and Spanish identity PDFs
-- Create and import a new v4 Household Update Pack with two test accounts
-- Test desktop, tablet, and mobile layouts
+- Google Apps Script authorization and deployment
+- English/Spanish switching in the deployed iframe
+- PDF conversion in Apps Script
+- Two-account Update Pack transfer
+- Browser speech synthesis and spellcheck behavior

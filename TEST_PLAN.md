@@ -1,37 +1,36 @@
-# FamilyPD v4 Live Test Plan
+# FamilyPD v5 Live Test Plan
 
-## Household Lead
+## Translation correction
 
-1. Open the new `/exec` deployment.
-2. Run **Workspace → Repair FamilyPD Structure**.
-3. Change the language to Spanish and back to English.
-4. Open **Household Identity**.
-5. Use all five generator dropdowns and create editable ideas.
-6. Insert one vision, mission, and motto suggestion, edit the wording, and save.
-7. Add three values from the library, edit one description, add one custom value, and save.
-8. Open **Roles & Profile**.
-9. Select a Meeting Facilitator role and review the automatic responsibilities.
-10. Edit one responsibility, remove one, add one, and add the role to the list.
-11. Add a second leadership role using a generic member label.
-12. Edit the saved role, add it back, and save the roster.
-13. Publish a new household identity version.
-14. Generate the PDF in English, switch to Spanish, and generate another PDF.
-15. Create a new v4 Household Update Pack.
+1. Open the deployed `/exec` app.
+2. Switch to Español.
+3. Confirm the header, left navigation, overview, identity frame, profile frame, Goals, Update Packs, Help, Workspace settings, field help, and information icons change to Spanish.
+4. Switch back to English without reloading.
+5. Confirm the full frame returns to English.
 
-## Family Member
+## Household Lead goals
 
-1. Open the Family Member test account.
-2. Upgrade and repair the member workspace.
-3. Import the new v4 Update Pack.
-4. Review the shared identity, values, commitments, and roles.
-5. Confirm private suggestions and profile preferences remain separate.
+1. Open Goals & Checkpoints.
+2. Select each pillar and confirm relevant goal ideas appear.
+3. Use a suggested idea.
+4. Edit the title, description, and steps.
+5. Save a household goal.
+6. Save a private personal goal.
+7. Mark a step complete.
+8. Add a checkpoint with a general progress note, barrier, support need, and next action.
+9. Generate a goal PDF.
+10. Confirm it includes a References page.
+11. Create a new Household Update Pack.
 
-## Accessibility and help
+## Family Member goals
 
-1. Complete the first-use tutorial.
-2. Restart it from **Help & Tutorials**.
-3. Test larger text.
-4. Test simple-language preference.
-5. Test read-aloud.
-6. Copy the AI prompt and confirm the privacy warning is visible.
-7. Confirm spellcheck works in mission, vision, values, commitments, responsibilities, and suggestions.
+1. Import the new v5 Household Update Pack.
+2. Confirm the shared household goal, steps, progress, and recent checkpoints appear as read-only.
+3. Create a personal goal.
+4. Confirm the personal goal can be edited and checked in.
+5. Confirm the personal goal does not appear in a newly imported household pack.
+6. Generate a PDF for the imported shared goal and for the personal goal.
+
+## Privacy tests
+
+Try entering an email address, phone number, exact street address, account-number label, password label, or identification pattern in a goal or checkpoint. Confirm FamilyPD blocks the entry and asks for a general description.

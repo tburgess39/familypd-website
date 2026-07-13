@@ -1,41 +1,36 @@
-# FamilyPD Build Map
+# FamilyPD Build Map After v5
 
 ## Completed foundation
 
 - Privacy-first Drive access
-- Separate Household Lead and Family Member roles
+- Security and authenticity checks
+- Household Lead and Family Member workspaces
+- Household Identity
+- Guided mission, vision, motto, values, commitments, and roles
+- English and Spanish support
+- Tutorials and accessibility guidance
+- Household and personal goals
+- Steps, checkpoints, progress tracking, and goal-plan PDFs
 - Signed Household Update Packs
-- Household Identity and version history
-- General member profiles
-- Guided mission, vision, and motto generation
-- Prepopulated values library
-- Simplified guided role builder
-- English/Spanish guidance architecture
-- First-use tutorial and Help Center foundation
-- Read-aloud, larger text, browser spellcheck, and AI-use guidance
 
-## Next build — Goals and Checkpoints
+## Next build — Meetings
 
-- Shared household goals
-- Private personal goals
-- Five-pillar alignment
-- Short-, medium-, and long-term timeframes
-- Guided goal generator
-- Selectable example goals
-- Small steps and checkpoints
-- Progress percentage and status
-- Barriers and support needed
-- Non-sensitive evidence guidance
-- Member-controlled sharing
+- Draft, scheduled, completed, and archived meetings
+- Guided topic selector
+- Five-pillar topic ideas
+- Editable discussion boxes
+- Current-news discussion option with verified sources and seven-year limit
+- Agenda, materials, meal, attendees by general label, decisions, and action items
+- Carry unfinished items forward
+- Duplicate and revisit meetings
+- Printable agenda and minutes PDFs
 - English/Spanish guidance
-- Tutorial and accessible field explanations
-- Goal-plan PDF with citations and References when external guidance is used
+- In-text citations and References for learning, research, news, and data content
 
 ## Later builds
 
-1. Meeting Planner and printable agenda/minutes
-2. Learning, research, videos, and discussions
-3. Community Opportunity and socioeconomic-mobility tools
-4. Policies, systems, and general safety planning
-5. Public FamilyPD Content Manager
-6. Main website integration, visual refresh, tutorial library, and asset audit
+- Learning and discussions
+- Community opportunity and socioeconomic mobility
+- Policies, systems, and safety
+- Public content manager
+- Main website integration, help center, visual refresh, and asset audit
