@@ -1,36 +1,68 @@
-# FamilyPD v7.2.2 — Role & Household-Member Dropdown Fix
+# FamilyPD v8.0.0 — Systems, Policies & Safety
 
-Replace only these four existing files.
+This package contains only the Apps Script files that changed or are new.
 
-## Script file
+## Replace these existing Script files
+
+- Code.gs
 - Config.gs
+- DataStoreService.gs
+- GuidanceService.gs
+- UpdatePackService.gs
 
-## HTML files
+## Replace these existing HTML files
+
 - Index.html
 - Scripts.html
 - Styles.html
 
-Open each existing file, select all content, and paste the matching replacement.
-Do not create duplicate files.
+## Add these new Script files
 
-## Deploy
-1. Replace only the four files listed above.
-2. Save the Apps Script project.
-3. Open Deploy > Manage deployments.
-4. Edit the current web-app deployment.
-5. Select New version.
-6. Deploy.
-7. Reopen the /exec URL.
+- SystemsService.gs
+- SystemsDocumentService.gs
 
-Repair is not required.
+## Add this new HTML file
 
-## What this fixes
-- Role-template dropdown always has English and Spanish choices.
-- General role, age group, learning format, check-in rhythm, and sharing
-  preference dropdowns remain populated even when an older response omits
-  their option arrays.
-- Household-member assignment is now a dropdown.
-- General labels include Adult Member A, Young Adult Member A, Teen Member A,
-  Child Member A, and similar choices.
-- Custom general label reveals an optional editable field.
-- Editing a saved role restores the household-member dropdown selection.
+- SystemsClient.html
+
+Do not replace appsscript.json or any file not listed above.
+
+## Deployment
+
+1. Replace the eight existing files listed above.
+2. Add the two new Script files and one new HTML file.
+3. Save the Apps Script project.
+4. Open Deploy > Manage deployments.
+5. Edit the current web-app deployment.
+6. Select New version.
+7. Deploy and reopen the /exec URL.
+8. Open Workspace and run Repair FamilyPD Structure once.
+
+Repair creates the new Systems Policies and Safety Drive folder and migrates
+the new guidebook citation. It does not delete existing identity, roles, goals,
+meetings, learning plans, Update Packs, preferences, or files.
+
+## Build 8 features
+
+- Systems, Policies & Safety in the main navigation
+- 30 English templates and 30 matching Spanish templates
+- Five templates for Health, Relationships, Education, Finances, Goals, and
+  Household Organization
+- Policy, System, Checklist, and Safety Plan record types
+- General role assignments and participant labels
+- Editable purpose, agreement, steps, review frequency, dates, and notes
+- Dashboard counts and upcoming reviews
+- Mark Reviewed action with automatic next-review calculation
+- Bilingual PDFs with Hall, 2025 citations and References
+- Read-only Family Member access through signed Update Packs
+- General safety reminders without emergency contacts or other sensitive data
+
+## Safety and privacy
+
+FamilyPD safety templates are general planning reminders. They do not replace
+official guidance, emergency services, medical care, legal advice, financial
+professionals, or qualified safety professionals.
+
+Do not enter exact addresses, emergency contacts, diagnoses, medical details,
+account numbers, passwords, identification documents, or details revealing
+when a home is empty.
