@@ -1,91 +1,107 @@
-# FamilyPD Guided Meeting Planner v6.0.0
+# Family Personal Development Website
 
-Use this complete package as the single source of truth. Do not combine older v5 files with this build.
+Starter static website for Family Personal Development.
 
-## What v6 adds
+## Files
 
-- Guided bilingual Family Meeting Planner
-- Draft, Scheduled, Completed, and Archived meeting states
-- Meeting date, time, duration, format, general location note, facilitator role, and participant labels
-- Any capable household role may be selected to facilitate, including a teen or young adult
-- Prewritten English/Spanish topic libraries for:
-  - Health
-  - Relationships
-  - Education
-  - Finances
-  - Goals
-  - Household Organization
-- Editable purpose, discussion questions, desired outcome, and planned time for every topic
-- Custom topics
-- Optional recent-news discussion search
-- Article title, source, publication date, and link validation
-- One-year news search window, which is newer than FamilyPD’s seven-year maximum
-- Article links visible to Household Lead and Family Member workspaces
-- Previous-meeting recap and carry-forward of unfinished action items
-- Opening message, materials, optional meal/refreshment plan, and closing message
-- Meeting notes, decisions, action items, responsible role, target date, and completion status
-- Private Family Member meeting preparation
-- Agenda and minutes PDFs
-- Guidebook in-text citation and References
-- Selected news articles listed in the meeting document References
-- Structured shared meetings in signed Household Update Packs
-- Updated English/Spanish tutorial and Meeting Planner quick guide
+- `index.html` — homepage
+- `about/index.html` — About page
+- `approach/index.html` — Our Approach page
+- `toolkit/index.html` — Family Toolkit directory
+- `toolkit/meeting-planner/index.html` — selectable-topic meeting planner and print document
+- `toolkit/pillar-check/index.html` — Five-Pillar Check-In
+- `toolkit/mission-vision/index.html` — Mission & Vision Builder
+- `toolkit/roles-responsibilities/index.html` — Roles & Responsibilities
+- `toolkit/goal-planner/index.html` — Family Goal Planner
+- `toolkit/news-discussion/index.html` — verified current-news discussion tool
+- `assets/data/family-news.json` — curated story collection
+- `programs/index.html` — Programs & Services page
+- `impact/index.html` — Impact & Accountability page
+- `get-involved/index.html` — Get Involved page and inquiry builder
+- `assets/css/styles.css` — shared design system and responsive layout
+- `assets/js/main.js` — mobile navigation and dynamic copyright year
+- `404.html` — GitHub Pages fallback page
 
-## Privacy
+## Local preview
 
-Use general participant and facilitator labels. FamilyPD does not require legal names, phone numbers, email addresses, exact addresses, confidential school records, medical information, account balances, passwords, or identification numbers.
+Open `index.html` in a browser.
 
-Recent-news results are suggestions for discussion. FamilyPD verifies that a selected result contains basic source metadata and a usable link. It does not certify every claim made by the publisher. Users must open and review the article before using it.
+## Publish with GitHub Pages
 
-## Apps Script project files
+1. Upload these files to the root of the `familypd-website` repository.
+2. Open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the `main` branch and `/ (root)`.
+5. Save.
+6. GitHub will provide a preview URL.
 
-### Script files
+Do not point `familypd.org` to GitHub Pages until the replacement site has been reviewed.
 
-- `CitationService.gs`
-- `Code.gs`
-- `Config.gs`
-- `DataStoreService.gs`
-- `DriveApiService.gs`
-- `GoalDocumentService.gs`
-- `GoalsService.gs`
-- `GuidanceService.gs`
-- `IdentityDocumentService.gs`
-- `IdentityService.gs`
-- `MeetingDocumentService.gs` **new**
-- `MeetingService.gs` **new**
-- `NewsService.gs` **new**
-- `PrivacyGuardService.gs`
-- `SecurityService.gs`
-- `UpdatePackService.gs`
-- `WorkspaceService.gs`
 
-### HTML files
+## Toolkit privacy
 
-- `Index.html`
-- `MeetingClient.html` **new**
-- `Scripts.html`
-- `Styles.html`
+Toolkit entries are saved only in the visitor's browser using `localStorage`.
+The static website does not transmit or store worksheet responses on a server.
 
-### Manifest
 
-- `appsscript.json`
+## Updating the verified news collection
 
-Markdown and text files are documentation only and are not added to Apps Script.
+Edit `assets/data/family-news.json`.
 
-## Upgrade from v5.0.1
+Each story must include:
+- a reliable original source;
+- a publication date within seven years;
+- at least one Family PD pillar;
+- a short factual summary;
+- proactive family actions;
+- discussion prompts;
+- the original article URL.
 
-1. Keep the current FamilyPD Drive workspace and JSON files.
-2. Replace every matching Apps Script file with the v6 version.
-3. Add the four new Apps Script files:
-   - `MeetingService`
-   - `MeetingDocumentService`
-   - `NewsService`
-   - `MeetingClient` as an HTML file
-4. Save.
-5. Open **Deploy → Manage deployments**.
-6. Edit the deployment and choose **New version**.
-7. Deploy.
-8. Open the `/exec` link.
-9. Open **Workspace → Repair FamilyPD Structure** once.
+The website automatically sorts stories newest-first and hides stories older than seven years.
 
-The v5 data migrates without deleting household identity, goals, personal goals, or other saved information.
+
+## Get Involved inquiry privacy
+
+The inquiry builder saves entries only in the visitor's browser.
+The user must choose to copy the message or open it in their email application.
+The website does not submit or store inquiry responses on a server.
+
+## Google Drive workspace integration
+
+- `workspace/index.html` — Google Drive workspace information and controls
+- `privacy/index.html` — website and Google Drive integration privacy policy
+- `assets/js/workspace-config.js` — one-line Apps Script deployment configuration
+- `assets/js/workspace-client.js` — secure popup bridge and PDF payload builder
+- `apps-script/familypd-workspace/` — complete Apps Script workspace backend
+
+
+### Before the buttons work
+
+Deploy the included Apps Script project and replace the placeholder URL in:
+
+`assets/js/workspace-config.js`
+
+Use the web app URL ending in `/exec`.
+
+
+## Public Resource Hub & Website Launch Center
+
+- `resources/index.html` — bilingual public resource directory
+- `resources/library/` — website-ready public resource pages
+- `launch-center/index.html` — browser-only public resource builder
+- `assets/data/public-resources.json` — resource hub catalog
+- `assets/js/resource-hub.js` — language, search, and filter controls
+- `assets/js/public-resource-page.js` — bilingual starter-resource renderer
+- `assets/js/resource-launch-center.js` — templates, review, preview, draft import/export, and ZIP content-kit generation
+
+The Launch Center does not connect GitHub to a private FamilyPD Drive workspace. Publishing remains a manual review and upload process.
+
+
+## FamilyPD Kids & Teens
+
+- `kids/index.html` — public Kids & Teens hub for ages 4–18
+- `kids/creator-lab/index.html` — bilingual interactive youth project generator
+- `assets/data/youth-project-ideas.json` — age-, pillar-, and project-based challenge library
+- `assets/js/youth-creator-lab.js` — idea generation, local saving, copying, downloading, and printing
+
+The Creator Lab does not collect or publish children’s submissions and does not connect to Google Drive or GitHub.

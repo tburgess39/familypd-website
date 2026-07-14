@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate an age-appropriate FamilyPD youth project challenge and build a printable plan for an app, game, comic, study tool, family challenge, or other resource.">
+  <title>Youth Creator Lab | Family Personal Development</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="youth-creator-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="Family Personal Development home">
+        <span class="brand-mark">FPD</span>
+        <span class="brand-text">
+          <strong>Family Personal Development</strong>
+          <small>Growth starts at home.</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../../about/">About</a>
+        <a href="../../toolkit/">Family Toolkit</a>
+        <a href="../../resources/">Resources</a>
+        <a href="../" aria-current="page">Kids & Teens</a>
+        <a href="../../programs/">Programs</a>
+        <a class="button button-small" href="../../get-involved/">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero creator-lab-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../">Kids & Teens</a>
+            <span aria-hidden="true">/</span>
+            <span>Youth Creator Lab</span>
+          </nav>
+          <p class="eyebrow" data-creator-copy data-en="Interactive project generator" data-es="Generador interactivo de proyectos">Interactive project generator</p>
+          <h1 data-creator-copy data-en="Turn a FamilyPD lesson into something young people can build." data-es="Convierte una lección de FamilyPD en algo que los jóvenes puedan crear.">Turn a FamilyPD lesson into something young people can build.</h1>
+          <p class="page-lead" data-creator-copy
+             data-en="Choose an age group, pillar, project type, and time. The lab creates a challenge, steps, test questions, and a printable project plan."
+             data-es="Elige un grupo de edad, pilar, tipo de proyecto y tiempo. El laboratorio crea un reto, pasos, preguntas para probar y un plan imprimible.">
+            Choose an age group, pillar, project type, and time. The lab creates a challenge, steps, test questions, and a printable project plan.
+          </p>
+        </div>
+
+        <aside class="creator-language-card">
+          <p class="eyebrow" data-creator-copy data-en="Choose language" data-es="Elija el idioma">Choose language</p>
+          <div class="resource-language-buttons">
+            <button type="button" data-creator-language="en" aria-pressed="true">English</button>
+            <button type="button" data-creator-language="es" aria-pressed="false">Español</button>
+          </div>
+          <p data-creator-copy
+             data-en="Project directions switch languages. Some skill labels remain in English while the full bilingual library is expanded."
+             data-es="Las instrucciones cambian de idioma. Algunas etiquetas de habilidades permanecen en inglés mientras se amplía la biblioteca bilingüe.">
+            Project directions switch languages. Some skill labels remain in English while the full bilingual library is expanded.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="youth-creator-lab" class="section">
+      <div class="container creator-lab-layout">
+        <div class="creator-lab-main">
+          <section class="creator-control-panel">
+            <div class="section-heading">
+              <p class="eyebrow" data-creator-copy data-en="Step 1" data-es="Paso 1">Step 1</p>
+              <h2 data-creator-copy data-en="Choose the kind of challenge." data-es="Elige el tipo de reto.">Choose the kind of challenge.</h2>
+            </div>
+
+            <div class="form-grid form-grid-four">
+              <label>
+                <span data-creator-copy data-en="Age group" data-es="Grupo de edad">Age group</span>
+                <select id="creator-age">
+                  <option value="" data-creator-copy data-en="Any age" data-es="Cualquier edad">Any age</option>
+                  <option value="4-7">Little Learners (Ages 4–7)</option>
+                  <option value="8-12">Builders (Ages 8–12)</option>
+                  <option value="13-18">Teen Launch (Ages 13–18)</option>
+                </select>
+              </label>
+
+              <label>
+                <span data-creator-copy data-en="FamilyPD pillar" data-es="Pilar de FamilyPD">FamilyPD pillar</span>
+                <select id="creator-pillar">
+                  <option value="">Any pillar / Cualquier pilar</option>
+                  <option>Health</option>
+                  <option>Relationships</option>
+                  <option>Education & Skills</option>
+                  <option>Finances</option>
+                  <option>Goals</option>
+                </select>
+              </label>
+
+              <label>
+                <span data-creator-copy data-en="Project type" data-es="Tipo de proyecto">Project type</span>
+                <select id="creator-type">
+                  <option value="">Any type / Cualquier tipo</option>
+                  <option>App</option>
+                  <option>Comic</option>
+                  <option>Family Challenge</option>
+                  <option>Game</option>
+                  <option>Printable</option>
+                  <option>Study Tool</option>
+                  <option>Tracker</option>
+                  <option>Video or Presentation</option>
+                </select>
+              </label>
+
+              <label>
+                <span data-creator-copy data-en="Available time" data-es="Tiempo disponible">Available time</span>
+                <select id="creator-time">
+                  <option value="">Any time / Cualquier tiempo</option>
+                  <option>30–60 minutes</option>
+                  <option>30–90 minutes</option>
+                  <option>1–2 hours</option>
+                  <option>1–3 hours</option>
+                  <option>2–5 hours</option>
+                  <option>2–6 hours</option>
+                  <option>3–8 hours</option>
+                </select>
+              </label>
+            </div>
+
+            <button class="button" id="generate-creator-idea" type="button" data-creator-copy data-en="Generate Project Idea" data-es="Generar idea de proyecto">Generate Project Idea</button>
+          </section>
+
+          <section class="creator-output-panel">
+            <div class="section-heading">
+              <p class="eyebrow" data-creator-copy data-en="Step 2" data-es="Paso 2">Step 2</p>
+              <h2 data-creator-copy data-en="Review the creator challenge." data-es="Revisa el reto del creador.">Review the creator challenge.</h2>
+            </div>
+            <div id="creator-idea-output" class="creator-idea-output">
+              <div class="creator-empty-state">
+                <strong>Your creator challenge will appear here.</strong>
+                <span>Choose your options and select Generate Idea.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="creator-plan-panel">
+            <div class="section-heading">
+              <p class="eyebrow" data-creator-copy data-en="Step 3" data-es="Paso 3">Step 3</p>
+              <h2 data-creator-copy data-en="Make the project your own." data-es="Haz que el proyecto sea tuyo.">Make the project your own.</h2>
+            </div>
+
+            <div class="form-grid form-grid-two">
+              <label>
+                <span data-creator-copy data-en="Project title" data-es="Título del proyecto">Project title</span>
+                <input id="creator-project-title" type="text">
+              </label>
+              <label>
+                <span data-creator-copy data-en="My creator role" data-es="Mi rol de creador">My creator role</span>
+                <input id="creator-role" type="text" placeholder="Researcher, coder, artist, tester…">
+              </label>
+              <label>
+                <span data-creator-copy data-en="Project purpose" data-es="Propósito del proyecto">Project purpose</span>
+                <textarea id="creator-project-purpose" rows="4"></textarea>
+              </label>
+              <label>
+                <span data-creator-copy data-en="Tools or materials" data-es="Herramientas o materiales">Tools or materials</span>
+                <textarea id="creator-materials" rows="4" placeholder="Paper, markers, laptop, Scratch, Canva, App Lab…"></textarea>
+              </label>
+              <label>
+                <span data-creator-copy data-en="My first step" data-es="Mi primer paso">My first step</span>
+                <textarea id="creator-first-step" rows="3"></textarea>
+              </label>
+              <label>
+                <span data-creator-copy data-en="Adult support I need" data-es="Apoyo adulto que necesito">Adult support I need</span>
+                <textarea id="creator-adult-support" rows="3"></textarea>
+              </label>
+              <label>
+                <span data-creator-copy data-en="Who will test or review it?" data-es="¿Quién lo probará o revisará?">Who will test or review it?</span>
+                <input id="creator-reviewer" type="text">
+              </label>
+              <label>
+                <span data-creator-copy data-en="Target date" data-es="Fecha objetivo">Target date</span>
+                <input id="creator-target-date" type="date">
+              </label>
+            </div>
+
+            <div class="tool-actions creator-plan-actions">
+              <button class="button button-secondary" id="save-creator-plan" type="button" data-creator-copy data-en="Save in Browser" data-es="Guardar en el navegador">Save in Browser</button>
+              <button class="button button-secondary" id="copy-creator-plan" type="button" data-creator-copy data-en="Copy Plan" data-es="Copiar plan">Copy Plan</button>
+              <button class="button button-secondary" id="download-creator-plan" type="button" data-creator-copy data-en="Download Text Plan" data-es="Descargar plan de texto">Download Text Plan</button>
+              <button class="button" id="print-creator-plan" type="button" data-creator-copy data-en="Print Project Plan" data-es="Imprimir plan">Print Project Plan</button>
+              <button class="text-button" id="clear-creator-plan" type="button" data-creator-copy data-en="Clear Plan" data-es="Borrar plan">Clear Plan</button>
+              <span id="creator-action-status" class="creator-action-status" aria-live="polite"></span>
+            </div>
+          </section>
+        </div>
+
+        <aside class="creator-lab-sidebar">
+          <div class="creator-sidebar-card">
+            <h2 data-creator-copy data-en="Creator promise" data-es="Promesa del creador">Creator promise</h2>
+            <p data-creator-copy
+               data-en="I will build something useful, test it, protect private information, give credit to sources, and ask for help when safety or accuracy matters."
+               data-es="Crearé algo útil, lo probaré, protegeré la información privada, citaré las fuentes y pediré ayuda cuando la seguridad o la exactitud sean importantes.">
+              I will build something useful, test it, protect private information, give credit to sources, and ask for help when safety or accuracy matters.
+            </p>
+          </div>
+
+          <div class="creator-sidebar-card">
+            <h2 data-creator-copy data-en="This lab does not" data-es="Este laboratorio no">This lab does not</h2>
+            <ul>
+              <li data-creator-copy data-en="collect or publish children’s projects" data-es="recopila ni publica proyectos de menores">collect or publish children’s projects</li>
+              <li data-creator-copy data-en="ask for a child’s full name, school, address, or account" data-es="solicita el nombre completo, escuela, dirección o cuenta de un menor">ask for a child’s full name, school, address, or account</li>
+              <li data-creator-copy data-en="connect to Google Drive or GitHub" data-es="se conecta a Google Drive o GitHub">connect to Google Drive or GitHub</li>
+              <li data-creator-copy data-en="replace adult supervision or professional safety guidance" data-es="reemplaza la supervisión adulta ni la orientación profesional de seguridad">replace adult supervision or professional safety guidance</li>
+            </ul>
+          </div>
+
+          <div class="creator-sidebar-card">
+            <h2 data-creator-copy data-en="Project cycle" data-es="Ciclo del proyecto">Project cycle</h2>
+            <ol>
+              <li data-creator-copy data-en="Choose a real family need." data-es="Elige una necesidad familiar real.">Choose a real family need.</li>
+              <li data-creator-copy data-en="Build a small first version." data-es="Crea una primera versión pequeña.">Build a small first version.</li>
+              <li data-creator-copy data-en="Test it with family." data-es="Pruébala con la familia.">Test it with family.</li>
+              <li data-creator-copy data-en="Improve what is unclear." data-es="Mejora lo que no esté claro.">Improve what is unclear.</li>
+              <li data-creator-copy data-en="Share only after adult review." data-es="Compártela solo después de la revisión de un adulto.">Share only after adult review.</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Family Personal Development</strong>
+        <p>Growth starts at home.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <a href="../../resources/">Resources</a>
+        <a href="../">Kids & Teens</a>
+        <a href="../../toolkit/">Toolkit</a>
+      </div>
+      <div>
+        <strong>Connect</strong>
+        <a href="mailto:info@familypd.org">info@familypd.org</a>
+        <a href="../../privacy/">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Family Personal Development. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/youth-creator-lab.js"></script>
+</body>
+</html>

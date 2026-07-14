@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build bilingual, guidebook-aligned FamilyPD public resources, review links and privacy boundaries, preview the family view, and export a website-ready content kit.">
+  <title>Public Resource & Website Launch Center | Family Personal Development</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="launch-center-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">FPD</span><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span>☰</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../about/">About</a><a href="../approach/">Our Approach</a><a href="../toolkit/">Family Toolkit</a><a href="../resources/">Resources</a>
+        <a href="../kids/">Kids & Teens</a><a href="../programs/">Programs</a><a href="../impact/">Impact</a><a class="button button-small" href="../get-involved/">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero launch-center-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../resources/">Resources</a><span>/</span><span>Website Launch Center</span></nav>
+          <p class="eyebrow">Public Resource Hub builder</p>
+          <h1>Build, review, preview, and export public FamilyPD resources.</h1>
+          <p class="page-lead">Create bilingual resources from editable templates, confirm guidebook alignment, check links and privacy boundaries, preview exactly what families will see, and download a website-ready content kit.</p>
+        </div>
+        <aside class="launch-boundary-card"><span class="launch-boundary-icon">✓</span><div><h2>Public content stays separate.</h2><p>This Launch Center runs in the browser. It does not connect GitHub to anyone’s private FamilyPD Google Drive workspace.</p><strong>Drafts stay in this browser unless you download them.</strong></div></aside>
+      </div>
+    </section>
+
+    <section class="section launch-process-section"><div class="container"><div class="launch-process-grid">
+      <article><span>1</span><strong>Choose a template</strong><p>Start with editable, guidebook-aligned structure.</p></article>
+      <article><span>2</span><strong>Write bilingually</strong><p>Complete English and Spanish public copy.</p></article>
+      <article><span>3</span><strong>Review boundaries</strong><p>Check sources, dates, links, privacy, and scope.</p></article>
+      <article><span>4</span><strong>Preview</strong><p>View the same public resource families will see.</p></article>
+      <article><span>5</span><strong>Export</strong><p>Download a ZIP for manual website review and upload.</p></article>
+    </div></div></section>
+
+    <form id="resource-launch-form" class="section launch-builder-form" autocomplete="off">
+      <div class="container launch-builder-layout">
+        <div class="launch-builder-main">
+          <section class="launch-panel">
+            <div class="launch-panel-heading"><span>1</span><div><p class="eyebrow">Template & alignment</p><h2>Choose the public resource you are building.</h2><p>Every template is prepopulated but fully editable.</p></div></div>
+            <div class="form-grid form-grid-three">
+              <label>Template<select name="templateType"><option value="quickGuide">Quick guide</option><option value="discussionGuide">Family discussion guide</option><option value="checklist">Checklist</option><option value="workshopHandout">Workshop handout</option><option value="newsDiscussion">Verified news discussion</option><option value="announcement">Website announcement</option></select><em>Choose the structure that best matches the family’s need.</em></label>
+              <label>Publication language<select name="publicationLanguage"><option value="bilingual">English + Spanish</option><option value="en">English only</option><option value="es">Spanish only</option></select><em>Bilingual is recommended for public FamilyPD resources.</em></label>
+              <label>Website folder name<input name="slug" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" placeholder="family-meeting-basics"><em>Lowercase letters, numbers, and hyphens only.</em></label>
+            </div>
+            <button class="button button-secondary" id="load-launch-template" type="button">Load Selected Template</button>
+            <div class="launch-alignment-grid">
+              <fieldset><legend>FamilyPD pillars</legend><label><input type="checkbox" name="pillarHealth" value="Health" data-launch-pillar> Health</label><label><input type="checkbox" name="pillarRelationships" value="Relationships" data-launch-pillar> Relationships</label><label><input type="checkbox" name="pillarEducation" value="Education & Skills" data-launch-pillar> Education & Skills</label><label><input type="checkbox" name="pillarFinances" value="Finances" data-launch-pillar> Finances</label><label><input type="checkbox" name="pillarGoals" value="Goals" data-launch-pillar> Goals</label></fieldset>
+              <fieldset><legend>Guiding principles</legend><label><input type="checkbox" name="principleAwareness" value="Self-awareness" data-launch-principle> Self-awareness</label><label><input type="checkbox" name="principleSystems" value="Systems" data-launch-principle> Systems</label><label><input type="checkbox" name="principlePolicies" value="Policies" data-launch-principle> Policies</label><label><input type="checkbox" name="principleCommunity" value="Community" data-launch-principle> Community</label></fieldset>
+            </div>
+            <div class="form-grid form-grid-three">
+              <label>Format — English<input name="format"></label><label>Format — Spanish<input name="formatEs"></label><label>Reading level<input name="readingLevel"></label>
+              <label>Audience — English<input name="audience"></label><label>Audience — Spanish<input name="audienceEs"></label><label>Version<input name="resourceVersion" placeholder="1.0"></label>
+              <label>Updated date<input type="date" name="updatedDate"></label><label>Last reviewed date<input type="date" name="lastReviewed"></label>
+            </div>
+          </section>
+
+          <section class="launch-panel">
+            <div class="launch-panel-heading"><span>2</span><div><p class="eyebrow">Bilingual public copy</p><h2>Write what families will read.</h2><p>English and Spanish fields stay side by side for easier review.</p></div></div>
+            <div class="bilingual-field-grid bilingual-field-head"><strong>English</strong><strong>Español</strong></div>
+            <div class="bilingual-field-grid">
+              <label>Public title<input name="titleEn"></label><label>Título público<input name="titleEs"></label>
+              <label>Short summary<textarea name="summaryEn" rows="3"></textarea></label><label>Resumen breve<textarea name="summaryEs" rows="3"></textarea></label>
+              <label>Why this matters<textarea name="whyEn" rows="5"></textarea></label><label>Por qué es importante<textarea name="whyEs" rows="5"></textarea></label>
+            </div>
+            <h3 class="launch-subheading">Key points / Puntos clave</h3>
+            <div class="launch-paired-rows">
+              <div class="bilingual-field-grid"><input name="keyEn1" placeholder="Key point 1"><input name="keyEs1" placeholder="Punto clave 1"></div><div class="bilingual-field-grid"><input name="keyEn2" placeholder="Key point 2"><input name="keyEs2" placeholder="Punto clave 2"></div><div class="bilingual-field-grid"><input name="keyEn3" placeholder="Key point 3"><input name="keyEs3" placeholder="Punto clave 3"></div><div class="bilingual-field-grid"><input name="keyEn4" placeholder="Key point 4"><input name="keyEs4" placeholder="Punto clave 4"></div><div class="bilingual-field-grid"><input name="keyEn5" placeholder="Key point 5"><input name="keyEs5" placeholder="Punto clave 5"></div>
+            </div>
+            <h3 class="launch-subheading">Discussion questions / Preguntas para conversar</h3>
+            <div class="launch-paired-rows">
+              <div class="bilingual-field-grid"><input name="questionEn1" placeholder="Question 1"><input name="questionEs1" placeholder="Pregunta 1"></div><div class="bilingual-field-grid"><input name="questionEn2" placeholder="Question 2"><input name="questionEs2" placeholder="Pregunta 2"></div><div class="bilingual-field-grid"><input name="questionEn3" placeholder="Question 3"><input name="questionEs3" placeholder="Pregunta 3"></div><div class="bilingual-field-grid"><input name="questionEn4" placeholder="Question 4"><input name="questionEs4" placeholder="Pregunta 4"></div>
+            </div>
+            <h3 class="launch-subheading">Action steps / Pasos de acción</h3>
+            <div class="launch-paired-rows">
+              <div class="bilingual-field-grid"><input name="actionEn1" placeholder="Action step 1"><input name="actionEs1" placeholder="Paso 1"></div><div class="bilingual-field-grid"><input name="actionEn2" placeholder="Action step 2"><input name="actionEs2" placeholder="Paso 2"></div><div class="bilingual-field-grid"><input name="actionEn3" placeholder="Action step 3"><input name="actionEs3" placeholder="Paso 3"></div><div class="bilingual-field-grid"><input name="actionEn4" placeholder="Action step 4"><input name="actionEs4" placeholder="Paso 4"></div><div class="bilingual-field-grid"><input name="actionEn5" placeholder="Action step 5"><input name="actionEs5" placeholder="Paso 5"></div>
+            </div>
+            <div class="bilingual-field-grid"><label>Scope and safety note<textarea name="boundaryEn" rows="4"></textarea></label><label>Nota de alcance y seguridad<textarea name="boundaryEs" rows="4"></textarea></label></div>
+            <details class="launch-ai-help"><summary>Use an AI tool to help draft Spanish</summary><p>Complete the English fields first. Copy the prepared prompt, open your preferred AI tool, paste it, and review every Spanish section with a fluent speaker before publication.</p><button class="button button-secondary" id="copy-translation-prompt" type="button">Copy Translation Prompt</button></details>
+          </section>
+
+          <section class="launch-panel">
+            <div class="launch-panel-heading"><span>3</span><div><p class="eyebrow">Sources, links & privacy</p><h2>Check what supports the resource—and what must stay private.</h2></div></div>
+            <div class="launch-source-table">
+              <div class="launch-source-row launch-source-head"><span>Source name</span><span>Public URL</span><span>Published</span><span>Reviewed</span></div>
+              <div class="launch-source-row"><input name="sourceName1"><input name="sourceUrl1" type="url" placeholder="https://"><input name="sourcePublished1" type="date"><input name="sourceReviewed1" type="date"></div>
+              <div class="launch-source-row"><input name="sourceName2"><input name="sourceUrl2" type="url" placeholder="https://"><input name="sourcePublished2" type="date"><input name="sourceReviewed2" type="date"></div>
+              <div class="launch-source-row"><input name="sourceName3"><input name="sourceUrl3" type="url" placeholder="https://"><input name="sourcePublished3" type="date"><input name="sourceReviewed3" type="date"></div>
+              <div class="launch-source-row"><input name="sourceName4"><input name="sourceUrl4" type="url" placeholder="https://"><input name="sourcePublished4" type="date"><input name="sourceReviewed4" type="date"></div>
+              <div class="launch-source-row"><input name="sourceName5"><input name="sourceUrl5" type="url" placeholder="https://"><input name="sourcePublished5" type="date"><input name="sourceReviewed5" type="date"></div>
+            </div>
+            <div class="launch-privacy-checklist">
+              <label><input type="checkbox" name="privacyNoNames"> I removed unnecessary names, phone numbers, addresses, account numbers, and identifying details.</label>
+              <label><input type="checkbox" name="privacyNoPrivateLinks"> I did not use private Google Drive, Google Docs, meeting, school, or family workspace links.</label>
+              <label><input type="checkbox" name="privacyNoSensitiveRecords"> I did not include private health, mental-health, school, legal, safety, or financial records.</label>
+              <label><input type="checkbox" name="privacyPermission"> I have permission for any identifiable photo, quote, testimonial, or family story.</label>
+              <label><input type="checkbox" name="privacyNoCopyright"> I did not copy a full copyrighted article, book section, worksheet, image, or video transcript.</label>
+              <label><input type="checkbox" name="privacyNoPromises"> I did not promise medical, legal, financial, educational, or safety outcomes.</label>
+              <label><input type="checkbox" name="privacyVerified"> I verified important factual claims and clearly labeled opinions or examples.</label>
+              <label><input type="checkbox" name="privacyNoDataCollection"> This public resource does not collect sensitive personal information.</label>
+            </div>
+            <label>Internal notes—not exported into the public page<textarea name="internalNotes" rows="4" placeholder="Reviewer notes, missing approvals, future updates…"></textarea></label>
+            <button class="button" id="run-launch-review" type="button">Run Publication Review</button>
+          </section>
+
+          <section class="launch-panel">
+            <div class="launch-panel-heading"><span>4</span><div><p class="eyebrow">Exact family preview</p><h2>Preview the public page before exporting it.</h2></div></div>
+            <div class="launch-preview-toolbar"><div role="group" aria-label="Preview language"><button type="button" class="active" data-preview-language="en" aria-pressed="true">English</button><button type="button" data-preview-language="es" aria-pressed="false">Español</button></div><div role="group" aria-label="Preview size"><button type="button" class="active" data-preview-size="desktop" aria-pressed="true">Desktop</button><button type="button" data-preview-size="mobile" aria-pressed="false">Mobile</button></div></div>
+            <div id="launch-preview-frame" class="launch-preview-frame"></div>
+          </section>
+
+          <section class="launch-panel">
+            <div class="launch-panel-heading"><span>5</span><div><p class="eyebrow">Website-ready export</p><h2>Download a public content kit—then review and upload manually.</h2></div></div>
+            <div class="launch-export-summary"><div><strong>The ZIP includes</strong><span>Standalone index.html, structured JSON, hub entry, sources record, review checklist, README, and an optional card snippet.</span></div><div><strong>It does not include</strong><span>Private family records, Google tokens, Drive files, GitHub access, passwords, or hidden publishing automation.</span></div></div>
+            <div class="tool-actions launch-export-actions"><button class="button button-secondary" id="save-launch-draft" type="button">Save Draft in Browser</button><button class="button button-secondary" id="download-launch-draft" type="button">Download Draft JSON</button><label class="button button-secondary launch-import-label">Import Draft JSON<input id="launch-import-file" type="file" accept="application/json,.json"></label><button class="button" id="export-launch-kit" type="button">Download Website Content Kit ZIP</button><button class="text-button" id="reset-launch-center" type="button">Clear Launch Center</button><span id="launch-action-status" class="launch-action-status" aria-live="polite"></span></div>
+          </section>
+        </div>
+
+        <aside class="launch-builder-sidebar">
+          <div id="launch-readiness" class="launch-readiness"><strong>Draft in progress</strong><span>Run the review when the content is ready.</span></div>
+          <div class="launch-sidebar-card"><h2>Publication review</h2><ul id="launch-review-list" class="launch-review-list"><li class="launch-review-neutral"><span>i</span><div><strong>Review not run yet.</strong><p>Complete the resource and select Run Publication Review.</p></div></li></ul></div>
+          <div class="launch-sidebar-card"><h2>Manual launch boundary</h2><ol><li>Download the ZIP.</li><li>Review every file.</li><li>Add the resource folder to the website.</li><li>Add the hub entry to the public resource JSON.</li><li>Preview GitHub Pages.</li><li>Publish after approval.</li></ol><p><strong>No private Drive-to-GitHub connection is used.</strong></p></div>
+        </aside>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>Growth starts at home.</p></div><div><strong>Explore</strong><a href="../toolkit/">Toolkit</a><a href="../resources/">Resources</a><a href="../workspace/">My Workspace</a></div><div><strong>Connect</strong><a href="mailto:info@familypd.org">info@familypd.org</a><a href="../privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+  <script src="../assets/js/main.js"></script><script src="../assets/js/resource-launch-center.js"></script>
+</body>
+</html>

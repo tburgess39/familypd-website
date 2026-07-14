@@ -1,0 +1,529 @@
+{
+  "last_updated": "2026-07-14",
+  "age_bands": {
+    "4-7": {
+      "en": "Little Learners (Ages 4–7)",
+      "es": "Pequeños aprendices (4–7 años)"
+    },
+    "8-12": {
+      "en": "Builders (Ages 8–12)",
+      "es": "Creadores (8–12 años)"
+    },
+    "13-18": {
+      "en": "Teen Launch (Ages 13–18)",
+      "es": "Lanzamiento juvenil (13–18 años)"
+    }
+  },
+  "ideas": [
+    {
+      "id": "health-routine-cards",
+      "ages": [
+        "4-7",
+        "8-12"
+      ],
+      "pillar": "Health",
+      "project_type": "Printable",
+      "time": "30–60 minutes",
+      "title": {
+        "en": "Healthy Routine Picture Cards",
+        "es": "Tarjetas con rutinas saludables"
+      },
+      "mission": {
+        "en": "Create picture cards that help a child remember a healthy morning, bedtime, or hygiene routine.",
+        "es": "Crea tarjetas con dibujos que ayuden a un niño a recordar una rutina saludable de la mañana, la noche o la higiene."
+      },
+      "skills": [
+        "Planning",
+        "Drawing",
+        "Sequencing"
+      ],
+      "steps": {
+        "en": [
+          "Choose one routine.",
+          "Break it into 4–6 small steps.",
+          "Draw or design one card for each step.",
+          "Ask a family member to test the order.",
+          "Improve any card that is confusing."
+        ],
+        "es": [
+          "Elige una rutina.",
+          "Divídela en 4–6 pasos pequeños.",
+          "Dibuja o diseña una tarjeta para cada paso.",
+          "Pide a un familiar que pruebe el orden.",
+          "Mejora cualquier tarjeta que no esté clara."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Can someone follow the routine without extra explanation?",
+          "Are the pictures easy to understand?",
+          "Is every step safe and age-appropriate?"
+        ],
+        "es": [
+          "¿Alguien puede seguir la rutina sin explicaciones adicionales?",
+          "¿Los dibujos son fáciles de entender?",
+          "¿Cada paso es seguro y apropiado para la edad?"
+        ]
+      }
+    },
+    {
+      "id": "feelings-comic",
+      "ages": [
+        "4-7",
+        "8-12"
+      ],
+      "pillar": "Relationships",
+      "project_type": "Comic",
+      "time": "1–2 hours",
+      "title": {
+        "en": "Feelings and Kind Words Comic",
+        "es": "Cómic sobre sentimientos y palabras amables"
+      },
+      "mission": {
+        "en": "Make a short comic that shows a character naming a feeling, asking for help, and using respectful words.",
+        "es": "Crea un cómic corto donde un personaje nombre un sentimiento, pida ayuda y use palabras respetuosas."
+      },
+      "skills": [
+        "Storytelling",
+        "Empathy",
+        "Communication"
+      ],
+      "steps": {
+        "en": [
+          "Choose one common family conflict.",
+          "Create two or three characters.",
+          "Show the unhelpful response.",
+          "Show a calmer, respectful response.",
+          "End with one lesson the reader can practice."
+        ],
+        "es": [
+          "Elige un conflicto familiar común.",
+          "Crea dos o tres personajes.",
+          "Muestra una respuesta poco útil.",
+          "Muestra una respuesta más tranquila y respetuosa.",
+          "Termina con una lección que el lector pueda practicar."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Does the comic avoid blaming or embarrassing anyone?",
+          "Can a child identify the feeling?",
+          "Does the story show a useful next step?"
+        ],
+        "es": [
+          "¿El cómic evita culpar o avergonzar a alguien?",
+          "¿Un niño puede identificar el sentimiento?",
+          "¿La historia muestra un próximo paso útil?"
+        ]
+      }
+    },
+    {
+      "id": "safety-scenario-game",
+      "ages": [
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Health",
+      "project_type": "Game",
+      "time": "1–3 hours",
+      "title": {
+        "en": "What Would You Do? Safety Scenario Game",
+        "es": "¿Qué harías? Juego de situaciones de seguridad"
+      },
+      "mission": {
+        "en": "Build a card or digital game that helps families practice calm, age-appropriate responses to common safety situations.",
+        "es": "Crea un juego de tarjetas o digital que ayude a las familias a practicar respuestas tranquilas y apropiadas para situaciones comunes de seguridad."
+      },
+      "skills": [
+        "Safety awareness",
+        "Decision-making",
+        "Game design"
+      ],
+      "steps": {
+        "en": [
+          "Choose 6–10 realistic situations.",
+          "Write one safe question for each situation.",
+          "Research the correct response with a trusted adult or official source.",
+          "Create answer choices.",
+          "Test the game and correct unclear guidance."
+        ],
+        "es": [
+          "Elige de 6 a 10 situaciones realistas.",
+          "Escribe una pregunta segura para cada situación.",
+          "Investiga la respuesta correcta con un adulto de confianza o una fuente oficial.",
+          "Crea opciones de respuesta.",
+          "Prueba el juego y corrige cualquier orientación poco clara."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Is the guidance based on a reliable source?",
+          "Could any scenario frighten younger children unnecessarily?",
+          "Does the game tell players when to get an adult or call emergency services?"
+        ],
+        "es": [
+          "¿La orientación se basa en una fuente confiable?",
+          "¿Alguna situación podría asustar innecesariamente a niños pequeños?",
+          "¿El juego indica cuándo buscar a un adulto o llamar a emergencias?"
+        ]
+      }
+    },
+    {
+      "id": "study-hack-cards",
+      "ages": [
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "Study Tool",
+      "time": "30–90 minutes",
+      "title": {
+        "en": "Study Hack Challenge Cards",
+        "es": "Tarjetas de retos para estudiar mejor"
+      },
+      "mission": {
+        "en": "Create cards that teach short, practical ways to plan, focus, remember, and ask for help.",
+        "es": "Crea tarjetas que enseñen formas breves y prácticas de planificar, concentrarse, recordar y pedir ayuda."
+      },
+      "skills": [
+        "Research",
+        "Learning strategies",
+        "Design"
+      ],
+      "steps": {
+        "en": [
+          "Choose 8–12 study strategies.",
+          "Explain each strategy in one sentence.",
+          "Add a tiny challenge or example.",
+          "Group the cards by planning, focus, memory, and help-seeking.",
+          "Ask a student to test three cards."
+        ],
+        "es": [
+          "Elige de 8 a 12 estrategias de estudio.",
+          "Explica cada estrategia en una oración.",
+          "Agrega un pequeño reto o ejemplo.",
+          "Organiza las tarjetas por planificación, concentración, memoria y búsqueda de ayuda.",
+          "Pide a un estudiante que pruebe tres tarjetas."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Can a student use the strategy immediately?",
+          "Is the language short and clear?",
+          "Does the tool encourage learning instead of cheating?"
+        ],
+        "es": [
+          "¿Un estudiante puede usar la estrategia de inmediato?",
+          "¿El lenguaje es breve y claro?",
+          "¿La herramienta fomenta el aprendizaje en lugar de hacer trampa?"
+        ]
+      }
+    },
+    {
+      "id": "chore-randomizer",
+      "ages": [
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Goals",
+      "project_type": "App",
+      "time": "2–6 hours",
+      "title": {
+        "en": "Fair Chore Randomizer",
+        "es": "Sorteo justo de tareas del hogar"
+      },
+      "mission": {
+        "en": "Build a simple app that assigns age-appropriate household tasks fairly and explains when a task needs adult help.",
+        "es": "Crea una aplicación sencilla que asigne tareas apropiadas para la edad de forma justa e indique cuándo se necesita ayuda de un adulto."
+      },
+      "skills": [
+        "Coding",
+        "Logic",
+        "Responsibility"
+      ],
+      "steps": {
+        "en": [
+          "List safe, age-appropriate tasks.",
+          "Add names or team roles without public personal information.",
+          "Create rules so one person does not receive the same task repeatedly.",
+          "Add a reroll or swap option.",
+          "Test fairness across several rounds."
+        ],
+        "es": [
+          "Haz una lista de tareas seguras y apropiadas para la edad.",
+          "Agrega nombres o roles sin información personal pública.",
+          "Crea reglas para que una persona no reciba la misma tarea repetidamente.",
+          "Agrega una opción para volver a sortear o cambiar.",
+          "Prueba la equidad durante varias rondas."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Are dangerous or adult-only tasks excluded?",
+          "Does the app distribute work fairly?",
+          "Can a family edit the task list?"
+        ],
+        "es": [
+          "¿Se excluyen las tareas peligrosas o solo para adultos?",
+          "¿La aplicación distribuye el trabajo de forma justa?",
+          "¿La familia puede editar la lista de tareas?"
+        ]
+      }
+    },
+    {
+      "id": "allowance-budget-game",
+      "ages": [
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Finances",
+      "project_type": "Game",
+      "time": "1–3 hours",
+      "title": {
+        "en": "Save, Spend, Share Budget Game",
+        "es": "Juego de presupuesto: ahorrar, gastar y compartir"
+      },
+      "mission": {
+        "en": "Create a game where players make choices about saving, spending, giving, and preparing for an unexpected expense.",
+        "es": "Crea un juego donde los jugadores tomen decisiones sobre ahorrar, gastar, compartir y prepararse para un gasto inesperado."
+      },
+      "skills": [
+        "Budgeting",
+        "Math",
+        "Decision-making"
+      ],
+      "steps": {
+        "en": [
+          "Choose a simple amount of pretend income.",
+          "Create needs, wants, savings, and surprise-expense cards.",
+          "Set a goal players can work toward.",
+          "Write clear rules.",
+          "Play twice and adjust anything that feels unfair or confusing."
+        ],
+        "es": [
+          "Elige una cantidad sencilla de ingresos imaginarios.",
+          "Crea tarjetas de necesidades, deseos, ahorros y gastos sorpresa.",
+          "Establece una meta para los jugadores.",
+          "Escribe reglas claras.",
+          "Juega dos veces y ajusta lo que parezca injusto o confuso."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Does the game avoid shaming families with less money?",
+          "Are needs and wants explained respectfully?",
+          "Can players discuss why they made each choice?"
+        ],
+        "es": [
+          "¿El juego evita avergonzar a familias con menos dinero?",
+          "¿Las necesidades y los deseos se explican con respeto?",
+          "¿Los jugadores pueden explicar por qué tomaron cada decisión?"
+        ]
+      }
+    },
+    {
+      "id": "career-spotlight",
+      "ages": [
+        "13-18"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "Video or Presentation",
+      "time": "2–5 hours",
+      "title": {
+        "en": "Career and CTE Spotlight",
+        "es": "Presentación sobre carreras y educación técnica"
+      },
+      "mission": {
+        "en": "Research a career, technical program, certification, or apprenticeship and explain the pathway in clear language.",
+        "es": "Investiga una carrera, programa técnico, certificación o aprendizaje y explica la ruta en lenguaje claro."
+      },
+      "skills": [
+        "Career research",
+        "Public speaking",
+        "Source review"
+      ],
+      "steps": {
+        "en": [
+          "Choose one career connected to a real interest.",
+          "Use official school, employer, government, or professional sources.",
+          "Explain daily work, training, cost, salary range, and local opportunities.",
+          "Include questions families should ask.",
+          "Cite every source."
+        ],
+        "es": [
+          "Elige una carrera conectada con un interés real.",
+          "Usa fuentes oficiales de escuelas, empleadores, gobierno o asociaciones profesionales.",
+          "Explica el trabajo diario, la formación, el costo, el rango salarial y oportunidades locales.",
+          "Incluye preguntas que las familias deben hacer.",
+          "Cita todas las fuentes."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Are the salary and training facts current and sourced?",
+          "Does the presentation explain more than one pathway?",
+          "Does it avoid promising a job or income?"
+        ],
+        "es": [
+          "¿Los datos de salario y formación son actuales y tienen fuentes?",
+          "¿La presentación explica más de una ruta?",
+          "¿Evita prometer un trabajo o ingreso?"
+        ]
+      }
+    },
+    {
+      "id": "interview-practice-app",
+      "ages": [
+        "13-18"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "App",
+      "time": "3–8 hours",
+      "title": {
+        "en": "Interview Practice Coach",
+        "es": "Entrenador para practicar entrevistas"
+      },
+      "mission": {
+        "en": "Build an app that asks common interview questions, times practice answers, and gives a respectful preparation checklist.",
+        "es": "Crea una aplicación que haga preguntas comunes de entrevista, mida el tiempo de las respuestas y ofrezca una lista de preparación respetuosa."
+      },
+      "skills": [
+        "Coding",
+        "Communication",
+        "Career readiness"
+      ],
+      "steps": {
+        "en": [
+          "Write 10–15 general interview questions.",
+          "Add preparation reminders for hygiene, clothing, research, resume, and questions to ask.",
+          "Include a timer and reflection prompt.",
+          "Avoid storing recordings or personal answers by default.",
+          "Test with a mock interview."
+        ],
+        "es": [
+          "Escribe de 10 a 15 preguntas generales de entrevista.",
+          "Agrega recordatorios sobre higiene, ropa, investigación, currículum y preguntas para hacer.",
+          "Incluye un cronómetro y una pregunta de reflexión.",
+          "Evita guardar grabaciones o respuestas personales de forma predeterminada.",
+          "Prueba la aplicación con una entrevista simulada."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Does the app protect private answers?",
+          "Are the questions appropriate for an entry-level interview?",
+          "Does the feedback encourage clear, honest answers instead of fake perfection?"
+        ],
+        "es": [
+          "¿La aplicación protege las respuestas privadas?",
+          "¿Las preguntas son apropiadas para una entrevista inicial?",
+          "¿La retroalimentación fomenta respuestas claras y honestas en lugar de una perfección falsa?"
+        ]
+      }
+    },
+    {
+      "id": "goal-progress-board",
+      "ages": [
+        "4-7",
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Goals",
+      "project_type": "Tracker",
+      "time": "30–90 minutes",
+      "title": {
+        "en": "Small Steps Goal Board",
+        "es": "Tablero de metas en pequeños pasos"
+      },
+      "mission": {
+        "en": "Design a visual tracker that helps someone break one goal into small steps and celebrate progress.",
+        "es": "Diseña un registro visual que ayude a dividir una meta en pasos pequeños y celebrar el progreso."
+      },
+      "skills": [
+        "Goal setting",
+        "Design",
+        "Reflection"
+      ],
+      "steps": {
+        "en": [
+          "Choose one realistic goal.",
+          "Break it into 3–7 small steps.",
+          "Add a simple progress marker.",
+          "Include a place to write what helped and what was difficult.",
+          "Choose a healthy way to celebrate effort."
+        ],
+        "es": [
+          "Elige una meta realista.",
+          "Divídela en 3–7 pasos pequeños.",
+          "Agrega un marcador de progreso sencillo.",
+          "Incluye un espacio para escribir qué ayudó y qué fue difícil.",
+          "Elige una forma saludable de celebrar el esfuerzo."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Are the steps small enough to complete?",
+          "Does the board celebrate effort, not only the final result?",
+          "Can the goal be changed when life changes?"
+        ],
+        "es": [
+          "¿Los pasos son lo suficientemente pequeños para completarlos?",
+          "¿El tablero celebra el esfuerzo y no solo el resultado final?",
+          "¿La meta puede cambiar cuando cambie la vida?"
+        ]
+      }
+    },
+    {
+      "id": "family-kindness-challenge",
+      "ages": [
+        "4-7",
+        "8-12",
+        "13-18"
+      ],
+      "pillar": "Relationships",
+      "project_type": "Family Challenge",
+      "time": "30–60 minutes",
+      "title": {
+        "en": "Seven-Day Family Kindness Challenge",
+        "es": "Reto familiar de amabilidad de siete días"
+      },
+      "mission": {
+        "en": "Create seven small actions that help family members practice respect, consideration, encouragement, and teamwork.",
+        "es": "Crea siete acciones pequeñas que ayuden a la familia a practicar respeto, consideración, ánimo y trabajo en equipo."
+      },
+      "skills": [
+        "Empathy",
+        "Planning",
+        "Family engagement"
+      ],
+      "steps": {
+        "en": [
+          "Choose seven actions that do not cost money.",
+          "Make each action clear and achievable.",
+          "Include different ways to show care.",
+          "Create a simple tracker.",
+          "Hold a short reflection after day seven."
+        ],
+        "es": [
+          "Elige siete acciones que no cuesten dinero.",
+          "Haz que cada acción sea clara y posible.",
+          "Incluye diferentes maneras de demostrar cariño.",
+          "Crea un registro sencillo.",
+          "Hagan una breve reflexión después del séptimo día."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Can every age group participate?",
+          "Does the challenge avoid forcing physical affection?",
+          "Are the actions respectful of boundaries?"
+        ],
+        "es": [
+          "¿Puede participar cada grupo de edad?",
+          "¿El reto evita obligar el afecto físico?",
+          "¿Las acciones respetan los límites personales?"
+        ]
+      }
+    }
+  ]
+}
