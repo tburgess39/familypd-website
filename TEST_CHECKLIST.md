@@ -1,88 +1,54 @@
-# FamilyPD v9.0.0 Live Test Checklist
+# FamilyPD v9.1.0 Live Test Checklist
 
 ## Installation
 
-- Confirm the eight existing files were replaced rather than duplicated.
-- Add OpportunityService and OpportunityDocumentService as Script files.
-- Add OpportunityClient as an HTML file.
-- Deploy a New version.
-- Run Repair FamilyPD Structure once.
-- Confirm the Opportunities and Mobility folder appears in Drive.
+- Confirm all replacement files were replaced, not duplicated.
+- Confirm AccessibilitySupportClient was added as an HTML file.
+- Confirm appsscript.json was replaced as the project manifest.
+- Confirm OAuth scopes remain only drive.file and script.external_request.
+- Deploy a New version and reopen the /exec link.
+- Do not run Repair.
 
-## Navigation and dashboard
+## English and Spanish
 
-- Confirm Opportunities & Mobility appears in the main menu.
-- Confirm the panel opens.
-- Confirm the dashboard shows Shared, Personal, Action needed, and Past deadline.
-- Confirm up to three upcoming deadlines appear.
+- Switch English -> Español -> English at least three times.
+- Confirm no saveInterfacePreferences error appears.
+- Confirm the main navigation, dynamic cards, and dropdown choices change language.
+- Confirm Goals, Meetings, Learning, Opportunities, and Systems continue refreshing even when one service reports an error.
+- Confirm user-written answers are preserved rather than translated.
 
-## Official-source finder
+## Quick Help and read aloud
 
-Test all categories:
+Test representative fields in Household Identity, Roles, Goals, checkpoints, Quick Meeting, Full Meeting Planner, private meeting preparation, Learning, Opportunities, and Systems.
 
-- Career exploration
-- Jobs
-- Training & credentials
-- Apprenticeships
-- Scholarships & financial aid
-- College & career school
-- Workforce help
-- Benefits & community support
-- Small business & entrepreneurship
-- Service & experience
+- Confirm a Choices / Opciones button appears beside editable fields.
+- Confirm the question is explained.
+- Read the question and current answer aloud.
+- Select an editable starter example.
+- Add a dynamic step, agenda item, question, or action and confirm the new field receives support.
+- Read the visible page/section and confirm it includes headings, questions, selections, and entered answers.
 
-- Search using only a category.
-- Search using category and audience.
-- Add an optional keyword.
-- Add an optional city, state, or ZIP code.
-- Confirm the source links open in a new tab.
-- Confirm Show All Sources displays fourteen starting points.
-- Confirm English and Spanish source descriptions and tips appear.
+## Recent stories
 
-## Public-link checker
+- Search in Quick Meeting and Full Meeting Planner.
+- Confirm GDELT results appear when available.
+- Confirm Google News and Bing News fallback cards appear instead of an error when GDELT does not respond.
+- Choose an article and paste the exact HTTPS link.
 
-- Paste a public HTTPS opportunity page.
-- Confirm the domain, source tier, HTTP result, and title appear.
-- Confirm a successful check opens the editable planner.
-- Test an invalid, HTTP-only, local, numeric-IP, and unreachable link.
-- Confirm the app says that link checking is not a fact-check.
+## Link checker
 
-## Opportunity plans
+Test https://familypd.org/, https://nevadapartners.org/, an official opportunity resource, a normal public HTTPS article, an HTTP-only link, localhost, a private/numeric IP, and a malformed URL.
 
-As Household Lead:
+Confirm the result distinguishes secure HTTPS format, public domain, certificate/page response when completed, limited automated checking, HTTP status, and redirects. Confirm it does not claim organization, nonprofit, content, or safety verification.
 
-- Save a shared household opportunity.
-- Save a private personal opportunity.
-- Edit both records.
-- Change a personal record to shared and confirm no duplicate remains.
-- Change a shared record to personal and confirm no duplicate remains.
-- Add requirements, questions, next action, and action steps.
-- Add optional action due dates and mark an action completed.
-- Test Current, Action needed, Upcoming deadlines, Shared, Personal, Archived,
-  and All filters.
-- Confirm privacy checks block likely sensitive information.
+## Socioeconomic mobility
 
-As Family Member:
+- Confirm the definition appears in English and Spanish and can be read aloud.
+- Confirm all six mobility pathways appear.
+- Confirm starter actions open a prepopulated editable opportunity plan.
+- Open Opportunity Atlas, Opportunity Insights, Urban Upward Mobility, and Census MOVS.
+- Confirm each resource includes a clear explanation, suggested family use, and the caution that community patterns do not determine an individual's potential or future.
 
-- Confirm imported shared opportunities are read-only.
-- Confirm a shared opportunity can be copied into a private personal plan.
-- Confirm the personal copy can be edited without changing the shared record.
-- Confirm Family Members cannot save or archive shared household records.
+## Regression
 
-## PDFs
-
-- Generate an English PDF.
-- Generate a Spanish PDF.
-- Confirm metadata, requirements, actions, questions, source verification,
-  privacy notice, Hall, 2025 citation, and References appear.
-- Confirm Toni Hall is identified as the guidebook author.
-
-## Update Packs and regression
-
-- Create a Household Update Pack with a shared opportunity.
-- Import it into another Family Member workspace.
-- Confirm complete requirements and action steps transfer.
-- Switch English -> Español -> English three times.
-- Confirm user-written content is preserved rather than automatically translated.
-- Confirm Identity, Roles, Goals, Meetings, Learning, Systems, PDFs, Drive links,
-  and Update Packs still work.
+Confirm Identity, roles, goals, checkpoints, meetings, PDFs, learning, opportunity plans, systems, Update Packs, Drive links, and Household Lead/Family Member views still work.
