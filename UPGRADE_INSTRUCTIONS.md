@@ -1,24 +1,20 @@
-# FamilyPD v7.2.0 — Identity Hub & Navigation Fix
+# FamilyPD v7.2.2 — Role & Household-Member Dropdown Fix
 
-This package contains only the five Apps Script files that changed.
+Replace only these four existing files.
 
-## Replace these Script files
-
+## Script file
 - Config.gs
-- GuidanceService.gs
 
-## Replace these HTML files
-
+## HTML files
 - Index.html
 - Scripts.html
 - Styles.html
 
-Do not add duplicate files. Open each existing file, select all of its content,
-and replace it with the matching file from this package.
+Open each existing file, select all content, and paste the matching replacement.
+Do not create duplicate files.
 
 ## Deploy
-
-1. Replace only the five files listed above.
+1. Replace only the four files listed above.
 2. Save the Apps Script project.
 3. Open Deploy > Manage deployments.
 4. Edit the current web-app deployment.
@@ -26,39 +22,15 @@ and replace it with the matching file from this package.
 6. Deploy.
 7. Reopen the /exec URL.
 
-Repair is not required. The stored-data schema remains 7.0.0.
+Repair is not required.
 
 ## What this fixes
-
-- Prevents the publishedVersion error when packStatus is missing from an older
-  or partially updated server response.
-- Removes the automatic tutorial popup. The tutorial remains available manually
-  from Help & Tutorials.
-- Removes the separate Roles & Profile navigation item.
-- Places household roles and personal workspace preferences directly inside
-  Household Identity.
-- Changes the menu label to Household Identity & Roles for Household Leads.
-- Keeps Overview, Goals, Meetings, Learning, Update Packs, Help, and Workspace
-  directly available in the navigation menu.
-- Adds an in-page Household Identity section menu for Examples, Mission & Vision,
-  Values, Roles, and My Preferences.
-- Adds pillar-based clickable identity examples in English and Spanish.
-
-## Pillar example coverage
-
-For each FamilyPD pillar—Health, Relationships, Education, Finances, and Goals—
-the workspace now includes:
-
-- 6 mission examples
-- 6 vision examples
-- 8 value examples
-
-That is 20 selectable examples per pillar and 100 total examples per language.
-Every selected example remains editable.
-
-## Guidebook alignment
-
-The interface follows The Family Personal Development Guidebook by Toni Hall:
-mission explains what the household practices, vision describes the household
-being built, values describe agreed behavior, and roles make responsibility
-visible and shared.
+- Role-template dropdown always has English and Spanish choices.
+- General role, age group, learning format, check-in rhythm, and sharing
+  preference dropdowns remain populated even when an older response omits
+  their option arrays.
+- Household-member assignment is now a dropdown.
+- General labels include Adult Member A, Young Adult Member A, Teen Member A,
+  Child Member A, and similar choices.
+- Custom general label reveals an optional editable field.
+- Editing a saved role restores the household-member dropdown selection.
