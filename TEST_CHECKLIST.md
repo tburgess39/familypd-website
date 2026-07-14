@@ -1,36 +1,72 @@
-# FamilyPD v7.1.0 Test Checklist
+# FamilyPD v7.2.0 Test Checklist
 
-## Quick Meeting
+## Immediate error fix
 
-- Choose each meeting type and confirm the suggested title, length, and topics change.
-- Keep, remove, and add topics.
-- Confirm the total is limited to three, including an optional article.
-- Leave the date blank and confirm the meeting saves as a Draft.
-- Add a date and confirm it saves as Scheduled.
-- Select a teen or young-adult facilitator role.
-- Continue a Quick Meeting in the Full Planner and confirm the selections carry over.
+- Open the deployed /exec link.
+- Confirm the workspace loads without:
+  Cannot read properties of undefined (reading 'publishedVersion')
+- Confirm the published identity badge shows either a version or Not published.
 
-## Articles and links
+## Navigation
 
-- Find a recent story and add it.
-- Open the article before saving.
-- Paste one public HTTPS article link and choose Check and Add Link.
-- Confirm FamilyPD uses the page title when available and displays the domain.
-- Confirm the checked link becomes an editable agenda topic.
-- Replace a selected article without having to remove it first.
-- Confirm FamilyPD still explains that link checking is not a full fact-check.
+- Confirm the menu shows:
+  - Overview
+  - Household Identity & Roles
+  - Goals & Checkpoints
+  - Meetings
+  - Learning & Discussions
+  - Update Packs
+  - Help & Tutorials
+  - Workspace
+- Confirm there is no separate Roles & Profile menu item.
+- Open Household Identity & Roles.
+- Confirm the in-page buttons scroll to Examples, Mission & Vision, Values,
+  Roles, and My Preferences.
 
-## Dashboard
+## Household Identity examples
 
-- Schedule at least four future meetings.
-- Confirm the next three appear on the dashboard in date/time order.
-- Confirm today's and tomorrow's meetings use clear labels.
-- Confirm Family Members see imported upcoming meetings.
-- Confirm the Quick Meeting dashboard button is hidden in a Family Member workspace.
+For every pillar:
 
-## Language and regression
+- Health
+- Relationships
+- Education
+- Finances
+- Goals
 
+Confirm the dropdown shows:
+
+- 6 mission examples
+- 6 vision examples
+- 8 value examples
+
+Confirm:
+
+- Selecting a mission places it in the Mission field.
+- Selecting a vision places it in the Vision field.
+- Selecting a value adds it to Selected Values.
+- All selected wording remains editable.
+- The eight-value workspace limit is still enforced.
+
+## Roles and preferences
+
+- Confirm Guided Role Builder appears on the Household Identity page.
+- Confirm My FamilyPD Preferences appears on the same page.
+- Save a role and profile preferences.
+- Reload and confirm they remain saved.
+- Test the Family Member workspace and confirm published roles and personal
+  preferences appear on the Household Identity page.
+
+## Popup and language
+
+- Clear site storage or test in a private window.
+- Confirm the tutorial does not open automatically.
+- Open Help & Tutorials and confirm Restart Tutorial still opens it manually.
 - Switch English -> Español -> English three times.
-- Confirm Quick Meeting and dashboard text fully returns to the selected language.
-- Confirm Identity, Goals, Learning, full Meetings, PDFs, and Update Packs still work.
-- Confirm generated documents continue to cite Toni Hall/Hall.
+- Confirm navigation, example dropdowns, cards, roles, and preferences fully
+  return to the selected language.
+
+## Regression
+
+- Confirm Goals, Meetings, Learning, Update Packs, PDFs, Drive links, and the
+  Quick Meeting dashboard still work.
+- Confirm generated references continue to use Toni Hall / Hall, 2025.
