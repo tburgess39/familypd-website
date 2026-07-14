@@ -1,54 +1,62 @@
-# FamilyPD v9.1.0 Live Test Checklist
+# FamilyPD v9.2.0 Test Checklist
 
-## Installation
+## Install
 
-- Confirm all replacement files were replaced, not duplicated.
-- Confirm AccessibilitySupportClient was added as an HTML file.
-- Confirm appsscript.json was replaced as the project manifest.
-- Confirm OAuth scopes remain only drive.file and script.external_request.
-- Deploy a New version and reopen the /exec link.
-- Do not run Repair.
+- Replace all ten files rather than adding copies.
+- Deploy a New version.
+- Reopen the /exec link.
+- Do not run Repair unless FamilyPD displays a health warning.
 
-## English and Spanish
+## Language
 
-- Switch English -> Español -> English at least three times.
-- Confirm no saveInterfacePreferences error appears.
-- Confirm the main navigation, dynamic cards, and dropdown choices change language.
-- Confirm Goals, Meetings, Learning, Opportunities, and Systems continue refreshing even when one service reports an error.
-- Confirm user-written answers are preserved rather than translated.
+- Switch English -> Español -> English.
+- Confirm the page refreshes automatically.
+- Confirm the same feature reopens after refresh.
+- Confirm Opportunity labels and verification text translate.
+- Confirm Spanish navigation text remains inside its buttons.
+- Confirm user-written content remains unchanged.
 
-## Quick Help and read aloud
+## Guided flow
 
-Test representative fields in Household Identity, Roles, Goals, checkpoints, Quick Meeting, Full Meeting Planner, private meeting preparation, Learning, Opportunities, and Systems.
+- In Household Identity, test all seven steps.
+- Confirm only the selected major section is visible.
+- In Opportunities, test Learn, Find Sources, Check a Link, Build a Plan, and
+  Saved Plans.
+- Confirm creating/editing opens Build a Plan and saving returns to Saved Plans.
 
-- Confirm a Choices / Opciones button appears beside editable fields.
-- Confirm the question is explained.
-- Read the question and current answer aloud.
-- Select an editable starter example.
-- Add a dynamic step, agenda item, question, or action and confirm the new field receives support.
-- Read the visible page/section and confirm it includes headings, questions, selections, and entered answers.
+## Help and reading
 
-## Recent stories
+- Start Read Aloud and stop it midway.
+- Confirm Stop Reading is disabled when speech is idle.
+- Test Help & choices on identity, goals, meetings, learning, opportunities,
+  and systems.
+- Confirm dropdown choices include definitions or examples.
+- Confirm the URL checker help does not insert a sentence into the URL field.
+- Test a dynamically added agenda item, step, question, and action.
 
-- Search in Quick Meeting and Full Meeting Planner.
-- Confirm GDELT results appear when available.
-- Confirm Google News and Bing News fallback cards appear instead of an error when GDELT does not respond.
-- Choose an article and paste the exact HTTPS link.
+## Tutorial
 
-## Link checker
+- Confirm the tutorial covers Workspace, Identity, Roles, Goals, Meetings,
+  Learning, Opportunities, Systems, Family Sharing, accessibility, privacy,
+  and Help.
+- Confirm applicable steps can open the related feature.
 
-Test https://familypd.org/, https://nevadapartners.org/, an official opportunity resource, a normal public HTTPS article, an HTTP-only link, localhost, a private/numeric IP, and a malformed URL.
+## Family Sharing
 
-Confirm the result distinguishes secure HTTPS format, public domain, certificate/page response when completed, limited automated checking, HTTP status, and redirects. Confirm it does not claim organization, nonprofit, content, or safety verification.
+- Confirm the page says Family Sharing / Compartir con la familia.
+- Create a sharing file.
+- Confirm its filename starts with FamilyPD_Family_Sharing_File_.
+- Import it into a Family Member workspace.
+- Confirm previously signed update/sharing files remain compatible.
 
-## Socioeconomic mobility
+## Workspace health
 
-- Confirm the definition appears in English and Spanish and can be read aloud.
-- Confirm all six mobility pathways appear.
-- Confirm starter actions open a prepopulated editable opportunity plan.
-- Open Opportunity Atlas, Opportunity Insights, Urban Upward Mobility, and Census MOVS.
-- Confirm each resource includes a clear explanation, suggested family use, and the caution that community patterns do not determine an individual's potential or future.
+- Confirm an account without a workspace stays in setup.
+- Move an app-created test folder to Trash.
+- Reload and confirm FamilyPD pauses dependent tools and offers Repair Workspace.
+- Run Repair and confirm the workspace resumes.
 
 ## Regression
 
-Confirm Identity, roles, goals, checkpoints, meetings, PDFs, learning, opportunity plans, systems, Update Packs, Drive links, and Household Lead/Family Member views still work.
+Test Identity, Roles, Goals, Meetings, stories, Learning, Opportunities,
+Systems, PDFs, Drive links, and both workspace roles.
