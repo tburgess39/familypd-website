@@ -1,84 +1,88 @@
-# FamilyPD v8.0.0 Live Test Checklist
+# FamilyPD v9.0.0 Live Test Checklist
 
 ## Installation
 
 - Confirm the eight existing files were replaced rather than duplicated.
-- Confirm SystemsService and SystemsDocumentService were added as Script files.
-- Confirm SystemsClient was added as an HTML file.
+- Add OpportunityService and OpportunityDocumentService as Script files.
+- Add OpportunityClient as an HTML file.
 - Deploy a New version.
 - Run Repair FamilyPD Structure once.
-- Confirm the new Systems Policies and Safety folder appears in Drive.
+- Confirm the Opportunities and Mobility folder appears in Drive.
 
 ## Navigation and dashboard
 
-- Confirm Systems, Policies & Safety appears in the main menu.
+- Confirm Opportunities & Mobility appears in the main menu.
 - Confirm the panel opens.
-- Confirm the dashboard shows Active, Review needed, and Current records.
-- Confirm up to three upcoming system reviews appear.
+- Confirm the dashboard shows Shared, Personal, Action needed, and Past deadline.
+- Confirm up to three upcoming deadlines appear.
 
-## Guided templates
+## Official-source finder
 
-For English and Spanish, check each area:
+Test all categories:
 
-- Health
-- Relationships
-- Education
-- Finances
-- Goals
-- Household Organization
+- Career exploration
+- Jobs
+- Training & credentials
+- Apprenticeships
+- Scholarships & financial aid
+- College & career school
+- Workforce help
+- Benefits & community support
+- Small business & entrepreneurship
+- Service & experience
 
-Confirm each area contains five templates.
+- Search using only a category.
+- Search using category and audience.
+- Add an optional keyword.
+- Add an optional city, state, or ZIP code.
+- Confirm the source links open in a new tab.
+- Confirm Show All Sources displays fourteen starting points.
+- Confirm English and Spanish source descriptions and tips appear.
 
-Confirm templates include a useful mix of:
+## Public-link checker
 
-- Policy
-- System
-- Checklist
-- Safety Plan
+- Paste a public HTTPS opportunity page.
+- Confirm the domain, source tier, HTTP result, and title appear.
+- Confirm a successful check opens the editable planner.
+- Test an invalid, HTTP-only, local, numeric-IP, and unreachable link.
+- Confirm the app says that link checking is not a fact-check.
 
-## Creating and editing
+## Opportunity plans
 
-- Use a template.
-- Edit the title, purpose, statement, steps, responsible role, participant
-  labels, priority, frequency, dates, and notes.
-- Save as Draft.
-- Change to Active and save again.
-- Change a System to a Safety Plan and confirm only one record remains.
-- Change it back and confirm no duplicate record is created.
-- Add and remove checklist steps.
-- Confirm the privacy guard blocks likely sensitive values.
+As Household Lead:
 
-## Review workflow
+- Save a shared household opportunity.
+- Save a private personal opportunity.
+- Edit both records.
+- Change a personal record to shared and confirm no duplicate remains.
+- Change a shared record to personal and confirm no duplicate remains.
+- Add requirements, questions, next action, and action steps.
+- Add optional action due dates and mark an action completed.
+- Test Current, Action needed, Upcoming deadlines, Shared, Personal, Archived,
+  and All filters.
+- Confirm privacy checks block likely sensitive information.
 
-- Create a record with a start date and review frequency.
-- Leave Next review blank.
-- Confirm FamilyPD calculates a next-review date.
-- Click Mark Reviewed.
-- Confirm Last reviewed and Next review update.
-- Create an overdue date and confirm Review needed filtering works.
+As Family Member:
 
-## PDF
+- Confirm imported shared opportunities are read-only.
+- Confirm a shared opportunity can be copied into a private personal plan.
+- Confirm the personal copy can be edited without changing the shared record.
+- Confirm Family Members cannot save or archive shared household records.
 
-- Generate a PDF for a Policy.
-- Generate a PDF for a Safety Plan.
-- Confirm the PDFs show purpose, agreement, roles, steps, dates, privacy notice,
-  Hall, 2025 in-text citation, and References.
-- Confirm Toni Hall is the guidebook author.
+## PDFs
 
-## Update Packs
+- Generate an English PDF.
+- Generate a Spanish PDF.
+- Confirm metadata, requirements, actions, questions, source verification,
+  privacy notice, Hall, 2025 citation, and References appear.
+- Confirm Toni Hall is identified as the guidebook author.
 
-- Create a Household Update Pack.
-- Import it into a Family Member workspace.
-- Confirm systems and safety plans appear read-only.
-- Confirm complete checklist steps transfer without truncation.
-- Confirm Family Member users cannot edit, archive, or mark shared systems
-  reviewed.
-- Confirm they can generate a PDF in their own Drive.
+## Update Packs and regression
 
-## Language and regression
-
+- Create a Household Update Pack with a shared opportunity.
+- Import it into another Family Member workspace.
+- Confirm complete requirements and action steps transfer.
 - Switch English -> Español -> English three times.
-- Confirm the menu, panel, templates, cards, dashboard, and Help guide switch.
-- Confirm user-written content is preserved and not automatically translated.
-- Confirm Identity, Roles, Goals, Meetings, Learning, Update Packs, PDFs, and
-  dashboard meetings still work.
+- Confirm user-written content is preserved rather than automatically translated.
+- Confirm Identity, Roles, Goals, Meetings, Learning, Systems, PDFs, Drive links,
+  and Update Packs still work.
