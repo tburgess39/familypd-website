@@ -1,0 +1,7 @@
+Use this inside oauthScopes:
+
+"https://www.googleapis.com/auth/drive.file"
+
+Remove:
+
+"https://www.googleapis.com/auth/drive"
