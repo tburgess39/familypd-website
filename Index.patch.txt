@@ -1,0 +1,9 @@
+Add this immediately before the closing </body> tag in Index.html:
+
+<?!= include('IdentityClient'); ?>
+
+The existing ReviewClient include should remain. Recommended order:
+
+<?!= include('ReviewClient'); ?>
+<?!= include('IdentityClient'); ?>
+</body>
