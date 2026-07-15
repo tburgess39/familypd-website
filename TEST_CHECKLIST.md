@@ -1,14 +1,11 @@
-# FamilyPD v9.3.0 test checklist
+# FamilyPD v9.4.0 Test Checklist
 
-- [ ] App loads without a syntax error.
-- [ ] Learning & Discussions opens.
-- [ ] Learn, Grow & Find Help appears above the learning-plan builder.
-- [ ] Catalog count and reviewed date appear.
-- [ ] Search for `IEP` returns relevant resources.
-- [ ] Search for `Canvas` returns the Canvas guides.
-- [ ] Category and Free-only filters work.
-- [ ] Open resource launches a new browser tab.
-- [ ] Copy link works.
-- [ ] AI prompt sections expand and copy correctly.
-- [ ] Existing learning plans still load and save.
-- [ ] Mobile layout remains readable.
+1. Open Overview and confirm the menu says **Overview** only once.
+2. Confirm feature cards no longer show **Available now**.
+3. Save profile preferences and confirm no `saveProfile is not a function` error.
+4. Publish identity and confirm the compatibility wrapper uses the installed IdentityService method.
+5. Open **Family AI** from the menu.
+6. Select an example prompt, submit it, and confirm the page shows the backend-connection note until the connector is installed.
+7. After the backend connector is installed, confirm the answer appears in the conversation window.
+8. Replace the website placeholder URL and confirm the website's **Open FamilyPD App** button opens the deployed workspace.
+9. Test English/Spanish menu switching and mobile layout.

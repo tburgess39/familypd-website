@@ -1,27 +1,25 @@
-# FamilyPD v9.3.0 — Learning & Resource Hub update
+# FamilyPD v9.4.0 — Reliability, Family AI UI, and Website Connection
 
-## Add these new files
-- ResourceHubService.gs
-- ResourceHubClient.html
+## Replace these Apps Script files
+- `Code.gs`
+- `Config.gs`
+- `Index.html`
+- `Scripts.html`
+- `Styles.html`
 
-## Replace these existing files
-- Code.gs
-- Index.html
-- Styles.html
+## Add these Apps Script files
+- `FamilyAiClient.html`
 
-## What changed
-- Adds **Learn, Grow & Find Help** inside the existing Learning panel.
-- Adds a curated catalog of trusted starting resources across learning, school platforms, IEP/504 support, careers, worker rights, basic needs, finances, health, mindset/books, safety, parenting, and family legacy.
-- Adds search, category filtering, free-resource filtering, direct resource links, and copy-link controls.
-- Adds three copy-ready AI prompts for learning almost anything, learning school platforms, and preparing for IEP/504 meetings.
-- Introduces FamilyPD's Family Operating System positioning inside the application without changing existing Drive scopes.
+## Optional backend connector template
+- `FamilyAiBackendConnector.example.html`
 
-## Installation order
-1. Add the two new files to the Apps Script project using the exact names above.
-2. Replace Code.gs, Index.html, and Styles.html.
-3. Save all files.
-4. Deploy a new web-app version.
-5. Open Learning & Discussions and verify the resource catalog loads.
+Your son can rename the template to `FamilyAiBackendConnector.html`, replace the endpoint, and include it immediately before `FamilyAiClient` in `Index.html`.
 
-## Scope note
-This update uses a built-in catalog and does not add Drive, Gmail, Calendar, or external-service scopes. Opening a resource happens in the user's browser.
+## Website connection file
+- Replace the website's `app/index.html` with `website-app-index.html`.
+- In that file, replace `REPLACE_WITH_APPS_SCRIPT_EXEC_URL` with the deployed `/exec` URL for the FamilyPD Apps Script web app.
+- Commit and publish the website update. The public FamilyPD App page will then open the working private workspace.
+- Later, `app.familypd.org` can be configured as a branded redirect or gateway to the same deployment.
+
+## Important
+Do not replace unchanged service files. This package is intentionally changed/new files only.
