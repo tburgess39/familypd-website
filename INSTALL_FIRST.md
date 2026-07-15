@@ -1,17 +1,27 @@
-# FamilyPD OS 10.4 — install first
+# FamilyPD OS v11.2 — Project Studio Drive Repair + Refresh
 
-## Apps Script
-Replace/add only the files in `AppsScript/`. Do not delete unrelated project files.
+Replace only these Apps Script files:
 
-Then save and deploy a new version of the existing web app.
+1. `ProjectStudioService.gs`
+2. `ProjectStudioClient.html`
 
-## Website
-Copy the contents of `Website_Update/` into the matching paths in the GitHub Pages repository.
+Do not delete any other files.
 
-Open `Website_Update/assets/js/familypd-os-config.js` and replace:
+Then save, create a new version of the existing web-app deployment, and test the `/exec` URL.
 
-`REPLACE_WITH_FAMILYPD_OS_EXEC_URL`
+## What this fixes
 
-with the current deployed FamilyPD Apps Script URL ending in `/exec`.
+The prior version looked for folder-creation methods on `FPDDriveFileServiceV10`, but your current FamilyPD workspace is actually created and repaired through `WorkspaceService` and `DriveApiService`. Therefore, repair could succeed while Project Studio still failed every time.
 
-Commit and push the website files. GitHub Pages must finish publishing before the changes appear.
+This update:
+
+- checks workspace health before folder creation;
+- tells the user whether setup or repair is required;
+- runs the existing workspace repair;
+- refreshes health immediately after repair;
+- retries project-folder creation without a browser reload;
+- creates the project folder with the same `DriveApiService.createFolder(name, parentId)` contract already used by `WorkspaceService`;
+- keeps the project tracker unchanged if Drive creation fails;
+- constructs the Drive folder link from the returned folder ID when necessary.
+
+No `DriveApp.getRootFolder()` call is used.

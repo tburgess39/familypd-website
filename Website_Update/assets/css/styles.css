@@ -5119,3 +5119,30 @@ select:focus {
     padding: 0;
   }
 }
+
+/* FamilyPD OS button text visibility fix */
+.site-nav a.button,
+.site-nav a.button:link,
+.site-nav a.button:visited,
+.site-nav a.button:hover,
+.site-nav a.button:focus,
+.site-nav a.button:active {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-indent: 0 !important;
+}
+
+#open-family-pd-os,
+#open-family-pd-os:link,
+#open-family-pd-os:visited,
+#open-family-pd-os:hover,
+#open-family-pd-os:focus,
+#open-family-pd-os:active {
+  color: #102434 !important;
+  -webkit-text-fill-color: #102434 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-indent: 0 !important;
+}

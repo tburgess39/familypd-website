@@ -1,1 +1,159 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FamilyPD OS | Family Personal Development</title><link rel="stylesheet" href="../assets/css/styles.css"><style>.os-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.os-steps article{padding:20px;border:1px solid #d9e1e5;border-radius:16px;background:#fff}.os-launch-card{padding:28px;border-radius:22px;background:#102434;color:#fff}.os-launch-card h2,.os-launch-card p{color:#fff}.os-launch-card .button{display:inline-flex;visibility:visible;opacity:1;color:#102434;background:#e0a33b}.os-launch-note{margin-top:12px;font-size:.9rem}@media(max-width:760px){.os-steps{grid-template-columns:1fr}}</style></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="../"><span class="brand-mark">FPD</span><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><nav class="site-nav"><a href="../resources/">Resources</a><a href="../toolkit/">Toolkit</a><a class="button button-small" href="./">FamilyPD OS</a></nav></div></header><main id="main-content"><section class="page-hero"><div class="container page-hero-grid"><div><p class="eyebrow">The Family Operating System</p><h1>One private place for your family to organize, learn, communicate, and grow.</h1><p class="page-lead">FamilyPD OS brings meetings, goals, learning, family identity, systems, resources, and Family AI into one connected experience.</p></div><aside class="os-launch-card"><h2>Open your private workspace</h2><p>Sign in with the Google account that should own or access this FamilyPD workspace.</p><a id="open-family-pd-os" class="button" href="#">Open FamilyPD OS</a><p id="os-connection-note" class="os-launch-note">Checking the secure app connection…</p></aside></div></section><section class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Start here</p><h2>Three simple steps</h2></div><div class="os-steps"><article><strong>1. Open FamilyPD OS</strong><p>Use the button above and sign in with your own Google account.</p></article><article><strong>2. Choose your role</strong><p>Set up and manage a household, or join as a family member using an invitation link.</p></article><article><strong>3. Build gradually</strong><p>Start with the family profile, then add meetings, goals, learning, and other tools as needed.</p></article></div></div></section></main><footer class="site-footer"><div class="container footer-bottom">© <span id="year"></span> Family Personal Development.</div></footer><script src="../assets/js/familypd-os-config.js"></script><script>document.getElementById('year').textContent=new Date().getFullYear();(function(){const a=document.getElementById('open-family-pd-os');const n=document.getElementById('os-connection-note');const url=(window.FAMILYPD_OS_CONFIG||{}).osUrl||'';if(url&&url.indexOf('REPLACE_WITH_')!==0){a.href=url;a.target='_blank';a.rel='noopener';n.textContent='The secure FamilyPD OS workspace will open in a new tab.';}else{a.setAttribute('aria-disabled','true');a.addEventListener('click',e=>e.preventDefault());n.textContent='The FamilyPD OS link has not been connected yet. Add the current Apps Script /exec URL to assets/js/familypd-os-config.js.';}})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FamilyPD OS | Family Personal Development</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .os-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .os-steps article {
+      padding: 20px;
+      border: 1px solid #d9e1e5;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .os-launch-card {
+      padding: 28px;
+      border-radius: 22px;
+      background: #102434;
+      color: #fff;
+    }
+
+    .os-launch-card h2,
+    .os-launch-card p {
+      color: #fff;
+    }
+
+    .os-launch-card .button {
+      display: inline-flex;
+      visibility: visible;
+      opacity: 1;
+      color: #102434 !important;
+      -webkit-text-fill-color: #102434 !important;
+      background: #e0a33b;
+    }
+
+    .os-launch-note {
+      margin-top: 12px;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      .os-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark">FPD</span>
+        <span class="brand-text">
+          <strong>Family Personal Development</strong>
+          <small>Growth starts at home.</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../resources/">Resources</a>
+        <a href="../toolkit/">Toolkit</a>
+        <a class="button button-small" href="./">
+          <span>FamilyPD OS</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">The Family Operating System</p>
+          <h1>One private place for your family to organize, learn, communicate, and grow.</h1>
+          <p class="page-lead">
+            FamilyPD OS brings meetings, goals, learning, family identity, systems,
+            resources, and Family AI into one connected experience.
+          </p>
+        </div>
+
+        <aside class="os-launch-card">
+          <h2>Open your private workspace</h2>
+          <p>Sign in with the Google account that should own or access this FamilyPD workspace.</p>
+          <a id="open-family-pd-os" class="button" href="#">
+            <span>Open FamilyPD OS</span>
+          </a>
+          <p id="os-connection-note" class="os-launch-note">
+            Checking the secure app connection…
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Start here</p>
+          <h2>Three simple steps</h2>
+        </div>
+
+        <div class="os-steps">
+          <article>
+            <strong>1. Open FamilyPD OS</strong>
+            <p>Use the button above and sign in with your own Google account.</p>
+          </article>
+          <article>
+            <strong>2. Choose your role</strong>
+            <p>Set up and manage a household, or join as a family member using an invitation link.</p>
+          </article>
+          <article>
+            <strong>3. Build gradually</strong>
+            <p>Start with the family profile, then add meetings, goals, learning, and other tools as needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      © <span id="year"></span> Family Personal Development.
+    </div>
+  </footer>
+
+  <script src="../assets/js/familypd-os-config.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function connectFamilyPdOs() {
+      const button = document.getElementById('open-family-pd-os');
+      const note = document.getElementById('os-connection-note');
+      const url = (window.FAMILYPD_OS_CONFIG || {}).osUrl || '';
+
+      if (url && url.indexOf('REPLACE_WITH_') !== 0) {
+        button.href = url;
+        button.target = '_blank';
+        button.rel = 'noopener';
+        note.textContent = 'The secure FamilyPD OS workspace will open in a new tab.';
+      } else {
+        button.setAttribute('aria-disabled', 'true');
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+        });
+        note.textContent =
+          'The FamilyPD OS link has not been connected yet. Add the current Apps Script /exec URL to assets/js/familypd-os-config.js.';
+      }
+    }());
+  </script>
+</body>
+</html>
