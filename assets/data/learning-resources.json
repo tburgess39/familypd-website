@@ -1,0 +1,285 @@
+{
+  "last_reviewed": "2026-07-14",
+  "notice": {
+    "en": "Availability, account eligibility, features, and pricing can change. Review each official site before creating an account or assigning a tool.",
+    "es": "La disponibilidad, los requisitos de cuenta, las funciones y los precios pueden cambiar. Revise el sitio oficial antes de crear una cuenta o asignar una herramienta."
+  },
+  "resources": [
+    {
+      "id": "code-org",
+      "name": "Code.org",
+      "url": "https://code.org/en-US/students",
+      "category": "Coding & Computer Science",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Community Programs"
+      ],
+      "age_note": {
+        "en": "Learning options for elementary through high school.",
+        "es": "Opciones de aprendizaje desde primaria hasta secundaria."
+      },
+      "description": {
+        "en": "Self-paced computer science and AI activities, including block coding, apps, games, animations, and web experiences.",
+        "es": "Actividades de ciencias de la computación e inteligencia artificial, incluyendo programación por bloques, aplicaciones, juegos, animaciones y experiencias web."
+      },
+      "use_for": {
+        "en": "Learn coding basics before building a household app, game, quiz, tracker, or website.",
+        "es": "Aprenda programación básica antes de crear una aplicación, juego, cuestionario, registro o sitio web para el hogar."
+      },
+      "support_note": {
+        "en": "Some tutorials can be started without an account; longer courses may require an account to save progress.",
+        "es": "Algunos tutoriales pueden iniciarse sin una cuenta; los cursos más largos pueden requerir una cuenta para guardar el progreso."
+      }
+    },
+    {
+      "id": "khan-academy",
+      "name": "Khan Academy",
+      "url": "https://www.khanacademy.org/computing",
+      "category": "Academic & Computing Skills",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "age_note": {
+        "en": "Best matched by topic and learner readiness.",
+        "es": "Se adapta mejor según el tema y la preparación del estudiante."
+      },
+      "description": {
+        "en": "Free learning in computing, Python, JavaScript, HTML/CSS, internet concepts, cybersecurity, and academic subjects.",
+        "es": "Aprendizaje gratuito de computación, Python, JavaScript, HTML/CSS, internet, ciberseguridad y materias académicas."
+      },
+      "use_for": {
+        "en": "Build background knowledge before creating a study tool, budget activity, career resource, or coding project.",
+        "es": "Desarrolle conocimientos antes de crear una herramienta de estudio, actividad de presupuesto, recurso profesional o proyecto de programación."
+      },
+      "support_note": {
+        "en": "Families can use learner and parent pathways to support progress outside school.",
+        "es": "Las familias pueden usar las opciones para estudiantes y padres para apoyar el progreso fuera de la escuela."
+      }
+    },
+    {
+      "id": "makecode",
+      "name": "Microsoft MakeCode",
+      "url": "https://www.microsoft.com/en-us/makecode",
+      "category": "Coding & Physical Computing",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Makerspaces"
+      ],
+      "age_note": {
+        "en": "Good for beginners moving from blocks toward text coding.",
+        "es": "Útil para principiantes que desean pasar de bloques a programación con texto."
+      },
+      "description": {
+        "en": "Browser-based coding with blocks and text, simulators, and supported hardware such as micro:bit.",
+        "es": "Programación en el navegador con bloques y texto, simuladores y dispositivos compatibles como micro:bit."
+      },
+      "use_for": {
+        "en": "Build timers, reminders, sensors, chore tools, games, safety signals, and household prototypes.",
+        "es": "Cree temporizadores, recordatorios, sensores, herramientas de tareas, juegos, señales de seguridad y prototipos para el hogar."
+      },
+      "support_note": {
+        "en": "Many projects can be tested in a simulator before using physical hardware.",
+        "es": "Muchos proyectos pueden probarse en un simulador antes de usar dispositivos físicos."
+      }
+    },
+    {
+      "id": "scratch",
+      "name": "Scratch",
+      "url": "https://scratch.mit.edu/",
+      "category": "Creative Coding",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Libraries"
+      ],
+      "age_note": {
+        "en": "Designed especially for ages 8–16, with broader use across ages.",
+        "es": "Diseñado especialmente para edades de 8 a 16 años, aunque se usa con otras edades."
+      },
+      "description": {
+        "en": "Create interactive stories, games, and animations using visual block-based programming.",
+        "es": "Cree historias interactivas, juegos y animaciones usando programación visual por bloques."
+      },
+      "use_for": {
+        "en": "Turn family lessons into comics, scenario games, quizzes, animations, and interactive explanations.",
+        "es": "Convierta lecciones familiares en cómics, juegos de situaciones, cuestionarios, animaciones y explicaciones interactivas."
+      },
+      "support_note": {
+        "en": "Use fictional characters and avoid publishing private family details.",
+        "es": "Use personajes ficticios y evite publicar detalles privados de la familia."
+      }
+    },
+    {
+      "id": "mit-app-inventor",
+      "name": "MIT App Inventor",
+      "url": "https://appinventor.mit.edu/explore/get-started",
+      "category": "Mobile App Creation",
+      "audiences": [
+        "Teens",
+        "Families",
+        "Educators",
+        "Community Programs"
+      ],
+      "age_note": {
+        "en": "Best for older children and teens with adult or educator support.",
+        "es": "Más apropiado para niños mayores y adolescentes con apoyo de un adulto o educador."
+      },
+      "description": {
+        "en": "A browser-based block-programming environment for designing and testing mobile apps.",
+        "es": "Un entorno de programación por bloques en el navegador para diseñar y probar aplicaciones móviles."
+      },
+      "use_for": {
+        "en": "Build household reminders, interview practice, goal trackers, budgeting tools, and family quizzes.",
+        "es": "Cree recordatorios, práctica de entrevistas, registros de metas, herramientas de presupuesto y cuestionarios familiares."
+      },
+      "support_note": {
+        "en": "Follow the official setup and beginner tutorials before building a custom app.",
+        "es": "Siga la configuración oficial y los tutoriales para principiantes antes de crear una aplicación personalizada."
+      }
+    },
+    {
+      "id": "canva-education",
+      "name": "Canva for Education",
+      "url": "https://www.canva.com/education/",
+      "category": "Design & Communication",
+      "audiences": [
+        "Students",
+        "Educators",
+        "School Partners"
+      ],
+      "age_note": {
+        "en": "Student access is generally provided through a teacher, school, or district.",
+        "es": "El acceso estudiantil generalmente se proporciona por medio de un maestro, escuela o distrito."
+      },
+      "description": {
+        "en": "Design presentations, posters, worksheets, videos, visual guides, and other communication materials.",
+        "es": "Diseñe presentaciones, carteles, hojas de trabajo, videos, guías visuales y otros materiales."
+      },
+      "use_for": {
+        "en": "Create routine cards, family challenge boards, career spotlights, study guides, and tutorial videos.",
+        "es": "Cree tarjetas de rutinas, tableros de retos, presentaciones de carreras, guías de estudio y videos tutoriales."
+      },
+      "support_note": {
+        "en": "Review sharing settings, copyright, image permissions, and public-link privacy before publishing.",
+        "es": "Revise la configuración para compartir, derechos de autor, permisos de imágenes y privacidad antes de publicar."
+      }
+    },
+    {
+      "id": "openai-academy",
+      "name": "OpenAI Academy & ChatGPT",
+      "url": "https://openai.com/academy/",
+      "secondary_url": "https://chatgpt.com/",
+      "category": "AI Literacy & Learning Support",
+      "audiences": [
+        "Families",
+        "Teens",
+        "Educators",
+        "Community Programs"
+      ],
+      "age_note": {
+        "en": "Use with appropriate account eligibility, family rules, and adult guidance for minors.",
+        "es": "Úselo con la elegibilidad apropiada, reglas familiares y orientación adulta para menores."
+      },
+      "description": {
+        "en": "Learn AI foundations and use ChatGPT to brainstorm, practice interviews, plan projects, and receive step-by-step learning support.",
+        "es": "Aprenda fundamentos de IA y use ChatGPT para generar ideas, practicar entrevistas, planificar proyectos y recibir apoyo paso a paso."
+      },
+      "use_for": {
+        "en": "Clarify a project idea, create practice questions, explain code, review a plan, or generate examples that the family verifies.",
+        "es": "Aclare una idea, cree preguntas, explique código, revise un plan o genere ejemplos que la familia debe verificar."
+      },
+      "support_note": {
+        "en": "Do not paste private family, school, health, financial, legal, or account information. AI output can be wrong.",
+        "es": "No introduzca información privada familiar, escolar, médica, financiera, legal o de cuentas. La IA puede equivocarse."
+      }
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "url": "https://grok.com/",
+      "category": "AI Brainstorming & Research Support",
+      "audiences": [
+        "Families",
+        "Teens",
+        "Adult Mentors"
+      ],
+      "age_note": {
+        "en": "Use only when account rules allow and with adult guidance for minors.",
+        "es": "Úselo únicamente cuando las reglas de la cuenta lo permitan y con orientación adulta para menores."
+      },
+      "description": {
+        "en": "An AI assistant that can support questions, brainstorming, writing, problem solving, and file analysis.",
+        "es": "Un asistente de IA que puede apoyar preguntas, ideas, escritura, resolución de problemas y análisis de archivos."
+      },
+      "use_for": {
+        "en": "Compare project ideas, brainstorm features, review questions, or identify topics needing verification.",
+        "es": "Compare ideas, genere funciones, revise preguntas o identifique temas que requieren verificación."
+      },
+      "support_note": {
+        "en": "Verify important information with official sources and do not connect private family files for a public project.",
+        "es": "Verifique información importante con fuentes oficiales y no conecte archivos familiares privados para un proyecto público."
+      }
+    },
+    {
+      "id": "diffit",
+      "name": "Diffit",
+      "url": "https://web.diffit.me/quick-start",
+      "category": "Educator & Community Learning Support",
+      "audiences": [
+        "Educators",
+        "School Staff",
+        "Community Instructors"
+      ],
+      "age_note": {
+        "en": "Designed for adult instructional use rather than independent child accounts.",
+        "es": "Diseñado para uso educativo de adultos y no para cuentas infantiles independientes."
+      },
+      "description": {
+        "en": "Helps educators create and adapt instructional materials, reading supports, activities, and differentiated resources.",
+        "es": "Ayuda a educadores a crear y adaptar materiales, apoyos de lectura, actividades y recursos diferenciados."
+      },
+      "use_for": {
+        "en": "A teacher, librarian, mentor, or workshop facilitator can adapt a FamilyPD topic for different reading levels.",
+        "es": "Un maestro, bibliotecario, mentor o facilitador puede adaptar un tema de FamilyPD para diferentes niveles de lectura."
+      },
+      "support_note": {
+        "en": "Families should receive adapted resources through an educator or community partner using the tool appropriately.",
+        "es": "Las familias deben recibir recursos adaptados por medio de un educador o socio comunitario."
+      }
+    },
+    {
+      "id": "magicschool",
+      "name": "MagicSchool",
+      "url": "https://www.magicschool.ai/professional-development",
+      "category": "School & Educator AI Support",
+      "audiences": [
+        "Educators",
+        "Schools",
+        "Community Education Partners"
+      ],
+      "age_note": {
+        "en": "Best used through educator-led or school-managed access.",
+        "es": "Es mejor usarlo mediante acceso dirigido por educadores o administrado por una escuela."
+      },
+      "description": {
+        "en": "An education-focused AI platform with tools and training for teachers, schools, and guided student learning.",
+        "es": "Una plataforma de IA educativa con herramientas y capacitación para maestros, escuelas y aprendizaje guiado."
+      },
+      "use_for": {
+        "en": "Partners can create lessons, family letters, rubrics, learning activities, and guided AI-literacy experiences.",
+        "es": "Los socios pueden crear lecciones, cartas para familias, rúbricas, actividades y experiencias guiadas de alfabetización en IA."
+      },
+      "support_note": {
+        "en": "Use organization-approved accounts and student settings; follow school and district guidance.",
+        "es": "Use cuentas aprobadas y configuraciones para estudiantes; siga la orientación de la escuela y el distrito."
+      }
+    }
+  ]
+}

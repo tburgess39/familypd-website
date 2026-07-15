@@ -1,0 +1,14 @@
+{
+  "delete_from_public_repo": [
+    "assets/js/workspace-client.js",
+    "assets/js/workspace-config.js",
+    "apps-script/familypd-workspace/Code.gs",
+    "apps-script/familypd-workspace/DEPLOYMENT_CHECKLIST.md",
+    "apps-script/familypd-workspace/DocumentService.gs",
+    "apps-script/familypd-workspace/SETUP.md",
+    "apps-script/familypd-workspace/Workspace.html",
+    "apps-script/familypd-workspace/WorkspaceService.gs",
+    "apps-script/familypd-workspace/appsscript.json"
+  ],
+  "notes": "GitHub upload does not delete old files. Remove these paths manually after uploading the update."
+}

@@ -64,7 +64,23 @@
           "¿Los dibujos son fáciles de entender?",
           "¿Cada paso es seguro y apropiado para la edad?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Help younger family members follow hygiene, morning, bedtime, or health routines more independently.",
+        "es": "Ayudar a los miembros más jóvenes a seguir rutinas de higiene, mañana, noche o salud con mayor independencia."
+      },
+      "school_connection": {
+        "en": "Practice sequencing, visual communication, health vocabulary, and following directions.",
+        "es": "Practicar secuencias, comunicación visual, vocabulario de salud y seguimiento de instrucciones."
+      },
+      "community_connection": {
+        "en": "A library, health educator, childcare program, or family center could review the cards for clarity and age appropriateness.",
+        "es": "Una biblioteca, educador de salud, programa infantil o centro familiar puede revisar las tarjetas para asegurar claridad y adecuación por edad."
+      },
+      "resource_ids": [
+        "canva-education",
+        "openai-academy"
+      ]
     },
     {
       "id": "feelings-comic",
@@ -115,7 +131,24 @@
           "¿Un niño puede identificar el sentimiento?",
           "¿La historia muestra un próximo paso útil?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Give children a safe example of naming emotions, asking for help, respecting boundaries, and repairing conflict.",
+        "es": "Dar a los niños un ejemplo seguro para nombrar emociones, pedir ayuda, respetar límites y reparar conflictos."
+      },
+      "school_connection": {
+        "en": "Strengthen writing, story structure, social-emotional learning, art, and communication.",
+        "es": "Fortalecer escritura, estructura narrativa, aprendizaje socioemocional, arte y comunicación."
+      },
+      "community_connection": {
+        "en": "A counselor, youth mentor, librarian, or family-support organization could review the lesson.",
+        "es": "Un consejero, mentor juvenil, bibliotecario u organización de apoyo familiar puede revisar la lección."
+      },
+      "resource_ids": [
+        "scratch",
+        "canva-education",
+        "openai-academy"
+      ]
     },
     {
       "id": "safety-scenario-game",
@@ -166,7 +199,25 @@
           "¿Alguna situación podría asustar innecesariamente a niños pequeños?",
           "¿El juego indica cuándo buscar a un adulto o llamar a emergencias?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Help family members practice calm choices before a common emergency or safety concern occurs.",
+        "es": "Ayudar a la familia a practicar decisiones tranquilas antes de una emergencia o preocupación de seguridad."
+      },
+      "school_connection": {
+        "en": "Develop research, decision-making, source evaluation, game design, and communication skills.",
+        "es": "Desarrollar investigación, toma de decisiones, evaluación de fuentes, diseño de juegos y comunicación."
+      },
+      "community_connection": {
+        "en": "Fire departments, emergency managers, health agencies, or school safety staff can provide official guidance.",
+        "es": "Bomberos, administradores de emergencias, agencias de salud o personal escolar pueden proporcionar orientación oficial."
+      },
+      "resource_ids": [
+        "scratch",
+        "code-org",
+        "canva-education",
+        "openai-academy"
+      ]
     },
     {
       "id": "study-hack-cards",
@@ -217,7 +268,25 @@
           "¿El lenguaje es breve y claro?",
           "¿La herramienta fomenta el aprendizaje en lugar de hacer trampa?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Give students and caregivers shared strategies for planning, focusing, remembering, and asking for help.",
+        "es": "Dar a estudiantes y cuidadores estrategias compartidas para planificar, concentrarse, recordar y pedir ayuda."
+      },
+      "school_connection": {
+        "en": "Connect home support with study skills, academic vocabulary, tutoring, and school expectations.",
+        "es": "Conectar el apoyo del hogar con habilidades de estudio, vocabulario académico, tutoría y expectativas escolares."
+      },
+      "community_connection": {
+        "en": "Teachers, tutors, libraries, after-school programs, and college-access organizations can test the strategies.",
+        "es": "Maestros, tutores, bibliotecas, programas después de clases y organizaciones de acceso universitario pueden probar las estrategias."
+      },
+      "resource_ids": [
+        "khan-academy",
+        "canva-education",
+        "openai-academy",
+        "diffit"
+      ]
     },
     {
       "id": "chore-randomizer",
@@ -268,7 +337,25 @@
           "¿La aplicación distribuye el trabajo de forma justa?",
           "¿La familia puede editar la lista de tareas?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Make household responsibilities more visible, fair, editable, and age appropriate.",
+        "es": "Hacer las responsabilidades del hogar más visibles, justas, editables y apropiadas para la edad."
+      },
+      "school_connection": {
+        "en": "Apply algorithms, variables, lists, fairness rules, testing, and user-interface design.",
+        "es": "Aplicar algoritmos, variables, listas, reglas de equidad, pruebas y diseño de interfaces."
+      },
+      "community_connection": {
+        "en": "A coding club, robotics team, library makerspace, CTE class, or STEM mentor can help build and test the app.",
+        "es": "Un club de programación, equipo de robótica, espacio maker, clase CTE o mentor STEM puede ayudar a crear y probar la aplicación."
+      },
+      "resource_ids": [
+        "code-org",
+        "makecode",
+        "scratch",
+        "mit-app-inventor"
+      ]
     },
     {
       "id": "allowance-budget-game",
@@ -319,7 +406,25 @@
           "¿Las necesidades y los deseos se explican con respeto?",
           "¿Los jugadores pueden explicar por qué tomaron cada decisión?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Create a shame-free way to practice choices about needs, wants, saving, sharing, and unexpected expenses.",
+        "es": "Crear una forma sin vergüenza de practicar decisiones sobre necesidades, deseos, ahorro, compartir y gastos inesperados."
+      },
+      "school_connection": {
+        "en": "Use math, percentages, problem solving, economics, writing, and explanation of choices.",
+        "es": "Usar matemáticas, porcentajes, resolución de problemas, economía, escritura y explicación de decisiones."
+      },
+      "community_connection": {
+        "en": "A financial educator, credit union, library, youth program, or nonprofit can review the examples and vocabulary.",
+        "es": "Un educador financiero, cooperativa de crédito, biblioteca, programa juvenil u organización sin fines de lucro puede revisar los ejemplos y el vocabulario."
+      },
+      "resource_ids": [
+        "khan-academy",
+        "scratch",
+        "canva-education",
+        "openai-academy"
+      ]
     },
     {
       "id": "career-spotlight",
@@ -369,7 +474,26 @@
           "¿La presentación explica más de una ruta?",
           "¿Evita prometer un trabajo o ingreso?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Help families understand career pathways, training options, costs, credentials, and questions to ask schools or employers.",
+        "es": "Ayudar a las familias a comprender rutas profesionales, formación, costos, credenciales y preguntas para escuelas o empleadores."
+      },
+      "school_connection": {
+        "en": "Connect student interests to CTE, college, certifications, apprenticeships, workplace skills, and credible research.",
+        "es": "Conectar intereses estudiantiles con CTE, universidad, certificaciones, aprendizajes, habilidades laborales e investigación confiable."
+      },
+      "community_connection": {
+        "en": "Employers, colleges, workforce programs, trade groups, and community organizations can provide current pathway information.",
+        "es": "Empleadores, universidades, programas laborales, asociaciones profesionales y organizaciones comunitarias pueden proporcionar información actual."
+      },
+      "resource_ids": [
+        "khan-academy",
+        "canva-education",
+        "openai-academy",
+        "grok",
+        "magicschool"
+      ]
     },
     {
       "id": "interview-practice-app",
@@ -419,7 +543,25 @@
           "¿Las preguntas son apropiadas para una entrevista inicial?",
           "¿La retroalimentación fomenta respuestas claras y honestas en lugar de una perfección falsa?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Give family members a private, repeatable way to prepare for interviews and discuss workplace expectations.",
+        "es": "Dar a la familia una forma privada y repetible de prepararse para entrevistas y hablar sobre expectativas laborales."
+      },
+      "school_connection": {
+        "en": "Practice speaking, reflection, app design, time management, resume preparation, and career readiness.",
+        "es": "Practicar comunicación oral, reflexión, diseño de aplicaciones, manejo del tiempo, currículum y preparación profesional."
+      },
+      "community_connection": {
+        "en": "Workforce programs, employers, career centers, mentors, and school counselors can contribute realistic questions and feedback.",
+        "es": "Programas laborales, empleadores, centros profesionales, mentores y consejeros escolares pueden aportar preguntas y comentarios realistas."
+      },
+      "resource_ids": [
+        "mit-app-inventor",
+        "code-org",
+        "openai-academy",
+        "canva-education"
+      ]
     },
     {
       "id": "goal-progress-board",
@@ -471,7 +613,24 @@
           "¿El tablero celebra el esfuerzo y no solo el resultado final?",
           "¿La meta puede cambiar cuando cambie la vida?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Help one family member or the whole household turn a goal into visible, manageable steps.",
+        "es": "Ayudar a un miembro o a todo el hogar a convertir una meta en pasos visibles y manejables."
+      },
+      "school_connection": {
+        "en": "Practice goal setting, reflection, visual design, planning, measurement, and revision.",
+        "es": "Practicar establecimiento de metas, reflexión, diseño visual, planificación, medición y revisión."
+      },
+      "community_connection": {
+        "en": "Teachers, coaches, counselors, mentors, and youth programs can help make the goal realistic and identify support.",
+        "es": "Maestros, entrenadores, consejeros, mentores y programas juveniles pueden ayudar a hacer la meta realista e identificar apoyo."
+      },
+      "resource_ids": [
+        "canva-education",
+        "khan-academy",
+        "openai-academy"
+      ]
     },
     {
       "id": "family-kindness-challenge",
@@ -523,7 +682,28 @@
           "¿El reto evita obligar el afecto físico?",
           "¿Las acciones respetan los límites personales?"
         ]
-      }
+      },
+      "household_need": {
+        "en": "Strengthen household harmony through respectful, low-cost actions that family members can practice together.",
+        "es": "Fortalecer la armonía del hogar mediante acciones respetuosas y de bajo costo que la familia pueda practicar."
+      },
+      "school_connection": {
+        "en": "Connect social-emotional learning, communication, reflection, writing, and teamwork.",
+        "es": "Conectar aprendizaje socioemocional, comunicación, reflexión, escritura y trabajo en equipo."
+      },
+      "community_connection": {
+        "en": "Schools, youth groups, faith communities, libraries, and service organizations can adapt the challenge.",
+        "es": "Escuelas, grupos juveniles, comunidades de fe, bibliotecas y organizaciones de servicio pueden adaptar el reto."
+      },
+      "resource_ids": [
+        "canva-education",
+        "scratch",
+        "openai-academy"
+      ]
     }
-  ]
+  ],
+  "purpose": {
+    "en": "Every project should solve or explain a real household need, strengthen school-connected skills, and identify a community resource or partner that can help.",
+    "es": "Cada proyecto debe resolver o explicar una necesidad real del hogar, fortalecer habilidades relacionadas con la escuela e identificar un recurso o socio comunitario que pueda ayudar."
+  }
 }

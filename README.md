@@ -105,3 +105,21 @@ The Launch Center does not connect GitHub to a private FamilyPD Drive workspace.
 - `assets/js/youth-creator-lab.js` — idea generation, local saving, copying, downloading, and printing
 
 The Creator Lab does not collect or publish children’s submissions and does not connect to Google Drive or GitHub.
+
+
+## Website and App Separation
+
+The public website at `familypd.org` is for learning, exploring, public resources, examples, and practice.
+
+The private application will live at `app.familypd.org` and will handle private family implementation, saved records, Google Drive workspace creation, Google Docs, and PDFs.
+
+See:
+- `SITE_APP_ARCHITECTURE.md`
+- `REMOVE_FROM_PUBLIC_REPO.md`
+- `SITE_APP_CORRECTION_UPGRADE.md`
+
+## Learning Tools Directory
+
+- `resources/learning-tools/index.html`
+- `assets/data/learning-resources.json`
+- `assets/js/learning-tools.js`
