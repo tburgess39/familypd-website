@@ -1,53 +1,27 @@
-# FamilyPD v9.2.0 — Guided Flow, Language Refresh & Workspace Health
+# FamilyPD v9.3.0 — Learning & Resource Hub update
 
-Replace only these existing files.
+## Add these new files
+- ResourceHubService.gs
+- ResourceHubClient.html
 
-## Script files
-
+## Replace these existing files
 - Code.gs
-- Config.gs
-- GuidanceService.gs
-- UpdatePackService.gs
-- WorkspaceService.gs
-
-## HTML files
-
-- AccessibilitySupportClient.html
 - Index.html
-- OpportunityClient.html
-- Scripts.html
 - Styles.html
 
-Open each existing file, select all of its content, and paste the matching
-replacement. Do not create duplicate files.
+## What changed
+- Adds **Learn, Grow & Find Help** inside the existing Learning panel.
+- Adds a curated catalog of trusted starting resources across learning, school platforms, IEP/504 support, careers, worker rights, basic needs, finances, health, mindset/books, safety, parenting, and family legacy.
+- Adds search, category filtering, free-resource filtering, direct resource links, and copy-link controls.
+- Adds three copy-ready AI prompts for learning almost anything, learning school platforms, and preparing for IEP/504 meetings.
+- Introduces FamilyPD's Family Operating System positioning inside the application without changing existing Drive scopes.
 
-appsscript.json did not change and is not included.
+## Installation order
+1. Add the two new files to the Apps Script project using the exact names above.
+2. Replace Code.gs, Index.html, and Styles.html.
+3. Save all files.
+4. Deploy a new web-app version.
+5. Open Learning & Discussions and verify the resource catalog loads.
 
-## Deployment
-
-1. Replace the ten files.
-2. Save the Apps Script project.
-3. Open Deploy > Manage deployments.
-4. Edit the web-app deployment.
-5. Select New version.
-6. Deploy.
-7. Reopen the /exec link.
-
-Repair is not required for the upgrade. FamilyPD now performs a workspace-health
-check at startup and displays Repair Workspace only when a required folder or
-core file is missing, inaccessible, or in Trash.
-
-## Improvements
-
-- Controlled automatic refresh when switching English or Spanish
-- Return to the previously open feature after the refresh
-- Spanish workspace-health messages
-- Navigation text wrapping for longer Spanish labels
-- Seven-step Household Identity guided flow
-- Five-step Opportunities guided flow
-- Expanded feature tutorial with Open this feature buttons
-- Question-level Help & choices with definitions and examples
-- No sentence examples inserted into URL, date, time, or number fields
-- Stop Reading control
-- Family Sharing terminology and meaningful exported filenames
-- Forced workspace setup and startup health verification
+## Scope note
+This update uses a built-in catalog and does not add Drive, Gmail, Calendar, or external-service scopes. Opening a resource happens in the user's browser.
