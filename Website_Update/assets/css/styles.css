@@ -5120,32 +5120,39 @@ select:focus {
   }
 }
 
-/* FamilyPD OS button text visibility fix */
-.site-nav a.button,
-.site-nav a.button:link,
-.site-nav a.button:visited,
-.site-nav a.button:hover,
-.site-nav a.button:focus,
-.site-nav a.button:active {
+
+/* FamilyPD OS navigation button — isolated permanent visibility fix. */
+.site-nav .family-pd-os-nav-button,
+.site-nav .family-pd-os-nav-button:link,
+.site-nav .family-pd-os-nav-button:visited,
+.site-nav .family-pd-os-nav-button:hover,
+.site-nav .family-pd-os-nav-button:focus,
+.site-nav .family-pd-os-nav-button:active {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 136px !important;
+  width: auto !important;
+  min-height: 44px !important;
+  padding: 0.72rem 1rem !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+  text-indent: 0 !important;
+  white-space: nowrap !important;
   opacity: 1 !important;
   visibility: visible !important;
-  text-indent: 0 !important;
+  overflow: visible !important;
 }
-
-#open-family-pd-os,
-#open-family-pd-os:link,
-#open-family-pd-os:visited,
-#open-family-pd-os:hover,
-#open-family-pd-os:focus,
-#open-family-pd-os:active {
-  color: #102434 !important;
-  -webkit-text-fill-color: #102434 !important;
+.site-nav .family-pd-os-nav-button .family-pd-os-nav-label {
+  display: inline !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font: inherit !important;
+  line-height: inherit !important;
   opacity: 1 !important;
   visibility: visible !important;
-  text-indent: 0 !important;
 }
-
-/* FamilyPD OS button visibility hard override */
-a.fpd-os-button, a.fpd-os-button:link, a.fpd-os-button:visited, a.fpd-os-button:hover, a.fpd-os-button:focus, a.fpd-os-button:active, .fpd-os-button, .fpd-os-button * { color:#ffffff !important; -webkit-text-fill-color:#ffffff !important; opacity:1 !important; visibility:visible !important; text-shadow:none !important; }

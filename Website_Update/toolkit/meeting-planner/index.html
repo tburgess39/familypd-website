@@ -1,0 +1,320 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Plan a focused family meeting with selectable topics, editable discussion prompts, action items, verified current-news topics, and a clean printable meeting document." name="description"/>
+<title>Family Meeting Planner | Family Personal Development</title>
+<link href="../../assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body class="meeting-planner-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Family Personal Development home" class="brand" href="../../index.html">
+<span class="brand-mark">FPD</span>
+<span class="brand-text">
+<strong>Family Personal Development</strong>
+<small>Growth starts at home.</small>
+</span>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle">
+<span class="sr-only">Toggle navigation</span>
+        ☰
+      </button>
+<nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="../../about/">About</a><a href="../../approach/">Our Approach</a><a aria-current="page" href="../../toolkit/">Toolkit Demos</a><a href="../../resources/">Resources</a><a href="../../kids/">Kids &amp; Teens</a><a href="../../programs/">Programs</a><a href="../../impact/">Impact</a><a class="button button-small family-pd-os-nav-button" href="../../app/" aria-label="Open FamilyPD OS"><span class="family-pd-os-nav-label">FamilyPD OS</span></a></nav>
+</div>
+</header>
+<main id="main-content">
+<section class="page-hero compact-tool-hero">
+<div class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../../index.html">Home</a>
+<span aria-hidden="true">/</span>
+<a href="../">Family Toolkit</a>
+<span aria-hidden="true">/</span>
+<span>Family Meeting Planner</span>
+</nav>
+<p class="eyebrow">Interactive family meeting tool</p>
+<h1>Plan a useful meeting—not just another conversation.</h1>
+<p class="page-lead">Choose topics, customize the discussion, document decisions and responsibilities, and print a clean meeting document for the family.</p>
+</div>
+</section><section class="section public-demo-banner">
+<div class="container public-demo-panel">
+<div>
+<strong>Public practice mode</strong>
+<span>Explore this sample tool here. Use fictional or non-sensitive information. Real family implementation, saved records, documents, PDFs, and Google Drive workspace features belong in the FamilyPD App.</span>
+</div>
+<a class="button button-secondary" href="../../app/">Learn About the FamilyPD App</a>
+</div>
+</section>
+<section class="section meeting-builder-section">
+<div class="container">
+<form autocomplete="off" class="meeting-builder">
+<section class="meeting-panel">
+<div class="meeting-panel-heading">
+<span>1</span>
+<div>
+<p class="eyebrow">Meeting details</p>
+<h2>Set the purpose and participants.</h2>
+</div>
+</div>
+<div class="form-grid form-grid-two">
+<label>
+            Meeting title
+            <input data-save="meeting-title" placeholder="Example: Sunday Family Planning Meeting" type="text"/>
+</label>
+<label>
+            Main purpose
+            <input data-save="meeting-purpose" placeholder="What should this meeting accomplish?" type="text"/>
+</label>
+</div>
+<div class="form-grid form-grid-four">
+<label>
+            Date
+            <input data-save="meeting-date" type="date"/>
+</label>
+<label>
+            Start time
+            <input data-save="meeting-time" type="time"/>
+</label>
+<label>
+            Facilitator
+            <input data-save="meeting-facilitator" type="text"/>
+</label>
+<label>
+            Participants
+            <input data-save="meeting-participants" placeholder="Names or household" type="text"/>
+</label>
+</div>
+<label>
+          Opening / welcome
+          <textarea data-save="meeting-opening" placeholder="How will you welcome everyone and explain why the meeting matters?" rows="3"></textarea>
+</label>
+</section>
+<section class="meeting-panel">
+<div class="meeting-panel-heading">
+<span>2</span>
+<div>
+<p class="eyebrow">Choose topics</p>
+<h2>Select what the family needs to discuss.</h2>
+<p>Checked topics automatically create editable discussion boxes below.</p>
+</div>
+</div>
+<div class="topic-library">
+<fieldset class="topic-group">
+<legend>Health</legend>
+<label><input data-meeting-topic="" data-pillar="Health" data-prompts="How is everyone feeling physically, mentally, and emotionally? Does anyone need rest, an appointment, support, or someone to listen?" data-save="meeting-topic-health-check" data-title="Physical, Mental &amp; Emotional Check-In" data-topic-id="health-check" type="checkbox"/> Physical, mental &amp; emotional check-in</label>
+<label><input data-meeting-topic="" data-pillar="Health" data-prompts="What emergency or safety situation should we review? Does everyone know who to call, where to go, and what to do first?" data-save="meeting-topic-safety-plan" data-title="Safety &amp; Emergency Readiness" data-topic-id="safety-plan" type="checkbox"/> Safety and emergency readiness</label>
+<label><input data-meeting-topic="" data-pillar="Health" data-prompts="Which routines are helping us feel well? What is difficult to maintain? What one change would make this week healthier?" data-save="meeting-topic-health-routines" data-title="Sleep, Meals, Movement &amp; Health Routines" data-topic-id="health-routines" type="checkbox"/> Sleep, meals, movement &amp; routines</label>
+<label><input data-meeting-topic="" data-pillar="Health" data-prompts="How is screen time affecting sleep, mood, safety, school, or relationships? What expectations or device settings should we review?" data-save="meeting-topic-digital-wellness" data-title="Digital Wellness &amp; Screen Time" data-topic-id="digital-wellness" type="checkbox"/> Digital wellness and screen time</label>
+</fieldset>
+<fieldset class="topic-group">
+<legend>Relationships</legend>
+<label><input data-meeting-topic="" data-pillar="Relationships" data-prompts="What communication has been working well? Where have tone, listening, honesty, or respect become difficult? What should we practice?" data-save="meeting-topic-communication" data-title="Communication &amp; Respect" data-topic-id="communication" type="checkbox"/> Communication and respect</label>
+<label><input data-meeting-topic="" data-pillar="Relationships" data-prompts="Is there a conflict that needs calm discussion or repair? What happened, how did it affect people, and what would accountability or repair look like?" data-save="meeting-topic-repair" data-title="Conflict, Repair &amp; Forgiveness" data-topic-id="repair" type="checkbox"/> Conflict, repair and forgiveness</label>
+<label><input data-meeting-topic="" data-pillar="Relationships" data-prompts="When have we felt most connected lately? What simple activity or routine would help us spend meaningful time together?" data-save="meeting-topic-quality-time" data-title="Quality Time &amp; Family Connection" data-topic-id="quality-time" type="checkbox"/> Quality time and connection</label>
+<label><input data-meeting-topic="" data-pillar="Relationships" data-prompts="Who needs help, advice, encouragement, transportation, time, information, or simply someone to listen?" data-save="meeting-topic-support-needs" data-title="Support Needed" data-topic-id="support-needs" type="checkbox"/> Support needed</label>
+</fieldset>
+<fieldset class="topic-group">
+<legend>Education &amp; Skills</legend>
+<label><input data-meeting-topic="" data-pillar="Education &amp; Skills" data-prompts="What assignments, grades, attendance concerns, applications, tests, or deadlines are coming up? What support is needed?" data-save="meeting-topic-school-progress" data-title="School Progress &amp; Deadlines" data-topic-id="school-progress" type="checkbox"/> School progress and deadlines</label>
+<label><input data-meeting-topic="" data-pillar="Education &amp; Skills" data-prompts="What careers, technical programs, credentials, certifications, or practical skills should we explore next?" data-save="meeting-topic-career-skills" data-title="Career, CTE &amp; Skill Development" data-topic-id="career-skills" type="checkbox"/> Career, CTE and skill development</label>
+<label><input data-meeting-topic="" data-pillar="Education &amp; Skills" data-prompts="Are our passwords, accounts, devices, privacy settings, and online habits protecting the family? What needs to be updated or taught?" data-save="meeting-topic-digital-safety" data-title="Technology, Privacy &amp; Online Safety" data-topic-id="digital-safety" type="checkbox"/> Technology, privacy and online safety</label>
+</fieldset>
+<fieldset class="topic-group">
+<legend>Finances</legend>
+<label><input data-meeting-topic="" data-pillar="Finances" data-prompts="What income, bills, subscriptions, school costs, travel, repairs, or other expenses need attention before the next meeting?" data-save="meeting-topic-bills-budget" data-title="Bills, Budget &amp; Upcoming Expenses" data-topic-id="bills-budget" type="checkbox"/> Bills, budget and upcoming expenses</label>
+<label><input data-meeting-topic="" data-pillar="Finances" data-prompts="What are we saving for? What is one realistic decision that protects or moves that goal forward?" data-save="meeting-topic-saving" data-title="Saving &amp; Financial Priorities" data-topic-id="saving" type="checkbox"/> Saving and financial priorities</label>
+<label><input data-meeting-topic="" data-pillar="Finances" data-prompts="Has anyone received a suspicious call, text, email, job offer, invoice, or payment request? What signs should everyone recognize?" data-save="meeting-topic-fraud" data-title="Scams, Fraud &amp; Consumer Awareness" data-topic-id="fraud" type="checkbox"/> Scams, fraud and consumer awareness</label>
+</fieldset>
+<fieldset class="topic-group">
+<legend>Goals &amp; Household Operations</legend>
+<label><input data-meeting-topic="" data-pillar="Goals" data-prompts="What progress has been made? What is blocked? What is the next smallest useful step, and who will support it?" data-save="meeting-topic-goal-progress" data-title="Family &amp; Personal Goal Progress" data-topic-id="goal-progress" type="checkbox"/> Family and personal goal progress</label>
+<label><input data-meeting-topic="" data-pillar="Goals" data-prompts="What appointments, practices, work shifts, school events, travel, celebrations, or transportation needs are coming up?" data-save="meeting-topic-schedule" data-title="Schedules, Events &amp; Transportation" data-topic-id="schedule" type="checkbox"/> Schedules, events and transportation</label>
+<label><input data-meeting-topic="" data-pillar="Goals" data-prompts="What needs to be completed? Is the work fair and clear? Does anyone need training, help, a reminder system, or a backup person?" data-save="meeting-topic-responsibilities" data-title="Household Responsibilities" data-topic-id="responsibilities" type="checkbox"/> Household responsibilities</label>
+<label><input data-meeting-topic="" data-pillar="Goals" data-prompts="What went well? What effort, growth, kindness, courage, or contribution should the family recognize?" data-save="meeting-topic-celebrations" data-title="Celebrations, Gratitude &amp; Recognition" data-topic-id="celebrations" type="checkbox"/> Celebrations, gratitude and recognition</label>
+</fieldset>
+<fieldset class="topic-group topic-group-news">
+<legend>Current News &amp; Prevention</legend>
+<div class="selected-news-summary" id="selected-news-summary">
+<p>No verified story selected yet.</p>
+<a class="inline-link" href="../news-discussion/">Choose a verified Family PD story</a>
+</div>
+</fieldset>
+</div>
+<div class="custom-topic-builder">
+<div>
+<h3>Add your own topic</h3>
+<p>Create a custom topic and optional starting prompt.</p>
+</div>
+<div class="form-grid form-grid-three">
+<label>
+              Topic
+              <input id="custom-topic-title" placeholder="Custom discussion topic" type="text"/>
+</label>
+<label>
+              Pillar
+              <select id="custom-topic-pillar">
+<option>Health</option>
+<option>Relationships</option>
+<option>Education &amp; Skills</option>
+<option>Finances</option>
+<option>Goals</option>
+</select>
+</label>
+<label>
+              Starting prompt
+              <input id="custom-topic-prompt" placeholder="What should the family discuss?" type="text"/>
+</label>
+</div>
+<button class="button button-secondary" id="add-custom-topic" type="button">Add Custom Topic</button>
+</div>
+</section>
+<section class="meeting-panel">
+<div class="meeting-panel-heading">
+<span>3</span>
+<div>
+<p class="eyebrow">Discussion workspace</p>
+<h2>Edit the prompts and record the discussion.</h2>
+</div>
+</div>
+<div class="meeting-selected-topics" id="meeting-selected-topics">
+<div class="empty-topic-state">
+<strong>No topics selected yet.</strong>
+<span>Check topics above to create editable discussion boxes.</span>
+</div>
+</div>
+</section>
+<section class="meeting-panel">
+<div class="meeting-panel-heading">
+<span>4</span>
+<div>
+<p class="eyebrow">Decisions &amp; action</p>
+<h2>Turn discussion into clear next steps.</h2>
+</div>
+</div>
+<label>
+          Key decisions or family agreements
+          <textarea data-save="meeting-decisions" placeholder="What did the family agree to do, change, stop, continue, or review?" rows="5"></textarea>
+</label>
+<div aria-label="Meeting action items" class="meeting-action-table" role="table">
+<div class="meeting-action-row meeting-action-head" role="row">
+<div role="columnheader">Action item</div>
+<div role="columnheader">Owner</div>
+<div role="columnheader">Due date</div>
+<div role="columnheader">Support needed</div>
+</div>
+<div class="meeting-action-row" role="row">
+<div role="cell"><input aria-label="Action item 1" data-save="meeting-action-1"/></div>
+<div role="cell"><input aria-label="Owner 1" data-save="meeting-owner-1"/></div>
+<div role="cell"><input aria-label="Due date 1" data-save="meeting-due-1" type="date"/></div>
+<div role="cell"><input aria-label="Support 1" data-save="meeting-support-1"/></div>
+</div>
+<div class="meeting-action-row" role="row">
+<div role="cell"><input aria-label="Action item 2" data-save="meeting-action-2"/></div>
+<div role="cell"><input aria-label="Owner 2" data-save="meeting-owner-2"/></div>
+<div role="cell"><input aria-label="Due date 2" data-save="meeting-due-2" type="date"/></div>
+<div role="cell"><input aria-label="Support 2" data-save="meeting-support-2"/></div>
+</div>
+<div class="meeting-action-row" role="row">
+<div role="cell"><input aria-label="Action item 3" data-save="meeting-action-3"/></div>
+<div role="cell"><input aria-label="Owner 3" data-save="meeting-owner-3"/></div>
+<div role="cell"><input aria-label="Due date 3" data-save="meeting-due-3" type="date"/></div>
+<div role="cell"><input aria-label="Support 3" data-save="meeting-support-3"/></div>
+</div>
+<div class="meeting-action-row" role="row">
+<div role="cell"><input aria-label="Action item 4" data-save="meeting-action-4"/></div>
+<div role="cell"><input aria-label="Owner 4" data-save="meeting-owner-4"/></div>
+<div role="cell"><input aria-label="Due date 4" data-save="meeting-due-4" type="date"/></div>
+<div role="cell"><input aria-label="Support 4" data-save="meeting-support-4"/></div>
+</div>
+</div>
+<div class="form-grid form-grid-two">
+<label>
+            Closing message / encouragement
+            <textarea data-save="meeting-closing" placeholder="End with gratitude, encouragement, a value, quote, prayer, or reminder." rows="3"></textarea>
+</label>
+<label>
+            Next meeting or review date
+            <input data-save="meeting-next-date" type="date"/>
+</label>
+</div>
+</section>
+<div class="tool-actions meeting-tool-actions">
+<button class="button tool-save" data-save-status="" type="button">Save Practice Draft in This Browser</button>
+<button class="button button-secondary" id="print-meeting-document" type="button">Print Meeting Document</button>
+<button class="text-button" data-reset-scope="meeting" type="button">Clear meeting plan</button>
+</div>
+</form>
+</div>
+</section>
+<section aria-hidden="true" class="meeting-print-sheet" id="meeting-print-sheet">
+<div class="meeting-print-header">
+<span>Family Personal Development</span>
+<h1 id="print-meeting-title">Family Meeting Document</h1>
+<p id="print-meeting-purpose"></p>
+</div>
+<div class="meeting-print-meta" id="print-meeting-meta"></div>
+<section>
+<h2>Opening</h2>
+<p id="print-meeting-opening"></p>
+</section>
+<section>
+<h2>Discussion Topics</h2>
+<div id="print-meeting-topics"></div>
+</section>
+<section>
+<h2>Decisions &amp; Agreements</h2>
+<p id="print-meeting-decisions"></p>
+</section>
+<section>
+<h2>Action Items</h2>
+<div id="print-meeting-actions"></div>
+</section>
+<section class="meeting-print-closing">
+<div>
+<h2>Closing Message</h2>
+<p id="print-meeting-closing"></p>
+</div>
+<div>
+<h2>Next Review</h2>
+<p id="print-meeting-next"></p>
+</div>
+</section>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Family Personal Development</strong>
+<p>Growth starts at home.</p>
+</div>
+<div>
+<strong>Explore</strong>
+<a href="../../app/">FamilyPD OS</a>
+<a href="../../about/">About</a>
+<a href="../../approach/">Our Approach</a>
+<a href="../">Toolkit</a>
+<a href="../../programs/">Programs</a>
+<a href="../../impact/">Impact</a>
+<a href="../../resources/">Resources</a>
+<a href="../../kids/">Kids &amp; Teens</a></div>
+<div>
+<strong>Connect</strong>
+<a href="mailto:info@familypd.org">info@familypd.org</a>
+<a href="../../get-involved/">Get involved</a>
+<a href="../../privacy/">Privacy</a>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span id="year"></span> Family Personal Development. All rights reserved.</span>
+</div>
+</footer>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

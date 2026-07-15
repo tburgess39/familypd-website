@@ -1,0 +1,658 @@
+{
+  "last_reviewed": "2026-07-14",
+  "roles": {
+    "family": {
+      "en": "Family or caregiver",
+      "es": "Familia o cuidador"
+    },
+    "school": {
+      "en": "School or educator",
+      "es": "Escuela o educador"
+    },
+    "community": {
+      "en": "Community organization",
+      "es": "Organización comunitaria"
+    }
+  },
+  "pathways": [
+    {
+      "id": "health-safety",
+      "pillar": "Health",
+      "title": {
+        "en": "Health, Safety & Well-Being",
+        "es": "Salud, seguridad y bienestar"
+      },
+      "summary": {
+        "en": "Connect everyday health, emotional well-being, preparedness, and safety needs with school and community support.",
+        "es": "Conecte las necesidades diarias de salud, bienestar emocional, preparación y seguridad con apoyo escolar y comunitario."
+      },
+      "household_signals": {
+        "en": [
+          "The family needs clearer routines for sleep, hygiene, appointments, medication, exercise, or emotional check-ins.",
+          "Family members are unsure what to do during a fire, emergency, online-safety concern, or other crisis.",
+          "Stress, fear, conflict, or lack of information is making it harder to respond calmly."
+        ],
+        "es": [
+          "La familia necesita rutinas más claras para dormir, higiene, citas, medicamentos, ejercicio o revisiones emocionales.",
+          "Los miembros no saben qué hacer durante un incendio, emergencia, problema de seguridad digital u otra crisis.",
+          "El estrés, miedo, conflicto o falta de información dificulta responder con calma."
+        ]
+      },
+      "household_actions": {
+        "en": [
+          "Choose one routine or safety topic instead of trying to fix everything at once.",
+          "Use age-appropriate language and practice the plan together.",
+          "Write down who will do what, where information is stored, and when the plan will be reviewed."
+        ],
+        "es": [
+          "Elija una rutina o tema de seguridad en lugar de intentar resolver todo a la vez.",
+          "Use lenguaje apropiado para la edad y practiquen el plan juntos.",
+          "Anote quién hará qué, dónde se guarda la información y cuándo se revisará el plan."
+        ]
+      },
+      "school_support": {
+        "en": [
+          "School nurse, counselor, social worker, psychologist, or student-support team",
+          "Health, physical education, digital citizenship, or safety staff",
+          "Family engagement office or school administrator"
+        ],
+        "es": [
+          "Enfermero escolar, consejero, trabajador social, psicólogo o equipo de apoyo",
+          "Personal de salud, educación física, ciudadanía digital o seguridad",
+          "Oficina de participación familiar o administrador escolar"
+        ]
+      },
+      "community_support": {
+        "en": [
+          "Public health agency, hospital education program, or community clinic",
+          "Fire department, emergency-management office, or safety organization",
+          "Mental-health, youth-support, recreation, or family-service organization"
+        ],
+        "es": [
+          "Agencia de salud pública, programa educativo de hospital o clínica comunitaria",
+          "Departamento de bomberos, oficina de emergencias u organización de seguridad",
+          "Organización de salud mental, apoyo juvenil, recreación o servicios familiares"
+        ]
+      },
+      "questions": {
+        "en": [
+          "What official guidance or training is available for families?",
+          "What should children know at different ages?",
+          "Is there a free class, checklist, referral, or practice opportunity?",
+          "Who should the family contact when the need is urgent or outside your role?"
+        ],
+        "es": [
+          "¿Qué orientación o capacitación oficial está disponible para las familias?",
+          "¿Qué deben saber los niños según su edad?",
+          "¿Existe una clase, lista, referencia u oportunidad de práctica gratuita?",
+          "¿A quién debe contactar la familia cuando la necesidad es urgente o está fuera de su función?"
+        ]
+      },
+      "family_lens": {
+        "en": [
+          "Prepare questions before contacting a school or organization.",
+          "Ask for explanations in plain language and the family’s preferred language.",
+          "Bring the guidance home and practice one action together."
+        ],
+        "es": [
+          "Prepare preguntas antes de contactar una escuela u organización.",
+          "Solicite explicaciones en lenguaje sencillo y en el idioma preferido de la familia.",
+          "Lleve la orientación al hogar y practiquen una acción juntos."
+        ]
+      },
+      "school_lens": {
+        "en": [
+          "Explain the difference between school procedures and household preparation.",
+          "Share public resources without requesting unnecessary private family details.",
+          "Create a warm handoff when the family needs an outside agency."
+        ],
+        "es": [
+          "Explique la diferencia entre los procedimientos escolares y la preparación del hogar.",
+          "Comparta recursos públicos sin solicitar detalles familiares privados innecesarios.",
+          "Facilite una conexión clara cuando la familia necesite una agencia externa."
+        ]
+      },
+      "community_lens": {
+        "en": [
+          "Offer family-friendly explanations, demonstrations, and referral steps.",
+          "State what the organization can and cannot provide.",
+          "Coordinate with schools or family programs when appropriate and permitted."
+        ],
+        "es": [
+          "Ofrezca explicaciones, demostraciones y pasos de referencia para familias.",
+          "Indique claramente lo que la organización puede y no puede proporcionar.",
+          "Coordine con escuelas o programas familiares cuando sea apropiado y permitido."
+        ]
+      },
+      "project_ideas": {
+        "en": [
+          "Create a household routine card set.",
+          "Build an age-appropriate safety scenario game.",
+          "Make a family wellness resource map."
+        ],
+        "es": [
+          "Cree tarjetas de rutinas del hogar.",
+          "Cree un juego de situaciones de seguridad apropiado para la edad.",
+          "Prepare un mapa de recursos de bienestar familiar."
+        ]
+      },
+      "resource_ids": [
+        "canva-education",
+        "scratch",
+        "openai-academy"
+      ]
+    },
+    {
+      "id": "relationships",
+      "pillar": "Relationships",
+      "title": {
+        "en": "Relationships, Communication & Support",
+        "es": "Relaciones, comunicación y apoyo"
+      },
+      "summary": {
+        "en": "Strengthen respectful communication, boundaries, conflict repair, family belonging, and help-seeking.",
+        "es": "Fortalezca la comunicación respetuosa, límites, reparación de conflictos, pertenencia familiar y búsqueda de ayuda."
+      },
+      "household_signals": {
+        "en": [
+          "Family members are talking past one another or avoiding important conversations.",
+          "Expectations, boundaries, responsibilities, or consequences are unclear.",
+          "A child, caregiver, or other family member needs more connection or support."
+        ],
+        "es": [
+          "Los miembros hablan sin escucharse o evitan conversaciones importantes.",
+          "Las expectativas, límites, responsabilidades o consecuencias no están claras.",
+          "Un niño, cuidador u otro miembro necesita más conexión o apoyo."
+        ]
+      },
+      "household_actions": {
+        "en": [
+          "Choose a calm time and one topic for discussion.",
+          "Use respectful statements that describe the concern without attacking a person.",
+          "End with one agreement, one support action, and a time to check back."
+        ],
+        "es": [
+          "Elija un momento tranquilo y un solo tema para conversar.",
+          "Use expresiones respetuosas que describan la preocupación sin atacar a una persona.",
+          "Termine con un acuerdo, una acción de apoyo y una fecha para revisar."
+        ]
+      },
+      "school_support": {
+        "en": [
+          "Teacher, counselor, social worker, behavior team, or family liaison",
+          "Student clubs, peer-support programs, restorative-practice staff, or coaches",
+          "Special education, multilingual learner, or student-services team when relevant"
+        ],
+        "es": [
+          "Maestro, consejero, trabajador social, equipo de conducta o enlace familiar",
+          "Clubes estudiantiles, apoyo entre compañeros, prácticas restaurativas o entrenadores",
+          "Equipo de educación especial, estudiantes multilingües o servicios estudiantiles cuando corresponda"
+        ]
+      },
+      "community_support": {
+        "en": [
+          "Family counseling, mentoring, parenting, or youth-development organization",
+          "Library, recreation center, cultural group, or faith community",
+          "Conflict-resolution, domestic-violence, or crisis-support agency when appropriate"
+        ],
+        "es": [
+          "Organización de consejería familiar, mentoría, crianza o desarrollo juvenil",
+          "Biblioteca, centro recreativo, grupo cultural o comunidad de fe",
+          "Agencia de resolución de conflictos, violencia doméstica o crisis cuando corresponda"
+        ]
+      },
+      "questions": {
+        "en": [
+          "What support is available before the situation becomes a crisis?",
+          "How can the family reinforce the same communication skill at home?",
+          "What confidentiality and reporting limits should the family understand?",
+          "What services are available in the family’s preferred language?"
+        ],
+        "es": [
+          "¿Qué apoyo está disponible antes de que la situación se convierta en crisis?",
+          "¿Cómo puede la familia reforzar la misma habilidad de comunicación en casa?",
+          "¿Qué límites de confidencialidad y reporte debe comprender la familia?",
+          "¿Qué servicios están disponibles en el idioma preferido de la familia?"
+        ]
+      },
+      "family_lens": {
+        "en": [
+          "Share the goal of the conversation before describing the conflict.",
+          "Ask what support is available and what the family can practice at home.",
+          "Protect private details when a general explanation is enough."
+        ],
+        "es": [
+          "Comparta el objetivo de la conversación antes de describir el conflicto.",
+          "Pregunte qué apoyo existe y qué puede practicar la familia en casa.",
+          "Proteja los detalles privados cuando una explicación general sea suficiente."
+        ]
+      },
+      "school_lens": {
+        "en": [
+          "Treat caregivers as partners rather than only contacting them when something is wrong.",
+          "Explain school language, processes, and next steps clearly.",
+          "Connect families with community support when needs extend beyond school."
+        ],
+        "es": [
+          "Trate a los cuidadores como socios y no solo los contacte cuando haya un problema.",
+          "Explique claramente el lenguaje, los procesos y los próximos pasos escolares.",
+          "Conecte a las familias con apoyo comunitario cuando la necesidad exceda a la escuela."
+        ]
+      },
+      "community_lens": {
+        "en": [
+          "Offer low-barrier ways to ask for help.",
+          "Use culturally responsive and family-respecting practices.",
+          "Share clear eligibility, cost, scheduling, and confidentiality information."
+        ],
+        "es": [
+          "Ofrezca formas accesibles de pedir ayuda.",
+          "Use prácticas culturalmente sensibles y respetuosas de la familia.",
+          "Comparta información clara sobre elegibilidad, costo, horario y confidencialidad."
+        ]
+      },
+      "project_ideas": {
+        "en": [
+          "Create a respectful-communication comic.",
+          "Build a family kindness challenge.",
+          "Design conversation starter cards."
+        ],
+        "es": [
+          "Cree un cómic de comunicación respetuosa.",
+          "Cree un reto familiar de amabilidad.",
+          "Diseñe tarjetas para iniciar conversaciones."
+        ]
+      },
+      "resource_ids": [
+        "scratch",
+        "canva-education",
+        "openai-academy"
+      ]
+    },
+    {
+      "id": "education-skills",
+      "pillar": "Education & Skills",
+      "title": {
+        "en": "Education, Digital Skills & Career Pathways",
+        "es": "Educación, habilidades digitales y rutas profesionales"
+      },
+      "summary": {
+        "en": "Help families understand school expectations, learning supports, CTE, credentials, careers, technology, and lifelong skill development.",
+        "es": "Ayude a las familias a comprender expectativas escolares, apoyos, CTE, credenciales, carreras, tecnología y aprendizaje continuo."
+      },
+      "household_signals": {
+        "en": [
+          "A student needs help with attendance, assignments, study habits, progress, or advocacy.",
+          "The family does not understand available courses, CTE programs, credentials, college, apprenticeships, or careers.",
+          "A family member needs digital skills for school, employment, forms, communication, or services."
+        ],
+        "es": [
+          "Un estudiante necesita ayuda con asistencia, tareas, hábitos de estudio, progreso o defensa educativa.",
+          "La familia no comprende cursos, programas CTE, credenciales, universidad, aprendizajes o carreras disponibles.",
+          "Un miembro necesita habilidades digitales para escuela, empleo, formularios, comunicación o servicios."
+        ]
+      },
+      "household_actions": {
+        "en": [
+          "Identify the learner’s current strength, challenge, interest, and next milestone.",
+          "Write down questions before meeting with a teacher, counselor, program, or employer.",
+          "Choose one skill-building resource and a regular time to use it."
+        ],
+        "es": [
+          "Identifique la fortaleza, desafío, interés y próximo logro del estudiante.",
+          "Anote preguntas antes de reunirse con un maestro, consejero, programa o empleador.",
+          "Elija un recurso para desarrollar habilidades y un horario regular para usarlo."
+        ]
+      },
+      "school_support": {
+        "en": [
+          "Teacher, counselor, academic strategist, librarian, or family-engagement staff",
+          "CTE department, college-and-career center, work-based learning, or special programs",
+          "Technology, multilingual learner, special education, or adult-education staff when relevant"
+        ],
+        "es": [
+          "Maestro, consejero, especialista académico, bibliotecario o personal de participación familiar",
+          "Departamento CTE, centro universitario y profesional, aprendizaje laboral o programas especiales",
+          "Personal de tecnología, estudiantes multilingües, educación especial o educación de adultos cuando corresponda"
+        ]
+      },
+      "community_support": {
+        "en": [
+          "Public library, tutoring, makerspace, youth program, or digital-skills class",
+          "College, apprenticeship, workforce center, employer, trade organization, or certification provider",
+          "Community organization providing devices, internet access, mentoring, or career exposure"
+        ],
+        "es": [
+          "Biblioteca pública, tutoría, espacio maker, programa juvenil o clase de habilidades digitales",
+          "Universidad, aprendizaje, centro laboral, empleador, asociación profesional o proveedor de certificaciones",
+          "Organización que proporciona dispositivos, internet, mentoría o exposición profesional"
+        ]
+      },
+      "questions": {
+        "en": [
+          "What options match the learner’s interests and current preparation?",
+          "What are the deadlines, costs, prerequisites, transportation needs, and required documents?",
+          "What support is available for language, disability, technology, tutoring, or financial barriers?",
+          "What can the family monitor or practice at home?"
+        ],
+        "es": [
+          "¿Qué opciones coinciden con los intereses y la preparación actual del estudiante?",
+          "¿Cuáles son las fechas, costos, requisitos, transporte y documentos necesarios?",
+          "¿Qué apoyo existe para idioma, discapacidad, tecnología, tutoría o barreras financieras?",
+          "¿Qué puede supervisar o practicar la familia en casa?"
+        ]
+      },
+      "family_lens": {
+        "en": [
+          "Ask for the full pathway, not only the next course or application.",
+          "Keep copies of public requirements, deadlines, and questions.",
+          "Connect learning at home to a real project or opportunity."
+        ],
+        "es": [
+          "Solicite la ruta completa y no solo el próximo curso o solicitud.",
+          "Guarde copias de requisitos públicos, fechas y preguntas.",
+          "Conecte el aprendizaje en casa con un proyecto u oportunidad real."
+        ]
+      },
+      "school_lens": {
+        "en": [
+          "Explain pathways without assuming families understand school terminology.",
+          "Show how courses, credentials, activities, and careers connect.",
+          "Refer families to community programs that extend learning beyond school hours."
+        ],
+        "es": [
+          "Explique las rutas sin asumir que las familias comprenden la terminología escolar.",
+          "Muestre cómo se conectan cursos, credenciales, actividades y carreras.",
+          "Refiera a las familias a programas comunitarios que amplían el aprendizaje fuera del horario escolar."
+        ]
+      },
+      "community_lens": {
+        "en": [
+          "State the skill, age, cost, schedule, prerequisites, and outcome clearly.",
+          "Offer orientations or demonstrations that families can understand.",
+          "Coordinate with schools to reduce duplicated steps and missed opportunities."
+        ],
+        "es": [
+          "Indique claramente la habilidad, edad, costo, horario, requisitos y resultado.",
+          "Ofrezca orientaciones o demostraciones comprensibles para familias.",
+          "Coordine con escuelas para reducir pasos duplicados y oportunidades perdidas."
+        ]
+      },
+      "project_ideas": {
+        "en": [
+          "Build a study strategy card set.",
+          "Create a career or CTE spotlight.",
+          "Develop an interview-practice app or digital-skills guide."
+        ],
+        "es": [
+          "Cree tarjetas de estrategias de estudio.",
+          "Prepare una presentación de carrera o CTE.",
+          "Desarrolle una aplicación de práctica de entrevistas o guía digital."
+        ]
+      },
+      "resource_ids": [
+        "code-org",
+        "khan-academy",
+        "makecode",
+        "mit-app-inventor",
+        "canva-education",
+        "openai-academy"
+      ]
+    },
+    {
+      "id": "finances",
+      "pillar": "Finances",
+      "title": {
+        "en": "Finances, Benefits & Household Stability",
+        "es": "Finanzas, beneficios y estabilidad del hogar"
+      },
+      "summary": {
+        "en": "Connect money awareness, employment, benefits, basic needs, and financial goals with trustworthy education and support.",
+        "es": "Conecte conocimientos financieros, empleo, beneficios, necesidades básicas y metas con educación y apoyo confiable."
+      },
+      "household_signals": {
+        "en": [
+          "The family needs a clearer picture of income, bills, debt, spending, saving, or financial priorities.",
+          "A household member needs employment, training, benefits, food, housing, transportation, or legal-resource information.",
+          "Money conversations are avoided, confusing, or creating conflict."
+        ],
+        "es": [
+          "La familia necesita una visión más clara de ingresos, facturas, deudas, gastos, ahorros o prioridades.",
+          "Un miembro necesita empleo, capacitación, beneficios, alimentos, vivienda, transporte o información legal.",
+          "Las conversaciones sobre dinero se evitan, son confusas o causan conflicto."
+        ]
+      },
+      "household_actions": {
+        "en": [
+          "Choose one financial question and gather only the information needed to understand it.",
+          "Separate immediate needs, monthly responsibilities, and longer-term goals.",
+          "Use shame-free language and protect account numbers and private documents."
+        ],
+        "es": [
+          "Elija una pregunta financiera y reúna solo la información necesaria para comprenderla.",
+          "Separe necesidades inmediatas, responsabilidades mensuales y metas a largo plazo.",
+          "Use lenguaje sin vergüenza y proteja números de cuenta y documentos privados."
+        ]
+      },
+      "school_support": {
+        "en": [
+          "School social worker, counselor, family liaison, or student-support office",
+          "Financial aid, college-and-career, adult education, or workforce-readiness staff",
+          "McKinney-Vento, nutrition, transportation, or other student-support programs when relevant"
+        ],
+        "es": [
+          "Trabajador social escolar, consejero, enlace familiar u oficina de apoyo estudiantil",
+          "Personal de ayuda financiera, universidad y carrera, educación de adultos o preparación laboral",
+          "Programas McKinney-Vento, nutrición, transporte u otros apoyos cuando correspondan"
+        ]
+      },
+      "community_support": {
+        "en": [
+          "Workforce center, benefits navigator, financial educator, credit union, or housing counselor",
+          "Food, transportation, childcare, utility, legal-aid, or emergency-support organization",
+          "Tax assistance, small-business, entrepreneurship, or credential-support program"
+        ],
+        "es": [
+          "Centro laboral, navegador de beneficios, educador financiero, cooperativa de crédito o consejero de vivienda",
+          "Organización de alimentos, transporte, cuidado infantil, servicios públicos, asistencia legal o emergencia",
+          "Programa de impuestos, pequeños negocios, emprendimiento o apoyo para credenciales"
+        ]
+      },
+      "questions": {
+        "en": [
+          "Is this education, coaching, a referral, a benefit, a loan, or a commercial service?",
+          "What are the eligibility rules, costs, documents, deadlines, and privacy practices?",
+          "Is the organization licensed, approved, or recognized for this service?",
+          "What should the family avoid sharing until legitimacy is confirmed?"
+        ],
+        "es": [
+          "¿Esto es educación, asesoría, referencia, beneficio, préstamo o servicio comercial?",
+          "¿Cuáles son las reglas, costos, documentos, fechas y prácticas de privacidad?",
+          "¿La organización tiene licencia, aprobación o reconocimiento para este servicio?",
+          "¿Qué debe evitar compartir la familia hasta confirmar que el servicio es legítimo?"
+        ]
+      },
+      "family_lens": {
+        "en": [
+          "Ask for written eligibility and cost information before providing sensitive documents.",
+          "Compare more than one trustworthy option when possible.",
+          "Turn the information into one realistic household action."
+        ],
+        "es": [
+          "Solicite información escrita sobre elegibilidad y costo antes de entregar documentos sensibles.",
+          "Compare más de una opción confiable cuando sea posible.",
+          "Convierta la información en una acción realista para el hogar."
+        ]
+      },
+      "school_lens": {
+        "en": [
+          "Provide warm referrals instead of sending families through multiple disconnected offices.",
+          "Explain which support is school-based and which is external.",
+          "Avoid requesting financial details the school does not need."
+        ],
+        "es": [
+          "Ofrezca referencias claras en lugar de enviar a la familia a oficinas desconectadas.",
+          "Explique qué apoyo pertenece a la escuela y cuál es externo.",
+          "Evite solicitar detalles financieros que la escuela no necesita."
+        ]
+      },
+      "community_lens": {
+        "en": [
+          "Publish clear eligibility, documentation, cost, wait-time, and contact information.",
+          "Use nonjudgmental language and accessible application support.",
+          "Explain data sharing, referrals, and complaint processes."
+        ],
+        "es": [
+          "Publique información clara sobre elegibilidad, documentos, costo, espera y contacto.",
+          "Use lenguaje sin juicio y apoyo accesible para solicitudes.",
+          "Explique el intercambio de datos, referencias y procesos de quejas."
+        ]
+      },
+      "project_ideas": {
+        "en": [
+          "Create a save-spend-share game.",
+          "Build a household resource checklist.",
+          "Design a family goal or bill-awareness tracker."
+        ],
+        "es": [
+          "Cree un juego de ahorrar, gastar y compartir.",
+          "Prepare una lista de recursos del hogar.",
+          "Diseñe un registro de metas o facturas familiares."
+        ]
+      },
+      "resource_ids": [
+        "khan-academy",
+        "canva-education",
+        "openai-academy"
+      ]
+    },
+    {
+      "id": "goals-opportunity",
+      "pillar": "Goals",
+      "title": {
+        "en": "Goals, Opportunity & Family Progress",
+        "es": "Metas, oportunidades y progreso familiar"
+      },
+      "summary": {
+        "en": "Turn household priorities into clear steps, accountability, opportunity connections, and progress reviews.",
+        "es": "Convierta prioridades del hogar en pasos claros, responsabilidad, conexiones con oportunidades y revisiones de progreso."
+      },
+      "household_signals": {
+        "en": [
+          "The family has important goals but no shared plan, timeline, or progress check.",
+          "Family members need opportunities, mentors, equipment, information, transportation, or encouragement.",
+          "The household starts plans but has difficulty following through or adjusting."
+        ],
+        "es": [
+          "La familia tiene metas importantes pero no un plan, calendario o revisión compartida.",
+          "Los miembros necesitan oportunidades, mentores, equipo, información, transporte o ánimo.",
+          "El hogar inicia planes pero tiene dificultad para continuar o ajustar."
+        ]
+      },
+      "household_actions": {
+        "en": [
+          "Choose one goal and define what progress would look like within 30, 60, or 90 days.",
+          "Break the goal into small steps with owners, support needs, and review dates.",
+          "Identify one school or community connection that could remove a barrier or expand the opportunity."
+        ],
+        "es": [
+          "Elija una meta y defina cómo se vería el progreso en 30, 60 o 90 días.",
+          "Divida la meta en pasos con responsables, apoyo y fechas de revisión.",
+          "Identifique una conexión escolar o comunitaria que pueda reducir una barrera o ampliar la oportunidad."
+        ]
+      },
+      "school_support": {
+        "en": [
+          "Teacher, counselor, coach, club advisor, mentor, or family-engagement staff",
+          "College-and-career, CTE, scholarship, leadership, service, or extracurricular programs",
+          "Attendance, academic, special-program, or student-success teams"
+        ],
+        "es": [
+          "Maestro, consejero, entrenador, asesor de club, mentor o personal de participación familiar",
+          "Programas universitarios, profesionales, CTE, becas, liderazgo, servicio o extracurriculares",
+          "Equipos de asistencia, académicos, programas especiales o éxito estudiantil"
+        ]
+      },
+      "community_support": {
+        "en": [
+          "Mentoring, youth development, leadership, arts, sports, or service organization",
+          "Workforce, college-access, scholarship, apprenticeship, or entrepreneurship program",
+          "Library, nonprofit, employer, cultural organization, or neighborhood network"
+        ],
+        "es": [
+          "Organización de mentoría, desarrollo juvenil, liderazgo, artes, deportes o servicio",
+          "Programa laboral, acceso universitario, becas, aprendizajes o emprendimiento",
+          "Biblioteca, organización sin fines de lucro, empleador, organización cultural o red vecinal"
+        ]
+      },
+      "questions": {
+        "en": [
+          "What opportunity fits the person’s age, interest, preparation, schedule, and transportation?",
+          "What are the deadlines, expectations, costs, and required commitments?",
+          "What support exists when the family encounters a barrier?",
+          "How will progress be reviewed and the plan adjusted?"
+        ],
+        "es": [
+          "¿Qué oportunidad se adapta a la edad, interés, preparación, horario y transporte?",
+          "¿Cuáles son las fechas, expectativas, costos y compromisos requeridos?",
+          "¿Qué apoyo existe cuando la familia encuentra una barrera?",
+          "¿Cómo se revisará el progreso y se ajustará el plan?"
+        ]
+      },
+      "family_lens": {
+        "en": [
+          "Connect the goal to a clear reason that matters to the household.",
+          "Ask for realistic requirements before committing time or money.",
+          "Celebrate effort and adjust the plan when circumstances change."
+        ],
+        "es": [
+          "Conecte la meta con una razón clara que sea importante para el hogar.",
+          "Solicite requisitos realistas antes de comprometer tiempo o dinero.",
+          "Celebre el esfuerzo y ajuste el plan cuando cambien las circunstancias."
+        ]
+      },
+      "school_lens": {
+        "en": [
+          "Help families see opportunities early enough to prepare.",
+          "Explain hidden expectations, deadlines, and pathway steps.",
+          "Connect students with mentors and organizations that extend support."
+        ],
+        "es": [
+          "Ayude a las familias a conocer oportunidades con tiempo para prepararse.",
+          "Explique expectativas, fechas y pasos que no sean evidentes.",
+          "Conecte a estudiantes con mentores y organizaciones que amplíen el apoyo."
+        ]
+      },
+      "community_lens": {
+        "en": [
+          "Publish clear entry points and next steps.",
+          "Design opportunities that account for transportation, scheduling, language, and cost barriers.",
+          "Share progress information with families in respectful, useful ways."
+        ],
+        "es": [
+          "Publique puntos de entrada y próximos pasos claros.",
+          "Diseñe oportunidades considerando transporte, horario, idioma y costo.",
+          "Comparta información de progreso con las familias de forma respetuosa y útil."
+        ]
+      },
+      "project_ideas": {
+        "en": [
+          "Create a small-steps goal board.",
+          "Build an opportunity or career map.",
+          "Design a family progress tracker."
+        ],
+        "es": [
+          "Cree un tablero de metas en pequeños pasos.",
+          "Prepare un mapa de oportunidades o carreras.",
+          "Diseñe un registro de progreso familiar."
+        ]
+      },
+      "resource_ids": [
+        "canva-education",
+        "khan-academy",
+        "openai-academy",
+        "grok"
+      ]
+    }
+  ]
+}
