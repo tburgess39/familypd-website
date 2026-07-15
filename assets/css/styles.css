@@ -4743,3 +4743,379 @@ select:focus {
   .public-demo-panel{display:grid}
   .household-project-standard,.household-project-example-grid,.creator-bridge-sections,.creator-learning-grid,.learning-tool-grid,.learning-bridge-grid,.website-app-bridge-grid,.app-feature-grid{grid-template-columns:1fr}
 }
+
+
+/* Family–School–Community Bridge Center */
+.bridge-center-hero {
+  background:
+    radial-gradient(circle at 83% 17%, rgba(44,122,120,.20), transparent 28%),
+    radial-gradient(circle at 72% 79%, rgba(224,163,59,.20), transparent 25%),
+    linear-gradient(135deg, var(--cream), #fff 68%);
+}
+
+.bridge-language-card {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.bridge-language-card p:last-child {
+  color: var(--muted);
+}
+
+.bridge-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+
+.bridge-purpose-grid article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+
+.bridge-purpose-grid article > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.bridge-purpose-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bridge-builder-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 310px;
+  gap: 24px;
+  align-items: start;
+}
+
+.bridge-builder-main {
+  display: grid;
+  gap: 20px;
+}
+
+.bridge-control-panel,
+.bridge-output-panel {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: white;
+  box-shadow: 0 8px 18px rgba(16,36,52,.05);
+}
+
+.bridge-empty-state {
+  padding: 30px;
+  border: 2px dashed var(--line);
+  border-radius: 15px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.bridge-plan-document {
+  padding: 24px;
+  border-radius: 17px;
+  background: var(--soft);
+}
+
+.bridge-plan-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bridge-plan-heading h2 {
+  margin: 8px 0 6px;
+  font-size: 1.85rem;
+}
+
+.bridge-plan-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bridge-pillar-badge,
+.bridge-role-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.bridge-pillar-badge {
+  background: var(--navy);
+  color: white;
+}
+
+.bridge-role-badge {
+  flex: 0 0 auto;
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.bridge-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 19px;
+}
+
+.bridge-plan-grid section {
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+}
+
+.bridge-plan-grid h3,
+.bridge-project-ideas h3,
+.bridge-learning-resources h3 {
+  font-size: 1.08rem;
+}
+
+.bridge-plan-grid li,
+.bridge-project-ideas li {
+  margin-bottom: 7px;
+}
+
+.bridge-role-lens {
+  border-left: 6px solid var(--teal) !important;
+}
+
+.bridge-project-ideas,
+.bridge-learning-resources {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+}
+
+.bridge-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.bridge-resource-card {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.bridge-resource-card > span {
+  color: var(--orange);
+  font-size: .72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bridge-resource-card h4 {
+  margin: 6px 0;
+  color: var(--navy);
+}
+
+.bridge-resource-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bridge-resource-card small {
+  display: block;
+  margin: 9px 0;
+  color: var(--muted);
+}
+
+.bridge-resource-card a {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.bridge-practice-note {
+  margin-top: 18px;
+  padding: 17px;
+  border-left: 6px solid var(--gold);
+  background: var(--cream);
+}
+
+.bridge-practice-note p {
+  margin: 7px 0;
+}
+
+.bridge-plan-actions {
+  margin-top: 18px;
+}
+
+.bridge-action-status {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.bridge-sidebar {
+  position: sticky;
+  top: 90px;
+  display: grid;
+  gap: 15px;
+}
+
+.bridge-sidebar-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+
+.bridge-sidebar-card:first-child {
+  border-top: 6px solid var(--gold);
+}
+
+.bridge-sidebar-card h2 {
+  font-size: 1.22rem;
+}
+
+.bridge-sidebar-card p,
+.bridge-sidebar-card li {
+  color: var(--muted);
+}
+
+.bridge-use-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+
+.bridge-use-grid article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: white;
+}
+
+.bridge-use-grid article > span {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: white;
+  font-weight: 900;
+}
+
+.bridge-use-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bridge-program-callout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: var(--cream);
+}
+
+.bridge-program-callout p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+/* Keep the canonical desktop menu consistent and readable. */
+@media (max-width: 1260px) and (min-width: 981px) {
+  .site-nav {
+    gap: 11px;
+  }
+
+  .site-nav a {
+    font-size: .84rem;
+  }
+
+  .site-nav .button-small {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .bridge-purpose-grid,
+  .bridge-use-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .bridge-builder-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bridge-sidebar {
+    position: static;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .bridge-purpose-grid,
+  .bridge-plan-grid,
+  .bridge-resource-grid,
+  .bridge-use-grid,
+  .bridge-sidebar,
+  .bridge-program-callout {
+    grid-template-columns: 1fr;
+  }
+
+  .bridge-plan-heading {
+    flex-direction: column;
+  }
+
+  .bridge-control-panel,
+  .bridge-output-panel {
+    padding: 19px;
+  }
+}
+
+@media print {
+  .bridge-center-page .site-header,
+  .bridge-center-page .site-footer,
+  .bridge-center-page .bridge-center-hero,
+  .bridge-center-page .bridge-purpose-section,
+  .bridge-center-page .bridge-control-panel,
+  .bridge-center-page .bridge-sidebar,
+  .bridge-center-page .bridge-plan-actions,
+  .bridge-center-page .bridge-use-grid {
+    display: none !important;
+  }
+
+  .bridge-center-page .bridge-builder-layout {
+    display: block;
+  }
+
+  .bridge-center-page .bridge-output-panel {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .bridge-center-page .bridge-plan-document {
+    background: white;
+    padding: 0;
+  }
+}
