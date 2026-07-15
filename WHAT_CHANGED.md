@@ -1,12 +1,24 @@
-# FamilyPD OS v11.3 — Profile, Sharing, Resources, and Communication Styles
+# FamilyPD OS v11 Launch Readiness — What changed
 
-- Adds one-click editable Family Profile templates, including single-parent, blended, grandparent-led, newly formed, and legacy households.
-- Changes the main action to **Create Profile** and guides the Lead to review, save, publish, and share.
-- Adds a view-only published Family Profile link.
-- Rewrites Family Sharing instructions in plain language while preserving the existing secure connection-file process.
-- Keeps member-only join/upload controls and Lead-only creation controls.
-- Removes visible preference fields that do not change the experience; keeps language and accessibility controls.
-- Includes the Resource Hub service so the catalog can load without typing.
-- Adds a generic, non-clinical D/i/S/C communication-style profile activity with copy and download options.
-- Adds a stronger public-website FamilyPD OS button-text visibility fix.
-- Preserves existing FamilyPD OS features and services.
+## Family Sharing
+- Removed the family-facing signed-CSV workflow.
+- Household Leads now create one invitation link after publishing the Family Profile.
+- The invitation link carries the approved household connection information internally.
+- Family Members paste the invitation link, verify the household, and then the Join button becomes available.
+- Connected members see the household name, join date, and a clear disconnect warning.
+- Household Leads and Family Members can create sharing links for eligible profiles, projects, and goals.
+- Recipients preview an item before selecting **Add to My FamilyPD**.
+- Imported shared items appear on the Overview dashboard and Family Sharing page.
+- Private projects, goals, notes, journals, and files are not removed when a member disconnects.
+
+## Family Profile
+- Retained the ready-made profile templates and editable profile fields.
+- Family Profile remains the shared household identity.
+- Personal settings, accessibility choices, projects, goals, and communication profiles remain separate personal information.
+
+## Repair
+- Workspace repair remembers the active FamilyPD page and returns to it after the required reload instead of always opening Workspace Setup.
+
+## Website
+- Added an isolated CSS and JavaScript repair for the FamilyPD OS top-menu label.
+- No development notes or release announcements were added to the public website.

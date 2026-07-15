@@ -1,0 +1,19 @@
+/* Load after the site's main stylesheet. Keeps FamilyPD OS text visible. */
+header nav a[href*="/app"],
+header nav a[href*="script.google.com"],
+nav a[href*="/app"],
+a.family-pd-os-nav-button,
+a.family-pd-os-nav-button:link,
+a.family-pd-os-nav-button:visited,
+a.family-pd-os-nav-button:hover,
+a.family-pd-os-nav-button:focus,
+a.family-pd-os-nav-button:active {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-decoration-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  text-indent: 0 !important;
+}

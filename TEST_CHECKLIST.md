@@ -1,11 +1,28 @@
-# Test checklist
+# FamilyPD OS v11 Launch Readiness — Test checklist
 
-1. Open Family Profile as Household Lead and choose each new starting profile.
-2. Select **Create Profile** and confirm mission, vision, motto, values, and commitments populate.
-3. Save and publish the profile; then create and open the view-only Profile Link.
-4. Confirm a Lead sees invite/share creation tools and a Member sees only join/upload tools.
-5. Join as a Member, disconnect, and confirm private personal work remains.
-6. Open Learning Resources and confirm cards appear before typing.
-7. Complete the Communication Style Profile and test copy/download.
-8. Confirm all prior apps still open.
-9. On the public website, hard refresh and confirm the orange FamilyPD OS button text remains visible in normal, hover, focus, and visited states.
+## Household Lead
+- [ ] Create a Family Profile from each starter template.
+- [ ] Edit the generated mission, vision, motto, values, and commitments.
+- [ ] Save and publish the Family Profile.
+- [ ] Open Family Sharing and create one invitation link.
+- [ ] Copy the invitation link and open it with a different Google account.
+- [ ] Create a sharing link for the published Family Profile, a project, and a goal.
+
+## Family Member
+- [ ] Open FamilyPD OS using a Family Member workspace.
+- [ ] Paste an invalid invitation and confirm Join remains disabled.
+- [ ] Paste the valid invitation and verify the household preview.
+- [ ] Join the household and confirm the connected household card appears.
+- [ ] Open a shared project or goal link.
+- [ ] Preview it and select Add to My FamilyPD.
+- [ ] Confirm the item appears on Overview and Family Sharing.
+- [ ] Disconnect and confirm private projects, goals, and notes remain.
+
+## Repair
+- [ ] Start repair from Project Studio and confirm return to Project Studio.
+- [ ] Start repair from another panel and confirm return to that panel.
+
+## Website
+- [ ] Confirm FamilyPD OS text is visible in the top menu before and after hover.
+- [ ] Confirm the text remains visible after the link has been visited.
+- [ ] Test desktop and mobile navigation.
