@@ -88,14 +88,15 @@ a { color: inherit; }
 .brand-link {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
 }
 
 .brand-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+  width: 54px;
+  height: 54px;
   display: block;
+  object-fit: contain;
 }
 
 .brand-text {
