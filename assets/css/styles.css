@@ -106,7 +106,13 @@ a { color: inherit; }
 
 .brand-text small { color: var(--muted); margin-top: 3px; }
 
-.nav-links a {
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.site-nav a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,24 +121,9 @@ a { color: inherit; }
   text-align: center;
 }
 
-.nav-links a:nth-child(2),
-.nav-links a:nth-child(3),
-.nav-links a:nth-child(5) {
-  width: 82px;
+.site-nav .family-pd-os-nav-button {
+  min-height: auto;
 }
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.site-nav a {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: .95rem;
-}
-
 .site-nav a:hover { color: var(--orange); }
 
 .nav-toggle {
