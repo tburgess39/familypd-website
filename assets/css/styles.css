@@ -93,10 +93,9 @@ a { color: inherit; }
 }
 
 .brand-logo {
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: auto;
   display: block;
-  object-fit: contain;
 }
 
 .brand-text {
