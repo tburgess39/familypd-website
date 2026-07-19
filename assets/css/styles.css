@@ -106,6 +106,21 @@ a { color: inherit; }
 
 .brand-text small { color: var(--muted); margin-top: 3px; }
 
+.nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.nav-links a:nth-child(2),
+.nav-links a:nth-child(3),
+.nav-links a:nth-child(5) {
+  width: 82px;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
