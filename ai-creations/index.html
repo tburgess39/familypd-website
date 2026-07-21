@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Creations | Family Personal Development</title>
+  <meta name="description" content="Explore AI-assisted images, webpages, prompts, project support, and tutoring examples created by Family Personal Development.">
+  <link rel="icon" href="../assets/images/familypd.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/images/familypd.png">
+  <style>
+    :root {
+      --aic-navy: #17365d;
+      --aic-blue: #2f75b5;
+      --aic-green: #4d9b45;
+      --aic-orange: #e9822b;
+      --aic-gold: #f2bd3d;
+      --aic-ink: #172033;
+      --aic-muted: #5d6677;
+      --aic-bg: #f7f8fb;
+      --aic-card: #ffffff;
+      --aic-line: #dfe4ec;
+      --aic-radius: 18px;
+      --aic-shadow: 0 14px 36px rgba(23, 54, 93, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--aic-ink);
+      background: var(--aic-bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .aic-shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+
+    .aic-skip {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: #fff;
+      color: var(--aic-navy);
+      border-radius: 8px;
+    }
+    .aic-skip:focus { left: 10px; }
+
+    .aic-header {
+      background: #fff;
+      border-bottom: 1px solid var(--aic-line);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .aic-header-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .aic-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--aic-navy);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .aic-brand img { width: 46px; height: 46px; object-fit: contain; }
+    .aic-nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+    .aic-nav a { text-decoration: none; font-size: 0.93rem; font-weight: 700; color: #354052; }
+    .aic-nav a:hover, .aic-nav a:focus-visible { color: var(--aic-blue); }
+    .aic-nav .aic-app-link {
+      color: #fff;
+      background: var(--aic-orange);
+      padding: 9px 14px;
+      border-radius: 999px;
+    }
+
+    .aic-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0 58px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(242, 189, 61, 0.22), transparent 26%),
+        radial-gradient(circle at 8% 88%, rgba(77, 155, 69, 0.16), transparent 24%),
+        linear-gradient(135deg, #f9fbff, #fffaf3);
+      border-bottom: 1px solid var(--aic-line);
+    }
+    .aic-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(290px, 0.6fr);
+      align-items: center;
+      gap: 52px;
+    }
+    .aic-eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid rgba(47, 117, 181, 0.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.76);
+      color: var(--aic-blue);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .aic-hero h1 {
+      margin: 18px 0 16px;
+      max-width: 760px;
+      color: var(--aic-navy);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+    .aic-hero p {
+      max-width: 740px;
+      margin: 0;
+      color: var(--aic-muted);
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+    .aic-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .aic-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 17px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .aic-button-primary { color: #fff; background: var(--aic-navy); }
+    .aic-button-secondary { color: var(--aic-navy); background: #fff; border-color: var(--aic-line); }
+    .aic-button:hover { transform: translateY(-1px); }
+
+    .aic-separate-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(23,54,93,0.12);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--aic-shadow);
+    }
+    .aic-separate-card strong { display: block; color: var(--aic-navy); font-size: 1.1rem; }
+    .aic-separate-card p { margin: 8px 0 18px; font-size: 0.95rem; }
+    .aic-mini-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .aic-mini-grid span {
+      min-height: 62px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px;
+      border-radius: 13px;
+      background: #f6f8fc;
+      color: #354052;
+      font-weight: 800;
+      font-size: 0.86rem;
+    }
+
+    .aic-main { padding: 48px 0 76px; }
+    .aic-intro { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }
+    .aic-intro h2 { margin: 0; color: var(--aic-navy); font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -0.035em; }
+    .aic-intro p { margin: 6px 0 0; color: var(--aic-muted); max-width: 720px; }
+
+    .aic-tools {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.8fr) minmax(0, 2.2fr);
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .aic-search {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--aic-line);
+      border-radius: 12px;
+      padding: 10px 13px;
+      background: #fff;
+      color: var(--aic-ink);
+    }
+    .aic-search:focus { outline: 3px solid rgba(47,117,181,0.18); border-color: var(--aic-blue); }
+    .aic-filters { display: flex; gap: 9px; flex-wrap: wrap; }
+    .aic-filter {
+      min-height: 42px;
+      border: 1px solid var(--aic-line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: #fff;
+      color: #3b4657;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .aic-filter[aria-pressed="true"] { color: #fff; background: var(--aic-blue); border-color: var(--aic-blue); }
+
+    .aic-status { min-height: 24px; margin: 0 0 12px; color: var(--aic-muted); font-size: 0.93rem; }
+    .aic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .aic-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--aic-line);
+      border-radius: var(--aic-radius);
+      background: var(--aic-card);
+      box-shadow: 0 8px 25px rgba(23,54,93,0.055);
+    }
+    .aic-card:hover { box-shadow: var(--aic-shadow); transform: translateY(-2px); }
+    .aic-visual {
+      min-height: 205px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(47,117,181,0.13), rgba(242,189,61,0.2)),
+        #eef4fa;
+    }
+    .aic-visual img { width: 100%; height: 205px; object-fit: cover; }
+    .aic-placeholder { text-align: center; padding: 26px; color: var(--aic-navy); }
+    .aic-placeholder-icon { display: block; font-size: 2.5rem; margin-bottom: 8px; }
+    .aic-placeholder strong { font-size: 1rem; }
+    .aic-type {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 2;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      color: var(--aic-navy);
+      font-size: 0.76rem;
+      font-weight: 850;
+      box-shadow: 0 6px 18px rgba(23,54,93,0.1);
+    }
+    .aic-card-body { padding: 20px; display: flex; flex: 1; flex-direction: column; }
+    .aic-audience { color: var(--aic-blue); font-size: 0.79rem; font-weight: 850; text-transform: uppercase; letter-spacing: 0.07em; }
+    .aic-card h3 { margin: 8px 0 8px; color: var(--aic-navy); font-size: 1.25rem; line-height: 1.24; }
+    .aic-card p { margin: 0; color: var(--aic-muted); font-size: 0.96rem; }
+    .aic-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0; }
+    .aic-tag { padding: 5px 8px; border-radius: 999px; background: #f1f4f8; color: #4d5869; font-size: 0.75rem; font-weight: 750; }
+    .aic-card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+    .aic-card-actions .aic-button { min-height: 39px; padding: 8px 11px; font-size: 0.84rem; }
+
+    .aic-empty {
+      grid-column: 1 / -1;
+      padding: 36px;
+      text-align: center;
+      border: 1px dashed #bec7d5;
+      border-radius: var(--aic-radius);
+      background: #fff;
+      color: var(--aic-muted);
+    }
+
+    .aic-principle {
+      margin-top: 42px;
+      padding: 28px;
+      border-radius: 20px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--aic-navy), #255b91);
+    }
+    .aic-principle h2 { margin: 0 0 8px; font-size: 1.55rem; }
+    .aic-principle p { margin: 0; max-width: 900px; color: rgba(255,255,255,0.86); }
+
+    .aic-footer { padding: 32px 0; background: #102844; color: rgba(255,255,255,0.8); }
+    .aic-footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .aic-footer a { color: #fff; }
+
+    .aic-dialog {
+      width: min(720px, calc(100% - 24px));
+      max-height: min(84vh, 760px);
+      border: 0;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+    }
+    .aic-dialog::backdrop { background: rgba(10, 24, 42, 0.65); }
+    .aic-dialog-inner { padding: 24px; }
+    .aic-dialog-header { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
+    .aic-dialog h2 { margin: 0; color: var(--aic-navy); font-size: 1.55rem; }
+    .aic-close {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border: 1px solid var(--aic-line);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .aic-prompt-box {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--aic-line);
+      border-radius: 14px;
+      background: #f7f9fc;
+      white-space: pre-wrap;
+      color: #263247;
+    }
+    .aic-copy-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+    .aic-copy-status { color: var(--aic-green); font-weight: 800; min-height: 22px; }
+
+    @media (max-width: 940px) {
+      .aic-header { position: static; }
+      .aic-header-inner { align-items: flex-start; padding-block: 14px; }
+      .aic-nav { gap: 11px; }
+      .aic-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .aic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .aic-tools { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .aic-shell { width: min(100% - 22px, 1180px); }
+      .aic-header-inner { display: block; }
+      .aic-brand { margin-bottom: 12px; }
+      .aic-nav { justify-content: flex-start; }
+      .aic-nav a { font-size: 0.84rem; }
+      .aic-hero { padding-top: 48px; }
+      .aic-grid { grid-template-columns: 1fr; }
+      .aic-intro { display: block; }
+      .aic-mini-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .aic-card, .aic-button { transition: transform 160ms ease, box-shadow 160ms ease; }
+    }
+  </style>
+</head>
+<body>
+  <a class="aic-skip" href="#main-content">Skip to creations</a>
+
+  <header class="aic-header">
+    <div class="aic-shell aic-header-inner">
+      <a class="aic-brand" href="../" aria-label="Family Personal Development home">
+        <img src="../assets/images/familypd.png" alt="">
+        <span>Family Personal Development</span>
+      </a>
+      <nav class="aic-nav" aria-label="Main navigation">
+        <a href="../about/">About</a>
+        <a href="../approach/">Our Approach</a>
+        <a href="../resources/">Resources</a>
+        <a href="../kids/">Kids &amp; Teens</a>
+        <a href="../programs/">Programs</a>
+        <a href="../impact/">Impact</a>
+        <a class="aic-app-link" href="../app/">FamilyPD OS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="aic-hero">
+      <div class="aic-shell aic-hero-grid">
+        <div>
+          <span class="aic-eyebrow">FamilyPD AI Creations</span>
+          <h1>See what is possible with a clear idea and the right prompt.</h1>
+          <p>Explore AI-assisted images, webpages, prompts, project support, and tutoring examples designed to help families learn, create, organize, and grow.</p>
+          <div class="aic-actions">
+            <a class="aic-button aic-button-primary" href="#creation-gallery">Explore the Gallery</a>
+            <a class="aic-button aic-button-secondary" href="../resources/">Back to Learning Resources</a>
+          </div>
+        </div>
+
+        <aside class="aic-separate-card" aria-label="FamilyPD AI is a separate tool">
+          <strong>Looking for FamilyPD AI?</strong>
+          <p>FamilyPD AI is the assistant families can use. AI Creations is the separate showcase where you can see examples, prompts, and possibilities.</p>
+          <div class="aic-mini-grid" aria-hidden="true">
+            <span>Images</span>
+            <span>Webpages</span>
+            <span>Project Help</span>
+            <span>Tutoring</span>
+          </div>
+          <div class="aic-actions">
+            <a class="aic-button aic-button-secondary" id="family-pd-ai-link" href="../ai/">Open FamilyPD AI</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="aic-main" id="creation-gallery" aria-labelledby="gallery-title">
+      <div class="aic-shell">
+        <div class="aic-intro">
+          <div>
+            <h2 id="gallery-title">AI Creation Gallery</h2>
+            <p>Browse by creation type or search for a topic. Each example may include the idea, the prompt, and a link to the finished creation.</p>
+          </div>
+        </div>
+
+        <div class="aic-tools">
+          <label>
+            <span class="aic-skip">Search creations</span>
+            <input class="aic-search" id="creation-search" type="search" placeholder="Search creations..." autocomplete="off">
+          </label>
+          <div class="aic-filters" id="creation-filters" aria-label="Filter creations"></div>
+        </div>
+
+        <p class="aic-status" id="creation-status" aria-live="polite"></p>
+        <div class="aic-grid" id="creation-grid"></div>
+
+        <aside class="aic-principle">
+          <h2>AI should support thinking—not replace it.</h2>
+          <p>FamilyPD encourages families and learners to use AI to ask better questions, understand difficult ideas, organize projects, practice skills, and improve their own work while protecting privacy and checking information carefully.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="aic-footer">
+    <div class="aic-shell aic-footer-inner">
+      <span>© <span id="aic-year"></span> Family Personal Development, Inc.</span>
+      <span><a href="../">FamilyPD.org</a> · We build tools that help families thrive.</span>
+    </div>
+  </footer>
+
+  <dialog class="aic-dialog" id="prompt-dialog" aria-labelledby="dialog-title">
+    <div class="aic-dialog-inner">
+      <div class="aic-dialog-header">
+        <div>
+          <span class="aic-audience" id="dialog-category"></span>
+          <h2 id="dialog-title">Prompt</h2>
+        </div>
+        <button class="aic-close" id="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="aic-prompt-box" id="dialog-prompt"></div>
+      <div class="aic-copy-row">
+        <button class="aic-button aic-button-primary" id="copy-prompt" type="button">Copy Prompt</button>
+        <span class="aic-copy-status" id="copy-status" aria-live="polite"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="creations-data.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      const content = window.FAMILY_PD_AI_CREATIONS || { categories: [], creations: [] };
+      const categoryMap = new Map(content.categories.map(category => [category.id, category.label]));
+      const iconMap = {
+        images: "▧",
+        webpages: "⌘",
+        prompts: "✦",
+        projects: "✓",
+        tutoring: "?"
+      };
+
+      const state = { category: "all", search: "" };
+      const grid = document.getElementById("creation-grid");
+      const filters = document.getElementById("creation-filters");
+      const status = document.getElementById("creation-status");
+      const search = document.getElementById("creation-search");
+      const dialog = document.getElementById("prompt-dialog");
+      const dialogTitle = document.getElementById("dialog-title");
+      const dialogCategory = document.getElementById("dialog-category");
+      const dialogPrompt = document.getElementById("dialog-prompt");
+      const copyStatus = document.getElementById("copy-status");
+      let activePrompt = "";
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function filteredCreations() {
+        const query = state.search.trim().toLowerCase();
+        return content.creations.filter(item => {
+          const matchesCategory = state.category === "all" || item.category === state.category;
+          const searchable = [
+            item.title,
+            item.description,
+            item.audience,
+            categoryMap.get(item.category),
+            ...(item.tags || [])
+          ].join(" ").toLowerCase();
+          return matchesCategory && (!query || searchable.includes(query));
+        });
+      }
+
+      function renderFilters() {
+        filters.innerHTML = content.categories.map(category => `
+          <button
+            class="aic-filter"
+            type="button"
+            data-category="${escapeHtml(category.id)}"
+            aria-pressed="${state.category === category.id}">
+            ${escapeHtml(category.label)}
+          </button>
+        `).join("");
+      }
+
+      function visualMarkup(item) {
+        if (item.image) {
+          return `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy">`;
+        }
+        return `
+          <div class="aic-placeholder" aria-label="Add a screenshot for ${escapeHtml(item.title)}">
+            <span class="aic-placeholder-icon" aria-hidden="true">${iconMap[item.category] || "✦"}</span>
+            <strong>${escapeHtml(categoryMap.get(item.category) || "AI Creation")}</strong>
+          </div>
+        `;
+      }
+
+      function actionMarkup(item) {
+        const actions = [];
+        if (item.prompt) {
+          actions.push(`<button class="aic-button aic-button-primary" type="button" data-prompt-id="${escapeHtml(item.id)}">View Prompt</button>`);
+        }
+        if (item.link) {
+          actions.push(`<a class="aic-button aic-button-secondary" href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.linkLabel || "View Creation")}</a>`);
+        }
+        return actions.join("");
+      }
+
+      function renderCards() {
+        const items = filteredCreations();
+        status.textContent = `${items.length} creation${items.length === 1 ? "" : "s"} shown`;
+
+        if (!items.length) {
+          grid.innerHTML = `<div class="aic-empty"><strong>No creations match that search.</strong><br>Try another word or choose All Creations.</div>`;
+          return;
+        }
+
+        grid.innerHTML = items.map(item => `
+          <article class="aic-card">
+            <div class="aic-visual">
+              <span class="aic-type">${escapeHtml(categoryMap.get(item.category) || item.category)}</span>
+              ${visualMarkup(item)}
+            </div>
+            <div class="aic-card-body">
+              <span class="aic-audience">${escapeHtml(item.audience || "FamilyPD Community")}</span>
+              <h3>${escapeHtml(item.title)}</h3>
+              <p>${escapeHtml(item.description)}</p>
+              <div class="aic-tags">
+                ${(item.tags || []).map(tag => `<span class="aic-tag">${escapeHtml(tag)}</span>`).join("")}
+              </div>
+              <div class="aic-card-actions">${actionMarkup(item)}</div>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      function render() {
+        renderFilters();
+        renderCards();
+      }
+
+      filters.addEventListener("click", event => {
+        const button = event.target.closest("[data-category]");
+        if (!button) return;
+        state.category = button.dataset.category;
+        render();
+      });
+
+      search.addEventListener("input", event => {
+        state.search = event.target.value;
+        renderCards();
+      });
+
+      grid.addEventListener("click", event => {
+        const button = event.target.closest("[data-prompt-id]");
+        if (!button) return;
+        const item = content.creations.find(entry => entry.id === button.dataset.promptId);
+        if (!item) return;
+        activePrompt = item.prompt || "";
+        dialogTitle.textContent = item.title;
+        dialogCategory.textContent = categoryMap.get(item.category) || "AI Creation";
+        dialogPrompt.textContent = activePrompt;
+        copyStatus.textContent = "";
+        dialog.showModal();
+      });
+
+      document.getElementById("dialog-close").addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", event => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      document.getElementById("copy-prompt").addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(activePrompt);
+          copyStatus.textContent = "Prompt copied.";
+        } catch (error) {
+          copyStatus.textContent = "Select and copy the prompt above.";
+        }
+      });
+
+      document.getElementById("aic-year").textContent = new Date().getFullYear();
+      document.getElementById("family-pd-ai-link").href = content.familyPdAiUrl || "../ai/";
+      render();
+    }());
+  </script>
+</body>
+</html>
