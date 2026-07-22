@@ -631,7 +631,7 @@ if (involvementPreview) {
     emailButton.addEventListener('click', () => {
       const subject = encodeURIComponent('Family PD Get Involved Inquiry');
       const body = encodeURIComponent(buildInvolvementMessage());
-      window.location.href = `mailto:info@familypd.org?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:admin@familypd.org?subject=${subject}&body=${body}`;
       if (status) status.textContent = 'Opening your email application…';
     });
   }

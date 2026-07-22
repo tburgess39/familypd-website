@@ -1,104 +1,96 @@
 (() => {
   'use strict';
-  const grid = document.getElementById('learning-tool-grid');
+  const grid = document.getElementById('learning-resource-grid');
   if (!grid) return;
 
   const state = {
     resources: [],
     language: localStorage.getItem('familypd:learning-tool-language') || 'en',
-    category: 'all',
-    audience: 'all',
+    category: '',
+    audience: '',
+    pillar: '',
     search: ''
   };
 
-  const t = {
-    en: {open:'Open official resource', useFor:'How this can help a FamilyPD project', note:'Account or support note', age:'Age / access', all:'All', noResults:'No learning tools match the current filters.'},
-    es: {open:'Abrir recurso oficial', useFor:'Cómo puede ayudar con un proyecto de FamilyPD', note:'Nota de cuenta o apoyo', age:'Edad / acceso', all:'Todos', noResults:'Ninguna herramienta coincide con los filtros actuales.'}
+  const words = {
+    en: { allCategories:'All categories', allAudiences:'All audiences', allPillars:'All pillars', open:'Open official resource', use:'Project ideas', age:'Age / access', note:'Account or support note', results:'resources shown', none:'No resources match these filters.' },
+    es: { allCategories:'Todas las categorías', allAudiences:'Todos los públicos', allPillars:'Todos los pilares', open:'Abrir recurso oficial', use:'Ideas para proyectos', age:'Edad / acceso', note:'Nota de cuenta o apoyo', results:'recursos mostrados', none:'Ningún recurso coincide con estos filtros.' }
   };
 
-  const esc = value => String(value ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");
+  const esc = value => String(value ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const local = value => typeof value === 'string' ? value : value?.[state.language] || value?.en || '';
 
-  function renderLanguage() {
-    document.documentElement.lang = state.language;
-    document.querySelectorAll('[data-learning-copy]').forEach(el => {
-      const copy = el.dataset[state.language];
-      if (copy) el.textContent = copy;
-    });
-    document.querySelectorAll('[data-learning-language]').forEach(button => {
-      const active = button.dataset.learningLanguage === state.language;
-      button.classList.toggle('active', active);
-      button.setAttribute('aria-pressed', String(active));
-    });
+  function options(select, values, first, selected) {
+    select.innerHTML = `<option value="">${first}</option>` + values.map(value => `<option value="${esc(value)}">${esc(value)}</option>`).join('');
+    select.value = values.includes(selected) ? selected : '';
   }
 
-  function populateFilters() {
-    const category = document.getElementById('learning-category');
-    const audience = document.getElementById('learning-audience');
+  function updateFilters() {
     const categories = [...new Set(state.resources.map(item => item.category))].sort();
     const audiences = [...new Set(state.resources.flatMap(item => item.audiences || []))].sort();
-
-    category.innerHTML = `<option value="all">${t[state.language].all}</option>` +
-      categories.map(item => `<option value="${esc(item)}">${esc(item)}</option>`).join('');
-    audience.innerHTML = `<option value="all">${t[state.language].all}</option>` +
-      audiences.map(item => `<option value="${esc(item)}">${esc(item)}</option>`).join('');
-
-    category.value = categories.includes(state.category) ? state.category : 'all';
-    audience.value = audiences.includes(state.audience) ? state.audience : 'all';
+    const pillars = [...new Set(state.resources.flatMap(item => item.pillars || []))].sort();
+    options(document.getElementById('resource-category'), categories, words[state.language].allCategories, state.category);
+    options(document.getElementById('resource-audience'), audiences, words[state.language].allAudiences, state.audience);
+    options(document.getElementById('resource-pillar'), pillars, words[state.language].allPillars, state.pillar);
   }
 
-  function matches(resource) {
-    if (state.category !== 'all' && resource.category !== state.category) return false;
-    if (state.audience !== 'all' && !(resource.audiences || []).includes(state.audience)) return false;
-    const text = [resource.name, resource.category, ...(resource.audiences || []), local(resource.description), local(resource.use_for)].join(' ').toLowerCase();
-    return !state.search || text.includes(state.search.toLowerCase());
+  function matches(item) {
+    if (state.category && item.category !== state.category) return false;
+    if (state.audience && !(item.audiences || []).includes(state.audience)) return false;
+    if (state.pillar && !(item.pillars || []).includes(state.pillar)) return false;
+    const haystack = [item.name, item.category, ...(item.audiences || []), ...(item.pillars || []), local(item.description), local(item.use_for), local(item.age_note)].join(' ').toLowerCase();
+    return !state.search || haystack.includes(state.search.toLowerCase());
   }
 
-  function card(resource) {
-    const article = document.createElement('article');
-    article.className = 'learning-tool-card';
-    article.innerHTML = `
-      <div class="learning-tool-top"><span>${esc(resource.category)}</span><small>${esc((resource.audiences || []).join(' · '))}</small></div>
-      <h2>${esc(resource.name)}</h2>
-      <p>${esc(local(resource.description))}</p>
-      <div class="learning-tool-detail"><strong>${t[state.language].useFor}</strong><p>${esc(local(resource.use_for))}</p></div>
-      <div class="learning-tool-detail"><strong>${t[state.language].age}</strong><p>${esc(local(resource.age_note))}</p></div>
-      <div class="learning-tool-note"><strong>${t[state.language].note}</strong><p>${esc(local(resource.support_note))}</p></div>
-      <a class="button" href="${esc(resource.url)}" target="_blank" rel="noopener noreferrer">${t[state.language].open} ↗</a>`;
-    return article;
+  function card(item) {
+    return `<article class="learning-tool-card">
+      <div class="learning-tool-top"><span>${esc(item.category)}</span><small>${esc((item.audiences || []).join(' · '))}</small></div>
+      <h2>${esc(item.name)}</h2>
+      <p>${esc(local(item.description))}</p>
+      <div class="resource-pillar-tags">${(item.pillars || []).map(p => `<span>${esc(p)}</span>`).join('')}</div>
+      <div class="learning-tool-detail"><strong>${words[state.language].use}</strong><p>${esc(local(item.use_for))}</p></div>
+      <div class="learning-tool-detail"><strong>${words[state.language].age}</strong><p>${esc(local(item.age_note))}</p></div>
+      <div class="learning-tool-note"><strong>${words[state.language].note}</strong><p>${esc(local(item.support_note))}</p></div>
+      <a class="button" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${words[state.language].open} ↗</a>
+    </article>`;
   }
 
   function render() {
-    renderLanguage();
-    populateFilters();
+    document.documentElement.lang = state.language;
+    document.querySelectorAll('[data-resource-language]').forEach(button => {
+      const active = button.dataset.resourceLanguage === state.language;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    updateFilters();
     const results = state.resources.filter(matches);
-    document.getElementById('learning-result-count').textContent = String(results.length);
-    grid.innerHTML = '';
-    if (!results.length) {
-      grid.innerHTML = `<div class="resource-empty-state">${t[state.language].noResults}</div>`;
-      return;
-    }
-    results.forEach(item => grid.appendChild(card(item)));
+    const count = document.getElementById('resource-result-count');
+    if (count) count.textContent = `${results.length} ${words[state.language].results}`;
+    grid.innerHTML = results.length ? results.map(card).join('') : `<div class="resource-empty-state">${words[state.language].none}</div>`;
   }
 
   async function load() {
     try {
-      const response = await fetch('../../assets/data/learning-resources.json', {cache:'no-store'});
-      if (!response.ok) throw new Error();
-      state.resources = (await response.json()).resources || [];
+      const response = await fetch('/assets/data/learning-resources.json', {cache:'no-store'});
+      if (!response.ok) throw new Error('Resource catalog failed to load');
+      const data = await response.json();
+      state.resources = data.resources || [];
+      document.getElementById('resource-notice').textContent = local(data.notice);
       render();
-    } catch {
-      grid.innerHTML = '<div class="resource-empty-state">The learning tool directory could not load. Please refresh the page.</div>';
+    } catch (error) {
+      grid.innerHTML = '<div class="resource-empty-state">The learning directory could not load. Refresh the page and try again.</div>';
+      console.error(error);
     }
   }
 
-  document.querySelectorAll('[data-learning-language]').forEach(button => button.addEventListener('click', () => {
-    state.language = button.dataset.learningLanguage;
+  document.querySelectorAll('[data-resource-language]').forEach(button => button.addEventListener('click', () => {
+    state.language = button.dataset.resourceLanguage;
     localStorage.setItem('familypd:learning-tool-language', state.language);
     render();
   }));
-  document.getElementById('learning-search').addEventListener('input', e => { state.search = e.target.value.trim(); render(); });
-  document.getElementById('learning-category').addEventListener('change', e => { state.category = e.target.value; render(); });
-  document.getElementById('learning-audience').addEventListener('change', e => { state.audience = e.target.value; render(); });
+  document.getElementById('resource-search').addEventListener('input', event => { state.search = event.target.value.trim(); render(); });
+  document.getElementById('resource-category').addEventListener('change', event => { state.category = event.target.value; render(); });
+  document.getElementById('resource-audience').addEventListener('change', event => { state.audience = event.target.value; render(); });
+  document.getElementById('resource-pillar').addEventListener('change', event => { state.pillar = event.target.value; render(); });
   load();
 })();

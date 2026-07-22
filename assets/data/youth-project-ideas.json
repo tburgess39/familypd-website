@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-22",
   "age_bands": {
     "4-7": {
       "en": "Little Learners (Ages 4–7)",
@@ -12,6 +12,10 @@
     "13-18": {
       "en": "Teen Launch (Ages 13–18)",
       "es": "Lanzamiento juvenil (13–18 años)"
+    },
+    "family": {
+      "en": "Whole Family / Adult-Supported",
+      "es": "Toda la familia / Con apoyo adulto"
     }
   },
   "ideas": [
@@ -19,7 +23,8 @@
       "id": "health-routine-cards",
       "ages": [
         "4-7",
-        "8-12"
+        "8-12",
+        "family"
       ],
       "pillar": "Health",
       "project_type": "Printable",
@@ -80,13 +85,18 @@
       "resource_ids": [
         "canva-education",
         "openai-academy"
+      ],
+      "need_tags": [
+        "health",
+        "organization"
       ]
     },
     {
       "id": "feelings-comic",
       "ages": [
         "4-7",
-        "8-12"
+        "8-12",
+        "family"
       ],
       "pillar": "Relationships",
       "project_type": "Comic",
@@ -148,13 +158,17 @@
         "scratch",
         "canva-education",
         "openai-academy"
+      ],
+      "need_tags": [
+        "connection"
       ]
     },
     {
       "id": "safety-scenario-game",
       "ages": [
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Health",
       "project_type": "Game",
@@ -217,13 +231,18 @@
         "code-org",
         "canva-education",
         "openai-academy"
+      ],
+      "need_tags": [
+        "health",
+        "organization"
       ]
     },
     {
       "id": "study-hack-cards",
       "ages": [
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Education & Skills",
       "project_type": "Study Tool",
@@ -286,13 +305,18 @@
         "canva-education",
         "openai-academy",
         "diffit"
+      ],
+      "need_tags": [
+        "school",
+        "career"
       ]
     },
     {
       "id": "chore-randomizer",
       "ages": [
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Goals",
       "project_type": "App",
@@ -355,13 +379,18 @@
         "makecode",
         "scratch",
         "mit-app-inventor"
+      ],
+      "need_tags": [
+        "goals",
+        "organization"
       ]
     },
     {
       "id": "allowance-budget-game",
       "ages": [
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Finances",
       "project_type": "Game",
@@ -424,12 +453,16 @@
         "scratch",
         "canva-education",
         "openai-academy"
+      ],
+      "need_tags": [
+        "money"
       ]
     },
     {
       "id": "career-spotlight",
       "ages": [
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Education & Skills",
       "project_type": "Video or Presentation",
@@ -493,12 +526,17 @@
         "openai-academy",
         "grok",
         "magicschool"
+      ],
+      "need_tags": [
+        "school",
+        "career"
       ]
     },
     {
       "id": "interview-practice-app",
       "ages": [
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Education & Skills",
       "project_type": "App",
@@ -561,6 +599,10 @@
         "code-org",
         "openai-academy",
         "canva-education"
+      ],
+      "need_tags": [
+        "school",
+        "career"
       ]
     },
     {
@@ -568,7 +610,8 @@
       "ages": [
         "4-7",
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Goals",
       "project_type": "Tracker",
@@ -630,6 +673,10 @@
         "canva-education",
         "khan-academy",
         "openai-academy"
+      ],
+      "need_tags": [
+        "goals",
+        "organization"
       ]
     },
     {
@@ -637,7 +684,8 @@
       "ages": [
         "4-7",
         "8-12",
-        "13-18"
+        "13-18",
+        "family"
       ],
       "pillar": "Relationships",
       "project_type": "Family Challenge",
@@ -699,6 +747,456 @@
         "canva-education",
         "scratch",
         "openai-academy"
+      ],
+      "need_tags": [
+        "connection"
+      ]
+    },
+    {
+      "id": "family-command-center",
+      "ages": [
+        "8-12",
+        "13-18",
+        "family"
+      ],
+      "pillar": "Goals",
+      "project_type": "Printable",
+      "time": "1–3 hours",
+      "need_tags": [
+        "organization",
+        "goals"
+      ],
+      "title": {
+        "en": "Family Command Center",
+        "es": "Centro de organización familiar"
+      },
+      "mission": {
+        "en": "Design a simple visual center for schedules, chores, reminders, and one family goal.",
+        "es": "Diseñe un centro visual para horarios, tareas, recordatorios y una meta familiar."
+      },
+      "skills": [
+        "Planning",
+        "Design",
+        "Responsibility"
+      ],
+      "steps": {
+        "en": [
+          "List the information the family forgets most.",
+          "Choose a wall, board, binder, or digital format.",
+          "Create sections for schedule, tasks, reminders, and one goal.",
+          "Assign one person to update each section.",
+          "Test it for one week and simplify it."
+        ],
+        "es": [
+          "Liste la información que la familia olvida.",
+          "Elija pared, tablero, carpeta o formato digital.",
+          "Cree secciones de horario, tareas, recordatorios y una meta.",
+          "Asigne a una persona para actualizar cada sección.",
+          "Pruébelo una semana y simplifique."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Can everyone find what they need quickly?",
+          "Is the system simple enough to update?",
+          "Are responsibilities clear?"
+        ],
+        "es": [
+          "¿Todos encuentran lo necesario rápidamente?",
+          "¿Es fácil de actualizar?",
+          "¿Están claras las responsabilidades?"
+        ]
+      },
+      "household_need": {
+        "en": "Reduce clutter, missed tasks, and confusion about who is doing what.",
+        "es": "Reducir desorden, tareas olvidadas y confusión de responsabilidades."
+      },
+      "school_connection": {
+        "en": "Uses organization, visual communication, time management, and design.",
+        "es": "Usa organización, comunicación visual, tiempo y diseño."
+      },
+      "community_connection": {
+        "en": "A librarian, organizer, teacher, or mentor could review the layout.",
+        "es": "Un bibliotecario, organizador, maestro o mentor puede revisar el diseño."
+      },
+      "resource_ids": [
+        "canva-education",
+        "adobe-express",
+        "chatgpt"
+      ]
+    },
+    {
+      "id": "robotic-helping-hand",
+      "ages": [
+        "8-12",
+        "13-18",
+        "family"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "Robotics or Maker",
+      "time": "Multi-day",
+      "need_tags": [
+        "career",
+        "organization"
+      ],
+      "title": {
+        "en": "Robotic Helping Hand Challenge",
+        "es": "Reto de ayuda robótica"
+      },
+      "mission": {
+        "en": "Design and prototype a robot or mechanism that helps with a safe household task.",
+        "es": "Diseñe un robot o mecanismo que ayude con una tarea doméstica segura."
+      },
+      "skills": [
+        "Planning",
+        "Coding",
+        "Logic",
+        "Responsibility"
+      ],
+      "steps": {
+        "en": [
+          "Choose a safe household task that could be easier.",
+          "Draw the problem and success criteria.",
+          "Research a mechanism, sensor, or coding approach.",
+          "Build or simulate a prototype.",
+          "Test safely, record results, and improve one feature."
+        ],
+        "es": [
+          "Elija una tarea segura que pueda ser más fácil.",
+          "Dibuje el problema y criterios de éxito.",
+          "Investigue un mecanismo, sensor o código.",
+          "Construya o simule un prototipo.",
+          "Pruebe con seguridad, registre y mejore."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Does it solve the chosen problem?",
+          "Is the design safe around people and property?",
+          "What failed and what changed?"
+        ],
+        "es": [
+          "¿Resuelve el problema?",
+          "¿Es seguro para personas y propiedad?",
+          "¿Qué falló y qué cambió?"
+        ]
+      },
+      "household_need": {
+        "en": "Use engineering to solve a real organization or accessibility need.",
+        "es": "Use ingeniería para resolver una necesidad de organización o accesibilidad."
+      },
+      "school_connection": {
+        "en": "Connects engineering design, robotics, coding, data, and documentation.",
+        "es": "Conecta diseño, robótica, programación, datos y documentación."
+      },
+      "community_connection": {
+        "en": "A robotics team, maker space, mentor, or educator can review the prototype.",
+        "es": "Un equipo de robótica, laboratorio, mentor o educador puede revisar."
+      },
+      "resource_ids": [
+        "cmu-robotics",
+        "vex-education",
+        "vexcode-v5",
+        "makecode",
+        "robotmesh"
+      ]
+    },
+    {
+      "id": "roblox-family-systems-game",
+      "ages": [
+        "13-18",
+        "family"
+      ],
+      "pillar": "Goals",
+      "project_type": "Game",
+      "time": "Multi-day",
+      "need_tags": [
+        "organization",
+        "goals",
+        "career"
+      ],
+      "title": {
+        "en": "Roblox Family Systems Game",
+        "es": "Juego de sistemas familiares en Roblox"
+      },
+      "mission": {
+        "en": "Prototype a Roblox experience that rewards healthy routines, teamwork, or goal progress.",
+        "es": "Cree una experiencia de Roblox que premie rutinas saludables, trabajo en equipo o metas."
+      },
+      "skills": [
+        "Game design",
+        "Coding",
+        "Planning",
+        "Testing"
+      ],
+      "steps": {
+        "en": [
+          "Choose one family system to teach.",
+          "Write the player goal, rules, rewards, and safety limits.",
+          "Build a private prototype in Roblox Studio.",
+          "Ask family members to test without publishing publicly.",
+          "Revise confusing rules and review privacy before any sharing."
+        ],
+        "es": [
+          "Elija un sistema familiar para enseñar.",
+          "Escriba meta, reglas, premios y límites de seguridad.",
+          "Cree un prototipo privado en Roblox Studio.",
+          "Pida pruebas familiares sin publicar.",
+          "Revise reglas y privacidad antes de compartir."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Does the game teach the intended habit?",
+          "Can players understand the rules?",
+          "Are chat, spending, privacy, and public sharing controlled?"
+        ],
+        "es": [
+          "¿Enseña el hábito?",
+          "¿Se entienden las reglas?",
+          "¿Están controlados chat, gastos, privacidad y publicación?"
+        ]
+      },
+      "household_need": {
+        "en": "Make a routine or goal more engaging while practicing digital creation.",
+        "es": "Hacer una rutina o meta más atractiva practicando creación digital."
+      },
+      "school_connection": {
+        "en": "Uses Lua, game design, logic, debugging, writing, and digital citizenship.",
+        "es": "Usa Lua, diseño, lógica, depuración, escritura y ciudadanía digital."
+      },
+      "community_connection": {
+        "en": "A trusted coder, educator, or adult can review safety and design.",
+        "es": "Un programador, educador o adulto de confianza puede revisar seguridad y diseño."
+      },
+      "resource_ids": [
+        "roblox-education",
+        "roblox-studio",
+        "w3schools",
+        "chatgpt"
+      ]
+    },
+    {
+      "id": "minecraft-future-home",
+      "ages": [
+        "8-12",
+        "13-18",
+        "family"
+      ],
+      "pillar": "Finances",
+      "project_type": "Game",
+      "time": "1–3 hours",
+      "need_tags": [
+        "money",
+        "goals"
+      ],
+      "title": {
+        "en": "Minecraft Future Home Budget Build",
+        "es": "Construcción de hogar futuro con presupuesto en Minecraft"
+      },
+      "mission": {
+        "en": "Design a home or community in Minecraft while working within a simple budget and priority list.",
+        "es": "Diseñe un hogar o comunidad en Minecraft usando un presupuesto y prioridades."
+      },
+      "skills": [
+        "Budgeting",
+        "Math",
+        "Planning",
+        "Design"
+      ],
+      "steps": {
+        "en": [
+          "Choose a total budget and required needs.",
+          "Assign costs to materials, rooms, and features.",
+          "Plan before building.",
+          "Track spending while constructing.",
+          "Explain one tradeoff and one future improvement."
+        ],
+        "es": [
+          "Elija presupuesto y necesidades.",
+          "Asigne costos a materiales, cuartos y funciones.",
+          "Planifique antes de construir.",
+          "Registre gastos al construir.",
+          "Explique una decisión y mejora futura."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Did the build stay within budget?",
+          "Were needs chosen before wants?",
+          "Can the builder explain tradeoffs?"
+        ],
+        "es": [
+          "¿Se mantuvo dentro del presupuesto?",
+          "¿Se eligieron necesidades antes que deseos?",
+          "¿Puede explicar decisiones?"
+        ]
+      },
+      "household_need": {
+        "en": "Practice needs, wants, planning, and tradeoffs without using real money.",
+        "es": "Practicar necesidades, deseos, planificación y decisiones sin dinero real."
+      },
+      "school_connection": {
+        "en": "Connects math, economics, design, writing, and digital building.",
+        "es": "Conecta matemáticas, economía, diseño, escritura y construcción digital."
+      },
+      "community_connection": {
+        "en": "A financial educator, teacher, or family member can review the budget.",
+        "es": "Un educador financiero, maestro o familiar puede revisar el presupuesto."
+      },
+      "resource_ids": [
+        "minecraft-education",
+        "khan-academy",
+        "canva-education"
+      ]
+    },
+    {
+      "id": "school-system-map",
+      "ages": [
+        "13-18",
+        "family"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "Research",
+      "time": "1–3 hours",
+      "need_tags": [
+        "school",
+        "organization"
+      ],
+      "title": {
+        "en": "School System Map",
+        "es": "Mapa del sistema escolar"
+      },
+      "mission": {
+        "en": "Create a one-page map showing where the family finds grades, calendars, policies, support services, records, and special-program information.",
+        "es": "Cree un mapa de una página con calificaciones, calendarios, políticas, apoyo, registros e información especial."
+      },
+      "skills": [
+        "Research",
+        "Source review",
+        "Planning",
+        "Communication"
+      ],
+      "steps": {
+        "en": [
+          "List the school information the family often needs.",
+          "Find official school, district, state, and federal sources.",
+          "Record the page title, purpose, and contact point.",
+          "Create a simple visual map or family reference sheet.",
+          "Review it each grading period."
+        ],
+        "es": [
+          "Liste la información escolar necesaria.",
+          "Encuentre fuentes oficiales escolares, distritales, estatales y federales.",
+          "Registre título, propósito y contacto.",
+          "Cree un mapa o guía visual.",
+          "Revíselo cada período."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Are the sources official and current?",
+          "Can another caregiver find the information?",
+          "Does the map avoid private student details?"
+        ],
+        "es": [
+          "¿Las fuentes son oficiales y actuales?",
+          "¿Otro cuidador puede encontrar la información?",
+          "¿Evita datos privados del estudiante?"
+        ]
+      },
+      "household_need": {
+        "en": "Reduce confusion about school information, services, and documents.",
+        "es": "Reducir confusión sobre información, servicios y documentos escolares."
+      },
+      "school_connection": {
+        "en": "Builds research, source evaluation, family advocacy, and organization.",
+        "es": "Desarrolla investigación, evaluación de fuentes, defensa y organización."
+      },
+      "community_connection": {
+        "en": "A parent center, counselor, librarian, or advocate can review the map.",
+        "es": "Un centro de padres, consejero, bibliotecario o defensor puede revisarlo."
+      },
+      "resource_ids": [
+        "canva-education",
+        "adobe-express",
+        "chatgpt",
+        "gcfglobal"
+      ]
+    },
+    {
+      "id": "career-skill-sprint",
+      "ages": [
+        "13-18",
+        "family"
+      ],
+      "pillar": "Education & Skills",
+      "project_type": "Family Challenge",
+      "time": "Multi-day",
+      "need_tags": [
+        "career",
+        "goals"
+      ],
+      "title": {
+        "en": "Seven-Day Career Skill Sprint",
+        "es": "Reto de siete días de habilidad profesional"
+      },
+      "mission": {
+        "en": "Choose one employability or technical skill and practice it in small daily steps for one week.",
+        "es": "Elija una habilidad laboral o técnica y practíquela en pasos diarios durante una semana."
+      },
+      "skills": [
+        "Career readiness",
+        "Goal setting",
+        "Reflection",
+        "Planning"
+      ],
+      "steps": {
+        "en": [
+          "Choose one skill tied to a real career goal.",
+          "Select one trustworthy learning resource.",
+          "Plan 15–30 minutes of practice for seven days.",
+          "Save one piece of evidence each day.",
+          "Reflect on progress and choose the next step."
+        ],
+        "es": [
+          "Elija una habilidad ligada a una meta profesional.",
+          "Seleccione un recurso confiable.",
+          "Planifique 15–30 minutos por siete días.",
+          "Guarde evidencia diaria.",
+          "Reflexione y elija el próximo paso."
+        ]
+      },
+      "test_questions": {
+        "en": [
+          "Was practice completed consistently?",
+          "What evidence shows improvement?",
+          "What credential, course, or project should come next?"
+        ],
+        "es": [
+          "¿Se practicó con constancia?",
+          "¿Qué evidencia muestra mejora?",
+          "¿Qué credencial, curso o proyecto sigue?"
+        ]
+      },
+      "household_need": {
+        "en": "Turn career talk into a small, measurable learning routine.",
+        "es": "Convertir conversación de carrera en una rutina medible."
+      },
+      "school_connection": {
+        "en": "Uses goal setting, workplace readiness, learning reflection, and portfolio evidence.",
+        "es": "Usa metas, preparación laboral, reflexión y evidencia de portafolio."
+      },
+      "community_connection": {
+        "en": "A mentor, employer, teacher, or workforce program can give feedback.",
+        "es": "Un mentor, empleador, maestro o programa laboral puede dar comentarios."
+      },
+      "resource_ids": [
+        "wrs-practice",
+        "microsoft-learn",
+        "linkedin-learning",
+        "harvard-free",
+        "typing-com"
       ]
     }
   ],

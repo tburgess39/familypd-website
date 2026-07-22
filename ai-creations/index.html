@@ -1,13 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Creations | Family Personal Development</title>
-  <meta name="description" content="Explore AI-assisted images, webpages, prompts, project support, and tutoring examples created by Family Personal Development.">
-  <link rel="icon" href="../assets/images/familypd.ico" sizes="any">
-  <link rel="icon" type="image/png" href="../assets/images/familypd.png">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Creations | Family Personal Development</title>
+<meta content="Explore AI-assisted images, webpages, prompts, project support, and tutoring examples created by Family Personal Development." name="description"/>
+<link href="../assets/images/familypd.ico" rel="icon" sizes="any"/>
+<link href="../assets/images/familypd.png" rel="icon" type="image/png"/>
+<style>
     :root {
       --aic-navy: #17365d;
       --aic-blue: #2f75b5;
@@ -335,109 +336,98 @@
   </style>
 </head>
 <body>
-  <a class="aic-skip" href="#main-content">Skip to creations</a>
-
-  <header class="aic-header">
-    <div class="aic-shell aic-header-inner">
-      <a class="aic-brand" href="../" aria-label="Family Personal Development home">
-        <img src="../assets/images/familypd.png" alt="">
-        <span>Family Personal Development</span>
-      </a>
-      <nav class="aic-nav" aria-label="Main navigation">
-        <a href="../about/">About</a>
-        <a href="../approach/">Our Approach</a>
-        <a href="../resources/">Resources</a>
-        <a href="../kids/">Kids &amp; Teens</a>
-        <a href="../programs/">Programs</a>
-        <a href="../impact/">Impact</a>
-        <a class="aic-app-link" href="../app/">FamilyPD OS</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="aic-hero">
-      <div class="aic-shell aic-hero-grid">
-        <div>
-          <span class="aic-eyebrow">FamilyPD AI Creations</span>
-          <h1>See what is possible with a clear idea and the right prompt.</h1>
-          <p>Explore AI-assisted images, webpages, prompts, project support, and tutoring examples designed to help families learn, create, organize, and grow.</p>
-          <div class="aic-actions">
-            <a class="aic-button aic-button-primary" href="#creation-gallery">Explore the Gallery</a>
-            <a class="aic-button aic-button-secondary" href="../resources/">Back to Learning Resources</a>
-          </div>
-        </div>
-
-        <aside class="aic-separate-card" aria-label="FamilyPD AI is a separate tool">
-          <strong>Looking for FamilyPD AI?</strong>
-          <p>FamilyPD AI is the assistant families can use. AI Creations is the separate showcase where you can see examples, prompts, and possibilities.</p>
-          <div class="aic-mini-grid" aria-hidden="true">
-            <span>Images</span>
-            <span>Webpages</span>
-            <span>Project Help</span>
-            <span>Tutoring</span>
-          </div>
-          <div class="aic-actions">
-            <a class="aic-button aic-button-secondary" id="family-pd-ai-link" href="../ai/">Open FamilyPD AI</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="aic-main" id="creation-gallery" aria-labelledby="gallery-title">
-      <div class="aic-shell">
-        <div class="aic-intro">
-          <div>
-            <h2 id="gallery-title">AI Creation Gallery</h2>
-            <p>Browse by creation type or search for a topic. Each example may include the idea, the prompt, and a link to the finished creation.</p>
-          </div>
-        </div>
-
-        <div class="aic-tools">
-          <label>
-            <span class="aic-skip">Search creations</span>
-            <input class="aic-search" id="creation-search" type="search" placeholder="Search creations..." autocomplete="off">
-          </label>
-          <div class="aic-filters" id="creation-filters" aria-label="Filter creations"></div>
-        </div>
-
-        <p class="aic-status" id="creation-status" aria-live="polite"></p>
-        <div class="aic-grid" id="creation-grid"></div>
-
-        <aside class="aic-principle">
-          <h2>AI should support thinking—not replace it.</h2>
-          <p>FamilyPD encourages families and learners to use AI to ask better questions, understand difficult ideas, organize projects, practice skills, and improve their own work while protecting privacy and checking information carefully.</p>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="aic-footer">
-    <div class="aic-shell aic-footer-inner">
-      <span>© <span id="aic-year"></span> Family Personal Development, Inc.</span>
-      <span><a href="../">FamilyPD.org</a> · We build tools that help families thrive.</span>
-    </div>
-  </footer>
-
-  <dialog class="aic-dialog" id="prompt-dialog" aria-labelledby="dialog-title">
-    <div class="aic-dialog-inner">
-      <div class="aic-dialog-header">
-        <div>
-          <span class="aic-audience" id="dialog-category"></span>
-          <h2 id="dialog-title">Prompt</h2>
-        </div>
-        <button class="aic-close" id="dialog-close" type="button" aria-label="Close">×</button>
-      </div>
-      <div class="aic-prompt-box" id="dialog-prompt"></div>
-      <div class="aic-copy-row">
-        <button class="aic-button aic-button-primary" id="copy-prompt" type="button">Copy Prompt</button>
-        <span class="aic-copy-status" id="copy-status" aria-live="polite"></span>
-      </div>
-    </div>
-  </dialog>
-
-  <script src="creations-data.js"></script>
-  <script>
+<a class="aic-skip" href="#main-content">Skip to creations</a>
+<header class="aic-header">
+<div class="aic-shell aic-header-inner">
+<a aria-label="Family Personal Development home" class="aic-brand" href="../">
+<img alt="" src="../assets/images/familypd.png"/>
+<span>Family Personal Development</span>
+</a>
+<nav aria-label="Main navigation" class="aic-nav">
+<a href="../about/">About</a>
+<a href="../approach/">Our Approach</a>
+<a href="../resources/">Resources</a>
+<a href="../programs/">Programs</a>
+<a href="../impact/">Impact</a>
+<a class="aic-app-link" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" target="_blank" rel="noopener noreferrer">Donate</a><a class="aic-app-link" href="https://app.familypd.org/" target="_blank" rel="noopener noreferrer">FamilyPD OS</a>
+</nav>
+</div>
+</header>
+<main id="main-content">
+<section class="aic-hero">
+<div class="aic-shell aic-hero-grid">
+<div>
+<span class="aic-eyebrow">FamilyPD AI Creations</span>
+<h1>See what is possible with a clear idea and the right prompt.</h1>
+<p>Explore AI-assisted images, webpages, prompts, project support, and tutoring examples designed to help families learn, create, organize, and grow.</p>
+<div class="aic-actions">
+<a class="aic-button aic-button-primary" href="#creation-gallery">Explore the Gallery</a>
+<a class="aic-button aic-button-secondary" href="../resources/">Back to Learning Resources</a>
+</div>
+</div>
+<aside aria-label="FamilyPD AI is a separate tool" class="aic-separate-card">
+<strong>Looking for FamilyPD AI?</strong>
+<p>FamilyPD AI is the assistant families can use. AI Creations is the separate showcase where you can see examples, prompts, and possibilities.</p>
+<div aria-hidden="true" class="aic-mini-grid">
+<span>Images</span>
+<span>Webpages</span>
+<span>Project Help</span>
+<span>Tutoring</span>
+</div>
+<div class="aic-actions">
+<a class="aic-button aic-button-secondary" href="../resources/learning-tools/" id="family-pd-ai-link">Explore AI Learning Tools</a>
+</div>
+</aside>
+</div>
+</section>
+<section aria-labelledby="gallery-title" class="aic-main" id="creation-gallery">
+<div class="aic-shell">
+<div class="aic-intro">
+<div>
+<h2 id="gallery-title">AI Creation Gallery</h2>
+<p>Browse by creation type or search for a topic. Each example may include the idea, the prompt, and a link to the finished creation.</p>
+</div>
+</div>
+<div class="aic-tools">
+<label>
+<span class="aic-skip">Search creations</span>
+<input autocomplete="off" class="aic-search" id="creation-search" placeholder="Search creations..." type="search"/>
+</label>
+<div aria-label="Filter creations" class="aic-filters" id="creation-filters"></div>
+</div>
+<p aria-live="polite" class="aic-status" id="creation-status"></p>
+<div class="aic-grid" id="creation-grid"></div>
+<aside class="aic-principle">
+<h2>AI should support thinking—not replace it.</h2>
+<p>FamilyPD encourages families and learners to use AI to ask better questions, understand difficult ideas, organize projects, practice skills, and improve their own work while protecting privacy and checking information carefully.</p>
+</aside>
+</div>
+</section>
+</main>
+<footer class="aic-footer">
+<div class="aic-shell aic-footer-inner">
+<span>© <span id="aic-year"></span> Family Personal Development, Inc.</span>
+<span><a href="../">FamilyPD.org</a> · We build tools that help families thrive.</span>
+</div>
+</footer>
+<dialog aria-labelledby="dialog-title" class="aic-dialog" id="prompt-dialog">
+<div class="aic-dialog-inner">
+<div class="aic-dialog-header">
+<div>
+<span class="aic-audience" id="dialog-category"></span>
+<h2 id="dialog-title">Prompt</h2>
+</div>
+<button aria-label="Close" class="aic-close" id="dialog-close" type="button">×</button>
+</div>
+<div class="aic-prompt-box" id="dialog-prompt"></div>
+<div class="aic-copy-row">
+<button class="aic-button aic-button-primary" id="copy-prompt" type="button">Copy Prompt</button>
+<span aria-live="polite" class="aic-copy-status" id="copy-status"></span>
+</div>
+</div>
+</dialog>
+<script src="creations-data.js"></script>
+<script>
     (function () {
       "use strict";
 

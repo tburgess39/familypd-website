@@ -1,8 +1,8 @@
 {
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-22",
   "notice": {
-    "en": "Availability, account eligibility, features, and pricing can change. Review each official site before creating an account or assigning a tool.",
-    "es": "La disponibilidad, los requisitos de cuenta, las funciones y los precios pueden cambiar. Revise el sitio oficial antes de crear una cuenta o asignar una herramienta."
+    "en": "Availability, account eligibility, features, pricing, and links can change. Review the official site before creating an account, assigning a child, sharing publicly, or making a purchase.",
+    "es": "La disponibilidad, elegibilidad, funciones, precios y enlaces pueden cambiar. Revise el sitio oficial antes de crear una cuenta, asignar una herramienta, compartir públicamente o comprar."
   },
   "resources": [
     {
@@ -16,269 +16,1055 @@
         "Educators",
         "Community Programs"
       ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
       "age_note": {
-        "en": "Learning options for elementary through high school.",
-        "es": "Opciones de aprendizaje desde primaria hasta secundaria."
+        "en": "Elementary through high school options.",
+        "es": "Opciones desde primaria hasta secundaria."
       },
       "description": {
-        "en": "Self-paced computer science and AI activities, including block coding, apps, games, animations, and web experiences.",
-        "es": "Actividades de ciencias de la computación e inteligencia artificial, incluyendo programación por bloques, aplicaciones, juegos, animaciones y experiencias web."
+        "en": "Free computer science, coding, AI, app, game, and web activities.",
+        "es": "Actividades gratuitas de computación, programación, IA, aplicaciones, juegos y web."
       },
       "use_for": {
-        "en": "Learn coding basics before building a household app, game, quiz, tracker, or website.",
-        "es": "Aprenda programación básica antes de crear una aplicación, juego, cuestionario, registro o sitio web para el hogar."
+        "en": "Build a quiz, game, animation, app, or family learning activity.",
+        "es": "Cree un cuestionario, juego, animación, aplicación o actividad familiar."
       },
       "support_note": {
-        "en": "Some tutorials can be started without an account; longer courses may require an account to save progress.",
-        "es": "Algunos tutoriales pueden iniciarse sin una cuenta; los cursos más largos pueden requerir una cuenta para guardar el progreso."
+        "en": "Many activities are free; review account and age requirements before saving progress.",
+        "es": "Muchas actividades son gratuitas; revise los requisitos de cuenta y edad."
       }
     },
     {
       "id": "khan-academy",
       "name": "Khan Academy",
-      "url": "https://www.khanacademy.org/computing",
+      "url": "https://www.khanacademy.org/",
       "category": "Academic & Computing Skills",
       "audiences": [
         "Students",
         "Families",
         "Educators"
       ],
+      "pillars": [
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
       "age_note": {
-        "en": "Best matched by topic and learner readiness.",
-        "es": "Se adapta mejor según el tema y la preparación del estudiante."
+        "en": "Use the course level that matches the learner.",
+        "es": "Use el nivel que corresponda al estudiante."
       },
       "description": {
-        "en": "Free learning in computing, Python, JavaScript, HTML/CSS, internet concepts, cybersecurity, and academic subjects.",
-        "es": "Aprendizaje gratuito de computación, Python, JavaScript, HTML/CSS, internet, ciberseguridad y materias académicas."
+        "en": "Free lessons and practice in math, science, computing, economics, test preparation, and more.",
+        "es": "Lecciones y práctica gratuitas de matemáticas, ciencias, computación, economía y más."
       },
       "use_for": {
-        "en": "Build background knowledge before creating a study tool, budget activity, career resource, or coding project.",
-        "es": "Desarrolle conocimientos antes de crear una herramienta de estudio, actividad de presupuesto, recurso profesional o proyecto de programación."
+        "en": "Review a school topic, practice math for budgeting, or build background knowledge.",
+        "es": "Repase un tema escolar, practique matemáticas para presupuestos o aprenda conceptos."
       },
       "support_note": {
-        "en": "Families can use learner and parent pathways to support progress outside school.",
-        "es": "Las familias pueden usar las opciones para estudiantes y padres para apoyar el progreso fuera de la escuela."
+        "en": "An account can save progress; families should review child account settings.",
+        "es": "Una cuenta puede guardar el progreso; revise la configuración de menores."
       }
     },
     {
       "id": "makecode",
       "name": "Microsoft MakeCode",
       "url": "https://www.microsoft.com/en-us/makecode",
-      "category": "Coding & Physical Computing",
+      "category": "Coding & Maker",
       "audiences": [
         "Students",
         "Families",
         "Educators",
-        "Makerspaces"
+        "Community Programs"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
       ],
       "age_note": {
-        "en": "Good for beginners moving from blocks toward text coding.",
-        "es": "Útil para principiantes que desean pasar de bloques a programación con texto."
+        "en": "Beginner-friendly block coding with text-code pathways.",
+        "es": "Programación por bloques para principiantes con transición a texto."
       },
       "description": {
-        "en": "Browser-based coding with blocks and text, simulators, and supported hardware such as micro:bit.",
-        "es": "Programación en el navegador con bloques y texto, simuladores y dispositivos compatibles como micro:bit."
+        "en": "Free coding environments for micro:bit, Minecraft, Arcade, and other maker platforms.",
+        "es": "Entornos gratuitos para micro:bit, Minecraft, Arcade y otras plataformas."
       },
       "use_for": {
-        "en": "Build timers, reminders, sensors, chore tools, games, safety signals, and household prototypes.",
-        "es": "Cree temporizadores, recordatorios, sensores, herramientas de tareas, juegos, señales de seguridad y prototipos para el hogar."
+        "en": "Create a chore randomizer, habit game, sensor project, or family challenge.",
+        "es": "Cree un asignador de tareas, juego de hábitos, proyecto con sensores o reto familiar."
       },
       "support_note": {
-        "en": "Many projects can be tested in a simulator before using physical hardware.",
-        "es": "Muchos proyectos pueden probarse en un simulador antes de usar dispositivos físicos."
+        "en": "Hardware is optional for some simulators; account and device needs vary.",
+        "es": "El hardware es opcional en algunos simuladores; los requisitos varían."
       }
     },
     {
       "id": "scratch",
       "name": "Scratch",
       "url": "https://scratch.mit.edu/",
-      "category": "Creative Coding",
+      "category": "Coding & Creative Media",
       "audiences": [
         "Students",
         "Families",
-        "Educators",
-        "Libraries"
+        "Educators"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Goals"
       ],
       "age_note": {
-        "en": "Designed especially for ages 8–16, with broader use across ages.",
-        "es": "Diseñado especialmente para edades de 8 a 16 años, aunque se usa con otras edades."
+        "en": "Designed especially for ages 8–16, with broader use possible.",
+        "es": "Diseñado especialmente para edades de 8 a 16 años."
       },
       "description": {
-        "en": "Create interactive stories, games, and animations using visual block-based programming.",
-        "es": "Cree historias interactivas, juegos y animaciones usando programación visual por bloques."
+        "en": "Free block-coding platform for stories, games, animations, and interactive projects.",
+        "es": "Plataforma gratuita para historias, juegos, animaciones y proyectos interactivos."
       },
       "use_for": {
-        "en": "Turn family lessons into comics, scenario games, quizzes, animations, and interactive explanations.",
-        "es": "Convierta lecciones familiares en cómics, juegos de situaciones, cuestionarios, animaciones y explicaciones interactivas."
+        "en": "Create a feelings story, safety game, goal tracker, or family history animation.",
+        "es": "Cree una historia de emociones, juego de seguridad, registro de metas o animación familiar."
       },
       "support_note": {
-        "en": "Use fictional characters and avoid publishing private family details.",
-        "es": "Use personajes ficticios y evite publicar detalles privados de la familia."
+        "en": "Public sharing and community features require adult review and safe usernames.",
+        "es": "Las funciones públicas requieren revisión adulta y nombres de usuario seguros."
       }
     },
     {
       "id": "mit-app-inventor",
       "name": "MIT App Inventor",
-      "url": "https://appinventor.mit.edu/explore/get-started",
-      "category": "Mobile App Creation",
+      "url": "https://appinventor.mit.edu/",
+      "category": "App Development",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Best for learners ready to design and test mobile apps.",
+        "es": "Para estudiantes listos para diseñar y probar aplicaciones móviles."
+      },
+      "description": {
+        "en": "Free browser-based visual app development with tutorials and examples.",
+        "es": "Desarrollo visual gratuito de aplicaciones con tutoriales y ejemplos."
+      },
+      "use_for": {
+        "en": "Build a family checklist, interview-practice app, resource finder, or tracker.",
+        "es": "Cree una lista familiar, aplicación de entrevistas, buscador de recursos o registro."
+      },
+      "support_note": {
+        "en": "A Google account and compatible device or emulator may be needed.",
+        "es": "Puede requerir cuenta de Google y dispositivo compatible o emulador."
+      }
+    },
+    {
+      "id": "w3schools",
+      "name": "W3Schools",
+      "url": "https://www.w3schools.com/",
+      "category": "Web Development",
       "audiences": [
         "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Beginner through intermediate web and programming tutorials.",
+        "es": "Tutoriales de nivel principiante a intermedio."
+      },
+      "description": {
+        "en": "Tutorials and practice for HTML, CSS, JavaScript, Python, SQL, and more.",
+        "es": "Tutoriales y práctica de HTML, CSS, JavaScript, Python, SQL y más."
+      },
+      "use_for": {
+        "en": "Build a family website prototype, digital portfolio, resource page, or calculator.",
+        "es": "Cree un prototipo de sitio familiar, portafolio, página de recursos o calculadora."
+      },
+      "support_note": {
+        "en": "Core tutorials are free; optional paid services exist.",
+        "es": "Los tutoriales principales son gratuitos; existen servicios pagos opcionales."
+      }
+    },
+    {
+      "id": "freecodecamp",
+      "name": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/",
+      "category": "Web & Career Skills",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Self-paced pathways work best for motivated teens and adults.",
+        "es": "Rutas a su propio ritmo para adolescentes y adultos motivados."
+      },
+      "description": {
+        "en": "Free coding curriculum, projects, articles, and certification pathways.",
+        "es": "Plan de estudios, proyectos, artículos y certificaciones gratuitos."
+      },
+      "use_for": {
+        "en": "Develop portfolio projects, websites, data skills, or programming foundations.",
+        "es": "Desarrolle portafolios, sitios web, datos o fundamentos de programación."
+      },
+      "support_note": {
+        "en": "An account is useful for progress and certifications; review community guidance.",
+        "es": "Una cuenta ayuda con el progreso; revise la orientación de la comunidad."
+      }
+    },
+    {
+      "id": "cs-unplugged",
+      "name": "CS Unplugged",
+      "url": "https://www.csunplugged.org/en/",
+      "category": "Unplugged Computer Science",
+      "audiences": [
+        "Children",
+        "Students",
         "Families",
         "Educators",
         "Community Programs"
       ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills"
+      ],
       "age_note": {
-        "en": "Best for older children and teens with adult or educator support.",
-        "es": "Más apropiado para niños mayores y adolescentes con apoyo de un adulto o educador."
+        "en": "Activities can be adapted for different ages without a computer.",
+        "es": "Actividades adaptables a diferentes edades sin computadora."
       },
       "description": {
-        "en": "A browser-based block-programming environment for designing and testing mobile apps.",
-        "es": "Un entorno de programación por bloques en el navegador para diseñar y probar aplicaciones móviles."
+        "en": "Free games and puzzles that teach computer science concepts with everyday materials.",
+        "es": "Juegos y acertijos gratuitos que enseñan computación con materiales comunes."
       },
       "use_for": {
-        "en": "Build household reminders, interview practice, goal trackers, budgeting tools, and family quizzes.",
-        "es": "Cree recordatorios, práctica de entrevistas, registros de metas, herramientas de presupuesto y cuestionarios familiares."
+        "en": "Run a family sorting game, logic challenge, teamwork activity, or technology lesson.",
+        "es": "Realice un juego de clasificación, lógica, trabajo en equipo o tecnología."
       },
       "support_note": {
-        "en": "Follow the official setup and beginner tutorials before building a custom app.",
-        "es": "Siga la configuración oficial y los tutoriales para principiantes antes de crear una aplicación personalizada."
+        "en": "Review setup and safety for active group activities.",
+        "es": "Revise la preparación y seguridad de las actividades activas."
+      }
+    },
+    {
+      "id": "typing-com",
+      "name": "Typing.com",
+      "url": "https://www.typing.com/student/lessons",
+      "category": "Typing & Digital Basics",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Lessons support beginners through more advanced typing practice.",
+        "es": "Lecciones desde principiantes hasta práctica avanzada."
+      },
+      "description": {
+        "en": "Typing lessons, tests, games, and technology foundations with free options.",
+        "es": "Lecciones, pruebas, juegos y fundamentos tecnológicos con opciones gratuitas."
+      },
+      "use_for": {
+        "en": "Improve keyboarding for school, resumes, coding, and digital portfolios.",
+        "es": "Mejore el teclado para escuela, currículos, programación y portafolios."
+      },
+      "support_note": {
+        "en": "Free and paid options differ; adults should review ads and account choices.",
+        "es": "Las opciones gratuitas y pagas difieren; revise anuncios y cuentas."
+      }
+    },
+    {
+      "id": "harvard-free",
+      "name": "Harvard Free Online Courses",
+      "url": "https://pll.harvard.edu/catalog/free",
+      "category": "College & Lifelong Learning",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families"
+      ],
+      "pillars": [
+        "Health",
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Course difficulty, duration, prerequisites, and certificates vary.",
+        "es": "La dificultad, duración, requisitos y certificados varían."
+      },
+      "description": {
+        "en": "Harvard’s catalog includes free online course options across many subjects.",
+        "es": "El catálogo de Harvard incluye cursos en línea gratuitos de muchas materias."
+      },
+      "use_for": {
+        "en": "Explore computer science, leadership, health, humanities, data, or career interests.",
+        "es": "Explore computación, liderazgo, salud, humanidades, datos o carreras."
+      },
+      "support_note": {
+        "en": "Some courses are free to audit while certificates or optional services may cost money.",
+        "es": "Algunos cursos son gratuitos para estudiar; los certificados pueden costar."
       }
     },
     {
       "id": "canva-education",
-      "name": "Canva for Education",
-      "url": "https://www.canva.com/education/",
-      "category": "Design & Communication",
+      "name": "Canva",
+      "url": "https://www.canva.com/",
+      "category": "Design & Presentation",
       "audiences": [
         "Students",
+        "Families",
         "Educators",
-        "School Partners"
+        "Community Programs"
+      ],
+      "pillars": [
+        "Health",
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
       ],
       "age_note": {
-        "en": "Student access is generally provided through a teacher, school, or district.",
-        "es": "El acceso estudiantil generalmente se proporciona por medio de un maestro, escuela o distrito."
+        "en": "Templates are accessible to beginners; account eligibility varies.",
+        "es": "Las plantillas son accesibles para principiantes; la elegibilidad varía."
       },
       "description": {
-        "en": "Design presentations, posters, worksheets, videos, visual guides, and other communication materials.",
-        "es": "Diseñe presentaciones, carteles, hojas de trabajo, videos, guías visuales y otros materiales."
+        "en": "Design tool for presentations, posters, planners, videos, worksheets, and websites.",
+        "es": "Herramienta para presentaciones, carteles, planificadores, videos y sitios."
       },
       "use_for": {
-        "en": "Create routine cards, family challenge boards, career spotlights, study guides, and tutorial videos.",
-        "es": "Cree tarjetas de rutinas, tableros de retos, presentaciones de carreras, guías de estudio y videos tutoriales."
+        "en": "Create routine cards, budgets, family meeting visuals, goal boards, or portfolios.",
+        "es": "Cree tarjetas de rutinas, presupuestos, reuniones, metas o portafolios."
       },
       "support_note": {
-        "en": "Review sharing settings, copyright, image permissions, and public-link privacy before publishing.",
-        "es": "Revise la configuración para compartir, derechos de autor, permisos de imágenes y privacidad antes de publicar."
+        "en": "Free and paid features differ; review public-sharing settings before publishing.",
+        "es": "Las funciones gratuitas y pagas difieren; revise la publicación pública."
+      }
+    },
+    {
+      "id": "adobe-express",
+      "name": "Adobe Express",
+      "url": "https://www.adobe.com/express/",
+      "category": "Design & Creative Media",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Community Programs"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Beginner-friendly creation tools with account-dependent features.",
+        "es": "Herramientas para principiantes con funciones según la cuenta."
+      },
+      "description": {
+        "en": "Create graphics, webpages, videos, presentations, and social content.",
+        "es": "Cree gráficos, páginas web, videos, presentaciones y contenido social."
+      },
+      "use_for": {
+        "en": "Build a family story, campaign, safety message, project showcase, or portfolio.",
+        "es": "Cree una historia familiar, campaña, mensaje de seguridad o portafolio."
+      },
+      "support_note": {
+        "en": "Free and premium features vary; review AI, account, and publishing settings.",
+        "es": "Las funciones varían; revise IA, cuentas y publicación."
       }
     },
     {
       "id": "openai-academy",
-      "name": "OpenAI Academy & ChatGPT",
-      "url": "https://openai.com/academy/",
-      "secondary_url": "https://chatgpt.com/",
-      "category": "AI Literacy & Learning Support",
+      "name": "OpenAI Academy",
+      "url": "https://academy.openai.com/",
+      "category": "AI Learning",
       "audiences": [
-        "Families",
         "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Best for guided adult or teen learning about AI use.",
+        "es": "Para aprendizaje guiado de adultos o adolescentes sobre IA."
+      },
+      "description": {
+        "en": "Learning resources and events about using AI effectively and responsibly.",
+        "es": "Recursos y eventos para usar IA de manera eficaz y responsable."
+      },
+      "use_for": {
+        "en": "Learn prompting, responsible AI habits, and ways to support projects or learning.",
+        "es": "Aprenda prompts, hábitos responsables y apoyo para proyectos."
+      },
+      "support_note": {
+        "en": "Review availability, sign-in needs, and current program offerings.",
+        "es": "Revise disponibilidad, inicio de sesión y ofertas actuales."
+      }
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com/",
+      "category": "AI Assistant",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Health",
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Use with adult guidance and age-appropriate accounts.",
+        "es": "Use con guía adulta y cuentas apropiadas para la edad."
+      },
+      "description": {
+        "en": "AI assistant for explanation, brainstorming, practice, planning, and drafting.",
+        "es": "Asistente de IA para explicar, generar ideas, practicar, planificar y redactar."
+      },
+      "use_for": {
+        "en": "Generate project steps, explain school topics, practice interviews, or draft family tools.",
+        "es": "Genere pasos, explique temas, practique entrevistas o redacte herramientas."
+      },
+      "support_note": {
+        "en": "AI can be wrong. Do not enter sensitive information; verify health, legal, financial, and safety facts.",
+        "es": "La IA puede equivocarse. No ingrese datos sensibles y verifique información importante."
+      }
+    },
+    {
+      "id": "roblox-education",
+      "name": "Roblox Education",
+      "url": "https://education.roblox.com/",
+      "category": "Game Design & Coding",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Lesson suitability and platform access depend on age and adult supervision.",
+        "es": "La idoneidad depende de la edad y supervisión adulta."
+      },
+      "description": {
+        "en": "Learning resources that use Roblox experiences and creation to teach coding, design, and digital skills.",
+        "es": "Recursos que usan Roblox para enseñar programación, diseño y habilidades digitales."
+      },
+      "use_for": {
+        "en": "Explore game design, coding, collaboration, digital citizenship, or storytelling.",
+        "es": "Explore diseño de juegos, programación, colaboración y ciudadanía digital."
+      },
+      "support_note": {
+        "en": "Roblox includes online community features; adults should review safety, privacy, chat, and spending controls.",
+        "es": "Roblox tiene comunidad en línea; revise seguridad, privacidad, chat y gastos."
+      }
+    },
+    {
+      "id": "roblox-studio",
+      "name": "Roblox Creator Hub / Studio",
+      "url": "https://create.roblox.com/",
+      "category": "Game Development",
+      "audiences": [
+        "Teens",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Use age-appropriate accounts and adult review for publishing.",
+        "es": "Use cuentas apropiadas y revisión adulta para publicar."
+      },
+      "description": {
+        "en": "Free creation tools and documentation for building Roblox experiences with Lua.",
+        "es": "Herramientas y documentación gratuitas para crear experiencias con Lua."
+      },
+      "use_for": {
+        "en": "Build a family teamwork game, learning simulation, obstacle course, or portfolio project.",
+        "es": "Cree un juego familiar, simulación, recorrido o proyecto de portafolio."
+      },
+      "support_note": {
+        "en": "Public publishing, purchases, plugins, community content, and collaboration require careful review.",
+        "es": "La publicación, compras, plugins y colaboración requieren revisión cuidadosa."
+      }
+    },
+    {
+      "id": "minecraft-education",
+      "name": "Minecraft Education Lesson Library",
+      "url": "https://education.minecraft.net/en-us/resources/explore-lessons",
+      "category": "Game-Based Learning",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Health",
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Lessons can be filtered by age, subject, and language.",
+        "es": "Las lecciones se filtran por edad, materia e idioma."
+      },
+      "description": {
+        "en": "Game-based lessons and challenges across computer science, math, science, history, art, and social-emotional learning.",
+        "es": "Lecciones y retos de computación, matemáticas, ciencias, historia, arte y aprendizaje socioemocional."
+      },
+      "use_for": {
+        "en": "Model a safe home, sustainable community, budget, historical setting, or coding solution.",
+        "es": "Modele un hogar seguro, comunidad sostenible, presupuesto o solución de código."
+      },
+      "support_note": {
+        "en": "Licensing, trials, demo lessons, devices, and multiplayer access vary.",
+        "es": "Las licencias, pruebas, demos, dispositivos y multijugador varían."
+      }
+    },
+    {
+      "id": "cmu-robotics",
+      "name": "Carnegie Mellon Robotics Academy",
+      "url": "https://www.cmu.edu/roboticsacademy/",
+      "category": "Robotics & Engineering",
+      "audiences": [
+        "Students",
+        "Families",
         "Educators",
         "Community Programs"
       ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
       "age_note": {
-        "en": "Use with appropriate account eligibility, family rules, and adult guidance for minors.",
-        "es": "Úselo con la elegibilidad apropiada, reglas familiares y orientación adulta para menores."
+        "en": "Programs range from introductory to advanced robotics and coding.",
+        "es": "Programas desde robótica introductoria hasta avanzada."
       },
       "description": {
-        "en": "Learn AI foundations and use ChatGPT to brainstorm, practice interviews, plan projects, and receive step-by-step learning support.",
-        "es": "Aprenda fundamentos de IA y use ChatGPT para generar ideas, practicar entrevistas, planificar proyectos y recibir apoyo paso a paso."
+        "en": "Curriculum, training, certifications, and learning resources for robotics and computer science.",
+        "es": "Currículo, capacitación, certificaciones y recursos de robótica y computación."
       },
       "use_for": {
-        "en": "Clarify a project idea, create practice questions, explain code, review a plan, or generate examples that the family verifies.",
-        "es": "Aclare una idea, cree preguntas, explique código, revise un plan o genere ejemplos que la familia debe verificar."
+        "en": "Learn sensors, programming, engineering design, troubleshooting, and team roles.",
+        "es": "Aprenda sensores, programación, diseño, solución de problemas y roles."
       },
       "support_note": {
-        "en": "Do not paste private family, school, health, financial, legal, or account information. AI output can be wrong.",
-        "es": "No introduzca información privada familiar, escolar, médica, financiera, legal o de cuentas. La IA puede equivocarse."
+        "en": "Some resources or certifications may require accounts, hardware, enrollment, or payment.",
+        "es": "Algunos recursos requieren cuentas, hardware, inscripción o pago."
+      }
+    },
+    {
+      "id": "vex-education",
+      "name": "VEX Education",
+      "url": "https://education.vex.com/",
+      "category": "Robotics & Engineering",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Community Programs"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "STEM Labs and resources cover multiple VEX platforms and age levels.",
+        "es": "STEM Labs y recursos para varias plataformas y edades."
+      },
+      "description": {
+        "en": "VEX curriculum, STEM Labs, educator resources, and robotics learning materials.",
+        "es": "Currículo VEX, laboratorios STEM y materiales de robótica."
+      },
+      "use_for": {
+        "en": "Build and test mechanisms, coding challenges, engineering notebooks, and team projects.",
+        "es": "Construya mecanismos, retos de programación, cuadernos y proyectos."
+      },
+      "support_note": {
+        "en": "Many materials are free; physical builds require compatible equipment.",
+        "es": "Muchos materiales son gratuitos; las construcciones requieren equipo compatible."
+      }
+    },
+    {
+      "id": "vexcode-v5",
+      "name": "VEXcode V5",
+      "url": "https://codev5.vex.com/",
+      "category": "Robotics Coding",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "For VEX V5 coding with blocks, Python, or C++ pathways.",
+        "es": "Para VEX V5 con bloques, Python o C++."
+      },
+      "description": {
+        "en": "Browser-based coding environment for VEX V5 projects.",
+        "es": "Entorno de programación web para proyectos VEX V5."
+      },
+      "use_for": {
+        "en": "Program motors, sensors, autonomous routines, and robotics challenges.",
+        "es": "Programe motores, sensores, rutinas autónomas y retos."
+      },
+      "support_note": {
+        "en": "Physical testing requires VEX V5 equipment; follow hardware safety guidance.",
+        "es": "Las pruebas físicas requieren VEX V5 y normas de seguridad."
+      }
+    },
+    {
+      "id": "rec-foundation",
+      "name": "Robotics Education & Competition Foundation",
+      "url": "https://recf.org/",
+      "category": "Robotics Competition & Community",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators",
+        "Community Programs"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Programs and events vary by age, location, season, and registration.",
+        "es": "Los programas varían por edad, lugar, temporada e inscripción."
+      },
+      "description": {
+        "en": "Information about robotics competitions, teams, volunteers, scholarships, and events.",
+        "es": "Información sobre competencias, equipos, voluntariado, becas y eventos."
+      },
+      "use_for": {
+        "en": "Explore teamwork, leadership, competition pathways, scholarships, and service roles.",
+        "es": "Explore trabajo en equipo, liderazgo, competencias, becas y servicio."
+      },
+      "support_note": {
+        "en": "Costs, travel, registration, team eligibility, and local availability vary.",
+        "es": "Los costos, viajes, inscripción y disponibilidad local varían."
+      }
+    },
+    {
+      "id": "robotmesh",
+      "name": "RobotMesh Studio",
+      "url": "https://www.robotmesh.com/studio",
+      "category": "Robotics Coding",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Check current platform, account, browser, and hardware support.",
+        "es": "Revise plataforma, cuenta, navegador y hardware actuales."
+      },
+      "description": {
+        "en": "Online robotics programming environment and learning option for supported systems.",
+        "es": "Entorno de programación de robótica en línea para sistemas compatibles."
+      },
+      "use_for": {
+        "en": "Practice robotics code, simulation, and project development where supported.",
+        "es": "Practique código, simulación y desarrollo de proyectos compatibles."
+      },
+      "support_note": {
+        "en": "Product availability and supported hardware can change; confirm on the official site.",
+        "es": "La disponibilidad y el hardware compatible pueden cambiar; confirme en el sitio oficial."
+      }
+    },
+    {
+      "id": "vex-forum",
+      "name": "VEX Forum",
+      "url": "https://www.vexforum.com/",
+      "category": "Robotics Community",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Best with adult guidance for younger users.",
+        "es": "Mejor con guía adulta para usuarios jóvenes."
+      },
+      "description": {
+        "en": "Community discussions about VEX robotics, coding, design, troubleshooting, and events.",
+        "es": "Debates comunitarios sobre robótica VEX, programación, diseño y eventos."
+      },
+      "use_for": {
+        "en": "Research a build problem, compare approaches, and learn from experienced users.",
+        "es": "Investigue un problema, compare enfoques y aprenda de usuarios experimentados."
+      },
+      "support_note": {
+        "en": "Community answers are not official instructions; verify safety and technical claims.",
+        "es": "Las respuestas comunitarias no son instrucciones oficiales; verifique seguridad y datos."
+      }
+    },
+    {
+      "id": "vex-youtube",
+      "name": "VEX Robotics Learning Videos",
+      "url": "https://www.youtube.com/channel/UC7jrVEiBjPrOM7-RZSAoebg",
+      "category": "Robotics Video Learning",
+      "audiences": [
+        "Students",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Video suitability depends on topic, learner readiness, and adult review.",
+        "es": "La idoneidad depende del tema, preparación y revisión adulta."
+      },
+      "description": {
+        "en": "Video demonstrations and learning content connected to robotics and VEX projects.",
+        "es": "Demostraciones y contenido de aprendizaje relacionado con robótica y VEX."
+      },
+      "use_for": {
+        "en": "Preview mechanisms, coding, competition concepts, and troubleshooting approaches.",
+        "es": "Vea mecanismos, programación, competencias y solución de problemas."
+      },
+      "support_note": {
+        "en": "YouTube recommendations, comments, and ads require adult review.",
+        "es": "Las recomendaciones, comentarios y anuncios de YouTube requieren revisión adulta."
+      }
+    },
+    {
+      "id": "wrs-practice",
+      "name": "Workplace Readiness Skills Practice",
+      "url": "https://wrs.ctecs.org/practice/",
+      "category": "Career Readiness",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Useful for learners preparing for workplace-readiness assessments and employment.",
+        "es": "Útil para preparación de habilidades laborales y empleo."
+      },
+      "description": {
+        "en": "Practice questions and review for workplace readiness skills.",
+        "es": "Preguntas de práctica y repaso de habilidades laborales."
+      },
+      "use_for": {
+        "en": "Study professionalism, communication, teamwork, safety, ethics, and workplace expectations.",
+        "es": "Estudie profesionalismo, comunicación, trabajo en equipo, seguridad y ética."
+      },
+      "support_note": {
+        "en": "This is practice; confirm the standards and test requirements that apply to your program.",
+        "es": "Es práctica; confirme los estándares y requisitos de su programa."
+      }
+    },
+    {
+      "id": "linkedin-learning",
+      "name": "LinkedIn Learning",
+      "url": "https://www.linkedin.com/learning/",
+      "category": "Career & Professional Skills",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families"
+      ],
+      "pillars": [
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Course access may be available through employers, schools, or public libraries.",
+        "es": "Puede estar disponible por empleadores, escuelas o bibliotecas."
+      },
+      "description": {
+        "en": "Courses in technology, business, creativity, leadership, and professional development.",
+        "es": "Cursos de tecnología, negocios, creatividad, liderazgo y desarrollo profesional."
+      },
+      "use_for": {
+        "en": "Build job skills, prepare a portfolio, practice software, or explore careers.",
+        "es": "Desarrolle habilidades laborales, portafolios, software o carreras."
+      },
+      "support_note": {
+        "en": "Usually requires a subscription or participating organization; check library access.",
+        "es": "Generalmente requiere suscripción u organización participante; revise su biblioteca."
+      }
+    },
+    {
+      "id": "microsoft-learn",
+      "name": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/training/",
+      "category": "Technology & Career Skills",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families",
+        "Educators"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Learning paths range from beginner to professional certification preparation.",
+        "es": "Rutas desde principiante hasta preparación para certificaciones."
+      },
+      "description": {
+        "en": "Free technical training for Microsoft products, cloud, data, AI, security, and development.",
+        "es": "Capacitación técnica gratuita de nube, datos, IA, seguridad y desarrollo."
+      },
+      "use_for": {
+        "en": "Explore career pathways, practice technical concepts, and prepare for credentials.",
+        "es": "Explore carreras, practique conceptos y prepárese para credenciales."
+      },
+      "support_note": {
+        "en": "Hands-on labs, exams, sandboxes, and certifications may have separate requirements or costs.",
+        "es": "Laboratorios, exámenes y certificaciones pueden tener requisitos o costos."
+      }
+    },
+    {
+      "id": "udemy",
+      "name": "Udemy",
+      "url": "https://www.udemy.com/",
+      "category": "Online Courses",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families"
+      ],
+      "pillars": [
+        "Health",
+        "Relationships",
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Course quality, level, pricing, and instructor support vary.",
+        "es": "La calidad, nivel, precio y apoyo varían."
+      },
+      "description": {
+        "en": "Large catalog of courses in technology, business, hobbies, wellness, and personal development.",
+        "es": "Gran catálogo de tecnología, negocios, pasatiempos, bienestar y desarrollo."
+      },
+      "use_for": {
+        "en": "Find a focused course tied to a family goal or skill gap.",
+        "es": "Encuentre un curso enfocado en una meta o habilidad familiar."
+      },
+      "support_note": {
+        "en": "Many courses cost money; review previews, ratings, instructor credentials, and refund terms.",
+        "es": "Muchos cursos cuestan; revise muestras, calificaciones, instructores y reembolsos."
+      }
+    },
+    {
+      "id": "digitallearn",
+      "name": "DigitalLearn.org",
+      "url": "https://www.digitallearn.org/",
+      "category": "Digital Literacy",
+      "audiences": [
+        "Adults",
+        "Families",
+        "Community Programs"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Designed for people building basic digital confidence.",
+        "es": "Diseñado para desarrollar confianza digital básica."
+      },
+      "description": {
+        "en": "Free beginner lessons on computers, internet use, email, online safety, and common tasks.",
+        "es": "Lecciones gratuitas sobre computadoras, internet, correo, seguridad y tareas comunes."
+      },
+      "use_for": {
+        "en": "Practice digital basics needed for jobs, school portals, services, and family organization.",
+        "es": "Practique habilidades para trabajos, portales escolares, servicios y organización."
+      },
+      "support_note": {
+        "en": "Some courses may direct learners to local library support.",
+        "es": "Algunos cursos pueden dirigir a apoyo de bibliotecas locales."
+      }
+    },
+    {
+      "id": "gcfglobal",
+      "name": "GCFGlobal",
+      "url": "https://edu.gcfglobal.org/en/",
+      "category": "Everyday Learning",
+      "audiences": [
+        "Teens",
+        "Adults",
+        "Families"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Finances",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Self-paced lessons for beginners and everyday learners.",
+        "es": "Lecciones a su propio ritmo para principiantes."
+      },
+      "description": {
+        "en": "Free tutorials on technology, work, reading, math, money, and everyday skills.",
+        "es": "Tutoriales gratuitos de tecnología, trabajo, lectura, matemáticas, dinero y vida diaria."
+      },
+      "use_for": {
+        "en": "Learn spreadsheets, resumes, budgeting basics, communication, and computer use.",
+        "es": "Aprenda hojas de cálculo, currículos, presupuestos, comunicación y computación."
+      },
+      "support_note": {
+        "en": "Review current site terms and use external financial or health guidance carefully.",
+        "es": "Revise términos actuales y use con cuidado la orientación financiera o de salud."
+      }
+    },
+    {
+      "id": "diffit",
+      "name": "Diffit",
+      "url": "https://web.diffit.me/",
+      "category": "Learning Support & Differentiation",
+      "audiences": [
+        "Families",
+        "Educators",
+        "Teens"
+      ],
+      "pillars": [
+        "Education & Skills"
+      ],
+      "age_note": {
+        "en": "Adult or educator review is important when adapting learning materials.",
+        "es": "Es importante la revisión adulta al adaptar materiales."
+      },
+      "description": {
+        "en": "AI-supported tool for adapting texts, questions, vocabulary, and learning materials.",
+        "es": "Herramienta con IA para adaptar textos, preguntas, vocabulario y materiales."
+      },
+      "use_for": {
+        "en": "Create accessible reading supports or practice materials around a family learning goal.",
+        "es": "Cree apoyos de lectura o práctica para una meta de aprendizaje."
+      },
+      "support_note": {
+        "en": "AI output may be inaccurate; review content, privacy, age, and account terms.",
+        "es": "La IA puede ser inexacta; revise contenido, privacidad, edad y cuentas."
+      }
+    },
+    {
+      "id": "magicschool",
+      "name": "MagicSchool",
+      "url": "https://www.magicschool.ai/",
+      "category": "AI Learning Support",
+      "audiences": [
+        "Families",
+        "Educators",
+        "Teens"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
+      ],
+      "age_note": {
+        "en": "Designed mainly for education contexts; adult review is required.",
+        "es": "Diseñado principalmente para educación; requiere revisión adulta."
+      },
+      "description": {
+        "en": "AI tools for planning, learning supports, feedback, and education-related tasks.",
+        "es": "Herramientas de IA para planificación, apoyo, comentarios y tareas educativas."
+      },
+      "use_for": {
+        "en": "Brainstorm project supports, study materials, reflection prompts, or skill practice.",
+        "es": "Genere apoyo para proyectos, estudio, reflexión o práctica."
+      },
+      "support_note": {
+        "en": "Review AI accuracy, student privacy, age, and account requirements.",
+        "es": "Revise exactitud de IA, privacidad, edad y cuentas."
       }
     },
     {
       "id": "grok",
       "name": "Grok",
       "url": "https://grok.com/",
-      "category": "AI Brainstorming & Research Support",
+      "category": "AI Assistant",
       "audiences": [
+        "Adults",
         "Families",
-        "Teens",
-        "Adult Mentors"
+        "Teens"
+      ],
+      "pillars": [
+        "Education & Skills",
+        "Goals"
       ],
       "age_note": {
-        "en": "Use only when account rules allow and with adult guidance for minors.",
-        "es": "Úselo únicamente cuando las reglas de la cuenta lo permitan y con orientación adulta para menores."
+        "en": "Use with adult guidance and current age/account rules.",
+        "es": "Use con guía adulta y reglas actuales de edad y cuenta."
       },
       "description": {
-        "en": "An AI assistant that can support questions, brainstorming, writing, problem solving, and file analysis.",
-        "es": "Un asistente de IA que puede apoyar preguntas, ideas, escritura, resolución de problemas y análisis de archivos."
+        "en": "AI assistant for questions, brainstorming, explanations, and project support.",
+        "es": "Asistente de IA para preguntas, ideas, explicaciones y proyectos."
       },
       "use_for": {
-        "en": "Compare project ideas, brainstorm features, review questions, or identify topics needing verification.",
-        "es": "Compare ideas, genere funciones, revise preguntas o identifique temas que requieren verificación."
+        "en": "Compare explanations, generate ideas, or support research after checking sources.",
+        "es": "Compare explicaciones, genere ideas o apoye investigación verificando fuentes."
       },
       "support_note": {
-        "en": "Verify important information with official sources and do not connect private family files for a public project.",
-        "es": "Verifique información importante con fuentes oficiales y no conecte archivos familiares privados para un proyecto público."
-      }
-    },
-    {
-      "id": "diffit",
-      "name": "Diffit",
-      "url": "https://web.diffit.me/quick-start",
-      "category": "Educator & Community Learning Support",
-      "audiences": [
-        "Educators",
-        "School Staff",
-        "Community Instructors"
-      ],
-      "age_note": {
-        "en": "Designed for adult instructional use rather than independent child accounts.",
-        "es": "Diseñado para uso educativo de adultos y no para cuentas infantiles independientes."
-      },
-      "description": {
-        "en": "Helps educators create and adapt instructional materials, reading supports, activities, and differentiated resources.",
-        "es": "Ayuda a educadores a crear y adaptar materiales, apoyos de lectura, actividades y recursos diferenciados."
-      },
-      "use_for": {
-        "en": "A teacher, librarian, mentor, or workshop facilitator can adapt a FamilyPD topic for different reading levels.",
-        "es": "Un maestro, bibliotecario, mentor o facilitador puede adaptar un tema de FamilyPD para diferentes niveles de lectura."
-      },
-      "support_note": {
-        "en": "Families should receive adapted resources through an educator or community partner using the tool appropriately.",
-        "es": "Las familias deben recibir recursos adaptados por medio de un educador o socio comunitario."
-      }
-    },
-    {
-      "id": "magicschool",
-      "name": "MagicSchool",
-      "url": "https://www.magicschool.ai/professional-development",
-      "category": "School & Educator AI Support",
-      "audiences": [
-        "Educators",
-        "Schools",
-        "Community Education Partners"
-      ],
-      "age_note": {
-        "en": "Best used through educator-led or school-managed access.",
-        "es": "Es mejor usarlo mediante acceso dirigido por educadores o administrado por una escuela."
-      },
-      "description": {
-        "en": "An education-focused AI platform with tools and training for teachers, schools, and guided student learning.",
-        "es": "Una plataforma de IA educativa con herramientas y capacitación para maestros, escuelas y aprendizaje guiado."
-      },
-      "use_for": {
-        "en": "Partners can create lessons, family letters, rubrics, learning activities, and guided AI-literacy experiences.",
-        "es": "Los socios pueden crear lecciones, cartas para familias, rúbricas, actividades y experiencias guiadas de alfabetización en IA."
-      },
-      "support_note": {
-        "en": "Use organization-approved accounts and student settings; follow school and district guidance.",
-        "es": "Use cuentas aprobadas y configuraciones para estudiantes; siga la orientación de la escuela y el distrito."
+        "en": "AI can be wrong; review privacy, account, and content settings before use.",
+        "es": "La IA puede equivocarse; revise privacidad, cuenta y contenido."
       }
     }
   ]
