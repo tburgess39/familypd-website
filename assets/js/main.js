@@ -663,3 +663,63 @@ if (involvementPreview) {
     });
   }
 }
+
+// FamilyPD public navigation additions and Learning Center filters.
+(function enhanceFamilyPDNavigation() {
+  document.querySelectorAll('.site-nav').forEach((nav) => {
+    const resourcesLink = nav.querySelector('a[href="/resources/"]');
+    const donateLink = nav.querySelector('.donate-nav-button');
+
+    if (!nav.querySelector('a[href="/learning-center/"]')) {
+      const learningLink = document.createElement('a');
+      learningLink.href = '/learning-center/';
+      learningLink.textContent = 'Learning Center';
+      if (document.body.classList.contains('learning-center-page') || window.location.pathname.startsWith('/learning-center/')) {
+        learningLink.setAttribute('aria-current', 'page');
+      }
+      if (resourcesLink) resourcesLink.insertAdjacentElement('afterend', learningLink);
+      else if (donateLink) nav.insertBefore(learningLink, donateLink);
+      else nav.appendChild(learningLink);
+    }
+
+    if (!nav.querySelector('a[href="/toolkit/"]')) {
+      const toolkitLink = document.createElement('a');
+      toolkitLink.href = '/toolkit/';
+      toolkitLink.textContent = 'Family Toolkit';
+      if (window.location.pathname.startsWith('/toolkit/')) toolkitLink.setAttribute('aria-current', 'page');
+      const learningLink = nav.querySelector('a[href="/learning-center/"]');
+      if (learningLink) learningLink.insertAdjacentElement('afterend', toolkitLink);
+      else if (donateLink) nav.insertBefore(toolkitLink, donateLink);
+      else nav.appendChild(toolkitLink);
+    }
+  });
+})();
+
+(function initLearningCenterFilters() {
+  const grid = document.getElementById('learning-topic-grid');
+  const search = document.getElementById('topic-search');
+  const pillar = document.getElementById('topic-pillar');
+  const count = document.getElementById('topic-result-count');
+  const empty = document.getElementById('learning-empty-state');
+  if (!grid || !search || !pillar) return;
+
+  const cards = [...grid.querySelectorAll('[data-topic-card]')];
+  const filterTopics = () => {
+    const query = search.value.trim().toLowerCase();
+    const selectedPillar = pillar.value;
+    let visible = 0;
+    cards.forEach((card) => {
+      const haystack = `${card.dataset.title || ''} ${card.dataset.keywords || ''}`.toLowerCase();
+      const matchesQuery = !query || haystack.includes(query);
+      const matchesPillar = !selectedPillar || card.dataset.pillar === selectedPillar || card.dataset.pillar === 'all';
+      const show = matchesQuery && matchesPillar;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (count) count.textContent = `${visible} topic${visible === 1 ? '' : 's'} available`;
+    if (empty) empty.style.display = visible ? 'none' : 'block';
+  };
+  search.addEventListener('input', filterTopics);
+  pillar.addEventListener('change', filterTopics);
+  filterTopics();
+})();
