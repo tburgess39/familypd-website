@@ -673,7 +673,7 @@ if (involvementPreview) {
     if (!nav.querySelector('a[href="/learning-center/"]')) {
       const learningLink = document.createElement('a');
       learningLink.href = '/learning-center/';
-      learningLink.textContent = 'Learning Center';
+      learningLink.textContent = 'Lifelong Learning';
       if (document.body.classList.contains('learning-center-page') || window.location.pathname.startsWith('/learning-center/')) {
         learningLink.setAttribute('aria-current', 'page');
       }
