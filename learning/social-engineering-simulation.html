@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#173b63" name="theme-color"/>
+<meta content="A safe social-engineering and credential-harvesting simulation using only fixed fictional data." name="description"/>
+<meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src https://d2hie3dpn9wvbb.cloudfront.net;" http-equiv="Content-Security-Policy"/>
+<link href="familypd-cyber-assets/familypd-cyber.css" rel="stylesheet"/>
+<title>Social Engineering Exploration | FamilyPD</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="https://familypd.org/" rel="noopener" target="_blank">
+<img alt="Family Personal Development logo" class="brand-logo" src="familypd-cyber-assets/familypd-logo.png"/>
+<span class="brand-text">Family Personal Development<small>Cybersecurity Curiosity Library</small></span>
+</a>
+<nav aria-label="Cybersecurity exploration navigation" class="actions"><a class="btn" href="cybersecurity-who-has-access.html">Journey</a><a class="btn" href="cybersecurity-explore.html">Explore</a><a class="btn" href="osint-tony-stark.html">OSINT</a><a class="btn dark" href="social-engineering-simulation.html">Social Engineering</a><a class="btn" href="credential-harvesting-range-guide.html">Range Guide</a><a class="btn" href="nevada-partners-cybersecurity-pathway.html">Pathway</a></nav>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<span class="eyebrow">Safe simulation • fixed fictional credentials</span>
+<h1>Would You Trust the Request?</h1>
+<p>Explore how urgency, authority, fear, curiosity, and familiarity can make a suspicious request feel normal.</p>
+</section>
+<div class="notice"><h3>Use Fake Data Only</h3><p>Never enter a real username, password, MFA code, account number, or private detail into a demonstration. The login below uses fixed read-only practice values and sends nothing.</p></div>
+<section class="section">
+<div class="section-head"><span class="stepno">1</span><div><h2>Credential-Harvesting Simulation</h2><span>A fake page does not need to authenticate a victim; it only needs to capture what is entered.</span></div><span class="time">~5 min</span></div>
+<div class="grid-2">
+<div class="fake-browser">
+<div class="browser-top"><div class="browser-dots"><i></i><i></i><i></i></div><div class="urlbar">http://cloudbox-login.practice/account/verify</div></div>
+<div class="login">
+<h3>CloudBox Account Verification</h3>
+<p>Your files will be locked in 10 minutes. Sign in now to prevent suspension.</p>
+<label>Username<input id="fakeUser" readonly="" value="explorer@practice.test"/></label>
+<label>Password<input id="fakePass" readonly="" value="PracticeOnly!2026"/></label>
+<button id="fakeSignIn" type="button">Sign In with Practice Data</button>
+<p class="small">CloudBox is fictional. No form is submitted.</p>
+</div>
+</div>
+<div>
+<h3>Practice Capture View</h3>
+<div class="console" id="console">Waiting for the fixed practice values...</div>
+<div class="callout info"><b>Look beyond design:</b> The address, unexpected urgency, strange request, and verification path matter more than polished graphics.</div>
+</div>
+</div>
+</section>
+<section class="section" id="socialQuiz">
+<div class="quizbar"><div><h2>Respond Like a Defender</h2><p>Select the safest next action.</p></div><span class="score">Answers revealed: 0 / 5</span><button class="btn" data-reset-quiz="#socialQuiz">Reset</button></div>
+<div class="grid-2">
+<article class="card question" data-answer="verify" data-correct-feedback="Correct. Use a known phone number, face-to-face contact, or another trusted channel—not the contact information inside the request."><h3>“Your manager” urgently asks for gift-card codes.</h3><div class="option-grid"><button class="option" data-choice="send" data-feedback="Gift cards are difficult to recover and are a common fraud request. Pause before spending anything.">Buy and send them</button><button class="option" data-choice="reply" data-feedback="Replying stays inside the possibly compromised channel. Verify somewhere else.">Reply and ask if it is real</button><button class="option" data-choice="verify">Verify independently</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="official" data-correct-feedback="Correct. Real support should not ask for a one-time code that approves access. End the contact and reach official support separately."><h3>“Support” asks for your MFA code.</h3><div class="option-grid"><button class="option" data-choice="share" data-feedback="An MFA code may approve the attacker’s login. Never share it unexpectedly.">Share the code quickly</button><button class="option" data-choice="official">Use an official support channel</button><button class="option" data-choice="fake" data-feedback="Giving a fake code continues the interaction and may reveal that the account is active. End and report the contact.">Send a fake code</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="navigate" data-correct-feedback="Correct. Open the known official site or app yourself instead of trusting the message link."><h3>A text says your account closes in ten minutes.</h3><div class="option-grid"><button class="option" data-choice="click" data-feedback="Urgency is designed to stop you from checking the destination. Do not use the embedded link.">Tap the message link</button><button class="option" data-choice="navigate">Navigate to the official site separately</button><button class="option" data-choice="password" data-feedback="Legitimate support does not need your password in a text reply.">Reply with your password</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="known" data-correct-feedback="Correct. Confirm the identity through a known contact method before sending money or sensitive information."><h3>A friend’s new account asks for emergency money and says not to call.</h3><div class="option-grid"><button class="option" data-choice="send" data-feedback="The secrecy and urgency are warning signs. Do not send money before verification.">Send it immediately</button><button class="option" data-choice="known">Confirm through a known number</button><button class="option" data-choice="share" data-feedback="Forwarding the request may spread a compromised account or scam. Verify and report instead.">Forward it to others</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="domain" data-correct-feedback="Correct. HTTPS protects the connection, but it does not prove the site belongs to the organization you intended to visit."><h3>A login page shows a padlock. What still needs verification?</h3><div class="option-grid"><button class="option" data-choice="nothing" data-feedback="A phishing site can obtain a certificate and use HTTPS. The padlock is not proof of identity.">Nothing—the padlock proves it is safe</button><button class="option" data-choice="domain">The exact domain and reason for the login</button><button class="option" data-choice="color" data-feedback="Brand colors can be copied easily. Verify the address and context instead.">Only the page colors</button></div><p class="feedback"></p></article>
+</div>
+</section>
+<section class="section">
+<h2>Defender Pattern</h2>
+<div class="flow">
+<div class="flow-step"><b>Pause</b>Interrupt urgency and emotion.</div>
+<div class="flow-step"><b>Inspect</b>Check sender, domain, wording, and request.</div>
+<div class="flow-step"><b>Verify</b>Use a separate trusted channel.</div>
+<div class="flow-step"><b>Protect &amp; Report</b>Do not share secrets; report suspicious activity.</div>
+</div>
+<a class="btn dark" href="credential-harvesting-range-guide.html">See the authorized CYBER.ORG Range walkthrough</a>
+</section>
+<section class="section refs">
+<h2>References</h2>
+<ol>
+<li>Cybersecurity and Infrastructure Security Agency. (n.d.). <i>Recognize and report phishing</i>. https://www.cisa.gov/secure-our-world/recognize-and-report-phishing</li>
+<li>MITRE. (n.d.). <i>Phishing: T1566</i>. https://attack.mitre.org/techniques/T1566/</li>
+<li>National Institute of Standards and Technology. (2024). <i>Digital identity guidelines</i> (NIST SP 800-63). https://pages.nist.gov/800-63-4/</li>
+</ol>
+</section>
+</main>
+<footer class="footer">
+<div class="footerbox">
+<b>FamilyPD Curiosity Library</b><br/>
+    This public exploration uses safe simulations, fictional information, and authorized environments.
+    Never test a real person, account, device, website, or network without clear permission.
+  </div>
+</footer>
+<script src="familypd-cyber-assets/familypd-cyber.js"></script>
+</body></html>

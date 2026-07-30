@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#173b63" name="theme-color"/>
+<meta content="Explore computer hardware, Linux, ports, number systems, cybersecurity vocabulary, CyberChef, hardening, careers, certifications, competitions, and the Nevada Partners pathway." name="description"/>
+<meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src https://d2hie3dpn9wvbb.cloudfront.net;" http-equiv="Content-Security-Policy"/>
+<link href="familypd-cyber-assets/familypd-cyber.css" rel="stylesheet"/>
+<title>Cybersecurity Exploration Hub | FamilyPD</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="https://familypd.org/" rel="noopener" target="_blank">
+<img alt="Family Personal Development logo" class="brand-logo" src="familypd-cyber-assets/familypd-logo.png"/>
+<span class="brand-text">Family Personal Development<small>Cybersecurity Curiosity Library</small></span>
+</a>
+<nav aria-label="Cybersecurity exploration navigation" class="actions"><a class="btn" href="cybersecurity-who-has-access.html">Journey</a><a class="btn dark" href="cybersecurity-explore.html">Explore</a><a class="btn" href="osint-tony-stark.html">OSINT</a><a class="btn" href="social-engineering-simulation.html">Social Engineering</a><a class="btn" href="credential-harvesting-range-guide.html">Range Guide</a><a class="btn" href="nevada-partners-cybersecurity-pathway.html">Pathway</a></nav>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<span class="eyebrow">Curiosity hub • choose a direction</span>
+<h1>Explore Cybersecurity</h1>
+<p>Open a card, test a simulator, compare a number system, investigate a port, or follow a pathway from foundational IT to cyber defense.</p>
+</section>
+<div class="intro-row">
+<div class="intro-card"><h3>🔎 Follow Your Curiosity</h3><p>There is no required order. Begin with the topic that makes you ask the most questions.</p></div>
+<div class="intro-card"><h3>🧭 Suggested Route</h3><p>Computer → operating system → network → identity → threats → defense → careers.</p></div>
+</div>
+<nav class="navgrid">
+<a href="#hardware">Hardware<span>~8 min</span></a><a href="#numbers">Numbers<span>~5 min</span></a>
+<a href="#ports">Ports<span>~8 min</span></a><a href="#words">Vocabulary<span>~8 min</span></a>
+<a href="#cyberchef">CyberChef<span>~10 min</span></a><a href="#hardening">Defense<span>~12 min</span></a>
+</nav>
+<section class="section" id="hardware">
+<div class="section-head"><span class="stepno">A</span><div><h2>Computer Anatomy</h2><span>Select a part to reveal its role and security connection.</span></div><span class="time">~5–8 min</span></div>
+<div class="component-grid">
+<button class="component" data-part="motherboard">Motherboard</button><button class="component" data-part="cpu">CPU</button>
+<button class="component" data-part="ram">RAM</button><button class="component" data-part="storage">Storage</button>
+<button class="component" data-part="nic">Network interface</button><button class="component" data-part="gpu">GPU</button>
+<button class="component" data-part="psu">Power supply</button><button class="component" data-part="firmware">Firmware / UEFI</button>
+<button class="component" data-part="os">Operating system</button><button class="component" data-part="peripheral">Peripherals</button>
+</div>
+<div class="detail-panel" id="componentDetail"><h3>Select a component</h3><p>Hardware, software, identity, and networks work together as one system.</p></div>
+</section>
+<section class="section" id="numbers">
+<div class="section-head"><span class="stepno">B</span><div><h2>Number-System Converter</h2><span>Change one value and see the equivalent binary, decimal, and hexadecimal forms.</span></div><span class="time">~3–5 min</span></div>
+<div class="converter">
+<label>Decimal<input id="decimal" inputmode="numeric"/></label>
+<label>Binary<input id="binary" inputmode="numeric"/></label>
+<label>Hexadecimal<input id="hexadecimal"/></label>
+</div>
+<div class="callout info" id="converterStatus"></div>
+<div class="grid-3">
+<div class="card"><h3>Binary</h3><p>Base 2 uses only 0 and 1. Eight bits commonly form one byte.</p></div>
+<div class="card"><h3>Decimal</h3><p>Base 10 is the everyday system using digits 0 through 9.</p></div>
+<div class="card"><h3>Hexadecimal</h3><p>Base 16 uses 0–9 and A–F. It provides a compact way to display binary values.</p></div>
+</div>
+</section>
+<section class="section" id="ports">
+<div class="section-head"><span class="stepno">C</span><div><h2>Common Ports &amp; Services</h2><span>Select a port to see what it commonly supports and what defenders consider.</span></div><span class="time">~6–10 min</span></div>
+<div class="port-grid">
+<button class="port" data-port="20/21"><b>20/21</b>FTP</button><button class="port" data-port="22"><b>22</b>SSH</button>
+<button class="port" data-port="23"><b>23</b>Telnet</button><button class="port" data-port="25"><b>25</b>SMTP</button>
+<button class="port" data-port="53"><b>53</b>DNS</button><button class="port" data-port="67/68"><b>67/68</b>DHCP</button>
+<button class="port" data-port="80"><b>80</b>HTTP</button><button class="port" data-port="110"><b>110</b>POP3</button>
+<button class="port" data-port="143"><b>143</b>IMAP</button><button class="port" data-port="443"><b>443</b>HTTPS</button>
+<button class="port" data-port="445"><b>445</b>SMB</button><button class="port" data-port="3389"><b>3389</b>RDP</button>
+</div>
+<div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>An open port means a service is listening. It does not automatically mean the system is vulnerable.</p></div>
+</section>
+<section class="section" id="words">
+<div class="section-head"><span class="stepno">D</span><div><h2>Cybersecurity Vocabulary</h2><span>Search for a word or browse the cards.</span></div><span class="time">~5–10 min</span></div>
+<input class="glossary-search" id="glossarySearch" placeholder="Search reconnaissance, OSINT, hash, firewall…"/>
+<div class="term-grid">
+<div class="term"><b>Reconnaissance</b>Gathering information about a person, organization, system, or environment before or during an operation.</div>
+<div class="term"><b>OSINT</b>Open-source intelligence: collecting and analyzing information from publicly available sources.</div>
+<div class="term"><b>Target</b>The person, account, device, application, organization, or outcome an operation focuses on. It may be known first or identified during reconnaissance.</div>
+<div class="term"><b>Attack surface</b>All reachable places where a system or person could be exposed to an attack.</div>
+<div class="term"><b>Vulnerability</b>A weakness that may be used to violate a security requirement.</div>
+<div class="term"><b>Exploit</b>A method or code that takes advantage of a vulnerability.</div>
+<div class="term"><b>Threat</b>Anything capable of causing harm to an asset.</div>
+<div class="term"><b>Risk</b>The possibility and impact of a threat using a vulnerability.</div>
+<div class="term"><b>Authentication</b>Proving an identity, such as with a password, passkey, token, or biometric.</div>
+<div class="term"><b>Authorization</b>Deciding what an authenticated identity is allowed to do.</div>
+<div class="term"><b>Least privilege</b>Giving only the access needed for a task or role.</div>
+<div class="term"><b>Hash</b>A one-way transformation that produces a fixed-style output from input data.</div>
+<div class="term"><b>Salt</b>Unique extra data combined with a password before hashing to reduce the value of precomputed lookup tables.</div>
+<div class="term"><b>Encryption</b>Transforming readable data into protected ciphertext using a key.</div>
+<div class="term"><b>Encoding</b>Changing data into another representation for storage, transmission, or compatibility; it is not automatically secrecy.</div>
+<div class="term"><b>Firewall</b>A control that allows or blocks traffic according to rules.</div>
+<div class="term"><b>Hardening</b>Reducing attack surface and strengthening a system’s configuration.</div>
+<div class="term"><b>Patch</b>An update that fixes defects or vulnerabilities.</div>
+<div class="term"><b>Log</b>A time-stamped record of events generated by systems and applications.</div>
+<div class="term"><b>Incident response</b>Preparing for, detecting, containing, removing, recovering from, and learning from security incidents.</div>
+<div class="term"><b>Social engineering</b>Influencing people to reveal information, approve access, send money, or take another risky action.</div>
+<div class="term"><b>Cybersecurity</b>The practice of protecting systems, networks, applications, devices, and data from unauthorized access, disruption, alteration, or destruction.</div><div class="term"><b>Network</b>Two or more connected devices that exchange data and share services or resources.</div><div class="term"><b>Zero-day</b>A newly discovered vulnerability for which defenders may have no vendor patch yet; attackers may try to exploit it before a fix is available.</div><div class="term"><b>File system</b>The structure and rules an operating system uses to name, organize, store, locate, protect, and recover files on a storage device.</div><div class="term"><b>Hacking</b>Using technical knowledge to explore, test, change, or control technology. It is ethical only when it is authorized, scoped, and used responsibly.</div></div>
+</section>
+<section class="section" id="cyberchef">
+<div class="section-head"><span class="stepno">E</span><div><h2>CyberChef: Transform and Inspect Data</h2><span>CyberChef applies operations to input and displays the result.</span></div><span class="time">~8–12 min</span></div>
+<div class="flow">
+<div class="flow-step"><b>1. Operations</b>Search for a tool such as “From Base64,” “To Hex,” or “SHA2.”</div>
+<div class="flow-step"><b>2. Recipe</b>Drag the operation into the recipe area.</div>
+<div class="flow-step"><b>3. Input</b>Enter fake or non-sensitive practice data.</div>
+<div class="flow-step"><b>4. Output</b>Observe, compare, and explain the transformed result.</div>
+</div>
+<div class="grid-3">
+<div class="card"><h3>Decode Base64</h3><p>Paste <code>Q3liZXJzZWN1cml0eQ==</code>, then use <b>From Base64</b>. The output is <b>Cybersecurity</b>.</p></div>
+<div class="card"><h3>Compare Hashes</h3><p>Use a fake word with <b>SHA2</b>. Change one character and notice how dramatically the output changes.</p></div>
+<div class="card"><h3>Add a Fake Salt</h3><p>Compare <code>robot2026</code> with <code>robot2026|583967</code> before hashing. The outputs should be different.</p></div>
+</div>
+<div class="callout danger"><b>Privacy:</b> Never paste a real password, account token, confidential file, private message, or personal record into a public web tool.</div>
+<a class="btn dark" href="https://gchq.github.io/CyberChef/" rel="noopener" target="_blank">Open CyberChef</a>
+</section>
+<section class="section" id="hardening">
+<div class="section-head"><span class="stepno">F</span><div><h2>System Hardening</h2><span>Select a defense to see why it matters.</span></div><span class="time">~8–12 min</span></div>
+<div class="grid-4">
+<div class="reveal-card"><button aria-expanded="false">Updates</button><div class="reveal-content"><p>Patch operating systems, applications, browsers, firmware, and network devices. Remove unsupported software.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Accounts</button><div class="reveal-content"><p>Remove unused accounts, avoid shared administrator accounts, use least privilege, and protect sign-in with MFA.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Services &amp; Ports</button><div class="reveal-content"><p>Disable what is unnecessary, limit remote access, restrict firewall rules, and monitor exposed services.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Passwords</button><div class="reveal-content"><p>Use unique long passwords or passphrases, password managers, secure reset processes, and modern password hashing.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Logs</button><div class="reveal-content"><p>Enable useful logs, synchronize time, centralize important events, and investigate unusual authentication or system activity.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Backups</button><div class="reveal-content"><p>Keep multiple protected copies and test restoration. A backup that cannot be restored is not a reliable recovery plan.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Encryption</button><div class="reveal-content"><p>Protect data at rest and in transit, manage keys carefully, and remember that encryption does not replace access control.</p></div></div>
+<div class="reveal-card"><button aria-expanded="false">Baseline &amp; Documentation</button><div class="reveal-content"><p>Know the approved configuration, document changes, test one change at a time, and verify the system still performs its intended role.</p></div></div>
+</div>
+<div class="callout info"><b>Competition connection:</b> Cyber-defense events often place vulnerabilities and insecure settings inside virtual machines. Participants inspect the system, fix issues, preserve required services, and watch scoring or evidence of improvement.</div>
+</section>
+<section class="section">
+<div class="section-head"><span class="stepno">G</span><div><h2>Places to Practice</h2><span>Use only official challenges and authorized environments.</span></div><span class="time">Explore</span></div>
+<div class="grid-4">
+<div class="card"><h3>CYBER.ORG Range</h3><p>Browser-based virtual machines isolated from private networks.</p><a class="btn" href="https://apps.cyber.org/" rel="noopener" target="_blank">Open Range</a></div>
+<div class="card"><h3>CyberPatriot</h3><p>Cyber-defense competition centered on finding and fixing vulnerabilities while preserving system function.</p><a class="btn" href="https://www.uscyberpatriot.org/" rel="noopener" target="_blank">Explore CyberPatriot</a></div>
+<div class="card"><h3>National Cyber League</h3><p>Gym and team games covering OSINT, cryptography, logs, network traffic, passwords, and more.</p><a class="btn" href="https://nationalcyberleague.org/" rel="noopener" target="_blank">Explore NCL</a></div>
+<div class="card"><h3>picoCTF</h3><p>Beginner-friendly capture-the-flag challenges from Carnegie Mellon University.</p><a class="btn" href="https://picoctf.org/" rel="noopener" target="_blank">Explore picoCTF</a></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><span class="stepno">H</span><div><h2>Careers &amp; Certifications</h2><span>Cybersecurity includes technical, investigative, analytical, risk, support, and leadership work.</span></div><span class="time">Explore</span></div>
+<div class="grid-3">
+<div class="card"><h3>Las Vegas Snapshot</h3><p>Computer and mathematical occupations in the Las Vegas metro averaged <b>$47.47 per hour</b> in May 2025. This broad group includes many roles beyond cybersecurity.</p><p class="small">Source: U.S. Bureau of Labor Statistics, May 2025 OEWS.</p></div>
+<div class="card"><h3>National Security Analyst Snapshot</h3><p>Information security analysts had a national median annual wage of <b>$124,910</b> in May 2024, with projected employment growth of <b>29%</b> from 2024–2034.</p><p class="small">Experience, education, certifications, industry, and location affect pay.</p></div>
+<div class="card"><h3>Search Terms</h3><p>IT support, help desk, network technician, systems administrator, SOC analyst, security analyst, vulnerability analyst, cloud security, GRC, incident response, and digital forensics.</p></div>
+</div>
+<div class="grid-4 mt-08"><div class="card"><h3>CompTIA A+ V15</h3><p>Core 1 <b>220-1201</b> and Core 2 <b>220-1202</b>: hardware, networking, operating systems, security, troubleshooting, and operational procedures.</p></div><div class="card"><h3>CompTIA Network+</h3><p><b>N10-009</b>: network concepts, implementation, operations, security, and troubleshooting.</p></div><div class="card"><h3>CompTIA Security+</h3><p><b>SY0-701</b>: threats, architecture, operations, incident response, governance, risk, and compliance.</p></div><div class="card"><h3>CompTIA Linux+</h3><p><b>XK0-006</b>: Linux system management, services, security, containers, automation, scripting, and troubleshooting.</p></div></div>
+<div class="callout note"><b>Version check:</b> Certification codes and requirements change. Verify the current exam on the certification provider’s official website before buying materials or scheduling.</div>
+<div class="hero-actions">
+<a class="btn" href="https://www.onetonline.org/" rel="noopener" target="_blank">Explore occupations on O*NET</a>
+<a class="btn" href="https://www.careeronestop.org/" rel="noopener" target="_blank">Explore CareerOneStop</a>
+<a class="btn" href="https://www.employnv.gov/" rel="noopener" target="_blank">Search EmployNV</a>
+<a class="btn" href="https://www.comptia.org/en-us/certifications/" rel="noopener" target="_blank">Verify CompTIA certifications</a>
+</div>
+</section>
+<section class="section pathway-invite" id="pathway">
+<div class="section-head">
+<span class="stepno">I</span>
+<div><h2>See the Nevada Partners Cybersecurity Pathway</h2><span>Connect the ideas on this page to a four-course pathway beginning with CSEC 114 in August 2026.</span></div>
+<span class="time">Explore next</span>
+</div>
+<div class="grid-2">
+<div class="card soft">
+<h3>Start with the foundations</h3>
+<p>The pathway begins with IT essentials—hardware, operating systems, networking, support, troubleshooting, and foundational security—then expands into networking, Linux, and security.</p>
+</div>
+<div class="card">
+<h3>See how the courses connect</h3>
+<p>Review the course sequence, the skills each course develops, and the certifications connected to the pathway.</p>
+<a class="btn dark" href="nevada-partners-cybersecurity-pathway.html">Explore the pathway</a>
+</div>
+</div>
+</section><section class="section" id="curiosityQuiz">
+<div class="quizbar"><div><h2>Curiosity Check</h2><p>Choose an answer to reveal the explanation.</p></div><span class="score">Answers revealed: 0 / 5</span><button class="btn" data-reset-quiz="#curiosityQuiz">Reset</button></div>
+<div class="grid-3">
+<article class="card question" data-answer="authz" data-correct-feedback="Correct. Authorization determines which actions an authenticated identity may perform."><h3>What decides what a signed-in person may do?</h3><div class="option-grid"><button class="option" data-choice="authn" data-feedback="Authentication proves identity. The question asks what controls permissions after identity is known.">Authentication</button><button class="option" data-choice="authz">Authorization</button><button class="option" data-choice="hash" data-feedback="A hash transforms data; it does not assign account permissions.">Hashing</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="443" data-correct-feedback="Correct. HTTPS commonly uses TCP port 443."><h3>Which port commonly carries HTTPS?</h3><div class="option-grid"><button class="option" data-choice="22" data-feedback="Port 22 is commonly SSH, an encrypted remote shell.">22</button><button class="option" data-choice="80" data-feedback="Port 80 is commonly HTTP without TLS.">80</button><button class="option" data-choice="443">443</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="salt" data-correct-feedback="Correct. A unique salt changes the hash and weakens simple precomputed lookup attacks."><h3>What is added before password hashing to make identical passwords produce different stored results?</h3><div class="option-grid"><button class="option" data-choice="salt">A salt</button><button class="option" data-choice="port" data-feedback="A port identifies a service endpoint; it is not added to password data.">A port</button><button class="option" data-choice="firewall" data-feedback="A firewall filters traffic; it does not change the password hash.">A firewall rule</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="lsblk" data-correct-feedback="Correct. lsblk displays block devices and can show partitions and mount points."><h3>Which Linux command helps identify storage devices?</h3><div class="option-grid"><button class="option" data-choice="pwd" data-feedback="pwd shows the current working directory, not the device list.">pwd</button><button class="option" data-choice="lsblk">lsblk</button><button class="option" data-choice="cat" data-feedback="cat displays file contents; it does not list block devices.">cat</button></div><p class="feedback"></p></article>
+<article class="card question" data-answer="least" data-correct-feedback="Correct. Least privilege limits the damage one account or process can cause."><h3>Which principle gives only the access needed?</h3><div class="option-grid"><button class="option" data-choice="least">Least privilege</button><button class="option" data-choice="public" data-feedback="Public access increases exposure and does not consider role requirements.">Public by default</button><button class="option" data-choice="shared" data-feedback="Shared administrator accounts reduce accountability and usually grant too much access.">Shared administrator access</button></div><p class="feedback"></p></article>
+</div>
+</section>
+<section class="section refs">
+<h2>References</h2>
+<ol>
+<li>Air &amp; Space Forces Association. (n.d.). <i>CyberPatriot</i>. https://www.uscyberpatriot.org/</li>
+<li>CompTIA. (n.d.). <i>Certifications</i>. https://www.comptia.org/en-us/certifications/</li>
+<li>Cyber Innovation Center. (n.d.). <i>CYBER.ORG Range</i>. https://cyber.org/range</li>
+<li>Government Communications Headquarters. (n.d.). <i>CyberChef</i>. https://gchq.github.io/CyberChef/</li>
+<li>Internet Assigned Numbers Authority. (n.d.). <i>Service name and transport protocol port number registry</i>. https://www.iana.org/assignments/service-names-port-numbers/</li>
+<li>National Cyber League. (n.d.). <i>National Cyber League</i>. https://nationalcyberleague.org/</li>
+<li>U.S. Bureau of Labor Statistics. (2026, June 18). <i>Occupational employment and wages in Las Vegas-Henderson-North Las Vegas — May 2025</i>. https://www.bls.gov/regions/west/news-release/occupationalemploymentandwages_lasvegas.htm</li>
+<li>U.S. Bureau of Labor Statistics. (2025, August 28). <i>Information security analysts</i>. <i>Occupational Outlook Handbook</i>. https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm</li>
+</ol>
+</section>
+</main>
+<footer class="footer">
+<div class="footerbox">
+<b>FamilyPD Curiosity Library</b><br/>
+    This public exploration uses safe simulations, fictional information, and authorized environments.
+    Never test a real person, account, device, website, or network without clear permission.
+  </div>
+</footer>
+<script src="familypd-cyber-assets/familypd-cyber-data.js"></script><script src="familypd-cyber-assets/familypd-cyber.js"></script>
+</body></html>
