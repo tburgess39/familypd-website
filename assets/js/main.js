@@ -759,3 +759,63 @@ document.addEventListener('DOMContentLoaded',()=>{
     connect.appendChild(wrap);
   });
 });
+
+
+/* FamilyPD v26: identify the cybersecurity Family Practice panel even when
+   its page-specific markup changes, then apply accessible contrast. */
+(function fixCyberFamilyPracticeContrast() {
+  function normalizeText(value) {
+    return String(value || "")
+      .replace(/[’‘]/g, "'")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+  }
+
+  function applyFix() {
+    const targetText = "strengthen one part of your family's digital safety system";
+    const headings = document.querySelectorAll("h1, h2, h3");
+
+    headings.forEach(function (heading) {
+      if (!normalizeText(heading.textContent).includes(targetText)) return;
+
+      const panel =
+        heading.closest("section") ||
+        heading.closest("article") ||
+        heading.parentElement;
+
+      if (!panel) return;
+      panel.classList.add("cyber-family-practice");
+
+      panel.querySelectorAll(
+        "h1,h2,h3,h4,p,li,span,strong,b,small,label"
+      ).forEach(function (element) {
+        const classText = String(element.className || "").toLowerCase();
+        const isAccent =
+          classText.includes("eyebrow") ||
+          classText.includes("kicker") ||
+          classText.includes("label");
+
+        element.style.setProperty(
+          "color",
+          isAccent ? "#ffd37a" : "#ffffff",
+          "important"
+        );
+      });
+
+      panel.querySelectorAll(
+        "article p,.card p,[class*='card'] p,article li,.card li,[class*='card'] li"
+      ).forEach(function (element) {
+        element.style.setProperty("color", "#eaf4f8", "important");
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyFix);
+  } else {
+    applyFix();
+  }
+
+  window.addEventListener("load", applyFix);
+})();

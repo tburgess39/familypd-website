@@ -229,3 +229,35 @@ details>div{padding:.9rem 1rem}
 .footerbox a:focus-visible {
   color: #ffd37a !important;
 }
+
+
+/* FamilyPD v26: cybersecurity Family Practice contrast */
+.cyber-family-practice,
+.cyber-family-practice h1,
+.cyber-family-practice h2,
+.cyber-family-practice h3,
+.cyber-family-practice h4,
+.cyber-family-practice p,
+.cyber-family-practice li,
+.cyber-family-practice span,
+.cyber-family-practice strong,
+.cyber-family-practice b,
+.cyber-family-practice small,
+.cyber-family-practice label {
+  color: #ffffff !important;
+}
+
+.cyber-family-practice .eyebrow,
+.cyber-family-practice [class*="eyebrow"],
+.cyber-family-practice [class*="label"],
+.cyber-family-practice [class*="kicker"] {
+  color: #ffd37a !important;
+}
+
+.cyber-family-practice article p,
+.cyber-family-practice .card p,
+.cyber-family-practice [class*="card"] p,
+.cyber-family-practice article li,
+.cyber-family-practice [class*="card"] li {
+  color: #eaf4f8 !important;
+}
