@@ -5673,3 +5673,61 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
 .school-ranking-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:24px 0}.school-ranking-grid ol,.school-ranking-grid ul{padding-left:22px}.school-ranking-grid li{margin:8px 0}
 @media(max-width:900px){.county-card-grid,.resource-action-grid,.county-service-grid,.school-ranking-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.county-card-grid,.resource-action-grid,.county-service-grid,.school-ranking-grid{grid-template-columns:1fr}.county-card,.resource-action-grid article,.school-ranking-grid article{padding:19px}.community-resource-table{min-width:760px}}
+
+/* =========================================================
+   FamilyPD sitewide footer contrast protection — v18
+   Keeps all footer copy and links readable on the dark footer.
+   ========================================================= */
+.site-footer,
+.site-footer .container,
+.site-footer .footer-grid,
+.site-footer .footer-grid > div,
+.site-footer .footer-bottom,
+.site-footer p,
+.site-footer span,
+.site-footer strong,
+.site-footer small,
+.site-footer li,
+.site-footer address,
+.site-footer a,
+.site-footer a:link,
+.site-footer a:visited,
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:focus-visible,
+.site-footer a:active,
+.site-footer .social-links a,
+.site-footer .social-links a:visited {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.site-footer a,
+.site-footer a:link,
+.site-footer a:visited {
+  text-decoration-color: rgba(255,255,255,.72) !important;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  background: rgba(255,255,255,.10) !important;
+  border-radius: 4px;
+  outline: 2px solid #ffffff !important;
+  outline-offset: 3px;
+}
+
+.site-footer svg,
+.site-footer svg path,
+.site-footer svg use {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.site-footer .footer-bottom {
+  border-top-color: rgba(255,255,255,.28) !important;
+}
