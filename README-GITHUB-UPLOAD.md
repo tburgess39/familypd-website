@@ -1,49 +1,33 @@
-# FamilyPD Cybersecurity — GitHub Drop-In Package
+# FamilyPD Cybersecurity Learning Center Update
 
-This package installs the FamilyPD **Lifelong Learning → Cybersecurity** section.
-
-## Main entry page
-
-After upload, open:
-
-`/learning/cybersecurity.html`
-
-Recommended public URL:
-
-`https://familypd.org/learning/cybersecurity.html`
+This ZIP is structured to upload directly into the root of the existing `familypd-website` GitHub repository.
 
 ## Upload
 
-1. Unzip this package.
+1. Extract the ZIP.
 2. Open the root of the FamilyPD GitHub repository.
-3. Upload the included `learning` folder.
-4. Allow GitHub to merge it with the existing `learning` folder.
+3. Upload the included `index.html`, `learning-center`, and `learning` items.
+4. Choose **Replace** when GitHub reports files with the same names.
 5. Commit the changes.
 
-## Add visible access from Lifelong Learning
+Do not upload the outer folder as a new folder. Merge its contents with the repository root.
 
-The complete website repository was not included in this package, so the existing Lifelong Learning page is not overwritten.
-Add a card or menu link that points to:
+## Access path
 
-`learning/cybersecurity.html`
+`FamilyPD home → Learning Center → Cybersecurity`
 
-Suggested card:
+The main cybersecurity URL is:
 
-**Cybersecurity**  
-Learn how computers, networks, people, and access decisions connect. Explore safe simulations, digital safety, CTE programs, and career preparation options.
+`https://familypd.org/learning-center/cybersecurity/`
 
-Button: **Explore Cybersecurity**
+## Main changes
 
-## New structure
-
-- `cybersecurity.html` — Lifelong Learning cybersecurity section home
-- `cybersecurity-who-has-access.html` — guided journey
-- `cybersecurity-explore.html` — interactive exploration hub
-- `cybersecurity-career-prep-options.html` — career preparation options hub
-- `cybersecurity-cte-programs.html` — CTE exploration with official CCSD and CMS links
-- `nevada-partners-cybersecurity-pathway.html` — Nevada Partners as one career preparation option
-- OSINT, social-engineering, QR, and authorized Range pages
-
-## Important
-
-This package updates the cybersecurity section only. The full FamilyPD repository is still needed to directly edit the existing Lifelong Learning landing page, sitewide navigation, and the five pillar pages.
+- Added a visible Learning Center link and card to the website home page.
+- Updated the Cybersecurity card on the Learning Center page.
+- Rebuilt the current Cybersecurity page as the central hub for all cybersecurity content.
+- Connected the guided journey, hands-on exploration, QR safety, OSINT, social engineering, authorized Range guide, career preparation, CTE, and Nevada Partners pages.
+- Reframed Nevada Partners as one career-preparation option.
+- Added a dedicated CTE page with official CCSD and Charlotte-Mecklenburg Schools links.
+- Removed classroom-day, lesson-duration, weekly, and August 2026 wording so the section can be used at any time.
+- Redirected the prior standalone cyber home to the Learning Center Cybersecurity hub.
+- Preserved the old Nevada Partners URL with a redirect to the renamed career-preparation page.

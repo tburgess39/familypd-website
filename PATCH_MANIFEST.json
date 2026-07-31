@@ -1,29 +1,21 @@
 {
-  "version": "7.0.0",
-  "packageType": "CHANGED_NEW_FILES_ONLY",
-  "replaceExisting": [
-    "Code.gs",
-    "Config.gs",
-    "DataStoreService.gs",
-    "GoalDocumentService.gs",
-    "GoalsService.gs",
-    "GuidanceService.gs",
-    "IdentityDocumentService.gs",
-    "IdentityService.gs",
-    "Index.html",
-    "MeetingClient.html",
-    "MeetingDocumentService.gs",
-    "MeetingService.gs",
-    "PrivacyGuardService.gs",
-    "Scripts.html",
-    "Styles.html",
-    "UpdatePackService.gs"
+  "package": "FamilyPD Cybersecurity Learning Center Update",
+  "main_url": "/learning-center/cybersecurity/",
+  "changed_or_new_files": [
+    "index.html",
+    "learning-center/index.html",
+    "learning-center/cybersecurity/index.html",
+    "learning/cybersecurity.html",
+    "learning/cybersecurity-who-has-access.html",
+    "learning/cybersecurity-explore.html",
+    "learning/i-got-you-qr.html",
+    "learning/osint-tony-stark.html",
+    "learning/social-engineering-simulation.html",
+    "learning/credential-harvesting-range-guide.html",
+    "learning/cybersecurity-career-prep-options.html",
+    "learning/cybersecurity-cte-programs.html",
+    "learning/nevada-partners-cybersecurity-career-prep.html",
+    "learning/nevada-partners-cybersecurity-pathway.html"
   ],
-  "addNew": [
-    "LearningClient.html",
-    "LearningDocumentService.gs",
-    "LearningService.gs",
-    "ResourceVerificationService.gs"
-  ],
-  "unchangedManifest": "appsscript.json"
+  "upload_root": "repository root"
 }
