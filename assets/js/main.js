@@ -696,6 +696,18 @@ if (involvementPreview) {
       else nav.appendChild(toolkitLink);
     }
 
+    if (!nav.querySelector('a[href="/search/"]')) {
+      const searchLink = document.createElement('a');
+      searchLink.href = '/search/';
+      searchLink.textContent = 'Search';
+      searchLink.className = 'site-search-nav-link';
+      if (window.location.pathname.startsWith('/search/')) searchLink.setAttribute('aria-current', 'page');
+      const toolkitLink = nav.querySelector('a[href="/toolkit/"]');
+      if (toolkitLink) toolkitLink.insertAdjacentElement('afterend', searchLink);
+      else if (donateLink) nav.insertBefore(searchLink, donateLink);
+      else nav.appendChild(searchLink);
+    }
+
   });
 })();
 

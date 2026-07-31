@@ -5846,3 +5846,44 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
   body.connector-printing .connector-print-document{display:block!important;position:static!important;width:100%!important}
   body.connector-printing .connector-print-sheet{border-color:#173247;box-shadow:none}
 }
+
+
+/* FamilyPD v25: consistent resource directory and public site search */
+.resources-hero .resource-quick-search{max-width:760px;margin-top:24px;padding:18px;border:1px solid rgba(255,255,255,.42);border-radius:14px;background:rgba(255,255,255,.1)}
+.resource-quick-search label,.site-search-form>label{display:block;font-weight:800;margin-bottom:8px}
+.resource-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch}
+.resource-search-row input{margin:0;min-height:48px;background:#fff;color:#173247;border:2px solid #aec0ca}
+.resource-search-row .button{min-height:48px}
+.section-compact{padding-top:24px;padding-bottom:12px}
+.educator-resource-notice{border-left:6px solid #c86632;background:#fff7ec;color:#173247}
+.educator-resource-notice p{color:#273f50!important}
+.resource-directory-controls,.site-search-toolbar{display:grid;grid-template-columns:minmax(260px,1fr) minmax(210px,.55fr) auto;gap:14px;align-items:end;margin:24px 0}
+.resource-directory-controls label,.site-search-toolbar label{font-weight:800;color:#173247}
+.resource-directory-controls input,.resource-directory-controls select,.site-search-toolbar select{margin-top:7px}
+.resource-directory-controls p,.site-search-toolbar p{grid-column:1/-1;margin:0;color:#2f4656!important;font-weight:700}
+.resource-directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.resource-directory-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #c9d5dc;border-radius:14px;padding:20px;box-shadow:0 8px 22px rgba(20,45,70,.07)}
+.resource-directory-card h3{margin:12px 0 7px;color:#173247;font-size:1.18rem}
+.resource-directory-card p{color:#2f4656!important;line-height:1.55}
+.resource-directory-card .button{margin-top:auto;align-self:flex-start}
+.resource-directory-card-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.resource-scope{display:inline-flex;padding:5px 9px;border-radius:999px;background:#eaf2f6;color:#173247;font-size:.76rem;font-weight:800}
+.resource-scope-educator{background:#fff0da;color:#733c16}
+.resource-audience{font-size:.9rem;margin-top:4px}
+.site-search-form{max-width:860px;margin-bottom:20px}
+.site-search-results{display:grid;gap:14px;margin-top:20px}
+.site-search-result{display:flex;justify-content:space-between;gap:24px;align-items:center;border:1px solid #c9d5dc;border-radius:14px;background:#fff;padding:20px}
+.site-search-result h2{font-size:1.2rem;margin:9px 0 6px}
+.site-search-result h2 a{color:#173247}
+.site-search-result p{margin:4px 0;color:#2f4656!important}
+.site-search-nav-link::before{content:"⌕";margin-right:5px;font-weight:900}
+@media(max-width:980px){
+  .resource-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .resource-search-row,.resource-directory-controls,.site-search-toolbar{grid-template-columns:1fr}
+  .resource-directory-controls p,.site-search-toolbar p{grid-column:auto}
+  .resource-directory-grid{grid-template-columns:1fr}
+  .site-search-result{align-items:flex-start;flex-direction:column}
+  .site-search-result .button{align-self:flex-start}
+}

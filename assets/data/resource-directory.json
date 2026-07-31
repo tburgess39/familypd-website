@@ -1,0 +1,354 @@
+{
+  "updated": "2026-07-31",
+  "categories": [
+    "All Resources",
+    "Interactive Tools",
+    "FamilyPD Framework",
+    "Learning Center",
+    "School Systems",
+    "Community Support",
+    "Learning Resources",
+    "Youth & Family Learning",
+    "Media & Discussion",
+    "Educator Resources",
+    "Programs & Platform"
+  ],
+  "items": [
+    {
+      "title": "FamilyPD Learning Center",
+      "url": "/learning-center/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Explore FamilyPD topic pages, practical explanations, discussion prompts, references, and related tools.",
+      "keywords": "learning curiosity lifelong topics family education"
+    },
+    {
+      "title": "Family Toolkit",
+      "url": "/toolkit/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Open the complete directory of browser-based FamilyPD reflection, planning, communication, and meeting tools.",
+      "keywords": "toolkit tools worksheets interactive planning"
+    },
+    {
+      "title": "Five Pillars",
+      "url": "/pillars/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Explore Health, Relationships, Education, Finances, and Goals as connected areas of family growth.",
+      "keywords": "pillars framework health relationships education finances goals"
+    },
+    {
+      "title": "Kids & Teens",
+      "url": "/kids/",
+      "category": "Youth & Family Learning",
+      "audience": "Youth and families",
+      "description": "Find age-aware activities, project ideas, roles, learning resources, and career exploration.",
+      "keywords": "kids teens youth children projects careers"
+    },
+    {
+      "title": "Media Bank",
+      "url": "/media-bank/",
+      "category": "Media & Discussion",
+      "audience": "Families and educators",
+      "description": "Search FamilyPD educational visuals by topic, pillar, principle, and format.",
+      "keywords": "images visuals graphics social media discussion"
+    },
+    {
+      "title": "Community Resources by County",
+      "url": "/resources/community/",
+      "category": "Community Support",
+      "audience": "Families",
+      "description": "Locate starting points for food, housing, health, school, and other support by county.",
+      "keywords": "community county assistance food housing support resources"
+    },
+    {
+      "title": "Understanding School Systems",
+      "url": "/resources/school-systems/",
+      "category": "School Systems",
+      "audience": "Families",
+      "description": "Navigate school structures, records, meetings, IEPs, Section 504, advocacy, and family-school partnerships.",
+      "keywords": "school district iep 504 records advocacy parents"
+    },
+    {
+      "title": "Free & Low-Cost Learning Tools",
+      "url": "/resources/learning-tools/",
+      "category": "Learning Resources",
+      "audience": "Families",
+      "description": "Browse external learning tools for coding, academics, careers, design, typing, robotics, and more.",
+      "keywords": "free learning tools coding robotics academics typing"
+    },
+    {
+      "title": "Health Pillar",
+      "url": "/pillars/health/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Explore physical, emotional, preventive, and everyday health practices for the household.",
+      "keywords": "health wellness sleep water exercise emotional"
+    },
+    {
+      "title": "Relationships Pillar",
+      "url": "/pillars/relationships/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Strengthen communication, trust, connection, conflict repair, and support systems.",
+      "keywords": "relationships communication trust conflict love"
+    },
+    {
+      "title": "Education Pillar",
+      "url": "/pillars/education/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Build lifelong learning, school navigation, credentials, skills, and career preparation.",
+      "keywords": "education school learning credentials career"
+    },
+    {
+      "title": "Finances Pillar",
+      "url": "/pillars/finances/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Support financial awareness, planning, stability, opportunity, and shared family understanding.",
+      "keywords": "finances money budget savings debt opportunity"
+    },
+    {
+      "title": "Goals Pillar",
+      "url": "/pillars/goals/",
+      "category": "FamilyPD Framework",
+      "audience": "Families",
+      "description": "Turn family priorities into clear actions, routines, accountability, and progress.",
+      "keywords": "goals action planning accountability progress"
+    },
+    {
+      "title": "Research-Based Five-Pillar Check-In",
+      "url": "/toolkit/pillar-check/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Choose a pillar, answer focused questions, and receive immediate educational feedback and suggestions.",
+      "keywords": "check in health sleep water exercise relationships finances goals"
+    },
+    {
+      "title": "Family Identity Builder",
+      "url": "/toolkit/mission-vision/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Create a family mission, vision, values, commitments, goals, and editable family identity summary.",
+      "keywords": "mission vision values identity commitments"
+    },
+    {
+      "title": "Roles & Workload Calculator",
+      "url": "/toolkit/roles-responsibilities/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Make visible work, ownership, frequency, effort, and mental load easier to discuss.",
+      "keywords": "roles responsibilities chores workload mental load"
+    },
+    {
+      "title": "Pattern Reflector",
+      "url": "/toolkit/pattern-reflector/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Reflect on patterns affecting family routines, relationships, decisions, and progress.",
+      "keywords": "patterns reflection habits routines behavior"
+    },
+    {
+      "title": "Goal Planner",
+      "url": "/toolkit/goal-planner/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Break a goal into practical steps, support, obstacles, timelines, and follow-through.",
+      "keywords": "goal planner steps timeline obstacles"
+    },
+    {
+      "title": "Family Meeting Planner",
+      "url": "/toolkit/meeting-planner/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Prepare a focused family meeting with topics, prompts, notes, decisions, and next steps.",
+      "keywords": "meeting agenda discussion family planner"
+    },
+    {
+      "title": "Communication Style Reflection",
+      "url": "/toolkit/communication-style/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Explore communication preferences and receive immediate results without submitting personal information.",
+      "keywords": "disc communication style reflection personality"
+    },
+    {
+      "title": "News Discussion Tool",
+      "url": "/toolkit/news-discussion/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Use current issues and verified stories to support thoughtful family discussion.",
+      "keywords": "news discussion current events media literacy"
+    },
+    {
+      "title": "Outreach Message Generator",
+      "url": "/programs/bridge-center/",
+      "category": "Interactive Tools",
+      "audience": "Families",
+      "description": "Find natural words for contacting schools, agencies, organizations, and community partners.",
+      "keywords": "outreach message email school teacher community connector"
+    },
+    {
+      "title": "Family Project Idea Generator",
+      "url": "/kids/creator-lab/",
+      "category": "Interactive Tools",
+      "audience": "Youth and families",
+      "description": "Generate a family project using a pillar, age range, time, project type, or real-life need.",
+      "keywords": "project generator kids youth creator lab"
+    },
+    {
+      "title": "Why Lifelong Learning Matters",
+      "url": "/learning-center/why-lifelong-learning/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Explore why learning should continue across ages, roles, careers, and family life.",
+      "keywords": "lifelong learning curiosity growth"
+    },
+    {
+      "title": "Cybersecurity",
+      "url": "/learning-center/cybersecurity/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Learn practical cybersecurity ideas, risks, family practices, and ways data moves through systems.",
+      "keywords": "cybersecurity online safety data privacy hacking"
+    },
+    {
+      "title": "Atoms",
+      "url": "/learning-center/atoms/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Explore matter, atoms, and how scientific curiosity connects to everyday life.",
+      "keywords": "atoms science matter STEM"
+    },
+    {
+      "title": "Procrastination",
+      "url": "/learning-center/procrastination/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Understand procrastination patterns and practical ways to begin, continue, and finish.",
+      "keywords": "procrastination motivation discipline habits"
+    },
+    {
+      "title": "Motivation & Self-Discipline",
+      "url": "/learning-center/motivation-self-discipline/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Compare motivation and discipline and explore how routines support follow-through.",
+      "keywords": "motivation discipline habits routines"
+    },
+    {
+      "title": "Books & Family Learning",
+      "url": "/learning-center/books/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Browse FamilyPD book spotlights, lessons learned, discussion ideas, and references.",
+      "keywords": "books reading book club summaries"
+    },
+    {
+      "title": "Family Learning Journeys",
+      "url": "/learning-center/journeys/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "See how a family can document what it explored, learned, practiced, and shared.",
+      "keywords": "journeys learning reflection family"
+    },
+    {
+      "title": "AI Learning",
+      "url": "/learning-center/ai-learning/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Explore artificial intelligence in plain language, including responsible use and family learning ideas.",
+      "keywords": "AI artificial intelligence prompts responsible use"
+    },
+    {
+      "title": "Career Exploration",
+      "url": "/learning-center/career-exploration/",
+      "category": "Learning Center",
+      "audience": "Families",
+      "description": "Explore careers, skills, education pathways, labor information, and next-step planning.",
+      "keywords": "career jobs pathways skills occupation"
+    },
+    {
+      "title": "CCSD PGS & Contact Units Learning Page",
+      "url": "/learning-center/pgs-contact-units/",
+      "category": "Educator Resources",
+      "audience": "CCSD licensed educators",
+      "description": "Understand CCSD Professional Growth System concepts, Contact Units, evidence, and official-source verification.",
+      "keywords": "CCSD PGS contact units CU educators ELMS"
+    },
+    {
+      "title": "Family-School Partnership Reflection",
+      "url": "/resources/school-systems/family-partnership/",
+      "category": "School Systems",
+      "audience": "Parents and caregivers",
+      "description": "Reflect on family involvement, early communication, advocacy, and shared responsibility without blame.",
+      "keywords": "parent partnership teacher grades attendance advocacy"
+    },
+    {
+      "title": "Clark County School District Guide",
+      "url": "/resources/school-systems/districts/ccsd/",
+      "category": "School Systems",
+      "audience": "CCSD families and educators",
+      "description": "Find CCSD-specific school-system and educator information, including access to the FamilyPD PGS page.",
+      "keywords": "CCSD Clark County schools Nevada educators"
+    },
+    {
+      "title": "Clark County, Nevada Community Resources",
+      "url": "/resources/community/clark-county-nv/",
+      "category": "Community Support",
+      "audience": "Clark County families",
+      "description": "Review publicly shared food and pet-food resources plus official assistance starting points.",
+      "keywords": "Clark County Nevada Las Vegas food pantry pet food"
+    },
+    {
+      "title": "Mecklenburg County, North Carolina Community Resources",
+      "url": "/resources/community/mecklenburg-county-nc/",
+      "category": "Community Support",
+      "audience": "Mecklenburg County families",
+      "description": "Find county service directories, food, housing, health, and family-support starting points.",
+      "keywords": "Mecklenburg Charlotte North Carolina food housing"
+    },
+    {
+      "title": "Onslow County, North Carolina Community Resources",
+      "url": "/resources/community/onslow-county-nc/",
+      "category": "Community Support",
+      "audience": "Onslow County families",
+      "description": "Find county, school, food, health, and family-support starting points.",
+      "keywords": "Onslow Jacksonville North Carolina resources"
+    },
+    {
+      "title": "Unofficial CCSD PGS Assistant",
+      "url": "/pgs/",
+      "category": "Educator Resources",
+      "audience": "CCSD licensed educators only",
+      "description": "Access the FamilyPD explanation page and private CCSD-domain assistant for CU tracking, evidence organization, and ELMS preparation.",
+      "keywords": "PGS assistant CCSD educator CU contact units professional growth"
+    },
+    {
+      "title": "FamilyPD Programs",
+      "url": "/programs/",
+      "category": "Programs & Platform",
+      "audience": "Families and partners",
+      "description": "Explore FamilyPD programs, implementation supports, and growing family-development initiatives.",
+      "keywords": "programs nonprofit implementation"
+    },
+    {
+      "title": "FamilyPD OS",
+      "url": "/app/",
+      "category": "Programs & Platform",
+      "audience": "Families",
+      "description": "Learn about the FamilyPD family operating system and integrated household workspace vision.",
+      "keywords": "FamilyPD OS family operating system workspace"
+    },
+    {
+      "title": "FamilyPD Workspace",
+      "url": "/workspace/",
+      "category": "Programs & Platform",
+      "audience": "Families",
+      "description": "Learn about the private workspace approach for family information, meetings, goals, and tools.",
+      "keywords": "workspace private household dashboard"
+    }
+  ]
+}
