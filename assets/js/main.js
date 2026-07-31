@@ -480,6 +480,9 @@ function isWithinYears(dateString, years) {
 function renderNewsCard(story) {
   const card = document.createElement('article');
   card.className = 'family-news-card';
+  card.dataset.newsCard = '';
+  card.dataset.pillar = story.pillar || '';
+  card.dataset.search = [story.title, story.source, story.summary, story.pillar, story.secondary_pillar].filter(Boolean).join(' ').toLowerCase();
 
   card.innerHTML = `
     <div class="news-card-meta">
@@ -673,7 +676,7 @@ if (involvementPreview) {
     if (!nav.querySelector('a[href="/learning-center/"]')) {
       const learningLink = document.createElement('a');
       learningLink.href = '/learning-center/';
-      learningLink.textContent = 'Lifelong Learning';
+      learningLink.textContent = 'Learning Center';
       if (document.body.classList.contains('learning-center-page') || window.location.pathname.startsWith('/learning-center/')) {
         learningLink.setAttribute('aria-current', 'page');
       }
@@ -722,4 +725,12 @@ if (involvementPreview) {
   search.addEventListener('input', filterTopics);
   pillar.addEventListener('change', filterTopics);
   filterTopics();
+})();
+
+
+(function initFamilyNewsFilters(){
+ const search=document.getElementById('news-search'); const pillar=document.getElementById('news-pillar-filter'); const clear=document.getElementById('news-filter-clear'); const status=document.getElementById('news-filter-status'); const grid=document.getElementById('family-news-grid');
+ if(!grid||!search||!pillar)return;
+ function apply(){const q=search.value.trim().toLowerCase();const p=pillar.value;const cards=[...grid.querySelectorAll('[data-news-card]')];let shown=0;cards.forEach(c=>{const okQ=!q||(c.dataset.search||c.textContent.toLowerCase()).includes(q);const okP=p==='all'||c.dataset.pillar===p;c.hidden=!(okQ&&okP);if(!c.hidden)shown++;});if(status)status.textContent=cards.length?`Showing ${shown} of ${cards.length} articles.`:'Loading articles…';}
+ search.addEventListener('input',apply);pillar.addEventListener('change',apply);clear?.addEventListener('click',()=>{search.value='';pillar.value='all';apply();search.focus();});new MutationObserver(apply).observe(grid,{childList:true,subtree:true});setTimeout(apply,300);
 })();

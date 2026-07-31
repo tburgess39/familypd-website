@@ -1,5 +1,5 @@
 {
-  "last_verified": "2026-07-12",
+  "last_verified": "2026-07-30",
   "policy": {
     "max_age_years": 7,
     "criteria": [
@@ -10,6 +10,23 @@
     ]
   },
   "stories": [
+    {
+      "id": "charlotte-teen-violence-community-2026",
+      "title": "Charlotte leaders call for deeper community involvement to prevent teen violence",
+      "source": "WBTV",
+      "published": "2026-07-24",
+      "pillar": "Relationships",
+      "secondary_pillar": "Health",
+      "url": "https://www.wbtv.com/2026/07/24/its-not-going-away-charlotte-police-community-leaders-ask-more-involvement-stop-teen-violence/",
+      "summary": "After multiple deadly shootings involving teenagers, Charlotte police and community leaders emphasized de-escalation, responsibility, education, mentoring, and sustained adult involvement. The report highlights that prevention requires families, mentors, schools, community programs, and volunteers working together.",
+      "prevention": [
+        "Talk with children and teens about conflict, online arguments, social-media bullying, and de-escalation before a crisis occurs.",
+        "Identify trusted adults, mentors, programs, and safe places young people can use when emotions or conflict escalate.",
+        "Practice a family plan for walking away, contacting an adult, reporting threats, and getting emergency help.",
+        "Support or volunteer with credible youth-development and violence-prevention organizations in the community."
+      ],
+      "prompts": "Who can each young person in our family contact when conflict feels unsafe? What online or in-person situations require walking away and getting adult help? Which community program, mentor, coach, faith leader, or volunteer opportunity could strengthen our support network?"
+    },
     {
       "id": "storm-boating-safety-2026",
       "title": "Sudden severe storm turns a holiday boat trip into a tragedy",

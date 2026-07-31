@@ -1,0 +1,25 @@
+{
+  "updated": "2026-07-30",
+  "categories": [
+    "All",
+    "Five Pillars",
+    "News Insights",
+    "Learning Center",
+    "Family Tools",
+    "Social Media"
+  ],
+  "items": [
+    {
+      "id": "family-mission-vision",
+      "title": "Family Mission and Vision",
+      "category": "Family Tools",
+      "pillar": "Goals",
+      "type": "Infographic",
+      "image": "/assets/images/family-mission-vision.png",
+      "alt": "FamilyPD family mission and vision graphic",
+      "description": "A FamilyPD visual supporting household mission, vision, values, and direction.",
+      "page": "/toolkit/mission-vision/",
+      "source": "FamilyPD original visual"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 <meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src https://d2hie3dpn9wvbb.cloudfront.net;" http-equiv="Content-Security-Policy"/>
 <link href="familypd-cyber-assets/familypd-cyber.css" rel="stylesheet"/>
 <title>Cybersecurity: Who Has Access? | FamilyPD</title>
-<meta content="bf4882e41b1b18344d2034b1" name="fpd-quiz-salt"/></head>
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
@@ -27,7 +27,7 @@
 <h1>Cybersecurity: Who Has Access?</h1>
 <p>Every device stores, processes, or moves information. Explore how computers work, how attackers gather clues and influence people, and how defenders reduce risk.</p>
 <div class="hero-actions">
-<a class="btn primary" href="#path">Jump to the first section below</a>
+<a class="btn primary" href="#path">Follow the journey</a>
 <a class="btn ghost" href="cybersecurity-explore.html">Open the exploration hub</a>
 </div>
 </section>
@@ -37,20 +37,20 @@
 </div>
 <div class="notice"><h3>Important Boundary</h3><p>Cybersecurity knowledge can protect or harm. This site focuses on awareness, ethical testing, safe practice environments, and defense. Public information is not automatic permission to target a real person.</p></div>
 <nav aria-label="Explore sections" class="navgrid">
-<a href="#trust">Jump to Trust section<span>On this page</span></a>
-<a href="#path">Jump to Attack path section<span>On this page</span></a>
-<a href="#computer">Jump to Computer section<span>On this page</span></a>
-<a href="#linux">Jump to Linux section<span>On this page</span></a>
-<a href="#network">Jump to Networks section<span>On this page</span></a>
-<a href="#people">Jump to People and OSINT section<span>On this page</span></a>
+<a href="#trust">Trust<span>Links &amp; trust</span></a>
+<a href="#path">Attack path<span>How attacks unfold</span></a>
+<a href="#computer">Computer<span>Hardware &amp; software</span></a>
+<a href="#linux">Linux<span>Files &amp; storage</span></a>
+<a href="#network">Networks<span>Ports &amp; traffic</span></a>
+<a href="#people">People &amp; OSINT<span>Human risk</span></a>
 </nav>
 <section class="section" id="trust">
-<div class="section-head"><span class="stepno">1</span><div><h2>Trust Is a Security Decision</h2><span>A QR code hides a destination until a device reads it.</span></div><span class="time">Trust</span></div>
+<div class="section-head"><span class="stepno">1</span><div><h2>Trust Is a Security Decision</h2><span>An unfamiliar button can hide a destination and rely on curiosity, urgency, or trust.</span></div><span class="time">Trust &amp; links</span></div>
 <div class="grid-2">
 <div class="card soft">
-<h3>📱 Try the QR Experience</h3>
-<p>The printed code opens a safe “I GOT YOU!” page that demonstrates what happens when a browser loads a URL.</p>
-<a class="btn dark" href="i-got-you-qr.html">Open the QR destination</a>
+<h3>⚠️ Click This Suspicious Button</h3>
+<p>This harmless FamilyPD simulation shows what happens when someone clicks an unfamiliar button before verifying where it leads.</p>
+<a class="btn dark" href="i-got-you-qr.html">Click this suspicious button</a>
 </div>
 <div class="card">
 <h3>Why This Matters</h3>
@@ -59,8 +59,8 @@
 </div>
 </div>
 </section>
-<section class="section" id="path">
-<div class="section-head"><span class="stepno">2</span><div><h2>How a Cyber Operation Can Unfold</h2><span>The order can overlap, repeat, or change as new information appears.</span></div><span class="time">Attack Path</span></div>
+<section class="section" data-quiz="" id="path">
+<div class="section-head"><span class="stepno">2</span><div><h2>How a Cyber Operation Can Unfold</h2><span>The order can overlap, repeat, or change as new information appears.</span></div><span class="time">Ethical scope</span></div>
 <div class="focus"><b>Context matters:</b> Sometimes a target or goal is known first. Other times reconnaissance reveals which systems, accounts, or people may become targets. Ethical testing begins with authorization and scope before any technical action.</div>
 <div class="grid-4">
 <div class="reveal-card"><button aria-expanded="false">0. Permission &amp; Scope</button><div class="reveal-content"><p>Define what is authorized, which systems are included, what actions are allowed, when testing may occur, and how findings will be reported.</p></div></div>
@@ -73,9 +73,9 @@
 <div class="reveal-card"><button aria-expanded="false">7. Detect, Respond &amp; Recover</button><div class="reveal-content"><p>Teams contain the issue, preserve evidence, remove the cause, restore operations, communicate appropriately, and improve controls.</p></div></div>
 </div>
 <div class="section section-flat mt-09" id="pathQuiz">
-<div class="quizbar"><h3>Path Check</h3><span class="score">Answers revealed: 0 / 3</span><button class="btn" data-reset-quiz="#pathQuiz">Reset</button></div>
+<div class="quizbar"><h3>Path Check</h3><span class="score">Completed: 0 / 3</span><button class="btn" data-reset-quiz="#pathQuiz">Reset check</button></div>
 <div class="grid-3">
-<article class="card question" data-answer-hash="28b89afb629c9b3a4ca3ac9f50e1dae4c969378cf95b8fe9493ead7ea59bdf46" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="cybersecurity-who-has-access-q1">
+<article class="card question" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="path-recon">
 <h3>Collecting public usernames and company information fits where?</h3>
 <div class="option-grid">
 <button class="option" data-choice="access" data-feedback="Initial access is the foothold. This step happens earlier, while information is being gathered.">Initial access</button>
@@ -83,7 +83,7 @@
 <button class="option" data-choice="recovery" data-feedback="Recovery happens after an incident. The clue describes information gathering before access.">Recovery</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-answer-hash="dcf29c3a50f4fd5b8a1d36366e3fc172e11582038faaed5fe401cf5a32b03819" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="cybersecurity-who-has-access-q2">
+<article class="card question" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="path-scope">
 <h3>What comes before authorized security testing?</h3>
 <div class="option-grid">
 <button class="option" data-choice="scan" data-feedback="Scanning without a defined scope can affect systems you were never authorized to touch.">Scan first</button>
@@ -91,7 +91,7 @@
 <button class="option" data-choice="password" data-feedback="Credentials do not replace written authorization or a clear scope.">Obtain a password</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-answer-hash="c458f48e6dfe823f9e22948bc732348a590f868fcc3e67bcb3f342919ea57520" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="cybersecurity-who-has-access-q3">
+<article class="card question" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="path-sequence">
 <h3>Does every incident follow one perfect sequence?</h3>
 <div class="option-grid">
 <button class="option" data-choice="always" data-feedback="Models organize thinking, but real behavior may skip, repeat, or overlap stages.">Yes, always</button>
@@ -134,7 +134,7 @@
 </div>
 </section>
 <section class="section" id="network">
-<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Number Systems</h2><span>Services listen on ports, while computers represent values using number systems.</span></div><span class="time">Linux</span></div>
+<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Number Systems</h2><span>Services listen on ports, while computers represent values using number systems.</span></div><span class="time">Networks</span></div>
 <div class="port-grid">
 <button class="port" data-port="22"><b>22</b>SSH</button><button class="port" data-port="53"><b>53</b>DNS</button>
 <button class="port" data-port="67/68"><b>67/68</b>DHCP</button><button class="port" data-port="80"><b>80</b>HTTP</button>
@@ -151,7 +151,7 @@
 <div class="callout info" id="converterStatus"></div>
 </section>
 <section class="section" id="people">
-<div class="section-head"><span class="stepno">6</span><div><h2>People, Reconnaissance &amp; Social Engineering</h2><span>Technical clues and human behavior often connect.</span></div><span class="time">People &amp; OSINT</span></div>
+<div class="section-head"><span class="stepno">6</span><div><h2>People, Reconnaissance &amp; Social Engineering</h2><span>Technical clues and human behavior often connect.</span></div><span class="time">Human factors</span></div>
 <div class="grid-3">
 <div class="card soft"><h3>🕵🏽 Tony Stark OSINT Challenge</h3><p>Explore the real fictional practice environment, then use the answer-check cards.</p><a class="btn dark" href="osint-tony-stark.html">Open OSINT exploration</a></div>
 <div class="card"><h3>🎭 Social Engineering</h3><p>Identify urgency, authority, impersonation, and credential-harvesting warning signs.</p><a class="btn" href="social-engineering-simulation.html">Open the simulation</a></div>
@@ -166,7 +166,7 @@
 <div class="reveal-card"><button aria-expanded="false">Reduce Attack Surface</button><div class="reveal-content"><p>Disable unnecessary services, close unused ports, remove unsupported software, and segment networks.</p></div></div>
 <div class="reveal-card"><button aria-expanded="false">Back Up &amp; Recover</button><div class="reveal-content"><p>Maintain tested backups, recovery procedures, logs, and communication plans so incidents do not become permanent failures.</p></div></div>
 </div>
-<div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html#hardening">Open the Explore page at System Hardening</a></div>
+<div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html#hardening">Explore hardening, careers, certifications, CyberChef, and competitions</a></div>
 </section>
 <section class="section pathway-invite"><div class="section-head"><span class="stepno">→</span><div><h2>Where These Ideas Can Lead</h2><span>Continue learning, compare career preparation options, explore high-school CTE, or review the Nevada Partners program.</span></div><span class="time">Continue</span></div><div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html">Open the exploration hub</a><a class="btn" href="cybersecurity-career-prep-options.html">Compare career prep options</a><a class="btn" href="cybersecurity-cte-programs.html">Explore CTE programs</a></div></section>
 <section class="section refs">
