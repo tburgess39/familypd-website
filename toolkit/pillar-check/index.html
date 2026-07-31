@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="A concrete FamilyPD five-pillar reflection calculator."/><title>Five-Pillar Check-In | Family Personal Development</title>
-<link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/></head>
-<body><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner">
-<a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
-<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
-<nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/approach/">Our Approach</a><a href="/resources/">Resources</a><a href="/programs/">Programs</a><a href="/impact/">Impact</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav>
-</div></header>
+<meta name="description" content="Choose one FamilyPD pillar and receive live, research-informed praise, concerns, reflection prompts, and practical next steps."/>
+<title>Research-Based Five-Pillar Check-In | Family Personal Development</title>
+<link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/><link href="/assets/css/pillar-check.css" rel="stylesheet"/></head>
+<body class="pillar-check-page"><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/approach/">Our Approach</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/" aria-current="page">Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a></nav></div></header>
 <main id="main-content">
-<section class="page-hero compact-hero"><div class="container"><nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/toolkit/">Family Toolkit</a><span>/</span><span>Five-Pillar Check-In</span></nav>
-<p class="eyebrow">Five-Pillar Check-In</p><h1>Reflect on what is going well and what may need support.</h1>
-<p class="page-lead">Rate concrete experiences instead of guessing what “struggling” means. The tool summarizes strengths, possible concerns, and a practical place to begin.</p></div></section>
-<section class="section compact-section"><div class="container">
-<div class="safety-disclaimer"><strong>Educational reflection—not an assessment</strong><p>This tool cannot diagnose health, relationship, financial, educational, or safety conditions. Seek qualified help for urgent concerns. Call 911 for immediate danger and call or text 988 in the United States for a suicide or mental-health crisis.</p></div>
-<form id="pillar-calculator" class="pillar-calculator-shell">
-<div id="pillar-question-groups"></div>
-<button class="button" type="submit">Calculate my family check-in</button>
-<button class="button button-secondary" type="reset">Clear responses</button>
-</form>
-<section id="pillar-calculator-results" class="calculator-results" aria-live="polite"><h2>Your check-in summary</h2><p>Complete any pillar you want to review. More answered questions produce a fuller picture.</p></section>
-<aside class="reference-panel"><h2>How to use the results</h2><p>Lower scores are not proof that a family has failed. They may show where stress, limited resources, health needs, conflict, or missing systems are affecting daily life. FamilyPD encourages families to start with health and safety, then choose one manageable next step.</p>
-<h3>References</h3><ul class="apa-references">
-<li>Centers for Disease Control and Prevention. (2024). <em>Tips to support healthy routines for children and teens</em>. https://www.cdc.gov/healthy-weight-growth/tips-parents-caregivers/</li>
-<li>U.S. Census Bureau. (2025). <em>About poverty in the U.S. population</em>. https://www.census.gov/topics/income-poverty/poverty/about.html</li>
-<li>U.S. Department of Health and Human Services, Office of the Surgeon General. (2023). <em>Social connection</em>. https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/</li>
-</ul></aside>
+<section class="page-hero compact-hero"><div class="container"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/toolkit/">Toolkit</a><span>/</span><span>Five-Pillar Check-In</span></nav><p class="eyebrow">FamilyPD check-in</p><h1>Check in on one pillar at a time.</h1><p class="page-lead">Choose a pillar, answer a short set of research-informed questions, and watch feedback appear as you make selections.</p></div></section>
+<section class="section compact-info-section"><div class="container"><div class="check-disclaimer"><strong>Educational reflection—not diagnosis or professional advice.</strong><p>This tool uses general public-health, education, financial-well-being, social-connection, and goal-setting guidance. Needs vary by age, health condition, disability, pregnancy, medication, climate, work demands, and family circumstances. For urgent symptoms, immediate danger, or thoughts of self-harm, contact emergency or crisis services. For individualized advice, contact an appropriate licensed or qualified professional.</p></div></div></section>
+<section class="section pillar-check-section"><div class="container">
+<div class="pillar-picker-card"><label for="pillar-select"><strong>Which pillar would you like to check in on?</strong><select id="pillar-select"><option value="">Choose one pillar</option><option value="health">Health</option><option value="relationships">Relationships</option><option value="education">Education &amp; Skills</option><option value="finances">Finances</option><option value="goals">Goals</option></select></label><p id="pillar-intro">You only need to complete the pillar that matters most today.</p></div>
+<div class="check-layout">
+<section class="question-panel" aria-labelledby="question-title"><div class="panel-heading"><p class="eyebrow">Your responses</p><h2 id="question-title">Choose a pillar to begin.</h2><p id="question-help">Questions will appear here in compact dropdowns.</p></div><form id="pillar-form"><div id="profile-area"></div><div id="question-area"></div><div class="form-actions"><button type="button" class="button button-secondary" id="clear-check">Clear this check-in</button><button type="button" class="button" id="print-check">Print summary</button></div></form></section>
+<aside class="feedback-panel" aria-live="polite" aria-labelledby="feedback-title"><div class="feedback-sticky"><p class="eyebrow">Live feedback</p><h2 id="feedback-title">Your pillar summary</h2><div id="feedback-overview" class="feedback-overview"><span class="feedback-icon neutral">○</span><div><strong>No answers yet</strong><p>Your praise, concerns, and suggestions will appear here as you answer.</p></div></div><div id="feedback-items" class="feedback-items"></div><div id="next-step" class="next-step-box" hidden></div></div></aside>
+</div>
 </div></section>
-</main><footer class="site-footer"><div class="container footer-grid">
-<div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div>
-<div><strong>Explore</strong><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/kids/">Kids &amp; Teens</a><a href="/app/">About FamilyPD OS</a></div>
-<div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div>
-</div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
-<script src="/assets/js/main.js"></script><script src="/assets/js/pillar-check-calculator.js"></script></body></html>
+<section class="section section-tinted references-section"><div class="container"><div class="section-heading compact-heading"><p class="eyebrow">Sources used</p><h2>Research and guidance behind the check-in</h2><p>Feedback uses general benchmarks and plain-language interpretations. It does not calculate medical risk or replace individualized assessment.</p></div><div id="pillar-references" class="references-list"><p>Choose a pillar to see its APA-style references.</p></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/learning-center/">Learning Center</a><a href="/kids/">Kids &amp; Teens</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script><script src="/assets/js/pillar-check.js"></script></body></html>
