@@ -1,15 +1,20 @@
-# FamilyPD Toolkit Layout Hotfix v6.1
+# FamilyPD Community Connector Refinement v7
 
-This is a small corrective patch for the Family Toolkit upload.
+Upload the contents of this ZIP into the root of the FamilyPD GitHub repository and replace matching files.
 
-## What it fixes
-- Checkboxes no longer stretch across the card.
-- Statement text no longer collapses into a one-letter-wide column.
-- Category boxes return to their natural height.
-- Global text wrapping is corrected so words wrap normally.
-- Heavy visual effects are disabled inside calculators to improve loading and interaction speed.
+Changed files:
+- programs/bridge-center/index.html
+- programs/index.html
+- assets/js/family-school-community-bridge.js
+- assets/data/family-school-community-bridge.json
+- assets/css/styles.css
 
-## Upload
-Upload the included `assets` folder to the root of the FamilyPD GitHub repository and replace the matching file.
+## Purpose
+The former Bridge Center overlapped with the Goal Builder and Where to Start tools. It is now a distinct Community Connector focused on:
+- identifying people and organizations that may help;
+- preparing respectful outreach;
+- asking useful questions;
+- overcoming common barriers to connecting;
+- planning follow-up and warm introductions.
 
-Only `assets/css/styles.css` needs to change for this hotfix. The toolkit HTML and JavaScript from v6 can remain in place.
+It no longer generates household projects or goal plans.
