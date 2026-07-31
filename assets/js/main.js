@@ -734,3 +734,15 @@ if (involvementPreview) {
  function apply(){const q=search.value.trim().toLowerCase();const p=pillar.value;const cards=[...grid.querySelectorAll('[data-news-card]')];let shown=0;cards.forEach(c=>{const okQ=!q||(c.dataset.search||c.textContent.toLowerCase()).includes(q);const okP=p==='all'||c.dataset.pillar===p;c.hidden=!(okQ&&okP);if(!c.hidden)shown++;});if(status)status.textContent=cards.length?`Showing ${shown} of ${cards.length} articles.`:'Loading articles…';}
  search.addEventListener('input',apply);pillar.addEventListener('change',apply);clear?.addEventListener('click',()=>{search.value='';pillar.value='all';apply();search.focus();});new MutationObserver(apply).observe(grid,{childList:true,subtree:true});setTimeout(apply,300);
 })();
+
+// Add FamilyPD social links consistently across pages.
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.site-footer .footer-grid').forEach(footer=>{
+    if(footer.querySelector('.social-links')) return;
+    const connect=[...footer.children].find(el=>/Connect/i.test(el.textContent||''))||footer.lastElementChild;
+    if(!connect) return;
+    const wrap=document.createElement('div');wrap.className='social-links';
+    wrap.innerHTML='<a href="https://www.facebook.com/yourfamilypd" target="_blank" rel="noopener noreferrer">Facebook @yourfamilypd</a><a href="https://www.linkedin.com/company/familypd/" target="_blank" rel="noopener noreferrer">LinkedIn FamilyPD</a>';
+    connect.appendChild(wrap);
+  });
+});

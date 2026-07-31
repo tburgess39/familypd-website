@@ -28,6 +28,23 @@
       "prompts": "Who can each young person in our family contact when conflict feels unsafe? What online or in-person situations require walking away and getting adult help? Which community program, mentor, coach, faith leader, or volunteer opportunity could strengthen our support network?"
     },
     {
+      "id": "registered-apprenticeship-expansion-2026",
+      "title": "Federal investment expands Registered Apprenticeship opportunities",
+      "source": "U.S. Department of Labor",
+      "published": "2026-07-07",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Finances",
+      "url": "https://www.dol.gov/newsroom/releases/eta/eta20260707",
+      "summary": "The U.S. Department of Labor announced $162 million to expand Registered Apprenticeship in key industries, creating more earn-while-you-learn career opportunities.",
+      "prevention": [
+        "Compare apprenticeship, college, CTE, certification, and workforce-program options before choosing a pathway.",
+        "Ask whether a program is registered, paid, connected to employers, and clear about credentials earned.",
+        "Include transportation, work schedules, childcare, equipment, and long-term wages in the family decision.",
+        "Use official apprenticeship and workforce sources rather than relying only on advertisements."
+      ],
+      "prompts": "Which family members could benefit from paid training? What career fields match their interests? What questions should we ask before enrolling in a program?"
+    },
+    {
       "id": "storm-boating-safety-2026",
       "title": "Sudden severe storm turns a holiday boat trip into a tragedy",
       "source": "Associated Press",
@@ -35,7 +52,7 @@
       "pillar": "Health",
       "secondary_pillar": "Goals",
       "url": "https://apnews.com/article/lake-geneva-storm-capsized-boat-4142639443688fecd6a880477020e9f7",
-      "summary": "A sudden severe storm overwhelmed a recreational boat on Geneva Lake. Three children died even though the children were wearing life jackets, showing how quickly weather conditions can exceed a family\u2019s ability to react.",
+      "summary": "A sudden severe storm overwhelmed a recreational boat on Geneva Lake. Three children died even though the children were wearing life jackets, showing how quickly weather conditions can exceed a family’s ability to react.",
       "prevention": [
         "Check forecasts and active alerts immediately before outdoor or water activities.",
         "Decide in advance which weather conditions mean the activity stops or the family returns to shore.",
@@ -60,6 +77,23 @@
         "Discuss how online activity affects sleep, mood, school, safety, and family relationships."
       ],
       "prompts": "What are our current screen-time expectations? Which apps, games, chats, purchases, or location settings need review? What should children do when an unknown person contacts them?"
+    },
+    {
+      "id": "family-school-engagement-2026",
+      "title": "Education and HHS launch new family-engagement and school-support grants",
+      "source": "U.S. Department of Education",
+      "published": "2026-05-28",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Relationships",
+      "url": "https://www.ed.gov/about/news/press-release/us-department-of-education-and-us-department-of-health-and-human-services-announce-first-grant-competitions-under-family-engagement-and-school",
+      "summary": "New federal grant competitions emphasize literacy, tutoring, family engagement, and community partnerships that support students.",
+      "prevention": [
+        "Ask schools what tutoring, literacy, mentoring, and family-engagement supports are available.",
+        "Use school and district websites, newsletters, portals, and family events to find programs early.",
+        "Keep a simple list of contacts for teachers, counselors, family-engagement staff, and community partners.",
+        "Discuss which supports match the student’s actual need rather than waiting for a crisis."
+      ],
+      "prompts": "Which school supports do we know how to access? Who is our main school contact? What service or partnership could help our family now?"
     },
     {
       "id": "canvas-cyberattack-2026",
@@ -90,10 +124,95 @@
       "prevention": [
         "Do not engage with generic, unexpected job texts or messaging-app offers.",
         "Never pay money to get paid or secure a job.",
-        "Verify employers through the organization\u2019s official website and published contact information.",
+        "Verify employers through the organization’s official website and published contact information.",
         "Ask a trusted adult or experienced job seeker to review unfamiliar offers."
       ],
       "prompts": "What signs make a job offer suspicious? How will our family verify recruiters and employers? What information or money should never be provided during an unexpected job conversation?"
+    },
+    {
+      "id": "ai-apprenticeship-skills-2026",
+      "title": "Labor Department launches tools for AI skills in apprenticeships",
+      "source": "U.S. Department of Labor",
+      "published": "2026-04-29",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Goals",
+      "url": "https://www.dol.gov/newsroom/releases/eta/eta20260429",
+      "summary": "A new federal resource helps apprenticeship programs integrate artificial intelligence skills and industry-specific training into career pathways.",
+      "prevention": [
+        "Treat AI literacy as a career skill while continuing to build reading, math, communication, and technical foundations.",
+        "Verify what an AI training program teaches and whether employers recognize the resulting skills.",
+        "Practice using AI as an assistant while checking accuracy and protecting private information.",
+        "Build a portfolio that shows real work rather than relying only on course completion."
+      ],
+      "prompts": "Where is AI already changing work our family is interested in? Which foundational skills still matter? What could we build or practice to demonstrate learning?"
+    },
+    {
+      "id": "social-media-scam-2026",
+      "title": "FTC explains how common scams begin on social media",
+      "source": "Federal Trade Commission",
+      "published": "2026-04-08",
+      "pillar": "Finances",
+      "secondary_pillar": "Education & Skills",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/04/how-spot-top-scams-started-social-media",
+      "summary": "The FTC warned that social-media scams often use fake sales, investment offers, impersonation, and urgent messages to steal money or personal information.",
+      "prevention": [
+        "Pause before sending money, sharing codes, or clicking links from social-media messages.",
+        "Verify people and companies using contact information found independently.",
+        "Search the name of an offer or company with words such as scam or complaint.",
+        "Report suspicious accounts and discuss scams openly so embarrassment does not prevent someone from asking for help."
+      ],
+      "prompts": "Which scams are most likely to reach our family? What is our rule for sending money or verification codes? Who should we ask before acting on an urgent message?"
+    },
+    {
+      "id": "fafsa-college-scorecard-2026",
+      "title": "FAFSA completion grows as families gain updated college outcome information",
+      "source": "U.S. Department of Education",
+      "published": "2026-03-26",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Finances",
+      "url": "https://www.ed.gov/about/news/press-release/us-department-of-education-celebrates-more-10-million-fafsar-forms-complete-and-additional-transparency-measures",
+      "summary": "The Department of Education reported more than 10 million processed 2026–27 FAFSA forms and updated College Scorecard information on post-graduation earnings.",
+      "prevention": [
+        "Complete financial-aid forms early and save copies of confirmation information.",
+        "Compare total cost, grants, loans, graduation rates, credentials, and likely earnings—not just the school name.",
+        "Review aid offers carefully and ask what must be repaid.",
+        "Discuss affordable alternatives such as community college, CTE, apprenticeships, and employer-paid education."
+      ],
+      "prompts": "What does our family need to learn about FAFSA and financial aid? How will we compare program cost with likely outcomes? Which lower-cost pathways should remain on the table?"
+    },
+    {
+      "id": "student-attendance-engagement-2026",
+      "title": "New federal resources focus on student attendance and engagement",
+      "source": "U.S. Department of Education",
+      "published": "2026-02-26",
+      "pillar": "Education & Skills",
+      "secondary_pillar": "Health",
+      "url": "https://www.ed.gov/teaching-and-administration/supporting-students/seac/supporting-student-attendance-and-engagement",
+      "summary": "Federal guidance highlights the many reasons students miss school, including health, caregiving, work, transportation, and disengagement, and points families and schools toward supportive responses.",
+      "prevention": [
+        "Track absences and patterns before they become a larger academic problem.",
+        "Ask what barrier is behind the absence instead of assuming a motivation problem.",
+        "Contact the school early about health, transportation, bullying, caregiving, disability, or work-related barriers.",
+        "Create a morning, transportation, and backup communication plan."
+      ],
+      "prompts": "What usually causes absences or lateness in our household? Who should we contact at school? What backup plan would make attendance easier?"
+    },
+    {
+      "id": "youth-mental-health-free-mind-2025",
+      "title": "CDC campaign connects youth substance use and mental health conversations",
+      "source": "Centers for Disease Control and Prevention",
+      "published": "2025-08-05",
+      "pillar": "Health",
+      "secondary_pillar": "Relationships",
+      "url": "https://www.cdc.gov/media/releases/2025/2025-cdc-launches-new-campaign-to-address-youth-substance-use-and-mental-health.html",
+      "summary": "CDC launched the Free Mind campaign with resources for youth ages 12–17 and caregivers about substance use, mental health, and how the two can affect each other.",
+      "prevention": [
+        "Create regular, nonjudgmental opportunities for young people to talk about stress, substances, and peer pressure.",
+        "Know warning signs and identify trusted adults and professional supports before a crisis.",
+        "Discuss how sleep, social media, relationships, trauma, and substances can affect mood and decisions.",
+        "Avoid shame-based reactions that make children hide problems."
+      ],
+      "prompts": "Which adults can our children talk to without fear? What warning signs would concern us? How can we make difficult conversations feel safer?"
     }
   ]
 }
