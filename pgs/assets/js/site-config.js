@@ -1,5 +1,3 @@
 window.PGS_SITE_CONFIG = {
-  // Paste the deployed Google Apps Script /exec URL between the quotes.
-  // Example: "https://script.google.com/macros/s/DEPLOYMENT_ID/exec"
-  assistantUrl: ""
+  assistantUrl: "https://script.google.com/a/macros/nv.ccsd.net/s/AKfycbzCXcjBhI_sEXx7NkN5lLcHWRxi_P-MQ_MonHsdwV7veeOXrU8INfV8vo_6A0qBtRj8/exec"
 };
