@@ -695,6 +695,19 @@ if (involvementPreview) {
       else if (donateLink) nav.insertBefore(toolkitLink, donateLink);
       else nav.appendChild(toolkitLink);
     }
+
+    if (!nav.querySelector('a[href="/pgs/"]')) {
+      const pgsLink = document.createElement('a');
+      pgsLink.href = '/pgs/';
+      pgsLink.textContent = 'PGS Assistant';
+      if (window.location.pathname.startsWith('/pgs/') || window.location.pathname.startsWith('/learning-center/pgs-contact-units/')) {
+        pgsLink.setAttribute('aria-current', 'page');
+      }
+      const toolkitLink = nav.querySelector('a[href="/toolkit/"]');
+      if (toolkitLink) toolkitLink.insertAdjacentElement('afterend', pgsLink);
+      else if (donateLink) nav.insertBefore(pgsLink, donateLink);
+      else nav.appendChild(pgsLink);
+    }
   });
 })();
 
@@ -742,7 +755,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const connect=[...footer.children].find(el=>/Connect/i.test(el.textContent||''))||footer.lastElementChild;
     if(!connect) return;
     const wrap=document.createElement('div');wrap.className='social-links';
-    wrap.innerHTML='<a href="https://www.facebook.com/yourfamilypd" target="_blank" rel="noopener noreferrer">Facebook @yourfamilypd</a><a href="https://www.linkedin.com/company/familypd/" target="_blank" rel="noopener noreferrer">LinkedIn FamilyPD</a>';
+    wrap.innerHTML='<a href="/pgs/">PGS Assistant</a><a href="https://www.facebook.com/yourfamilypd" target="_blank" rel="noopener noreferrer">Facebook @yourfamilypd</a><a href="https://www.linkedin.com/company/familypd/" target="_blank" rel="noopener noreferrer">LinkedIn FamilyPD</a>';
     connect.appendChild(wrap);
   });
 });

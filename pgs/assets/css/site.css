@@ -505,3 +505,22 @@ nav a:hover, nav a:focus-visible {
   .video-card { grid-template-columns: 92px 1fr; }
   .site-footer { grid-template-columns: 1fr; padding-left: 16px; padding-right: 16px; }
 }
+
+
+/* FamilyPD brand and Apps Script setup */
+.brand .family-pd-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #fff;
+  padding: 3px;
+  flex: 0 0 auto;
+}
+.brand:hover .family-pd-logo,
+.brand:focus-visible .family-pd-logo { transform: none; }
+.assistant-install-section code { overflow-wrap: anywhere; }
+.assistant-install-section .button { display: inline-flex; margin-top: 10px; }
+@media (max-width: 560px) {
+  .brand .family-pd-logo { width: 46px; height: 46px; }
+}
