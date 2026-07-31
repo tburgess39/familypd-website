@@ -5731,3 +5731,56 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
 .site-footer .footer-bottom {
   border-top-color: rgba(255,255,255,.28) !important;
 }
+
+/* =========================================================
+   FamilyPD v19 — framework contrast, connector, partnership
+   ========================================================= */
+/* Framework copy must remain readable on saturated/dark colors. */
+.pillar-framework-section,
+.pillar-framework-section p,
+.pillar-framework-section li,
+.pillar-framework-section small,
+.pillar-framework-section span,
+.pillar-framework-section a,
+.pillar-framework-visual,
+.pillar-framework-visual p,
+.pillar-framework-visual small,
+.framework-principle-card,
+.framework-principle-card p,
+.framework-principle-card li,
+.framework-method-strip,
+.framework-method-strip span,
+.framework-pillar,
+.framework-pillar strong,
+.framework-pillar small,
+.framework-pillar-number {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+.pillar-framework-section .eyebrow,
+.framework-visual-heading span,
+.framework-principle-card .principle-index {
+  color:#ffd98f !important;
+  -webkit-text-fill-color:#ffd98f !important;
+  opacity:1 !important;
+}
+.framework-pillar small { color:#dff3c2 !important; -webkit-text-fill-color:#dff3c2 !important; }
+.framework-pillar:hover,
+.framework-pillar:focus-visible { color:#fff !important; }
+
+/* Connector display and copy blocks. */
+.copy-block{white-space:pre-wrap;border:1px solid #91a8b7;border-radius:10px;padding:.75rem;background:#f8fbfc;color:#102f47!important;overflow-wrap:anywhere}
+.connector-card p,.connector-card li,.connector-card small{color:#17394f}
+.connector-card .button{color:#fff}
+.connector-card .button.button-secondary{color:#17394f}
+
+/* Family-school partnership reflection. */
+.partnership-reflection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.partnership-reflection-grid article{background:#fff;border:1px solid #c7d3dc;border-radius:16px;padding:1.1rem;min-width:0}
+.partnership-reflection-grid h3{margin-top:0;font-size:1.15rem;color:#173247}
+.partnership-reflection-grid label{display:grid;gap:.4rem;margin-top:.9rem;font-weight:750;color:#173247}
+.partnership-reflection-grid select{width:100%;min-height:46px;border:1px solid #788e9d;border-radius:10px;padding:.7rem;background:#fff;color:#173247}
+.partnership-result{margin-top:1rem;background:#102f47;border-radius:16px;padding:1.25rem}
+.partnership-result h2,.partnership-result p,.partnership-result strong{color:#fff!important;-webkit-text-fill-color:#fff!important}
+@media(max-width:760px){.partnership-reflection-grid{grid-template-columns:1fr}}
