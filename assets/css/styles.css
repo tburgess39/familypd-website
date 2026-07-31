@@ -5663,87 +5663,13 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
 .book-learning-card p{margin-bottom:.65rem}
 @media(max-width:680px){.page-hero h1{font-size:2rem}.section{padding-block:1.8rem}.learning-topic-card,.book-learning-card,.tool-directory-card{padding:1rem}}
 
-/* Community Connector refinement v7 */
-.compact-tool-hero{padding-block:clamp(28px,5vw,58px)}
-.compact-tool-hero h1{max-width:850px;font-size:clamp(2rem,4.4vw,3.55rem);line-height:1.04}
-.community-connector-layout{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:22px;align-items:start}
-.connector-controls,.bridge-output-panel{min-width:0}
-.connector-controls label,.connector-controls select{min-width:0;max-width:100%}
-.connector-controls select{width:100%;white-space:normal}
-.compact-heading h2{font-size:clamp(1.5rem,2.7vw,2.15rem)}
-.connector-plan,.connector-plan *{min-width:0;overflow-wrap:anywhere;word-break:normal}
-.connector-message{margin:18px 0;padding:18px;border-left:5px solid var(--orange);border-radius:12px;background:#fff7ef}
-.connector-message p{margin:0;color:#152f42}
-.connector-explainer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.connector-explainer-grid article{padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff}
-.connector-explainer-grid h2{font-size:1.25rem}
-.connector-explainer-grid p{color:#243b4a}
-@media(max-width:900px){.community-connector-layout,.connector-explainer-grid{grid-template-columns:1fr}}
-
-/* Family Toolkit v8: independent tool directory and simplified workload calculator */
-.toolkit-directory-page .compact-hero{padding-block:clamp(1.5rem,3vw,2.75rem)}
-.toolkit-directory-page .compact-heading{margin-bottom:1.25rem}
-.toolkit-directory-page .compact-heading h2{font-size:clamp(1.65rem,2.5vw,2.2rem);margin-bottom:.35rem}
-.tool-directory-grid{align-items:stretch}
-.tool-directory-card{min-width:0;overflow:hidden}
-.tool-directory-card h3,.tool-directory-card p,.tool-directory-use span{overflow-wrap:anywhere;word-break:normal}
-.featured-tool-card{border-width:2px}
-.simple-member-fields{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.compact-member-card{padding:.85rem}
-.compact-member-card label{margin:0}
-.simplified-responsibility-table{min-width:920px}
-.simplified-responsibility-table input,.simplified-responsibility-table select{min-width:0;width:100%;max-width:100%;box-sizing:border-box}
-.simplified-responsibility-table th,.simplified-responsibility-table td{vertical-align:top;overflow-wrap:anywhere}
-.calculator-summary-note{margin-top:-.35rem}
-.balanced-note{padding:1rem;border:1px solid #9fb8a7;background:#f4faf5;border-radius:12px;margin:1rem 0;color:#17251c}
-.balanced-note strong,.balanced-note p{color:#17251c}
-@media(max-width:760px){.responsibility-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.simplified-responsibility-table{min-width:820px}}
-@media print{.reality-category-grid fieldset{break-inside:avoid;height:auto!important;min-height:0!important}.reality-category-grid label{display:grid!important;grid-template-columns:20px minmax(0,1fr)!important;gap:.55rem!important;white-space:normal!important}.reality-category-grid input[type="checkbox"]{width:18px!important;height:18px!important;min-width:18px!important;max-width:18px!important}}
-
-/* FamilyPD refinement v9: footer contrast, compact Learning Center, student project ideas */
-.site-footer,
-.site-footer p,
-.site-footer strong,
-.site-footer span,
-.site-footer small,
-.site-footer a,
-.site-footer a:visited {
-  color:#fff !important;
-}
-.site-footer a:hover,
-.site-footer a:focus {
-  color:#fff !important;
-  text-decoration:underline;
-}
-
-.learning-topic-accordion{display:grid;gap:.85rem;max-width:1000px}
-.learning-topic-accordion details{border:1px solid #c8d2db;border-radius:14px;background:#fff;overflow:hidden}
-.learning-topic-accordion summary{display:grid;grid-template-columns:minmax(0,1fr);gap:.2rem;padding:1rem 1.15rem;cursor:pointer;color:#17212b;font-weight:900;list-style:none}
-.learning-topic-accordion summary::-webkit-details-marker{display:none}
-.learning-topic-accordion summary::after{content:"+";grid-column:2;grid-row:1 / span 2;align-self:center;font-size:1.5rem;color:#174f61}
-.learning-topic-accordion details[open] summary::after{content:"−"}
-.learning-topic-accordion summary span{font-size:1.08rem;color:#17212b}
-.learning-topic-accordion summary small{font-size:.92rem;font-weight:500;color:#324657}
-.learning-topic-accordion details[open] summary{border-bottom:1px solid #d7dfe5;background:#f7fafb}
-.learning-link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;padding:1rem}
-.learning-link-list a{display:grid;gap:.3rem;min-width:0;padding:.9rem;border:1px solid #d6dee5;border-radius:11px;background:#fff;text-decoration:none}
-.learning-link-list a:hover,.learning-link-list a:focus{border-color:#b36d20;background:#fff8f0}
-.learning-link-list strong{color:#17365d;font-size:1rem}
-.learning-link-list span{color:#263746;font-size:.93rem;line-height:1.45}
-
-.student-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.student-project-grid article{min-width:0;padding:1.15rem;border:1px solid #c8d2db;border-radius:14px;background:#fff}
-.student-project-grid article>span{display:inline-flex;margin-bottom:.55rem;padding:.25rem .55rem;border-radius:999px;background:#eef4f6;color:#17365d;font-size:.8rem;font-weight:900}
-.student-project-grid h3{font-size:1.2rem;margin:0 0 .55rem;color:#17212b}
-.student-project-grid ul{margin:.4rem 0 0;padding-left:1.2rem}
-.student-project-grid li{margin:.35rem 0;color:#263746}
-.student-resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
-.student-resource-grid a{display:grid;gap:.3rem;min-width:0;padding:1rem;border:1px solid #c8d2db;border-radius:12px;background:#fff;text-decoration:none}
-.student-resource-grid strong{color:#17365d}.student-resource-grid span{color:#263746;font-size:.93rem}
-.student-project-note{margin-top:1rem;padding:1rem 1.1rem;border-left:5px solid #c96d2d;border-radius:10px;background:#fff}
-.student-project-note h2{font-size:1.2rem;margin-bottom:.35rem}.student-project-note p{margin:0}
-
-@media(max-width:720px){
-  .learning-link-list,.student-project-grid,.student-resource-grid{grid-template-columns:1fr}
-  .learning-topic-accordion summary{padding:.9rem 1rem}
-}
+/* FamilyPD v13: county community resources and school ranking context */
+.community-resources-hero{background:radial-gradient(circle at 85% 10%,rgba(200,156,47,.18),transparent 28%),linear-gradient(135deg,var(--cream),#fff 72%)}
+.county-card-grid,.resource-action-grid,.county-service-grid,.school-ranking-grid{display:grid;gap:20px}
+.county-card-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}.county-card,.resource-action-grid article,.school-ranking-grid article{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 8px 20px rgba(16,36,52,.05)}
+.county-card{display:flex;flex-direction:column}.county-card .button{align-self:flex-start;margin-top:auto}.resource-action-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:24px}.resource-action-grid article{display:flex;flex-direction:column}.resource-action-grid .button{align-self:flex-start;margin-top:auto}
+.county-service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.county-service-grid a{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);text-decoration:none}.county-service-grid a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.county-service-grid strong{color:var(--teal);font-size:1.05rem}.county-service-grid span{color:var(--ink)}
+.resource-table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}.community-resource-table{width:100%;min-width:900px;border-collapse:collapse}.community-resource-table th,.community-resource-table td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;white-space:normal;overflow-wrap:anywhere}.community-resource-table thead th{background:var(--navy);color:#fff}.community-resource-table tbody th{color:var(--navy);width:19%}.community-resource-table tbody tr:nth-child(even){background:var(--soft)}
+.school-ranking-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:24px 0}.school-ranking-grid ol,.school-ranking-grid ul{padding-left:22px}.school-ranking-grid li{margin:8px 0}
+@media(max-width:900px){.county-card-grid,.resource-action-grid,.county-service-grid,.school-ranking-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.county-card-grid,.resource-action-grid,.county-service-grid,.school-ranking-grid{grid-template-columns:1fr}.county-card,.resource-action-grid article,.school-ranking-grid article{padding:19px}.community-resource-table{min-width:760px}}
