@@ -1,17 +1,40 @@
 (() => {
-  const root=document.getElementById('bridge-center'); if(!root) return;
-  const state={data:null,language:localStorage.getItem('familypd:bridge-language')||'en'};
-  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const text=(obj)=>obj?.[state.language]||obj?.en||'';
-  const needEl=document.getElementById('bridge-need');
-  function renderLanguage(){document.documentElement.lang=state.language;document.querySelectorAll('[data-bridge-language]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.bridgeLanguage===state.language)));populateNeeds();}
-  function populateNeeds(){const current=needEl.value;needEl.innerHTML=`<option value="">${state.language==='es'?'Elija una conexión':'Choose a connection'}</option>`+state.data.needs.map(n=>`<option value="${esc(n.id)}">${esc(text(n.label))}</option>`).join('');if(state.data.needs.some(n=>n.id===current))needEl.value=current;}
-  function li(items){return `<ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`}
-  function barrierTip(v){const tips={words:'Use the sample message below and edit only what feels comfortable.',trust:'Begin with an official website, a known institution, or a warm introduction from someone trusted.',cost:'Ask about fees, insurance, sliding-scale services, scholarships, and free public options before enrolling.',language:'Ask whether interpretation, translated materials, or bilingual staff are available.',transport:'Ask about virtual meetings, transit help, mobile services, or locations closer to home.',privacy:'Ask what information is required, who can see it, and what confidentiality or reporting limits apply.',none:'Keep the first request small, specific, and easy to answer.'};return tips[v]||tips.none;}
-  function filterContacts(items,comfort){if(comfort==='any')return items; const map={known:['trusted','relative','friend','neighbor','parent'],school:['school','teacher','counselor','liaison','educator'],community:['community','library','organization','center','group','program'],professional:['provider','licensed','counselor','clinic','department','financial','workforce']};const keys=map[comfort]||[];const first=items.filter(x=>keys.some(k=>x.toLowerCase().includes(k)));return first.length?first.concat(items.filter(x=>!first.includes(x))):items;}
-  function build(){const id=needEl.value,out=document.getElementById('bridge-plan-output');if(!id){out.innerHTML='<div class="bridge-empty-state"><strong>Please choose a type of connection.</strong></div>';return;}const n=state.data.needs.find(x=>x.id===id),comfort=document.getElementById('bridge-comfort').value,barrier=document.getElementById('bridge-barrier').value,contacts=filterContacts(n.contacts,comfort);out.innerHTML=`<article class="bridge-plan-document connector-plan"><div class="bridge-plan-heading"><div><span class="bridge-pillar-badge">Community connection</span><h2>${esc(text(n.label))}</h2><p>This plan helps prepare a respectful first contact. It does not guarantee services or eligibility.</p></div></div><div class="bridge-plan-grid"><section><h3>People or organizations to consider</h3>${li(contacts)}</section><section><h3>Questions to ask</h3>${li(n.questions)}</section></div><section class="connector-message"><h3>Sample outreach message</h3><p>${esc(n.message)}</p></section><section><h3>Make reaching out easier</h3><p>${esc(barrierTip(barrier))}</p></section><section><h3>Follow-up steps</h3>${li(n.follow)}</section><aside class="bridge-practice-note"><strong>Look for a warm connection.</strong><p>When possible, ask a trusted person to introduce you directly. A named contact and clear handoff are usually more useful than a general list of links.</p></aside></article>`;out.scrollIntoView({behavior:'smooth',block:'start'});}
-  async function copy(){const out=document.getElementById('bridge-plan-output');const status=document.getElementById('bridge-action-status');try{await navigator.clipboard.writeText(out.innerText);status.textContent='Plan copied.';}catch{status.textContent='Copy was not available. Select the text manually.';}setTimeout(()=>status.textContent='',2500);}
-  async function init(){try{const r=await fetch('../../assets/data/family-school-community-bridge.json',{cache:'no-store'});if(!r.ok)throw Error();state.data=await r.json();renderLanguage();}catch{document.getElementById('bridge-plan-output').innerHTML='<div class="bridge-empty-state">The Community Connector could not load. Please refresh the page.</div>';}}
-  document.querySelectorAll('[data-bridge-language]').forEach(b=>b.addEventListener('click',()=>{state.language=b.dataset.bridgeLanguage;localStorage.setItem('familypd:bridge-language',state.language);renderLanguage();}));
-  document.getElementById('build-bridge-plan').addEventListener('click',build);document.getElementById('copy-bridge-plan').addEventListener('click',copy);document.getElementById('print-bridge-plan').addEventListener('click',()=>window.print());init();
+  const form=document.getElementById('connector-form');
+  const output=document.getElementById('connector-output');
+  if(!form||!output)return;
+  const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const types={
+    school:{name:'school or district',contact:'teacher, counselor, family liaison, case manager, department chair, or administrator',verify:'Use the official school or district directory.'},
+    government:{name:'public agency',contact:'front-desk specialist, caseworker, program coordinator, or constituent-services contact',verify:'Use an official .gov website or verified public phone number.'},
+    community:{name:'community organization',contact:'intake specialist, program coordinator, family navigator, volunteer coordinator, or director',verify:'Confirm the organization’s services, fees, eligibility rules, and privacy practices.'},
+    health:{name:'health or counseling provider',contact:'licensed provider, nurse, care coordinator, intake specialist, or patient advocate',verify:'Confirm credentials, cost, insurance, privacy limits, and urgent-care instructions.'},
+    career:{name:'education or career contact',contact:'admissions adviser, workforce navigator, CTE counselor, program coordinator, employer representative, or mentor',verify:'Confirm requirements, deadlines, costs, and whether the opportunity is official.'},
+    faith:{name:'faith, cultural, or neighborhood group',contact:'community leader, family ministry contact, group coordinator, or trusted member',verify:'Ask how the group protects privacy, safety, inclusion, and boundaries.'},
+    person:{name:'trusted person',contact:'relative, friend, neighbor, co-parent, colleague, or mentor',verify:'Start with one specific request and agree on boundaries rather than assuming ongoing availability.'}
+  };
+  const requests={
+    information:{ask:'clear information and an explanation of the correct process',questions:['Who is the best person to answer this?','What information or documents should I prepare?','Can the next steps be explained in plain language?']},
+    meeting:{ask:'a short meeting or conversation',questions:['Who should attend?','How much time should we reserve?','What should I send or prepare beforehand?']},
+    referral:{ask:'a referral or warm introduction',questions:['Who has the right expertise or authority?','May I mention your name when I contact them?','Is there a direct contact rather than only a general webpage?']},
+    application:{ask:'help understanding or completing a process, form, or application',questions:['What are the eligibility rules and deadlines?','Which documents are required?','Who can help if I get stuck or receive a denial?']},
+    support:{ask:'one specific form of practical or ongoing support',questions:['What support is realistically available?','What schedule, boundaries, or eligibility rules apply?','What backup option exists if this support is unavailable?']},
+    collaboration:{ask:'a conversation about possible collaboration',questions:['What shared purpose could this support?','Who can approve or coordinate the partnership?','What would a small first step look like?']},
+    concern:{ask:'help understanding and resolving a concern',questions:['Who has authority to address this concern?','What complaint, review, or appeal process applies?','What response time and follow-up should I expect?']}
+  };
+  let currentMessage='';
+  function naturalMethod(v){return {email:'a written response',phone:'a phone call',meeting:'an in-person or virtual meeting',introduction:'a warm introduction'}[v]||'a response';}
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const type=types[document.getElementById('connection-type').value];
+    const request=requests[document.getElementById('request-type').value];
+    const topic=document.getElementById('connection-topic').value.trim();
+    const history=document.getElementById('connection-history').value.trim();
+    const method=naturalMethod(document.getElementById('connection-method').value);
+    if(!type||!request||!topic){output.innerHTML='<p><strong>Please choose the organization type and request, then briefly describe the topic.</strong></p>';return;}
+    currentMessage=`Hello, I am reaching out because ${topic.charAt(0).toLowerCase()+topic.slice(1)}. I am seeking ${request.ask}. ${history?`So far, I have ${history.charAt(0).toLowerCase()+history.slice(1)}. `:''}Could you let me know whether you are the correct contact, or connect me with the person who can help? I would prefer ${method}. Thank you for your time.`;
+    output.innerHTML=`<section><h3>Who may be useful to contact</h3><p>Look for a ${esc(type.contact)}.</p><p><strong>Before sharing private information:</strong> ${esc(type.verify)}</p></section><section><h3>Editable outreach message</h3><textarea class="message-box" id="generated-connection-message">${esc(currentMessage)}</textarea></section><section><h3>Questions to clarify the next step</h3><ul>${request.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul></section><section><h3>Follow-up plan</h3><ol><li>Write down the person’s name, role, and preferred contact method.</li><li>Confirm the next step, deadline, and expected response time.</li><li>Send a brief follow-up or thank-you and keep a record of agreed actions.</li></ol></section>`;
+    document.getElementById('generated-connection-message').addEventListener('input',e=>currentMessage=e.target.value);
+  });
+  document.getElementById('copy-connection').addEventListener('click',async()=>{const status=document.getElementById('connection-status');if(!currentMessage){status.textContent='Build a message first.';return;}try{await navigator.clipboard.writeText(currentMessage);status.textContent='Message copied.';}catch{status.textContent='Select and copy the message manually.';}});
+  document.getElementById('print-connection').addEventListener('click',()=>window.print());
 })();

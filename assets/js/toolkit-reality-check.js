@@ -1,51 +1,25 @@
-
 (() => {
-  const form = document.getElementById('reality-check-form');
-  const output = document.getElementById('reality-results');
-  if (!form || !output) return;
-
-  const groups = {
-    poverty: {
-      title: 'Possible financial instability or material hardship',
-      text: 'Your responses may suggest that essential needs are difficult to meet consistently. Some families are living in poverty or near-poverty without recognizing the term because they are still working, paying some bills, or “making it work.” Official poverty is based on income and family size, but everyday hardship can exist above that line too.',
-      ideas: ['List the next 30 days of essential needs before optional spending.', 'Check eligibility for food, utility, housing, health, transportation, school, or workforce assistance.', 'Choose one trusted person or community organization to contact before the situation becomes urgent.']
-    },
-    health: {
-      title: 'Daily health routines may need support',
-      text: 'Your responses may show that stress, limited time, cost, or exhaustion is affecting water, meals, sleep, or care. These patterns can make concentration, patience, school, work, and family communication harder.',
-      ideas: ['Choose one routine to stabilize first: water, one balanced meal, sleep, medication, or an overdue appointment.', 'Use a visible reminder or shared family routine instead of relying on one person to remember everything.', 'Seek a qualified health professional when symptoms, distress, or delayed care are concerning.']
-    },
-    relationship: {
-      title: 'Communication may be causing harm or disconnection',
-      text: 'Frequent yelling, insults, threats, ridicule, fear, or silent treatment can become normalized inside a household. Your responses may suggest that the family needs safer communication, boundaries, repair, or professional support.',
-      ideas: ['Discuss one specific behavior rather than labeling a person.', 'Create a pause-and-return agreement for heated conversations.', 'Consider counseling, a trusted mediator, faith leader, or family-support professional when patterns are difficult to change alone.']
-    },
-    workload: {
-      title: 'One person may be carrying too much',
-      text: 'Visible chores are only part of household work. Planning, remembering, scheduling, caregiving, emotional support, and noticing what needs to happen also consume time and energy.',
-      ideas: ['Use the Household Workload Calculator to name visible and invisible responsibilities.', 'Assign backup people for essential work instead of leaving one person responsible every time.', 'Rotate, simplify, automate, postpone, or ask outside support for tasks that do not need to remain with one person.']
-    },
-    community: {
-      title: 'The household may be too isolated',
-      text: 'Isolation increases pressure on caregivers and can leave a family without help during illness, transportation problems, school emergencies, financial shocks, or emotional crisis. Needing community is not failure.',
-      ideas: ['Identify one person for practical help and one person for emotional support.', 'Explore school, neighborhood, faith, library, nonprofit, parent-group, or community-center connections.', 'For single parents and isolated caregivers, build backup plans before an emergency rather than waiting until everything becomes unmanageable.']
-    }
-  };
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const selected = [...form.querySelectorAll('input[name="reality"]:checked')].map(el => el.value);
-    if (!selected.length) {
-      output.innerHTML = '<h2>Your reflection results</h2><p>Please select at least one statement that feels familiar.</p>';
-      return;
-    }
-    const active = new Set(selected.map(v => v.split('-')[0]));
-    const cards = [...active].map(key => {
-      const group = groups[key];
-      return `<article class="result-card"><h3>${group.title}</h3><p>${group.text}</p><h4>Possible next steps</h4><ul>${group.ideas.map(i => `<li>${i}</li>`).join('')}</ul></article>`;
-    }).join('');
-    output.innerHTML = `<h2>Your reflection results</h2><p class="result-intro">These patterns are possibilities, not diagnoses. Use what fits, seek qualified help where needed, and begin with immediate safety and basic needs.</p><div class="result-card-grid">${cards}</div>
-      <div class="result-next-links"><a class="button" href="/toolkit/pillar-check/">Complete the Five-Pillar Check-In</a><a class="button button-secondary" href="/toolkit/roles-responsibilities/">Open the Workload Calculator</a></div>`;
-    output.scrollIntoView({behavior:'smooth', block:'start'});
-  });
+const form=document.getElementById('reality-check-form'),groupsHost=document.getElementById('pattern-groups'),selectedHost=document.getElementById('selected-patterns'),countHost=document.getElementById('selection-count'),results=document.getElementById('reality-results');if(!form||!groupsHost)return;
+const groups=[
+{name:'Basic needs and money',id:'poverty',items:[['bills','Essential bills are often late, skipped, or paid with borrowed money.'],['food','The household sometimes runs short on food, medicine, transportation, utilities, or hygiene supplies.'],['shock','One unexpected expense could create a major crisis.'],['housing','Housing feels unstable, overcrowded, unsafe, or at risk.']]},
+{name:'Health and daily functioning',id:'health',items:[['water','Family members regularly go most of the day without drinking water.'],['meals','Balanced meals are difficult to plan or afford consistently.'],['sleep','Poor sleep, exhaustion, or irregular schedules affect daily life.'],['care','Medical, dental, mental-health, or medication needs are being postponed.']]},
+{name:'Relationships and communication',id:'relationships',items:[['disrespect','Yelling, insults, threats, sarcasm, ridicule, or silent treatment happen often.'],['fear','Someone is afraid to speak honestly or disagree.'],['repair','Conflict happens, but apologies, repair, or changed behavior rarely follow.'],['disconnect','Family members live together but feel emotionally disconnected.']]},
+{name:'Workload and caregiving',id:'workload',items:[['one','One person manages most cleaning, planning, caregiving, errands, school contact, and emotional support.'],['invisible','Important work is noticed only when it is not done.'],['burnout','A caregiver feels constantly exhausted, resentful, or unable to rest.'],['backup','Essential responsibilities have no backup person.']]},
+{name:'Community and support',id:'community',items:[['isolated','The household has few people it can call for practical or emotional help.'],['backup','There is no reliable backup for childcare, transportation, meals, or emergencies.'],['single','A single parent or caregiver is carrying most responsibilities without dependable support.'],['avoid','The family avoids asking for help even when the situation is becoming unmanageable.']]}
+];
+const guidance={
+ poverty:{title:'Possible material hardship or financial instability',text:'Your selections may suggest that basic needs or unexpected costs are placing the household under significant pressure. This is not a judgment of effort or worth.',ideas:['List the most urgent need first: food, housing, utilities, transportation, medicine, or safety.','Consider a benefits navigator, school family liaison, 211-type service, housing counselor, or reputable nonprofit.','Use the Financial tools only after immediate needs and safety are addressed.'],tool:['Community Connector','/programs/bridge-center/']},
+ health:{title:'Health routines or access may need support',text:'Your selections may suggest that daily health needs, rest, nutrition, hydration, or access to care are being interrupted.',ideas:['Choose one immediate need rather than trying to repair every routine at once.','Consider a clinic, school nurse, counselor, public-health office, or trusted provider.','Use the Five-Pillar Check-In to explore health patterns in more detail.'],tool:['Five-Pillar Check-In','/toolkit/five-pillar-check-in/']},
+ relationships:{title:'Communication or emotional safety may need attention',text:'Your selections may suggest that conflict patterns are affecting trust, dignity, or a person’s willingness to speak honestly.',ideas:['Pause high-conflict conversations when people cannot communicate safely.','Discuss one specific behavior and its impact rather than labeling a person.','Consider a qualified counselor, mediator, faith leader with healthy boundaries, or family-support program when appropriate.'],tool:['Communication Style Reflection','/toolkit/communication-style/']},
+ workload:{title:'Household work may be uneven or hidden',text:'Your selections may suggest that one person is carrying a large share of visible work, invisible planning, caregiving, or emotional labor.',ideas:['List recurring work before deciding how to redistribute it.','Identify work that can be shared, rotated, simplified, postponed, or supported outside the household.','Use the Household Workload Calculator to estimate distribution.'],tool:['Household Workload Calculator','/toolkit/roles-responsibilities/']},
+ community:{title:'The household may be too isolated for its current demands',text:'Your selections may suggest that the family has limited backup during stress or crisis. Isolation can make ordinary problems harder to manage.',ideas:['Identify one trustworthy person and one organization before an emergency occurs.','Ask for a small, specific form of support instead of a broad promise.','Use the Community Connector to prepare an outreach message.'],tool:['Community Connector','/programs/bridge-center/']}
+};
+const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+groupsHost.innerHTML=groups.map((g,gi)=>`<details class="pattern-group" ${gi===0?'open':''}><summary>${esc(g.name)}</summary><table class="pattern-table"><thead><tr><th>Select</th><th>Statement</th></tr></thead><tbody>${g.items.map(([id,text])=>`<tr><td><input type="checkbox" name="reality" value="${g.id}:${id}" data-group="${g.id}" data-text="${esc(text)}" aria-label="Select: ${esc(text)}"></td><td>${esc(text)}</td></tr>`).join('')}</tbody></table></details>`).join('');
+function selected(){return [...form.querySelectorAll('input[name=reality]:checked')];}
+function updateSelection(){const items=selected();countHost.textContent=`${items.length} selected`;selectedHost.innerHTML=items.length?items.map(i=>`<li>${esc(i.dataset.text)}</li>`).join(''):'<li>No statements selected yet.</li>';}
+form.addEventListener('change',e=>{if(e.target.name==='reality')updateSelection();});
+document.getElementById('clear-patterns').addEventListener('click',()=>{form.querySelectorAll('input[name=reality]').forEach(i=>i.checked=false);document.getElementById('reflection-note').value='';updateSelection();results.innerHTML='<h2>Your reflection results</h2><p>Your matching patterns and support ideas will appear here after you review your selections and generate results.</p>';});
+form.addEventListener('submit',e=>{e.preventDefault();const items=selected();if(!items.length){results.innerHTML='<h2>Your reflection results</h2><p>Select at least one statement first. You may choose from only one category.</p>';return;}const active=[...new Set(items.map(i=>i.dataset.group))];const note=document.getElementById('reflection-note').value.trim();results.innerHTML=`<h2>Your reflection results</h2><p><strong>${items.length} selected statement${items.length===1?'':'s'}</strong> across ${active.length} area${active.length===1?'':'s'}. These are possible patterns—not diagnoses.</p>${note?`<p><strong>Your note:</strong> ${esc(note)}</p>`:''}<div class="result-grid">${active.map(k=>{const g=guidance[k];return `<article class="result-card"><h3>${esc(g.title)}</h3><p>${esc(g.text)}</p><h4>Ideas to consider</h4><ul>${g.ideas.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><a class="button button-secondary" href="${g.tool[1]}">Open ${esc(g.tool[0])}</a></article>`}).join('')}</div><p class="gentle-note"><strong>Suggested starting point:</strong> Begin with immediate safety and basic needs, then choose the one area where a small improvement could create the most relief.</p>`;results.scrollIntoView({behavior:'smooth',block:'start'});});
+updateSelection();
 })();
