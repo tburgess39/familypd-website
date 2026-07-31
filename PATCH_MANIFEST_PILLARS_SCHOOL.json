@@ -1,0 +1,26 @@
+{
+  "package": "FamilyPD Pillars and School Systems Upgrade",
+  "version": "2026-07-30",
+  "changed_or_new_files": [
+    "index.html",
+    "assets/css/styles.css",
+    "pillars/index.html",
+    "pillars/health/index.html",
+    "pillars/relationships/index.html",
+    "pillars/education/index.html",
+    "pillars/finances/index.html",
+    "pillars/goals/index.html",
+    "resources/index.html",
+    "resources/school-systems/index.html",
+    "resources/school-systems/districts/ccsd/index.html",
+    "resources/school-systems/districts/cms/index.html",
+    "learning-center/index.html",
+    "learning-center/journeys/index.html",
+    "README-PILLARS-SCHOOL-UPGRADE.md",
+    "PATCH_MANIFEST_PILLARS_SCHOOL.json"
+  ],
+  "new_routes": [
+    "/resources/school-systems/districts/ccsd/",
+    "/resources/school-systems/districts/cms/"
+  ]
+}
