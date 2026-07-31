@@ -1,49 +1,14 @@
-# FamilyPD Cybersecurity — GitHub Drop-In Package
+# FamilyPD Family Reality & Workload Tools — v6
 
-This package installs the FamilyPD **Learning Center → Cybersecurity** section.
+Upload the contents of this ZIP into the root of the FamilyPD GitHub repository and replace matching files.
 
-## Main entry page
-
-After upload, open:
-
-`/learning/cybersecurity.html`
-
-Recommended public URL:
-
-`https://familypd.org/learning/cybersecurity.html`
-
-## Upload
-
-1. Unzip this package.
-2. Open the root of the FamilyPD GitHub repository.
-3. Upload the included `learning` folder.
-4. Allow GitHub to merge it with the existing `learning` folder.
-5. Commit the changes.
-
-## Add visible access from Learning Center
-
-The complete website repository was not included in this package, so the existing Learning Center page is not overwritten.
-Add a card or menu link that points to:
-
-`learning/cybersecurity.html`
-
-Suggested card:
-
-**Cybersecurity**  
-Learn how computers, networks, people, and access decisions connect. Explore safe simulations, digital safety, CTE programs, and career preparation options.
-
-Button: **Explore Cybersecurity**
-
-## New structure
-
-- `cybersecurity.html` — Learning Center cybersecurity section home
-- `cybersecurity-who-has-access.html` — guided journey
-- `cybersecurity-explore.html` — interactive exploration hub
-- `cybersecurity-career-prep-options.html` — career preparation options hub
-- `cybersecurity-cte-programs.html` — CTE exploration with official CCSD and CMS links
-- `nevada-partners-cybersecurity-pathway.html` — Nevada Partners as one career preparation option
-- OSINT, social-engineering, QR, and authorized Range pages
+## Updated
+- Family Toolkit landing page: multi-select Family Reality Check with all matching suggestions
+- Five-Pillar Check-In: concrete question-based calculator
+- Household Workload Calculator: visible/invisible work, ownership, helpers, effort, mental load, overload summary, child-safe contribution ideas, and community support planning
+- Sitewide contrast and overflow protections
+- Smaller page titles and tighter spacing on the updated tools
+- Educational disclaimers, APA-style in-text citations, and reference lists
 
 ## Important
-
-This package updates the cybersecurity section only. The full FamilyPD repository is still needed to directly edit the existing Learning Center landing page, sitewide navigation, and the five pillar pages.
+These tools are educational reflections, not medical, mental-health, legal, financial, safety, or poverty determinations.
