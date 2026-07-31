@@ -1,48 +1,49 @@
-# FamilyPD Cybersecurity Exploration — GitHub Drop-In Package
+# FamilyPD Cybersecurity — GitHub Drop-In Package
 
-This package is arranged from the **repository root**.
+This package installs the FamilyPD **Lifelong Learning → Cybersecurity** section.
+
+## Main entry page
+
+After upload, open:
+
+`/learning/cybersecurity.html`
+
+Recommended public URL:
+
+`https://familypd.org/learning/cybersecurity.html`
 
 ## Upload
 
 1. Unzip this package.
-2. Open the root of the `familypd-website` GitHub repository.
-3. Drag the included **`learning` folder** into the repository root.
+2. Open the root of the FamilyPD GitHub repository.
+3. Upload the included `learning` folder.
 4. Allow GitHub to merge it with the existing `learning` folder.
-5. Commit the files.
+5. Commit the changes.
 
-The package does not overwrite a generic `learning/assets` directory. Its shared files are isolated in:
+## Add visible access from Lifelong Learning
 
-`learning/familypd-cyber-assets/`
+The complete website repository was not included in this package, so the existing Lifelong Learning page is not overwritten.
+Add a card or menu link that points to:
 
-## Main public page
+`learning/cybersecurity.html`
 
-`https://familypd.org/learning/cybersecurity-who-has-access.html`
+Suggested card:
 
-## Other pages
+**Cybersecurity**  
+Learn how computers, networks, people, and access decisions connect. Explore safe simulations, digital safety, CTE programs, and career preparation options.
 
-- `/learning/cybersecurity-explore.html`
-- `/learning/osint-tony-stark.html`
-- `/learning/social-engineering-simulation.html`
-- `/learning/credential-harvesting-range-guide.html`
-- `/learning/nevada-partners-cybersecurity-pathway.html`
-- `/learning/i-got-you-qr.html`
+Button: **Explore Cybersecurity**
 
-## Curiosity Library link
+## New structure
 
-Add this link to the existing Curiosity Library directory or dropdown when ready:
+- `cybersecurity.html` — Lifelong Learning cybersecurity section home
+- `cybersecurity-who-has-access.html` — guided journey
+- `cybersecurity-explore.html` — interactive exploration hub
+- `cybersecurity-career-prep-options.html` — career preparation options hub
+- `cybersecurity-cte-programs.html` — CTE exploration with official CCSD and CMS links
+- `nevada-partners-cybersecurity-pathway.html` — Nevada Partners as one career preparation option
+- OSINT, social-engineering, QR, and authorized Range pages
 
-```html
-<a href="/learning/cybersecurity-who-has-access.html">
-  Cybersecurity: Who Has Access?
-</a>
-```
+## Important
 
-Suggested description:
-
-> Explore computers, Linux, networks, OSINT, social engineering, digital trust, cyber defense, careers, and the Nevada Partners pathway.
-
-## Notes
-
-- All internal page links are relative and work on GitHub Pages.
-- CSS, JavaScript, the FamilyPD logo, and QR image are included.
-- The public simulations use fictional or fixed information and are intended for safe, authorized learning.
+This package updates the cybersecurity section only. The full FamilyPD repository is still needed to directly edit the existing Lifelong Learning landing page, sitewide navigation, and the five pillar pages.
