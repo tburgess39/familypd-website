@@ -201,3 +201,31 @@ details>div{padding:.9rem 1rem}
 .text-center{text-align:center}
 .center-copy{margin-inline:auto}
 .justify-center{justify-content:center}
+
+
+/* FamilyPD v23: cybersecurity bottom-section contrast fix */
+.callout.safe,
+.callout.safe p,
+.callout.safe b,
+.callout.safe strong,
+.callout.safe span,
+.callout.safe li {
+  color: #173b63 !important;
+}
+
+.footerbox,
+.footerbox p,
+.footerbox b,
+.footerbox strong,
+.footerbox span,
+.footerbox small,
+.footerbox li,
+.footerbox a,
+.footerbox a:visited {
+  color: #ffffff !important;
+}
+
+.footerbox a:hover,
+.footerbox a:focus-visible {
+  color: #ffd37a !important;
+}
