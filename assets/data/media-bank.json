@@ -15,6 +15,17 @@
   ],
   "items": [
     {
+      "id": "health-pillar-overview",
+      "title": "Health Pillar Overview",
+      "category": "Five Pillars",
+      "pillar": "Health",
+      "type": "Infographic",
+      "image": "/assets/media/health-pillar-overview.webp",
+      "alt": "FamilyPD Pillar One Health infographic explaining that mental, physical, emotional, spiritual health, and safety form the foundation for the other pillars.",
+      "description": "A FamilyPD overview of Health as the priority pillar, including mental, physical, and spiritual wellness and the habits that support the whole family.",
+      "page": "/pillars/health/"
+    },
+    {
       "id": "relationships-pillar-overview",
       "title": "Relationships Pillar Overview",
       "category": "Five Pillars",
