@@ -121,14 +121,22 @@
   });
 
   document.getElementById('print-connection').addEventListener('click', ()=>{
-    if(!printablePlan){ status.textContent='Create a communication plan first.'; return; }
+    if(!printablePlan){ status.textContent='Create an outreach plan first.'; return; }
     printablePlan.message=currentMessage;
-    const w=window.open('','_blank','noopener,noreferrer');
-    if(!w){ status.textContent='Allow pop-ups to create the print-ready plan.'; return; }
+    const existing=document.getElementById('connector-print-document');
+    if(existing) existing.remove();
     const lis=printablePlan.reflection.map(x=>`<li>${esc(x)}</li>`).join('');
-    w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${esc(printablePlan.title)}</title><style>
-      @page{margin:.55in}*{box-sizing:border-box}body{font-family:Arial,sans-serif;color:#173247;line-height:1.45;margin:0}.sheet{max-width:8in;margin:auto;border:3px solid #173247;padding:28px}.brand{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b76028}.title{font-size:28px;margin:5px 0 4px}.sub{margin:0 0 20px;color:#405667}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}.meta div{background:#eef4f2;border-left:5px solid #6f8d42;padding:10px}.section{margin-top:18px}.section h2{font-size:17px;margin:0 0 8px;color:#173247;border-bottom:2px solid #d3a64a;padding-bottom:5px}.message{white-space:pre-wrap;border:1px solid #9caeb9;border-radius:8px;padding:14px;background:#fbfcfc}.callout{border-left:5px solid #c96c35;background:#fff5e8;padding:12px}.footer{margin-top:22px;font-size:11px;color:#405667;border-top:1px solid #9caeb9;padding-top:10px}@media print{button{display:none}.sheet{border-color:#173247}}
-      </style></head><body><div class="sheet"><div class="brand">Family Personal Development</div><h1 class="title">Community Connection Plan</h1><p class="sub">A practical communication guide for reaching people and organizations.</p><div class="meta"><div><strong>Contact type</strong><br>${esc(printablePlan.type)}</div><div><strong>Topic</strong><br>${esc(printablePlan.topic)}</div></div><div class="section"><h2>Email or written message</h2><div class="message">${esc(printablePlan.message)}</div></div><div class="section"><h2>Phone-call opening</h2><div class="message">${esc(printablePlan.phone)}</div></div><div class="section"><h2>Meeting opening</h2><div class="message">${esc(printablePlan.meeting)}</div></div><div class="section"><h2>Before reaching out</h2><ul>${lis}</ul></div><div class="section"><h2>When to advocate</h2><div class="callout">${esc(printablePlan.advocate)}</div></div><div class="section"><h2>Possible contact</h2><p>${esc(printablePlan.contact)}</p><p><strong>Protect your information:</strong> ${esc(printablePlan.verify)}</p></div><p class="footer">FamilyPD provides general educational guidance. Confirm official procedures and contact information before sharing private information.</p></div><script>window.onload=()=>window.print();<\/script></body></html>`);
-    w.document.close();
+    const doc=document.createElement('section');
+    doc.id='connector-print-document';
+    doc.className='connector-print-document';
+    doc.setAttribute('aria-hidden','true');
+    doc.innerHTML=`<div class="connector-print-sheet"><div class="connector-print-brand">Family Personal Development</div><h1 class="connector-print-title">Outreach Communication Plan</h1><p class="connector-print-sub">Natural language and preparation guidance for reaching a person or organization.</p><div class="connector-print-meta"><div><strong>Contact type</strong><br>${esc(printablePlan.type)}</div><div><strong>Topic</strong><br>${esc(printablePlan.topic)}</div></div><div class="connector-print-section"><h2>Copy-and-send message</h2><div class="connector-print-message">${esc(printablePlan.message)}</div></div><div class="connector-print-section"><h2>Phone-call opening</h2><div class="connector-print-message">${esc(printablePlan.phone)}</div></div><div class="connector-print-section"><h2>Meeting opening</h2><div class="connector-print-message">${esc(printablePlan.meeting)}</div></div><div class="connector-print-section"><h2>Before reaching out</h2><ul>${lis}</ul></div><div class="connector-print-section"><h2>When to advocate</h2><div class="connector-print-callout">${esc(printablePlan.advocate)}</div></div><div class="connector-print-section"><h2>Possible contact</h2><p>${esc(printablePlan.contact)}</p><p><strong>Protect your information:</strong> ${esc(printablePlan.verify)}</p></div><p class="connector-print-footer">FamilyPD provides general educational guidance. Confirm official procedures and contact information before sharing private information.</p></div>`;
+    document.body.appendChild(doc);
+    document.body.classList.add('connector-printing');
+    const cleanup=()=>{document.body.classList.remove('connector-printing');doc.remove();window.removeEventListener('afterprint',cleanup);};
+    window.addEventListener('afterprint',cleanup);
+    status.textContent='Opening the print dialog…';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));
+    setTimeout(()=>{ if(document.body.classList.contains('connector-printing')) cleanup(); },30000);
   });
 })();

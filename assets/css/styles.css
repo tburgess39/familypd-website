@@ -5784,3 +5784,65 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
 .partnership-result{margin-top:1rem;background:#102f47;border-radius:16px;padding:1.25rem}
 .partnership-result h2,.partnership-result p,.partnership-result strong{color:#fff!important;-webkit-text-fill-color:#fff!important}
 @media(max-width:760px){.partnership-reflection-grid{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   FamilyPD v21 — permanent readable contrast protections
+   ========================================================= */
+/* Main-page framework list: visible before and after hover. */
+.hero-card .pillar-list a,
+.hero-card .pillar-list a:link,
+.hero-card .pillar-list a:visited,
+.hero-card .pillar-list a:hover,
+.hero-card .pillar-list a:focus-visible,
+.hero-card .pillar-list li,
+.hero-card .pillar-list span,
+.hero-card .hero-card-link,
+.hero-card .hero-card-link:visited {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  opacity:1 !important;
+}
+.hero-card .pillar-list a { background:rgba(255,255,255,.08) !important; }
+.hero-card .pillar-list a:hover,
+.hero-card .pillar-list a:focus-visible { background:rgba(255,255,255,.18) !important; outline:2px solid #ffffff; outline-offset:2px; }
+.hero-card .pillar-list span { background:#c86632 !important; }
+
+/* Main-page five-pillar cards must always use dark copy on white cards. */
+.linked-pillar-grid .pillar-card,
+.linked-pillar-grid .pillar-card h3,
+.linked-pillar-grid .pillar-card p,
+.linked-pillar-grid .pillar-card span,
+.linked-pillar-grid .pillar-card:visited,
+.linked-pillar-grid .pillar-card:hover,
+.linked-pillar-grid .pillar-card:focus-visible {
+  color:#102f47 !important;
+  -webkit-text-fill-color:#102f47 !important;
+  opacity:1 !important;
+}
+.linked-pillar-grid .pillar-card .icon { color:#ffffff !important; -webkit-text-fill-color:#ffffff !important; }
+
+/* Do not allow low-contrast gray text on light backgrounds. */
+.page-lead,.section-heading p,.card p,.source-note,.helper-text,.field-help,.form-help,.muted,
+.media-card p,.media-bank-controls p { color:#2f4656 !important; opacity:1 !important; }
+
+/* Print-only outreach plan generated in the current page; no popup required. */
+.connector-print-document{display:none;background:#fff;color:#173247;line-height:1.5}
+.connector-print-document *{box-sizing:border-box;color:#173247!important;-webkit-text-fill-color:#173247!important}
+.connector-print-sheet{max-width:8in;margin:0 auto;border:3px solid #173247;padding:28px;background:#fff}
+.connector-print-brand{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b76028!important}
+.connector-print-title{font-size:28px;line-height:1.1;margin:6px 0 4px}
+.connector-print-sub{margin:0 0 20px;color:#405667!important}
+.connector-print-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.connector-print-meta>div{background:#eef4f2;border-left:5px solid #6f8d42;padding:10px;overflow-wrap:anywhere}
+.connector-print-section{margin-top:18px;break-inside:avoid}
+.connector-print-section h2{font-size:17px;margin:0 0 8px;border-bottom:2px solid #d3a64a;padding-bottom:5px}
+.connector-print-message{white-space:pre-wrap;border:1px solid #9caeb9;border-radius:8px;padding:14px;background:#fbfcfc;overflow-wrap:anywhere}
+.connector-print-callout{border-left:5px solid #c96c35;background:#fff5e8;padding:12px}
+.connector-print-footer{margin-top:22px;font-size:11px;color:#405667!important;border-top:1px solid #9caeb9;padding-top:10px}
+@media print{
+  @page{margin:.55in}
+  body.connector-printing>*:not(.connector-print-document){display:none!important}
+  body.connector-printing .connector-print-document{display:block!important;position:static!important;width:100%!important}
+  body.connector-printing .connector-print-sheet{border-color:#173247;box-shadow:none}
+}
