@@ -1,20 +1,14 @@
-# FamilyPD Community Connector Refinement v7
+# FamilyPD Toolkit, Learning Center & Kids/Teens Refinement v9
 
 Upload the contents of this ZIP into the root of the FamilyPD GitHub repository and replace matching files.
 
-Changed files:
-- programs/bridge-center/index.html
-- programs/index.html
-- assets/js/family-school-community-bridge.js
-- assets/data/family-school-community-bridge.json
-- assets/css/styles.css
+## This package is cumulative
+It includes the v8 independent Toolkit and simplified Workload Calculator, the v7 Community Connector, and the new v9 refinements.
 
-## Purpose
-The former Bridge Center overlapped with the Goal Builder and Where to Start tools. It is now a distinct Community Connector focused on:
-- identifying people and organizations that may help;
-- preparing respectful outreach;
-- asking useful questions;
-- overcoming common barriers to connecting;
-- planning follow-up and warm introductions.
-
-It no longer generates household projects or goal plans.
+## v9 changes
+- Makes all footer text and links white for readable contrast on the dark footer.
+- Replaces the overwhelming Learning Center card wall with compact expandable category dropdowns.
+- Removes the Kids & Teens blueprint/process structure.
+- Reframes Kids & Teens as a project-idea and resource page connected to the five pillars and four guiding principles.
+- Adds project ideas for health, relationships, education, finances, goals, community, systems/policies, and self-awareness.
+- Adds direct learning and creation resources for students.
