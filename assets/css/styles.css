@@ -5932,3 +5932,406 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
   content: none !important;
   display: none !important;
 }
+
+
+/* FamilyPD v29: Kids & Teens Creator Hub */
+.youth-creator-page {
+  --youth-navy:#102f4d;
+  --youth-blue:#176b87;
+  --youth-teal:#0b8e8d;
+  --youth-orange:#ef6c35;
+  --youth-gold:#f2b63d;
+  --youth-purple:#754bb3;
+  --youth-green:#398449;
+  --youth-pink:#cf3f7a;
+}
+
+.youth-creator-hero {
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(242,182,61,.25),transparent 22%),
+    radial-gradient(circle at 75% 85%,rgba(11,142,141,.22),transparent 26%),
+    linear-gradient(135deg,#f9fcff 0%,#fff9ed 100%);
+}
+
+.youth-hero-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+  gap:42px;
+  align-items:center;
+}
+
+.youth-creator-hero h1 {
+  max-width:900px;
+  color:var(--youth-navy);
+  font-size:clamp(2.35rem,5vw,4.5rem);
+  line-height:1.03;
+}
+
+.youth-hero-note {
+  margin-top:16px;
+  color:#304c60!important;
+  font-weight:750;
+}
+
+.youth-possibility-card {
+  padding:26px;
+  border:2px solid rgba(16,47,77,.13);
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 22px 55px rgba(16,47,77,.13);
+  transform:rotate(1deg);
+}
+
+.youth-card-label {
+  margin:0 0 15px;
+  color:var(--youth-purple)!important;
+  font-size:.86rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.youth-possibility-cloud {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:22px;
+}
+
+.youth-possibility-cloud span {
+  padding:8px 11px;
+  border-radius:999px;
+  color:#fff;
+  font-size:.88rem;
+  font-weight:850;
+}
+
+.youth-possibility-cloud span:nth-child(5n+1){background:var(--youth-orange)}
+.youth-possibility-cloud span:nth-child(5n+2){background:var(--youth-blue)}
+.youth-possibility-cloud span:nth-child(5n+3){background:var(--youth-purple)}
+.youth-possibility-cloud span:nth-child(5n+4){background:var(--youth-green)}
+.youth-possibility-cloud span:nth-child(5n){background:var(--youth-pink)}
+
+.youth-possibility-card strong {
+  display:block;
+  color:var(--youth-navy);
+  font-size:1.2rem;
+}
+
+.youth-hook-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.youth-hook-grid article,
+.did-you-know-grid article,
+.youth-safety-grid article {
+  border:1px solid #cad8e0;
+  border-radius:18px;
+  background:#fff;
+  padding:21px;
+  box-shadow:0 8px 23px rgba(16,47,77,.07);
+}
+
+.youth-hook-grid article>span {
+  display:block;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+.youth-hook-grid h3,
+.did-you-know-grid h3 {
+  margin:0 0 7px;
+  color:var(--youth-navy);
+}
+
+.youth-hook-grid p,
+.did-you-know-grid p,
+.youth-safety-grid p {
+  margin:0;
+  color:#334d60!important;
+  line-height:1.55;
+}
+
+.youth-project-table-wrap {
+  overflow-x:auto;
+  border:1px solid #bdced8;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 14px 35px rgba(16,47,77,.08);
+}
+
+.youth-project-table {
+  width:100%;
+  min-width:960px;
+  border-collapse:collapse;
+}
+
+.youth-project-table th,
+.youth-project-table td {
+  padding:18px;
+  border-right:1px solid #d6e0e6;
+  border-bottom:1px solid #d6e0e6;
+  vertical-align:top;
+  text-align:left;
+  color:#284558;
+  line-height:1.5;
+}
+
+.youth-project-table thead th {
+  background:var(--youth-navy);
+  color:#fff;
+  font-size:.92rem;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.youth-project-table tbody th {
+  min-width:160px;
+  color:var(--youth-navy);
+  background:#f7fafc;
+  font-size:1.02rem;
+}
+
+.youth-project-table tbody tr:hover td,
+.youth-project-table tbody tr:hover th {
+  background:#fffaf0;
+}
+
+.pillar-dot {
+  display:inline-block;
+  width:11px;
+  height:11px;
+  margin-right:8px;
+  border-radius:50%;
+}
+.pillar-dot.health{background:#ef6c35}
+.pillar-dot.relationships{background:#cf3f7a}
+.pillar-dot.education{background:#398449}
+.pillar-dot.finances{background:#0b8e8d}
+.pillar-dot.goals{background:#754bb3}
+.pillar-dot.community{background:#176b87}
+.pillar-dot.systems{background:#f2b63d}
+.pillar-dot.awareness{background:#6d7680}
+
+.did-you-know-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.did-you-know-grid article {
+  position:relative;
+  overflow:hidden;
+}
+
+.did-you-know-grid article::after {
+  content:"";
+  position:absolute;
+  right:-28px;
+  bottom:-28px;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:rgba(242,182,61,.13);
+}
+
+.did-you-know-number {
+  display:inline-grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  margin-bottom:12px;
+  border-radius:13px;
+  background:var(--youth-purple);
+  color:#fff;
+  font-weight:900;
+}
+
+.youth-build-path h2,
+.youth-build-path .eyebrow {
+  color:#fff!important;
+}
+
+.creator-path {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  padding:0;
+  list-style:none;
+}
+
+.creator-path li {
+  display:flex;
+  gap:13px;
+  min-height:150px;
+  padding:19px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:18px;
+  background:rgba(255,255,255,.08);
+}
+
+.creator-path li>span {
+  display:grid;
+  place-items:center;
+  flex:0 0 42px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--youth-gold);
+  color:var(--youth-navy);
+  font-weight:900;
+}
+
+.creator-path strong {
+  display:block;
+  color:#fff;
+  font-size:1.15rem;
+}
+
+.creator-path p {
+  margin:6px 0 0;
+  color:#e9f4f7!important;
+  line-height:1.5;
+}
+
+.youth-resource-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.youth-resource-grid article {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:21px;
+  border:1px solid #c8d6df;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(16,47,77,.07);
+}
+
+.resource-tool-heading {
+  display:flex;
+  gap:11px;
+  align-items:center;
+}
+
+.resource-tool-heading>span {
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border-radius:13px;
+  background:#eef5f8;
+  color:var(--youth-purple);
+  font-weight:900;
+}
+
+.resource-tool-heading h3 {
+  margin:0;
+  color:var(--youth-navy);
+}
+
+.youth-resource-grid p {
+  color:#334d60!important;
+  line-height:1.55;
+}
+
+.youth-resource-grid a {
+  margin-top:auto;
+  font-weight:850;
+}
+
+.resource-safety {
+  padding:10px;
+  border-radius:10px;
+  background:#fff7e7;
+  font-size:.9rem;
+}
+
+.youth-business-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+  gap:28px;
+  align-items:start;
+}
+
+.youth-portfolio-card {
+  padding:24px;
+  border-radius:20px;
+  background:var(--youth-navy);
+  color:#fff;
+  box-shadow:0 16px 34px rgba(16,47,77,.16);
+}
+
+.youth-portfolio-card>span {
+  color:#ffd77a;
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.youth-portfolio-card h3,
+.youth-portfolio-card p,
+.youth-portfolio-card li {
+  color:#fff!important;
+}
+
+.youth-safety-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.youth-safety-grid strong {
+  display:block;
+  margin-bottom:6px;
+  color:var(--youth-navy);
+  font-size:1.05rem;
+}
+
+.youth-final-cta {
+  display:flex;
+  justify-content:space-between;
+  gap:28px;
+  align-items:center;
+  margin-top:28px;
+  padding:25px;
+  border-radius:20px;
+  background:linear-gradient(125deg,#e8f7f6,#fff5dd);
+}
+
+.youth-final-cta h2 {
+  margin:5px 0;
+  color:var(--youth-navy);
+}
+
+.youth-final-cta p {
+  color:#334d60!important;
+}
+
+@media(max-width:1000px){
+  .youth-hero-grid,
+  .youth-business-grid{grid-template-columns:1fr}
+  .youth-hook-grid,
+  .did-you-know-grid,
+  .creator-path,
+  .youth-resource-grid,
+  .youth-safety-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .youth-possibility-card{transform:none}
+}
+
+@media(max-width:680px){
+  .youth-hook-grid,
+  .did-you-know-grid,
+  .creator-path,
+  .youth-resource-grid,
+  .youth-safety-grid{grid-template-columns:1fr}
+  .youth-final-cta{align-items:flex-start;flex-direction:column}
+  .youth-creator-hero h1{font-size:2.35rem}
+}
