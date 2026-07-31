@@ -1,14 +1,16 @@
-# FamilyPD Toolkit, Learning Center & Kids/Teens Refinement v9
+# FamilyPD PGS Integration v10
 
 Upload the contents of this ZIP into the root of the FamilyPD GitHub repository and replace matching files.
 
-## This package is cumulative
-It includes the v8 independent Toolkit and simplified Workload Calculator, the v7 Community Connector, and the new v9 refinements.
+## Added
+- `/pgs/` — FamilyPD PGS Assistant public app
+- `/learning-center/pgs-contact-units/` — CCEA, Contact Units, PGS, and official-resource guide
 
-## v9 changes
-- Makes all footer text and links white for readable contrast on the dark footer.
-- Replaces the overwhelming Learning Center card wall with compact expandable category dropdowns.
-- Removes the Kids & Teens blueprint/process structure.
-- Reframes Kids & Teens as a project-idea and resource page connected to the five pillars and four guiding principles.
-- Adds project ideas for health, relationships, education, finances, goals, community, systems/policies, and self-awareness.
-- Adds direct learning and creation resources for students.
+## Updated
+- `/learning-center/index.html` — adds the PGS/CU topic under Education, School, and Careers
+
+## Important
+The private Google Apps Script assistant URL is still blank in:
+`/pgs/assets/js/site-config.js`
+
+When the Apps Script web app is deployed, paste its `/exec` URL into `assistantUrl`.
