@@ -1,14 +1,15 @@
-# FamilyPD Family Reality & Workload Tools — v6
+# FamilyPD Toolkit Layout Hotfix v6.1
 
-Upload the contents of this ZIP into the root of the FamilyPD GitHub repository and replace matching files.
+This is a small corrective patch for the Family Toolkit upload.
 
-## Updated
-- Family Toolkit landing page: multi-select Family Reality Check with all matching suggestions
-- Five-Pillar Check-In: concrete question-based calculator
-- Household Workload Calculator: visible/invisible work, ownership, helpers, effort, mental load, overload summary, child-safe contribution ideas, and community support planning
-- Sitewide contrast and overflow protections
-- Smaller page titles and tighter spacing on the updated tools
-- Educational disclaimers, APA-style in-text citations, and reference lists
+## What it fixes
+- Checkboxes no longer stretch across the card.
+- Statement text no longer collapses into a one-letter-wide column.
+- Category boxes return to their natural height.
+- Global text wrapping is corrected so words wrap normally.
+- Heavy visual effects are disabled inside calculators to improve loading and interaction speed.
 
-## Important
-These tools are educational reflections, not medical, mental-health, legal, financial, safety, or poverty determinations.
+## Upload
+Upload the included `assets` folder to the root of the FamilyPD GitHub repository and replace the matching file.
+
+Only `assets/css/styles.css` needs to change for this hotfix. The toolkit HTML and JavaScript from v6 can remain in place.
