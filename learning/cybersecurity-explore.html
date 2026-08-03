@@ -63,13 +63,14 @@
       <button class="active" data-computer-mode="data" type="button">Data flow</button>
       <button data-computer-mode="power" type="button">Power flow</button>
     </div>
-    <label>Choose a task<select id="computerTask">
-      <option value="open">Open a saved picture</option>
-      <option value="save">Type and save a document</option>
-      <option value="web">Open a website</option>
-      <option value="video">Play a video</option>
-      <option value="typeA">Type the letter A</option>
-    </select></label>
+    <div class="sim-choice-group" id="computerTaskChoices" aria-label="Choose a data-flow task">
+      <span class="sim-choice-label">Choose a task</span>
+      <button class="sim-choice active" data-computer-task="open" type="button">Open a saved picture</button>
+      <button class="sim-choice" data-computer-task="save" type="button">Type and save a document</button>
+      <button class="sim-choice" data-computer-task="web" type="button">Open a website</button>
+      <button class="sim-choice" data-computer-task="video" type="button">Play a video</button>
+      <button class="sim-choice" data-computer-task="typeA" type="button">Type the letter A</button>
+    </div>
     <button class="btn" id="computerSimReplay" type="button">Replay</button>
   </div>
   <div class="computer-step-status" id="computerStepStatus" hidden><b>Ready.</b> Select Start simulation.</div>
@@ -124,9 +125,9 @@
 <div class="section-head"><span class="stepno">D</span><div><h2>How Data Travels Through the OSI Model</h2><span>Watch a fictional request move down seven layers, cross a network, and move back up at the target.</span></div><span class="time">Interactive</span></div>
 <div class="callout info"><b>From data to signals:</b> The OSI model separates network communication into seven layers. As data leaves <code>hacker (10.10.10.25)</code>, each layer adds or prepares information. The target at <code>10.10.10.20</code> receives the signals and works back up the layers to rebuild the message.</div>
 <div class="simulator osi-simulator" id="osiSimulator">
-  <div class="simulator-head"><div><span class="sim-kicker">Safe fictional network</span><h3>OSI Activity Simulation</h3><p>Choose an activity and follow encapsulation, devices, addressing, protocols, and decapsulation. No real traffic is sent.</p></div><button class="btn dark" id="osiStart" type="button">Start simulation</button></div>
+  <div class="simulator-head"><div><span class="sim-kicker">Safe fictional network</span><h3>OSI Activity Simulation</h3><p>Follow one familiar activity—visiting a secure website—as it moves down the seven OSI layers, crosses the network, and is rebuilt by the target. No real traffic is sent.</p></div><button class="btn dark" id="osiStart" type="button">Start secure website simulation</button></div>
   <div class="sim-controls" id="osiControls" hidden>
-    <label>Choose an activity<select id="osiScenario"><option value="https">Open a secure website</option><option value="ping">Ping the target</option><option value="scan">Check HTTPS service</option></select></label>
+    <div class="fixed-activity"><b>Activity:</b> Visit a secure website using HTTPS</div>
     <button class="btn" id="osiNext" type="button">Next layer</button><button class="btn" id="osiReplay" type="button">Replay</button>
   </div>
   <div class="osi-progress" id="osiProgress" hidden aria-live="polite"></div>
@@ -153,17 +154,17 @@
 <div class="callout info"><b>How this connects:</b> The OSI simulator shows how data is prepared and moved through layers. This explorer shows how a packet analyzer organizes portions of that same fictional traffic for review. Everything below is preset practice data; the page does not capture live traffic.</div>
 <div class="packet-explorer" id="packetExplorer">
   <div class="packet-toolbar">
-    <label for="packetFilter"><b>Display filter</b></label>
-    <select id="packetFilter">
-      <option value="all">Show all packets</option>
-      <option value="dns">dns</option>
-      <option value="icmp">icmp</option>
-      <option value="tcp">tcp</option>
-      <option value="tls">tls</option>
-      <option value="http">http</option>
-      <option value="target">ip.addr == 10.10.10.20</option>
-      <option value="443">tcp.port == 443</option>
-    </select>
+    <b class="filter-label">Display filter</b>
+    <div class="packet-filter-buttons" id="packetFilterButtons" role="group" aria-label="Packet display filters">
+      <button class="filter-chip active" data-packet-filter="all" type="button">All</button>
+      <button class="filter-chip" data-packet-filter="dns" type="button">DNS</button>
+      <button class="filter-chip" data-packet-filter="icmp" type="button">ICMP</button>
+      <button class="filter-chip" data-packet-filter="tcp" type="button">TCP</button>
+      <button class="filter-chip" data-packet-filter="tls" type="button">TLS</button>
+      <button class="filter-chip" data-packet-filter="http" type="button">HTTP</button>
+      <button class="filter-chip" data-packet-filter="target" type="button">Target IP</button>
+      <button class="filter-chip" data-packet-filter="443" type="button">Port 443</button>
+    </div>
     <button class="btn" id="packetReset" type="button">Reset explorer</button>
   </div>
   <div class="packet-table-wrap">

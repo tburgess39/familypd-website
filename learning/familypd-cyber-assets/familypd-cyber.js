@@ -169,9 +169,9 @@ const FPD = (() => {
     ];
     const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
     function openPacket(p){detail.innerHTML=`<h3>Packet ${p.n}: ${p.proto}</h3><div class="packet-field"><div><b>Source</b><br>${esc(p.src)}</div><div><b>Destination</b><br>${esc(p.dst)}</div><div><b>Source port</b><br>${esc(p.sport)}</div><div><b>Destination port</b><br>${esc(p.dport)}</div><div><b>Length</b><br>${p.len} bytes</div><div><b>Summary</b><br>${esc(p.info)}</div></div><p><b>What it means:</b> ${esc(p.why)}</p>`;$$('tr',rows).forEach(x=>x.classList.toggle('selected',Number(x.dataset.packet)===p.n));}
-    function render(){const v=filter.value;const shown=packets.filter(p=>v==='all'||p.tags.includes(v)||p.proto.toLowerCase()===v);rows.innerHTML=shown.map(p=>`<tr tabindex="0" data-packet="${p.n}"><td>${p.n}</td><td>${esc(p.src)}</td><td>${esc(p.dst)}</td><td><b>${p.proto}</b></td><td>${p.len}</td><td>${esc(p.info)}</td></tr>`).join('');$$('[data-packet]',rows).forEach(row=>{const open=()=>openPacket(packets.find(x=>x.n===Number(row.dataset.packet)));row.addEventListener('click',open);row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});}
-    filter.addEventListener('change',render);render();
-    const reset=$('#packetReset');if(reset)reset.addEventListener('click',()=>{filter.value='all';render();detail.innerHTML='<h3>Select a packet</h3><p>Choose a row to see what the source, destination, protocol, port, and message mean.</p>';const f=$('#packetChallengeFeedback');if(f){f.textContent='';f.className='feedback';}$$('.packet-answer').forEach(x=>x.classList.remove('correct','incorrect'));});
+    function render(){const v=activePacketFilter;const shown=packets.filter(p=>v==='all'||p.tags.includes(v)||p.proto.toLowerCase()===v);rows.innerHTML=shown.map(p=>`<tr tabindex="0" data-packet="${p.n}"><td>${p.n}</td><td>${esc(p.src)}</td><td>${esc(p.dst)}</td><td><b>${p.proto}</b></td><td>${p.len}</td><td>${esc(p.info)}</td></tr>`).join('');$$('[data-packet]',rows).forEach(row=>{const open=()=>openPacket(packets.find(x=>x.n===Number(row.dataset.packet)));row.addEventListener('click',open);row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});}
+    document.querySelectorAll('[data-packet-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-packet-filter]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');activePacketFilter=btn.dataset.packetFilter;render();}));render();
+    const reset=$('#packetReset');if(reset)reset.addEventListener('click',()=>{activePacketFilter='all';document.querySelectorAll('[data-packet-filter]').forEach(x=>x.classList.toggle('active',x.dataset.packetFilter==='all'));render();detail.innerHTML='<h3>Select a packet</h3><p>Choose a row to see what the source, destination, protocol, port, and message mean.</p>';const f=$('#packetChallengeFeedback');if(f){f.textContent='';f.className='feedback';}$$('.packet-answer').forEach(x=>x.classList.remove('correct','incorrect'));});
     $$('.packet-answer').forEach(btn=>btn.addEventListener('click',()=>{const f=$('#packetChallengeFeedback');$$('.packet-answer').forEach(x=>x.classList.remove('correct','incorrect'));if(btn.dataset.packetAnswer==='12'){btn.classList.add('correct');f.textContent='Correct. Packet 12 contains a fictional HTTP login request whose form values are readable. HTTPS/TLS would encrypt the application data.';f.className='feedback good';openPacket(packets.find(p=>p.n===12));}else{btn.classList.add('incorrect');f.textContent='Not quite. Packet 12 is the clearest example because the fictional username and password appear in readable HTTP data.';f.className='feedback bad';}}));
   }
 
@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
     [['cpu','ram','storage','gpu','nic','input','display'],'Powered components','Separate branches power the CPU, RAM, storage, GPU, network interface, input devices, and display. They do not receive power through one another.','Power is distributed in parallel to component branches.']
   ]};
   let computerMode='data';
+  let selectedComputerTask='open';
   let computerRunId=0;
   function cancelComputerRun(){computerRunId+=1;}
   function cardMarkup(id,title,detail,index){return '<article class="simple-flow-step" data-flow-id="'+id+'"><span class="flow-step-number">'+(index+1)+'</span><div><b>'+title+'</b><p>'+detail+'</p><small data-flow-status>Waiting</small></div></article>';}
@@ -253,10 +254,10 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
   }
   function completeFlowCards(){document.querySelectorAll('#computerFlowBoard .simple-flow-step').forEach(card=>{card.classList.remove('current');card.classList.add('done');const st=card.querySelector('[data-flow-status]');if(st)st.textContent='Complete';});}
   async function runComputer(){
-    const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout'),taskSelect=document.getElementById('computerTask'),startState=document.getElementById('computerStartState');
-    if(!board||!out||!taskSelect)return;
+    const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout'),startState=document.getElementById('computerStartState');
+    if(!board||!out)return;
     const runId=++computerRunId;
-    const scenario=computerMode==='power'?powerScenario:computerScenarios[taskSelect.value];
+    const scenario=computerMode==='power'?powerScenario:computerScenarios[selectedComputerTask];
     const steps=scenario.steps;
     renderComputerFlow(steps);resetFlowCards();board.hidden=false;out.hidden=false;if(status)status.hidden=false;
     if(startState)startState.innerHTML=computerMode==='power'?'<b>Power-flow starting state:</b> The computer begins unplugged. The four stages below show the simplified startup path. The final stage is one parallel branch, not a chain through each component.':'<b>Data-flow starting state:</b> The computer is already plugged in, powered on, and idle. The cards show only the major components used by the selected task.';
@@ -271,7 +272,7 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
         if(bitReadout)bitReadout.textContent='Power mode shows energy delivery. A power-rail voltage is not a data bit.';
       }else{
         if(powerReadout)powerReadout.textContent='The computer remains powered while this component handles the task.';
-        if(bitReadout)bitReadout.innerHTML=taskSelect.value==='typeA'?'Example signal pattern: <code>01000001</code> = 8 bits = 1 byte = decimal 65 = “A”. Actual HIGH and LOW voltage limits depend on the circuit datasheet.':'Data is represented by LOW and HIGH voltage regions. Groups of 8 bits form bytes.';
+        if(bitReadout)bitReadout.innerHTML=selectedComputerTask==='typeA'?'Example signal pattern: <code>01000001</code> = 8 bits = 1 byte = decimal 65 = “A”. Actual HIGH and LOW voltage limits depend on the circuit datasheet.':'Data is represented by LOW and HIGH voltage regions. Groups of 8 bits form bytes.';
       }
       await wait(1150);
     }
@@ -283,8 +284,8 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
   function restartComputer(){cancelComputerRun();window.setTimeout(runComputer,0);}
   const computerStart=document.getElementById('computerSimStart');
   if(computerStart)computerStart.addEventListener('click',()=>{const controls=document.querySelector('#computerFlowSimulator .sim-controls');if(controls)controls.hidden=false;computerStart.textContent='Run again';restartComputer();});
-  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;const task=document.getElementById('computerTask');if(task)task.closest('label').hidden=computerMode==='power';restartComputer();}));
-  const computerTask=document.getElementById('computerTask');if(computerTask)computerTask.addEventListener('change',restartComputer);
+  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;const choices=document.getElementById('computerTaskChoices');if(choices)choices.hidden=computerMode==='power';restartComputer();}));
+  document.querySelectorAll('[data-computer-task]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-computer-task]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');selectedComputerTask=btn.dataset.computerTask;restartComputer();}));
   const computerReplay=document.getElementById('computerSimReplay');if(computerReplay)computerReplay.addEventListener('click',restartComputer);
 
   const osiLayers={
@@ -312,10 +313,11 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
     return [...down,...transit,...up];
   }
   function renderOsi(reset=false){
-    const stack=document.getElementById('osiStack'),detail=document.getElementById('osiDetail'),output=document.getElementById('osiOutput'),progress=document.getElementById('osiProgress'),scenarioEl=document.getElementById('osiScenario');
-    if(!stack||!detail||!output||!progress||!scenarioEl)return;
-    if(reset){osiSequence=buildOsiSequence(scenarioEl.value);osiIndex=0;}
-    const item=osiSequence[osiIndex],scenario=scenarioEl.value;
+    const stack=document.getElementById('osiStack'),detail=document.getElementById('osiDetail'),output=document.getElementById('osiOutput'),progress=document.getElementById('osiProgress');
+    if(!stack||!detail||!output||!progress)return;
+    const scenario='https';
+    if(reset){osiSequence=buildOsiSequence(scenario);osiIndex=0;}
+    const item=osiSequence[osiIndex];
     document.querySelectorAll('.osi-layer').forEach(x=>x.classList.remove('active','completed','receiving'));
     document.querySelectorAll('.osi-endpoint,.osi-transit').forEach(x=>x.classList.remove('active'));
     if(item.direction==='transit'){
@@ -335,6 +337,5 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
   const osiStart=document.getElementById('osiStart');if(osiStart)osiStart.addEventListener('click',()=>{document.getElementById('osiControls').hidden=false;document.getElementById('osiStackWrap').hidden=false;osiStart.textContent='Restart simulation';renderOsi(true);});
   const osiNext=document.getElementById('osiNext');if(osiNext)osiNext.addEventListener('click',()=>{if(!osiSequence.length)renderOsi(true);else{osiIndex=Math.min(osiIndex+1,osiSequence.length-1);renderOsi();}});
   const osiReplay=document.getElementById('osiReplay');if(osiReplay)osiReplay.addEventListener('click',()=>renderOsi(true));
-  const osiScenario=document.getElementById('osiScenario');if(osiScenario)osiScenario.addEventListener('change',()=>renderOsi(true));
-  document.querySelectorAll('.osi-layer').forEach(btn=>btn.addEventListener('click',()=>{const layer=Number(btn.dataset.osiLayer),scenario=document.getElementById('osiScenario')?.value||'https',d=osiLayers[scenario][layer],detail=document.getElementById('osiDetail');if(detail){detail.hidden=false;detail.innerHTML='<h4>Layer '+layer+': '+d[0]+'</h4><p>'+d[1]+'</p><p><b>'+d[2]+'</b></p><div class="osi-pdu"><b>Typical PDU:</b> '+d[3]+'</div>';}}));
+  document.querySelectorAll('.osi-layer').forEach(btn=>btn.addEventListener('click',()=>{const layer=Number(btn.dataset.osiLayer),scenario='https',d=osiLayers[scenario][layer],detail=document.getElementById('osiDetail');if(detail){detail.hidden=false;detail.innerHTML='<h4>Layer '+layer+': '+d[0]+'</h4><p>'+d[1]+'</p><p><b>'+d[2]+'</b></p><div class="osi-pdu"><b>Typical PDU:</b> '+d[3]+'</div>';}}));
 })();

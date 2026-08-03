@@ -322,3 +322,24 @@ details>div{padding:.9rem 1rem}
 .simple-flow-arrow{text-align:center;font-size:1.35rem;line-height:1;color:#61798b}
 .logic-demo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.logic-unknown{background:#fff3cd;color:#73510a}
 @media(max-width:700px){.logic-demo{grid-template-columns:1fr}.simple-flow-step{grid-template-columns:36px 1fr;padding:.8rem}.flow-step-number{width:30px;height:30px}}
+
+
+/* Readability and no-dropdown simulator controls */
+#computerFlowSimulator .btn.dark,#osiSimulator .btn.dark{background:#f4f8fb!important;color:#173b63!important;border:2px solid #173b63!important}
+#computerFlowSimulator .btn,#osiSimulator .btn,#packetExplorer .btn{background:#fff!important;color:#173b63!important;border:1px solid #7895aa!important}
+.segmented button,.segmented button.active{background:#fff!important;color:#173b63!important;border-right:1px solid #b9c9d8}
+.segmented button.active{background:#dceaf4!important;box-shadow:inset 0 0 0 2px #173b63}
+.computer-step-status{background:#eef5fa!important;color:#173b63!important}
+.computer-step-status span{color:#294d67!important}
+.sim-output,.packet-card{background:#eef5fa!important;color:#173b63!important}
+.simulator,.packet-explorer,.signal-card,.bits-bytes-bridge,.osi-detail,.osi-endpoint,.osi-transit,.osi-layer{color:#173b63}
+.sim-choice-group{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;flex:1 1 100%}
+.sim-choice-label{font-weight:800;color:#173b63;margin-right:.15rem}
+.sim-choice,.filter-chip{appearance:none;border:1px solid #7895aa;border-radius:999px;background:#fff;color:#173b63;padding:.58rem .8rem;font-weight:800;cursor:pointer;white-space:normal}
+.sim-choice:hover,.filter-chip:hover{background:#edf4f8}
+.sim-choice.active,.filter-chip.active{background:#dceaf4;color:#173b63;border-color:#173b63;box-shadow:inset 0 0 0 1px #173b63}
+.fixed-activity{padding:.7rem .9rem;border-radius:10px;background:#fff;color:#173b63;border:1px solid #b9c9d8;font-weight:700}
+.packet-toolbar{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap}.packet-filter-buttons{display:flex;gap:.4rem;flex-wrap:wrap;flex:1 1 500px}.filter-label{color:#173b63}
+.osi-layer.active,.osi-layer.receiving,.osi-endpoint.active,.osi-transit.active{color:#173b63!important}
+.osi-layer.active span,.osi-layer.receiving span{color:#fff!important}
+@media(max-width:700px){.sim-choice,.filter-chip{flex:1 1 145px}.packet-filter-buttons{flex-basis:100%}.fixed-activity{width:100%}}
