@@ -54,7 +54,9 @@ const FPD = (() => {
               feedback.className = 'feedback good';
             }
           } else if (feedback) {
-            feedback.textContent = btn.dataset.feedback || q.dataset.wrongFeedback || `Not quite. Try another answer.`;
+            const hint = btn.dataset.feedback || q.dataset.wrongFeedback || 'Not quite.';
+            const correctBtn = q.dataset.correctChoice ? q.querySelector('.option[data-choice="' + CSS.escape(q.dataset.correctChoice) + '"]') : null;
+            feedback.textContent = correctBtn ? hint + ' Correct answer: ' + correctBtn.textContent.trim() : hint + ' Try another answer.';
             feedback.className = 'feedback try';
           }
 
@@ -184,90 +186,104 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
 // FamilyPD interactive computer and packet-flow simulations
 (function(){
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  const computerPaths={
-    open:['storage','motherboard','ram','cpu','gpu','display'],
-    save:['input','motherboard','cpu','ram','motherboard','storage'],
-    web:['nic','motherboard','ram','cpu','gpu','display'],
-    video:['storage','motherboard','ram','cpu','gpu','display'],
-    typeA:['input','motherboard','cpu','ram','gpu','display']
+  const computerScenarios={
+    open:{label:'Open a saved picture',steps:[
+      ['storage','Storage','Reads the saved picture as bytes.'],
+      ['ram','RAM','Holds the active picture data temporarily.'],
+      ['cpu','CPU','Runs instructions that interpret the file.'],
+      ['gpu','GPU','Builds the image from processed values.'],
+      ['display','Display','Shows the completed picture.']
+    ]},
+    save:{label:'Type and save a document',steps:[
+      ['input','Keyboard / input','A key press becomes an input code.'],
+      ['cpu','CPU','The application interprets the keystroke.'],
+      ['ram','RAM','Holds the active, unsaved document.'],
+      ['storage','Storage','Writes the document bytes for long-term storage.']
+    ]},
+    web:{label:'Open a website',steps:[
+      ['nic','Network interface','Receives network signals and reconstructs frames.'],
+      ['ram','RAM','Buffers packet and browser data.'],
+      ['cpu','CPU','Runs browser instructions and processes the response.'],
+      ['gpu','GPU','Builds the page image.'],
+      ['display','Display','Shows the website.']
+    ]},
+    video:{label:'Play a video',steps:[
+      ['storage','Storage','Reads the compressed video file.'],
+      ['ram','RAM','Buffers upcoming video data.'],
+      ['cpu','CPU','Coordinates decoding and playback.'],
+      ['gpu','GPU','Builds the video frames.'],
+      ['display','Display / speakers','Present the picture and sound.']
+    ]},
+    typeA:{label:'Type the letter A',steps:[
+      ['input','Keyboard / input','The A key produces an input code.'],
+      ['cpu','CPU','Software interprets the input as the letter A.'],
+      ['ram','RAM','Holds the byte 01000001 while the program is running.'],
+      ['gpu','GPU','Builds pixels shaped like A.'],
+      ['display','Display','Shows A on the screen.']
+    ]}
   };
-  const computerInfo={
-    open:{storage:['Storage reads the picture','The saved file begins as bytes on the drive.'],motherboard:['The bus carries the bytes','Motherboard pathways connect storage, memory, and processors.'],ram:['RAM holds active picture data','The program copies working data into temporary memory.'],cpu:['CPU processes instructions','The CPU interprets the file and coordinates the task.'],gpu:['GPU builds the frame','The GPU converts processed values into pixels.'],display:['The picture appears','The display presents the completed frame.']},
-    save:{input:['Keyboard creates input','A key press becomes an input code.'],motherboard:['Input travels through controllers','The motherboard carries the signal toward the processor.'],cpu:['CPU interprets the keystrokes','The application processes each character.'],ram:['RAM holds the active document','The unsaved document remains in temporary memory.'],storage:['Storage writes the file','Saving records bytes for long-term storage.']},
-    web:{nic:['NIC receives network signals','The network interface converts signals into bits and frames.'],motherboard:['The bus carries network data','The motherboard connects the NIC with RAM and CPU.'],ram:['RAM buffers page data','Packets and browser data wait in temporary memory.'],cpu:['CPU runs browser instructions','The CPU helps rebuild and interpret the response.'],gpu:['GPU renders the page','The GPU creates the visual frame.'],display:['The website appears','The display presents the page.']},
-    video:{storage:['Storage reads compressed video','The media begins as stored bytes.'],motherboard:['The bus carries the stream','Groups of bits move toward memory and processors.'],ram:['RAM buffers upcoming video','Temporary memory helps playback remain smooth.'],cpu:['CPU coordinates decoding','The CPU executes media instructions.'],gpu:['GPU builds video frames','The GPU accelerates visual processing.'],display:['Video and sound play','The display and speakers present the output.']},
-    typeA:{input:['The A key is pressed','The keyboard sends a key code.'],motherboard:['The signal crosses the input controller','The motherboard carries it toward the CPU.'],cpu:['CPU interprets the character','Software maps the input to A.'],ram:['RAM stores the active byte','01000001 is one representation of A in ASCII.'],gpu:['GPU draws the letter','Pixels are prepared to form A.'],display:['A appears on screen','The application displays the character.']}
-  };
-  const powerSteps=[
-    {nodes:['outlet'],title:'Wall outlet supplies power',detail:'120 V AC is available at the outlet.',readout:'Input: 120 V AC'},
-    {nodes:['psu'],title:'Power supply converts electricity',detail:'The PSU converts AC into regulated DC rails.',readout:'PSU outputs: 12 V, 5 V, and 3.3 V DC'},
-    {nodes:['motherboard'],title:'Motherboard receives and regulates power',detail:'Connectors and voltage regulators route appropriate power.',readout:'Motherboard and VRMs lower and distribute voltage'},
-    {nodes:['cpu','ram','storage','gpu','nic','input','display'],title:'Components receive power in parallel',detail:'Separate paths deliver suitable voltages; power does not pass through CPU before reaching RAM or storage.',readout:'Parallel delivery to CPU, RAM, storage, GPU, NIC, input, and display'}
-  ];
+  const powerScenario={label:'Power on the computer',steps:[
+    [['outlet'],'Wall outlet','120 V AC is available at the outlet.','Input: 120 V AC'],
+    [['psu'],'Power supply','The PSU converts AC into regulated DC rails.','Typical PSU rails: 12 V, 5 V, and 3.3 V DC'],
+    [['motherboard'],'Motherboard and voltage regulators','Power enters motherboard connectors. Regulators create the voltages required by individual circuits.','The exact CPU, RAM, and chipset voltages depend on the hardware.'],
+    [['cpu','ram','storage','gpu','nic','input','display'],'Powered components','Separate branches power the CPU, RAM, storage, GPU, network interface, input devices, and display. They do not receive power through one another.','Power is distributed in parallel to component branches.']
+  ]};
   let computerMode='data';
   let computerRunId=0;
-  const nodeLabels={outlet:'Wall outlet',psu:'Power supply',motherboard:'Motherboard',input:'Keyboard / Input',storage:'Storage',ram:'RAM',cpu:'CPU',gpu:'GPU',display:'Display / Speakers',nic:'Network interface'};
-  function computerNodes(){return [...document.querySelectorAll('#computerFlowBoard .flow-node')];}
   function cancelComputerRun(){computerRunId+=1;}
-  function resetComputerBoard(forPower=false){
-    computerNodes().forEach(n=>{
-      n.classList.remove('active','power-active','completed','idle-powered','off');
-      n.classList.add(forPower?'off':'idle-powered');
-      const s=n.querySelector('[data-node-status]');
-      if(s)s.textContent=forPower?'Waiting':(n.dataset.node==='outlet'||n.dataset.node==='psu'||n.dataset.node==='motherboard'?'Powered':'Ready');
-      n.removeAttribute('aria-current');
-    });
+  function cardMarkup(id,title,detail,index){return '<article class="simple-flow-step" data-flow-id="'+id+'"><span class="flow-step-number">'+(index+1)+'</span><div><b>'+title+'</b><p>'+detail+'</p><small data-flow-status>Waiting</small></div></article>';}
+  function renderComputerFlow(steps){
+    const board=document.getElementById('computerFlowBoard');if(!board)return;
+    board.innerHTML=steps.map((step,i)=>{
+      const ids=Array.isArray(step[0])?step[0]:[step[0]];
+      const title=step[1],detail=step[2];
+      return cardMarkup(ids.join(','),title,detail,i);
+    }).join('<div class="simple-flow-arrow" aria-hidden="true">↓</div>');
   }
-  function activateComputerNodes(ids,mode){
-    computerNodes().forEach(n=>n.removeAttribute('aria-current'));
-    ids.forEach(id=>{
-      const n=document.querySelector('#computerFlowBoard [data-node="'+id+'"]');
-      if(!n)return;
-      n.classList.remove('off','idle-powered','completed','active','power-active');
-      n.classList.add(mode==='power'?'power-active':'active');
-      n.setAttribute('aria-current','step');
-      const s=n.querySelector('[data-node-status]');if(s)s.textContent='Active now';
+  function resetFlowCards(){document.querySelectorAll('#computerFlowBoard .simple-flow-step').forEach(card=>{card.classList.remove('current','done');const st=card.querySelector('[data-flow-status]');if(st)st.textContent='Waiting';});}
+  function activateFlowCard(index){
+    const cards=[...document.querySelectorAll('#computerFlowBoard .simple-flow-step')];
+    cards.forEach((card,i)=>{
+      card.classList.toggle('current',i===index);
+      card.classList.toggle('done',i<index);
+      const st=card.querySelector('[data-flow-status]');
+      if(st)st.textContent=i<index?'Complete':i===index?'Active now':'Waiting';
     });
+    cards[index]?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
   }
-  function completeComputerNodes(ids,mode){
-    ids.forEach(id=>{
-      const n=document.querySelector('#computerFlowBoard [data-node="'+id+'"]');if(!n)return;
-      n.classList.remove('active','power-active');n.classList.add('completed');n.removeAttribute('aria-current');
-      const s=n.querySelector('[data-node-status]');if(s)s.textContent=mode==='power'?'Power delivered':'Step complete';
-    });
-  }
+  function completeFlowCards(){document.querySelectorAll('#computerFlowBoard .simple-flow-step').forEach(card=>{card.classList.remove('current');card.classList.add('done');const st=card.querySelector('[data-flow-status]');if(st)st.textContent='Complete';});}
   async function runComputer(){
     const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout'),taskSelect=document.getElementById('computerTask'),startState=document.getElementById('computerStartState');
     if(!board||!out||!taskSelect)return;
-    const runId=++computerRunId,task=taskSelect.value;
-    board.hidden=false;out.hidden=false;if(status)status.hidden=false;
-    resetComputerBoard(computerMode==='power');
-    if(startState)startState.innerHTML=computerMode==='power'?'<b>Power-flow starting state:</b> The simulation begins before startup power reaches the computer. Watch the wall outlet, power supply, and motherboard activate first.':'<b>Data-flow starting state:</b> The computer is already plugged in, powered on, and idle. Dim components have power; bright components are actively moving or processing data.';
-    const steps=computerMode==='power'?powerSteps:computerPaths[task].map(id=>({nodes:[id],title:(computerInfo[task][id]||[])[0]||nodeLabels[id],detail:(computerInfo[task][id]||[])[1]||''}));
-    out.innerHTML='<b>Simulation running.</b> Only the current step is bright; completed steps remain marked.';
+    const runId=++computerRunId;
+    const scenario=computerMode==='power'?powerScenario:computerScenarios[taskSelect.value];
+    const steps=scenario.steps;
+    renderComputerFlow(steps);resetFlowCards();board.hidden=false;out.hidden=false;if(status)status.hidden=false;
+    if(startState)startState.innerHTML=computerMode==='power'?'<b>Power-flow starting state:</b> The computer begins unplugged. The four stages below show the simplified startup path. The final stage is one parallel branch, not a chain through each component.':'<b>Data-flow starting state:</b> The computer is already plugged in, powered on, and idle. The cards show only the major components used by the selected task.';
+    out.innerHTML='<b>'+scenario.label+':</b> follow the highlighted card from top to bottom.';
     for(let i=0;i<steps.length;i++){
       if(runId!==computerRunId)return;
-      const step=steps[i];activateComputerNodes(step.nodes,computerMode);
-      if(status)status.innerHTML='<b>Step '+(i+1)+' of '+steps.length+': '+step.title+'</b><span>'+step.detail+'</span>';
+      activateFlowCard(i);
+      const step=steps[i];
+      if(status)status.innerHTML='<b>Step '+(i+1)+' of '+steps.length+': '+step[1]+'</b><span>'+step[2]+'</span>';
       if(computerMode==='power'){
-        if(powerReadout)powerReadout.textContent=step.readout;
-        if(bitReadout)bitReadout.textContent='Power mode shows energy delivery. No data bit is being represented by this voltage display.';
+        if(powerReadout)powerReadout.textContent=step[3]||'Power is being distributed.';
+        if(bitReadout)bitReadout.textContent='Power mode shows energy delivery. A power-rail voltage is not a data bit.';
       }else{
-        if(powerReadout)powerReadout.textContent='The computer remains powered while the highlighted component works.';
-        if(bitReadout)bitReadout.innerHTML=task==='typeA'?'Signal example: <code>01000001</code> = 8 bits = 1 byte = decimal 65 = “A”.':'Data moves in groups of bits. Example byte: <code>01000001</code>.';
+        if(powerReadout)powerReadout.textContent='The computer remains powered while this component handles the task.';
+        if(bitReadout)bitReadout.innerHTML=taskSelect.value==='typeA'?'Example signal pattern: <code>01000001</code> = 8 bits = 1 byte = decimal 65 = “A”. Actual HIGH and LOW voltage limits depend on the circuit datasheet.':'Data is represented by LOW and HIGH voltage regions. Groups of 8 bits form bytes.';
       }
-      await wait(1250);if(runId!==computerRunId)return;
-      completeComputerNodes(step.nodes,computerMode);
-      await wait(350);
+      await wait(1150);
     }
     if(runId!==computerRunId)return;
-    if(status)status.innerHTML='<b>Complete.</b><span>'+(computerMode==='power'?'Power reached the PSU, motherboard, and component branches in the order shown.':'The selected task used the components in the simplified order shown.')+'</span>';
-    out.innerHTML='<b>Complete:</b> '+(computerMode==='power'?'After startup, components remain powered while activity changes.':'Voltage states represent bits; bits form bytes; bytes form files and network data.');
+    completeFlowCards();
+    if(status)status.innerHTML='<b>Complete.</b><span>'+(computerMode==='power'?'The outlet, PSU, motherboard/regulators, and parallel component branches are now powered.':'The task used the simplified sequence shown. Real systems overlap and pipeline many operations.')+'</span>';
+    out.innerHTML='<b>Complete:</b> '+(computerMode==='power'?'Power supplies energy; component activity changes after startup.':'Voltage regions represent bits, bits form bytes, bytes form files, and transfer rates measure bits moved per second.');
   }
   function restartComputer(){cancelComputerRun();window.setTimeout(runComputer,0);}
   const computerStart=document.getElementById('computerSimStart');
   if(computerStart)computerStart.addEventListener('click',()=>{const controls=document.querySelector('#computerFlowSimulator .sim-controls');if(controls)controls.hidden=false;computerStart.textContent='Run again';restartComputer();});
-  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;restartComputer();}));
+  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;const task=document.getElementById('computerTask');if(task)task.closest('label').hidden=computerMode==='power';restartComputer();}));
   const computerTask=document.getElementById('computerTask');if(computerTask)computerTask.addEventListener('change',restartComputer);
   const computerReplay=document.getElementById('computerSimReplay');if(computerReplay)computerReplay.addEventListener('click',restartComputer);
 

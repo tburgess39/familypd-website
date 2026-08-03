@@ -73,39 +73,19 @@
     <button class="btn" id="computerSimReplay" type="button">Replay</button>
   </div>
   <div class="computer-step-status" id="computerStepStatus" hidden><b>Ready.</b> Select Start simulation.</div>
-  <div class="flow-board computer-board" id="computerFlowBoard" aria-live="polite" hidden>
-    <div class="flow-node" data-node="outlet"><b>Wall outlet</b><span>120 V AC enters the power supply</span><small data-node-status>Powered</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="psu"><b>Power supply</b><span>Converts AC to 12 V, 5 V, and 3.3 V DC rails</span><small data-node-status>Powered</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="motherboard"><b>Motherboard</b><span>Distributes power and carries data on buses</span><small data-node-status>Powered</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="input"><b>Keyboard / Input</b><span>Creates input signals</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="storage"><b>Storage</b><span>Keeps files after power is removed</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="ram"><b>RAM</b><span>Holds active data temporarily</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="cpu"><b>CPU</b><span>Fetches, decodes, and executes instructions</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="gpu"><b>GPU</b><span>Builds image and video frames</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="display"><b>Display / Speakers</b><span>Presents visual or audio output</span><small data-node-status>Ready</small></div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-node" data-node="nic"><b>Network interface</b><span>Sends and receives network signals</span><small data-node-status>Ready</small></div>
-  </div>
+  <div class="simple-flow-board" id="computerFlowBoard" aria-live="polite" hidden></div>
   <div class="sim-output" id="computerSimOutput" hidden></div>
   <div class="signal-panels">
-    <article class="signal-card"><h4>Power voltage</h4><p>Power rails provide energy to components. Common desktop rails include <b>12 V</b>, <b>5 V</b>, and <b>3.3 V</b>. Voltage regulators lower these values further for parts such as the CPU and RAM.</p><div id="powerVoltageReadout" class="readout">Idle: power is available throughout the system.</div></article>
-    <article class="signal-card"><h4>Logic voltage represents a bit</h4><p>A bit is not an amount of power. Hardware interprets a lower or higher electrical state as <b>0</b> or <b>1</b>. Exact thresholds vary, so this simplified display is for learning.</p><div class="logic-demo"><span class="logic-low">0.0 V → 0</span><span class="logic-high">1.2 V → 1</span></div><div id="bitSignalReadout" class="readout">Example byte: <code>01000001</code> = decimal 65 = “A”</div></article>
+    <article class="signal-card"><h4>Power voltage</h4><p>The wall supplies <b>120 V AC</b> in this U.S. teaching example. The power supply converts it to regulated DC rails such as <b>12 V</b>, <b>5 V</b>, and <b>3.3 V</b>. Motherboard voltage regulators then provide the lower voltages required by individual components.</p><div id="powerVoltageReadout" class="readout">Select Power flow to trace the startup path.</div></article>
+    <article class="signal-card"><h4>Logic voltage represents a bit</h4><p>A bit is not a fixed voltage and is not an amount of power. A digital input interprets a voltage in its guaranteed <b>LOW</b> region as <b>0</b> and a voltage in its guaranteed <b>HIGH</b> region as <b>1</b>. The exact limits depend on the device, supply voltage, and datasheet.</p><div class="logic-demo"><span class="logic-low">Near 0 V / LOW region → 0</span><span class="logic-high">Near the logic supply rail / HIGH region → 1</span><span class="logic-unknown">Middle region → not guaranteed</span></div><div id="bitSignalReadout" class="readout">Example byte: <code>01000001</code> = 8 bits = decimal 65 = “A”</div></article>
   </div>
   <div class="bits-bytes-bridge">
     <h4>From voltage states to speed and storage</h4>
-    <div class="bridge-line"><b>Voltage states</b><span>→</span><b>bits</b><span>→</span><b>8 bits = 1 byte</b><span>→</span><b>bytes make files</b></div>
+    <div class="bridge-line"><b>Voltage regions</b><span>→</span><b>bits</b><span>→</span><b>8 bits = 1 byte</b><span>→</span><b>bytes make files</b></div>
     <div class="grid-3 compact-grid">
       <div><b>Storage capacity</b><p><code>KB, MB, GB, TB</code> describe how many bytes can be stored.</p></div>
       <div><b>Transfer speed</b><p><code>Mb/s</code> and <code>Gb/s</code> describe how many bits move each second.</p></div>
-      <div><b>Uppercase matters</b><p><code>b</code> = bit; <code>B</code> = byte. Example: 800 Mb/s ÷ 8 ≈ 100 MB/s.</p></div>
+      <div><b>Uppercase matters</b><p><code>b</code> = bit; <code>B</code> = byte. Example: 800 Mb/s ÷ 8 ≈ 100 MB/s before overhead.</p></div>
     </div>
   </div>
   <div class="callout info"><b>Important:</b> Electricity powers the components. Data is represented by changing electrical states organized as bits. Power and data are connected, but they are not the same thing.</div>
