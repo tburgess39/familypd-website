@@ -46,6 +46,26 @@
 <button class="component" data-part="os">Operating system</button><button class="component" data-part="peripheral">Peripherals</button>
 </div>
 <div class="detail-panel" id="componentDetail"><h3>Select a component</h3><p>Hardware, software, identity, and networks work together as one system.</p></div><div class="callout info" id="insideFlow"><b>How bits move inside a computer:</b> Input devices, storage, and network interfaces send electrical signals that represent bits. The CPU interprets instructions, RAM temporarily holds active data, storage keeps data long term, and buses carry groups of bits between components. The operating system coordinates this movement so programs can open files, display images, and communicate across a network.</div>
+<div class="simulator" id="computerFlowSimulator">
+  <div class="simulator-head"><div><span class="sim-kicker">Interactive model</span><h3>Inside the Computer: Power &amp; Data Flow</h3><p>Choose a mode and a task. Follow the highlighted path to see how components work together.</p></div><button class="btn dark" id="computerSimStart" type="button">Start simulation</button></div>
+  <div class="sim-controls" hidden>
+    <div class="segmented" role="group" aria-label="Computer flow mode"><button class="active" data-computer-mode="data" type="button">Data flow</button><button data-computer-mode="power" type="button">Power flow</button></div>
+    <label>Choose a task<select id="computerTask"><option value="open">Open a saved picture</option><option value="save">Type and save a document</option><option value="web">Open a website</option><option value="video">Play a video</option></select></label>
+    <button class="btn" id="computerSimReplay" type="button">Replay</button>
+  </div>
+  <div class="flow-board" id="computerFlowBoard" aria-live="polite" hidden>
+    <div class="flow-node" data-node="outlet"><b>Wall outlet</b><span>Provides electrical energy</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="psu"><b>Power supply</b><span>Converts and distributes power</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="motherboard"><b>Motherboard</b><span>Connects components and pathways</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="storage"><b>Storage</b><span>Keeps files long term</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="ram"><b>RAM</b><span>Temporary working area</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="cpu"><b>CPU</b><span>Processes instructions</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="gpu"><b>GPU / Display</b><span>Builds what appears on screen</span></div>
+    <div class="flow-arrow">→</div><div class="flow-node" data-node="nic"><b>Network interface</b><span>Sends and receives network data</span></div>
+  </div>
+  <div class="sim-output" id="computerSimOutput" hidden></div>
+  <div class="callout info"><b>Important:</b> Electricity powers the components. Data is represented by changing electrical states and organized as bits. Power flow and data flow are connected, but they are not the same thing.</div>
+</div>
 </section>
 <section class="section" id="numbers">
 <div class="section-head"><span class="stepno">B</span><div><h2>Number-System Converter</h2><span>Change one value and see the equivalent binary, decimal, and hexadecimal forms.</span></div><span class="time">Converter</span></div>
@@ -58,12 +78,12 @@
 <div class="grid-3">
 <div class="card"><h3>Binary</h3><p>Base 2 uses only 0 and 1 because digital circuits can reliably represent two states. Those bit patterns become instructions, letters, pixels, addresses, and packet fields.</p></div>
 <div class="card"><h3>Decimal</h3><p>Base 10 is the everyday system using digits 0 through 9.</p></div>
-<div class="card"><h3>Hexadecimal</h3><p>Base 16 uses 0–9 and A–F. One hexadecimal digit represents four binary bits, making long values easier to read. Hex appears in memory addresses, MAC addresses, hashes, debugging, and web colors such as #173B63.</p><a class="btn" href="https://color.adobe.com/create/color-wheel" rel="noopener" target="_blank">Explore Adobe Color Wheel</a></div>
+<div class="card"><h3>Hexadecimal</h3><p>Base 16 uses 0–9 and A–F. One hexadecimal digit represents four binary bits, making long values easier to read. Hex appears in memory addresses, MAC addresses, hashes, debugging, and web colors such as #173B63.</p><a class="btn" href="https://www.canva.com/colors/color-wheel/" rel="noopener" target="_blank">Explore Canva Color Wheel</a></div>
 </div>
 </section><section class="section" id="linux-foundations">
 <div class="section-head"><span class="stepno">C</span><div><h2>Operating Systems &amp; Linux Foundations</h2><span>Understand why an operating system matters and what common Linux commands ask the computer to do.</span></div><span class="time">Concepts &amp; vocabulary</span></div>
 <div class="grid-3">
-<div class="card"><h3>What an operating system does</h3><p>The operating system manages hardware, memory, files, users, applications, permissions, processes, and network connections.</p></div>
+<div class="card"><h3>What an operating system does</h3><p>The operating system manages hardware, memory, files, users, applications, permissions, processes, and network connections.</p><p><b>Windows:</b> Windows is the operating system most learners are likely to recognize from home, school, or work computers. Its desktop, Start menu, File Explorer, and Settings provide a graphical way to perform many of the same kinds of tasks that Linux users can perform with commands.</p></div>
 <div class="card"><h3>Why Linux matters</h3><p>Linux is common in servers, cloud platforms, networking, embedded systems, security tools, and authorized lab environments. Knowing Linux helps learners understand how systems operate beneath a graphical interface.</p></div>
 <div class="card"><h3>Commands are precise requests</h3><p>A command asks the operating system to perform a specific task. Start with read-only inspection before making changes.</p></div>
 </div>
@@ -76,8 +96,25 @@
 <div class="callout info"><b>Apply the concepts:</b> The Cyber Investigation Lab provides a fictional <code>hacker</code> machine, a fictional <code>target</code> at <code>10.10.10.20</code>, preset scan output, and a Wireshark-style packet explorer. It never accesses the visitor’s real network.</div>
 <div class="hero-actions"><a class="btn dark" href="cybersecurity-who-has-access.html#linux">Open the safe Linux and network lab</a></div>
 </section>
+<section class="section" id="network-flow">
+<div class="section-head"><span class="stepno">D</span><div><h2>How Data Becomes Network Packets</h2><span>Follow a request from a browser to a fictional target and back.</span></div><span class="time">Interactive</span></div>
+<div class="callout info"><b>From bits to packets:</b> An application creates data. The operating system and network software divide it into manageable pieces, add addressing and protocol information, and send the packets through the network interface. Switches move frames within a local network, routers move packets between networks, and the destination reassembles the data.</div>
+<div class="simulator" id="packetFlowSimulator">
+  <div class="simulator-head"><div><span class="sim-kicker">Safe fictional network</span><h3>Follow a Packet Through the Network</h3><p>Trace traffic from <code>hacker (10.10.10.25)</code> to <code>target (10.10.10.20)</code>. No real network is contacted.</p></div><button class="btn dark" id="packetSimStart" type="button">Start simulation</button></div>
+  <div class="sim-controls" id="packetControls" hidden><label>Choose an activity<select id="packetScenario"><option value="https">Visit a secure website</option><option value="ping">Ping the target</option><option value="scan">Check a target service</option></select></label><button class="btn" id="packetNext" type="button">Next step</button><button class="btn" id="packetReplay" type="button">Replay</button></div>
+  <div class="packet-route" id="packetRoute" hidden>
+    <div class="route-node" data-hop="app"><b>Application</b><span>Creates the request</span></div><div class="route-arrow">→</div>
+    <div class="route-node" data-hop="nic"><b>Network interface</b><span>Turns bits into signals</span></div><div class="route-arrow">→</div>
+    <div class="route-node" data-hop="switch"><b>Switch / Wi-Fi</b><span>Uses local MAC information</span></div><div class="route-arrow">→</div>
+    <div class="route-node" data-hop="router"><b>Router</b><span>Uses IP information</span></div><div class="route-arrow">→</div>
+    <div class="route-node" data-hop="target"><b>Target</b><span>Reassembles and responds</span></div>
+  </div>
+  <div class="packet-card" id="packetCard" hidden></div>
+  <div class="sim-output" id="packetSimOutput" hidden></div>
+</div>
+</section>
 <section class="section" id="ports">
-<div class="section-head"><span class="stepno">D</span><div><h2>Common Ports &amp; Services</h2><span>Select a port to see what it commonly supports and what defenders consider.</span></div><span class="time">Services</span></div>
+<div class="section-head"><span class="stepno">E</span><div><h2>Common Ports &amp; Services</h2><span>Select a port to see what it commonly supports and what defenders consider.</span></div><span class="time">Services</span></div>
 <div class="port-grid">
 <button class="port" data-port="20/21"><b>20/21</b>FTP</button><button class="port" data-port="22"><b>22</b>SSH</button>
 <button class="port" data-port="23"><b>23</b>Telnet</button><button class="port" data-port="25"><b>25</b>SMTP</button>
@@ -89,7 +126,7 @@
 <div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>An open port means a service is listening. It does not automatically mean the system is vulnerable.</p></div>
 </section>
 <section class="section" id="words">
-<div class="section-head"><span class="stepno">E</span><div><h2>Cybersecurity Vocabulary</h2><span>Search for a word or browse the cards.</span></div><span class="time">Glossary</span></div>
+<div class="section-head"><span class="stepno">F</span><div><h2>Cybersecurity Vocabulary</h2><span>Search for a word or browse the cards.</span></div><span class="time">Glossary</span></div>
 <input class="glossary-search" id="glossarySearch" placeholder="Search reconnaissance, OSINT, hash, firewall…"/>
 <div class="term-grid">
 <div class="term"><b>Reconnaissance</b>Gathering information about a person, organization, system, or environment before or during an operation.</div>
@@ -116,7 +153,7 @@
 <div class="term"><b>Cybersecurity</b>The practice of protecting systems, networks, applications, devices, and data from unauthorized access, disruption, alteration, or destruction.</div><div class="term"><b>Network</b>Two or more connected devices that exchange data and share services or resources.</div><div class="term"><b>Zero-day</b>A newly discovered vulnerability for which defenders may have no vendor patch yet; attackers may try to exploit it before a fix is available.</div><div class="term"><b>File system</b>The structure and rules an operating system uses to name, organize, store, locate, protect, and recover files on a storage device.</div><div class="term"><b>Hacking</b>Using technical knowledge to explore, test, change, or control technology. It is ethical only when it is authorized, scoped, and used responsibly.</div></div>
 </section>
 <section class="section" id="cyberchef">
-<div class="section-head"><span class="stepno">F</span><div><h2>CyberChef: Transform and Inspect Data</h2><span>CyberChef applies operations to input and displays the result.</span></div><span class="time">Data tools</span></div>
+<div class="section-head"><span class="stepno">G</span><div><h2>CyberChef: Transform and Inspect Data</h2><span>CyberChef applies operations to input and displays the result.</span></div><span class="time">Data tools</span></div>
 <div class="flow">
 <div class="flow-step"><b>1. Operations</b>Search for a tool such as “From Base64,” “To Hex,” or “SHA2.”</div>
 <div class="flow-step"><b>2. Recipe</b>Drag the operation into the recipe area.</div>
@@ -132,7 +169,7 @@
 <a class="btn dark" href="https://gchq.github.io/CyberChef/" rel="noopener" target="_blank">Open CyberChef</a>
 </section>
 <section class="section" id="hardening">
-<div class="section-head"><span class="stepno">G</span><div><h2>System Hardening</h2><span>Select a defense to see why it matters.</span></div><span class="time">Defensive controls</span></div>
+<div class="section-head"><span class="stepno">H</span><div><h2>System Hardening</h2><span>Select a defense to see why it matters.</span></div><span class="time">Defensive controls</span></div>
 <div class="grid-4">
 <div class="reveal-card"><button aria-expanded="false">Updates</button><div class="reveal-content"><p>Patch operating systems, applications, browsers, firmware, and network devices. Remove unsupported software.</p></div></div>
 <div class="reveal-card"><button aria-expanded="false">Accounts</button><div class="reveal-content"><p>Remove unused accounts, avoid shared administrator accounts, use least privilege, and protect sign-in with MFA.</p></div></div>
@@ -146,7 +183,7 @@
 <div class="callout info"><b>Competition connection:</b> Cyber-defense events often place vulnerabilities and insecure settings inside virtual machines. Participants inspect the system, fix issues, preserve required services, and watch scoring or evidence of improvement.</div>
 </section>
 <section class="section">
-<div class="section-head"><span class="stepno">H</span><div><h2>Places to Practice</h2><span>Use only official challenges and authorized environments.</span></div><span class="time">Explore</span></div>
+<div class="section-head"><span class="stepno">I</span><div><h2>Places to Practice</h2><span>Use only official challenges and authorized environments.</span></div><span class="time">Explore</span></div>
 <div class="grid-4">
 <div class="card"><h3>CYBER.ORG Range</h3><p>Browser-based virtual machines isolated from private networks.</p><a class="btn" href="https://apps.cyber.org/" rel="noopener" target="_blank">Open Range</a></div>
 <div class="card"><h3>CyberPatriot</h3><p>Cyber-defense competition centered on finding and fixing vulnerabilities while preserving system function.</p><a class="btn" href="https://www.uscyberpatriot.org/" rel="noopener" target="_blank">Explore CyberPatriot</a></div>

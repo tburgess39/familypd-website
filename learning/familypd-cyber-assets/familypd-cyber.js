@@ -174,3 +174,41 @@ const FPD = (() => {
   return { init(){initRevealCards();initSingleChoiceQuiz();initResetButtons();initComponentCards();initPorts();initConverter();initGlossary();initCyberLabTabs();initTerminal();initFakeScans();initPacketExplorer();initFacts();initVersionQuestions();initCredentialDemo();} };
 })();
 document.addEventListener('DOMContentLoaded',()=>FPD.init());
+
+// FamilyPD interactive computer and packet-flow simulations
+(function(){
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  const computerPaths={
+    data:{open:['storage','motherboard','ram','cpu','gpu'],save:['cpu','ram','motherboard','storage'],web:['nic','motherboard','ram','cpu','gpu'],video:['storage','ram','cpu','gpu']},
+    power:{open:['outlet','psu','motherboard','storage','ram','cpu','gpu'],save:['outlet','psu','motherboard','cpu','ram','storage'],web:['outlet','psu','motherboard','nic','ram','cpu','gpu'],video:['outlet','psu','motherboard','storage','ram','cpu','gpu']}
+  };
+  let computerMode='data', computerRun=0;
+  async function runComputer(){
+    const board=document.getElementById('computerFlowBoard'), out=document.getElementById('computerSimOutput'); if(!board||!out)return;
+    const token=++computerRun, task=document.getElementById('computerTask').value, path=computerPaths[computerMode][task];
+    board.hidden=false; out.hidden=false; board.querySelectorAll('.flow-node').forEach(n=>n.classList.remove('active','power-active'));
+    const descriptions={open:'The picture is read from storage, copied into RAM, processed by the CPU, and sent to the display.',save:'The document is created and processed, held temporarily in RAM, then written to long-term storage.',web:'The network interface receives the response, RAM holds active data, the CPU processes it, and the browser displays it.',video:'Storage supplies the media, RAM buffers it, the CPU coordinates playback, and the GPU builds the frames.'};
+    out.innerHTML='<b>Watch the highlighted path.</b> '+(computerMode==='power'?'Electrical energy is being distributed so each component can operate.':descriptions[task]);
+    for(const id of path){if(token!==computerRun)return; const node=board.querySelector('[data-node="'+id+'"]'); if(node){node.classList.add(computerMode==='power'?'power-active':'active'); node.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});} await wait(650)}
+    out.innerHTML+='<br><b>Complete:</b> '+(computerMode==='power'?'Power makes the work possible; it is not the information itself.':'The same underlying bits can represent instructions, text, image pixels, sound, addresses, or packet fields depending on context.');
+  }
+  const start=document.getElementById('computerSimStart'); if(start)start.addEventListener('click',()=>{document.querySelector('#computerFlowSimulator .sim-controls').hidden=false; start.textContent='Run again'; runComputer()});
+  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;runComputer()}));
+  const task=document.getElementById('computerTask'); if(task)task.addEventListener('change',runComputer); const replay=document.getElementById('computerSimReplay'); if(replay)replay.addEventListener('click',runComputer);
+
+  const packetScenarios={
+    https:[
+      {hop:'app',title:'Browser creates a request',protocol:'HTTPS',port:'443',info:'The application asks for a secure web resource.'},
+      {hop:'nic',title:'Network interface prepares signals',protocol:'TCP/TLS',port:'443',info:'The operating system adds protocol information and the NIC transmits the bits.'},
+      {hop:'switch',title:'Local network forwards the frame',protocol:'Ethernet / Wi-Fi',port:'—',info:'Local delivery uses MAC-address information.'},
+      {hop:'router',title:'Router forwards the packet',protocol:'IP',port:'443',info:'The router examines the destination IP and selects the next path.'},
+      {hop:'target',title:'Target receives and responds',protocol:'HTTPS',port:'443',info:'The target reassembles the request, processes it, and sends encrypted response packets back.'}],
+    ping:[{hop:'app',title:'Ping creates an echo request',protocol:'ICMP',port:'No port',info:'Ping uses ICMP rather than TCP or UDP ports.'},{hop:'nic',title:'NIC transmits the request',protocol:'ICMP',port:'No port',info:'The request leaves hacker at 10.10.10.25.'},{hop:'router',title:'Router forwards by IP',protocol:'IP/ICMP',port:'No port',info:'The destination is target at 10.10.10.20.'},{hop:'target',title:'Target sends an echo reply',protocol:'ICMP',port:'No port',info:'A reply suggests the fictional target is reachable in this simulation.'}],
+    scan:[{hop:'app',title:'Scanner checks a service',protocol:'TCP',port:'443',info:'The simulator sends a fictional connection request to a selected port.'},{hop:'nic',title:'NIC sends the packet',protocol:'TCP SYN',port:'443',info:'Source 10.10.10.25 asks target 10.10.10.20 whether the service is listening.'},{hop:'router',title:'Router forwards the packet',protocol:'IP/TCP',port:'443',info:'IP identifies the target; the port identifies the service endpoint.'},{hop:'target',title:'Target responds',protocol:'TCP SYN-ACK',port:'443',info:'The fictional response indicates that HTTPS is open. Open does not automatically mean vulnerable.'}]
+  };
+  let packetIndex=0;
+  function showPacket(reset=false){const route=document.getElementById('packetRoute'),card=document.getElementById('packetCard'),out=document.getElementById('packetSimOutput');if(!route||!card)return; if(reset)packetIndex=0; const scenario=document.getElementById('packetScenario').value,steps=packetScenarios[scenario],step=steps[packetIndex]; route.hidden=false;card.hidden=false;out.hidden=false;route.querySelectorAll('.route-node').forEach(n=>n.classList.remove('active'));const node=route.querySelector('[data-hop="'+step.hop+'"]');if(node){node.classList.add('active');node.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})}card.innerHTML='<h4>'+step.title+'</h4><div class="packet-field"><div><b>Source</b><br><code>10.10.10.25</code></div><div><b>Destination</b><br><code>10.10.10.20</code></div><div><b>Protocol</b><br>'+step.protocol+'</div><div><b>Port</b><br>'+step.port+'</div></div><p>'+step.info+'</p>';out.innerHTML='<b>Step '+(packetIndex+1)+' of '+steps.length+'.</b> '+(packetIndex===steps.length-1?'The response then travels back through the network so the application can use it.':'Select Next step to continue.');}
+  const ps=document.getElementById('packetSimStart');if(ps)ps.addEventListener('click',()=>{document.getElementById('packetControls').hidden=false;ps.textContent='Restart simulation';showPacket(true)});
+  const pn=document.getElementById('packetNext');if(pn)pn.addEventListener('click',()=>{const steps=packetScenarios[document.getElementById('packetScenario').value];packetIndex=(packetIndex+1)%steps.length;showPacket()});
+  const pr=document.getElementById('packetReplay');if(pr)pr.addEventListener('click',()=>showPacket(true)); const psc=document.getElementById('packetScenario');if(psc)psc.addEventListener('change',()=>showPacket(true));
+})();
