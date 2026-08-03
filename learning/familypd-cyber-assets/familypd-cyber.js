@@ -185,83 +185,140 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
 (function(){
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const computerPaths={
-    data:{
-      open:['storage','motherboard','ram','cpu','gpu','display'],
-      save:['input','motherboard','cpu','ram','motherboard','storage'],
-      web:['nic','motherboard','ram','cpu','gpu','display'],
-      video:['storage','motherboard','ram','cpu','gpu','display'],
-      typeA:['input','motherboard','cpu','ram','gpu','display']
-    }
+    open:['storage','motherboard','ram','cpu','gpu','display'],
+    save:['input','motherboard','cpu','ram','motherboard','storage'],
+    web:['nic','motherboard','ram','cpu','gpu','display'],
+    video:['storage','motherboard','ram','cpu','gpu','display'],
+    typeA:['input','motherboard','cpu','ram','gpu','display']
   };
-  const stepInfo={
-    data:{
-      open:{storage:['Reads the saved picture','File data begins as bytes stored on the drive.'],motherboard:['Carries the bytes on a data bus','The motherboard provides pathways between devices.'],ram:['Loads active picture data','RAM temporarily holds the bytes the program needs now.'],cpu:['Processes file instructions','The CPU interprets the file format and coordinates the work.'],gpu:['Builds the image frame','The GPU turns processed data into pixels.'],display:['Shows the picture','The display presents the completed frame.']},
-      save:{input:['Captures typed characters','The keyboard creates input signals.'],motherboard:['Carries the input','The input travels through motherboard controllers and buses.'],cpu:['Interprets the keystrokes','The CPU runs the application instructions.'],ram:['Holds the document temporarily','The active document remains in RAM while it is edited.'],storage:['Writes bytes to long-term storage','Saving keeps the file after power is removed.']},
-      web:{nic:['Receives network signals','The NIC converts incoming signals into bits and frames.'],motherboard:['Carries network data','The motherboard bus connects the NIC with memory and the CPU.'],ram:['Buffers the page data','RAM holds active packets and browser data.'],cpu:['Processes browser instructions','The CPU helps reassemble and interpret the response.'],gpu:['Renders the page','The GPU builds the visual frame.'],display:['Shows the website','The completed page appears on screen.']},
-      video:{storage:['Reads compressed video bytes','The media begins in storage.'],motherboard:['Carries the stream','Buses move groups of bits between components.'],ram:['Buffers upcoming video','RAM keeps data ready so playback stays smooth.'],cpu:['Coordinates decoding','The CPU runs instructions and may help decode the media.'],gpu:['Builds video frames','The GPU accelerates visual processing.'],display:['Plays video and sound','The display and speakers present the output.']},
-      typeA:{input:['Key A is pressed','The keyboard sends a code for the key.'],motherboard:['Carries the input signal','The signal reaches the CPU through the input controller.'],cpu:['Interprets the character','The program maps the input to the character A.'],ram:['Stores the active character','The byte 01000001 can represent A in ASCII.'],gpu:['Draws the letter','The GPU builds pixels shaped like A.'],display:['Shows A on screen','The character appears in the application.']}
-    }
+  const computerInfo={
+    open:{storage:['Storage reads the picture','The saved file begins as bytes on the drive.'],motherboard:['The bus carries the bytes','Motherboard pathways connect storage, memory, and processors.'],ram:['RAM holds active picture data','The program copies working data into temporary memory.'],cpu:['CPU processes instructions','The CPU interprets the file and coordinates the task.'],gpu:['GPU builds the frame','The GPU converts processed values into pixels.'],display:['The picture appears','The display presents the completed frame.']},
+    save:{input:['Keyboard creates input','A key press becomes an input code.'],motherboard:['Input travels through controllers','The motherboard carries the signal toward the processor.'],cpu:['CPU interprets the keystrokes','The application processes each character.'],ram:['RAM holds the active document','The unsaved document remains in temporary memory.'],storage:['Storage writes the file','Saving records bytes for long-term storage.']},
+    web:{nic:['NIC receives network signals','The network interface converts signals into bits and frames.'],motherboard:['The bus carries network data','The motherboard connects the NIC with RAM and CPU.'],ram:['RAM buffers page data','Packets and browser data wait in temporary memory.'],cpu:['CPU runs browser instructions','The CPU helps rebuild and interpret the response.'],gpu:['GPU renders the page','The GPU creates the visual frame.'],display:['The website appears','The display presents the page.']},
+    video:{storage:['Storage reads compressed video','The media begins as stored bytes.'],motherboard:['The bus carries the stream','Groups of bits move toward memory and processors.'],ram:['RAM buffers upcoming video','Temporary memory helps playback remain smooth.'],cpu:['CPU coordinates decoding','The CPU executes media instructions.'],gpu:['GPU builds video frames','The GPU accelerates visual processing.'],display:['Video and sound play','The display and speakers present the output.']},
+    typeA:{input:['The A key is pressed','The keyboard sends a key code.'],motherboard:['The signal crosses the input controller','The motherboard carries it toward the CPU.'],cpu:['CPU interprets the character','Software maps the input to A.'],ram:['RAM stores the active byte','01000001 is one representation of A in ASCII.'],gpu:['GPU draws the letter','Pixels are prepared to form A.'],display:['A appears on screen','The application displays the character.']}
   };
   const powerSteps=[
-    {nodes:['outlet'],title:'Wall power enters',detail:'The example starts with 120 V AC from the wall outlet.'},
-    {nodes:['psu'],title:'Power is converted',detail:'The power supply converts AC to regulated DC rails such as 12 V, 5 V, and 3.3 V.'},
-    {nodes:['motherboard'],title:'The motherboard distributes power',detail:'Power connectors and voltage-regulator circuits distribute and lower voltage where needed.'},
-    {nodes:['cpu','ram','storage','gpu','nic','input','display'],title:'Components receive power in parallel',detail:'These components do not receive power one after another. They receive appropriate rails or regulated voltages through separate paths.'}
+    {nodes:['outlet'],title:'Wall outlet supplies power',detail:'120 V AC is available at the outlet.',readout:'Input: 120 V AC'},
+    {nodes:['psu'],title:'Power supply converts electricity',detail:'The PSU converts AC into regulated DC rails.',readout:'PSU outputs: 12 V, 5 V, and 3.3 V DC'},
+    {nodes:['motherboard'],title:'Motherboard receives and regulates power',detail:'Connectors and voltage regulators route appropriate power.',readout:'Motherboard and VRMs lower and distribute voltage'},
+    {nodes:['cpu','ram','storage','gpu','nic','input','display'],title:'Components receive power in parallel',detail:'Separate paths deliver suitable voltages; power does not pass through CPU before reaching RAM or storage.',readout:'Parallel delivery to CPU, RAM, storage, GPU, NIC, input, and display'}
   ];
-  let computerMode='data', computerRun=0, computerBusy=false;
+  let computerMode='data';
+  let computerRunId=0;
   const nodeLabels={outlet:'Wall outlet',psu:'Power supply',motherboard:'Motherboard',input:'Keyboard / Input',storage:'Storage',ram:'RAM',cpu:'CPU',gpu:'GPU',display:'Display / Speakers',nic:'Network interface'};
-  function resetComputerBoard(){
-    const board=document.getElementById('computerFlowBoard'); if(!board)return;
-    board.querySelectorAll('.flow-node').forEach(n=>{n.classList.remove('active','power-active','completed');n.classList.add('idle-powered');const s=n.querySelector('[data-node-status]');if(s)s.textContent=n.dataset.node==='outlet'||n.dataset.node==='psu'||n.dataset.node==='motherboard'?'Powered':'Ready';});
+  function computerNodes(){return [...document.querySelectorAll('#computerFlowBoard .flow-node')];}
+  function cancelComputerRun(){computerRunId+=1;}
+  function resetComputerBoard(forPower=false){
+    computerNodes().forEach(n=>{
+      n.classList.remove('active','power-active','completed','idle-powered','off');
+      n.classList.add(forPower?'off':'idle-powered');
+      const s=n.querySelector('[data-node-status]');
+      if(s)s.textContent=forPower?'Waiting':(n.dataset.node==='outlet'||n.dataset.node==='psu'||n.dataset.node==='motherboard'?'Powered':'Ready');
+      n.removeAttribute('aria-current');
+    });
   }
-  function setNodeState(ids,mode,status){
-    const board=document.getElementById('computerFlowBoard');
-    ids.forEach(id=>{const n=board&&board.querySelector('[data-node="'+id+'"]');if(!n)return;n.classList.remove('idle-powered');n.classList.add(mode==='power'?'power-active':'active');const s=n.querySelector('[data-node-status]');if(s)s.textContent=status||'Active';n.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});});
+  function activateComputerNodes(ids,mode){
+    computerNodes().forEach(n=>n.removeAttribute('aria-current'));
+    ids.forEach(id=>{
+      const n=document.querySelector('#computerFlowBoard [data-node="'+id+'"]');
+      if(!n)return;
+      n.classList.remove('off','idle-powered','completed','active','power-active');
+      n.classList.add(mode==='power'?'power-active':'active');
+      n.setAttribute('aria-current','step');
+      const s=n.querySelector('[data-node-status]');if(s)s.textContent='Active now';
+    });
   }
-  function completeNodes(ids){
-    const board=document.getElementById('computerFlowBoard');ids.forEach(id=>{const n=board&&board.querySelector('[data-node="'+id+'"]');if(!n)return;n.classList.remove('active','power-active');n.classList.add('completed');const s=n.querySelector('[data-node-status]');if(s)s.textContent='Step complete';});
+  function completeComputerNodes(ids,mode){
+    ids.forEach(id=>{
+      const n=document.querySelector('#computerFlowBoard [data-node="'+id+'"]');if(!n)return;
+      n.classList.remove('active','power-active');n.classList.add('completed');n.removeAttribute('aria-current');
+      const s=n.querySelector('[data-node-status]');if(s)s.textContent=mode==='power'?'Power delivered':'Step complete';
+    });
   }
   async function runComputer(){
-    const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout');if(!board||!out||computerBusy)return;
-    computerBusy=true;const token=++computerRun,task=document.getElementById('computerTask').value;
-    board.hidden=false;out.hidden=false;if(status)status.hidden=false;resetComputerBoard();
-    const steps=computerMode==='power'?powerSteps:computerPaths.data[task].map(id=>({nodes:[id],title:(stepInfo.data[task][id]||[])[0]||nodeLabels[id],detail:(stepInfo.data[task][id]||[])[1]||''}));
-    out.innerHTML='<b>Simulation running.</b> Each step completes before the next begins.';
+    const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout'),taskSelect=document.getElementById('computerTask'),startState=document.getElementById('computerStartState');
+    if(!board||!out||!taskSelect)return;
+    const runId=++computerRunId,task=taskSelect.value;
+    board.hidden=false;out.hidden=false;if(status)status.hidden=false;
+    resetComputerBoard(computerMode==='power');
+    if(startState)startState.innerHTML=computerMode==='power'?'<b>Power-flow starting state:</b> The simulation begins before startup power reaches the computer. Watch the wall outlet, power supply, and motherboard activate first.':'<b>Data-flow starting state:</b> The computer is already plugged in, powered on, and idle. Dim components have power; bright components are actively moving or processing data.';
+    const steps=computerMode==='power'?powerSteps:computerPaths[task].map(id=>({nodes:[id],title:(computerInfo[task][id]||[])[0]||nodeLabels[id],detail:(computerInfo[task][id]||[])[1]||''}));
+    out.innerHTML='<b>Simulation running.</b> Only the current step is bright; completed steps remain marked.';
     for(let i=0;i<steps.length;i++){
-      if(token!==computerRun){computerBusy=false;return;}
-      const step=steps[i];setNodeState(step.nodes,computerMode,'Active now');
+      if(runId!==computerRunId)return;
+      const step=steps[i];activateComputerNodes(step.nodes,computerMode);
       if(status)status.innerHTML='<b>Step '+(i+1)+' of '+steps.length+': '+step.title+'</b><span>'+step.detail+'</span>';
       if(computerMode==='power'){
-        if(powerReadout)powerReadout.textContent=i===0?'Input: 120 V AC':i===1?'PSU output rails: 12 V, 5 V, and 3.3 V DC':i===2?'Motherboard regulators lower voltage for individual components.':'CPU, RAM, storage, GPU, NIC, input, and display receive suitable power through parallel paths.';
-        if(bitReadout)bitReadout.innerHTML='No data bit is being transferred in power mode. Power provides energy; it is not the information.';
+        if(powerReadout)powerReadout.textContent=step.readout;
+        if(bitReadout)bitReadout.textContent='Power mode shows energy delivery. No data bit is being represented by this voltage display.';
       }else{
-        if(powerReadout)powerReadout.textContent='System remains powered while this component becomes active.';
-        if(bitReadout)bitReadout.innerHTML=task==='typeA'?'Current example: <code>01000001</code> = 8 bits = 1 byte = “A”':'Data moves as groups of bits. Example byte: <code>01000001</code>.';
+        if(powerReadout)powerReadout.textContent='The computer remains powered while the highlighted component works.';
+        if(bitReadout)bitReadout.innerHTML=task==='typeA'?'Signal example: <code>01000001</code> = 8 bits = 1 byte = decimal 65 = “A”.':'Data moves in groups of bits. Example byte: <code>01000001</code>.';
       }
-      await wait(900);if(token!==computerRun){computerBusy=false;return;}completeNodes(step.nodes);await wait(250);
+      await wait(1250);if(runId!==computerRunId)return;
+      completeComputerNodes(step.nodes,computerMode);
+      await wait(350);
     }
-    if(status)status.innerHTML='<b>Complete.</b><span>'+(computerMode==='power'?'Power was distributed in parallel after conversion and regulation.':'The highlighted components cooperated in the order shown for this simplified task.')+'</span>';
-    out.innerHTML='<b>Complete:</b> '+(computerMode==='power'?'The computer stays powered while its workload changes.':'Bits become meaningful only when hardware and software interpret them as instructions, text, image pixels, sound, addresses, or packet fields.');
-    computerBusy=false;
+    if(runId!==computerRunId)return;
+    if(status)status.innerHTML='<b>Complete.</b><span>'+(computerMode==='power'?'Power reached the PSU, motherboard, and component branches in the order shown.':'The selected task used the components in the simplified order shown.')+'</span>';
+    out.innerHTML='<b>Complete:</b> '+(computerMode==='power'?'After startup, components remain powered while activity changes.':'Voltage states represent bits; bits form bytes; bytes form files and network data.');
   }
-  function restartComputer(){computerRun++;computerBusy=false;resetComputerBoard();runComputer();}
-  const start=document.getElementById('computerSimStart');if(start)start.addEventListener('click',()=>{document.querySelector('#computerFlowSimulator .sim-controls').hidden=false;start.textContent='Run again';restartComputer();});
-  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{computerRun++;computerBusy=false;document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;restartComputer();}));
-  const task=document.getElementById('computerTask');if(task)task.addEventListener('change',restartComputer);const replay=document.getElementById('computerSimReplay');if(replay)replay.addEventListener('click',restartComputer);
+  function restartComputer(){cancelComputerRun();window.setTimeout(runComputer,0);}
+  const computerStart=document.getElementById('computerSimStart');
+  if(computerStart)computerStart.addEventListener('click',()=>{const controls=document.querySelector('#computerFlowSimulator .sim-controls');if(controls)controls.hidden=false;computerStart.textContent='Run again';restartComputer();});
+  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;restartComputer();}));
+  const computerTask=document.getElementById('computerTask');if(computerTask)computerTask.addEventListener('change',restartComputer);
+  const computerReplay=document.getElementById('computerSimReplay');if(computerReplay)computerReplay.addEventListener('click',restartComputer);
 
-  const packetScenarios={
-    https:[
-      {hop:'app',title:'Browser creates a request',protocol:'HTTPS',port:'443',info:'The application asks for a secure web resource.'},
-      {hop:'nic',title:'Network interface prepares signals',protocol:'TCP/TLS',port:'443',info:'The operating system adds protocol information and the NIC transmits the bits.'},
-      {hop:'switch',title:'Local network forwards the frame',protocol:'Ethernet / Wi-Fi',port:'—',info:'Local delivery uses MAC-address information.'},
-      {hop:'router',title:'Router forwards the packet',protocol:'IP',port:'443',info:'The router examines the destination IP and selects the next path.'},
-      {hop:'target',title:'Target receives and responds',protocol:'HTTPS',port:'443',info:'The target reassembles the request, processes it, and sends encrypted response packets back.'}],
-    ping:[{hop:'app',title:'Ping creates an echo request',protocol:'ICMP',port:'No port',info:'Ping uses ICMP rather than TCP or UDP ports.'},{hop:'nic',title:'NIC transmits the request',protocol:'ICMP',port:'No port',info:'The request leaves hacker at 10.10.10.25.'},{hop:'router',title:'Router forwards by IP',protocol:'IP/ICMP',port:'No port',info:'The destination is target at 10.10.10.20.'},{hop:'target',title:'Target sends an echo reply',protocol:'ICMP',port:'No port',info:'A reply suggests the fictional target is reachable in this simulation.'}],
-    scan:[{hop:'app',title:'Scanner checks a service',protocol:'TCP',port:'443',info:'The simulator sends a fictional connection request to a selected port.'},{hop:'nic',title:'NIC sends the packet',protocol:'TCP SYN',port:'443',info:'Source 10.10.10.25 asks target 10.10.10.20 whether the service is listening.'},{hop:'router',title:'Router forwards the packet',protocol:'IP/TCP',port:'443',info:'IP identifies the target; the port identifies the service endpoint.'},{hop:'target',title:'Target responds',protocol:'TCP SYN-ACK',port:'443',info:'The fictional response indicates that HTTPS is open. Open does not automatically mean vulnerable.'}]
+  const osiLayers={
+    https:{
+      7:['Application','Browser creates an HTTPS request.','Device/app: browser and web server','Data'],
+      6:['Presentation','TLS prepares encryption and data formatting.','Technology: TLS, encryption, encoding','Data'],
+      5:['Session','The communicating applications maintain a conversation.','Function: session management','Data'],
+      4:['Transport','TCP adds source/destination ports and reliable delivery controls.','Protocol: TCP • destination port 443','Segment'],
+      3:['Network','IP adds hacker and target addresses; routers use this layer.','Device: router • 10.10.10.25 → 10.10.10.20','Packet'],
+      2:['Data Link','The NIC builds a frame with local MAC information; a switch or Wi-Fi AP forwards it.','Devices: NIC, switch, wireless access point','Frame'],
+      1:['Physical','Bits become electrical, light, or radio signals across the medium.','Devices/media: cable, fiber, antenna, repeater','Bits']
+    },
+    ping:{
+      7:['Application','The ping utility asks to test reachability.','Application: ping','Data'],6:['Presentation','No special display formatting is needed for this simple request.','Function: data representation','Data'],5:['Session','The utility tracks the request and reply for this test.','Function: conversation tracking','Data'],4:['Transport','ICMP does not use TCP or UDP port numbers.','Note: no transport port','Message'],3:['Network','ICMP travels with IP addressing to the target.','Router • ICMP • 10.10.10.20','Packet'],2:['Data Link','The NIC and local network prepare and forward a frame.','NIC, switch/Wi-Fi, MAC addresses','Frame'],1:['Physical','Bits cross the medium as signals.','Cable/fiber/radio','Bits']
+    },
+    scan:{
+      7:['Application','A safe simulated scanner checks whether HTTPS is listening.','Application: scanner','Data'],6:['Presentation','The test does not yet exchange encrypted web content.','Function: representation','Data'],5:['Session','The scanner tracks the connection attempt.','Function: session state','Data'],4:['Transport','TCP creates a SYN directed to port 443.','TCP SYN • destination port 443','Segment'],3:['Network','IP addresses identify hacker and target; routers forward the packet.','Router • 10.10.10.25 → 10.10.10.20','Packet'],2:['Data Link','NIC and switch/Wi-Fi use local frame and MAC information.','NIC, switch, wireless AP','Frame'],1:['Physical','The frame becomes a stream of bits carried by signals.','Cable/fiber/radio','Bits']
+    }
   };
-  let packetIndex=0;
-  function showPacket(reset=false){const route=document.getElementById('packetRoute'),card=document.getElementById('packetCard'),out=document.getElementById('packetSimOutput');if(!route||!card)return; if(reset)packetIndex=0; const scenario=document.getElementById('packetScenario').value,steps=packetScenarios[scenario],step=steps[packetIndex]; route.hidden=false;card.hidden=false;out.hidden=false;route.querySelectorAll('.route-node').forEach(n=>n.classList.remove('active'));const node=route.querySelector('[data-hop="'+step.hop+'"]');if(node){node.classList.add('active');node.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})}card.innerHTML='<h4>'+step.title+'</h4><div class="packet-field"><div><b>Source</b><br><code>10.10.10.25</code></div><div><b>Destination</b><br><code>10.10.10.20</code></div><div><b>Protocol</b><br>'+step.protocol+'</div><div><b>Port</b><br>'+step.port+'</div></div><p>'+step.info+'</p>';out.innerHTML='<b>Step '+(packetIndex+1)+' of '+steps.length+'.</b> '+(packetIndex===steps.length-1?'The response then travels back through the network so the application can use it.':'Select Next step to continue.');}
-  const ps=document.getElementById('packetSimStart');if(ps)ps.addEventListener('click',()=>{document.getElementById('packetControls').hidden=false;ps.textContent='Restart simulation';showPacket(true)});
-  const pn=document.getElementById('packetNext');if(pn)pn.addEventListener('click',()=>{const steps=packetScenarios[document.getElementById('packetScenario').value];packetIndex=(packetIndex+1)%steps.length;showPacket()});
-  const pr=document.getElementById('packetReplay');if(pr)pr.addEventListener('click',()=>showPacket(true)); const psc=document.getElementById('packetScenario');if(psc)psc.addEventListener('change',()=>showPacket(true));
+  let osiSequence=[],osiIndex=0;
+  function buildOsiSequence(scenario){
+    const down=[7,6,5,4,3,2,1].map(layer=>({layer,direction:'down'}));
+    const transit=[{layer:0,direction:'transit'}];
+    const up=[1,2,3,4,5,6,7].map(layer=>({layer,direction:'up'}));
+    return [...down,...transit,...up];
+  }
+  function renderOsi(reset=false){
+    const stack=document.getElementById('osiStack'),detail=document.getElementById('osiDetail'),output=document.getElementById('osiOutput'),progress=document.getElementById('osiProgress'),scenarioEl=document.getElementById('osiScenario');
+    if(!stack||!detail||!output||!progress||!scenarioEl)return;
+    if(reset){osiSequence=buildOsiSequence(scenarioEl.value);osiIndex=0;}
+    const item=osiSequence[osiIndex],scenario=scenarioEl.value;
+    document.querySelectorAll('.osi-layer').forEach(x=>x.classList.remove('active','completed','receiving'));
+    document.querySelectorAll('.osi-endpoint,.osi-transit').forEach(x=>x.classList.remove('active'));
+    if(item.direction==='transit'){
+      document.querySelector('.osi-transit')?.classList.add('active');
+      detail.innerHTML='<h4>Across the network</h4><p>The frame leaves the local interface. Switches or Wi-Fi handle local delivery, routers forward by IP between networks, and the physical medium carries the bits as signals.</p><div class="osi-pdu"><b>Current form:</b> Bits/signals</div>';
+    }else{
+      const layerBtn=stack.querySelector('[data-osi-layer="'+item.layer+'"]');if(layerBtn)layerBtn.classList.add(item.direction==='up'?'receiving':'active');
+      const d=osiLayers[scenario][item.layer];
+      const directionText=item.direction==='down'?'Encapsulation at hacker':'Decapsulation at target';
+      detail.innerHTML='<h4>Layer '+item.layer+': '+d[0]+'</h4><p>'+d[1]+'</p><p><b>'+d[2]+'</b></p><div class="osi-pdu"><b>'+directionText+' • PDU:</b> '+d[3]+'</div>';
+      const endpoint=document.querySelector(item.direction==='down'?'.osi-endpoint:not(.target)':'.osi-endpoint.target');if(endpoint)endpoint.classList.add('active');
+    }
+    progress.hidden=false;detail.hidden=false;output.hidden=false;
+    progress.innerHTML='<b>Step '+(osiIndex+1)+' of '+osiSequence.length+'</b><span>'+(item.direction==='down'?'Sending: moving down the OSI model':item.direction==='up'?'Receiving: moving up the OSI model':'Signals crossing the fictional network')+'</span>';
+    output.innerHTML=osiIndex===osiSequence.length-1?'<b>Complete:</b> The target application rebuilt and interpreted the request. A response would repeat the process in the opposite direction.':'Select <b>Next layer</b> to continue.';
+  }
+  const osiStart=document.getElementById('osiStart');if(osiStart)osiStart.addEventListener('click',()=>{document.getElementById('osiControls').hidden=false;document.getElementById('osiStackWrap').hidden=false;osiStart.textContent='Restart simulation';renderOsi(true);});
+  const osiNext=document.getElementById('osiNext');if(osiNext)osiNext.addEventListener('click',()=>{if(!osiSequence.length)renderOsi(true);else{osiIndex=Math.min(osiIndex+1,osiSequence.length-1);renderOsi();}});
+  const osiReplay=document.getElementById('osiReplay');if(osiReplay)osiReplay.addEventListener('click',()=>renderOsi(true));
+  const osiScenario=document.getElementById('osiScenario');if(osiScenario)osiScenario.addEventListener('change',()=>renderOsi(true));
+  document.querySelectorAll('.osi-layer').forEach(btn=>btn.addEventListener('click',()=>{const layer=Number(btn.dataset.osiLayer),scenario=document.getElementById('osiScenario')?.value||'https',d=osiLayers[scenario][layer],detail=document.getElementById('osiDetail');if(detail){detail.hidden=false;detail.innerHTML='<h4>Layer '+layer+': '+d[0]+'</h4><p>'+d[1]+'</p><p><b>'+d[2]+'</b></p><div class="osi-pdu"><b>Typical PDU:</b> '+d[3]+'</div>';}}));
 })();
