@@ -261,3 +261,18 @@ details>div{padding:.9rem 1rem}
 .cyber-family-practice [class*="card"] li {
   color: #eaf4f8 !important;
 }
+
+/* FamilyPD safe cyber lab simulators */
+.cyber-lab-boundary{margin-bottom:1rem}
+.cyber-lab-tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin:1rem 0}
+.cyber-lab-tab{border:1px solid #b9cad9;background:#fff;color:#173b63;border-radius:999px;padding:.72rem 1rem;font:inherit;font-weight:800;cursor:pointer}
+.cyber-lab-tab:hover,.cyber-lab-tab:focus-visible,.cyber-lab-tab.active{background:#173b63;color:#fff;border-color:#173b63}
+.cyber-lab-panel{border:1px solid #c8d5df;border-radius:22px;padding:1rem;background:#fbfdff}
+.cyber-lab-panel[hidden]{display:none!important}.cyber-lab-panel.active{display:block}
+.command-chips{margin:.8rem 0}.scan-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}
+.scan-terminal pre{white-space:pre-wrap;margin:0;font:inherit}.scan-check,.packet-challenge{margin-top:1rem;padding:1rem;border:1px solid #c8d5df;border-radius:16px;background:#fff}
+.option-row{display:flex;gap:.6rem;flex-wrap:wrap}.scan-answer{border:1px solid #b9cad9;background:#fff;border-radius:12px;padding:.7rem .9rem;font:inherit;font-weight:750;cursor:pointer}
+.scan-answer.correct{border-color:#1c7c54;background:#e9f8f1}.scan-answer.incorrect{border-color:#b43b3b;background:#fff0f0}
+.packet-toolbar{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:.8rem 0}.packet-toolbar select{min-width:260px;padding:.65rem;border:1px solid #9fb4c5;border-radius:10px;background:#fff;font:inherit}
+.packet-table-wrap{overflow:auto;border:1px solid #c8d5df;border-radius:14px;background:#fff}.packet-table{width:100%;border-collapse:collapse;min-width:760px}.packet-table th,.packet-table td{text-align:left;padding:.7rem;border-bottom:1px solid #e2e8ee}.packet-table th{background:#edf4f8;color:#173b63}.packet-table tbody tr{cursor:pointer}.packet-table tbody tr:hover,.packet-table tbody tr:focus,.packet-table tbody tr.selected{background:#e7f4f8;outline:none}.packet-detail{margin-top:1rem}
+@media(max-width:700px){.cyber-lab-panel{padding:.75rem}.cyber-lab-tab{width:100%;text-align:left}.packet-toolbar select{width:100%;min-width:0}.scan-actions .btn{width:100%;text-align:center}.option-row{display:grid}.scan-answer{width:100%}}

@@ -75,7 +75,7 @@
 <div class="section section-flat mt-09" id="pathQuiz">
 <div class="quizbar"><h3>Path Check</h3><span class="score">Completed: 0 / 3</span><button class="btn" data-reset-quiz="#pathQuiz">Reset check</button></div>
 <div class="grid-3">
-<article class="card question" data-correct-choice="recon" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="path-recon">
+<article class="card question" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="path-recon">
 <h3>Collecting public usernames and company information fits where?</h3>
 <div class="option-grid">
 <button class="option" data-choice="access" data-feedback="Initial access is the foothold. This step happens earlier, while information is being gathered.">Initial access</button>
@@ -83,7 +83,7 @@
 <button class="option" data-choice="recovery" data-feedback="Recovery happens after an incident. The clue describes information gathering before access.">Recovery</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-correct-choice="scope" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="path-scope">
+<article class="card question" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="path-scope">
 <h3>What comes before authorized security testing?</h3>
 <div class="option-grid">
 <button class="option" data-choice="scan" data-feedback="Scanning without a defined scope can affect systems you were never authorized to touch.">Scan first</button>
@@ -91,7 +91,7 @@
 <button class="option" data-choice="password" data-feedback="Credentials do not replace written authorization or a clear scope.">Obtain a password</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-correct-choice="overlap" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="path-sequence">
+<article class="card question" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="path-sequence">
 <h3>Does every incident follow one perfect sequence?</h3>
 <div class="option-grid">
 <button class="option" data-choice="always" data-feedback="Models organize thinking, but real behavior may skip, repeat, or overlap stages.">Yes, always</button>
@@ -114,23 +114,71 @@
 <div class="detail-panel" id="componentDetail"><h3>Select a component</h3><p>Each part supports the larger system and creates different reliability, privacy, or security considerations.</p></div>
 </section>
 <section class="section" id="linux">
-<div class="section-head"><span class="stepno">4</span><div><h2>Explore Linux Storage</h2><span>Use safe, read-only commands to inspect files, devices, file systems, and mount points.</span></div><span class="time">Linux</span></div>
-<div class="chips">
-<button class="chip" data-cmd="pwd">pwd</button><button class="chip" data-cmd="ls">ls</button>
-<button class="chip" data-cmd="ls -la">ls -la</button><button class="chip" data-cmd="lsblk">lsblk</button>
-<button class="chip" data-cmd="df -h">df -h</button><button class="chip" data-cmd="mount">mount</button>
-<button class="chip" data-cmd="cat notes.txt">cat notes.txt</button><button class="chip" data-cmd="clear">clear</button>
+<div class="section-head"><span class="stepno">4</span><div><h2>Linux, Network Discovery &amp; Packet Analysis</h2><span>Practice safe, read-only commands inside a completely fictional lab using only the names <b>hacker</b> and <b>target</b>.</span></div><span class="time">Safe simulation</span></div>
+<div class="callout warning cyber-lab-boundary"><b>Authorized practice only:</b> Everything below is simulated. The page does not read your real IP address, scan your network, or capture live traffic. Never scan or intercept a real system without clear permission.</div>
+<div class="cyber-lab-tabs" role="tablist" aria-label="Cybersecurity lab simulators">
+<button class="cyber-lab-tab active" type="button" role="tab" aria-selected="true" aria-controls="linuxTerminalPanel" data-lab-tab="linuxTerminalPanel">Linux Terminal</button>
+<button class="cyber-lab-tab" type="button" role="tab" aria-selected="false" aria-controls="networkScanPanel" data-lab-tab="networkScanPanel">Fake Network Scan</button>
+<button class="cyber-lab-tab" type="button" role="tab" aria-selected="false" aria-controls="packetPanel" data-lab-tab="packetPanel">Wireshark-Style Packet Explorer</button>
+</div>
+<div class="cyber-lab-panel active" id="linuxTerminalPanel" role="tabpanel">
+<h3>Linux Terminal</h3>
+<p>Use the buttons or type a command. The fictional machine is <code>hacker</code> with the simulated private address <code>10.10.10.25</code>.</p>
+<div class="chips command-chips">
+<button class="chip" data-cmd="pwd">pwd</button><button class="chip" data-cmd="whoami">whoami</button><button class="chip" data-cmd="hostname">hostname</button>
+<button class="chip" data-cmd="uname -a">uname -a</button><button class="chip" data-cmd="cat /etc/os-release">cat /etc/os-release</button>
+<button class="chip" data-cmd="ip addr">ip addr</button><button class="chip" data-cmd="ip route">ip route</button><button class="chip" data-cmd="ping -c 3 10.10.10.20">ping target</button>
+<button class="chip" data-cmd="ls">ls</button><button class="chip" data-cmd="ls -la">ls -la</button><button class="chip" data-cmd="lsblk">lsblk</button>
+<button class="chip" data-cmd="df -h">df -h</button><button class="chip" data-cmd="mount">mount</button><button class="chip" data-cmd="free -h">free -h</button>
+<button class="chip" data-cmd="ps">ps</button><button class="chip" data-cmd="history">history</button><button class="chip" data-cmd="cat notes.txt">cat notes.txt</button><button class="chip" data-cmd="clear">clear</button>
 </div>
 <div class="terminal">
-<div class="terminal-head">victimpi@lab:~ — safe local simulation</div>
-<div class="terminal-out" id="termOut">Try a command. Look for the removable USB device, its file system, mount point, and available space.
-</div>
+<div class="terminal-head">hacker@lab:~ — fictional local simulation</div>
+<div class="terminal-out" id="termOut">Try <b>ip addr</b> to identify the simulated IP address, then inspect storage, memory, routes, and processes.</div>
 <div class="terminal-line"><span>$</span><input aria-label="Linux command" autocomplete="off" id="termIn"/><button id="runCmd">Run</button></div>
 </div>
 <div class="grid-3 mt-08">
-<div class="card"><h3>Device</h3><p><code>/dev/sda1</code> is the removable USB partition in this simulation.</p></div>
-<div class="card"><h3>Mount point</h3><p><code>/media/victimpi/CLASS_USB</code> is where its files become accessible.</p></div>
-<div class="card"><h3>Capacity</h3><p><code>df -h</code> shows the USB has about 12 GB available.</p></div>
+<div class="card"><h3>Simulated identity</h3><p><code>whoami</code> returns <code>hacker</code>. <code>hostname</code> returns <code>hacker</code>.</p></div>
+<div class="card"><h3>Simulated IP address</h3><p><code>ip addr</code> shows <code>10.10.10.25/24</code>. This is fictional—not the visitor’s real address.</p></div>
+<div class="card"><h3>Target system</h3><p>The fictional target is <code>10.10.10.20</code>. Commands return preset educational results only.</p></div>
+</div>
+</div>
+<div class="cyber-lab-panel" id="networkScanPanel" role="tabpanel" hidden>
+<h3>Fake Authorized Network Scan</h3>
+<p>Choose a preset scan to see the kind of information defenders and authorized testers review. Nothing is sent to a real network.</p>
+<div class="scan-actions">
+<button class="btn" type="button" data-fake-scan="discovery">Discover hosts</button>
+<button class="btn" type="button" data-fake-scan="ports">Scan target ports</button>
+<button class="btn" type="button" data-fake-scan="services">Identify services</button>
+<button class="btn" type="button" data-fake-scan="clear">Clear results</button>
+</div>
+<div class="terminal scan-terminal"><div class="terminal-head">hacker@lab:~ — fictional 10.10.10.0/24 practice range</div><pre class="terminal-out" id="scanOut">Select a scan above. Start with “Discover hosts.”</pre></div>
+<div class="grid-3 mt-08">
+<div class="card"><h3>What attackers notice</h3><p>Live hosts, open ports, service names, and software versions can help someone map an environment.</p></div>
+<div class="card"><h3>What defenders ask</h3><p>Is each service necessary, patched, authenticated, encrypted, restricted, and logged?</p></div>
+<div class="card"><h3>Important distinction</h3><p>An open port is not automatically a vulnerability. It is an exposed service that deserves review.</p></div>
+</div>
+<div class="scan-check" id="scanCheck">
+<h3>Quick Scan Check</h3>
+<p>Which open port in the fictional results is commonly associated with file sharing?</p>
+<div class="option-row"><button class="scan-answer" data-scan-answer="22">22 / SSH</button><button class="scan-answer" data-scan-answer="80">80 / HTTP</button><button class="scan-answer" data-scan-answer="445">445 / SMB</button></div>
+<p class="feedback" id="scanFeedback" aria-live="polite"></p>
+</div>
+</div>
+<div class="cyber-lab-panel" id="packetPanel" role="tabpanel" hidden>
+<h3>Wireshark-Style Packet Explorer</h3>
+<p>Follow fictional traffic between <code>hacker</code> (<code>10.10.10.25</code>) and <code>target</code> (<code>10.10.10.20</code>). Select a display filter or click a packet row to inspect it.</p>
+<div class="packet-toolbar">
+<label for="packetFilter"><b>Display filter</b></label>
+<select id="packetFilter"><option value="all">Show all packets</option><option value="dns">dns</option><option value="tcp">tcp</option><option value="http">http</option><option value="tls">tls</option><option value="target">ip.addr == 10.10.10.20</option><option value="443">tcp.port == 443</option></select>
+</div>
+<div class="packet-table-wrap"><table class="packet-table"><thead><tr><th>No.</th><th>Source</th><th>Destination</th><th>Protocol</th><th>Info</th></tr></thead><tbody id="packetRows"></tbody></table></div>
+<div class="detail-panel packet-detail" id="packetDetail"><h3>Select a packet</h3><p>Packet details will appear here. This is a teaching simulation, not live traffic.</p></div>
+<div class="packet-challenge">
+<h3>Follow the connection</h3>
+<p>Typical secure web flow: <b>DNS lookup → TCP handshake → TLS handshake → encrypted application traffic.</b></p>
+<p><b>Why it matters:</b> HTTP may expose readable data. HTTPS uses TLS so captured payload content is normally encrypted.</p>
+</div>
 </div>
 </section>
 <section class="section" id="network">
