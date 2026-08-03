@@ -75,7 +75,7 @@
 <div class="section section-flat mt-09" id="pathQuiz">
 <div class="quizbar"><h3>Path Check</h3><span class="score">Completed: 0 / 3</span><button class="btn" data-reset-quiz="#pathQuiz">Reset check</button></div>
 <div class="grid-3">
-<article class="card question" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="path-recon" data-correct-choice="recon">
+<article class="card question" data-correct-choice="recon" data-correct-feedback="Correct. Public usernames, posts, domains, and organizational clues are reconnaissance inputs." data-question-id="path-recon">
 <h3>Collecting public usernames and company information fits where?</h3>
 <div class="option-grid">
 <button class="option" data-choice="access" data-feedback="Initial access is the foothold. This step happens earlier, while information is being gathered.">Initial access</button>
@@ -83,7 +83,7 @@
 <button class="option" data-choice="recovery" data-feedback="Recovery happens after an incident. The clue describes information gathering before access.">Recovery</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="path-scope" data-correct-choice="scope">
+<article class="card question" data-correct-choice="scope" data-correct-feedback="Correct. Ethical work starts by defining permission, boundaries, and reporting expectations." data-question-id="path-scope">
 <h3>What comes before authorized security testing?</h3>
 <div class="option-grid">
 <button class="option" data-choice="scan" data-feedback="Scanning without a defined scope can affect systems you were never authorized to touch.">Scan first</button>
@@ -91,7 +91,7 @@
 <button class="option" data-choice="password" data-feedback="Credentials do not replace written authorization or a clear scope.">Obtain a password</button>
 </div><p class="feedback"></p>
 </article>
-<article class="card question" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="path-sequence" data-correct-choice="overlap">
+<article class="card question" data-correct-choice="overlap" data-correct-feedback="Correct. Real activity is not always a perfect straight line; stages can repeat as new evidence appears." data-question-id="path-sequence">
 <h3>Does every incident follow one perfect sequence?</h3>
 <div class="option-grid">
 <button class="option" data-choice="always" data-feedback="Models organize thinking, but real behavior may skip, repeat, or overlap stages.">Yes, always</button>
@@ -116,13 +116,13 @@
 <div class="grid-3">
 <div class="card"><h3>Bit</h3><p>A bit is one binary digit: <code>0</code> or <code>1</code>. It represents an off/on or false/true state.</p></div>
 <div class="card"><h3>Byte</h3><p>Eight bits commonly form one byte. Bytes help represent characters, colors, instructions, and stored data.</p></div>
-<div class="card"><h3>Why hexadecimal?</h3><p>Hexadecimal is a shorter way to display long binary values and appears in addresses, hashes, colors, and debugging.</p></div>
+<div class="card"><h3>Why hexadecimal?</h3><p>Hexadecimal shortens binary values so analysts can read them faster. It appears in memory, packet bytes, MAC addresses, hashes, and web colors such as #173B63.</p><a class="btn" href="https://color.adobe.com/create/color-wheel" rel="noopener" target="_blank">Try a color wheel</a></div>
 </div><div class="converter">
 <label>Decimal<input aria-label="Decimal value" id="decimal" inputmode="numeric"/></label>
 <label>Binary<input aria-label="Binary value" id="binary" inputmode="numeric"/></label>
 <label>Hexadecimal<input aria-label="Hexadecimal value" id="hexadecimal"/></label>
 </div><div class="callout info" id="converterStatus"></div></section><section class="section" id="network">
-<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Services</h2><span>Learn how devices connect and how services listen at numbered endpoints.</span></div><span class="time">Network foundations</span></div><div class="callout info"><b>Why this comes before scanning:</b> A scan is easier to understand after you know that IP addresses identify devices and ports identify service endpoints. Learn the concepts here, then apply them in the Linux lab.</div>
+<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Services</h2><span>Learn how devices connect and how services listen at numbered endpoints.</span></div><span class="time">Network foundations</span></div><div class="callout info" id="labNetworkFlow"><b>What the scan is really showing:</b> The fictional hacker machine sends preset requests toward the fictional target. In a real authorized assessment, responses are interpreted as bits arranged into packet fields. IP addresses help identify endpoints, ports suggest which services are listening, and packet captures show how the conversation unfolds over time.</div><div class="callout info"><b>Why this comes before scanning:</b> A scan is easier to understand after you know that IP addresses identify devices and ports identify service endpoints. Learn the concepts here, then apply them in the Linux lab.</div>
 <div class="port-grid">
 <button class="port" data-port="22"><b>22</b>SSH</button><button class="port" data-port="53"><b>53</b>DNS</button>
 <button class="port" data-port="67/68"><b>67/68</b>DHCP</button><button class="port" data-port="80"><b>80</b>HTTP</button>
@@ -130,9 +130,6 @@
 <button class="port" data-port="3389"><b>3389</b>RDP</button><button class="port" data-port="25"><b>25</b>SMTP</button>
 </div>
 <div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>A port identifies a service endpoint. Defenders ask whether that service is necessary, patched, authenticated, encrypted, limited, and logged.</p></div>
-
-
-
 </section><section class="section" id="linux">
 <div class="section-head"><span class="stepno">6</span><div><h2>Linux Command, Target &amp; Packet Lab</h2><span>Use commands against a fictional target, inspect preset scan results, and follow simulated packets.</span></div><span class="time">Safe application</span></div>
 <div class="callout warning cyber-lab-boundary"><b>Authorized practice only:</b> Everything below is simulated. The page does not read your real IP address, scan your network, or capture live traffic. Never scan or intercept a real system without clear permission.</div>
@@ -208,9 +205,6 @@
 <div class="card"><h3>🧪 Authorized Range</h3><p>Follow the complete CYBER.ORG Range walkthrough using Kali, Windows, SEToolkit, and fake credentials.</p><a class="btn" href="credential-harvesting-range-guide.html">Open the Range guide</a></div>
 </div>
 </section>
-
-
-
 <section class="section">
 <div class="section-head"><span class="stepno">8</span><div><h2>Defense Connects Everything</h2><span>Reduce exposure, detect unusual activity, respond, and improve.</span></div><span class="time">Defense</span></div>
 <div class="grid-4">
