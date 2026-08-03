@@ -18,45 +18,64 @@ const FPD = (() => {
     });
   }
 
+  function quizQuestions(root=document) {
+    return $$('.question[data-answer-hash], .question[data-correct-choice]', root);
+  }
+
   function initSingleChoiceQuiz(root=document) {
     const salt = document.querySelector('meta[name="fpd-quiz-salt"]')?.content || '';
-    $$('.question[data-answer-hash]', root).forEach(q => {
+    quizQuestions(root).forEach(q => {
       $$('.option', q).forEach(btn => {
         btn.addEventListener('click', async () => {
           if (q.dataset.locked === '1' || q.dataset.checking === '1') return;
           q.dataset.checking = '1';
-          const qid = q.dataset.questionId || '';
-          const candidate = await sha256(`${salt}|${qid}|${btn.dataset.choice || ''}`);
-          const correct = candidate === q.dataset.answerHash;
+          const choice = btn.dataset.choice || '';
+          let correct = false;
+
+          // Public learning pages may store the answer directly. Other pages can
+          // continue using a salted hash so this helper remains backward compatible.
+          if (q.dataset.correctChoice) {
+            correct = choice === q.dataset.correctChoice;
+          } else if (q.dataset.answerHash) {
+            const qid = q.dataset.questionId || '';
+            const candidate = await sha256(`${salt}|${qid}|${choice}`);
+            correct = candidate === q.dataset.answerHash;
+          }
+
           const feedback = $('.feedback', q);
           $$('.option', q).forEach(x => x.classList.remove('correct','incorrect'));
           btn.classList.add(correct ? 'correct' : 'incorrect');
+
           if (correct) {
             q.dataset.locked = '1';
             $$('.option', q).forEach(x => x.disabled = true);
-            feedback.textContent = q.dataset.correctFeedback || 'Correct.';
-            feedback.className = 'feedback good';
-          } else {
-            feedback.textContent = btn.dataset.feedback || q.dataset.wrongFeedback || 'Look again at the clue.';
+            if (feedback) {
+              feedback.textContent = q.dataset.correctFeedback || 'Correct.';
+              feedback.className = 'feedback good';
+            }
+          } else if (feedback) {
+            feedback.textContent = btn.dataset.feedback || q.dataset.wrongFeedback || `Not quite. Try another answer.`;
             feedback.className = 'feedback try';
           }
+
           q.dataset.checking = '0';
           updateScore(root);
         });
       });
     });
+    updateScore(root);
   }
 
   function updateScore(root=document) {
-    const questions = $$('.question[data-answer-hash]', root);
+    const questions = quizQuestions(root);
     if (!questions.length) return;
     const answered = questions.filter(q => q.dataset.locked === '1').length;
     const score = $('.score', root);
-    if (score) score.textContent = `Answers revealed: ${answered} / ${questions.length}`;
+    if (score) score.textContent = `Completed: ${answered} / ${questions.length}`;
   }
 
   function resetQuiz(root=document) {
-    $$('.question[data-answer-hash]', root).forEach(q => {
+    quizQuestions(root).forEach(q => {
       q.dataset.locked = '0'; q.dataset.checking = '0';
       $$('.option', q).forEach(x => { x.disabled = false; x.classList.remove('correct','incorrect'); });
       const f = $('.feedback', q);
