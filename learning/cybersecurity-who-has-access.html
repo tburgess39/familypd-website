@@ -5,10 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#173b63" name="theme-color"/>
-<meta content="An open, interactive cybersecurity exploration connecting trust, computers, Linux, networks, OSINT, social engineering, and defense." name="description"/>
+<meta content="Apply cybersecurity concepts through safe simulations involving trust, hardware, bits, networks, Linux, a fictional target, packet analysis, people, and defense." name="description"/>
 <meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src https://d2hie3dpn9wvbb.cloudfront.net;" http-equiv="Content-Security-Policy"/>
 <link href="familypd-cyber-assets/familypd-cyber.css" rel="stylesheet"/>
-<title>Cybersecurity: Who Has Access? | FamilyPD</title>
+<title>Cyber Investigation Lab: How Access Happens | FamilyPD</title>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -18,21 +18,21 @@
 <img alt="Family Personal Development logo" class="brand-logo" src="familypd-cyber-assets/familypd-logo.png"/>
 <span class="brand-text">Family Personal Development<small>Learning Center • Cybersecurity</small></span>
 </a>
-<nav aria-label="Cybersecurity exploration navigation" class="actions"><a class="btn" href="/learning-center/cybersecurity/">Cyber Hub</a><a class="btn dark" href="cybersecurity-who-has-access.html">Journey</a><a class="btn" href="cybersecurity-explore.html">Explore</a><a class="btn" href="osint-tony-stark.html">OSINT</a><a class="btn" href="social-engineering-simulation.html">Social Engineering</a><a class="btn" href="credential-harvesting-range-guide.html">Range Guide</a><a class="btn" href="cybersecurity-career-prep-options.html">Career Prep</a></nav>
+<nav aria-label="Cybersecurity exploration navigation" class="actions"><a class="btn" href="/learning-center/cybersecurity/">Cyber Hub</a><a class="btn dark" href="cybersecurity-who-has-access.html">Journey</a><a class="btn" href="cybersecurity-explore.html">Learn the technical foundations</a><a class="btn" href="osint-tony-stark.html">OSINT</a><a class="btn" href="social-engineering-simulation.html">Social Engineering</a><a class="btn" href="credential-harvesting-range-guide.html">Range Guide</a><a class="btn" href="cybersecurity-career-prep-options.html">Career Prep</a></nav>
 </div>
 </header>
 <main id="main">
 <section class="hero">
-<span class="eyebrow">Open exploration • safe simulations</span>
-<h1>Cybersecurity: Who Has Access?</h1>
-<p>Every device stores, processes, or moves information. Explore how computers work, how attackers gather clues and influence people, and how defenders reduce risk.</p>
+<span class="eyebrow">SAFE CONCEPT APPLICATION • FICTIONAL LAB</span>
+<h1>Cyber Investigation Lab: How Access Happens</h1>
+<p>Use one guided lab to trace how devices, data, networks, people, and access decisions connect. Everything technical on this page is fictional or simulated.</p>
 <div class="hero-actions">
 <a class="btn primary" href="#path">Follow the journey</a>
-<a class="btn ghost" href="cybersecurity-explore.html">Open the exploration hub</a>
+<a class="btn ghost" href="cybersecurity-explore.html">Learn the technical foundations</a>
 </div>
 </section>
 <div class="intro-row">
-<div class="intro-card"><h3>🚀 Explore in Any Order</h3><p>Move through the full path or jump directly to hardware, Linux, ports, OSINT, social engineering, hardening, careers, or certifications.</p></div>
+<div class="intro-card"><h3>🧭 Follow the Lab Path</h3><p>The sequence now moves from trust and ethical scope to hardware, bits, networks, Linux practice, packet analysis, people, and defense.</p></div>
 <div class="intro-card"><h3>🔐 Permission First</h3><p>Use fictional data, safe simulations, and systems you are clearly authorized to explore.</p></div>
 </div>
 <div class="notice"><h3>Important Boundary</h3><p>Cybersecurity knowledge can protect or harm. This site focuses on awareness, ethical testing, safe practice environments, and defense. Public information is not automatic permission to target a real person.</p></div>
@@ -112,18 +112,38 @@
 <button class="component" data-part="os">Operating system</button><button class="component" data-part="peripheral">Peripherals</button>
 </div>
 <div class="detail-panel" id="componentDetail"><h3>Select a component</h3><p>Each part supports the larger system and creates different reliability, privacy, or security considerations.</p></div>
-</section>
-<section class="section" id="linux">
-<div class="section-head"><span class="stepno">4</span><div><h2>Linux, Network Discovery &amp; Packet Analysis</h2><span>Practice safe, read-only commands inside a completely fictional lab using only the names <b>hacker</b> and <b>target</b>.</span></div><span class="time">Safe simulation</span></div>
+</section><section class="section" id="numbers"><div class="section-head"><span class="stepno">4</span><div><h2>Bits, Bytes &amp; Number Systems</h2><span>Computers represent text, images, instructions, and network values using patterns of bits.</span></div><span class="time">Data foundations</span></div>
+<div class="grid-3">
+<div class="card"><h3>Bit</h3><p>A bit is one binary digit: <code>0</code> or <code>1</code>. It represents an off/on or false/true state.</p></div>
+<div class="card"><h3>Byte</h3><p>Eight bits commonly form one byte. Bytes help represent characters, colors, instructions, and stored data.</p></div>
+<div class="card"><h3>Why hexadecimal?</h3><p>Hexadecimal is a shorter way to display long binary values and appears in addresses, hashes, colors, and debugging.</p></div>
+</div><div class="converter">
+<label>Decimal<input aria-label="Decimal value" id="decimal" inputmode="numeric"/></label>
+<label>Binary<input aria-label="Binary value" id="binary" inputmode="numeric"/></label>
+<label>Hexadecimal<input aria-label="Hexadecimal value" id="hexadecimal"/></label>
+</div><div class="callout info" id="converterStatus"></div></section><section class="section" id="network">
+<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Services</h2><span>Learn how devices connect and how services listen at numbered endpoints.</span></div><span class="time">Network foundations</span></div><div class="callout info"><b>Why this comes before scanning:</b> A scan is easier to understand after you know that IP addresses identify devices and ports identify service endpoints. Learn the concepts here, then apply them in the Linux lab.</div>
+<div class="port-grid">
+<button class="port" data-port="22"><b>22</b>SSH</button><button class="port" data-port="53"><b>53</b>DNS</button>
+<button class="port" data-port="67/68"><b>67/68</b>DHCP</button><button class="port" data-port="80"><b>80</b>HTTP</button>
+<button class="port" data-port="443"><b>443</b>HTTPS</button><button class="port" data-port="445"><b>445</b>SMB</button>
+<button class="port" data-port="3389"><b>3389</b>RDP</button><button class="port" data-port="25"><b>25</b>SMTP</button>
+</div>
+<div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>A port identifies a service endpoint. Defenders ask whether that service is necessary, patched, authenticated, encrypted, limited, and logged.</p></div>
+
+
+
+</section><section class="section" id="linux">
+<div class="section-head"><span class="stepno">6</span><div><h2>Linux Command, Target &amp; Packet Lab</h2><span>Use commands against a fictional target, inspect preset scan results, and follow simulated packets.</span></div><span class="time">Safe application</span></div>
 <div class="callout warning cyber-lab-boundary"><b>Authorized practice only:</b> Everything below is simulated. The page does not read your real IP address, scan your network, or capture live traffic. Never scan or intercept a real system without clear permission.</div>
-<div class="cyber-lab-tabs" role="tablist" aria-label="Cybersecurity lab simulators">
-<button class="cyber-lab-tab active" type="button" role="tab" aria-selected="true" aria-controls="linuxTerminalPanel" data-lab-tab="linuxTerminalPanel">Linux Terminal</button>
-<button class="cyber-lab-tab" type="button" role="tab" aria-selected="false" aria-controls="networkScanPanel" data-lab-tab="networkScanPanel">Fake Network Scan</button>
-<button class="cyber-lab-tab" type="button" role="tab" aria-selected="false" aria-controls="packetPanel" data-lab-tab="packetPanel">Wireshark-Style Packet Explorer</button>
+<div aria-label="Cybersecurity lab simulators" class="cyber-lab-tabs" role="tablist">
+<button aria-controls="linuxTerminalPanel" aria-selected="true" class="cyber-lab-tab active" data-lab-tab="linuxTerminalPanel" role="tab" type="button">Linux Terminal</button>
+<button aria-controls="networkScanPanel" aria-selected="false" class="cyber-lab-tab" data-lab-tab="networkScanPanel" role="tab" type="button">Guided Scan Results</button>
+<button aria-controls="packetPanel" aria-selected="false" class="cyber-lab-tab" data-lab-tab="packetPanel" role="tab" type="button">Packet Explorer</button>
 </div>
 <div class="cyber-lab-panel active" id="linuxTerminalPanel" role="tabpanel">
 <h3>Linux Terminal</h3>
-<p>Use the buttons or type a command. The fictional machine is <code>hacker</code> with the simulated private address <code>10.10.10.25</code>.</p>
+<p>Practice local Linux commands first, then interact with the fictional target at 10.10.10.20. Every response is preset; no real network request occurs.</p>
 <div class="chips command-chips">
 <button class="chip" data-cmd="pwd">pwd</button><button class="chip" data-cmd="whoami">whoami</button><button class="chip" data-cmd="hostname">hostname</button>
 <button class="chip" data-cmd="uname -a">uname -a</button><button class="chip" data-cmd="cat /etc/os-release">cat /etc/os-release</button>
@@ -131,8 +151,8 @@
 <button class="chip" data-cmd="ls">ls</button><button class="chip" data-cmd="ls -la">ls -la</button><button class="chip" data-cmd="lsblk">lsblk</button>
 <button class="chip" data-cmd="df -h">df -h</button><button class="chip" data-cmd="mount">mount</button><button class="chip" data-cmd="free -h">free -h</button>
 <button class="chip" data-cmd="ps">ps</button><button class="chip" data-cmd="history">history</button><button class="chip" data-cmd="cat notes.txt">cat notes.txt</button><button class="chip" data-cmd="clear">clear</button>
-</div>
-<div class="terminal">
+<button class="chip" data-cmd="ping 10.10.10.20">ping 10.10.10.20</button><button class="chip" data-cmd="nmap 10.10.10.20">nmap 10.10.10.20</button><button class="chip" data-cmd="nmap -sV 10.10.10.20">nmap -sV 10.10.10.20</button><button class="chip" data-cmd="curl http://10.10.10.20">curl http://10.10.10.20</button></div>
+<div class="callout info target-practice-guide"><b>Suggested command path:</b> Run <code>ip addr</code> to identify the hacker machine, <code>ping 10.10.10.20</code> to test simulated reachability, <code>nmap 10.10.10.20</code> to view fictional ports, <code>nmap -sV 10.10.10.20</code> to view preset service details, and <code>curl http://10.10.10.20</code> to request a fictional web page.</div><div class="terminal">
 <div class="terminal-head">hacker@lab:~ — fictional local simulation</div>
 <div class="terminal-out" id="termOut">Try <b>ip addr</b> to identify the simulated IP address, then inspect storage, memory, routes, and processes.</div>
 <div class="terminal-line"><span>$</span><input aria-label="Linux command" autocomplete="off" id="termIn"/><button id="runCmd">Run</button></div>
@@ -143,14 +163,14 @@
 <div class="card"><h3>Target system</h3><p>The fictional target is <code>10.10.10.20</code>. Commands return preset educational results only.</p></div>
 </div>
 </div>
-<div class="cyber-lab-panel" id="networkScanPanel" role="tabpanel" hidden>
+<div class="cyber-lab-panel" hidden="" id="networkScanPanel" role="tabpanel">
 <h3>Fake Authorized Network Scan</h3>
 <p>Choose a preset scan to see the kind of information defenders and authorized testers review. Nothing is sent to a real network.</p>
 <div class="scan-actions">
-<button class="btn" type="button" data-fake-scan="discovery">Discover hosts</button>
-<button class="btn" type="button" data-fake-scan="ports">Scan target ports</button>
-<button class="btn" type="button" data-fake-scan="services">Identify services</button>
-<button class="btn" type="button" data-fake-scan="clear">Clear results</button>
+<button class="btn" data-fake-scan="discovery" type="button">Discover hosts</button>
+<button class="btn" data-fake-scan="ports" type="button">Scan target ports</button>
+<button class="btn" data-fake-scan="services" type="button">Identify services</button>
+<button class="btn" data-fake-scan="clear" type="button">Clear results</button>
 </div>
 <div class="terminal scan-terminal"><div class="terminal-head">hacker@lab:~ — fictional 10.10.10.0/24 practice range</div><pre class="terminal-out" id="scanOut">Select a scan above. Start with “Discover hosts.”</pre></div>
 <div class="grid-3 mt-08">
@@ -162,10 +182,10 @@
 <h3>Quick Scan Check</h3>
 <p>Which open port in the fictional results is commonly associated with file sharing?</p>
 <div class="option-row"><button class="scan-answer" data-scan-answer="22">22 / SSH</button><button class="scan-answer" data-scan-answer="80">80 / HTTP</button><button class="scan-answer" data-scan-answer="445">445 / SMB</button></div>
-<p class="feedback" id="scanFeedback" aria-live="polite"></p>
+<p aria-live="polite" class="feedback" id="scanFeedback"></p>
 </div>
 </div>
-<div class="cyber-lab-panel" id="packetPanel" role="tabpanel" hidden>
+<div class="cyber-lab-panel" hidden="" id="packetPanel" role="tabpanel">
 <h3>Wireshark-Style Packet Explorer</h3>
 <p>Follow fictional traffic between <code>hacker</code> (<code>10.10.10.25</code>) and <code>target</code> (<code>10.10.10.20</code>). Select a display filter or click a packet row to inspect it.</p>
 <div class="packet-toolbar">
@@ -180,34 +200,19 @@
 <p><b>Why it matters:</b> HTTP may expose readable data. HTTPS uses TLS so captured payload content is normally encrypted.</p>
 </div>
 </div>
-</section>
-<section class="section" id="network">
-<div class="section-head"><span class="stepno">5</span><div><h2>Networks, Ports &amp; Number Systems</h2><span>Services listen on ports, while computers represent values using number systems.</span></div><span class="time">Networks</span></div>
-<div class="port-grid">
-<button class="port" data-port="22"><b>22</b>SSH</button><button class="port" data-port="53"><b>53</b>DNS</button>
-<button class="port" data-port="67/68"><b>67/68</b>DHCP</button><button class="port" data-port="80"><b>80</b>HTTP</button>
-<button class="port" data-port="443"><b>443</b>HTTPS</button><button class="port" data-port="445"><b>445</b>SMB</button>
-<button class="port" data-port="3389"><b>3389</b>RDP</button><button class="port" data-port="25"><b>25</b>SMTP</button>
-</div>
-<div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>A port identifies a service endpoint. Defenders ask whether that service is necessary, patched, authenticated, encrypted, limited, and logged.</p></div>
-<h3 class="mt-1">Binary • Decimal • Hexadecimal</h3>
-<div class="converter">
-<label>Decimal<input aria-label="Decimal value" id="decimal" inputmode="numeric"/></label>
-<label>Binary<input aria-label="Binary value" id="binary" inputmode="numeric"/></label>
-<label>Hexadecimal<input aria-label="Hexadecimal value" id="hexadecimal"/></label>
-</div>
-<div class="callout info" id="converterStatus"></div>
-</section>
-<section class="section" id="people">
-<div class="section-head"><span class="stepno">6</span><div><h2>People, Reconnaissance &amp; Social Engineering</h2><span>Technical clues and human behavior often connect.</span></div><span class="time">Human factors</span></div>
+</section><section class="section" id="people">
+<div class="section-head"><span class="stepno">7</span><div><h2>People, Reconnaissance &amp; Social Engineering</h2><span>Technical clues and human behavior often connect.</span></div><span class="time">Human factors</span></div>
 <div class="grid-3">
 <div class="card soft"><h3>🕵🏽 Tony Stark OSINT Challenge</h3><p>Explore the real fictional practice environment, then use the answer-check cards.</p><a class="btn dark" href="osint-tony-stark.html">Open OSINT exploration</a></div>
 <div class="card"><h3>🎭 Social Engineering</h3><p>Identify urgency, authority, impersonation, and credential-harvesting warning signs.</p><a class="btn" href="social-engineering-simulation.html">Open the simulation</a></div>
 <div class="card"><h3>🧪 Authorized Range</h3><p>Follow the complete CYBER.ORG Range walkthrough using Kali, Windows, SEToolkit, and fake credentials.</p><a class="btn" href="credential-harvesting-range-guide.html">Open the Range guide</a></div>
 </div>
 </section>
+
+
+
 <section class="section">
-<div class="section-head"><span class="stepno">7</span><div><h2>Defense Connects Everything</h2><span>Reduce exposure, detect unusual activity, respond, and improve.</span></div><span class="time">Defense</span></div>
+<div class="section-head"><span class="stepno">8</span><div><h2>Defense Connects Everything</h2><span>Reduce exposure, detect unusual activity, respond, and improve.</span></div><span class="time">Defense</span></div>
 <div class="grid-4">
 <div class="reveal-card"><button aria-expanded="false">Update &amp; Patch</button><div class="reveal-content"><p>Fix known vulnerabilities in operating systems, browsers, firmware, applications, and network devices.</p></div></div>
 <div class="reveal-card"><button aria-expanded="false">Control Access</button><div class="reveal-content"><p>Use unique accounts, strong authentication, MFA, least privilege, and regular access reviews.</p></div></div>
@@ -216,7 +221,7 @@
 </div>
 <div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html#hardening">Explore hardening, careers, certifications, CyberChef, and competitions</a></div>
 </section>
-<section class="section pathway-invite"><div class="section-head"><span class="stepno">→</span><div><h2>Where These Ideas Can Lead</h2><span>Continue learning, compare career preparation options, explore high-school CTE, or review the Nevada Partners program.</span></div><span class="time">Continue</span></div><div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html">Open the exploration hub</a><a class="btn" href="cybersecurity-career-prep-options.html">Compare career prep options</a><a class="btn" href="cybersecurity-cte-programs.html">Explore CTE programs</a></div></section>
+<section class="section pathway-invite"><div class="section-head"><span class="stepno">→</span><div><h2>Where These Ideas Can Lead</h2><span>Continue learning, compare career preparation options, explore high-school CTE, or review the Nevada Partners program.</span></div><span class="time">Continue</span></div><div class="hero-actions"><a class="btn dark" href="cybersecurity-explore.html">Learn the technical foundations</a><a class="btn" href="cybersecurity-career-prep-options.html">Compare career prep options</a><a class="btn" href="cybersecurity-cte-programs.html">Explore CTE programs</a></div></section>
 <section class="section refs">
 <h2>References</h2>
 <ol>
