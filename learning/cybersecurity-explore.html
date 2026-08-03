@@ -113,8 +113,45 @@
   <div class="sim-output" id="packetSimOutput" hidden></div>
 </div>
 </section>
+<section class="section" id="packet-capture">
+<div class="section-head"><span class="stepno">E</span><div><h2>Wireshark-Style Packet Explorer</h2><span>Inspect the same fictional traffic after it has been captured and organized into rows.</span></div><span class="time">Interactive</span></div>
+<div class="callout info"><b>How this connects:</b> The packet-flow simulator shows traffic moving. This explorer shows how a packet analyzer can display that traffic for review. Everything below is preset practice data; the page does not capture live traffic.</div>
+<div class="packet-explorer" id="packetExplorer">
+  <div class="packet-toolbar">
+    <label for="packetFilter"><b>Display filter</b></label>
+    <select id="packetFilter">
+      <option value="all">Show all packets</option>
+      <option value="dns">dns</option>
+      <option value="icmp">icmp</option>
+      <option value="tcp">tcp</option>
+      <option value="tls">tls</option>
+      <option value="http">http</option>
+      <option value="target">ip.addr == 10.10.10.20</option>
+      <option value="443">tcp.port == 443</option>
+    </select>
+    <button class="btn" id="packetReset" type="button">Reset explorer</button>
+  </div>
+  <div class="packet-table-wrap">
+    <table class="packet-table">
+      <thead><tr><th>No.</th><th>Source</th><th>Destination</th><th>Protocol</th><th>Length</th><th>Info</th></tr></thead>
+      <tbody id="packetRows"></tbody>
+    </table>
+  </div>
+  <div class="detail-panel packet-detail" id="packetDetail"><h3>Select a packet</h3><p>Choose a row to see what the source, destination, protocol, port, and message mean.</p></div>
+  <div class="packet-challenge">
+    <h3>Quick investigation</h3>
+    <p>Which packet best demonstrates why an unencrypted login can expose information?</p>
+    <div class="option-row">
+      <button class="option packet-answer" data-packet-answer="7" type="button">Packet 7: TLS Server Hello</button>
+      <button class="option packet-answer" data-packet-answer="12" type="button">Packet 12: HTTP login request</button>
+      <button class="option packet-answer" data-packet-answer="9" type="button">Packet 9: ICMP echo reply</button>
+    </div>
+    <div class="feedback" id="packetChallengeFeedback" aria-live="polite"></div>
+  </div>
+</div>
+</section>
 <section class="section" id="ports">
-<div class="section-head"><span class="stepno">E</span><div><h2>Common Ports &amp; Services</h2><span>Select a port to see what it commonly supports and what defenders consider.</span></div><span class="time">Services</span></div>
+<div class="section-head"><span class="stepno">F</span><div><h2>Common Ports &amp; Services</h2><span>Select a port to see what it commonly supports and what defenders consider.</span></div><span class="time">Services</span></div>
 <div class="port-grid">
 <button class="port" data-port="20/21"><b>20/21</b>FTP</button><button class="port" data-port="22"><b>22</b>SSH</button>
 <button class="port" data-port="23"><b>23</b>Telnet</button><button class="port" data-port="25"><b>25</b>SMTP</button>
@@ -126,7 +163,7 @@
 <div class="detail-panel" id="portDetail"><h3>Select a port</h3><p>An open port means a service is listening. It does not automatically mean the system is vulnerable.</p></div>
 </section>
 <section class="section" id="words">
-<div class="section-head"><span class="stepno">F</span><div><h2>Cybersecurity Vocabulary</h2><span>Search for a word or browse the cards.</span></div><span class="time">Glossary</span></div>
+<div class="section-head"><span class="stepno">G</span><div><h2>Cybersecurity Vocabulary</h2><span>Search for a word or browse the cards.</span></div><span class="time">Glossary</span></div>
 <input class="glossary-search" id="glossarySearch" placeholder="Search reconnaissance, OSINT, hash, firewall…"/>
 <div class="term-grid">
 <div class="term"><b>Reconnaissance</b>Gathering information about a person, organization, system, or environment before or during an operation.</div>
@@ -153,7 +190,7 @@
 <div class="term"><b>Cybersecurity</b>The practice of protecting systems, networks, applications, devices, and data from unauthorized access, disruption, alteration, or destruction.</div><div class="term"><b>Network</b>Two or more connected devices that exchange data and share services or resources.</div><div class="term"><b>Zero-day</b>A newly discovered vulnerability for which defenders may have no vendor patch yet; attackers may try to exploit it before a fix is available.</div><div class="term"><b>File system</b>The structure and rules an operating system uses to name, organize, store, locate, protect, and recover files on a storage device.</div><div class="term"><b>Hacking</b>Using technical knowledge to explore, test, change, or control technology. It is ethical only when it is authorized, scoped, and used responsibly.</div></div>
 </section>
 <section class="section" id="cyberchef">
-<div class="section-head"><span class="stepno">G</span><div><h2>CyberChef: Transform and Inspect Data</h2><span>CyberChef applies operations to input and displays the result.</span></div><span class="time">Data tools</span></div>
+<div class="section-head"><span class="stepno">H</span><div><h2>CyberChef: Transform and Inspect Data</h2><span>CyberChef applies operations to input and displays the result.</span></div><span class="time">Data tools</span></div>
 <div class="flow">
 <div class="flow-step"><b>1. Operations</b>Search for a tool such as “From Base64,” “To Hex,” or “SHA2.”</div>
 <div class="flow-step"><b>2. Recipe</b>Drag the operation into the recipe area.</div>
