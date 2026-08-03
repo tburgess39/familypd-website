@@ -185,22 +185,69 @@ document.addEventListener('DOMContentLoaded',()=>FPD.init());
 (function(){
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const computerPaths={
-    data:{open:['storage','motherboard','ram','cpu','gpu'],save:['cpu','ram','motherboard','storage'],web:['nic','motherboard','ram','cpu','gpu'],video:['storage','ram','cpu','gpu']},
-    power:{open:['outlet','psu','motherboard','storage','ram','cpu','gpu'],save:['outlet','psu','motherboard','cpu','ram','storage'],web:['outlet','psu','motherboard','nic','ram','cpu','gpu'],video:['outlet','psu','motherboard','storage','ram','cpu','gpu']}
+    data:{
+      open:['storage','motherboard','ram','cpu','gpu','display'],
+      save:['input','motherboard','cpu','ram','motherboard','storage'],
+      web:['nic','motherboard','ram','cpu','gpu','display'],
+      video:['storage','motherboard','ram','cpu','gpu','display'],
+      typeA:['input','motherboard','cpu','ram','gpu','display']
+    }
   };
-  let computerMode='data', computerRun=0;
-  async function runComputer(){
-    const board=document.getElementById('computerFlowBoard'), out=document.getElementById('computerSimOutput'); if(!board||!out)return;
-    const token=++computerRun, task=document.getElementById('computerTask').value, path=computerPaths[computerMode][task];
-    board.hidden=false; out.hidden=false; board.querySelectorAll('.flow-node').forEach(n=>n.classList.remove('active','power-active'));
-    const descriptions={open:'The picture is read from storage, copied into RAM, processed by the CPU, and sent to the display.',save:'The document is created and processed, held temporarily in RAM, then written to long-term storage.',web:'The network interface receives the response, RAM holds active data, the CPU processes it, and the browser displays it.',video:'Storage supplies the media, RAM buffers it, the CPU coordinates playback, and the GPU builds the frames.'};
-    out.innerHTML='<b>Watch the highlighted path.</b> '+(computerMode==='power'?'Electrical energy is being distributed so each component can operate.':descriptions[task]);
-    for(const id of path){if(token!==computerRun)return; const node=board.querySelector('[data-node="'+id+'"]'); if(node){node.classList.add(computerMode==='power'?'power-active':'active'); node.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});} await wait(650)}
-    out.innerHTML+='<br><b>Complete:</b> '+(computerMode==='power'?'Power makes the work possible; it is not the information itself.':'The same underlying bits can represent instructions, text, image pixels, sound, addresses, or packet fields depending on context.');
+  const stepInfo={
+    data:{
+      open:{storage:['Reads the saved picture','File data begins as bytes stored on the drive.'],motherboard:['Carries the bytes on a data bus','The motherboard provides pathways between devices.'],ram:['Loads active picture data','RAM temporarily holds the bytes the program needs now.'],cpu:['Processes file instructions','The CPU interprets the file format and coordinates the work.'],gpu:['Builds the image frame','The GPU turns processed data into pixels.'],display:['Shows the picture','The display presents the completed frame.']},
+      save:{input:['Captures typed characters','The keyboard creates input signals.'],motherboard:['Carries the input','The input travels through motherboard controllers and buses.'],cpu:['Interprets the keystrokes','The CPU runs the application instructions.'],ram:['Holds the document temporarily','The active document remains in RAM while it is edited.'],storage:['Writes bytes to long-term storage','Saving keeps the file after power is removed.']},
+      web:{nic:['Receives network signals','The NIC converts incoming signals into bits and frames.'],motherboard:['Carries network data','The motherboard bus connects the NIC with memory and the CPU.'],ram:['Buffers the page data','RAM holds active packets and browser data.'],cpu:['Processes browser instructions','The CPU helps reassemble and interpret the response.'],gpu:['Renders the page','The GPU builds the visual frame.'],display:['Shows the website','The completed page appears on screen.']},
+      video:{storage:['Reads compressed video bytes','The media begins in storage.'],motherboard:['Carries the stream','Buses move groups of bits between components.'],ram:['Buffers upcoming video','RAM keeps data ready so playback stays smooth.'],cpu:['Coordinates decoding','The CPU runs instructions and may help decode the media.'],gpu:['Builds video frames','The GPU accelerates visual processing.'],display:['Plays video and sound','The display and speakers present the output.']},
+      typeA:{input:['Key A is pressed','The keyboard sends a code for the key.'],motherboard:['Carries the input signal','The signal reaches the CPU through the input controller.'],cpu:['Interprets the character','The program maps the input to the character A.'],ram:['Stores the active character','The byte 01000001 can represent A in ASCII.'],gpu:['Draws the letter','The GPU builds pixels shaped like A.'],display:['Shows A on screen','The character appears in the application.']}
+    }
+  };
+  const powerSteps=[
+    {nodes:['outlet'],title:'Wall power enters',detail:'The example starts with 120 V AC from the wall outlet.'},
+    {nodes:['psu'],title:'Power is converted',detail:'The power supply converts AC to regulated DC rails such as 12 V, 5 V, and 3.3 V.'},
+    {nodes:['motherboard'],title:'The motherboard distributes power',detail:'Power connectors and voltage-regulator circuits distribute and lower voltage where needed.'},
+    {nodes:['cpu','ram','storage','gpu','nic','input','display'],title:'Components receive power in parallel',detail:'These components do not receive power one after another. They receive appropriate rails or regulated voltages through separate paths.'}
+  ];
+  let computerMode='data', computerRun=0, computerBusy=false;
+  const nodeLabels={outlet:'Wall outlet',psu:'Power supply',motherboard:'Motherboard',input:'Keyboard / Input',storage:'Storage',ram:'RAM',cpu:'CPU',gpu:'GPU',display:'Display / Speakers',nic:'Network interface'};
+  function resetComputerBoard(){
+    const board=document.getElementById('computerFlowBoard'); if(!board)return;
+    board.querySelectorAll('.flow-node').forEach(n=>{n.classList.remove('active','power-active','completed');n.classList.add('idle-powered');const s=n.querySelector('[data-node-status]');if(s)s.textContent=n.dataset.node==='outlet'||n.dataset.node==='psu'||n.dataset.node==='motherboard'?'Powered':'Ready';});
   }
-  const start=document.getElementById('computerSimStart'); if(start)start.addEventListener('click',()=>{document.querySelector('#computerFlowSimulator .sim-controls').hidden=false; start.textContent='Run again'; runComputer()});
-  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;runComputer()}));
-  const task=document.getElementById('computerTask'); if(task)task.addEventListener('change',runComputer); const replay=document.getElementById('computerSimReplay'); if(replay)replay.addEventListener('click',runComputer);
+  function setNodeState(ids,mode,status){
+    const board=document.getElementById('computerFlowBoard');
+    ids.forEach(id=>{const n=board&&board.querySelector('[data-node="'+id+'"]');if(!n)return;n.classList.remove('idle-powered');n.classList.add(mode==='power'?'power-active':'active');const s=n.querySelector('[data-node-status]');if(s)s.textContent=status||'Active';n.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});});
+  }
+  function completeNodes(ids){
+    const board=document.getElementById('computerFlowBoard');ids.forEach(id=>{const n=board&&board.querySelector('[data-node="'+id+'"]');if(!n)return;n.classList.remove('active','power-active');n.classList.add('completed');const s=n.querySelector('[data-node-status]');if(s)s.textContent='Step complete';});
+  }
+  async function runComputer(){
+    const board=document.getElementById('computerFlowBoard'),out=document.getElementById('computerSimOutput'),status=document.getElementById('computerStepStatus'),powerReadout=document.getElementById('powerVoltageReadout'),bitReadout=document.getElementById('bitSignalReadout');if(!board||!out||computerBusy)return;
+    computerBusy=true;const token=++computerRun,task=document.getElementById('computerTask').value;
+    board.hidden=false;out.hidden=false;if(status)status.hidden=false;resetComputerBoard();
+    const steps=computerMode==='power'?powerSteps:computerPaths.data[task].map(id=>({nodes:[id],title:(stepInfo.data[task][id]||[])[0]||nodeLabels[id],detail:(stepInfo.data[task][id]||[])[1]||''}));
+    out.innerHTML='<b>Simulation running.</b> Each step completes before the next begins.';
+    for(let i=0;i<steps.length;i++){
+      if(token!==computerRun){computerBusy=false;return;}
+      const step=steps[i];setNodeState(step.nodes,computerMode,'Active now');
+      if(status)status.innerHTML='<b>Step '+(i+1)+' of '+steps.length+': '+step.title+'</b><span>'+step.detail+'</span>';
+      if(computerMode==='power'){
+        if(powerReadout)powerReadout.textContent=i===0?'Input: 120 V AC':i===1?'PSU output rails: 12 V, 5 V, and 3.3 V DC':i===2?'Motherboard regulators lower voltage for individual components.':'CPU, RAM, storage, GPU, NIC, input, and display receive suitable power through parallel paths.';
+        if(bitReadout)bitReadout.innerHTML='No data bit is being transferred in power mode. Power provides energy; it is not the information.';
+      }else{
+        if(powerReadout)powerReadout.textContent='System remains powered while this component becomes active.';
+        if(bitReadout)bitReadout.innerHTML=task==='typeA'?'Current example: <code>01000001</code> = 8 bits = 1 byte = “A”':'Data moves as groups of bits. Example byte: <code>01000001</code>.';
+      }
+      await wait(900);if(token!==computerRun){computerBusy=false;return;}completeNodes(step.nodes);await wait(250);
+    }
+    if(status)status.innerHTML='<b>Complete.</b><span>'+(computerMode==='power'?'Power was distributed in parallel after conversion and regulation.':'The highlighted components cooperated in the order shown for this simplified task.')+'</span>';
+    out.innerHTML='<b>Complete:</b> '+(computerMode==='power'?'The computer stays powered while its workload changes.':'Bits become meaningful only when hardware and software interpret them as instructions, text, image pixels, sound, addresses, or packet fields.');
+    computerBusy=false;
+  }
+  function restartComputer(){computerRun++;computerBusy=false;resetComputerBoard();runComputer();}
+  const start=document.getElementById('computerSimStart');if(start)start.addEventListener('click',()=>{document.querySelector('#computerFlowSimulator .sim-controls').hidden=false;start.textContent='Run again';restartComputer();});
+  document.querySelectorAll('[data-computer-mode]').forEach(b=>b.addEventListener('click',()=>{computerRun++;computerBusy=false;document.querySelectorAll('[data-computer-mode]').forEach(x=>x.classList.remove('active'));b.classList.add('active');computerMode=b.dataset.computerMode;restartComputer();}));
+  const task=document.getElementById('computerTask');if(task)task.addEventListener('change',restartComputer);const replay=document.getElementById('computerSimReplay');if(replay)replay.addEventListener('click',restartComputer);
 
   const packetScenarios={
     https:[

@@ -47,24 +47,68 @@
 </div>
 <div class="detail-panel" id="componentDetail"><h3>Select a component</h3><p>Hardware, software, identity, and networks work together as one system.</p></div><div class="callout info" id="insideFlow"><b>How bits move inside a computer:</b> Input devices, storage, and network interfaces send electrical signals that represent bits. The CPU interprets instructions, RAM temporarily holds active data, storage keeps data long term, and buses carry groups of bits between components. The operating system coordinates this movement so programs can open files, display images, and communicate across a network.</div>
 <div class="simulator" id="computerFlowSimulator">
-  <div class="simulator-head"><div><span class="sim-kicker">Interactive model</span><h3>Inside the Computer: Power &amp; Data Flow</h3><p>Choose a mode and a task. Follow the highlighted path to see how components work together.</p></div><button class="btn dark" id="computerSimStart" type="button">Start simulation</button></div>
+  <div class="simulator-head">
+    <div><span class="sim-kicker">Interactive model</span><h3>Inside the Computer: Power &amp; Data Flow</h3><p>Choose a mode and task, then follow each numbered step. The simulator prevents steps from overlapping so the highlighted order stays accurate.</p></div>
+    <button class="btn dark" id="computerSimStart" type="button">Start simulation</button>
+  </div>
+  <div class="sim-start-state"><b>Starting state:</b> The computer is plugged in, powered on, and idle. Dim components already have power and are ready. A bright component is active in the current step.</div>
+  <div class="sim-legend" aria-label="Simulation legend">
+    <span><i class="legend-dot idle"></i> Powered and ready</span>
+    <span><i class="legend-dot data"></i> Moving or processing data</span>
+    <span><i class="legend-dot power"></i> Receiving or distributing power</span>
+    <span><i class="legend-dot done"></i> Completed step</span>
+  </div>
   <div class="sim-controls" hidden>
-    <div class="segmented" role="group" aria-label="Computer flow mode"><button class="active" data-computer-mode="data" type="button">Data flow</button><button data-computer-mode="power" type="button">Power flow</button></div>
-    <label>Choose a task<select id="computerTask"><option value="open">Open a saved picture</option><option value="save">Type and save a document</option><option value="web">Open a website</option><option value="video">Play a video</option></select></label>
+    <div class="segmented" role="group" aria-label="Computer flow mode">
+      <button class="active" data-computer-mode="data" type="button">Data flow</button>
+      <button data-computer-mode="power" type="button">Power flow</button>
+    </div>
+    <label>Choose a task<select id="computerTask">
+      <option value="open">Open a saved picture</option>
+      <option value="save">Type and save a document</option>
+      <option value="web">Open a website</option>
+      <option value="video">Play a video</option>
+      <option value="typeA">Type the letter A</option>
+    </select></label>
     <button class="btn" id="computerSimReplay" type="button">Replay</button>
   </div>
-  <div class="flow-board" id="computerFlowBoard" aria-live="polite" hidden>
-    <div class="flow-node" data-node="outlet"><b>Wall outlet</b><span>Provides electrical energy</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="psu"><b>Power supply</b><span>Converts and distributes power</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="motherboard"><b>Motherboard</b><span>Connects components and pathways</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="storage"><b>Storage</b><span>Keeps files long term</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="ram"><b>RAM</b><span>Temporary working area</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="cpu"><b>CPU</b><span>Processes instructions</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="gpu"><b>GPU / Display</b><span>Builds what appears on screen</span></div>
-    <div class="flow-arrow">→</div><div class="flow-node" data-node="nic"><b>Network interface</b><span>Sends and receives network data</span></div>
+  <div class="computer-step-status" id="computerStepStatus" hidden><b>Ready.</b> Select Start simulation.</div>
+  <div class="flow-board computer-board" id="computerFlowBoard" aria-live="polite" hidden>
+    <div class="flow-node" data-node="outlet"><b>Wall outlet</b><span>120 V AC enters the power supply</span><small data-node-status>Powered</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="psu"><b>Power supply</b><span>Converts AC to 12 V, 5 V, and 3.3 V DC rails</span><small data-node-status>Powered</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="motherboard"><b>Motherboard</b><span>Distributes power and carries data on buses</span><small data-node-status>Powered</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="input"><b>Keyboard / Input</b><span>Creates input signals</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="storage"><b>Storage</b><span>Keeps files after power is removed</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="ram"><b>RAM</b><span>Holds active data temporarily</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="cpu"><b>CPU</b><span>Fetches, decodes, and executes instructions</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="gpu"><b>GPU</b><span>Builds image and video frames</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="display"><b>Display / Speakers</b><span>Presents visual or audio output</span><small data-node-status>Ready</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" data-node="nic"><b>Network interface</b><span>Sends and receives network signals</span><small data-node-status>Ready</small></div>
   </div>
   <div class="sim-output" id="computerSimOutput" hidden></div>
-  <div class="callout info"><b>Important:</b> Electricity powers the components. Data is represented by changing electrical states and organized as bits. Power flow and data flow are connected, but they are not the same thing.</div>
+  <div class="signal-panels">
+    <article class="signal-card"><h4>Power voltage</h4><p>Power rails provide energy to components. Common desktop rails include <b>12 V</b>, <b>5 V</b>, and <b>3.3 V</b>. Voltage regulators lower these values further for parts such as the CPU and RAM.</p><div id="powerVoltageReadout" class="readout">Idle: power is available throughout the system.</div></article>
+    <article class="signal-card"><h4>Logic voltage represents a bit</h4><p>A bit is not an amount of power. Hardware interprets a lower or higher electrical state as <b>0</b> or <b>1</b>. Exact thresholds vary, so this simplified display is for learning.</p><div class="logic-demo"><span class="logic-low">0.0 V → 0</span><span class="logic-high">1.2 V → 1</span></div><div id="bitSignalReadout" class="readout">Example byte: <code>01000001</code> = decimal 65 = “A”</div></article>
+  </div>
+  <div class="bits-bytes-bridge">
+    <h4>From voltage states to speed and storage</h4>
+    <div class="bridge-line"><b>Voltage states</b><span>→</span><b>bits</b><span>→</span><b>8 bits = 1 byte</b><span>→</span><b>bytes make files</b></div>
+    <div class="grid-3 compact-grid">
+      <div><b>Storage capacity</b><p><code>KB, MB, GB, TB</code> describe how many bytes can be stored.</p></div>
+      <div><b>Transfer speed</b><p><code>Mb/s</code> and <code>Gb/s</code> describe how many bits move each second.</p></div>
+      <div><b>Uppercase matters</b><p><code>b</code> = bit; <code>B</code> = byte. Example: 800 Mb/s ÷ 8 ≈ 100 MB/s.</p></div>
+    </div>
+  </div>
+  <div class="callout info"><b>Important:</b> Electricity powers the components. Data is represented by changing electrical states organized as bits. Power and data are connected, but they are not the same thing.</div>
 </div>
 </section>
 <section class="section" id="numbers">
