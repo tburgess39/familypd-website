@@ -20,14 +20,20 @@ const FPD = (() => {
 
   function initSingleChoiceQuiz(root=document) {
     const salt = document.querySelector('meta[name="fpd-quiz-salt"]')?.content || '';
-    $$('.question[data-answer-hash]', root).forEach(q => {
+    $$('.question[data-answer-hash], .question[data-correct-choice]', root).forEach(q => {
       $$('.option', q).forEach(btn => {
         btn.addEventListener('click', async () => {
           if (q.dataset.locked === '1' || q.dataset.checking === '1') return;
           q.dataset.checking = '1';
-          const qid = q.dataset.questionId || '';
-          const candidate = await sha256(`${salt}|${qid}|${btn.dataset.choice || ''}`);
-          const correct = candidate === q.dataset.answerHash;
+          const selectedChoice = btn.dataset.choice || '';
+          let correct = false;
+          if (q.dataset.correctChoice) {
+            correct = selectedChoice === q.dataset.correctChoice;
+          } else {
+            const qid = q.dataset.questionId || '';
+            const candidate = await sha256(`${salt}|${qid}|${selectedChoice}`);
+            correct = candidate === q.dataset.answerHash;
+          }
           const feedback = $('.feedback', q);
           $$('.option', q).forEach(x => x.classList.remove('correct','incorrect'));
           btn.classList.add(correct ? 'correct' : 'incorrect');
@@ -37,7 +43,10 @@ const FPD = (() => {
             feedback.textContent = q.dataset.correctFeedback || 'Correct.';
             feedback.className = 'feedback good';
           } else {
-            feedback.textContent = btn.dataset.feedback || q.dataset.wrongFeedback || 'Look again at the clue.';
+            const correctButton = q.querySelector(`.option[data-choice="${CSS.escape(q.dataset.correctChoice || '')}"]`);
+            const answerText = correctButton ? correctButton.textContent.trim() : '';
+            const explanation = btn.dataset.feedback || q.dataset.wrongFeedback || 'Review the clue and try again.';
+            feedback.textContent = answerText ? `Not quite. ${explanation} Correct answer: ${answerText}.` : `Not quite. ${explanation}`;
             feedback.className = 'feedback try';
           }
           q.dataset.checking = '0';
@@ -48,15 +57,15 @@ const FPD = (() => {
   }
 
   function updateScore(root=document) {
-    const questions = $$('.question[data-answer-hash]', root);
+    const questions = $$('.question[data-answer-hash], .question[data-correct-choice]', root);
     if (!questions.length) return;
     const answered = questions.filter(q => q.dataset.locked === '1').length;
     const score = $('.score', root);
-    if (score) score.textContent = `Answers revealed: ${answered} / ${questions.length}`;
+    if (score) score.textContent = `Completed: ${answered} / ${questions.length}`;
   }
 
   function resetQuiz(root=document) {
-    $$('.question[data-answer-hash]', root).forEach(q => {
+    $$('.question[data-answer-hash], .question[data-correct-choice]', root).forEach(q => {
       q.dataset.locked = '0'; q.dataset.checking = '0';
       $$('.option', q).forEach(x => { x.disabled = false; x.classList.remove('correct','incorrect'); });
       const f = $('.feedback', q);
