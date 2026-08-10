@@ -6367,3 +6367,13 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
   .pgs-contact-link-group{grid-template-columns:1fr;padding:17px}
   .pgs-contact-resource-card{min-height:0}
 }
+
+/* FamilyPD homepage readability refinement - 2026-08-09 */
+body.home-page {
+  --muted: #000000;
+}
+
+body.home-page .hero h1 {
+  font-size: clamp(2.35rem, 6vw, 4.45rem);
+  line-height: 1.08;
+}
