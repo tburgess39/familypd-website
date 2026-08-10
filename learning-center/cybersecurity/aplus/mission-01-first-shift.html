@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Work your first IT support shift while learning the technician role and troubleshooting methodology used in CompTIA A+ preparation." name="description"/>
+<title>Mission 01: Your First Shift | FamilyPD A+</title>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.mission-shell{max-width:1000px;margin:auto}
+.mission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.mission-card,.ticket{background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.2rem;box-shadow:0 8px 22px rgba(15,48,74,.05)}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.6rem;margin:1rem 0}
+.steps div{background:#fff;border:2px solid #9fc4cb;border-radius:14px;padding:.8rem .4rem;text-align:center;font-weight:900;color:#163f61}
+.ticket{margin:1rem 0}
+.ticket-head{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.priority{border-radius:999px;padding:.25rem .6rem;font-size:.8rem;font-weight:900;background:#fff1c7;color:#795400}
+.choices{display:grid;gap:.65rem;margin-top:1rem}
+.choice{font:inherit;text-align:left;background:#fff;border:2px solid #c9d9e5;border-radius:12px;padding:.8rem 1rem;cursor:pointer}
+.choice:hover{border-color:#2d7f83;background:#f4fbfb}
+.choice.correct{border-color:#2f7d32;background:#edf8ee}
+.choice.wrong{border-color:#b23a3a;background:#fff0f0}
+.feedback{display:none;margin-top:.7rem;border-radius:12px;padding:.8rem 1rem;background:#f4f8fa}
+.feedback.show{display:block}
+.score{background:#071c2c;color:#fff;border-radius:18px;padding:1rem 1.2rem}
+.score strong{color:#fff}
+.progress{height:12px;background:rgba(255,255,255,.18);border-radius:999px;overflow:hidden;margin-top:.6rem}
+.progress span{display:block;height:100%;width:0;background:#62d5db}
+.mission-complete{display:none;background:#eaf7eb;border-left:5px solid #3b8b40;border-radius:14px;padding:1rem;margin-top:1rem}
+.mission-complete.show{display:block}
+.source-box{background:#f4f8fa;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.2rem}
+@media(max-width:760px){.mission-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
+<main id="main-content">
+<section class="page-hero"><div class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 01</span></nav>
+<p class="eyebrow">CompTIA A+ • Mission 01</p>
+<h1>Your First Shift</h1>
+<p class="page-lead"><strong>Role:</strong> Junior IT Support Specialist. You are three minutes into your first shift when the first ticket arrives. Your job is not to randomly try fixes. Ask, observe, test, verify, and document.</p>
+<div class="cyber-jump"><a class="button" href="#briefing">Begin mission</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-technician-case-file.html">Open the Technician Case File</a></div>
+</div></section>
+
+<section class="section" id="briefing"><div class="container mission-shell">
+<div class="section-heading"><p class="eyebrow">Mission briefing</p><h2>What does an IT specialist do?</h2><p>The job changes from ticket to ticket, but strong technicians rely on the same core habits.</p></div>
+<div class="mission-grid">
+<article class="mission-card"><h3>Problem solving</h3><p>Identify what is actually wrong, gather evidence, isolate causes, and choose an appropriate response.</p></article>
+<article class="mission-card"><h3>Communication</h3><p>Listen carefully, ask useful questions, explain clearly, and document information so others can understand it.</p></article>
+<article class="mission-card"><h3>Organization</h3><p>Keep tools, parts, notes, and work areas organized so support work can be performed safely and efficiently.</p></article>
+<article class="mission-card"><h3>Technical knowledge</h3><p>Build broad knowledge across hardware, software, operating systems, networking, cloud technologies, security, and troubleshooting.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container mission-shell">
+<div class="section-heading"><p class="eyebrow">Technician method</p><h2>Use a consistent troubleshooting process.</h2><p>The instructor-provided CompTIA Module 1 material teaches a repeatable best-practice methodology for approaching unfamiliar problems.</p></div>
+<div class="steps"><div>1<br/>Identify</div><div>2<br/>Theory</div><div>3<br/>Test</div><div>4<br/>Plan &amp; Fix</div><div>5<br/>Verify</div><div>6<br/>Document</div></div>
+<div class="mission-grid">
+<article class="mission-card"><h3>Identify the problem</h3><p>Gather exact symptoms and error messages. Ask who is affected, when it began, and what changed recently. Protect important data before risky repair work.</p></article>
+<article class="mission-card"><h3>Establish a theory</h3><p>Inspect the system, reproduce the issue when appropriate, consult documentation, and consider likely causes—including obvious ones.</p></article>
+<article class="mission-card"><h3>Test the theory</h3><p>Test one theory at a time so the evidence can confirm or reject your cause. If needed, create a new theory or escalate.</p></article>
+<article class="mission-card"><h3>Plan and implement</h3><p>Choose an authorized repair, replacement, or workaround. Consider policy, warranty, cost, risk, and the effect on the user.</p></article>
+<article class="mission-card"><h3>Verify functionality</h3><p>Confirm the original issue is resolved and the system is fully functional. Apply sensible preventive measures when appropriate.</p></article>
+<article class="mission-card"><h3>Document</h3><p>Record findings, actions, outcomes, tools or parts used, and lessons learned so the work can be understood later.</p></article>
+</div>
+<aside class="cyber-disclaimer" style="margin-top:1rem"><h2>Question the obvious.</h2><p>Power, cables, input sources, Wi-Fi switches, airplane mode, muted audio, and simple settings can create symptoms that look much more serious. Check simple, safe causes before replacing major hardware.</p></aside>
+</div></section>
+
+<section class="section"><div class="container mission-shell">
+<div class="section-heading"><p class="eyebrow">Support queue</p><h2>Choose the BEST next action.</h2><p>After each choice, explain your reasoning on the Technician Case File.</p></div>
+<div class="score"><strong>Ticket score: <span id="score">0 / 0</span></strong><div class="progress"><span id="progress"></span></div></div>
+
+<div class="ticket" data-answer="b">
+<div class="ticket-head"><h3>Ticket 001 — “The monitor is dead!”</h3><span class="priority">MEDIUM</span></div>
+<p>A teacher reports a completely black monitor. The desktop tower appears to be running.</p>
+<div class="choices">
+<button class="choice" data-choice="a">Replace the monitor immediately.</button>
+<button class="choice" data-choice="b">Ask what happened, then check monitor power, cable, and input source.</button>
+<button class="choice" data-choice="c">Reinstall Windows.</button>
+<button class="choice" data-choice="d">Replace the motherboard.</button>
+</div><div class="feedback">Start with evidence and simple physical checks before replacing hardware.</div></div>
+
+<div class="ticket" data-answer="c">
+<div class="ticket-head"><h3>Ticket 002 — “The internet is down!”</h3><span class="priority">HIGH</span></div>
+<p>One employee cannot reach a website. Nearby employees are working normally.</p>
+<div class="choices">
+<button class="choice" data-choice="a">Restart the company router.</button>
+<button class="choice" data-choice="b">Call the ISP and report an outage.</button>
+<button class="choice" data-choice="c">Check the affected computer's link/Wi-Fi status and IP configuration.</button>
+<button class="choice" data-choice="d">Replace the network switch.</button>
+</div><div class="feedback">Because other users are working, isolate the problem to the affected client before assuming a network-wide outage.</div></div>
+
+<div class="ticket" data-answer="a">
+<div class="ticket-head"><h3>Ticket 003 — “It became slow this morning.”</h3><span class="priority">LOW</span></div>
+<p>The PC was fine yesterday. The user installed a new application before leaving.</p>
+<div class="choices">
+<button class="choice" data-choice="a">Investigate the new application's startup/background activity and system resource use.</button>
+<button class="choice" data-choice="b">Replace the CPU.</button>
+<button class="choice" data-choice="c">Format the drive.</button>
+<button class="choice" data-choice="d">Ignore the recent change.</button>
+</div><div class="feedback">Recent changes are useful evidence. Test the most relevant theory before making unrelated changes.</div></div>
+
+<div class="ticket" data-answer="d">
+<div class="ticket-head"><h3>Ticket 004 — “Nothing prints.”</h3><span class="priority">MEDIUM</span></div>
+<p>A user clicks Print, but no page appears. Other applications work normally.</p>
+<div class="choices">
+<button class="choice" data-choice="a">Buy a new printer.</button>
+<button class="choice" data-choice="b">Reinstall the operating system.</button>
+<button class="choice" data-choice="c">Replace the user's RAM.</button>
+<button class="choice" data-choice="d">Check printer power/status, connection, selected printer, and print queue.</button>
+</div><div class="feedback">Isolate whether the issue is the printer, connection, queue/service, or configuration before replacing anything.</div></div>
+
+<div class="ticket" data-answer="b">
+<div class="ticket-head"><h3>Ticket 005 — Authorization Required</h3><span class="priority">HIGH</span></div>
+<p>You identify a failed component in a device that is under vendor warranty. Company policy says only the vendor may open it.</p>
+<div class="choices">
+<button class="choice" data-choice="a">Open it anyway because you know how.</button>
+<button class="choice" data-choice="b">Document your findings and follow the warranty/escalation process.</button>
+<button class="choice" data-choice="c">Ask the user to open it for you.</button>
+<button class="choice" data-choice="d">Hide the problem.</button>
+</div><div class="feedback">A professional technician respects authorization, company policy, warranty, and escalation boundaries.</div></div>
+
+<div class="mission-complete" id="missionComplete"><h3>Queue complete.</h3><p>Your score: <strong id="finalScore"></strong>. Now finish the Technician Case File by explaining why each action belonged at that point in the troubleshooting process.</p><a class="button" href="/learning-center/cybersecurity/aplus/mission-01-technician-case-file.html">Open the Case File</a></div>
+</div></section>
+
+<section class="section"><div class="container mission-shell">
+<div class="source-box"><h2>Sources, alignment &amp; credit</h2>
+<p><strong>Primary source used for this lesson:</strong> instructor-provided CompTIA A+ 220-1201 Module 1 materials, including “What Does an IT Specialist Do?” and “The Troubleshooting Methodology,” © CompTIA, Inc.</p>
+<p><strong>Certification alignment:</strong> CompTIA A+ Core 1 (220-1201) V15 Exam Objectives and Core 2 (220-1202) V15 Exam Objectives.</p>
+<p>This page uses independently written FamilyPD explanations, scenarios, interface design, and practice questions. It does not reproduce CompTIA exam questions or the supplied presentation slides.</p>
+<p>CompTIA and A+ are trademarks of CompTIA, Inc. Family Personal Development, Inc. is not affiliated with or endorsed by CompTIA unless expressly stated.</p></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+(function(){
+  var tickets=document.querySelectorAll('.ticket[data-answer]'), answered=0, correct=0;
+  var score=document.getElementById('score'), progress=document.getElementById('progress');
+  tickets.forEach(function(ticket){
+    ticket.querySelectorAll('.choice').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        if(ticket.dataset.done==='1') return;
+        ticket.dataset.done='1';
+        var ok=btn.dataset.choice===ticket.dataset.answer;
+        btn.classList.add(ok?'correct':'wrong');
+        if(!ok){
+          var right=ticket.querySelector('[data-choice="'+ticket.dataset.answer+'"]');
+          if(right) right.classList.add('correct');
+        }
+        ticket.querySelectorAll('.choice').forEach(function(b){b.disabled=true;});
+        ticket.querySelector('.feedback').classList.add('show');
+        answered++; if(ok) correct++;
+        score.textContent=correct+' / '+answered;
+        progress.style.width=((answered/tickets.length)*100)+'%';
+        if(answered===tickets.length){
+          document.getElementById('finalScore').textContent=correct+' / '+tickets.length;
+          document.getElementById('missionComplete').classList.add('show');
+        }
+      });
+    });
+  });
+})();
+</script>
+</body></html>
