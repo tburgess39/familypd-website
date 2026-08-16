@@ -3,35 +3,29 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="Build a practical CompTIA A+ study system with an interactive notebook, scenario-based practice, certification-aligned learning tools, and trusted outside resources." name="description"/>
-<title>CompTIA A+ Study Hub | FamilyPD Cybersecurity</title>
+<meta content="Explore FamilyPD's independent CompTIA A+ learning path with interactive lessons, technician scenarios, field-guide activities, and certification-aligned review." name="description"/>
+<title>CompTIA A+ Learning Path | FamilyPD Cybersecurity</title>
 <link href="/assets/images/favicon.ico" rel="icon"/>
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 <style>
 .aplus-shell{max-width:1120px;margin:auto}
+.aplus-jump{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.2rem}
 .aplus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-.aplus-card{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:20px;padding:1.25rem;box-shadow:0 9px 24px rgba(15,48,74,.06)}
-.aplus-card h3{margin:.25rem 0 .55rem;color:#163f61}.aplus-card p{margin:.2rem 0 .9rem}
-.aplus-label{display:inline-flex;background:#e9f4f4;color:#15535b;border-radius:999px;padding:.34rem .65rem;font-size:.8rem;font-weight:800}
-.aplus-callout{background:#071c2c;color:#fff;border-radius:22px;padding:1.4rem}.aplus-callout h2,.aplus-callout h3{color:#fff}
-.aplus-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem}
-.notebook-spread{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.25rem 0}
-.notebook-page{position:relative;background:#fffdf7;border:1px solid #c8bfae;border-radius:10px;min-height:410px;padding:1.1rem 1.1rem 1.1rem 2.45rem;box-shadow:0 10px 22px rgba(60,45,20,.08);overflow:hidden}
-.notebook-page:before{content:"";position:absolute;left:1.25rem;top:0;bottom:0;border-left:2px solid #edb5b5}
-.rule{height:1px;background:#b9d1e3;margin:1.15rem 0}
-.sketch{display:grid;place-items:center;border:2px solid #163f61;border-radius:12px;min-height:120px;font-size:3.8rem;background:#fff}
-.note-chip{display:inline-block;border:1px solid #163f61;border-radius:8px;padding:.3rem .55rem;margin:.2rem .15rem .2rem 0;font-size:.85rem;font-weight:700}
-.exam-tip{border-left:5px solid #d39222;background:#fff7df;border-radius:12px;padding:.9rem 1rem;margin:.85rem 0}
-.pbq-tip{border-left:5px solid #2d7f83;background:#eff8f7;border-radius:12px;padding:.9rem 1rem;margin:.85rem 0}
-.spacebar{display:flex;height:52px;border-radius:12px;overflow:hidden;border:1px solid rgba(15,48,74,.18);margin:.8rem 0}
-.spacebar span{display:flex;align-items:center;justify-content:center;text-align:center;padding:.25rem;font-size:.72rem;font-weight:900;color:#fff}
-.m1{width:13%;background:#337a9e}.m2{width:23%;background:#28658e}.m3{width:25%;background:#174d79}.m4{width:11%;background:#4b8f91}.m5{width:28%;background:#0e3b60}
-.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1rem}
-.checkitem{display:flex;gap:.55rem;align-items:flex-start;background:#fff;border:1px solid rgba(15,48,74,.12);border-radius:12px;padding:.75rem}
-.checkdot{flex:0 0 22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:#fff;font-weight:900}
-.sourcebox{background:#f4f8fa;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.15rem}
-@media(max-width:850px){.aplus-grid{grid-template-columns:1fr 1fr}.notebook-spread{grid-template-columns:1fr}}
-@media(max-width:620px){.aplus-grid,.checklist{grid-template-columns:1fr}.spacebar{height:auto;display:block}.spacebar span{width:100%!important;min-height:38px}}
+.aplus-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:20px;padding:1.3rem;box-shadow:0 10px 28px rgba(15,48,74,.06)}
+.aplus-card h3{margin:.35rem 0 .55rem}
+.aplus-card p{margin:0 0 1rem}
+.aplus-card .button{margin-top:auto;align-self:flex-start}
+.aplus-label{display:inline-flex;align-self:flex-start;background:#eaf5f5;color:#15535b;border-radius:999px;padding:.35rem .7rem;font-size:.82rem;font-weight:800}
+.aplus-domain-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem}
+.aplus-domain{background:#fff;border-left:5px solid #2d7f83;border-radius:16px;padding:1rem;box-shadow:0 8px 22px rgba(15,48,74,.05)}
+.aplus-domain h3{font-size:1rem;margin:.1rem 0 .35rem}
+.aplus-domain .weight{font-weight:900;color:#2d7f83}
+.aplus-method{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.aplus-method article{background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.1rem}
+.aplus-sources{background:#f4f8fa;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.2rem}
+.aplus-missions-first{padding-top:1.5rem;padding-bottom:1.5rem}.aplus-missions-first .section-heading{margin-bottom:1rem}.aplus-coming{padding:1rem}.aplus-coming h3{font-size:1.15rem;line-height:1.2}.aplus-coming p{font-size:.96rem;line-height:1.45;margin-bottom:0}.aplus-method-compact{padding-top:.8rem;padding-bottom:.8rem}.aplus-method-compact .aplus-method article{padding:.8rem 1rem}.aplus-method-compact .aplus-method p{font-size:.92rem;line-height:1.35;margin:.25rem 0 0}@media(max-width:650px){.aplus-missions-first{padding-top:1rem;padding-bottom:1rem}.aplus-card{padding:1rem}.aplus-card h3,.aplus-card h2{font-size:1.2rem;line-height:1.2}.aplus-card p{font-size:.96rem;line-height:1.45}.aplus-label{font-size:.76rem}.aplus-method-compact .aplus-method{gap:.55rem}}
+@media(max-width:950px){.aplus-domain-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.aplus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.aplus-grid,.aplus-domain-grid,.aplus-method{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="learning-center-page">
@@ -41,85 +35,65 @@
 <section class="page-hero"><div class="container">
 <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><span>CompTIA A+</span></nav>
 <p class="eyebrow">Cybersecurity • Certification Preparation</p>
-<h1>CompTIA A+: build a study system, not a pile of notes.</h1>
-<p class="page-lead">A+ covers a large amount of technical information, but certification questions ask you to use that information in context. Learn the facts you must remember, connect them to pictures and real equipment, then practice choosing the BEST or NEXT action in realistic technician scenarios.</p>
-<div class="aplus-actions"><a class="button" href="#notebook">Build your notebook</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice questions</a></div>
+<h1>CompTIA A+ Learning Path</h1>
+<p class="page-lead">Learn how computers, devices, networks, operating systems, security controls, and support procedures work—then practice thinking like an IT technician. This independent FamilyPD learning path is designed to support preparation for the CompTIA A+ Core 1 (220-1201) and Core 2 (220-1202) exams.</p>
+<div class="aplus-jump"><a class="button" href="#missions">Start learning</a><a class="button button-secondary" href="#roadmap">View the certification roadmap</a></div>
 </div></section>
 
-<section class="section compact-info-section"><div class="container aplus-shell">
-<div class="aplus-callout"><p class="eyebrow">The ultimate purpose</p><h2>Your notebook is a memory tool, not a transcript.</h2>
-<p>If you try to write every sentence you hear, you create a smaller textbook that is difficult to review. Instead, capture the information that helps you <strong>recognize, compare, troubleshoot, and make decisions</strong>: a clear picture, a short definition, the important differences, a memory trick when needed, and one scenario clue that tells you when the concept matters.</p>
-<p><strong>A picture really can be worth a thousand words:</strong> one labeled motherboard image can remind you where RAM, PCIe, M.2, CPU power, SATA, and the CPU socket belong much faster than six paragraphs of copied notes.</p></div>
-</div></section>
-
-<section class="section" id="notebook"><div class="container aplus-shell">
-<div class="section-heading"><p class="eyebrow">Interactive notebook</p><h2>What an effective A+ notebook page should look like.</h2><p>Use this as a model—not a rigid template. Every page should answer: <strong>What is it? What does it look like? Why does it matter? How could the exam place it inside a scenario?</strong></p></div>
-<div class="notebook-spread">
-<div class="notebook-page">
-<span class="aplus-label">Example page</span>
-<h3>RAM: Working Memory</h3>
-<div class="sketch" aria-label="Simple memory module illustration">▰▰▰▰</div>
-<div class="rule"></div>
-<p><strong>One-sentence idea:</strong> RAM holds the data and instructions the CPU is actively using; it is volatile.</p>
-<span class="note-chip">DIMM = desktop</span><span class="note-chip">SODIMM = laptop</span><span class="note-chip">DDR generations differ</span>
-<div class="exam-tip"><strong>Memory trick:</strong> RAM = the computer's active workspace. More workspace can help when many programs are open.</div>
-<div class="pbq-tip"><strong>Scenario clue:</strong> A user needs to run more applications simultaneously. What component upgrade is most directly relevant?</div>
-</div>
-<div class="notebook-page">
-<span class="aplus-label">Example page</span>
-<h3>Ports: Learn the Pattern</h3>
-<div class="sketch" aria-label="Cable and network symbol illustration">🔌 ↔ 🖥</div>
-<div class="rule"></div>
-<p><strong>Do not copy a paragraph for every port.</strong> Build a compact retrieval system.</p>
-<span class="note-chip">22 → SSH</span><span class="note-chip">53 → DNS</span><span class="note-chip">80 → HTTP</span><span class="note-chip">443 → HTTPS</span>
-<p><strong>What must be memorized?</strong> The number/name association.</p>
-<div class="pbq-tip"><strong>What must be applied?</strong> If secure remote command-line administration is required, recognize why SSH is appropriate instead of Telnet.</div>
-<div class="exam-tip"><strong>Practice:</strong> cover the labels, redraw the four relationships from memory, then answer a scenario.</div>
-</div>
-</div>
-</div></section>
-
-<section class="section section-tinted"><div class="container aplus-shell">
-<div class="section-heading"><p class="eyebrow">Use space intentionally</p><h2>Your notebook should roughly reflect the exam—not your favorite topic.</h2></div>
-<p>For Core 1, Mobile Devices represents <strong>13%</strong> of the exam, while Hardware &amp; Network Troubleshooting represents <strong>28%</strong>. Giving half of your Core 1 notebook to mobile devices would leave too little room for the topics the exam emphasizes more heavily. The goal is proportional coverage, while allowing related concepts to share pages. </p>
-<div class="spacebar" aria-label="Core 1 domain weighting visual">
-<span class="m1">Mobile<br>13%</span><span class="m2">Networking<br>23%</span><span class="m3">Hardware<br>25%</span><span class="m4">Cloud<br>11%</span><span class="m5">Troubleshooting<br>28%</span>
-</div>
+<section class="section section-tinted aplus-missions-first" id="missions"><div class="container aplus-shell">
+<div class="section-heading"><p class="eyebrow">Start here • Interactive missions</p><h2>Continue with the missions you already know.</h2><p>Mission 01 and Mission 02 stay at the top so returning learners can get back to work without hunting through the page.</p></div>
 <div class="aplus-grid">
-<div class="aplus-card"><span class="aplus-label">If Core 1 uses ~25 pages</span><h3>Example space budget</h3><p><strong>3</strong> Mobile • <strong>5–6</strong> Networking • <strong>6</strong> Hardware • <strong>2–3</strong> Virtualization/Cloud • <strong>7</strong> Troubleshooting.</p><p class="small">This is a planning example, not a required page count. A strong page can serve more than one objective.</p></div>
-<div class="aplus-card"><span class="aplus-label">Avoid this</span><h3>50% of the book on one small domain</h3><p>Extra notes do not automatically create extra readiness. If a section keeps growing, ask whether you are recording useful distinctions and scenarios—or simply copying information you can already look up.</p></div>
-<div class="aplus-card"><span class="aplus-label">Do this instead</span><h3>Use high-value representations</h3><p>Diagrams, connector sketches, mini comparison charts, troubleshooting trees, symptoms → cause → action patterns, flash flaps, and short scenario notes often produce better recall than copied paragraphs.</p></div>
+<article class="aplus-card"><span class="aplus-label">Mission 01 • Available</span><h3>Your First Shift</h3><p>Learn what an IT specialist does, practice the troubleshooting methodology, and work a queue of realistic support tickets.</p><a class="button" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Start Mission 01</a></article>
+<article class="aplus-card"><span class="aplus-label">Mission 02 • Available</span><h3>Inside the Machine</h3><p>Investigate power versus data, volts/amps/watts, motherboard components, CPU, RAM, storage, bits and bytes, and safe hardware handling.</p><a class="button" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Start Mission 02</a></article>
+<article class="aplus-card aplus-coming"><span class="aplus-label">Coming next</span><h3>Memory &amp; Storage</h3><p>Compare RAM, HDD, SATA SSD, NVMe, RAID, and the symptoms technicians use to diagnose problems.</p></article>
+</div>
+</div></section>
+
+<section class="section compact-info-section aplus-method-compact"><div class="container aplus-shell">
+<div class="aplus-method">
+<article><strong>Learn</strong><p>Clear explanations, visuals, examples, and memory connections.</p></article>
+<article><strong>Practice</strong><p>Realistic technician scenarios and troubleshooting decisions.</p></article>
+<article><strong>Build</strong><p>Add useful pieces to your interactive A+ study notebook.</p></article>
+<article><strong>Review</strong><p>Use certification-aligned checks and mixed practice.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted" id="roadmap"><div class="container aplus-shell">
+<div class="section-heading"><p class="eyebrow">Core 1 • 220-1201</p><h2>Build the hardware and networking foundation first.</h2><p>The current Core 1 exam is organized into five domains.</p></div>
+<div class="aplus-domain-grid">
+<article class="aplus-domain"><span class="weight">13%</span><h3>Mobile Devices</h3><p>Hardware, accessories, connectivity, synchronization, support.</p></article>
+<article class="aplus-domain"><span class="weight">23%</span><h3>Networking</h3><p>Ports, protocols, Wi-Fi, services, SOHO networks, tools.</p></article>
+<article class="aplus-domain"><span class="weight">25%</span><h3>Hardware</h3><p>Displays, cables, RAM, storage, motherboards, power, printers.</p></article>
+<article class="aplus-domain"><span class="weight">11%</span><h3>Virtualization &amp; Cloud</h3><p>VMs, hypervisors, containers, cloud models and characteristics.</p></article>
+<article class="aplus-domain"><span class="weight">28%</span><h3>Troubleshooting</h3><p>Hardware, storage, displays, mobile, network, and printer issues.</p></article>
 </div>
 </div></section>
 
 <section class="section"><div class="container aplus-shell">
-<div class="section-heading"><p class="eyebrow">Practice-question alignment</p><h2>Every concept should prepare you for a decision.</h2><p>A+ includes multiple-choice and performance-based questions. When you learn a concept, do not stop at “What is it?” Add the exam-thinking layer below.</p></div>
-<div class="checklist">
-<div class="checkitem"><span class="checkdot">1</span><div><strong>Recognize it.</strong><br/>Can I identify the component, command, protocol, symptom, or setting from a picture or description?</div></div>
-<div class="checkitem"><span class="checkdot">2</span><div><strong>Compare it.</strong><br/>Can I explain why one technology is the better choice than another in a specific situation?</div></div>
-<div class="checkitem"><span class="checkdot">3</span><div><strong>Troubleshoot it.</strong><br/>If it fails, what symptom would I see and what evidence should I collect first?</div></div>
-<div class="checkitem"><span class="checkdot">4</span><div><strong>Choose the NEXT/BEST action.</strong><br/>Can I avoid jumping to a destructive, expensive, or out-of-scope solution?</div></div>
-<div class="checkitem"><span class="checkdot">5</span><div><strong>Perform it.</strong><br/>Could I put steps in order, match parts, configure a basic setting, or interpret a help-desk ticket?</div></div>
-<div class="checkitem"><span class="checkdot">6</span><div><strong>Memorize what really requires memory.</strong><br/>Ports, acronyms, connector identities, command purposes, and other fixed associations still need retrieval practice.</div></div>
-</div>
-<div class="pbq-tip"><strong>Notebook habit:</strong> finish each topic with a tiny box labeled <em>How could A+ ask this?</em> Write one scenario prompt—not the answer. Later, use that prompt to quiz yourself.</div>
-</div></section>
-
-<section class="section section-tinted"><div class="container aplus-shell">
-<div class="section-heading"><p class="eyebrow">Explore &amp; learn more</p><h2>Use several learning tools—not just one source.</h2></div>
+<div class="section-heading"><p class="eyebrow">Core 2 • 220-1202</p><h2>Then move into systems, security, and support operations.</h2></div>
 <div class="aplus-grid">
-<div class="aplus-card"><span class="aplus-label">Interactive exploration</span><h3>WCTA Cyber Apps</h3><p>West Career and Technical Academy Cybersecurity has created a collection of web-based learning apps. Use the apps as supplemental exploration: interact with a concept, test what you notice, then connect the experience back to your notebook and A+ objectives.</p><a class="button" href="https://apps.wctacyber.org/" target="_blank" rel="noopener noreferrer">Open WCTA Cyber Apps</a><p class="small"><strong>Credit:</strong> External learning applications are provided by WCTA Cyber. FamilyPD links to the original Apps site rather than presenting the tools as FamilyPD-created resources.</p></div>
-<div class="aplus-card"><span class="aplus-label">Scenario practice</span><h3>FamilyPD A+ Practice Lab</h3><p>Work original questions written around the current A+ objectives. Each explanation focuses on the clue, why the best answer fits, and why tempting alternatives do not.</p><a class="button" href="/learning-center/cybersecurity/aplus/practice-questions.html">Open practice questions</a></div>
-<div class="aplus-card"><span class="aplus-label">Outside practice</span><h3>Use reputable question banks</h3><p>Use outside questions to find weak areas, not to memorize answer patterns. Always verify that a resource is aligned to the current <strong>220-1201 / 220-1202</strong> exam series.</p><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html#external">View practice resources</a></div>
+<article class="aplus-card"><span class="aplus-label">28%</span><h3>Operating Systems</h3><p>Windows, Linux, macOS, installations, settings, tools, commands, networking, and applications.</p></article>
+<article class="aplus-card"><span class="aplus-label">28%</span><h3>Security</h3><p>Physical and logical controls, hardening, malware, social engineering, wireless security, and data protection.</p></article>
+<article class="aplus-card"><span class="aplus-label">23%</span><h3>Software Troubleshooting</h3><p>Windows, mobile OS, application, and security troubleshooting scenarios.</p></article>
+<article class="aplus-card"><span class="aplus-label">21%</span><h3>Operational Procedures</h3><p>Documentation, change management, backup, safety, professionalism, scripting, remote access, and AI concepts.</p></article>
 </div>
 </div></section>
 
-<section class="section"><div class="container aplus-shell"><div class="sourcebox">
-<h2>Certification alignment &amp; credit</h2>
-<p>FamilyPD independently develops its explanations, examples, notebook strategies, and original practice questions to support learning. CompTIA A+ exam objectives are used as the certification-alignment framework. CompTIA and A+ are trademarks of CompTIA, Inc.; FamilyPD is not affiliated with or endorsed by CompTIA.</p>
-<p>CompTIA's current objectives state that A+ candidates pass Core 1 (220-1201) and Core 2 (220-1202), and describe job-role skills including installation/configuration, networking basics, cybersecurity methods, troubleshooting, documentation, customer support, scripting, cloud, virtualization, and multi-OS environments.</p>
-<p>Do not use unauthorized exam dumps. Practice should teach concepts and decision-making rather than reproduce protected live exam content.</p>
-</div></div></section>
+<section class="section"><div class="container aplus-shell">
+<div class="aplus-grid">
+<article class="aplus-card"><span class="aplus-label">Study companion</span><h2>Build an A+ Interactive Notebook</h2><p>Turn each mission into a study tool you can reuse later. Print FamilyPD images, draw your own, use accurate cutouts, add safe cable samples, and build flaps, pockets, sliders, and mini-books that help you quiz yourself.</p><a class="button" href="/learning/a-plus-interactive-notebook.html">Build the A+ notebook</a></article>
+<article class="aplus-card"><span class="aplus-label">Hands-on build</span><h2>Build, Understand &amp; Use a Raspberry Pi 5</h2><p>Use a real single-board computer to connect A+ concepts: power, cooling, storage, ports, operating systems, Linux, networking, command-line tools, troubleshooting, and documentation.</p><a class="button" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Open the Raspberry Pi 5 lab</a></article>
+</div>
+</div></section>
+
+<section class="section"><div class="container aplus-shell">
+<div class="aplus-sources">
+<h2>Certification alignment, sources &amp; credit</h2>
+<p>This independent FamilyPD educational resource supports preparation for CompTIA A+. CompTIA and A+ are trademarks of CompTIA, Inc. Family Personal Development, Inc. is not affiliated with or endorsed by CompTIA unless expressly stated.</p>
+<p><strong>Primary alignment sources used for this page:</strong> CompTIA A+ Core 1 (220-1201) V15 Exam Objectives, CompTIA A+ Core 2 (220-1202) V15 Exam Objectives, and instructor-provided CompTIA A+ Module 1 instructional materials. FamilyPD explanations, scenarios, activities, and page design are independently created for teaching and study.</p>
+<p>When future lessons use additional authoritative sources—such as Microsoft, Apple, Linux documentation, hardware manufacturers, NIST, or CISA—the specific sources used will be listed on that lesson page.</p>
+</div>
+</div></section>
 </main>
 <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
 <script src="/assets/js/main.js"></script>
