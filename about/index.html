@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -11,8 +6,28 @@
 <meta content="Learn how Family Personal Development began and how it helps families build healthier, more stable, and more intentional lives." name="description"/>
 <title>About | Family Personal Development</title>
 <link href="../assets/css/styles.css" rel="stylesheet"/>
+
+<style id="familypd-about-readable-text">
+/* About page readability: keep intentional light text on dark sections,
+   but use black for body/subtext on light backgrounds. */
+.about-page main .page-hero .page-lead,
+.about-page main .page-hero .quote-credit,
+.about-page main .section:not(.section-dark) p,
+.about-page main .section:not(.section-dark) li,
+.about-page main .section:not(.section-dark) .founder-title,
+.about-page main .section:not(.section-dark) .comparison-label {
+  color:#111 !important;
+}
+.about-page main .section-dark p,
+.about-page main .section-dark li,
+.about-page main .section-dark h2,
+.about-page main .section-dark h3 {
+  color:#fff !important;
+}
+</style>
+
 </head>
-<body>
+<body class="about-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="container header-inner">
 <a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
@@ -208,10 +223,6 @@
             focused on family tools, workshops, education and career readiness, and
             community partnership.
           </p>
-<div class="button-row button-row-tight" style="margin-top:18px">
-<a class="button" href="/about/founder/">View Toni Hall's Professional Portfolio</a>
-<a class="button button-secondary" href="https://www.linkedin.com/in/tonihallcte/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-</div>
 </div>
 </div>
 </section>
