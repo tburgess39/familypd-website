@@ -24,27 +24,28 @@
 .about-page main .section-dark h3 {
   color:#fff !important;
 }
-
-/* Founder card sits on a dark navy background inside a light section.
-   Keep the general readability rule above, then explicitly restore
-   accessible light text and a clear Founder-page call to action. */
-.about-page main .section:not(.section-dark) .founder-card p {
-  color:#f4f7f9 !important;
-}
+/* Founder card is intentionally dark; override the light-section readability rule. */
 .about-page main .section:not(.section-dark) .founder-card .eyebrow {
   color:#f1bf68 !important;
 }
-.about-page main .founder-card .founder-title {
+.about-page main .section:not(.section-dark) .founder-card h2 {
+  color:#fff !important;
+}
+.about-page main .section:not(.section-dark) .founder-card .founder-title {
   color:#d6e1e7 !important;
 }
-.about-page main .founder-card .founder-link {
+.about-page .founder-about-button {
+  display:inline-flex;
   margin-top:14px;
-  min-height:42px;
-  padding:9px 14px;
   background:var(--gold);
-  border-color:var(--gold);
   color:var(--navy-2) !important;
-  box-shadow:none;
+  border-color:var(--gold);
+  font-weight:900;
+}
+.about-page .founder-about-button:hover,
+.about-page .founder-about-button:focus-visible {
+  background:#f1bf68;
+  border-color:#f1bf68;
 }
 </style>
 
@@ -224,7 +225,7 @@
 <p class="eyebrow">Founder</p>
 <h2>Toni Hall</h2>
 <p class="founder-title">Mother, educator, and Career &amp; Technical Education leader</p>
-<a class="button founder-link" href="/about/founder/">About the Founder →</a>
+<a class="button button-small founder-about-button" href="/about/founder/">About the Founder →</a>
 </div>
 </div>
 <div class="founder-copy">
