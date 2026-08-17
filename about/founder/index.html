@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="description" content="Professional portfolio of Family Personal Development founder Toni A. Hall — educator, CTE leader, technologist, curriculum developer, and program builder."/>
+<title>About the Founder | Toni A. Hall | Family Personal Development</title>
+<link href="../../assets/css/styles.css" rel="stylesheet"/>
+<style>
+  .founder-portfolio-hero{padding:clamp(42px,7vw,82px) 0 34px;background:linear-gradient(135deg,#f7fbfc 0%,#fff8ef 100%);border-bottom:1px solid var(--line)}
+  .founder-portfolio-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.8fr);gap:32px;align-items:center}
+  .founder-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:#eaf6f4;color:var(--teal);font-weight:900;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+  .founder-portfolio-hero h1{margin:13px 0 10px;font-size:clamp(2.5rem,6vw,5.2rem);line-height:.96;letter-spacing:-.045em;color:var(--navy)}
+  .founder-role-line{margin:0 0 16px;font-size:clamp(1.05rem,2.3vw,1.35rem);font-weight:800;color:#173b63}
+  .founder-summary{max-width:760px;font-size:1.08rem;line-height:1.72;color:#17212b}
+  .founder-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .founder-profile-card{padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 18px 45px rgba(16,36,52,.08)}
+  .founder-monogram{width:92px;height:92px;display:grid;place-items:center;border-radius:24px;background:var(--navy);color:#fff;font-size:2rem;font-weight:950;letter-spacing:.03em;margin-bottom:16px}
+  .founder-profile-card h2{margin:0 0 6px;font-size:1.55rem;color:var(--navy)}
+  .founder-profile-card p{margin:5px 0;color:#25313c}
+  .founder-mini-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+  .founder-mini-tags span{padding:6px 9px;border-radius:999px;background:#eef3f6;color:var(--navy);font-size:.78rem;font-weight:850}
+  .founder-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}
+  .founder-stat{padding:17px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+  .founder-stat strong{display:block;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1;color:var(--navy)}
+  .founder-stat span{display:block;margin-top:7px;font-size:.86rem;line-height:1.35;color:#293640;font-weight:700}
+  .founder-section{padding:44px 0}
+  .founder-section.alt{background:#f7fafb;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .founder-section-head{max-width:800px;margin-bottom:24px}
+  .founder-section-head h2{margin:6px 0 9px;font-size:clamp(1.8rem,4vw,3rem);color:var(--navy)}
+  .founder-section-head p{margin:0;color:#26323c;line-height:1.65}
+  .founder-capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .founder-capability{padding:20px;border:1px solid var(--line);border-radius:17px;background:#fff}
+  .founder-capability h3{margin:0 0 8px;color:var(--navy);font-size:1.08rem}
+  .founder-capability p{margin:0;color:#26323c;line-height:1.55}
+  .founder-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .founder-impact-card{padding:20px;border-radius:17px;background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal)}
+  .founder-impact-card strong{display:block;color:var(--navy);font-size:1.06rem;margin-bottom:6px}
+  .founder-impact-card p{margin:0;color:#26323c;line-height:1.5}
+  .founder-career{display:grid;gap:12px}
+  .founder-career article{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 20px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+  .founder-career time{font-weight:900;color:var(--teal)}
+  .founder-career h3{margin:0 0 4px;color:var(--navy);font-size:1.08rem}
+  .founder-career p{margin:0;color:#293640;line-height:1.55}
+  .founder-credentials{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .founder-credential-card{padding:20px;border-radius:17px;background:#fff;border:1px solid var(--line)}
+  .founder-credential-card h3{margin:0 0 10px;color:var(--navy)}
+  .founder-credential-card ul{margin:0;padding-left:19px;color:#26323c;line-height:1.6}
+  .founder-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .founder-work-card{padding:20px;border-radius:17px;background:#fff;border:1px solid var(--line)}
+  .founder-work-card h3{margin:0 0 7px;color:var(--navy)}
+  .founder-work-card p{margin:0;color:#26323c;line-height:1.55}
+  .founder-principle{padding:25px;border-radius:20px;background:var(--navy);color:#fff}
+  .founder-principle h2{margin:0 0 10px;color:#fff}
+  .founder-principle p{margin:0;max-width:900px;line-height:1.65;color:#fff}
+  .founder-source-note{font-size:.82rem;color:#52616d;margin-top:18px;line-height:1.5}
+  @media(max-width:850px){.founder-portfolio-grid,.founder-credentials{grid-template-columns:1fr}.founder-stat-grid{grid-template-columns:repeat(2,1fr)}.founder-capability-grid,.founder-impact-grid{grid-template-columns:1fr 1fr}.founder-career article{grid-template-columns:1fr;gap:5px}.founder-work-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.founder-capability-grid,.founder-impact-grid,.founder-stat-grid{grid-template-columns:1fr}.founder-portfolio-hero{padding-top:30px}.founder-profile-card{padding:19px}.founder-section{padding:34px 0}.founder-actions .button{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
+<nav aria-label="Main navigation" class="site-nav" id="site-nav"><a aria-current="page" href="/about/">About</a><a href="/approach/">Our Approach</a><a href="/resources/">Resources</a><a href="/programs/">Programs</a><a href="/impact/">Impact</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav>
+</div></header>
+<main id="main-content">
+<section class="founder-portfolio-hero">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/about/">About</a><span aria-hidden="true">/</span><span>Founder</span></nav>
+    <div class="founder-portfolio-grid">
+      <div>
+        <span class="founder-kicker">About the Founder</span>
+        <h1>Toni A. Hall</h1>
+        <p class="founder-role-line">Educator · CTE Leader · Technologist · Curriculum &amp; Program Developer · FamilyPD Founder</p>
+        <p class="founder-summary">Toni Hall's work sits at the intersection of technology, education, workforce preparation, and practical systems. Her career has included software development, classroom teaching, district curriculum leadership, program management, cybersecurity and robotics instruction, and Career &amp; Technical Education leadership. FamilyPD brings those experiences together around one goal: helping families gain practical knowledge, systems, and opportunities they can use in everyday life.</p>
+        <div class="founder-actions">
+          <a class="button" href="https://www.linkedin.com/in/tonihallcte/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+          <a class="button button-secondary" href="https://www.eldoradohs.org/apps/staff/" target="_blank" rel="noopener noreferrer">Educator Profile</a>
+          <a class="button button-secondary" href="/about/">FamilyPD Story</a>
+        </div>
+      </div>
+      <aside class="founder-profile-card" aria-label="Professional profile summary">
+        <div class="founder-monogram" aria-hidden="true">TH</div>
+        <h2>Professional Focus</h2>
+        <p><strong>Technology + Education + Systems</strong></p>
+        <p>Turning complex ideas into practical learning experiences, programs, tools, and workflows people can actually use.</p>
+        <div class="founder-mini-tags"><span>Cybersecurity</span><span>Robotics</span><span>CTE</span><span>Curriculum</span><span>Programming</span><span>Leadership</span></div>
+      </aside>
+    </div>
+    <div class="founder-stat-grid" aria-label="Career highlights">
+      <div class="founder-stat"><strong>20 yrs</strong><span>Technology and education experience represented across the professional timeline</span></div>
+      <div class="founder-stat"><strong>3×</strong><span>NCWIT Aspirations in Computing Educator Award recognition</span></div>
+      <div class="founder-stat"><strong>$25K+</strong><span>Grant and program funding represented in the professional record</span></div>
+      <div class="founder-stat"><strong>2</strong><span>Current CompTIA certifications: Network+ and Security+</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+<div class="container">
+  <div class="founder-section-head"><p class="eyebrow">What I bring</p><h2>A multidisciplinary skill set built through real work.</h2><p>The strength of the portfolio is not one job title. It is the ability to connect technical knowledge, instruction, program operations, data, communication, and leadership into systems that move people and projects forward.</p></div>
+  <div class="founder-capability-grid">
+    <article class="founder-capability"><h3>Cybersecurity &amp; Networking</h3><p>Certification-aligned instruction, network security concepts, ethical cybersecurity, hardware and systems troubleshooting, and hands-on technical learning.</p></article>
+    <article class="founder-capability"><h3>Robotics &amp; Engineering</h3><p>STEM robotics instruction, engineering design, mechanical systems, technical labs, safety, troubleshooting, and project-based learning.</p></article>
+    <article class="founder-capability"><h3>Curriculum Development</h3><p>Designing instructional pathways, embedding industry credentials, creating resources, and translating complex technical content into understandable learning experiences.</p></article>
+    <article class="founder-capability"><h3>Software &amp; Data Systems</h3><p>Experience with web applications, databases, SQL, JavaScript, Python, HTML, Visual Basic, Java, C#, documentation, testing, and workflow design.</p></article>
+    <article class="founder-capability"><h3>Program &amp; Project Leadership</h3><p>Department systems, budgets, staff coordination, scheduling, grant opportunities, program operations, documentation, deadlines, and continuous improvement.</p></article>
+    <article class="founder-capability"><h3>Partnership &amp; Opportunity Building</h3><p>Connecting education with employers, community organizations, career pathways, grants, work-based learning, and experiences that expand access for learners.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="founder-section alt">
+<div class="container">
+  <div class="founder-section-head"><p class="eyebrow">Professional journey</p><h2>From programmer to educator to founder.</h2><p>Each stage added a different lens: how systems work, how people learn, how programs operate, and how opportunities are built.</p></div>
+  <div class="founder-career">
+    <article><time>2006–2010</time><div><h3>Programmer / Analyst</h3><p>Developed, tested, documented, and improved web applications and databases while working with technical and managerial teams to solve business problems.</p></div></article>
+    <article><time>2012–2017</time><div><h3>Instructor &amp; Program Director</h3><p>Built learning experiences in programming, multimedia, and web design while also managing a large credit-recovery program, staff, budget, data systems, and online-learning operations.</p></div></article>
+    <article><time>2017–2023</time><div><h3>District Curriculum Coordinator</h3><p>Supported Information Technology curriculum, certification integration, teacher coaching, technical support, district strategy, partnerships, and work-based learning.</p></div></article>
+    <article><time>2023–Present</time><div><h3>Cybersecurity &amp; Robotics CTE Educator</h3><p>Delivers hands-on cybersecurity and robotics instruction with labs, simulations, project-based learning, employability skills, certification preparation, and student leadership opportunities.</p></div></article>
+    <article><time>2025–Present</time><div><h3>CTE Department Chair</h3><p>Supports instructional systems, PLCs, departmental communication, data collection, compliance, curriculum articulation, recruitment, grants, events, and collaboration with school and district leadership.</p></div></article>
+    <article><time>Founder</time><div><h3>Family Personal Development</h3><p>Applies lessons from education, technology, leadership, systems thinking, and lived experience to practical tools that help families organize, learn, communicate, plan, and grow.</p></div></article>
+  </div>
+</div>
+</section>
+
+<section class="founder-section">
+<div class="container">
+  <div class="founder-section-head"><p class="eyebrow">Recognition &amp; results</p><h2>Selected achievements.</h2><p>A snapshot of professional recognition, resource development, and impact documented in the professional record.</p></div>
+  <div class="founder-impact-grid">
+    <article class="founder-impact-card"><strong>NCWIT Aspirations in Computing Educator Award</strong><p>Recognized in 2022, 2024, and 2025.</p></article>
+    <article class="founder-impact-card"><strong>Clark County RAVE Review Award</strong><p>Professional recognition received in October 2025.</p></article>
+    <article class="founder-impact-card"><strong>CTE Visionary Award</strong><p>Recognized in February 2020 for vision and commitment to Career &amp; Technical Education.</p></article>
+    <article class="founder-impact-card"><strong>SentinelOne Cybersecurity Funding</strong><p>$10,000 secured in 2024 to support cybersecurity learning.</p></article>
+    <article class="founder-impact-card"><strong>Gene Haas Funding</strong><p>$5,250 represented across 2024–2025.</p></article>
+    <article class="founder-impact-card"><strong>Duke Energy Funding</strong><p>$10,000 represented across 2017–2019.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="founder-section alt">
+<div class="container">
+  <div class="founder-section-head"><p class="eyebrow">Credentials</p><h2>Education, certification &amp; technical foundation.</h2></div>
+  <div class="founder-credentials">
+    <article class="founder-credential-card"><h3>Education &amp; Licensure</h3><ul><li>Master of Arts — Management and Leadership, Webster University</li><li>Bachelor of Business Administration — Computer Information Systems, Campbell University</li><li>Nevada Professional Secondary CTE license with endorsements in Computer Science Education, Web Design &amp; Development, Technology &amp; Engineering, and Business Education</li></ul></article>
+    <article class="founder-credential-card"><h3>Industry &amp; Technical Credentials</h3><ul><li>CompTIA Network+ (2026)</li><li>CompTIA Security+ (2026)</li><li>Microsoft Introduction to Programming Using Python</li><li>Microsoft Database Fundamentals</li><li>Microsoft Software Development Fundamentals</li></ul></article>
+  </div>
+</div>
+</section>
+
+<section class="founder-section">
+<div class="container">
+  <div class="founder-section-head"><p class="eyebrow">What I build</p><h2>Work designed to be used—not just presented.</h2></div>
+  <div class="founder-work-grid">
+    <article class="founder-work-card"><h3>Certification-aligned learning experiences</h3><p>Cybersecurity, networking, computer hardware, Linux, robotics, simulations, interactive labs, study systems, and resources designed to make technical concepts understandable.</p></article>
+    <article class="founder-work-card"><h3>Programs, pathways &amp; operating systems</h3><p>Program structures, instructional pathways, communication systems, tracking tools, documentation, workflows, budgets, and processes that make complex initiatives easier to manage.</p></article>
+    <article class="founder-work-card"><h3>Digital tools &amp; websites</h3><p>Web applications, databases, instructional websites, resource hubs, user guides, process documentation, and technology-supported tools that solve practical problems.</p></article>
+    <article class="founder-work-card"><h3>Opportunity-building ecosystems</h3><p>Partnerships, grants, certification pathways, work-based learning, student leadership, career exploration, and community-facing resources that help people see and reach the next step.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="founder-section alt">
+<div class="container">
+  <div class="founder-principle"><h2>Why this matters to FamilyPD</h2><p>FamilyPD is built around a practical belief: knowledge is most powerful when people can use it. The same skills that strengthen classrooms and organizations—clear goals, useful systems, continuous learning, technical competence, documentation, communication, and intentional improvement—can also help families create stronger futures.</p></div>
+  <p class="founder-source-note">This public portfolio intentionally excludes private contact information and confidential employer or family information. Professional details are summarized from Toni Hall's résumé and public professional/educator profiles.</p>
+  <div class="founder-actions" style="margin-top:18px"><a class="button" href="https://www.linkedin.com/in/tonihallcte/" target="_blank" rel="noopener noreferrer">Professional Profile</a><a class="button button-secondary" href="/impact/">Explore FamilyPD Impact</a><a class="button button-secondary" href="mailto:admin@familypd.org">Contact FamilyPD</a></div>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-grid">
+<div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div>
+<div><strong>Explore</strong><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/kids/">Kids &amp; Teens</a><a href="/app/">About FamilyPD OS</a></div>
+<div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div>
+</div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
