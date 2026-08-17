@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Raspberry Pi 5 Build Guide | FamilyPD</title>
+<meta name="description" content="A clear step-by-step FamilyPD guide for assembling, preparing, booting, verifying, and troubleshooting a Raspberry Pi 5."/>
+<link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.build-shell{max-width:980px;margin:auto}.build-step{display:grid;grid-template-columns:44px 1fr;gap:.85rem;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:16px;padding:1rem;margin:.75rem 0}.build-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:white;font-weight:900}.check-card{background:#eef7f7;border-left:5px solid #2d7f83;border-radius:14px;padding:1rem;margin:1rem 0}.warn{background:#fff7e5;border-left:5px solid #d16a2d;border-radius:14px;padding:1rem;margin:1rem 0}.code{background:#0d1b2a;color:#fff;border-radius:12px;padding:.85rem;overflow:auto;font-family:ui-monospace,monospace}h1{font-size:clamp(2rem,5vw,3rem)}h2{font-size:clamp(1.45rem,3vw,1.95rem)}
+
+.aplus-quick-strip{display:flex;flex-wrap:wrap;gap:.45rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px;padding:.75rem;margin:1rem 0}
+.aplus-quick-strip strong{width:100%;color:#163f61;font-size:.92rem}
+.aplus-quick-strip .button{font-size:13px!important;line-height:1.1!important;padding:8px 11px!important;min-height:33px!important;width:auto!important}
+@media(max-width:620px){.aplus-quick-strip{gap:.35rem}.aplus-quick-strip .button{font-size:12.5px!important;padding:7px 9px!important}}
+
+
+</style></head>
+<body class="learning-center-page"><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav></div></header>
+<main id="main-content">
+<section class="page-hero"><div class="container build-shell"><nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><span>Pi 5 Build</span></nav><p class="eyebrow">Raspberry Pi 5 • Hands-on build</p><h1>Build and boot a Raspberry Pi 5.</h1><p class="page-lead">Follow the physical build in order. Use the separate Pi learning page when you want deeper explanations of the processor, memory, storage, mobile-device comparisons, Linux, networking, and A+ connections.</p></div></section>
+<div class="container build-shell"><div class="resource-strip aplus-quick-strip">
+<strong>A+ quick links</strong>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Acronyms</a>
+<a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+</div></div>
+<section class="section"><div class="container build-shell">
+<div class="section-heading"><p class="eyebrow">Before you start</p><h2>Know your parts and protect the hardware.</h2></div>
+<div class="check-card"><strong>Typical items</strong><ul><li>Raspberry Pi 5</li><li>microSD card or other supported boot storage</li><li>Raspberry Pi 5 compatible case</li><li>Active Cooler or case fan if your build uses one</li><li>5 V / 5 A USB-C power supply recommended for full Pi 5 capability</li><li>micro-HDMI cable + display</li><li>USB/Bluetooth keyboard and mouse</li><li>Ethernet cable or Wi-Fi access</li></ul></div>
+<div class="warn"><strong>Safety:</strong> Work with power disconnected while installing/removing hardware. Handle the board by its edges when possible. Follow the case/cooler manufacturer's instructions. GPIO uses 3.3 V logic; do not apply 5 V to GPIO inputs.</div>
+
+<div class="build-step"><div class="build-num">1</div><div><h3>Prepare Raspberry Pi OS</h3><p>On another computer, install Raspberry Pi Imager. Select the correct Raspberry Pi model, choose Raspberry Pi OS, select the microSD card, and write the image. Use Imager's customization options if you want to preconfigure Wi-Fi, hostname, username, and SSH.</p><p><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer">Open Raspberry Pi Imager</a></p></div></div>
+<div class="build-step"><div class="build-num">2</div><div><h3>Inspect the Pi before assembly</h3><p>Locate the BCM2712 processor, LPDDR memory, microSD slot, USB ports, micro-HDMI ports, Ethernet, USB-C power, fan connector, PCIe FFC connector, and 40-pin GPIO header. Compare what you see with the diagrams on the Pi learning page.</p></div></div>
+<div class="build-step"><div class="build-num">3</div><div><h3>Install cooling and case components</h3><p>If your kit includes an Active Cooler or case fan, install it according to its instructions before closing the case. Make sure the fan cable is routed correctly and nothing presses against components.</p></div></div>
+<div class="build-step"><div class="build-num">4</div><div><h3>Insert the boot media</h3><p>With power disconnected, insert the prepared microSD card fully into the slot. Do not force it.</p></div></div>
+<div class="build-step"><div class="build-num">5</div><div><h3>Connect display and input</h3><p>Connect micro-HDMI to the monitor, then connect keyboard/mouse. Connect Ethernet if you want wired networking. Power should still be disconnected.</p></div></div>
+<div class="build-step"><div class="build-num">6</div><div><h3>Connect power last</h3><p>Connect the USB-C power supply after the other basic connections are ready. Pi 5 normally begins booting when power is connected.</p></div></div>
+<div class="build-step"><div class="build-num">7</div><div><h3>Complete first boot</h3><p>Follow the Raspberry Pi OS setup prompts. Confirm keyboard, mouse, display, time zone, and network settings. Allow updates if appropriate for your environment.</p></div></div>
+<div class="build-step"><div class="build-num">8</div><div><h3>Verify the system</h3><p>Open Terminal and collect evidence that the system is working.</p><div class="code">hostname
+uname -a
+cat /etc/os-release
+ip addr
+free -h
+lsblk
+df -h
+vcgencmd measure_temp</div></div></div>
+<div class="build-step"><div class="build-num">9</div><div><h3>Test networking</h3><p>Confirm the Pi has an IP address. If your environment permits it, test network reachability and DNS. Record whether you used Wi-Fi or Ethernet.</p></div></div>
+<div class="build-step"><div class="build-num">10</div><div><h3>Document the build</h3><p>Add a labeled Pi diagram or photo to your notebook. Record the processor architecture, RAM type, boot/storage device, power connection, display connection, network connection, cooling solution, and at least one command you used to verify the system.</p></div></div>
+
+<div class="section-heading" style="margin-top:2rem"><p class="eyebrow">If it does not boot</p><h2>Troubleshoot one variable at a time.</h2></div>
+<div class="check-card"><ul><li><strong>No power/activity:</strong> verify the USB-C supply, outlet, connections, and that the power source is appropriate for Pi 5.</li><li><strong>No display:</strong> verify monitor input, micro-HDMI cable/port, and boot media before assuming the board failed.</li><li><strong>Boot media problem:</strong> re-check the Imager target and rewrite the card if necessary.</li><li><strong>Network problem:</strong> check whether an IP address is assigned, then verify Wi-Fi/Ethernet settings and local network availability.</li><li><strong>Performance/heat:</strong> confirm cooler/fan installation and inspect temperature rather than guessing.</li></ul></div>
+<div class="button-row"><a class="button" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Understand the Pi 5</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a></div>
+</div></section></main>
+<footer class="site-footer"><div class="container"><p>FamilyPD Learning Center • Independent educational resource</p></div></footer><script src="/assets/js/main.js"></script></body></html>
