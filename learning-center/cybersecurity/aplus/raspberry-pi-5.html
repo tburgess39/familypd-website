@@ -32,6 +32,53 @@
  .page-hero h1{font-size:1.75rem!important}.section-heading h2,.mission-shell h2,.pi-shell h2{font-size:1.32rem!important}
 }
 </style>
+
+<style id="familypd-aplus-final-button-size">
+/* Compact FamilyPD A+ actions: intentionally overrides shared site button sizing. */
+body.learning-center-page a.button,
+body.learning-center-page button.button,
+.aplus-shell a.button,
+.mission-shell a.button,
+.pi-shell a.button,
+.mission-nav a.button,
+.resource-strip a.button,
+.pi-jump a.button,
+.mission-bottom a.button {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  padding: 9px 14px !important;
+  min-height: 36px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+}
+body.learning-center-page a.button.button-small,
+body.learning-center-page button.button.button-small {
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+  min-height: 34px !important;
+}
+@media (max-width: 760px) {
+  body.learning-center-page a.button,
+  body.learning-center-page button.button,
+  .aplus-shell a.button,
+  .mission-shell a.button,
+  .pi-shell a.button,
+  .mission-nav a.button,
+  .resource-strip a.button,
+  .pi-jump a.button,
+  .mission-bottom a.button {
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+    min-height: 34px !important;
+  }
+}
+</style>
+
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,6 +87,58 @@
 <section class="page-hero"><div class="container pi-shell"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><span>Raspberry Pi 5</span></nav><p class="eyebrow">A+ Hands-on Lab</p><h1>Build, Understand &amp; Use a Raspberry Pi 5</h1><p class="page-lead">A Raspberry Pi 5 is a small, complete computer. Building and using one gives you a real system for practicing hardware, storage, operating systems, Linux, networking, ports, troubleshooting, documentation, and safe handling.</p><div class="pi-jump"><a class="button" href="#build">Start the build</a><a class="button button-secondary" href="#aplus">See the A+ connection</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Open notebook guide</a></div></div></section>
 
 <section class="section compact-info-section"><div class="container pi-shell"><div class="pi-callout"><strong>Before you start</strong><p>Power the board off and disconnect USB-C power before installing or removing hardware. Handle the board by its edges, work on a clean nonconductive surface, and avoid touching exposed contacts unnecessarily.</p></div><div class="pi-grid"><article class="pi-card"><h3>What is a Raspberry Pi 5?</h3><p>It is a single-board computer: the processor, memory, storage connections, network interfaces, USB, display connections, and other I/O are concentrated on one compact board instead of spread across a full-size desktop motherboard.</p></article><article class="pi-card"><h3>Why use it for A+?</h3><p>You can identify real components, prepare boot media, install an operating system, configure peripherals, use Linux commands, connect to a network, inspect an IP address, troubleshoot boot and power problems, and document what you changed.</p></article></div></div></section>
+
+<section class="section" id="arm">
+<div class="container pi-shell">
+  <div class="section-heading">
+    <p class="eyebrow">Processor architecture</p>
+    <h2>What does “4-core Arm Cortex-A76” actually mean?</h2>
+    <p>You do not see four separate Cortex-A76 chips on the Raspberry Pi 5. The four CPU cores are built inside one Broadcom BCM2712 processor package.</p>
+  </div>
+  <div class="notebook-layout">
+    <div>
+      <div class="pi-callout">
+        <strong>ARM is a processor architecture family.</strong>
+        <p><strong>Arm</strong> designs processor architectures and CPU core designs used in many phones, tablets, embedded systems, and single-board computers. The Raspberry Pi 5 uses the 64-bit Armv8-A instruction set architecture and four Cortex-A76 CPU cores. <strong>Cortex-A76</strong> is the core design; <strong>BCM2712</strong> is the Broadcom system-on-chip that contains those cores.</p>
+      </div>
+      <div class="pi-grid">
+        <article class="pi-card"><h3>4-core / quad-core</h3><p>There are four processing cores inside the CPU cluster. The operating system can schedule different work across those cores.</p></article>
+        <article class="pi-card"><h3>Cortex-A76</h3><p>This is the Arm CPU core design used by the BCM2712. Each Pi 5 core has its own 512 KB L2 cache.</p></article>
+        <article class="pi-card"><h3>BCM2712</h3><p>This is the physical Broadcom application processor/SoC on the board. Its four Cortex-A76 cores share a 2 MB L3 cache and run at up to 2.4 GHz.</p></article>
+        <article class="pi-card"><h3>Compared with Intel/AMD</h3><p>A desktop Intel Core or AMD Ryzen processor is also one physical CPU package containing multiple cores. The important A+ idea is that <em>core count</em> describes processing units inside the processor; it does not mean four separate CPU chips.</p></article>
+      </div>
+      <div class="pi-callout">
+        <strong>Architecture is not the same thing as brand.</strong>
+        <p>Arm and x86-64 systems can perform many of the same computer tasks, but they use different instruction-set architectures. Software and operating-system builds must support the processor architecture they run on. This is why an installer or download may be labeled <strong>ARM64</strong> or <strong>x86-64/AMD64</strong>.</p>
+      </div>
+    </div>
+    <div class="notebook-graphic">
+      <svg viewBox="0 0 620 540" role="img" aria-label="Simplified diagram showing four Arm Cortex-A76 cores inside the Raspberry Pi 5 BCM2712 processor">
+        <rect x="55" y="35" width="510" height="450" rx="28" fill="#eef7f7" stroke="#2d7f83" stroke-width="5"/>
+        <text x="310" y="78" text-anchor="middle" font-size="27" font-weight="700" fill="#163f61">Broadcom BCM2712 SoC</text>
+        <text x="310" y="108" text-anchor="middle" font-size="18" fill="#163f61">One physical processor package</text>
+        <g fill="#ffffff" stroke="#2d7f83" stroke-width="3">
+          <rect x="105" y="145" width="180" height="95" rx="16"/>
+          <rect x="335" y="145" width="180" height="95" rx="16"/>
+          <rect x="105" y="270" width="180" height="95" rx="16"/>
+          <rect x="335" y="270" width="180" height="95" rx="16"/>
+        </g>
+        <g fill="#163f61" font-size="20" font-weight="700" text-anchor="middle">
+          <text x="195" y="184">Cortex-A76</text><text x="195" y="213">Core 1</text>
+          <text x="425" y="184">Cortex-A76</text><text x="425" y="213">Core 2</text>
+          <text x="195" y="309">Cortex-A76</text><text x="195" y="338">Core 3</text>
+          <text x="425" y="309">Cortex-A76</text><text x="425" y="338">Core 4</text>
+        </g>
+        <rect x="150" y="397" width="320" height="55" rx="14" fill="#f4c84a"/>
+        <text x="310" y="431" text-anchor="middle" font-size="20" font-weight="700" fill="#163f61">2 MB shared L3 cache</text>
+        <text x="310" y="520" text-anchor="middle" font-size="18" font-weight="700" fill="#163f61">4 cores ≠ 4 visible CPU chips</text>
+      </svg>
+      <p class="small-note"><strong>Notebook idea:</strong> Draw this as a flap. Outside: “BCM2712.” Under the flap: four Cortex-A76 cores + shared cache. Beside it, draw one Intel/AMD desktop CPU package and write: “Different architecture and packaging; same core-count concept.”</p>
+    </div>
+  </div>
+</div>
+</section>
+
 <section class="section section-tinted" id="compare"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">Understand the platform</p><h2>Raspberry Pi 5 vs. a typical Intel/AMD desktop PC</h2><p>Both are real computers. The biggest difference is how the components are packaged and expanded.</p></div><div class="pi-part-map"><article><h3>Single-board computer</h3><p>A Raspberry Pi 5 is an <strong>SBC</strong>: CPU, RAM, networking, USB, display I/O, and many controllers are concentrated on one compact board.</p></article><article><h3>Desktop PC</h3><p>A typical Intel/AMD PC uses a larger motherboard with a socketed x86-64 CPU, replaceable DIMM memory, expansion slots, separate PSU, and more modular storage/cooling options.</p></article><article><h3>Same concepts, different packaging</h3><p>Both systems still need processing, working memory, persistent storage, power, cooling, input/output, networking, an operating system, and troubleshooting.</p></article></div><div style="overflow-x:auto"><table class="compare-table"><thead><tr><th>Concept</th><th>Raspberry Pi 5</th><th>Typical Intel/AMD desktop</th><th>A+ connection</th></tr></thead><tbody><tr><td>Processor</td><td>Broadcom BCM2712 quad-core 64-bit Arm Cortex-A76 SoC at 2.4 GHz</td><td>Socketed Intel or AMD x86-64 CPU on most DIY/serviceable desktops</td><td>CPU architecture, cores, clock speed, socket/replaceability</td></tr><tr><td>Memory</td><td>LPDDR4X memory soldered to the board; available in multiple capacities</td><td>Usually replaceable DDR DIMMs in motherboard memory slots</td><td>RAM purpose, capacity, form factor, upgradeability</td></tr><tr><td>Storage</td><td>Commonly microSD; can also use USB storage or PCIe-connected M.2 storage with appropriate hardware</td><td>SATA HDD/SSD and/or M.2 NVMe SSD are common</td><td>Boot media, SATA vs. PCIe/NVMe, capacity and speed</td></tr><tr><td>Power</td><td>USB-C power; Raspberry Pi recommends a 27 W supply for Pi 5</td><td>ATX/SFX PSU distributes multiple rails/connectors to motherboard and components</td><td>Power requirements, connectors, symptoms of insufficient power</td></tr><tr><td>Expansion</td><td>40-pin GPIO, USB, PCIe FFC, camera/display connections</td><td>PCIe x1/x4/x8/x16 slots, USB headers, SATA/M.2, front-panel headers</td><td>Ports, connectors, expansion, peripheral selection</td></tr><tr><td>Operating system</td><td>Raspberry Pi OS is a Debian-based Linux distribution</td><td>Windows is common; Linux is also supported</td><td>OS installation, files, networking, commands, troubleshooting</td></tr></tbody></table></div></div></section>
 
 <section class="section section-tinted" id="build"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">Part 1</p><h2>Build the system</h2><p>Prepare the boot media first, assemble the hardware while the board is unpowered, then connect power last.</p></div>
@@ -76,8 +175,8 @@ touch notes.txt</div></article></div><div class="pi-note"><strong>Windows connec
 
 <section class="section section-tinted"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">A+ notebook</p><h2>Document the build so you can study from it later.</h2></div><div class="pi-grid"><article class="pi-card"><h3>Add a Pi 5 board map</h3><p>Draw or print the board and label power, storage, processor, memory, USB, Ethernet, display, GPIO, cooling, and expansion connections.</p></article><article class="pi-card"><h3>Make a boot sequence flap</h3><p>Power → firmware/bootloader → boot media → operating system → login/desktop.</p></article><article class="pi-card"><h3>Add a command pocket</h3><p>Create removable cards for <code>ip addr</code>, <code>lsblk</code>, <code>df -h</code>, <code>free -h</code>, <code>uname -a</code>, and other commands you actually use.</p></article><article class="pi-card"><h3>Keep a troubleshooting log</h3><p>Record symptoms, evidence, what you changed, what fixed the issue, and how you verified the result.</p></article></div><div class="pi-jump"><a class="button" href="/learning/a-plus-interactive-notebook.html">Open the notebook builder</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">Back to A+ Learning Path</a></div></div></section>
 
-<section class="section section-tinted"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">Notebook example</p><h2>Turn the Pi build into a study page.</h2></div><div class="notebook-layout"><div class="notebook-example"><h3>Example Pi 5 notebook entry</h3><p><strong>Pi 5 = single-board computer (SBC).</strong></p><p><strong>CPU:</strong> Broadcom BCM2712, 4-core Arm Cortex-A76, 2.4 GHz. Soldered—not a socketed Intel/AMD desktop CPU.</p><p><strong>RAM:</strong> LPDDR4X soldered to board; same temporary-memory purpose as desktop DIMMs.</p><p><strong>Storage:</strong> microSD is common; PCIe/M.2 storage is possible with appropriate adapter/HAT.</p><p><strong>Power:</strong> USB-C. Pi 5 recommendation: 27 W supply; connect power last during assembly.</p><p><strong>A+ comparison:</strong> Write one line for each Pi component explaining the closest desktop equivalent.</p><p><strong>Troubleshooting log:</strong> Symptom → Evidence → Test → Fix → Verify.</p></div><div class="pi-note-graphic"><svg viewBox="0 0 620 420" role="img" aria-label="Raspberry Pi 5 notebook map"><rect x="70" y="55" width="480" height="290" rx="28" fill="#2d7f83"/><rect x="210" y="135" width="120" height="90" rx="14" fill="#f4c84a"/><text x="270" y="184" text-anchor="middle" font-size="20" font-weight="700" fill="#163f61">BCM2712</text><rect x="360" y="120" width="90" height="125" rx="12" fill="#8ed9d2"/><text x="405" y="187" text-anchor="middle" font-size="18" fill="#163f61">RAM</text><g fill="#fff"><rect x="105" y="105" width="60" height="35" rx="6"/><rect x="105" y="155" width="60" height="35" rx="6"/><rect x="105" y="205" width="60" height="35" rx="6"/><rect x="105" y="255" width="60" height="35" rx="6"/></g><text x="135" y="327" text-anchor="middle" font-size="16" fill="#fff">USB</text><rect x="465" y="105" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="136" text-anchor="middle" font-size="14" fill="#163f61">ETH</text><rect x="465" y="205" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="237" text-anchor="middle" font-size="14" fill="#163f61">HDMI</text><text x="310" y="383" text-anchor="middle" font-size="19" font-weight="700" fill="#163f61">Label → Compare → Troubleshoot → Review</text></svg></div></div></div></section>
-<section class="section"><div class="container pi-shell"><div class="pi-source"><h2>Official Raspberry Pi references</h2><p>This FamilyPD learning page is independently created. Raspberry Pi and related marks belong to Raspberry Pi Ltd. Family Personal Development is not affiliated with or endorsed by Raspberry Pi Ltd.</p><ul class="resource-list"><li><a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" rel="noopener noreferrer" target="_blank">Raspberry Pi Getting Started documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/os.html" rel="noopener noreferrer" target="_blank">Raspberry Pi OS documentation</a></li><li><a href="https://www.raspberrypi.com/products/raspberry-pi-5/" rel="noopener noreferrer" target="_blank">Raspberry Pi 5 product information</a></li><li><a href="https://www.raspberrypi.com/products/27w-power-supply/" rel="noopener noreferrer" target="_blank">Raspberry Pi 27 W USB-C Power Supply</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html" rel="noopener noreferrer" target="_blank">Raspberry Pi hardware documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/processors.html" rel="noopener noreferrer" target="_blank">Raspberry Pi processor documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/configuration.html" rel="noopener noreferrer" target="_blank">Raspberry Pi configuration documentation</a></li></ul></div><div class="mission-bottom"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a><a class="button" href="/learning-center/cybersecurity/aplus/">Back to A+ Home</a></div></div></section>
+<section class="section section-tinted"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">Notebook example</p><h2>Turn the Pi build into a study page.</h2></div><div class="notebook-layout"><div class="notebook-example"><h3>Example Pi 5 notebook entry</h3><p><strong>Pi 5 = single-board computer (SBC).</strong></p><p><strong>CPU:</strong> Broadcom BCM2712, 4-core Arm Cortex-A76, 2.4 GHz. The four cores are inside one processor package; they are not four visible chips. The SoC is soldered to the Pi board rather than installed in a replaceable desktop CPU socket.</p><p><strong>RAM:</strong> LPDDR4X soldered to board; same temporary-memory purpose as desktop DIMMs.</p><p><strong>Storage:</strong> microSD is common; PCIe/M.2 storage is possible with appropriate adapter/HAT.</p><p><strong>Power:</strong> USB-C. Pi 5 recommendation: 27 W supply; connect power last during assembly.</p><p><strong>A+ comparison:</strong> Write one line for each Pi component explaining the closest desktop equivalent.</p><p><strong>Troubleshooting log:</strong> Symptom → Evidence → Test → Fix → Verify.</p></div><div class="pi-note-graphic"><svg viewBox="0 0 620 420" role="img" aria-label="Raspberry Pi 5 notebook map"><rect x="70" y="55" width="480" height="290" rx="28" fill="#2d7f83"/><rect x="210" y="135" width="120" height="90" rx="14" fill="#f4c84a"/><text x="270" y="184" text-anchor="middle" font-size="20" font-weight="700" fill="#163f61">BCM2712</text><rect x="360" y="120" width="90" height="125" rx="12" fill="#8ed9d2"/><text x="405" y="187" text-anchor="middle" font-size="18" fill="#163f61">RAM</text><g fill="#fff"><rect x="105" y="105" width="60" height="35" rx="6"/><rect x="105" y="155" width="60" height="35" rx="6"/><rect x="105" y="205" width="60" height="35" rx="6"/><rect x="105" y="255" width="60" height="35" rx="6"/></g><text x="135" y="327" text-anchor="middle" font-size="16" fill="#fff">USB</text><rect x="465" y="105" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="136" text-anchor="middle" font-size="14" fill="#163f61">ETH</text><rect x="465" y="205" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="237" text-anchor="middle" font-size="14" fill="#163f61">HDMI</text><text x="310" y="383" text-anchor="middle" font-size="19" font-weight="700" fill="#163f61">Label → Compare → Troubleshoot → Review</text></svg></div></div></div></section>
+<section class="section"><div class="container pi-shell"><div class="pi-source"><h2>Official Raspberry Pi references</h2><p>This FamilyPD learning page is independently created. Raspberry Pi and related marks belong to Raspberry Pi Ltd. Family Personal Development is not affiliated with or endorsed by Raspberry Pi Ltd.</p><ul class="resource-list"><li><a href="https://www.raspberrypi.com/documentation/computers/processors.html" rel="noopener noreferrer" target="_blank">Processor reference: BCM2712 and Arm Cortex-A76 details</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" rel="noopener noreferrer" target="_blank">Raspberry Pi Getting Started documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/os.html" rel="noopener noreferrer" target="_blank">Raspberry Pi OS documentation</a></li><li><a href="https://www.raspberrypi.com/products/raspberry-pi-5/" rel="noopener noreferrer" target="_blank">Raspberry Pi 5 product information</a></li><li><a href="https://www.raspberrypi.com/products/27w-power-supply/" rel="noopener noreferrer" target="_blank">Raspberry Pi 27 W USB-C Power Supply</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html" rel="noopener noreferrer" target="_blank">Raspberry Pi hardware documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/processors.html" rel="noopener noreferrer" target="_blank">Raspberry Pi processor documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/configuration.html" rel="noopener noreferrer" target="_blank">Raspberry Pi configuration documentation</a></li></ul></div><div class="mission-bottom"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a><a class="button" href="/learning-center/cybersecurity/aplus/">Back to A+ Home</a></div></div></section>
 </main>
 <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
 <script src="/assets/js/main.js"></script>
