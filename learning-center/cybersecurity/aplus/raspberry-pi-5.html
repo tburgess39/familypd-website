@@ -109,12 +109,114 @@ body.learning-center-page button.button.button-small {
 }
 </style>
 
+
+<style id="familypd-aplus-layout-type-final">
+/* Keep the A+ quick-link bar aligned with the same content column as each page. */
+.aplus-quick-wrap{
+  width:min(100% - 2rem, 980px);
+  margin:0 auto;
+}
+.aplus-quick-strip{
+  box-sizing:border-box!important;
+  width:100%!important;
+  margin:.8rem 0!important;
+  padding:.65rem .75rem!important;
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(105px,max-content))!important;
+  justify-content:start!important;
+  align-items:center!important;
+  gap:.42rem!important;
+}
+.aplus-quick-strip>strong{
+  grid-column:1/-1!important;
+  width:auto!important;
+  margin:0 0 .1rem!important;
+  font-size:.84rem!important;
+  line-height:1.15!important;
+}
+.aplus-quick-strip .button{
+  box-sizing:border-box!important;
+  width:auto!important;
+  min-width:0!important;
+  min-height:32px!important;
+  margin:0!important;
+  padding:7px 10px!important;
+  font-size:12.5px!important;
+  line-height:1.1!important;
+  white-space:nowrap!important;
+}
+
+/* Keep supporting resource headings subordinate to the actual lesson content. */
+.aplus-card h2,
+.resource-card h2,
+.source-box h2,
+.notebook-example h2,
+.pi-card h2{
+  font-size:clamp(1.15rem,1.7vw,1.42rem)!important;
+  line-height:1.18!important;
+  margin:.3rem 0 .65rem!important;
+}
+.aplus-card h3,
+.resource-card h3,
+.mission-card h3,
+.pi-card h3,
+.card h3{
+  font-size:clamp(1rem,1.45vw,1.2rem)!important;
+  line-height:1.2!important;
+}
+.source-box h2{
+  font-size:clamp(1.12rem,1.55vw,1.32rem)!important;
+}
+.aplus-card .aplus-label,
+.aplus-label{
+  font-size:.78rem!important;
+}
+
+/* Landing-page study cards were visually competing with the course itself. */
+.aplus-shell .aplus-grid .aplus-card h2{
+  font-size:clamp(1.2rem,1.75vw,1.48rem)!important;
+}
+
+/* Mission page headings: readable, but not poster-sized. */
+.mission-shell .section-heading h2,
+.m2 .section-heading h2,
+.pi-shell .section-heading h2{
+  font-size:clamp(1.22rem,2vw,1.55rem)!important;
+  line-height:1.2!important;
+}
+.success-check h2{
+  font-size:clamp(1.2rem,1.8vw,1.45rem)!important;
+}
+.page-hero h1{
+  font-size:clamp(1.85rem,3.5vw,2.65rem)!important;
+  line-height:1.08!important;
+}
+
+@media(max-width:700px){
+  .aplus-quick-wrap{width:min(100% - 1.2rem,980px)}
+  .aplus-quick-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    padding:.55rem!important;
+  }
+  .aplus-quick-strip .button{
+    width:100%!important;
+    white-space:normal!important;
+    font-size:12px!important;
+    padding:7px 8px!important;
+  }
+  .page-hero h1{font-size:1.8rem!important}
+  .mission-shell .section-heading h2,
+  .m2 .section-heading h2,
+  .pi-shell .section-heading h2{font-size:1.24rem!important}
+}
+</style>
+
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
 <main id="main-content">
-<section class="page-hero"><div class="container pi-shell"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><span>Raspberry Pi 5</span></nav><p class="eyebrow">A+ Hands-on Lab</p><h1>Understand &amp; Use a Raspberry Pi 5</h1><p class="page-lead">A Raspberry Pi 5 is a small, complete computer. Building and using one gives you a real system for practicing hardware, storage, operating systems, Linux, networking, ports, troubleshooting, documentation, and safe handling.</p><div class="pi-jump"><a class="button" href="#build">Start the build</a><a class="button button-secondary" href="#aplus">See the A+ connection</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Open notebook guide</a></div></div></section><div class="resource-strip aplus-quick-strip">
+<section class="page-hero"><div class="container pi-shell"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><span>Raspberry Pi 5</span></nav><p class="eyebrow">A+ Hands-on Lab</p><h1>Understand &amp; Use a Raspberry Pi 5</h1><p class="page-lead">A Raspberry Pi 5 is a small, complete computer. Building and using one gives you a real system for practicing hardware, storage, operating systems, Linux, networking, ports, troubleshooting, documentation, and safe handling.</p><div class="pi-jump"><a class="button" href="#build">Start the build</a><a class="button button-secondary" href="#aplus">See the A+ connection</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Open notebook guide</a></div></div></section><div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
 <strong>A+ quick links</strong>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
@@ -124,7 +226,7 @@ body.learning-center-page button.button.button-small {
 <a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
-</div>
+</div></div>
 
 <section class="section compact-info-section"><div class="container pi-shell"><div class="pi-callout"><strong>Before you start</strong><p>Power the board off and disconnect USB-C power before installing or removing hardware. Handle the board by its edges, work on a clean nonconductive surface, and avoid touching exposed contacts unnecessarily.</p></div><div class="pi-grid"><article class="pi-card"><h3>What is a Raspberry Pi 5?</h3><p>It is a single-board computer: the processor, memory, storage connections, network interfaces, USB, display connections, and other I/O are concentrated on one compact board instead of spread across a full-size desktop motherboard.</p></article><article class="pi-card"><h3>Why use it for A+?</h3><p>You can identify real components, prepare boot media, install an operating system, configure peripherals, use Linux commands, connect to a network, inspect an IP address, troubleshoot boot and power problems, and document what you changed.</p></article></div></div></section>
 

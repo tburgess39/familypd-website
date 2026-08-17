@@ -99,9 +99,111 @@ body.learning-center-page button.button.button-small {
 }
 </style>
 
+
+<style id="familypd-aplus-layout-type-final">
+/* Keep the A+ quick-link bar aligned with the same content column as each page. */
+.aplus-quick-wrap{
+  width:min(100% - 2rem, 980px);
+  margin:0 auto;
+}
+.aplus-quick-strip{
+  box-sizing:border-box!important;
+  width:100%!important;
+  margin:.8rem 0!important;
+  padding:.65rem .75rem!important;
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(105px,max-content))!important;
+  justify-content:start!important;
+  align-items:center!important;
+  gap:.42rem!important;
+}
+.aplus-quick-strip>strong{
+  grid-column:1/-1!important;
+  width:auto!important;
+  margin:0 0 .1rem!important;
+  font-size:.84rem!important;
+  line-height:1.15!important;
+}
+.aplus-quick-strip .button{
+  box-sizing:border-box!important;
+  width:auto!important;
+  min-width:0!important;
+  min-height:32px!important;
+  margin:0!important;
+  padding:7px 10px!important;
+  font-size:12.5px!important;
+  line-height:1.1!important;
+  white-space:nowrap!important;
+}
+
+/* Keep supporting resource headings subordinate to the actual lesson content. */
+.aplus-card h2,
+.resource-card h2,
+.source-box h2,
+.notebook-example h2,
+.pi-card h2{
+  font-size:clamp(1.15rem,1.7vw,1.42rem)!important;
+  line-height:1.18!important;
+  margin:.3rem 0 .65rem!important;
+}
+.aplus-card h3,
+.resource-card h3,
+.mission-card h3,
+.pi-card h3,
+.card h3{
+  font-size:clamp(1rem,1.45vw,1.2rem)!important;
+  line-height:1.2!important;
+}
+.source-box h2{
+  font-size:clamp(1.12rem,1.55vw,1.32rem)!important;
+}
+.aplus-card .aplus-label,
+.aplus-label{
+  font-size:.78rem!important;
+}
+
+/* Landing-page study cards were visually competing with the course itself. */
+.aplus-shell .aplus-grid .aplus-card h2{
+  font-size:clamp(1.2rem,1.75vw,1.48rem)!important;
+}
+
+/* Mission page headings: readable, but not poster-sized. */
+.mission-shell .section-heading h2,
+.m2 .section-heading h2,
+.pi-shell .section-heading h2{
+  font-size:clamp(1.22rem,2vw,1.55rem)!important;
+  line-height:1.2!important;
+}
+.success-check h2{
+  font-size:clamp(1.2rem,1.8vw,1.45rem)!important;
+}
+.page-hero h1{
+  font-size:clamp(1.85rem,3.5vw,2.65rem)!important;
+  line-height:1.08!important;
+}
+
+@media(max-width:700px){
+  .aplus-quick-wrap{width:min(100% - 1.2rem,980px)}
+  .aplus-quick-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    padding:.55rem!important;
+  }
+  .aplus-quick-strip .button{
+    width:100%!important;
+    white-space:normal!important;
+    font-size:12px!important;
+    padding:7px 8px!important;
+  }
+  .page-hero h1{font-size:1.8rem!important}
+  .mission-shell .section-heading h2,
+  .m2 .section-heading h2,
+  .pi-shell .section-heading h2{font-size:1.24rem!important}
+}
+</style>
+
 </head><body class="learning-center-page"><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav></div></header>
-<main id="main-content"><section class="page-hero"><div class="container m2"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 02</span></nav><p class="eyebrow">CompTIA A+ • Mission 02</p><h1>Inside the Machine</h1><p class="page-lead">Before you replace or upgrade computer parts, understand what the parts do together. Investigate power, data, the motherboard, CPU, RAM, storage, bits and bytes, and safe hardware handling.</p><div class="mission-nav"><a class="button" href="#mission">Begin Mission 02</a><a class="button button-secondary" href="#practice">Practice questions</a><a class="button button-secondary" href="#notebook">Notebook guide</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi 5 lab</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ home</a></div></div></section><div class="resource-strip aplus-quick-strip">
+<main id="main-content"><section class="page-hero"><div class="container m2"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 02</span></nav><p class="eyebrow">CompTIA A+ • Mission 02</p><h1>Inside the Machine</h1><p class="page-lead">Before you replace or upgrade computer parts, understand what the parts do together. Investigate power, data, the motherboard, CPU, RAM, storage, bits and bytes, and safe hardware handling.</p><div class="mission-nav"><a class="button" href="#mission">Begin Mission 02</a><a class="button button-secondary" href="#practice">Practice questions</a><a class="button button-secondary" href="#notebook">Notebook guide</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi 5 lab</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ home</a></div></div></section><div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
 <strong>A+ quick links</strong>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
@@ -111,7 +213,7 @@ body.learning-center-page button.button.button-small {
 <a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
-</div>
+</div></div>
 
 <section class="section section-tinted"><div class="container m2">
 <div class="section-heading"><p class="eyebrow">Mission 02 hands-on system</p><h2>Use a Raspberry Pi 5 to make the hardware concepts real.</h2><p>The Raspberry Pi 5 is part of Mission 02 because it gives you a complete computer you can identify, assemble, boot, inspect, and troubleshoot before moving to the larger desktop PC build.</p></div>
