@@ -9,8 +9,10 @@ function runAllPGSTests() {
     }
   }
 
-  test('Library contains 43 current options', function() {
-    assertEqual_(PGS_ACTIVITY_LIBRARY.length, 43);
+  test('Library contains legacy and 9/1/26 rule records', function() {
+    assertEqual_(PGS_ACTIVITY_LIBRARY.length, 45);
+    assertEqual_(effectiveRulesForDate_(PGS_ACTIVITY_LIBRARY, '2026-08-31').length, 43);
+    assertEqual_(effectiveRulesForDate_(PGS_ACTIVITY_LIBRARY, '2026-09-01').length, 44);
   });
 
   test('Category keys are unique', function() {
@@ -61,12 +63,12 @@ function runAllPGSTests() {
   });
 
   test('Certificate-duration categories do not require invented times', function() {
-    ['VEGAS_PBS_PD','RPDP_PD','CCEA_COLLAB_PD','ASYNC_CONFERENCE_WEBINAR'].forEach(function(key) {
+    ['VEGAS_PBS_PD','RPDP_PD','CCEA_COLLAB_PD'].forEach(function(key) {
       assertEqual_(findRuleForTest_(key).entryMode, 'duration_hours');
     });
   });
 
-  test('Guided finder covers all 43 current category keys', function() {
+  test('Guided finder covers all rule-library category keys', function() {
     const finderKeys = [];
     (PGS_GUIDED_FINDER.contexts || []).forEach(function(context) {
       (context.roles || []).forEach(function(role) {
@@ -116,6 +118,36 @@ function runAllPGSTests() {
         });
       });
     });
+  });
+
+  test('9/1/26 conference split is date aware', function() {
+    const inPerson = effectiveRuleForDate_(findRuleForTest_('SYNC_CONFERENCE'), '2026-09-01');
+    const virtual = effectiveRuleForDate_(findRuleForTest_('VIRTUAL_SYNC_CONFERENCE'), '2026-09-01');
+    const asyncNew = effectiveRuleForDate_(findRuleForTest_('ASYNC_CONFERENCE_WEBINAR'), '2026-09-01');
+    assertEqual_(inPerson.maximumCUs, 80);
+    assertEqual_(virtual.maximumCUs, 40);
+    if (asyncNew !== null) throw new Error('Asynchronous standalone category should not be available on/after 9/1/26.');
+  });
+
+  test('9/1/26 micro-credential rule does not invent 5 CUs per credential', function() {
+    const micro = effectiveRuleForDate_(findRuleForTest_('MICRO_CREDENTIAL'), '2026-09-01');
+    assertEqual_(micro.calculationType, 'manual');
+    assertEqual_(micro.perUnitCUs, null);
+    assertEqual_(micro.maximumCUs, 50);
+  });
+
+  test('9/1/26 NDE professional development category is available with 120-CU maximum', function() {
+    const nde = effectiveRuleForDate_(findRuleForTest_('NDE_PD'), '2026-09-01');
+    assertEqual_(nde.maximumCUs, 120);
+    assertEqual_(nde.calculationType, 'manual');
+  });
+
+  test('Title I paid exception uses full-CU rate only on allowed categories', function() {
+    const plc = effectiveRuleForDate_(findRuleForTest_('PLC'), '2026-09-01');
+    const estimate = calculateEstimatedCUs_({
+      paymentStatus: 'paid', titleIException: 'yes', quantity: 3, sessions: []
+    }, plc);
+    assertEqual_(estimate, 1);
   });
 
   test('May 1, 2024 cutoff is enforced', function() {

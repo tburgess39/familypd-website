@@ -3,6 +3,10 @@ const WORKBOOK_NAME = 'PGS CU Assistant Data';
 const ROOT_FOLDER_NAME = 'PGS Column Advancement';
 const TIME_ZONE = 'America/Los_Angeles';
 const MIN_ACTIVITY_DATE = '2024-05-01';
+const PGS_2026_EFFECTIVE_DATE = '2026-09-01';
+const PGS_2026_LEGACY_END_DATE = '2026-08-31';
+const PGS_2026_GUIDE_NAME = '9/1/26 PGS Reference Guide';
+const PGS_2026_GUIDE_URL = 'https://bit.ly/CCSDPGS';
 
 const SHEETS = Object.freeze({
   ACTIVITIES: 'Activity Log',
@@ -34,7 +38,7 @@ const RULE_HEADERS = Object.freeze([
   'Packet Instructions', 'Evidence Checklist JSON', 'Source Document',
   'Last Verified', 'Entry Mode', 'Date Label', 'End Date Label',
   'Show End Date', 'Quantity Label', 'Quantity Help', 'Quantity Step',
-  'Evidence Input Basis'
+  'Evidence Input Basis', 'Effective For Activities Through'
 ]);
 
 const STATUS_OPTIONS = Object.freeze([
@@ -67,6 +71,8 @@ function getBootstrapData() {
   const rules = getRules_(spreadsheet);
   const activities = readActivities_(spreadsheet);
   const folders = getFolderLinks_();
+  const today = todayDateString_();
+  const currentRules = effectiveRulesForDate_(rules, today);
 
   return {
     appName: APP_NAME,
@@ -83,13 +89,28 @@ function getBootstrapData() {
     specialRules: PGS_SPECIAL_RULES,
     finderData: PGS_GUIDED_FINDER,
     expiredActivityNames: PGS_EXPIRED_ACTIVITY_NAMES,
-    libraryCount: rules.filter(function(rule) { return rule.active; }).length,
-    ruleAudit: {sourceDocument: '9/1/23 PGS Reference Guide', lastVerified: '2026-07-10', currentOptions: 43},
+    libraryCount: currentRules.length,
+    ruleEras: {
+      minimumDate: MIN_ACTIVITY_DATE,
+      legacyThrough: PGS_2026_LEGACY_END_DATE,
+      newGuideFrom: PGS_2026_EFFECTIVE_DATE,
+      legacyGuide: '9/1/23 PGS Reference Guide + current announcements',
+      newGuide: PGS_2026_GUIDE_NAME,
+      legacyOptions: effectiveRulesForDate_(rules, PGS_2026_LEGACY_END_DATE).length,
+      newGuideOptions: effectiveRulesForDate_(rules, PGS_2026_EFFECTIVE_DATE).length
+    },
+    ruleAudit: {
+      sourceDocument: 'Professional Growth System (PGS) Reference Guide - Effective September 1, 2026',
+      lastVerified: '2026-08-19',
+      currentDateOptions: currentRules.length,
+      legacyOptions: effectiveRulesForDate_(rules, PGS_2026_LEGACY_END_DATE).length,
+      newGuideOptions: effectiveRulesForDate_(rules, PGS_2026_EFFECTIVE_DATE).length
+    },
     warnings: [
-      'This assistant and its associated tools apply only to activities occurring on or after May 1, 2024.',
-      'Category suggestions are guidance, not final CCSD eligibility decisions.',
-      'Estimated CUs are not official approvals.',
-      'Review special PGS announcements in addition to the Reference Guide.',
+      'This assistant supports activities occurring on or after May 1, 2024 and selects the PGS rule era from the activity date.',
+      'Activities through August 31, 2026 use the prior rule set; activities on or after September 1, 2026 use the 9/1/26 PGS Reference Guide where applicable.',
+      'Category suggestions and CU estimates are guidance, not final CCSD eligibility or approval decisions.',
+      'For the 9/1/26 guide, standalone asynchronous conference/webinar attendance is not listed and Digital Promise micro-credentials no longer receive an assumed per-credential CU estimate in this assistant.',
       'The assistant prepares records and evidence but does not submit directly into ELMS.'
     ]
   };
@@ -100,12 +121,14 @@ function saveActivity(input) {
   const sheet = spreadsheet.getSheetByName(SHEETS.ACTIVITIES);
   const rules = getRules_(spreadsheet);
   const requestedCategoryKey = cleanString_(input && input.categoryKey);
-  const rule = rules.find(function(item) {
+  const baseRule = rules.find(function(item) {
     return item.categoryKey === requestedCategoryKey && item.active;
   });
+  const activityDateHint = activityDateHintFromInput_(input);
+  const rule = effectiveRuleForDate_(baseRule, activityDateHint);
 
   if (!rule) {
-    throw new Error('The selected activity category does not have an active rule.');
+    throw new Error('The selected activity category is not available for that activity date. Re-run Find My Category using the actual activity date.');
   }
 
   const activity = normalizeActivityInput_(input, rule);
@@ -141,7 +164,7 @@ function saveActivity(input) {
     paymentStatus: activity.paymentStatus,
     quantity: activity.quantity,
     unit: activity.unit,
-    titleIException: 'no',
+    titleIException: activity.titleIException,
     estimatedCUs: estimate,
     status: status,
     officialApprovedCUs: '',
@@ -233,11 +256,12 @@ function prepareActivityPacket(activityId) {
   const record = rowToActivity_(
     sheet.getRange(row, 1, 1, ACTIVITY_HEADERS.length).getValues()[0]
   );
-  const rule = rules.find(function(item) {
+  const baseRule = rules.find(function(item) {
     return item.categoryKey === record.categoryKey;
   });
+  const rule = effectiveRuleForDate_(baseRule, record.startDate);
 
-  if (!rule) throw new Error('The category rule could not be found.');
+  if (!rule) throw new Error('The category rule could not be found for the saved activity date.');
   if (rule.entryMode !== 'session_time') {
     throw new Error('The automatic packet generator is currently for time-based activities.');
   }
@@ -285,11 +309,12 @@ function createEvidenceFolderForActivity(activityId) {
   const record = rowToActivity_(
     sheet.getRange(row, 1, 1, ACTIVITY_HEADERS.length).getValues()[0]
   );
-  const rule = getRules_(spreadsheet).find(function(item) {
+  const baseRule = getRules_(spreadsheet).find(function(item) {
     return item.categoryKey === record.categoryKey;
   });
+  const rule = effectiveRuleForDate_(baseRule, record.startDate);
 
-  if (!rule) throw new Error('The category rule could not be found.');
+  if (!rule) throw new Error('The category rule could not be found for the saved activity date.');
 
   const folder = ensureCategoryFolder_(rule);
   const map = getHeaderMap_(ACTIVITY_HEADERS);
@@ -336,10 +361,10 @@ function setupWorkbook_(spreadsheet) {
   settings.getRange(1, 1, 1, 3).setValues([['Setting', 'Value', 'Purpose']]);
   settings.getRange(2, 1, 8, 3).setValues([
     ['Goal CUs', 225, 'Dashboard progress target.'],
-    ['Current Active Activity Options', PGS_ACTIVITY_LIBRARY.length, 'Loaded from the current activity library.'],
+    ['Current Active Activity Options', effectiveRulesForDate_(PGS_ACTIVITY_LIBRARY, todayDateString_()).length, 'Loaded from the activity-date rule library.'],
     ['Rule Warning', 'Suggestions and estimates must be verified against current official guidance.', 'Visible administrator reminder.'],
-    ['Reference Guide', '9/1/23 PGS Reference Guide', 'Current base guide listed on the CCSD PGS page.'],
-    ['Applicability Start Date', MIN_ACTIVITY_DATE, 'Assistant applies only to activities occurring on or after May 1, 2024.'],
+    ['Reference Guide', '9/1/26 PGS Reference Guide effective September 1, 2026', 'The assistant also preserves the prior rule era for activities through August 31, 2026.'],
+    ['Applicability Start Date', MIN_ACTIVITY_DATE, 'Assistant supports activities on or after May 1, 2024 and applies the rule set based on the activity date.'],
     ['Root Folder ID', '', 'Created by Workspace Setup.'],
     ['Root Folder URL', '', 'Created by Workspace Setup.'],
     ['Activity Evidence Folder URL', '', 'Created by Workspace Setup.']
@@ -398,7 +423,8 @@ function activityRuleToRow_(rule) {
     rule.sourceDocument || '', rule.lastVerified || '',
     rule.entryMode || '', rule.dateLabel || '', rule.endDateLabel || '',
     Boolean(rule.showEndDate), rule.quantityLabel || '', rule.quantityHelp || '',
-    rule.quantityStep || 1, rule.evidenceInputBasis || ''
+    rule.quantityStep || 1, rule.evidenceInputBasis || '',
+    rule.effectiveForActivitiesThrough || ''
   ];
 }
 
@@ -503,7 +529,8 @@ function getRules_(spreadsheet) {
         quantityLabel: displayValue_(row[34]),
         quantityHelp: displayValue_(row[35]),
         quantityStep: numberOrZero_(row[36]) || 1,
-        evidenceInputBasis: displayValue_(row[37])
+        evidenceInputBasis: displayValue_(row[37]),
+        effectiveForActivitiesThrough: dateToInput_(row[38]) || displayValue_(row[38])
       };
     });
 }
@@ -671,7 +698,7 @@ function normalizeActivityInput_(input, rule) {
     paymentStatus: paymentStatus,
     quantity: Math.max(0, numberOrZero_(a.quantity)),
     unit: cleanString_(a.unit),
-    titleIException: 'no',
+    titleIException: (rule.titleIExceptionAllowed && cleanString_(a.titleIException) === 'yes') ? 'yes' : 'no',
     status: 'Draft',
     officialApprovedCUs: '',
     evidenceLink: '',
@@ -835,7 +862,9 @@ function calculateEstimatedCUs_(activity, rule) {
     }
 
     const divisor = activity.paymentStatus === 'paid'
-      ? rule.paidHoursPerCU
+      ? ((rule.titleIExceptionAllowed && activity.titleIException === 'yes')
+          ? rule.unpaidHoursPerCU
+          : rule.paidHoursPerCU)
       : rule.unpaidHoursPerCU;
 
     const hours = activity.sessions && activity.sessions.length
@@ -861,38 +890,124 @@ function calculateEstimatedCUs_(activity, rule) {
   return result === '' ? '' : roundToTwo_(result);
 }
 
+function todayDateString_() {
+  return Utilities.formatDate(new Date(), TIME_ZONE, 'yyyy-MM-dd');
+}
+
+function activityDateHintFromInput_(input) {
+  const a = input || {};
+  const sessionDates = (a.sessions || [])
+    .map(function(session) { return cleanString_(session && session.date); })
+    .filter(Boolean)
+    .sort();
+  return sessionDates.length ? sessionDates[0] : cleanString_(a.startDate);
+}
+
+function effectiveRulesForDate_(rules, date) {
+  return (rules || []).map(function(rule) {
+    return effectiveRuleForDate_(rule, date);
+  }).filter(Boolean);
+}
+
+function effectiveRuleForDate_(baseRule, date) {
+  if (!baseRule || !baseRule.active) return null;
+  const activityDate = cleanString_(date) || todayDateString_();
+  if (baseRule.effectiveForActivitiesFrom &&
+      activityDate < baseRule.effectiveForActivitiesFrom) return null;
+  if (baseRule.effectiveForActivitiesThrough &&
+      activityDate > baseRule.effectiveForActivitiesThrough) return null;
+
+  const rule = JSON.parse(JSON.stringify(baseRule));
+  if (activityDate < PGS_2026_EFFECTIVE_DATE) return rule;
+
+  rule.ruleVersion = PGS_2026_GUIDE_NAME;
+  rule.sourceDocument = 'Professional Growth System (PGS) Reference Guide - Effective September 1, 2026';
+  rule.sourceUrl = PGS_2026_GUIDE_URL;
+  rule.lastVerified = '2026-08-19';
+  rule.packetInstructions = String(rule.packetInstructions || '')
+    .replace(/anyone in CCSD with the link can view/gi,
+      '“Anyone in the Clark County School District with the link can view”');
+  rule.evidenceChecklist = (rule.evidenceChecklist || []).map(function(item, index) {
+    if (index === 0 && /May 1, 2024/i.test(item)) {
+      return 'Confirm the activity occurred on or after September 1, 2026 when using the 9/1/26 rule set.';
+    }
+    return String(item || '').replace(/anyone in CCSD with the link can view/gi,
+      '“Anyone in the Clark County School District with the link can view”');
+  });
+
+  if (rule.categoryKey === 'SYNC_CONFERENCE') {
+    rule.activityName = 'In-Person / Live Attendance at Professional Development Conferences';
+    rule.maximumCUs = 80;
+    rule.documentation = 'Documentation required for CU submission in ELMS, including evidence of qualifying in-person/live conference attendance and activity time. Upload the required documentation to CCSD Google Drive as one file and submit its share link in ELMS.';
+    rule.limitations = 'Nationally and internationally recognized organizations must be on the PGS pre-approved conference list. Other organizations must be submitted by the related content-area department for PGS Advisory Committee review.';
+    rule.keywords = ['conference', 'summit', 'in-person conference', 'live conference'];
+    rule.notes = '9/1/26 Reference Guide in-person/live conference maximum: 80 CUs.';
+  }
+
+  if (rule.categoryKey === 'MICRO_CREDENTIAL') {
+    rule.calculationType = 'manual';
+    rule.perUnitCUs = null;
+    rule.maximumCUs = 50;
+    rule.documentation = 'Evidence of the Digital Promise-approved micro-credential and the documentation required for CU submission in ELMS.';
+    rule.limitations = 'Each micro-credential must relate to the assignment, license, or professional growth goals. Only Digital Promise-approved micro-credentials may be used. Maximum 50 CUs. The 9/1/26 Reference Guide does not state a universal CU value per credential.';
+    rule.quantityHelp = 'Enter the number of Digital Promise-approved micro-credentials actually earned. The assistant will not assume 5 CUs per credential for activities on or after September 1, 2026.';
+    rule.evidenceInputBasis = 'Record the documented micro-credential earned. Because the 9/1/26 Reference Guide does not state a universal per-credential CU value, verify the official CU amount before relying on an estimate.';
+    rule.notes = 'Manual CU verification required for the 9/1/26 rule era; no per-credential CU value is stated in the reference-guide table.';
+  }
+
+  if (rule.categoryKey === 'SPECIALTY_CEU') {
+    rule.limitations = 'For licensed professionals who hold a specialty professional license, such as a social worker or psychologist, or the equivalent requirements for an educator/licensed professional licensed through the business-and-industry route. CEUs must relate to the licensed assignment, license, or professional growth goals.';
+  }
+
+  return rule;
+}
+
 function buildSummary_(activities, rules) {
   function balancesFor_(includedActivities) {
-    return rules
-      .filter(function(rule) { return rule.active; })
-      .map(function(rule) {
-        const recorded = includedActivities
-          .filter(function(item) {
-            return item.categoryKey === rule.categoryKey;
-          })
-          .reduce(function(total, item) {
-            return total + numberOrZero_(item.estimatedCUs);
-          }, 0);
+    const grouped = {};
 
-        const countable = rule.maximumCUs === null
-          ? recorded
-          : Math.min(recorded, rule.maximumCUs);
+    includedActivities.forEach(function(activity) {
+      const baseRule = rules.find(function(rule) {
+        return rule.categoryKey === activity.categoryKey;
+      });
+      const rule = effectiveRuleForDate_(baseRule, activity.startDate);
+      if (!rule) return;
 
-        return {
+      const balanceKey = rule.categoryKey + '|' + rule.ruleVersion;
+      if (!grouped[balanceKey]) {
+        grouped[balanceKey] = {
           categoryKey: rule.categoryKey,
           parentCategory: rule.parentCategory,
           category: rule.activityName,
-          recorded: roundToTwo_(recorded),
-          countable: roundToTwo_(countable),
-          overMaximum: rule.maximumCUs === null
-            ? 0
-            : roundToTwo_(Math.max(0, recorded - rule.maximumCUs)),
-          maximum: rule.maximumCUs,
-          remaining: rule.maximumCUs === null
-            ? null
-            : roundToTwo_(Math.max(0, rule.maximumCUs - recorded))
+          ruleVersion: rule.ruleVersion,
+          recorded: 0,
+          maximum: rule.maximumCUs
         };
-      });
+      }
+      grouped[balanceKey].recorded += numberOrZero_(activity.estimatedCUs);
+    });
+
+    return Object.keys(grouped).map(function(key) {
+      const item = grouped[key];
+      const countable = item.maximum === null
+        ? item.recorded
+        : Math.min(item.recorded, item.maximum);
+      return {
+        categoryKey: item.categoryKey,
+        parentCategory: item.parentCategory,
+        category: item.category,
+        ruleVersion: item.ruleVersion,
+        recorded: roundToTwo_(item.recorded),
+        countable: roundToTwo_(countable),
+        overMaximum: item.maximum === null
+          ? 0
+          : roundToTwo_(Math.max(0, item.recorded - item.maximum)),
+        maximum: item.maximum,
+        remaining: item.maximum === null
+          ? null
+          : roundToTwo_(Math.max(0, item.maximum - item.recorded))
+      };
+    });
   }
 
   const estimatedActivities = activities.filter(function(item) {
@@ -1144,6 +1259,7 @@ function allowedRolesForCategory_(categoryKey) {
     mentee: 'Mentee',
     live_attendee: 'Conference Participant',
     async_attendee: 'Asynchronous Participant',
+    nde_pd_participant: 'NDE Professional Development Participant',
     conference_presenter: 'Conference Presenter',
     award_recipient: 'Award Recipient',
     grant_recipient: 'Grant Recipient',
@@ -1200,14 +1316,26 @@ function updateSettingsSheet_(spreadsheet) {
   const sheet = spreadsheet.getSheetByName(SHEETS.SETTINGS);
   const folders = getFolderLinks_();
   const updates = {
+    'Current Active Activity Options': effectiveRulesForDate_(PGS_ACTIVITY_LIBRARY, todayDateString_()).length,
+    'Rule Warning': 'The assistant applies the PGS rule set based on the activity date. Verify final eligibility and approval with CCSD.',
+    'Reference Guide': '9/1/26 PGS Reference Guide effective September 1, 2026; prior rule era preserved through August 31, 2026.',
+    'Applicability Start Date': MIN_ACTIVITY_DATE,
     'Root Folder ID': folders.rootFolderId,
     'Root Folder URL': folders.rootFolderUrl,
     'Activity Evidence Folder URL': folders.activityEvidenceFolderUrl
   };
-  sheet.getDataRange().getValues().forEach(function(row, index) {
+
+  const values = sheet.getDataRange().getValues();
+  const seen = {};
+  values.forEach(function(row, index) {
     if (Object.prototype.hasOwnProperty.call(updates, row[0])) {
       sheet.getRange(index + 1, 2).setValue(updates[row[0]]);
+      seen[row[0]] = true;
     }
+  });
+
+  Object.keys(updates).forEach(function(key) {
+    if (!seen[key]) sheet.appendRow([key, updates[key], 'Updated by the current PGS assistant rule library.']);
   });
 }
 

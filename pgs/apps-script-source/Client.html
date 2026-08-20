@@ -2,6 +2,8 @@
 'use strict';
 
 const MIN_ACTIVITY_DATE = '2024-05-01';
+const PGS_2026_EFFECTIVE_DATE = '2026-09-01';
+const PGS_2026_LEGACY_END_DATE = '2026-08-31';
 
 const pageMeta = {
   dashboard: ['Dashboard', 'One activity record powers the entire workflow.'],
@@ -26,7 +28,7 @@ const unitLabels = {
 
 const state = {
   activities: [], rules: [], workspace: {}, summary: {},
-  warnings: [], specialRules: [], expiredActivityNames: [], ruleAudit: {}, finder: {contexts: []}
+  warnings: [], specialRules: [], expiredActivityNames: [], ruleAudit: {}, ruleEras: {}, finder: {contexts: []}
 };
 
 const elements = {};
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'matchResults','activityForm','activityId','title','description','descriptionField',
     'descriptionSuggestions','organizationSuggestions','startDate','endDate','organization',
     'role','categoryKey','categoryGuidance','paymentStatus','quantity','quantityLabel',
-    'unit','titleIException','saveButton','formHeading','result','resultCategory',
+    'unit','titleIException','titleIField','saveButton','formHeading','result','resultCategory',
     'resultCUs','resultStatus','resultFolder','directoryCount',
     'directorySearch','directoryGroups','expiredList','openWorkbookButton',
     'createFoldersButton','recordsBody','categoryBody','evidenceActivitySelect',
@@ -66,13 +68,14 @@ function bindEvents() {
   elements.matcherContext.addEventListener('change', populateFinderRoles);
   elements.matcherRole.addEventListener('change', renderFinderActivities);
   elements.matcherActivityList.addEventListener('change', selectFinderActivity);
-  elements.matcherDate.addEventListener('change', updateFinderButton);
+  elements.matcherDate.addEventListener('change', function() { renderFinderActivities(); populateCategories(); updateFinderButton(); });
   elements.matchButton.addEventListener('click', runMatcher);
   elements.categoryKey.addEventListener('change', function() {
     configureCategory(elements.categoryKey.value);
     updateGeneratedActivityText();
   });
   elements.organization.addEventListener('input', updateGeneratedActivityText);
+  elements.startDate.addEventListener('change', function() { populateCategories(); if (elements.categoryKey.value) configureCategory(elements.categoryKey.value); });
   elements.role.addEventListener('change', updateGeneratedActivityText);
   elements.description.addEventListener('input', function() {
     if (!elements.sessionSection.hidden &&
@@ -168,6 +171,7 @@ function applyBootstrap(data) {
   state.finder = data.finderData || {contexts: []};
   state.expiredActivityNames = data.expiredActivityNames || [];
   state.ruleAudit = data.ruleAudit || {};
+  state.ruleEras = data.ruleEras || {};
 
   populateCategories();
   initializeGuidedFinder();
@@ -184,7 +188,9 @@ function applyBootstrap(data) {
 
 function populateCategories() {
   const selected = elements.categoryKey.value;
-  const groups = groupBy(state.rules, 'parentCategory');
+  const date = elements.startDate.value || elements.matcherDate.value || todayClientDate_();
+  const rulesForDate = effectiveRulesForDateClient_(date);
+  const groups = groupBy(rulesForDate, 'parentCategory');
   let html = '<option value="">Choose a category or use the matcher</option>';
 
   Object.keys(groups).sort().forEach(function(parent) {
@@ -197,7 +203,7 @@ function populateCategories() {
   });
 
   elements.categoryKey.innerHTML = html;
-  if (state.rules.some(function(rule) { return rule.categoryKey === selected; })) {
+  if (rulesForDate.some(function(rule) { return rule.categoryKey === selected; })) {
     elements.categoryKey.value = selected;
   }
   renderOrganizationSuggestions();
@@ -299,16 +305,30 @@ function renderFinderActivities() {
   }
 
   elements.matcherRoleHelp.textContent = role.description;
+  const date = elements.matcherDate.value;
+  const activities = (role.activities || []).filter(function(activity) {
+    if (!date) return true;
+    if (activity.availableFrom && date < activity.availableFrom) return false;
+    if (activity.availableThrough && date > activity.availableThrough) return false;
+    if (activity.categoryKey && !getRule(activity.categoryKey, date)) return false;
+    return true;
+  });
 
-  elements.matcherActivityList.innerHTML = (role.activities || []).map(function(activity) {
-    return '<label class="finder-activity-card">' +
-      '<input type="radio" name="finderActivityChoice" value="' +
-      escapeHtml(activity.id) + '">' +
-      '<span><strong>' + escapeHtml(activity.label) + '</strong>' +
-      '<p>' + escapeHtml(activity.description) + '</p>' +
-      '<small>' + escapeHtml(activity.officialBasis) + '</small></span>' +
-      '</label>';
-  }).join('');
+  elements.matcherActivityList.innerHTML = activities.length
+    ? activities.map(function(activity) {
+        const eraNote = activity.availableFrom
+          ? 'Effective ' + activity.availableFrom
+          : (activity.availableThrough ? 'Through ' + activity.availableThrough : '');
+        return '<label class="finder-activity-card">' +
+          '<input type="radio" name="finderActivityChoice" value="' +
+          escapeHtml(activity.id) + '">' +
+          '<span><strong>' + escapeHtml(activity.label) + '</strong>' +
+          '<p>' + escapeHtml(activity.description) + '</p>' +
+          '<small>' + escapeHtml(activity.officialBasis) + '</small>' +
+          (eraNote ? '<em class="finder-era-note">' + escapeHtml(eraNote) + '</em>' : '') +
+          '</span></label>';
+      }).join('')
+    : '<div class="empty-choice">No activity in this path is available for the selected date. Choose a different role or verify the current official PGS guidance.</div>';
 
   updateFinderButton();
 }
@@ -399,9 +419,9 @@ function runMatcher() {
     return;
   }
 
-  const rule = getRule(selected.categoryKey);
+  const rule = getRule(selected.categoryKey, activityDate);
   if (!rule) {
-    showToast('The selected official category is not available in the current library.', true);
+    showToast('The selected official category is not available for that activity date. Re-select the date and activity path.', true);
     return;
   }
 
@@ -462,8 +482,9 @@ function renderSpecialAlerts(description, selectedRuleId) {
 }
 
 function useCategory(categoryKey) {
-  const rule = getRule(categoryKey);
+  const rule = getRule(categoryKey, elements.matcherDate.value || elements.startDate.value || todayClientDate_());
   if (!rule) return;
+  populateCategories();
   elements.categoryKey.value = categoryKey;
   const selectedFinderActivity = getFinderActivity();
   const suggestedDescription = elements.matcherDescription.value.trim() ||
@@ -500,7 +521,7 @@ function useCategory(categoryKey) {
 }
 
 function configureCategory(categoryKey) {
-  const rule = getRule(categoryKey);
+  const rule = getRule(categoryKey, elements.startDate.value || elements.matcherDate.value || todayClientDate_());
 
   if (!rule) {
     elements.categoryGuidance.hidden = true;
@@ -541,6 +562,8 @@ function configureCategory(categoryKey) {
   elements.startDateField.hidden = isSession;
   elements.endDateField.hidden = isSession || !rule.showEndDate;
   elements.paymentStatusField.hidden = !showsPayment;
+  elements.titleIField.hidden = !rule.titleIExceptionAllowed;
+  if (!rule.titleIExceptionAllowed) elements.titleIException.value = 'no';
   elements.quantityField.hidden = !showsQuantity;
   elements.unitField.hidden = !showsQuantity;
 
@@ -592,7 +615,7 @@ function configureCategory(categoryKey) {
     '<p><strong>Watch for:</strong> ' +
       escapeHtml(rule.limitations) + '</p>' +
     (rule.titleIExceptionAllowed
-      ? '<div class="notice warn">The estimate uses the standard paid/unpaid rate. Any official Title I paid exception must be verified against current PGS rules.</div>'
+      ? '<div class="notice warn">If this is a qualifying Title I paid exception and you select Yes, the estimate uses the full-CU rate. The 9/1/26 guide specifically allows this for qualifying paid PLC participation, school-based core tutoring, and mentoring outside the contractual workday. Verify your Title I eligibility and activity conditions before relying on the estimate.</div>'
       : '') +
     (isAutomatic
       ? '<div class="notice warn"><strong>Automatic ELMS activity:</strong> This is a tracking record only. Do not create a duplicate self-reported submission.</div>'
@@ -854,7 +877,7 @@ function renderOrganizationSuggestions() {
 }
 
 function renderDescriptionSuggestions() {
-  const rule = getRule(elements.categoryKey.value);
+  const rule = getRule(elements.categoryKey.value, elements.startDate.value || elements.matcherDate.value || todayClientDate_());
   const values = [];
 
   if (rule) {
@@ -885,7 +908,7 @@ function renderDescriptionSuggestions() {
 }
 
 function updateGeneratedActivityText() {
-  const rule = getRule(elements.categoryKey.value);
+  const rule = getRule(elements.categoryKey.value, elements.startDate.value || elements.matcherDate.value || todayClientDate_());
   const parts = [
     elements.organization.value.trim(),
     rule ? rule.activityName : '',
@@ -904,7 +927,8 @@ function updateGeneratedActivityText() {
 
 function renderDirectory() {
   const query = elements.directorySearch.value.trim().toLowerCase();
-  const filtered = state.rules.filter(function(rule) {
+  const rulesForDate = effectiveRulesForDateClient_(todayClientDate_());
+  const filtered = rulesForDate.filter(function(rule) {
     const haystack = [
       rule.parentCategory, rule.activityName, rule.documentation,
       rule.limitations, (rule.keywords || []).join(' ')
@@ -913,7 +937,7 @@ function renderDirectory() {
   });
   const groups = groupBy(filtered, 'parentCategory');
   elements.directoryCount.textContent =
-    filtered.length + ' of ' + state.rules.length + ' current activity options shown';
+    filtered.length + ' of ' + rulesForDate.length + ' activity options effective today shown';
 
   elements.directoryGroups.innerHTML = Object.keys(groups).sort().map(function(parent) {
     return '<div class="directory-group"><h4>' + escapeHtml(parent) + '</h4>' +
@@ -970,7 +994,7 @@ function renderRecords() {
   } else {
     elements.recordsBody.innerHTML =
       state.activities.map(function(activity) {
-        const rule = getRule(activity.categoryKey);
+        const rule = getRule(activity.categoryKey, activity.startDate);
         const isTimeBased =
           rule && rule.entryMode === 'session_time';
 
@@ -1062,7 +1086,9 @@ function renderRecords() {
 function renderRuleAudit() {
   const audit = state.ruleAudit || {};
   elements.ruleAuditLabel.textContent = audit.lastVerified
-    ? 'Source library last verified ' + audit.lastVerified + '  |  ' + (audit.currentOptions || state.rules.length) + ' current options'
+    ? 'Source library last verified ' + audit.lastVerified +
+      ' | ' + (audit.legacyOptions || 43) + ' options through 8/31/26' +
+      ' | ' + (audit.newGuideOptions || 44) + ' options from 9/1/26'
     : '';
 }
 
@@ -1092,7 +1118,7 @@ function renderEvidenceGuide() {
   const activity = state.activities.find(function(item) {
     return item.id === id;
   });
-  const rule = activity ? getRule(activity.categoryKey) : null;
+  const rule = activity ? getRule(activity.categoryKey, activity.startDate) : null;
 
   if (!activity || !rule) {
     elements.evidenceGuideOutput.innerHTML =
@@ -1178,7 +1204,7 @@ function renderElmsReadiness() {
   elements.elmsReadinessOutput.innerHTML =
     '<div class="readiness-grid">' +
     state.activities.map(function(activity) {
-      const rule = getRule(activity.categoryKey);
+      const rule = getRule(activity.categoryKey, activity.startDate);
       const issues = [];
       let cardClass = '';
       let label = activity.status || 'Draft';
@@ -1227,7 +1253,7 @@ function renderElmsReadiness() {
 async function saveActivity(event) {
   event.preventDefault();
 
-  const selectedRule = getRule(elements.categoryKey.value);
+  const selectedRule = getRule(elements.categoryKey.value, elements.startDate.value || elements.matcherDate.value || todayClientDate_());
 
   if (!selectedRule) {
     showToast('Choose or confirm an activity category.', true);
@@ -1338,7 +1364,7 @@ async function saveActivity(event) {
     paymentStatus: elements.paymentStatus.value,
     quantity: Number(elements.quantity.value || 0),
     unit: elements.unit.value,
-    titleIException: 'no',
+    titleIException: elements.titleIException.value || 'no',
     sessions: mode === 'session_time'
       ? collectSessions()
       : []
@@ -1514,7 +1540,59 @@ function showView(viewId) {
 }
 window.showView = showView;
 
-function getRule(key) { return state.rules.find(function(rule) { return rule.categoryKey === key; }); }
+function todayClientDate_() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + day;
+}
+function effectiveRulesForDateClient_(date) {
+  return state.rules.map(function(rule) { return effectiveRuleForDateClient_(rule, date); }).filter(Boolean);
+}
+function effectiveRuleForDateClient_(baseRule, date) {
+  if (!baseRule || !baseRule.active) return null;
+  const activityDate = date || todayClientDate_();
+  if (baseRule.effectiveForActivitiesFrom && activityDate < baseRule.effectiveForActivitiesFrom) return null;
+  if (baseRule.effectiveForActivitiesThrough && activityDate > baseRule.effectiveForActivitiesThrough) return null;
+  const rule = JSON.parse(JSON.stringify(baseRule));
+  if (activityDate < PGS_2026_EFFECTIVE_DATE) return rule;
+
+  rule.ruleVersion = '9/1/26 PGS Reference Guide';
+  rule.sourceDocument = 'Professional Growth System (PGS) Reference Guide - Effective September 1, 2026';
+  rule.sourceUrl = 'https://bit.ly/CCSDPGS';
+  rule.lastVerified = '2026-08-19';
+  rule.packetInstructions = String(rule.packetInstructions || '').replace(/anyone in CCSD with the link can view/gi, '“Anyone in the Clark County School District with the link can view”');
+  rule.evidenceChecklist = (rule.evidenceChecklist || []).map(function(item, index) {
+    if (index === 0 && /May 1, 2024/i.test(item)) return 'Confirm the activity occurred on or after September 1, 2026 when using the 9/1/26 rule set.';
+    return String(item || '').replace(/anyone in CCSD with the link can view/gi, '“Anyone in the Clark County School District with the link can view”');
+  });
+
+  if (rule.categoryKey === 'SYNC_CONFERENCE') {
+    rule.activityName = 'In-Person / Live Attendance at Professional Development Conferences';
+    rule.maximumCUs = 80;
+    rule.documentation = 'Documentation required for CU submission in ELMS, including evidence of qualifying in-person/live conference attendance and activity time. Upload the required documentation to CCSD Google Drive as one file and submit its share link in ELMS.';
+    rule.limitations = 'Nationally and internationally recognized organizations must be on the PGS pre-approved conference list. Other organizations must be submitted by the related content-area department for PGS Advisory Committee review.';
+    rule.notes = '9/1/26 Reference Guide in-person/live conference maximum: 80 CUs.';
+  }
+  if (rule.categoryKey === 'MICRO_CREDENTIAL') {
+    rule.calculationType = 'manual';
+    rule.perUnitCUs = null;
+    rule.maximumCUs = 50;
+    rule.documentation = 'Evidence of the Digital Promise-approved micro-credential and the documentation required for CU submission in ELMS.';
+    rule.limitations = 'Each micro-credential must relate to the assignment, license, or professional growth goals. Only Digital Promise-approved micro-credentials may be used. Maximum 50 CUs. The 9/1/26 Reference Guide does not state a universal CU value per credential.';
+    rule.quantityHelp = 'Enter the number of Digital Promise-approved micro-credentials actually earned. The assistant will not assume 5 CUs per credential for activities on or after September 1, 2026.';
+    rule.evidenceInputBasis = 'Record the documented micro-credential earned. Because the 9/1/26 Reference Guide does not state a universal per-credential CU value, verify the official CU amount before relying on an estimate.';
+  }
+  if (rule.categoryKey === 'SPECIALTY_CEU') {
+    rule.limitations = 'For licensed professionals who hold a specialty professional license, such as a social worker or psychologist, or the equivalent requirements for an educator/licensed professional licensed through the business-and-industry route. CEUs must relate to the licensed assignment, license, or professional growth goals.';
+  }
+  return rule;
+}
+function getRule(key, date) {
+  const base = state.rules.find(function(rule) { return rule.categoryKey === key; });
+  return effectiveRuleForDateClient_(base, date);
+}
 function groupBy(items, key) {
   return items.reduce(function(groups, item) {
     const value = item[key] || 'Other';
@@ -1540,7 +1618,7 @@ function calculationSummary(rule) {
     return 'Normally 1 CU per ' + rule.unpaidHoursPerCU + ' unpaid hours or ' +
       rule.paidHoursPerCU + ' paid hours';
   }
-  if (rule.calculationType === 'count') return rule.perUnitCUs + ' CUs per ' + quantityLabelFor((rule.units || [])[0]).toLowerCase().replace(/s$/, '');
+  if (rule.calculationType === 'count' && rule.perUnitCUs !== null && rule.perUnitCUs !== '') return rule.perUnitCUs + ' CUs per ' + quantityLabelFor((rule.units || [])[0]).toLowerCase().replace(/s$/, '');
   if (rule.calculationType === 'fixed') return rule.fixedCUs + ' fixed CUs';
   if (rule.calculationType === 'unit_rate') {
     return Object.keys(rule.unitRates || {}).map(function(unit) {

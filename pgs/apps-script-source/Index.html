@@ -66,14 +66,14 @@
       <div class="cutoff-icon">📅</div>
       <div>
         <strong>Applicability Notice</strong>
-        <p>This assistant, calculator, category matcher, evidence guidance, folder tools, and ELMS-preparation tools apply only to activities occurring on or after <strong>May 1, 2024</strong>.</p>
+        <p>This assistant supports activities occurring on or after <strong>May 1, 2024</strong> and applies the PGS rule set based on the activity date. Activities through August 31, 2026 use the prior rule era; activities on or after September 1, 2026 use the 9/1/26 Reference Guide.</p>
       </div>
     </div>
 
     <section id="dashboard" class="view active">
       <div class="hero">
         <h3>Describe the work. Let the assistant narrow the category.</h3>
-        <p>Teachers should not need to memorize all PGS activity names. For activities occurring on or after May 1, 2024, the matcher compares the activity against the complete current category library, explains the recommendation, and shows the documentation before the record is saved.</p>
+        <p>Teachers should not need to memorize PGS activity names or remember which guide applies. For activities on or after May 1, 2024, the matcher uses the activity date to apply the prior rule era through August 31, 2026 or the 9/1/26 Reference Guide beginning September 1, 2026.</p>
         <div class="actions">
           <button class="btn gold" type="button" onclick="showView('matcher')">Find My Category</button>
           <button class="btn white" type="button" onclick="showView('activity')">I Already Know It</button>
@@ -81,18 +81,19 @@
       </div>
 
       <div class="grid g4 stats">
-        <div class="card stat"><div class="label">Current Activity Options</div><div class="value" id="libraryCount">0</div><small>Loaded from the full current guide</small></div>
+        <div class="card stat"><div class="label">Current Activity Options</div><div class="value" id="libraryCount">0</div><small>Based on today’s effective rule set</small></div>
         <div class="card stat"><div class="label">Estimated CUs</div><div class="value" id="estimated">0.00</div><small>All activity estimates</small></div>
         <div class="card stat"><div class="label">Approved CUs</div><div class="value" id="approved">0.00</div><small>Only official approvals entered</small></div>
         <div class="card stat"><div class="label">Remaining</div><div class="value" id="remaining">225.00</div><small>Based on approved CUs</small></div>
       </div>
       <div id="warningBox" class="notice warn"></div>
-      <div class="section"><h3>Annual Advancement Timeline</h3><p>Always verify dates on the official PGS page.</p></div>
+      <div class="section"><h3>9/1/26 Advancement Reminders</h3><p>Always verify current annual dates and announcements on the official PGS page.</p></div>
       <div class="grid g3">
-        <div class="card"><h3>June 1</h3><p>Request for Column Advancement deadline for the next contract year.</p></div>
-        <div class="card"><h3>August 31</h3><p>Complete all requirements and activities being used for the advancement cycle.</p></div>
-        <div class="card"><h3>October 1</h3><p>Submit all required documentation in ELMS for the current advancement cycle.</p></div>
+        <div class="card"><h3>October 1</h3><p>The 9/1/26 Reference Guide states that all activities completed during the advancement cycle must be submitted by October 1 of the year the employee is advancing.</p></div>
+        <div class="card"><h3>Current window only</h3><p>Activities completed during a previous advancement window will not be accepted for the current submission window.</p></div>
+        <div class="card"><h3>Verify other dates</h3><p>Check the official PGS page for current advancement-request, completion, and announcement dates not stated in the 9/1/26 Reference Guide table.</p></div>
       </div>
+      <div class="section"><h3>Which advancement track applies?</h3><p>The 9/1/26 Reference Guide identifies a two-year track for educators/licensed professionals serving exclusively at a Title I school and for self-contained special education teachers. Non-Title I educators and centrally assigned employees generally use the three-year track; centrally assigned employees may qualify for the two-year track only when all assignments are in Title I schools.</p></div>
     </section>
 
     <section id="matcher" class="view">
@@ -102,11 +103,11 @@
             <h3>Guided Activity Category Finder</h3>
             <p>Each step limits the next step to combinations supported by the current official PGS documentation.</p>
           </div>
-          <span class="verified-badge">43 current categories covered</span>
+          <span class="verified-badge">43 prior-era / 44 effective 9/1/26</span>
         </div>
 
         <div class="notice warn">
-          <strong>Date requirement:</strong> Use this finder only for activities occurring on or after May 1, 2024.
+          <strong>Date requirement:</strong> Enter the actual activity date. The assistant uses the prior rule set through August 31, 2026 and the 9/1/26 Reference Guide beginning September 1, 2026. Activities before May 1, 2024 are not supported.
         </div>
 
         <div class="finder-steps">
@@ -174,7 +175,7 @@
         <div class="heading-actions">
           <div>
             <h3 id="formHeading">Add a Professional Activity</h3>
-            <p>Choose directly or return to the matcher for help.</p><div class="notice warn"><strong>Only current-cycle rules:</strong> This form accepts activities occurring on or after May 1, 2024.</div>
+            <p>Choose directly or return to the matcher for help.</p><div class="notice warn"><strong>Activity-date rules:</strong> This form accepts activities occurring on or after May 1, 2024 and uses the activity date to select the applicable rule era.</div>
           </div>
           <button class="btn ghost" type="button" onclick="showView('matcher')">Help Me Choose</button>
         </div>

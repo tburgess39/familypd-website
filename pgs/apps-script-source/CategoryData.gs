@@ -1663,7 +1663,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of community awards received",
     "quantityHelp": "Enter awards actually received. The category is 5 CUs for one qualifying community award; maximum 5 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained\u2014not the hours spent applying, preparing, or completing related work."
+    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained—not the hours spent applying, preparing, or completing related work."
   },
   {
     "categoryKey": "STATE_AWARD",
@@ -1718,7 +1718,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of state professional awards received",
     "quantityHelp": "Enter awards actually received. The category is 15 CUs for one qualifying state award; maximum 15 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained\u2014not the hours spent applying, preparing, or completing related work."
+    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained—not the hours spent applying, preparing, or completing related work."
   },
   {
     "categoryKey": "NATIONAL_AWARD",
@@ -1773,7 +1773,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of national professional awards received",
     "quantityHelp": "Enter each qualifying national award received. Each earns 25 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained\u2014not the hours spent applying, preparing, or completing related work."
+    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained—not the hours spent applying, preparing, or completing related work."
   },
   {
     "categoryKey": "MENTOR",
@@ -1940,7 +1940,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of grants received",
     "quantityHelp": "Enter grants that were actually awarded and directly benefit students, the classroom/school, or school community. Each earns 3 CUs; maximum 30 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "Grant CUs are based on the number of grants actually received\u2014not hours spent writing or applying. Evidence that the grant was awarded is required."
+    "evidenceInputBasis": "Grant CUs are based on the number of grants actually received—not hours spent writing or applying. Evidence that the grant was awarded is required."
   },
   {
     "categoryKey": "SYNC_CONFERENCE",
@@ -2001,6 +2001,64 @@ const PGS_ACTIVITY_LIBRARY = [
     "evidenceInputBasis": "This category uses documented time. Enter exact session dates and start/end times so the record can support the Time-Based Activities form, agenda, itinerary, or session documentation required for this category."
   },
   {
+    "categoryKey": "VIRTUAL_SYNC_CONFERENCE",
+    "parentCategory": "External Professional Development",
+    "activityName": "Virtual / Synchronous Attendance at Professional Development Conferences",
+    "maximumCUs": 40,
+    "calculationType": "hours",
+    "units": [
+      "hours"
+    ],
+    "unitRates": {},
+    "unpaidHoursPerCU": 3,
+    "paidHoursPerCU": 6,
+    "perUnitCUs": null,
+    "fixedCUs": null,
+    "titleIExceptionAllowed": false,
+    "contractTimeAllowed": false,
+    "submissionMode": "self_report",
+    "documentation": "Documentation required for CU submission in ELMS, including evidence of real-time virtual conference attendance and the qualifying activity time. Upload the required documentation to CCSD Google Drive as one file and submit its share link in ELMS.",
+    "limitations": "Synchronous means occurring in real time at a specific date and time. Nationally and internationally recognized organizations must be on the PGS pre-approved conference list; other organizations must be submitted by the related content-area department for PGS Advisory Committee review. Additional virtual-conference attendance guidelines apply.",
+    "matchTags": [
+      "conference",
+      "attended",
+      "external"
+    ],
+    "keywords": [
+      "virtual conference",
+      "synchronous conference",
+      "live virtual conference",
+      "real-time webinar",
+      "conference"
+    ],
+    "sourcePage": "9",
+    "sourceUrl": "https://bit.ly/CCSDPGS",
+    "effectiveForActivitiesFrom": "2026-09-01",
+    "ruleVersion": "9/1/26 PGS Reference Guide",
+    "active": true,
+    "notes": "Maximum 40 CUs under the 9/1/26 Reference Guide.",
+    "sourceDocument": "Professional Growth System (PGS) Reference Guide - Effective September 1, 2026",
+    "lastVerified": "2026-08-19",
+    "approvalForm": "No separate approval form is stated in the 9/1/26 Reference Guide; verify current documentation instructions and virtual-conference guidelines.",
+    "approvalTiming": "Confirm that the organization is pre-approved, or that the related content-area department has completed the required review process, before relying on the activity for CUs.",
+    "packetInstructions": "Keep original, unaltered source documents. Upload the required documentation to CCSD Google Drive as a single file, share it so “Anyone in the Clark County School District with the link can view,” and submit that file link through Add Advancement Activity in ELMS.",
+    "evidenceChecklist": [
+      "Confirm the activity occurred on or after September 1, 2026.",
+      "Confirm the virtual conference occurred synchronously in real time at a specific date and time.",
+      "Confirm the organization is on the PGS pre-approved conference list or has completed the required content-area/PGS review process.",
+      "Keep the documentation required for CU submission, including evidence of attendance and qualifying activity time.",
+      "Upload the required documentation to CCSD Google Drive as one file, share it so “Anyone in the Clark County School District with the link can view,” and submit the link in ELMS."
+    ],
+    "entryMode": "session_time",
+    "dateLabel": "Session date",
+    "endDateLabel": "Derived from session log",
+    "showEndDate": false,
+    "quantityLabel": "Calculated hours",
+    "quantityHelp": "Enter each real-time virtual session date, start time, end time, break, and payment status. The assistant calculates net hours.",
+    "quantityStep": 0.25,
+    "evidenceInputBasis": "This category uses documented real-time attendance. Enter exact synchronous session dates and start/end times that can be supported by conference records."
+  },
+  {
     "categoryKey": "ASYNC_CONFERENCE_WEBINAR",
     "parentCategory": "External Professional Development",
     "activityName": "Asynchronous Conference or Webinar",
@@ -2037,7 +2095,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "effectiveForActivitiesFrom": "2024-05-01",
     "ruleVersion": "9/1/23 PGS Reference Guide + current announcements",
     "active": true,
-    "notes": "",
+    "notes": "Standalone asynchronous conference/webinar category is supported only for activities through August 31, 2026 under the prior rule set. The 9/1/26 Reference Guide does not list this as a standalone conference-attendance category.",
     "sourceDocument": "9/1/23 PGS Reference Guide and Documentation Required for CU Submission in ELMS",
     "lastVerified": "2026-07-10",
     "approvalForm": "Contact Unit Approval Form - Time-Based Activities when required by the documentation rule",
@@ -2057,7 +2115,8 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Documented duration",
     "quantityHelp": "Enter the hours/duration shown on the certificate, transcript, time report, or issuing-organization record. Do not invent start/end times.",
     "quantityStep": 0.25,
-    "evidenceInputBasis": "The official evidence requirement relies on a certificate, transcript, time report, or provider record showing hours/duration. Enter the documented total rather than reconstructing times that are not on the evidence."
+    "evidenceInputBasis": "The official evidence requirement relies on a certificate, transcript, time report, or provider record showing hours/duration. Enter the documented total rather than reconstructing times that are not on the evidence.",
+    "effectiveForActivitiesThrough": "2026-08-31"
   },
   {
     "categoryKey": "CONFERENCE_PRESENTATION",
@@ -2169,7 +2228,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of approved micro-credentials earned",
     "quantityHelp": "Enter Digital Promise-approved micro-credentials actually earned. Each earns 5 CUs; maximum 50 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained\u2014not the hours spent applying, preparing, or completing related work."
+    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained—not the hours spent applying, preparing, or completing related work."
   },
   {
     "categoryKey": "NBPTS_PROCESS",
@@ -2224,7 +2283,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Fixed official value",
     "quantityHelp": "The CU value is fixed by the guide; no hour or count entry is needed.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification\u2014not hours."
+    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification—not hours."
   },
   {
     "categoryKey": "NBPTS_CERTIFICATION",
@@ -2279,7 +2338,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Fixed official value",
     "quantityHelp": "The CU value is fixed by the guide; no hour or count entry is needed.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification\u2014not hours."
+    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification—not hours."
   },
   {
     "categoryKey": "NBPTS_MOC",
@@ -2334,7 +2393,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Fixed official value",
     "quantityHelp": "The CU value is fixed by the guide; no hour or count entry is needed.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification\u2014not hours."
+    "evidenceInputBasis": "This category has a fixed CU value based on documented submission, certification, or maintenance of certification—not hours."
   },
   {
     "categoryKey": "SECOND_ENDORSEMENT",
@@ -2391,7 +2450,7 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Number of qualifying second endorsements maintained",
     "quantityHelp": "Enter eligible endorsements outside the primary assignment. Each earns 10 CUs; maximum 20 CUs.",
     "quantityStep": 1,
-    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained\u2014not the hours spent applying, preparing, or completing related work."
+    "evidenceInputBasis": "This category is based on the documented number received, earned, or maintained—not the hours spent applying, preparing, or completing related work."
   },
   {
     "categoryKey": "SPECIALTY_CEU",
@@ -2454,7 +2513,64 @@ const PGS_ACTIVITY_LIBRARY = [
     "quantityLabel": "Documented hours or CEUs",
     "quantityHelp": "Choose documented clock hours or CEUs and enter the amount exactly as shown on the certificate/transcript.",
     "quantityStep": 0.1,
-    "evidenceInputBasis": "This category is measured by hours or CEUs printed on the responsible organization\u2019s certificate/transcript. Exact session times are not required unless a current department workflow specifically asks for a Time-Based Activities form."
+    "evidenceInputBasis": "This category is measured by hours or CEUs printed on the responsible organization’s certificate/transcript. Exact session times are not required unless a current department workflow specifically asks for a Time-Based Activities form."
+  },
+  {
+    "categoryKey": "NDE_PD",
+    "parentCategory": "External Professional Development",
+    "activityName": "Nevada Department of Education Professional Development",
+    "maximumCUs": 120,
+    "calculationType": "manual",
+    "units": [
+      "documented_hours"
+    ],
+    "unitRates": {},
+    "unpaidHoursPerCU": null,
+    "paidHoursPerCU": null,
+    "perUnitCUs": null,
+    "fixedCUs": null,
+    "titleIExceptionAllowed": false,
+    "contractTimeAllowed": false,
+    "submissionMode": "self_report",
+    "documentation": "Nevada Department of Education certificate and the documentation required for CU submission in ELMS. Upload required documentation to CCSD Google Drive as one file and submit its share link in ELMS.",
+    "limitations": "Maximum 120 CUs. This category is limited to free professional-development activities provided by Nevada Department of Education staff and excludes activities for which educators/licensed professionals must pay to participate.",
+    "matchTags": [
+      "professional_learning",
+      "nde",
+      "external"
+    ],
+    "keywords": [
+      "Nevada Department of Education",
+      "NDE professional development",
+      "NDE certificate",
+      "state professional development"
+    ],
+    "sourcePage": "10",
+    "sourceUrl": "https://bit.ly/CCSDPGS",
+    "effectiveForActivitiesFrom": "2026-09-01",
+    "ruleVersion": "9/1/26 PGS Reference Guide",
+    "active": true,
+    "notes": "The 9/1/26 Reference Guide establishes a 120-CU maximum but does not state a universal CU conversion value in the reference-guide table. The assistant therefore requires official verification rather than inventing a rate.",
+    "sourceDocument": "Professional Growth System (PGS) Reference Guide - Effective September 1, 2026",
+    "lastVerified": "2026-08-19",
+    "approvalForm": "No separate approval form is stated in the 9/1/26 Reference Guide; verify current documentation instructions.",
+    "approvalTiming": "Confirm the activity is free and provided by NDE staff before relying on this category.",
+    "packetInstructions": "Keep the NDE-issued certificate and other required documentation unaltered. Upload the required documentation to CCSD Google Drive as a single file, share it so “Anyone in the Clark County School District with the link can view,” and submit that file link through Add Advancement Activity in ELMS.",
+    "evidenceChecklist": [
+      "Confirm the activity occurred on or after September 1, 2026.",
+      "Confirm the professional-development activity was provided by Nevada Department of Education staff.",
+      "Confirm the activity was free to participate in.",
+      "Keep the NDE-issued certificate and any other documentation required for CU submission.",
+      "Upload the required documentation to CCSD Google Drive as one file, share it so “Anyone in the Clark County School District with the link can view,” and submit the link in ELMS."
+    ],
+    "entryMode": "ceu_or_hours",
+    "dateLabel": "NDE activity completion date",
+    "endDateLabel": "Optional end date",
+    "showEndDate": true,
+    "quantityLabel": "Documented hours shown on the NDE certificate",
+    "quantityHelp": "Enter the documented hours exactly as shown on the NDE certificate. The 9/1/26 Reference Guide does not state a universal CU conversion in this table, so the assistant will not invent an estimate.",
+    "quantityStep": 0.25,
+    "evidenceInputBasis": "Use the NDE-issued certificate exactly as provided. Record the documented hours, but verify the official CU amount in current PGS/ELMS guidance because the reference-guide table does not state a universal conversion rate."
   }
 ];
 
@@ -2980,33 +3096,50 @@ const PGS_GUIDED_FINDER = {
     {
       "id": "external_professional_org",
       "label": "An external professional association, conference, or webinar provider",
-      "description": "Use this path for recognized professional organizations outside the District provider categories.",
+      "description": "Use this path for recognized professional organizations outside the District provider categories. Conference rules change on September 1, 2026, so the activity date matters.",
       "roles": [
         {
           "id": "live_attendee",
-          "label": "I attended live, in person, or synchronously",
-          "description": "The event occurred in real time at a specific date and time.",
+          "label": "I attended a professional conference live or in real time",
+          "description": "Choose the format that actually occurred. The 9/1/26 guide separates in-person/live attendance from virtual/synchronous attendance.",
           "activities": [
             {
-              "id": "sync_conference",
+              "id": "in_person_conference",
               "categoryKey": "SYNC_CONFERENCE",
-              "label": "In-person, live virtual, or synchronous conference attendance",
-              "description": "I attended a real-time conference provided by an organization recognized by my profession or content area.",
-              "officialBasis": "Synchronous conference attendance; maximum 80 CUs."
+              "label": "In-person / live conference attendance",
+              "description": "I attended a qualifying professional-development conference in person or as a live attendance event.",
+              "officialBasis": "Through August 31, 2026 this is part of the combined synchronous category; beginning September 1, 2026 in-person/live conference attendance has a maximum of 80 CUs."
+            },
+            {
+              "id": "virtual_sync_conference_legacy",
+              "categoryKey": "SYNC_CONFERENCE",
+              "label": "Virtual / synchronous conference attendance - activity completed through August 31, 2026",
+              "description": "I attended a real-time virtual/synchronous conference before the 9/1/26 rule change.",
+              "officialBasis": "Prior rule set: real-time in-person/virtual synchronous conference attendance used the combined conference category with an 80-CU maximum.",
+              "availableThrough": "2026-08-31"
+            },
+            {
+              "id": "virtual_sync_conference_2026",
+              "categoryKey": "VIRTUAL_SYNC_CONFERENCE",
+              "label": "Virtual / synchronous conference attendance - activity on or after September 1, 2026",
+              "description": "I attended a qualifying professional-development conference virtually and synchronously in real time.",
+              "officialBasis": "9/1/26 Reference Guide: virtual/synchronous conference attendance has a maximum of 40 CUs.",
+              "availableFrom": "2026-09-01"
             }
           ]
         },
         {
           "id": "async_attendee",
-          "label": "I completed an asynchronous conference or webinar",
-          "description": "The content was viewed on demand rather than at a coordinated real-time session.",
+          "label": "I completed an asynchronous conference or webinar before September 1, 2026",
+          "description": "The standalone asynchronous conference/webinar category is a prior-rule category. The 9/1/26 Reference Guide does not list it as a standalone conference-attendance category.",
           "activities": [
             {
               "id": "async_conference",
               "categoryKey": "ASYNC_CONFERENCE_WEBINAR",
               "label": "Asynchronous Conference or Webinar",
               "description": "I completed an on-demand conference or webinar that did not occur in real time.",
-              "officialBasis": "Asynchronous conference/webinar; maximum 10 CUs."
+              "officialBasis": "Prior rule set only; maximum 10 CUs through August 31, 2026. Verify current guidance for activities on or after September 1, 2026.",
+              "availableThrough": "2026-08-31"
             }
           ]
         },
@@ -3083,14 +3216,14 @@ const PGS_GUIDED_FINDER = {
         {
           "id": "microcredential_earner",
           "label": "I earned an approved micro-credential",
-          "description": "Only Digital Promise-approved micro-credentials qualify under this category.",
+          "description": "Only Digital Promise-approved micro-credentials qualify. For activities on or after September 1, 2026, the reference guide states a 50-CU maximum but does not state a per-credential CU value.",
           "activities": [
             {
               "id": "microcredential",
               "categoryKey": "MICRO_CREDENTIAL",
               "label": "Digital Promise-Approved Micro-Credential",
               "description": "I earned a Digital Promise-approved micro-credential related to my assignment, license, or professional growth goals.",
-              "officialBasis": "Approved micro-credentials; maximum 50 CUs."
+              "officialBasis": "Digital Promise-approved micro-credentials; maximum 50 CUs. The 9/1/26 guide does not state a universal CU value per credential."
             }
           ]
         },
@@ -3140,8 +3273,8 @@ const PGS_GUIDED_FINDER = {
     },
     {
       "id": "licensure_ceu",
-      "label": "A license, endorsement, CEU, ASCA, NDE, or Mental Health Academy provider",
-      "description": "Use this path for maintaining an eligible second endorsement or completing qualifying specialty-license CEUs.",
+      "label": "A license, endorsement, specialty CEU, NDE professional-development, ASCA, or Mental Health Academy provider",
+      "description": "Use this path for maintaining an eligible second endorsement, completing qualifying specialty-license CEUs, or qualifying NDE professional development.",
       "roles": [
         {
           "id": "second_endorsement",
@@ -3160,7 +3293,7 @@ const PGS_GUIDED_FINDER = {
         {
           "id": "specialty_ceu",
           "label": "I completed continuing education for a specialty professional license",
-          "description": "This includes qualifying CEUs for OLEP and business/industry-route licensed professionals, plus NDE-issued CEUs.",
+          "description": "This includes qualifying CEUs for licensed professionals who hold a specialty professional license or qualify through the business-and-industry route. NDE professional development effective 9/1/26 is listed separately.",
           "activities": [
             {
               "id": "specialty_ceu",
@@ -3179,6 +3312,21 @@ const PGS_GUIDED_FINDER = {
               "sourceDocument": "9/1/23 PGS Reference Guide plus CCSD and CCEA PGS Announcements",
               "sourcePage": "10 and announcement pages 2-3",
               "sourceDate": "March 12 and March 30, 2026"
+            }
+          ]
+        },
+        {
+          "id": "nde_pd_participant",
+          "label": "I completed free professional development provided by Nevada Department of Education staff",
+          "description": "Use this category only for free NDE-staff professional-development activities completed on or after September 1, 2026.",
+          "activities": [
+            {
+              "id": "nde_pd_2026",
+              "categoryKey": "NDE_PD",
+              "label": "Nevada Department of Education Professional Development",
+              "description": "I completed a free professional-development activity provided by NDE staff and received an NDE certificate.",
+              "officialBasis": "9/1/26 Reference Guide: maximum 120 CUs; paid participation is excluded.",
+              "availableFrom": "2026-09-01"
             }
           ]
         }
@@ -3223,6 +3371,31 @@ const PGS_SPECIAL_RULES = [
     ],
     "message": "Certain self-designed or certificate-conversion university courses are not accepted for CU accrual under the posted PGS announcements. Confirm eligibility before paying for or submitting these credits.",
     "source": "CCSD and CCEA PGS Announcements"
+  },
+  {
+    "id": "ASYNC_NOT_LISTED_2026",
+    "title": "Asynchronous conference/webinar - 9/1/26 rule change",
+    "effectiveDate": "2026-09-01",
+    "keywords": [
+      "asynchronous",
+      "recorded webinar",
+      "on demand",
+      "self paced conference"
+    ],
+    "message": "The 9/1/26 PGS Reference Guide lists in-person/live and virtual/synchronous conference attendance, but it does not list a standalone asynchronous conference/webinar attendance category. Do not assume an on-demand activity qualifies under the prior 10-CU category; verify current PGS guidance or another applicable category.",
+    "source": "9/1/26 PGS Reference Guide, page 9"
+  },
+  {
+    "id": "MICRO_RATE_2026",
+    "title": "Micro-credential calculation - 9/1/26 guide",
+    "effectiveDate": "2026-09-01",
+    "keywords": [
+      "microcredential",
+      "micro-credential",
+      "digital promise"
+    ],
+    "message": "The 9/1/26 PGS Reference Guide limits qualifying Digital Promise micro-credentials to 50 CUs but does not state a universal CU value per credential in the reference-guide table. The assistant will not auto-calculate a per-credential amount for activities on or after September 1, 2026.",
+    "source": "9/1/26 PGS Reference Guide, page 9"
   }
 ];
 
