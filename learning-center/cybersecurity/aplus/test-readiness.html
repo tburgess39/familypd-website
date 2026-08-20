@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>A+ Test Readiness Tracker | FamilyPD</title>
+<meta name="description" content="Interactive FamilyPD CompTIA A+ 220-1201 and 220-1202 exam-objective readiness tracker."/>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.ready-shell{max-width:1050px;margin:auto}
+.ready-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.ready-tab{border:2px solid #163f61;background:#fff;color:#163f61;border-radius:10px;padding:.65rem .85rem;font:inherit;font-weight:800;cursor:pointer}
+.ready-tab.active{background:#163f61;color:#fff}
+.exam-panel[hidden]{display:none!important}
+.readiness-board{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin:1rem 0}
+.score-card,.exam-info-card{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:16px;padding:1rem}
+.score-ring{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.score-number{font-size:clamp(2.3rem,6vw,4.3rem);font-weight:900;color:#163f61;line-height:1}
+.score-label{font-weight:900;color:#2d7f83}
+.progress-track{height:15px;border-radius:999px;background:#e5edf2;overflow:hidden;margin:.75rem 0}
+.progress-fill{height:100%;width:0;background:#2d7f83;transition:width .2s ease}
+.domain-card{background:#fff;border:1px solid #cbd8e0;border-radius:14px;margin:.7rem 0;overflow:hidden}
+.domain-card summary{cursor:pointer;display:flex;justify-content:space-between;gap:.8rem;align-items:center;padding:.85rem;background:#f8fbfc;color:#163f61}
+.domain-card summary::-webkit-details-marker{display:none}
+.domain-number{display:inline-block;background:#163f61;color:#fff;border-radius:999px;padding:.2rem .5rem;margin-right:.45rem;font-size:.78rem}
+.domain-summary-right{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.domain-weight,.domain-progress{border-radius:999px;padding:.2rem .5rem;font-size:.78rem;font-weight:800}
+.domain-weight{background:#fff3d6;color:#805216} .domain-progress{background:#e9f4f4;color:#16575b}
+.domain-body{padding:.85rem}
+.ready-objective{display:flex;gap:.65rem;align-items:flex-start;padding:.62rem .2rem;border-bottom:1px solid #edf1f4;color:#111;line-height:1.4}
+.ready-objective:last-child{border-bottom:0}
+.ready-objective input{margin-top:.2rem;width:19px;height:19px;accent-color:#2d7f83;flex:0 0 auto}
+.domain-actions{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.45rem}
+.mini-btn{border:1px solid #8da6b6;background:#fff;color:#163f61;border-radius:8px;padding:.38rem .55rem;font:inherit;font-size:.82rem;font-weight:800;cursor:pointer}
+.info-check{display:flex;gap:.6rem;align-items:flex-start;margin:.55rem 0;color:#111}
+.info-check input{width:18px;height:18px;margin-top:.15rem;accent-color:#d16a2d}
+.exam-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.75rem 0}
+.meta{background:#f5f8fa;border-radius:10px;padding:.6rem;color:#111} .meta strong{display:block;color:#163f61}
+.ready-callout{background:#fff9ec;border-left:5px solid #d16a2d;border-radius:12px;padding:.85rem;margin:.8rem 0;color:#111}
+.ready-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}
+.ready-actions .button{font-size:13px!important;padding:8px 11px!important;min-height:34px!important;width:auto!important}
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto}
+.aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;font-size:.84rem}
+.aplus-quick-strip .button{font-size:12.5px!important;padding:7px 10px!important;min-height:32px!important;width:auto!important}
+.page-hero h1{font-size:clamp(1.85rem,3.5vw,2.65rem)!important}
+.ready-shell h2{font-size:clamp(1.22rem,2vw,1.55rem)!important}
+@media(max-width:800px){.readiness-board{grid-template-columns:1fr}.exam-meta{grid-template-columns:1fr}}
+@media(max-width:700px){.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important;white-space:normal!important}.domain-card summary{align-items:flex-start;flex-direction:column}.domain-summary-right{justify-content:flex-start}}
+</style>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
+<nav class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav>
+</div></header>
+
+<main id="main-content">
+<section class="page-hero"><div class="container ready-shell">
+<nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Test Readiness</span></nav>
+<p class="eyebrow">CompTIA A+ • self-assessment</p>
+<h1>Test Readiness Tracker</h1>
+<p class="page-lead">Check an objective only when you can explain it, recognize it in a scenario, or perform the task <strong>without relying heavily on notes</strong>. Your readiness percentage is weighted using the official domain percentages for each exam.</p>
+</div></section>
+
+<div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip"><strong>A+ quick links</strong>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
+</div></div>
+
+<section class="section"><div class="container ready-shell">
+<div class="ready-callout"><strong>This is a readiness self-check—not an exam score prediction.</strong> Checking every box does not guarantee a passing score. Use missed practice questions, labs, weak domains, and the official objectives to decide what to review next.</div>
+
+<div class="ready-tabs" role="tablist">
+<button class="ready-tab active" type="button" data-target="core1-panel">Core 1 • 220-1201</button>
+<button class="ready-tab" type="button" data-target="core2-panel">Core 2 • 220-1202</button>
+</div>
+
+<div id="core1-panel" class="exam-panel" data-exam="core1">
+<div class="readiness-board">
+<div class="score-card"><span class="score-label">Core 1 objective readiness</span><div class="score-ring"><div class="score-number" id="core1-score">0%</div><div><strong id="core1-count">0 of 27 objectives marked ready</strong><p>Weighted by official Core 1 domain percentages.</p></div></div><div class="progress-track"><div class="progress-fill" id="core1-fill"></div></div>
+<div class="ready-actions"><button class="button button-secondary reset-exam" data-exam="core1" type="button">Reset Core 1</button><button class="button button-secondary mark-exam" data-exam="core1" type="button">Mark all Core 1 ready</button></div></div>
+<div class="exam-info-card"><h2>Know the exam setup too</h2><div class="exam-meta"><div class="meta"><strong>Maximum questions</strong>90</div><div class="meta"><strong>Time</strong>90 minutes</div><div class="meta"><strong>Question types</strong>Multiple-choice + performance-based</div><div class="meta"><strong>Passing score</strong>675 / 900</div></div>
+<label class="info-check"><input type="checkbox" data-info="core1"><span>I know A+ certification requires passing both Core 1 and Core 2.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core1"><span>I know Core 1 has a maximum of 90 questions and a 90-minute time limit.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core1"><span>I know Core 1 includes multiple-choice and performance-based questions.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core1"><span>I know the Core 1 passing score is 675 on a 100–900 scale.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core1"><span>I know CompTIA recommends about 12 months of hands-on IT support experience.</span></label>
+<p><strong>Exam-info readiness:</strong> <span id="core1-info-score">0%</span></p></div>
+</div>
+<h2>Core 1 objectives</h2>
+
+<details class="domain-card" open data-exam-domain="core1-1.0">
+<summary>
+<div><span class="domain-number">1.0</span><strong>Mobile Devices</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">13% of exam</span><span class="domain-progress" id="core1-1-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="1.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="1.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.1" id="core1-1-1">
+<span><strong>1.1</strong> Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.2" id="core1-1-2">
+<span><strong>1.2</strong> Compare and contrast accessories and connectivity options for mobile devices.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3">
+<span><strong>1.3</strong> Given a scenario, configure basic mobile device network connectivity and provide application support.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core1-2.0">
+<summary>
+<div><span class="domain-number">2.0</span><strong>Networking</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">23% of exam</span><span class="domain-progress" id="core1-2-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="2.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="2.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.1" id="core1-2-1">
+<span><strong>2.1</strong> Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.2" id="core1-2-2">
+<span><strong>2.2</strong> Explain wireless networking technologies.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.3" id="core1-2-3">
+<span><strong>2.3</strong> Summarize services provided by networked hosts.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4">
+<span><strong>2.4</strong> Explain common network configuration concepts.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.5" id="core1-2-5">
+<span><strong>2.5</strong> Compare and contrast common networking hardware devices.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.6" id="core1-2-6">
+<span><strong>2.6</strong> Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.7" id="core1-2-7">
+<span><strong>2.7</strong> Compare and contrast internet connection types, network types, and their characteristics.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.8" id="core1-2-8">
+<span><strong>2.8</strong> Explain networking tools and their purposes.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core1-3.0">
+<summary>
+<div><span class="domain-number">3.0</span><strong>Hardware</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">25% of exam</span><span class="domain-progress" id="core1-3-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="3.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="3.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.1" id="core1-3-1">
+<span><strong>3.1</strong> Compare and contrast display components and attributes.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2">
+<span><strong>3.2</strong> Summarize basic cable types and their connectors, features, and purposes.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.3" id="core1-3-3">
+<span><strong>3.3</strong> Compare and contrast RAM characteristics.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4">
+<span><strong>3.4</strong> Compare and contrast storage devices.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5">
+<span><strong>3.5</strong> Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.6" id="core1-3-6">
+<span><strong>3.6</strong> Given a scenario, install the appropriate power supply.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.7" id="core1-3-7">
+<span><strong>3.7</strong> Given a scenario, deploy and configure multifunction devices/printers and settings.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.8" id="core1-3-8">
+<span><strong>3.8</strong> Given a scenario, perform appropriate printer maintenance.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core1-4.0">
+<summary>
+<div><span class="domain-number">4.0</span><strong>Virtualization and Cloud Computing</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">11% of exam</span><span class="domain-progress" id="core1-4-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="4.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="4.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="4.0" data-objective="4.1" id="core1-4-1">
+<span><strong>4.1</strong> Explain virtualization concepts.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="4.0" data-objective="4.2" id="core1-4-2">
+<span><strong>4.2</strong> Summarize cloud computing concepts.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core1-5.0">
+<summary>
+<div><span class="domain-number">5.0</span><strong>Hardware and Network Troubleshooting</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">28% of exam</span><span class="domain-progress" id="core1-5-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="5.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="5.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.1" id="core1-5-1">
+<span><strong>5.1</strong> Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.2" id="core1-5-2">
+<span><strong>5.2</strong> Given a scenario, troubleshoot drive and RAID issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.3" id="core1-5-3">
+<span><strong>5.3</strong> Given a scenario, troubleshoot video, projector, and display issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.4" id="core1-5-4">
+<span><strong>5.4</strong> Given a scenario, troubleshoot common mobile device issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.5" id="core1-5-5">
+<span><strong>5.5</strong> Given a scenario, troubleshoot network issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.6" id="core1-5-6">
+<span><strong>5.6</strong> Given a scenario, troubleshoot printer issues.</span>
+</label>
+</div></details>
+</div>
+
+<div id="core2-panel" class="exam-panel" data-exam="core2" hidden>
+<div class="readiness-board">
+<div class="score-card"><span class="score-label">Core 2 objective readiness</span><div class="score-ring"><div class="score-number" id="core2-score">0%</div><div><strong id="core2-count">0 of 36 objectives marked ready</strong><p>Weighted by official Core 2 domain percentages.</p></div></div><div class="progress-track"><div class="progress-fill" id="core2-fill"></div></div>
+<div class="ready-actions"><button class="button button-secondary reset-exam" data-exam="core2" type="button">Reset Core 2</button><button class="button button-secondary mark-exam" data-exam="core2" type="button">Mark all Core 2 ready</button></div></div>
+<div class="exam-info-card"><h2>Know the exam setup too</h2><div class="exam-meta"><div class="meta"><strong>Maximum questions</strong>90</div><div class="meta"><strong>Time</strong>90 minutes</div><div class="meta"><strong>Question types</strong>Multiple-choice + performance-based</div><div class="meta"><strong>Passing score</strong>700 / 900</div></div>
+<label class="info-check"><input type="checkbox" data-info="core2"><span>I know A+ certification requires passing both Core 1 and Core 2.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core2"><span>I know Core 2 has a maximum of 90 questions and a 90-minute time limit.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core2"><span>I know Core 2 includes multiple-choice and performance-based questions.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core2"><span>I know the Core 2 passing score is 700 on a 100–900 scale.</span></label>
+<label class="info-check"><input type="checkbox" data-info="core2"><span>I know CompTIA recommends about 12 months of hands-on IT support experience.</span></label>
+<p><strong>Exam-info readiness:</strong> <span id="core2-info-score">0%</span></p></div>
+</div>
+<h2>Core 2 objectives</h2>
+
+<details class="domain-card" open data-exam-domain="core2-1.0">
+<summary>
+<div><span class="domain-number">1.0</span><strong>Operating Systems</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">28% of exam</span><span class="domain-progress" id="core2-1-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="1.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="1.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.1" id="core2-1-1">
+<span><strong>1.1</strong> Explain common operating system (OS) types and their purposes.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2">
+<span><strong>1.2</strong> Given a scenario, perform OS installations and upgrades in a diverse environment.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.3" id="core2-1-3">
+<span><strong>1.3</strong> Compare and contrast basic features of Microsoft Windows editions.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.4" id="core2-1-4">
+<span><strong>1.4</strong> Given a scenario, use Microsoft Windows operating system features and tools.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5">
+<span><strong>1.5</strong> Given a scenario, use the appropriate Microsoft command-line tools.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.6" id="core2-1-6">
+<span><strong>1.6</strong> Given a scenario, configure Microsoft Windows settings.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7">
+<span><strong>1.7</strong> Given a scenario, configure Microsoft Windows networking features on a client/desktop.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8">
+<span><strong>1.8</strong> Explain common features and tools of the macOS/desktop operating system.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9">
+<span><strong>1.9</strong> Identify common features and tools of the Linux client/desktop operating system.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.10" id="core2-1-10">
+<span><strong>1.10</strong> Given a scenario, install applications according to requirements.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.11" id="core2-1-11">
+<span><strong>1.11</strong> Given a scenario, install and configure cloud-based productivity tools.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core2-2.0">
+<summary>
+<div><span class="domain-number">2.0</span><strong>Security</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">28% of exam</span><span class="domain-progress" id="core2-2-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="2.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="2.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.1" id="core2-2-1">
+<span><strong>2.1</strong> Summarize various security measures and their purposes.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2">
+<span><strong>2.2</strong> Given a scenario, configure and apply basic Microsoft Windows OS security settings.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.3" id="core2-2-3">
+<span><strong>2.3</strong> Compare and contrast wireless security protocols and authentication methods.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.4" id="core2-2-4">
+<span><strong>2.4</strong> Summarize types of malware and tools/methods for detection, removal, and prevention.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.5" id="core2-2-5">
+<span><strong>2.5</strong> Compare and contrast common social engineering attacks, threats, and vulnerabilities.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.6" id="core2-2-6">
+<span><strong>2.6</strong> Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.7" id="core2-2-7">
+<span><strong>2.7</strong> Given a scenario, apply workstation security options and hardening techniques.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.8" id="core2-2-8">
+<span><strong>2.8</strong> Given a scenario, apply common methods for securing mobile devices.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.9" id="core2-2-9">
+<span><strong>2.9</strong> Compare and contrast common data destruction and disposal methods.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.10" id="core2-2-10">
+<span><strong>2.10</strong> Given a scenario, apply security settings on SOHO wireless and wired networks.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.11" id="core2-2-11">
+<span><strong>2.11</strong> Given a scenario, configure relevant security settings in a browser.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core2-3.0">
+<summary>
+<div><span class="domain-number">3.0</span><strong>Software Troubleshooting</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">23% of exam</span><span class="domain-progress" id="core2-3-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="3.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="3.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.1" id="core2-3-1">
+<span><strong>3.1</strong> Given a scenario, troubleshoot common Windows OS issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.2" id="core2-3-2">
+<span><strong>3.2</strong> Given a scenario, troubleshoot common mobile OS and application issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.3" id="core2-3-3">
+<span><strong>3.3</strong> Given a scenario, troubleshoot common mobile OS and application security issues.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.4" id="core2-3-4">
+<span><strong>3.4</strong> Given a scenario, troubleshoot common personal computer (PC) security issues.</span>
+</label>
+</div></details>
+<details class="domain-card" open data-exam-domain="core2-4.0">
+<summary>
+<div><span class="domain-number">4.0</span><strong>Operational Procedures</strong></div>
+<div class="domain-summary-right"><span class="domain-weight">21% of exam</span><span class="domain-progress" id="core2-4-0-progress">0%</span></div>
+</summary>
+<div class="domain-body">
+<div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="4.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="4.0">Clear domain</button></div>
+
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.1" id="core2-4-1">
+<span><strong>4.1</strong> Given a scenario, implement best practices associated with documentation and support systems information management.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.2" id="core2-4-2">
+<span><strong>4.2</strong> Given a scenario, apply change management procedures.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.3" id="core2-4-3">
+<span><strong>4.3</strong> Given a scenario, implement workstation backup and recovery methods.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.4" id="core2-4-4">
+<span><strong>4.4</strong> Given a scenario, use common safety procedures.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.5" id="core2-4-5">
+<span><strong>4.5</strong> Summarize environmental impacts and local environment controls.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.6" id="core2-4-6">
+<span><strong>4.6</strong> Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.7" id="core2-4-7">
+<span><strong>4.7</strong> Given a scenario, use proper communication techniques and professionalism.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.8" id="core2-4-8">
+<span><strong>4.8</strong> Explain the basics of scripting.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.9" id="core2-4-9">
+<span><strong>4.9</strong> Given a scenario, use remote access technologies.</span>
+</label>
+<label class="ready-objective">
+<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.10" id="core2-4-10">
+<span><strong>4.10</strong> Explain basic concepts related to artificial intelligence (AI).</span>
+</label>
+</div></details>
+</div>
+
+<div class="ready-callout"><strong>How the percentage works:</strong> each official domain keeps its published exam weight. Within a domain, each top-level objective contributes an equal portion of that domain's weight. Example: if you mark half of the objectives in a 28% domain, that domain contributes about 14 percentage points to your readiness score.</div>
+</div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a></div></div></footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+const examData = {"core1": {"domains": [{"id": "1.0", "weight": 13, "count": 3}, {"id": "2.0", "weight": 23, "count": 8}, {"id": "3.0", "weight": 25, "count": 8}, {"id": "4.0", "weight": 11, "count": 2}, {"id": "5.0", "weight": 28, "count": 6}], "total": 27}, "core2": {"domains": [{"id": "1.0", "weight": 28, "count": 11}, {"id": "2.0", "weight": 28, "count": 11}, {"id": "3.0", "weight": 23, "count": 4}, {"id": "4.0", "weight": 21, "count": 10}], "total": 36}};
+
+function saveState(){
+ const state={checks:{},info:{}};
+ document.querySelectorAll('input[data-exam]').forEach(x=>state.checks[x.id]=x.checked);
+ ['core1','core2'].forEach(ex=>state.info[ex]=[...document.querySelectorAll('input[data-info="'+ex+'"]')].map(x=>x.checked));
+ localStorage.setItem('familypd-aplus-readiness-v1',JSON.stringify(state));
+}
+function loadState(){
+ try{
+   const state=JSON.parse(localStorage.getItem('familypd-aplus-readiness-v1')||'{}');
+   if(state.checks) Object.entries(state.checks).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.checked=!!val;});
+   if(state.info) Object.entries(state.info).forEach(([ex,vals])=>{[...document.querySelectorAll('input[data-info="'+ex+'"]')].forEach((el,i)=>el.checked=!!vals[i]);});
+ }catch(e){}
+}
+function updateExam(ex){
+ let weighted=0, selected=0;
+ examData[ex].domains.forEach(d=>{
+   const boxes=[...document.querySelectorAll('input[data-exam="'+ex+'"][data-domain="'+d.id+'"]')];
+   const hit=boxes.filter(x=>x.checked).length;
+   const frac=boxes.length?hit/boxes.length:0;
+   weighted += frac*d.weight;
+   selected += hit;
+   const progress=document.getElementById(ex+'-'+d.id.replace('.','-')+'-progress');
+   if(progress) progress.textContent=Math.round(frac*100)+'%';
+ });
+ const pct=Math.round(weighted);
+ document.getElementById(ex+'-score').textContent=pct+'%';
+ document.getElementById(ex+'-fill').style.width=pct+'%';
+ document.getElementById(ex+'-count').textContent=selected+' of '+examData[ex].total+' objectives marked ready';
+ const infos=[...document.querySelectorAll('input[data-info="'+ex+'"]')];
+ const ipct=infos.length?Math.round(infos.filter(x=>x.checked).length/infos.length*100):0;
+ document.getElementById(ex+'-info-score').textContent=ipct+'%';
+}
+function updateAll(){updateExam('core1');updateExam('core2');saveState();}
+document.querySelectorAll('input[data-exam],input[data-info]').forEach(x=>x.addEventListener('change',updateAll));
+document.querySelectorAll('.check-domain').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"][data-domain="'+btn.dataset.domain+'"]').forEach(x=>x.checked=true);updateAll();
+}));
+document.querySelectorAll('.clear-domain').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"][data-domain="'+btn.dataset.domain+'"]').forEach(x=>x.checked=false);updateAll();
+}));
+document.querySelectorAll('.reset-exam').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"],input[data-info="'+btn.dataset.exam+'"]').forEach(x=>x.checked=false);updateAll();
+}));
+document.querySelectorAll('.mark-exam').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"]').forEach(x=>x.checked=true);updateAll();
+}));
+document.querySelectorAll('.ready-tab').forEach(tab=>tab.addEventListener('click',()=>{
+ document.querySelectorAll('.ready-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');
+ document.querySelectorAll('.exam-panel').forEach(p=>p.hidden=p.id!==tab.dataset.target);
+}));
+loadState();updateExam('core1');updateExam('core2');
+</script>
+</body></html>
