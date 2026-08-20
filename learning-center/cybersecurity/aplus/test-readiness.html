@@ -48,6 +48,16 @@
 .ready-shell h2{font-size:clamp(1.22rem,2vw,1.55rem)!important}
 @media(max-width:800px){.readiness-board{grid-template-columns:1fr}.exam-meta{grid-template-columns:1fr}}
 @media(max-width:700px){.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important;white-space:normal!important}.domain-card summary{align-items:flex-start;flex-direction:column}.domain-summary-right{justify-content:flex-start}}
+
+.ican-title{font-weight:900;color:#163f61;margin:.65rem 0 .25rem}
+.ican-row{display:flex;gap:.6rem;align-items:flex-start;padding:.42rem .35rem;margin:.12rem 0;background:#fbfdfe;border-radius:8px;color:#111;line-height:1.4}
+.ican-row:hover{background:#f1f7f8}.ican-row input{width:18px;height:18px;margin-top:.15rem;accent-color:#2d7f83;flex:0 0 auto}
+.objective-block{display:block;padding:.75rem .25rem;border-bottom:1px solid #dfe8ed}
+.objective-head{display:flex;justify-content:space-between;gap:.75rem;align-items:flex-start;color:#111;line-height:1.4}
+.objective-pct{flex:0 0 auto;background:#e9f4f4;color:#16575b;border-radius:999px;padding:.18rem .48rem;font-size:.78rem;font-weight:900}
+.objective-meter{height:7px;background:#e5edf2;border-radius:999px;overflow:hidden;margin:.45rem 0}.objective-meter-fill{height:100%;width:0;background:#2d7f83;transition:width .2s}
+.objective-actions{display:flex;gap:.4rem;flex-wrap:wrap;margin:.5rem 0 .15rem}
+
 </style>
 </head>
 <body class="learning-center-page">
@@ -63,7 +73,7 @@
 <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Test Readiness</span></nav>
 <p class="eyebrow">CompTIA A+ • self-assessment</p>
 <h1>Test Readiness Tracker</h1>
-<p class="page-lead">Check an objective only when you can explain it, recognize it in a scenario, or perform the task <strong>without relying heavily on notes</strong>. Your readiness percentage is weighted using the official domain percentages for each exam.</p>
+<p class="page-lead">Open each objective and check the individual <strong>I can…</strong> statements you can confidently demonstrate without relying heavily on notes. Partial completion gives partial readiness credit; completing every I-can statement under an objective brings that objective to 100%. Your overall readiness remains weighted using the official exam-domain percentages.</p>
 </div></section>
 
 <div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip"><strong>A+ quick links</strong>
@@ -109,18 +119,27 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="1.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="1.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.1" id="core1-1-1">
-<span><strong>1.1</strong> Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.2" id="core1-1-2">
-<span><strong>1.2</strong> Compare and contrast accessories and connectivity options for mobile devices.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3">
-<span><strong>1.3</strong> Given a scenario, configure basic mobile device network connectivity and provide application support.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core1-1.1">
+<div class="objective-head"><div><strong>1.1</strong> Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</div><span class="objective-pct" id="core1-1-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-1-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.1" id="core1-1-1-ican-1"><span>I can identify replaceable laptop/mobile hardware such as batteries, keyboards, RAM, storage, and wireless cards.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.1" id="core1-1-1-ican-2"><span>I can identify privacy/security hardware, biometrics, NFC scanner features, antennas, cameras, and microphones.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.1" id="core1-1-1-ican-3"><span>I can choose an appropriate replacement approach for mobile hardware in a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="1.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="1.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-1.2">
+<div class="objective-head"><div><strong>1.2</strong> Compare and contrast accessories and connectivity options for mobile devices.</div><span class="objective-pct" id="core1-1-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-1-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.2" id="core1-1-2-ican-1"><span>I can compare USB/USB-C/microUSB/miniUSB, Lightning, NFC, Bluetooth, and tethering/hotspot connections.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.2" id="core1-1-2-ican-2"><span>I can match styluses, headsets, speakers, webcams, docking stations, port replicators, and pointing/drawing devices to their uses.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="1.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="1.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-1.3">
+<div class="objective-head"><div><strong>1.3</strong> Given a scenario, configure basic mobile device network connectivity and provide application support.</div><span class="objective-pct" id="core1-1-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-1-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3-ican-1"><span>I can configure Wi-Fi, hotspot, 3G/4G/5G, SIM/eSIM, and cellular data settings.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3-ican-2"><span>I can pair and test a Bluetooth device, including PIN-based pairing when required.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3-ican-3"><span>I can explain GPS/cellular location services and basic MDM concepts including BYOD, policies, and corporate apps.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="1.0" data-objective="1.3" id="core1-1-3-ican-4"><span>I can configure or troubleshoot synchronization of calendars, contacts, mail, cloud storage, and business apps while recognizing data caps.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="1.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="1.3">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core1-2.0">
 <summary>
@@ -130,38 +149,62 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="2.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="2.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.1" id="core1-2-1">
-<span><strong>2.1</strong> Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.2" id="core1-2-2">
-<span><strong>2.2</strong> Explain wireless networking technologies.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.3" id="core1-2-3">
-<span><strong>2.3</strong> Summarize services provided by networked hosts.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4">
-<span><strong>2.4</strong> Explain common network configuration concepts.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.5" id="core1-2-5">
-<span><strong>2.5</strong> Compare and contrast common networking hardware devices.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.6" id="core1-2-6">
-<span><strong>2.6</strong> Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.7" id="core1-2-7">
-<span><strong>2.7</strong> Compare and contrast internet connection types, network types, and their characteristics.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="2.0" data-objective="2.8" id="core1-2-8">
-<span><strong>2.8</strong> Explain networking tools and their purposes.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core1-2.1">
+<div class="objective-head"><div><strong>2.1</strong> Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</div><span class="objective-pct" id="core1-2-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.1" id="core1-2-1-ican-1"><span>I can match common ports to FTP, SSH, Telnet, SMTP, DNS, DHCP, HTTP/HTTPS, POP3, IMAP, NetBIOS/NetBT, LDAP, SMB/CIFS, and RDP.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.1" id="core1-2-1-ican-2"><span>I can compare TCP and UDP and choose the appropriate transport behavior for a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.2">
+<div class="objective-head"><div><strong>2.2</strong> Explain wireless networking technologies.</div><span class="objective-pct" id="core1-2-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.2" id="core1-2-2-ican-1"><span>I can compare 2.4 GHz, 5 GHz, and 6 GHz wireless bands.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.2" id="core1-2-2-ican-2"><span>I can explain channels, channel widths, frequency/band selection, and regulatory considerations.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.2" id="core1-2-2-ican-3"><span>I can recognize 802.11 standards and explain Bluetooth, NFC, and RFID uses.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.3">
+<div class="objective-head"><div><strong>2.3</strong> Summarize services provided by networked hosts.</div><span class="objective-pct" id="core1-2-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.3" id="core1-2-3-ican-1"><span>I can explain the purposes of DNS, DHCP, file, print, mail, syslog, web, AAA, database, and NTP servers.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.3" id="core1-2-3-ican-2"><span>I can explain spam gateways, UTM devices, load balancers, and proxy servers.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.3" id="core1-2-3-ican-3"><span>I can recognize SCADA/legacy embedded systems and IoT devices as networked hosts.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.4">
+<div class="objective-head"><div><strong>2.4</strong> Explain common network configuration concepts.</div><span class="objective-pct" id="core1-2-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4-ican-1"><span>I can identify the purposes of DNS A, AAAA, CNAME, MX, and TXT records.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4-ican-2"><span>I can explain SPF, DKIM, and DMARC in the context of email/spam management.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4-ican-3"><span>I can explain DHCP leases, reservations, scopes, and exclusions.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.4" id="core1-2-4-ican-4"><span>I can explain the purposes of VLANs and VPNs.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.5">
+<div class="objective-head"><div><strong>2.5</strong> Compare and contrast common networking hardware devices.</div><span class="objective-pct" id="core1-2-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.5" id="core1-2-5-ican-1"><span>I can compare routers, managed/unmanaged switches, access points, patch panels, and firewalls.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.5" id="core1-2-5-ican-2"><span>I can explain PoE injectors, PoE switches, and PoE standards.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.5" id="core1-2-5-ican-3"><span>I can identify cable modems, DSL equipment, ONTs, NICs, and physical MAC addresses.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.6">
+<div class="objective-head"><div><strong>2.6</strong> Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</div><span class="objective-pct" id="core1-2-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.6" id="core1-2-6-ican-1"><span>I can distinguish IPv4 private/public addressing, IPv6, and APIPA.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.6" id="core1-2-6-ican-2"><span>I can choose between static and dynamic addressing.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.6" id="core1-2-6-ican-3"><span>I can identify the roles of an IP address, subnet mask, and default gateway when configuring a SOHO network.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.6">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.7">
+<div class="objective-head"><div><strong>2.7</strong> Compare and contrast internet connection types, network types, and their characteristics.</div><span class="objective-pct" id="core1-2-7-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-7-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.7" id="core1-2-7-ican-1"><span>I can compare satellite, fiber, cable, DSL, cellular, and WISP internet connections.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.7" id="core1-2-7-ican-2"><span>I can distinguish LAN, WAN, PAN, MAN, SAN, and WLAN network types.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.7">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.7">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-2.8">
+<div class="objective-head"><div><strong>2.8</strong> Explain networking tools and their purposes.</div><span class="objective-pct" id="core1-2-8-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-2-8-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="2.0" data-objective="2.8" id="core1-2-8-ican-1"><span>I can select the correct crimper, cable stripper, Wi-Fi analyzer, toner probe, punchdown tool, cable tester, loopback plug, or network tap for a task.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="2.8">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="2.8">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core1-3.0">
 <summary>
@@ -171,38 +214,62 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="3.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="3.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.1" id="core1-3-1">
-<span><strong>3.1</strong> Compare and contrast display components and attributes.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2">
-<span><strong>3.2</strong> Summarize basic cable types and their connectors, features, and purposes.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.3" id="core1-3-3">
-<span><strong>3.3</strong> Compare and contrast RAM characteristics.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4">
-<span><strong>3.4</strong> Compare and contrast storage devices.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5">
-<span><strong>3.5</strong> Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.6" id="core1-3-6">
-<span><strong>3.6</strong> Given a scenario, install the appropriate power supply.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.7" id="core1-3-7">
-<span><strong>3.7</strong> Given a scenario, deploy and configure multifunction devices/printers and settings.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="3.0" data-objective="3.8" id="core1-3-8">
-<span><strong>3.8</strong> Given a scenario, perform appropriate printer maintenance.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core1-3.1">
+<div class="objective-head"><div><strong>3.1</strong> Compare and contrast display components and attributes.</div><span class="objective-pct" id="core1-3-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.1" id="core1-3-1-ican-1"><span>I can compare LCD (IPS/TN/VA), OLED, and Mini-LED display technologies.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.1" id="core1-3-1-ican-2"><span>I can explain touchscreens/digitizers, inverters, pixel density, refresh rate, resolution, and color gamut.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.2">
+<div class="objective-head"><div><strong>3.2</strong> Summarize basic cable types and their connectors, features, and purposes.</div><span class="objective-pct" id="core1-3-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2-ican-1"><span>I can compare copper, coaxial, shielded/unshielded twisted pair, plenum/direct-burial, single-mode, and multimode cabling.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2-ican-2"><span>I can identify USB 2.0/3.0, serial, Thunderbolt, HDMI, DisplayPort, DVI, VGA, USB-C, SATA, and eSATA uses.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2-ican-3"><span>I can recognize RJ11, RJ45, F-type, ST, SC, LC, punchdown, MicroUSB, MiniUSB, USB-C, Molex, Lightning, and DB9 connectors.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.2" id="core1-3-2-ican-4"><span>I can recognize T568A/T568B and choose an appropriate cable/connector or adapter for a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.3">
+<div class="objective-head"><div><strong>3.3</strong> Compare and contrast RAM characteristics.</div><span class="objective-pct" id="core1-3-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.3" id="core1-3-3-ican-1"><span>I can distinguish DIMM and SODIMM form factors.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.3" id="core1-3-3-ican-2"><span>I can compare DDR generations, ECC vs. non-ECC RAM, and channel configurations.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.4">
+<div class="objective-head"><div><strong>3.4</strong> Compare and contrast storage devices.</div><span class="objective-pct" id="core1-3-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4-ican-1"><span>I can compare HDD spindle speeds and 2.5-inch vs. 3.5-inch form factors.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4-ican-2"><span>I can distinguish SSD interfaces/protocols such as NVMe, SATA, PCIe, and SAS and form factors such as M.2 and mSATA.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4-ican-3"><span>I can explain the purpose/tradeoffs of RAID 0, 1, 5, 6, and 10.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.4" id="core1-3-4-ican-4"><span>I can identify flash drives, memory cards, and optical drives as storage options.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.5">
+<div class="objective-head"><div><strong>3.5</strong> Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</div><span class="objective-pct" id="core1-3-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-1"><span>I can compare ATX, microATX, and ITX motherboard form factors.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-2"><span>I can identify PCI/PCIe, power, SATA/eSATA, headers, and M.2 motherboard connections.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-3"><span>I can evaluate CPU socket/platform compatibility and recognize x86/x64 and ARM architectures.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-4"><span>I can configure relevant BIOS/UEFI options including boot, TPM, Secure Boot, passwords, fan/temperature, USB, and virtualization settings.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-5"><span>I can explain TPM/HSM hardware security uses and select common expansion cards.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.5" id="core1-3-5-ican-6"><span>I can choose appropriate fans, heat sinks, thermal material, or liquid cooling for a build.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.6">
+<div class="objective-head"><div><strong>3.6</strong> Given a scenario, install the appropriate power supply.</div><span class="objective-pct" id="core1-3-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.6" id="core1-3-6-ican-1"><span>I can distinguish 110–120 VAC and 220–240 VAC input requirements.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.6" id="core1-3-6-ican-2"><span>I can recognize 3.3 V, 5 V, and 12 V PSU outputs and the 20+4-pin motherboard connector.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.6" id="core1-3-6-ican-3"><span>I can select an appropriate PSU using wattage, efficiency, modularity, and redundancy requirements.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.6">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.7">
+<div class="objective-head"><div><strong>3.7</strong> Given a scenario, deploy and configure multifunction devices/printers and settings.</div><span class="objective-pct" id="core1-3-7-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-7-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.7" id="core1-3-7-ican-1"><span>I can set up a multifunction printer in an appropriate location and select the correct OS driver/firmware.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.7" id="core1-3-7-ican-2"><span>I can configure USB, Ethernet, or wireless connectivity and shared/print-server access.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.7" id="core1-3-7-ican-3"><span>I can configure duplex, orientation, trays, quality, authentication, secure printing, audit logs, scanning, and ADF/flatbed functions.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.7">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.7">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-3.8">
+<div class="objective-head"><div><strong>3.8</strong> Given a scenario, perform appropriate printer maintenance.</div><span class="objective-pct" id="core1-3-8-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-3-8-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.8" id="core1-3-8-ican-1"><span>I can perform common laser-printer maintenance including toner, maintenance kits, calibration, and cleaning.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.8" id="core1-3-8-ican-2"><span>I can maintain inkjet printers and clear cartridge, printhead, roller, feeder, calibration, and jam issues.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="3.0" data-objective="3.8" id="core1-3-8-ican-3"><span>I can perform basic thermal and impact printer maintenance.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="3.8">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="3.8">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core1-4.0">
 <summary>
@@ -212,14 +279,20 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="4.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="4.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="4.0" data-objective="4.1" id="core1-4-1">
-<span><strong>4.1</strong> Explain virtualization concepts.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="4.0" data-objective="4.2" id="core1-4-2">
-<span><strong>4.2</strong> Summarize cloud computing concepts.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core1-4.1">
+<div class="objective-head"><div><strong>4.1</strong> Explain virtualization concepts.</div><span class="objective-pct" id="core1-4-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-4-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="4.0" data-objective="4.1" id="core1-4-1-ican-1"><span>I can explain why VMs are used for sandboxing, development/testing, legacy applications, and cross-platform use.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="4.0" data-objective="4.1" id="core1-4-1-ican-2"><span>I can identify VM security, networking, and storage requirements and explain desktop/virtual desktop concepts.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="4.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="4.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-4.2">
+<div class="objective-head"><div><strong>4.2</strong> Summarize cloud computing concepts.</div><span class="objective-pct" id="core1-4-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-4-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="4.0" data-objective="4.2" id="core1-4-2-ican-1"><span>I can explain common cloud characteristics and distinguish cloud service/deployment concepts covered by the objective.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="4.0" data-objective="4.2" id="core1-4-2-ican-2"><span>I can recognize when cloud resources, synchronization, scalability, or shared resources fit a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="4.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="4.2">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core1-5.0">
 <summary>
@@ -229,30 +302,48 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core1" data-domain="5.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core1" data-domain="5.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.1" id="core1-5-1">
-<span><strong>5.1</strong> Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.2" id="core1-5-2">
-<span><strong>5.2</strong> Given a scenario, troubleshoot drive and RAID issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.3" id="core1-5-3">
-<span><strong>5.3</strong> Given a scenario, troubleshoot video, projector, and display issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.4" id="core1-5-4">
-<span><strong>5.4</strong> Given a scenario, troubleshoot common mobile device issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.5" id="core1-5-5">
-<span><strong>5.5</strong> Given a scenario, troubleshoot network issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core1" data-domain="5.0" data-objective="5.6" id="core1-5-6">
-<span><strong>5.6</strong> Given a scenario, troubleshoot printer issues.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core1-5.1">
+<div class="objective-head"><div><strong>5.1</strong> Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</div><span class="objective-pct" id="core1-5-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.1" id="core1-5-1-ican-1"><span>I can diagnose common motherboard, RAM, CPU, and power symptoms and choose an appropriate next troubleshooting action.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.1" id="core1-5-1-ican-2"><span>I can connect POST/beep/boot/power/thermal symptoms to likely hardware causes.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-5.2">
+<div class="objective-head"><div><strong>5.2</strong> Given a scenario, troubleshoot drive and RAID issues.</div><span class="objective-pct" id="core1-5-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.2" id="core1-5-2-ican-1"><span>I can diagnose common HDD/SSD and RAID symptoms and select an appropriate troubleshooting action.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-5.3">
+<div class="objective-head"><div><strong>5.3</strong> Given a scenario, troubleshoot video, projector, and display issues.</div><span class="objective-pct" id="core1-5-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.3" id="core1-5-3-ican-1"><span>I can diagnose common display, video, and projector symptoms and select an appropriate fix.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-5.4">
+<div class="objective-head"><div><strong>5.4</strong> Given a scenario, troubleshoot common mobile device issues.</div><span class="objective-pct" id="core1-5-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.4" id="core1-5-4-ican-1"><span>I can diagnose common mobile-device hardware symptoms and select an appropriate troubleshooting action.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-5.5">
+<div class="objective-head"><div><strong>5.5</strong> Given a scenario, troubleshoot network issues.</div><span class="objective-pct" id="core1-5-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.5" id="core1-5-5-ican-1"><span>I can diagnose common wired/wireless network symptoms using addressing, connectivity, signal, and hardware clues.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.5" id="core1-5-5-ican-2"><span>I can select an appropriate network troubleshooting tool or configuration check for a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core1-5.6">
+<div class="objective-head"><div><strong>5.6</strong> Given a scenario, troubleshoot printer issues.</div><span class="objective-pct" id="core1-5-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core1-5-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core1" data-domain="5.0" data-objective="5.6" id="core1-5-6-ican-1"><span>I can diagnose common printer symptoms and connect them to likely consumable, mechanical, connectivity, driver, or configuration causes.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core1" data-objective="5.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core1" data-objective="5.6">Clear</button></div>
+</div>
 </div></details>
 </div>
 
@@ -278,50 +369,83 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="1.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="1.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.1" id="core2-1-1">
-<span><strong>1.1</strong> Explain common operating system (OS) types and their purposes.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2">
-<span><strong>1.2</strong> Given a scenario, perform OS installations and upgrades in a diverse environment.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.3" id="core2-1-3">
-<span><strong>1.3</strong> Compare and contrast basic features of Microsoft Windows editions.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.4" id="core2-1-4">
-<span><strong>1.4</strong> Given a scenario, use Microsoft Windows operating system features and tools.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5">
-<span><strong>1.5</strong> Given a scenario, use the appropriate Microsoft command-line tools.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.6" id="core2-1-6">
-<span><strong>1.6</strong> Given a scenario, configure Microsoft Windows settings.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7">
-<span><strong>1.7</strong> Given a scenario, configure Microsoft Windows networking features on a client/desktop.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8">
-<span><strong>1.8</strong> Explain common features and tools of the macOS/desktop operating system.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9">
-<span><strong>1.9</strong> Identify common features and tools of the Linux client/desktop operating system.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.10" id="core2-1-10">
-<span><strong>1.10</strong> Given a scenario, install applications according to requirements.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="1.0" data-objective="1.11" id="core2-1-11">
-<span><strong>1.11</strong> Given a scenario, install and configure cloud-based productivity tools.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core2-1.1">
+<div class="objective-head"><div><strong>1.1</strong> Explain common operating system (OS) types and their purposes.</div><span class="objective-pct" id="core2-1-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.1" id="core2-1-1-ican-1"><span>I can compare Windows, Linux, macOS, Chrome OS, iPadOS, iOS, and Android and identify appropriate uses.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.1" id="core2-1-1-ican-2"><span>I can recognize NTFS, ReFS, FAT32, ext4, XFS, APFS, and exFAT filesystems.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.1" id="core2-1-1-ican-3"><span>I can explain EOL/update limitations and OS compatibility concerns.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.2">
+<div class="objective-head"><div><strong>1.2</strong> Given a scenario, perform OS installations and upgrades in a diverse environment.</div><span class="objective-pct" id="core2-1-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2-ican-1"><span>I can choose among USB, network, flash, internet, external/internal drive, and multiboot installation methods.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2-ican-2"><span>I can distinguish clean, upgrade, image, remote, zero-touch, recovery, and repair installations.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2-ican-3"><span>I can distinguish GPT and MBR and account for drive formatting.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.2" id="core2-1-2-ican-4"><span>I can plan an upgrade around backups, drivers/apps, backward compatibility, hardware compatibility, feature updates, and product life cycle.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.3">
+<div class="objective-head"><div><strong>1.3</strong> Compare and contrast basic features of Microsoft Windows editions.</div><span class="objective-pct" id="core2-1-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.3" id="core2-1-3-ican-1"><span>I can compare supported Windows 10/11 editions and N editions.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.3" id="core2-1-3-ican-2"><span>I can compare domain/workgroup, RDP, RAM limits, BitLocker, gpedit, UI/features, and upgrade paths.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.3" id="core2-1-3-ican-3"><span>I can recognize TPM and UEFI hardware requirements.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.4">
+<div class="objective-head"><div><strong>1.4</strong> Given a scenario, use Microsoft Windows operating system features and tools.</div><span class="objective-pct" id="core2-1-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.4" id="core2-1-4-ican-1"><span>I can use Task Manager tabs to inspect services, startup, performance, processes, and users.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.4" id="core2-1-4-ican-2"><span>I can choose the appropriate MMC snap-in for events, disks, tasks, devices, certificates, users/groups, performance, or Group Policy.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.4" id="core2-1-4-ican-3"><span>I can choose System Information, Resource Monitor, System Configuration, Disk Cleanup, Defragment, or Registry Editor for a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.5">
+<div class="objective-head"><div><strong>1.5</strong> Given a scenario, use the appropriate Microsoft command-line tools.</div><span class="objective-pct" id="core2-1-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5-ican-1"><span>I can use cd and dir for navigation.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5-ican-2"><span>I can choose ipconfig, ping, netstat, nslookup, net use, tracert, or pathping for a networking task.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5-ican-3"><span>I can choose chkdsk, format, or diskpart for disk tasks and md, rmdir, or robocopy for file tasks.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.5" id="core2-1-5-ican-4"><span>I can use hostname, net user, winver, whoami, command /?, gpupdate, gpresult, and sfc appropriately.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.6">
+<div class="objective-head"><div><strong>1.6</strong> Given a scenario, configure Microsoft Windows settings.</div><span class="objective-pct" id="core2-1-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.6" id="core2-1-6-ican-1"><span>I can locate and configure common Windows Control Panel/Settings options for devices, networking, firewall, users, apps, privacy, sound, indexing, and system settings.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.6" id="core2-1-6-ican-2"><span>I can configure File Explorer visibility/options and common power settings such as sleep, hibernate, fast startup, lid behavior, and USB selective suspend.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.6" id="core2-1-6-ican-3"><span>I can choose the correct Windows settings area for a given support scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.6">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.7">
+<div class="objective-head"><div><strong>1.7</strong> Given a scenario, configure Microsoft Windows networking features on a client/desktop.</div><span class="objective-pct" id="core2-1-7-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-7-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7-ican-1"><span>I can distinguish domain-joined and workgroup environments and access shared printers, file servers, and mapped drives.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7-ican-2"><span>I can configure local firewall exceptions and client IP/DNS/subnet/gateway settings.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7-ican-3"><span>I can establish VPN, wired, wireless, and WWAN connections and configure proxy/network-profile settings.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.7" id="core2-1-7-ican-4"><span>I can navigate network paths and explain metered-connection limitations.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.7">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.7">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.8">
+<div class="objective-head"><div><strong>1.8</strong> Explain common features and tools of the macOS/desktop operating system.</div><span class="objective-pct" id="core2-1-8-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-8-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8-ican-1"><span>I can install/uninstall macOS apps and recognize .dmg, .pkg, .app, and App Store methods.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8-ican-2"><span>I can recognize major macOS system folders and Apple ID/corporate restrictions.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8-ican-3"><span>I can use common macOS settings/features including Time Machine, Keychain, Spotlight, iCloud, Finder, Dock, Continuity, Disk Utility, FileVault, Terminal, and Force Quit.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.8" id="core2-1-8-ican-4"><span>I can apply macOS backup, antivirus, update/patch, and Rapid Security Response practices.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.8">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.8">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.9">
+<div class="objective-head"><div><strong>1.9</strong> Identify common features and tools of the Linux client/desktop operating system.</div><span class="objective-pct" id="core2-1-9-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-9-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9-ican-1"><span>I can use ls, pwd, mv, cp, rm, chmod, chown, grep, and find for Linux file work.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9-ican-2"><span>I can use fsck/mount, su/sudo, apt/dnf, and common Linux network commands.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9-ican-3"><span>I can use man, cat, top, ps, du, df, and nano and recognize key /etc configuration files.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.9" id="core2-1-9-ican-4"><span>I can explain systemd, the kernel, bootloader, and root account.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.9">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.9">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.10">
+<div class="objective-head"><div><strong>1.10</strong> Given a scenario, install applications according to requirements.</div><span class="objective-pct" id="core2-1-10-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-10-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.10" id="core2-1-10-ican-1"><span>I can evaluate 32/64-bit, GPU/VRAM, RAM, CPU, token, storage, and OS compatibility requirements before installing an application.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.10" id="core2-1-10-ican-2"><span>I can choose physical media, mounted ISO, downloadable package, or image deployment.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.10" id="core2-1-10-ican-3"><span>I can evaluate device, network, operational, and business impacts of a new application.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.10">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.10">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-1.11">
+<div class="objective-head"><div><strong>1.11</strong> Given a scenario, install and configure cloud-based productivity tools.</div><span class="objective-pct" id="core2-1-11-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-1-11-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.11" id="core2-1-11-ican-1"><span>I can configure cloud email, storage synchronization, and collaboration/productivity tools.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="1.0" data-objective="1.11" id="core2-1-11-ican-2"><span>I can explain identity synchronization and licensing assignment.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="1.11">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="1.11">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core2-2.0">
 <summary>
@@ -331,50 +455,83 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="2.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="2.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.1" id="core2-2-1">
-<span><strong>2.1</strong> Summarize various security measures and their purposes.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2">
-<span><strong>2.2</strong> Given a scenario, configure and apply basic Microsoft Windows OS security settings.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.3" id="core2-2-3">
-<span><strong>2.3</strong> Compare and contrast wireless security protocols and authentication methods.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.4" id="core2-2-4">
-<span><strong>2.4</strong> Summarize types of malware and tools/methods for detection, removal, and prevention.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.5" id="core2-2-5">
-<span><strong>2.5</strong> Compare and contrast common social engineering attacks, threats, and vulnerabilities.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.6" id="core2-2-6">
-<span><strong>2.6</strong> Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.7" id="core2-2-7">
-<span><strong>2.7</strong> Given a scenario, apply workstation security options and hardening techniques.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.8" id="core2-2-8">
-<span><strong>2.8</strong> Given a scenario, apply common methods for securing mobile devices.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.9" id="core2-2-9">
-<span><strong>2.9</strong> Compare and contrast common data destruction and disposal methods.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.10" id="core2-2-10">
-<span><strong>2.10</strong> Given a scenario, apply security settings on SOHO wireless and wired networks.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="2.0" data-objective="2.11" id="core2-2-11">
-<span><strong>2.11</strong> Given a scenario, configure relevant security settings in a browser.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core2-2.1">
+<div class="objective-head"><div><strong>2.1</strong> Summarize various security measures and their purposes.</div><span class="objective-pct" id="core2-2-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.1" id="core2-2-1-ican-1"><span>I can match physical security controls such as bollards, vestibules, badges, surveillance, alarms, locks, guards, fences, lighting, and magnetometers to their purposes.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.1" id="core2-2-1-ican-2"><span>I can compare keys, fobs, smart cards, mobile keys, and biometric access methods.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.1" id="core2-2-1-ican-3"><span>I can explain least privilege, Zero Trust, ACLs, MFA, SAML, SSO, just-in-time/PAM, MDM, DLP, IAM, and directory services.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.2">
+<div class="objective-head"><div><strong>2.2</strong> Given a scenario, configure and apply basic Microsoft Windows OS security settings.</div><span class="objective-pct" id="core2-2-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2-ican-1"><span>I can configure Defender Antivirus and Windows Firewall basics.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2-ican-2"><span>I can distinguish local/Microsoft accounts and standard, administrator, guest, and power-user roles.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2-ican-3"><span>I can compare password, PIN, biometric, SSO, and passwordless/Windows Hello sign-in.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2-ican-4"><span>I can apply NTFS/share permissions, inheritance, UAC, BitLocker/BitLocker-To-Go, and EFS appropriately.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.2" id="core2-2-2-ican-5"><span>I can recognize common Active Directory tasks such as domain join, Group Policy, security groups, home folders, and folder redirection.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.3">
+<div class="objective-head"><div><strong>2.3</strong> Compare and contrast wireless security protocols and authentication methods.</div><span class="objective-pct" id="core2-2-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.3" id="core2-2-3-ican-1"><span>I can compare WPA2/WPA3, TKIP, and AES.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.3" id="core2-2-3-ican-2"><span>I can distinguish RADIUS, TACACS+, Kerberos, and multifactor authentication uses.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.4">
+<div class="objective-head"><div><strong>2.4</strong> Summarize types of malware and tools/methods for detection, removal, and prevention.</div><span class="objective-pct" id="core2-2-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.4" id="core2-2-4-ican-1"><span>I can identify Trojan, rootkit, virus, spyware, ransomware, keylogger, boot-sector virus, cryptominer, stalkerware, fileless malware, adware, and PUPs.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.4" id="core2-2-4-ican-2"><span>I can choose appropriate detection/removal/prevention methods including EDR/MDR/XDR, antivirus/anti-malware, email security, firewalls, education, recovery, or reinstallation.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.5">
+<div class="objective-head"><div><strong>2.5</strong> Compare and contrast common social engineering attacks, threats, and vulnerabilities.</div><span class="objective-pct" id="core2-2-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.5" id="core2-2-5-ican-1"><span>I can distinguish phishing, vishing, smishing, QR phishing, spear phishing, whaling, shoulder surfing, tailgating, impersonation, and dumpster diving.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.5" id="core2-2-5-ican-2"><span>I can recognize DoS/DDoS, evil twin, zero-day, spoofing, on-path, brute-force/dictionary, insider, SQL injection, XSS, BEC, and supply-chain threats.</span></label><label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.5" id="core2-2-5-ican-3"><span>I can recognize risks from non-compliant, unpatched, unprotected, EOL, and BYOD systems.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.6">
+<div class="objective-head"><div><strong>2.6</strong> Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</div><span class="objective-pct" id="core2-2-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.6" id="core2-2-6-ican-1"><span>I can follow the objective&#x27;s malware-removal sequence: verify symptoms, quarantine, handle System Restore as directed, remediate, update, scan, re-enable protections, and educate the user.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.6">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.7">
+<div class="objective-head"><div><strong>2.7</strong> Given a scenario, apply workstation security options and hardening techniques.</div><span class="objective-pct" id="core2-2-7-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-7-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.7" id="core2-2-7-ican-1"><span>I can apply workstation hardening practices such as patching, least functionality, account controls, endpoint protection, and secure configuration in a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.7">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.7">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.8">
+<div class="objective-head"><div><strong>2.8</strong> Given a scenario, apply common methods for securing mobile devices.</div><span class="objective-pct" id="core2-2-8-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-8-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.8" id="core2-2-8-ican-1"><span>I can apply common mobile-device security controls such as screen locks, biometrics, remote capabilities, encryption, and policy-based controls in a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.8">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.8">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.9">
+<div class="objective-head"><div><strong>2.9</strong> Compare and contrast common data destruction and disposal methods.</div><span class="objective-pct" id="core2-2-9-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-9-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.9" id="core2-2-9-ican-1"><span>I can compare data-destruction and disposal methods and choose an appropriate method for the media and sensitivity of the data.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.9">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.9">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.10">
+<div class="objective-head"><div><strong>2.10</strong> Given a scenario, apply security settings on SOHO wireless and wired networks.</div><span class="objective-pct" id="core2-2-10-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-10-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.10" id="core2-2-10-ican-1"><span>I can apply basic SOHO wired/wireless security settings and choose secure authentication/encryption/configuration practices.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.10">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.10">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-2.11">
+<div class="objective-head"><div><strong>2.11</strong> Given a scenario, configure relevant security settings in a browser.</div><span class="objective-pct" id="core2-2-11-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-2-11-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="2.0" data-objective="2.11" id="core2-2-11-ican-1"><span>I can configure relevant browser security/privacy settings for a scenario.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="2.11">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="2.11">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core2-3.0">
 <summary>
@@ -384,22 +541,34 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="3.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="3.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.1" id="core2-3-1">
-<span><strong>3.1</strong> Given a scenario, troubleshoot common Windows OS issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.2" id="core2-3-2">
-<span><strong>3.2</strong> Given a scenario, troubleshoot common mobile OS and application issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.3" id="core2-3-3">
-<span><strong>3.3</strong> Given a scenario, troubleshoot common mobile OS and application security issues.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="3.0" data-objective="3.4" id="core2-3-4">
-<span><strong>3.4</strong> Given a scenario, troubleshoot common personal computer (PC) security issues.</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core2-3.1">
+<div class="objective-head"><div><strong>3.1</strong> Given a scenario, troubleshoot common Windows OS issues.</div><span class="objective-pct" id="core2-3-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-3-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="3.0" data-objective="3.1" id="core2-3-1-ican-1"><span>I can diagnose common Windows OS startup, performance, application, service, and system symptoms and choose an appropriate remediation.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="3.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="3.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-3.2">
+<div class="objective-head"><div><strong>3.2</strong> Given a scenario, troubleshoot common mobile OS and application issues.</div><span class="objective-pct" id="core2-3-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-3-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="3.0" data-objective="3.2" id="core2-3-2-ican-1"><span>I can diagnose common mobile OS/application symptoms and choose an appropriate remediation.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="3.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="3.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-3.3">
+<div class="objective-head"><div><strong>3.3</strong> Given a scenario, troubleshoot common mobile OS and application security issues.</div><span class="objective-pct" id="core2-3-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-3-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="3.0" data-objective="3.3" id="core2-3-3-ican-1"><span>I can recognize common mobile OS/application security symptoms and choose an appropriate remediation.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="3.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="3.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-3.4">
+<div class="objective-head"><div><strong>3.4</strong> Given a scenario, troubleshoot common personal computer (PC) security issues.</div><span class="objective-pct" id="core2-3-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-3-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="3.0" data-objective="3.4" id="core2-3-4-ican-1"><span>I can recognize common PC security symptoms and choose an appropriate remediation.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="3.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="3.4">Clear</button></div>
+</div>
 </div></details>
 <details class="domain-card" open data-exam-domain="core2-4.0">
 <summary>
@@ -409,50 +578,80 @@
 <div class="domain-body">
 <div class="domain-actions"><button type="button" class="mini-btn check-domain" data-exam="core2" data-domain="4.0">Mark all ready</button><button type="button" class="mini-btn clear-domain" data-exam="core2" data-domain="4.0">Clear domain</button></div>
 
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.1" id="core2-4-1">
-<span><strong>4.1</strong> Given a scenario, implement best practices associated with documentation and support systems information management.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.2" id="core2-4-2">
-<span><strong>4.2</strong> Given a scenario, apply change management procedures.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.3" id="core2-4-3">
-<span><strong>4.3</strong> Given a scenario, implement workstation backup and recovery methods.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.4" id="core2-4-4">
-<span><strong>4.4</strong> Given a scenario, use common safety procedures.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.5" id="core2-4-5">
-<span><strong>4.5</strong> Summarize environmental impacts and local environment controls.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.6" id="core2-4-6">
-<span><strong>4.6</strong> Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.7" id="core2-4-7">
-<span><strong>4.7</strong> Given a scenario, use proper communication techniques and professionalism.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.8" id="core2-4-8">
-<span><strong>4.8</strong> Explain the basics of scripting.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.9" id="core2-4-9">
-<span><strong>4.9</strong> Given a scenario, use remote access technologies.</span>
-</label>
-<label class="ready-objective">
-<input type="checkbox" data-exam="core2" data-domain="4.0" data-objective="4.10" id="core2-4-10">
-<span><strong>4.10</strong> Explain basic concepts related to artificial intelligence (AI).</span>
-</label>
+<div class="ready-objective objective-block" data-objective-block="core2-4.1">
+<div class="objective-head"><div><strong>4.1</strong> Given a scenario, implement best practices associated with documentation and support systems information management.</div><span class="objective-pct" id="core2-4-1-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-1-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.1" id="core2-4-1-ican-1"><span>I can create/use clear support documentation and asset/system information appropriate to a support environment.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.1">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.1">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.2">
+<div class="objective-head"><div><strong>4.2</strong> Given a scenario, apply change management procedures.</div><span class="objective-pct" id="core2-4-2-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-2-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.2" id="core2-4-2-ican-1"><span>I can explain and follow change-management procedures, including planning, approval, risk, rollback, documentation, and communication.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.2">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.2">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.3">
+<div class="objective-head"><div><strong>4.3</strong> Given a scenario, implement workstation backup and recovery methods.</div><span class="objective-pct" id="core2-4-3-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-3-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.3" id="core2-4-3-ican-1"><span>I can choose and implement an appropriate workstation backup/recovery method and verify recovery needs.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.3">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.3">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.4">
+<div class="objective-head"><div><strong>4.4</strong> Given a scenario, use common safety procedures.</div><span class="objective-pct" id="core2-4-4-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-4-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.4" id="core2-4-4-ican-1"><span>I can apply common electrical, ESD, lifting, fire, cable, and equipment safety procedures.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.4">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.4">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.5">
+<div class="objective-head"><div><strong>4.5</strong> Summarize environmental impacts and local environment controls.</div><span class="objective-pct" id="core2-4-5-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-5-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.5" id="core2-4-5-ican-1"><span>I can recognize environmental controls and responsible handling/disposal considerations for IT equipment and materials.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.5">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.5">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.6">
+<div class="objective-head"><div><strong>4.6</strong> Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</div><span class="objective-pct" id="core2-4-6-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-6-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.6" id="core2-4-6-ican-1"><span>I can explain prohibited content/activity, privacy, licensing, and policy responsibilities in a support role.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.6">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.6">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.7">
+<div class="objective-head"><div><strong>4.7</strong> Given a scenario, use proper communication techniques and professionalism.</div><span class="objective-pct" id="core2-4-7-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-7-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.7" id="core2-4-7-ican-1"><span>I can communicate professionally, clarify the problem, set expectations, avoid jargon when appropriate, and document/escalate appropriately.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.7">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.7">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.8">
+<div class="objective-head"><div><strong>4.8</strong> Explain the basics of scripting.</div><span class="objective-pct" id="core2-4-8-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-8-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.8" id="core2-4-8-ican-1"><span>I can explain basic scripting concepts and recognize common script use cases and risks.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.8">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.8">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.9">
+<div class="objective-head"><div><strong>4.9</strong> Given a scenario, use remote access technologies.</div><span class="objective-pct" id="core2-4-9-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-9-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.9" id="core2-4-9-ican-1"><span>I can choose an appropriate remote-access technology for a support scenario and account for security.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.9">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.9">Clear</button></div>
+</div>
+<div class="ready-objective objective-block" data-objective-block="core2-4.10">
+<div class="objective-head"><div><strong>4.10</strong> Explain basic concepts related to artificial intelligence (AI).</div><span class="objective-pct" id="core2-4-10-pct">0%</span></div>
+<div class="objective-meter"><div class="objective-meter-fill" id="core2-4-10-fill"></div></div>
+<div class="ican-title">I can…</div>
+<label class="ican-row"><input type="checkbox" class="ican-check" data-exam="core2" data-domain="4.0" data-objective="4.10" id="core2-4-10-ican-1"><span>I can explain basic AI concepts and recognize appropriate AI uses, limitations, and considerations in an IT-support context.</span></label>
+<div class="objective-actions"><button type="button" class="mini-btn mark-objective" data-exam="core2" data-objective="4.10">I can do all of these</button><button type="button" class="mini-btn clear-objective" data-exam="core2" data-objective="4.10">Clear</button></div>
+</div>
 </div></details>
 </div>
 
-<div class="ready-callout"><strong>How the percentage works:</strong> each official domain keeps its published exam weight. Within a domain, each top-level objective contributes an equal portion of that domain's weight. Example: if you mark half of the objectives in a 28% domain, that domain contributes about 14 percentage points to your readiness score.</div>
+<div class="ready-callout"><strong>How the percentage works:</strong> each official domain keeps its published exam weight. Within a domain, each top-level objective contributes an equal portion of its domain weight, and each I-can statement contributes an equal portion of its objective. This lets the tracker show partial readiness instead of forcing an all-or-nothing objective checkbox.</div>
 </div></section>
 </main>
 
@@ -460,58 +659,59 @@
 
 <script src="/assets/js/main.js"></script>
 <script>
-const examData = {"core1": {"domains": [{"id": "1.0", "weight": 13, "count": 3}, {"id": "2.0", "weight": 23, "count": 8}, {"id": "3.0", "weight": 25, "count": 8}, {"id": "4.0", "weight": 11, "count": 2}, {"id": "5.0", "weight": 28, "count": 6}], "total": 27}, "core2": {"domains": [{"id": "1.0", "weight": 28, "count": 11}, {"id": "2.0", "weight": 28, "count": 11}, {"id": "3.0", "weight": 23, "count": 4}, {"id": "4.0", "weight": 21, "count": 10}], "total": 36}};
-
+const examData = {
+ core1:{domains:[{id:"1.0",weight:13},{id:"2.0",weight:23},{id:"3.0",weight:25},{id:"4.0",weight:11},{id:"5.0",weight:28}]},
+ core2:{domains:[{id:"1.0",weight:28},{id:"2.0",weight:28},{id:"3.0",weight:23},{id:"4.0",weight:21}]}
+};
+function allI(ex,obj=null,domain=null){
+ let q='.ican-check[data-exam="'+ex+'"]';
+ if(obj) q+='[data-objective="'+obj+'"]';
+ if(domain) q+='[data-domain="'+domain+'"]';
+ return [...document.querySelectorAll(q)];
+}
 function saveState(){
- const state={checks:{},info:{}};
- document.querySelectorAll('input[data-exam]').forEach(x=>state.checks[x.id]=x.checked);
- ['core1','core2'].forEach(ex=>state.info[ex]=[...document.querySelectorAll('input[data-info="'+ex+'"]')].map(x=>x.checked));
- localStorage.setItem('familypd-aplus-readiness-v1',JSON.stringify(state));
+ const state={};
+ document.querySelectorAll('.ican-check,input[data-info]').forEach(x=>state[x.id]=x.checked);
+ localStorage.setItem('familypd-aplus-readiness-v2',JSON.stringify(state));
 }
 function loadState(){
- try{
-   const state=JSON.parse(localStorage.getItem('familypd-aplus-readiness-v1')||'{}');
-   if(state.checks) Object.entries(state.checks).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.checked=!!val;});
-   if(state.info) Object.entries(state.info).forEach(([ex,vals])=>{[...document.querySelectorAll('input[data-info="'+ex+'"]')].forEach((el,i)=>el.checked=!!vals[i]);});
- }catch(e){}
+ try{const state=JSON.parse(localStorage.getItem('familypd-aplus-readiness-v2')||'{}');
+ Object.entries(state).forEach(([id,v])=>{const e=document.getElementById(id);if(e)e.checked=!!v;});}catch(e){}
+}
+function objectiveFraction(ex,obj){
+ const b=allI(ex,obj); return b.length?b.filter(x=>x.checked).length/b.length:0;
 }
 function updateExam(ex){
- let weighted=0, selected=0;
+ let weighted=0, complete=0, totalObj=0;
  examData[ex].domains.forEach(d=>{
-   const boxes=[...document.querySelectorAll('input[data-exam="'+ex+'"][data-domain="'+d.id+'"]')];
-   const hit=boxes.filter(x=>x.checked).length;
-   const frac=boxes.length?hit/boxes.length:0;
-   weighted += frac*d.weight;
-   selected += hit;
-   const progress=document.getElementById(ex+'-'+d.id.replace('.','-')+'-progress');
-   if(progress) progress.textContent=Math.round(frac*100)+'%';
+   const objs=[...new Set(allI(ex,null,d.id).map(x=>x.dataset.objective))];
+   totalObj+=objs.length;
+   let domainSum=0;
+   objs.forEach(obj=>{
+      const f=objectiveFraction(ex,obj); domainSum+=f; if(f===1) complete++;
+      const first=allI(ex,obj)[0], base=first?.id.replace(/-ican-\d+$/,'');
+      if(base){const p=document.getElementById(base+'-pct'), fill=document.getElementById(base+'-fill');if(p)p.textContent=Math.round(f*100)+'%';if(fill)fill.style.width=(f*100)+'%';}
+   });
+   const df=objs.length?domainSum/objs.length:0; weighted+=df*d.weight;
+   const dp=document.getElementById(ex+'-'+d.id.replace('.','-')+'-progress');if(dp)dp.textContent=Math.round(df*100)+'%';
  });
  const pct=Math.round(weighted);
  document.getElementById(ex+'-score').textContent=pct+'%';
  document.getElementById(ex+'-fill').style.width=pct+'%';
- document.getElementById(ex+'-count').textContent=selected+' of '+examData[ex].total+' objectives marked ready';
+ document.getElementById(ex+'-count').textContent=complete+' of '+totalObj+' objectives fully ready';
  const infos=[...document.querySelectorAll('input[data-info="'+ex+'"]')];
- const ipct=infos.length?Math.round(infos.filter(x=>x.checked).length/infos.length*100):0;
- document.getElementById(ex+'-info-score').textContent=ipct+'%';
+ const ip=infos.length?Math.round(infos.filter(x=>x.checked).length/infos.length*100):0;
+ document.getElementById(ex+'-info-score').textContent=ip+'%';
 }
 function updateAll(){updateExam('core1');updateExam('core2');saveState();}
-document.querySelectorAll('input[data-exam],input[data-info]').forEach(x=>x.addEventListener('change',updateAll));
-document.querySelectorAll('.check-domain').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"][data-domain="'+btn.dataset.domain+'"]').forEach(x=>x.checked=true);updateAll();
-}));
-document.querySelectorAll('.clear-domain').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"][data-domain="'+btn.dataset.domain+'"]').forEach(x=>x.checked=false);updateAll();
-}));
-document.querySelectorAll('.reset-exam').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"],input[data-info="'+btn.dataset.exam+'"]').forEach(x=>x.checked=false);updateAll();
-}));
-document.querySelectorAll('.mark-exam').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('input[data-exam="'+btn.dataset.exam+'"]').forEach(x=>x.checked=true);updateAll();
-}));
-document.querySelectorAll('.ready-tab').forEach(tab=>tab.addEventListener('click',()=>{
- document.querySelectorAll('.ready-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');
- document.querySelectorAll('.exam-panel').forEach(p=>p.hidden=p.id!==tab.dataset.target);
-}));
+document.querySelectorAll('.ican-check,input[data-info]').forEach(x=>x.addEventListener('change',updateAll));
+document.querySelectorAll('.mark-objective').forEach(b=>b.addEventListener('click',()=>{allI(b.dataset.exam,b.dataset.objective).forEach(x=>x.checked=true);updateAll();}));
+document.querySelectorAll('.clear-objective').forEach(b=>b.addEventListener('click',()=>{allI(b.dataset.exam,b.dataset.objective).forEach(x=>x.checked=false);updateAll();}));
+document.querySelectorAll('.check-domain').forEach(b=>b.addEventListener('click',()=>{allI(b.dataset.exam,null,b.dataset.domain).forEach(x=>x.checked=true);updateAll();}));
+document.querySelectorAll('.clear-domain').forEach(b=>b.addEventListener('click',()=>{allI(b.dataset.exam,null,b.dataset.domain).forEach(x=>x.checked=false);updateAll();}));
+document.querySelectorAll('.reset-exam').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.ican-check[data-exam="'+b.dataset.exam+'"],input[data-info="'+b.dataset.exam+'"]').forEach(x=>x.checked=false);updateAll();}));
+document.querySelectorAll('.mark-exam').forEach(b=>b.addEventListener('click',()=>{allI(b.dataset.exam).forEach(x=>x.checked=true);updateAll();}));
+document.querySelectorAll('.ready-tab').forEach(tab=>tab.addEventListener('click',()=>{document.querySelectorAll('.ready-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');document.querySelectorAll('.exam-panel').forEach(p=>p.hidden=p.id!==tab.dataset.target);}));
 loadState();updateExam('core1');updateExam('core2');
 </script>
 </body></html>
