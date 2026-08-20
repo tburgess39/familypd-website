@@ -27,27 +27,6 @@
 .m3-shell .button,.page-hero .button,.mission-bottom .button{font-size:14px!important;line-height:1.15!important;padding:9px 13px!important;min-height:35px!important;width:auto!important}
 @media(max-width:760px){.m3-grid,.m3-notebook-layout{grid-template-columns:1fr}.aplus-quick-wrap{width:min(100% - 1.2rem,980px)}.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important;white-space:normal!important;font-size:12px!important}.page-hero h1{font-size:1.8rem!important}}
 </style>
-
-<style id="m3-compatibility-builder-css">
-.compat-builder{background:#f7fafc;border:1px solid #cbd8e0;border-radius:18px;padding:1rem;margin-top:1rem}
-.compat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
-.compat-field{background:#fff;border:1px solid #d7e1e7;border-radius:13px;padding:.75rem}
-.compat-field label{display:block;font-weight:900;color:#163f61;margin-bottom:.35rem}
-.compat-field select{width:100%;min-height:42px;border:1px solid #9fb6c5;border-radius:9px;background:#fff;color:#111;padding:.55rem;font:inherit}
-.compat-field small{display:block;color:#333;margin-top:.35rem;line-height:1.35}
-.compat-field.locked{opacity:.58}
-.compat-result{background:#fff;border:2px solid #9fb6c5;border-radius:15px;padding:.9rem;margin-top:.9rem}
-.compat-result h3{margin:.1rem 0 .55rem;font-size:1.15rem}
-.compat-status{display:inline-block;border-radius:999px;padding:.3rem .65rem;font-weight:900;background:#edf5f7;color:#163f61}
-.compat-status.ready{background:#edf8ee;color:#245f27}
-.compat-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:.75rem 0}
-.compat-stat{background:#f5f8fa;border-radius:11px;padding:.65rem;text-align:center}
-.compat-stat strong{display:block;color:#163f61;font-size:1.12rem}
-.compat-list{margin:.5rem 0;padding-left:1.2rem}.compat-list li{margin:.25rem 0;color:#111}
-.compat-note{background:#fff9ec;border-left:4px solid #d16a2d;border-radius:9px;padding:.65rem;margin-top:.65rem;color:#111}
-.compat-reset{margin-top:.65rem}
-@media(max-width:760px){.compat-grid,.compat-summary{grid-template-columns:1fr}}
-</style>
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -63,7 +42,7 @@
 <p class="eyebrow">CompTIA A+ • Mission 03</p>
 <h1>Motherboards, Connectors &amp; PC Hardware</h1>
 <p class="page-lead">Use one training desktop to learn safe disassembly and another set of compatible parts to practice assembly. The goal is not to memorize one computer—it is to recognize the <strong>common standards, functions, connectors, and compatibility checks</strong> that transfer to many PCs.</p>
-<div class="button-row"><a class="button" href="#start">Begin Mission 03</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Acronyms</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook Guide</a></div>
+<div class="button-row"><a class="button" href="#start">Begin Mission 03</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Acronyms</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook Guide</a></div>
 </div></section>
 
 <div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
@@ -75,7 +54,7 @@
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Terms</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
 <a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
@@ -144,46 +123,6 @@
 <article class="m3-card"><h3>GPU / expansion ↔ case</h3><p>Verify PCIe slot support, card length/height/thickness, power connectors, cooling clearance, and available expansion slots.</p></article>
 </div>
 <div class="m3-callout"><strong>Do not build by logo.</strong> A case, motherboard, CPU, memory kit, PSU, or GPU do not need matching manufacturer names. They need compatible <strong>standards and specifications.</strong></div>
-</div></section>
-
-
-<section class="section section-tinted" id="compatibility-builder"><div class="container m3-shell">
-<div class="section-heading"><p class="eyebrow">Interactive compatibility lab</p><h2>Build a system by compatibility—not by brand.</h2>
-<p>Start with a platform/case. Each choice filters the next list so you can practice the same questions a technician asks before buying or installing parts. The catalog is intentionally generic: it teaches <strong>standards, sockets, form factors, interfaces, and power requirements</strong> rather than particular manufacturers.</p></div>
-
-<div class="compat-builder">
-<div class="compat-grid">
-<div class="compat-field"><label for="cb-platform">1. Platform / case</label>
-<select id="cb-platform"><option value="">Choose a platform…</option><option value="atx">ATX desktop case</option><option value="matx">MicroATX desktop case</option><option value="mini">Mini-ITX compact case</option><option value="pi5">Raspberry Pi 5 case / SBC platform</option></select>
-<small>Case support determines which motherboard/system-board form factors physically fit.</small></div>
-
-<div class="compat-field locked" id="f-board"><label for="cb-board">2. Motherboard / system board</label><select id="cb-board" disabled><option value="">Choose the case first…</option></select><small>Desktop boards must fit the case. Pi uses an integrated single-board computer instead.</small></div>
-
-<div class="compat-field locked" id="f-cpu"><label for="cb-cpu">3. CPU / processor</label><select id="cb-cpu" disabled><option value="">Choose a motherboard first…</option></select><small>Desktop CPU compatibility depends on socket/platform support. Pi 5's processor is soldered to the board.</small></div>
-
-<div class="compat-field locked" id="f-ram"><label for="cb-ram">4. Memory</label><select id="cb-ram" disabled><option value="">Choose a motherboard first…</option></select><small>Match memory generation/type. Desktop DIMMs are not interchangeable with laptop SO-DIMMs or soldered LPDDR.</small></div>
-
-<div class="compat-field locked" id="f-storage"><label for="cb-storage">5. Storage</label><select id="cb-storage" disabled><option value="">Choose a motherboard/platform first…</option></select><small>Check interface and physical support: SATA, M.2 NVMe, microSD, USB, or supported PCIe storage.</small></div>
-
-<div class="compat-field locked" id="f-gpu"><label for="cb-gpu">6. Graphics / expansion</label><select id="cb-gpu" disabled><option value="">Choose a motherboard/platform first…</option></select><small>Dedicated GPUs add slot, clearance, cooling, and power requirements. Integrated graphics may need no separate card.</small></div>
-
-<div class="compat-field locked" id="f-cooling"><label for="cb-cooling">7. Cooling</label><select id="cb-cooling" disabled><option value="">Choose a CPU/platform first…</option></select><small>Verify socket mounting, thermal capacity, case clearance, fan headers, and airflow.</small></div>
-</div>
-
-<div class="compat-result" aria-live="polite">
-<span class="compat-status" id="cb-status">Start with a platform</span>
-<h3 id="cb-title">Your compatibility report will appear here.</h3>
-<div class="compat-summary">
-<div class="compat-stat"><strong id="cb-load">—</strong><span>Estimated selected load</span></div>
-<div class="compat-stat"><strong id="cb-power">—</strong><span>Power recommendation</span></div>
-<div class="compat-stat"><strong id="cb-form">—</strong><span>Form factor / power type</span></div>
-</div>
-<ul class="compat-list" id="cb-list"><li>Choose the case/platform to begin filtering compatible parts.</li></ul>
-<div class="compat-note" id="cb-note"><strong>Training note:</strong> A wattage calculator is a planning tool, not a substitute for component documentation. Real builds must also verify connector count/type, transient loads, PSU quality, efficiency, physical size, and manufacturer specifications.</div>
-<button class="button button-secondary compat-reset" id="cb-reset" type="button">Reset builder</button>
-</div></div>
-
-<div class="m3-callout"><strong>A+ connection:</strong> This activity practices form factors, motherboard/CPU compatibility, RAM generations, storage interfaces, PCIe expansion, cooling, power requirements, and troubleshooting logic. A part can be electrically compatible but still fail a physical-clearance, firmware, connector, or power check.</div>
 </div></section>
 
 <section class="section section-tinted"><div class="container m3-shell">
@@ -286,7 +225,7 @@
 <a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">← Previous: Mission 02</a>
 <a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
 <a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">More Practice</a>
-<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Terms Reference</a>
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
 <span class="button disabled" aria-disabled="true">Next: Memory &amp; Storage — coming next</span>
 </div></div></section>
 </main>
@@ -316,131 +255,5 @@ checks.forEach((box,i)=>{
   }));
 });
 updateScore();
-</script>
-
-<script id="m3-compatibility-builder-js">
-(()=>{
-const $=id=>document.getElementById(id);
-const platform=$("cb-platform"), board=$("cb-board"), cpu=$("cb-cpu"), ram=$("cb-ram"), storage=$("cb-storage"), gpu=$("cb-gpu"), cooling=$("cb-cooling");
-const fields={board:$("f-board"),cpu:$("f-cpu"),ram:$("f-ram"),storage:$("f-storage"),gpu:$("f-gpu"),cooling:$("f-cooling")};
-
-const DB={
- platforms:{
-  atx:{name:"ATX desktop case",forms:["ATX","MicroATX","Mini-ITX"],base:45,power:"ATX PSU",note:"A larger ATX case can commonly accept smaller standard boards when the case provides the correct mounting positions."},
-  matx:{name:"MicroATX desktop case",forms:["MicroATX","Mini-ITX"],base:40,power:"ATX/SFX PSU (case dependent)",note:"A MicroATX case normally cannot accept a full-size ATX board."},
-  mini:{name:"Mini-ITX compact case",forms:["Mini-ITX"],base:35,power:"SFX/SFX-L/ATX (case dependent)",note:"Compact cases make GPU length, cooler height, PSU size, and airflow especially important."},
-  pi5:{name:"Raspberry Pi 5 platform",forms:["Pi5"],base:0,power:"USB-C 5V/5A recommended",note:"Pi 5 is a single-board computer: CPU and RAM are integrated rather than installed into desktop sockets/slots."}
- },
- boards:[
-  {id:"a5-atx",name:"ATX board • AM5 socket • DDR5",form:"ATX",socket:"AM5",mem:"DDR5",w:45},
-  {id:"a5-matx",name:"MicroATX board • AM5 socket • DDR5",form:"MicroATX",socket:"AM5",mem:"DDR5",w:38},
-  {id:"a5-mini",name:"Mini-ITX board • AM5 socket • DDR5",form:"Mini-ITX",socket:"AM5",mem:"DDR5",w:35},
-  {id:"lga-atx",name:"ATX board • LGA1700 socket • DDR5",form:"ATX",socket:"LGA1700",mem:"DDR5",w:45},
-  {id:"lga-matx4",name:"MicroATX board • LGA1700 socket • DDR4",form:"MicroATX",socket:"LGA1700",mem:"DDR4",w:38},
-  {id:"lga-mini",name:"Mini-ITX board • LGA1700 socket • DDR5",form:"Mini-ITX",socket:"LGA1700",mem:"DDR5",w:35},
-  {id:"pi",name:"Raspberry Pi 5 single-board computer",form:"Pi5",socket:"SOLDERED_ARM",mem:"LPDDR4X",w:8}
- ],
- cpus:[
-  {id:"am5-65",name:"AM5 desktop CPU • 65 W class",socket:"AM5",w:65,igpu:true},
-  {id:"am5-120",name:"AM5 desktop CPU • 120 W class",socket:"AM5",w:120,igpu:true},
-  {id:"lga-65",name:"LGA1700 desktop CPU • 65 W class",socket:"LGA1700",w:65,igpu:true},
-  {id:"lga-125",name:"LGA1700 desktop CPU • 125 W class",socket:"LGA1700",w:125,igpu:true},
-  {id:"pi-cpu",name:"Integrated Arm processor (soldered)",socket:"SOLDERED_ARM",w:0,igpu:true}
- ],
- rams:[
-  {id:"d4-16",name:"16 GB DDR4 DIMM kit",type:"DDR4",w:6},{id:"d4-32",name:"32 GB DDR4 DIMM kit",type:"DDR4",w:9},
-  {id:"d5-16",name:"16 GB DDR5 DIMM kit",type:"DDR5",w:7},{id:"d5-32",name:"32 GB DDR5 DIMM kit",type:"DDR5",w:10},
-  {id:"pi4",name:"Integrated 4 GB LPDDR4X",type:"LPDDR4X",w:0},{id:"pi8",name:"Integrated 8 GB LPDDR4X",type:"LPDDR4X",w:0}
- ],
- storage:[
-  {id:"nvme",name:"M.2 NVMe SSD",desktop:true,pi:true,w:8},{id:"sata-ssd",name:"2.5-inch SATA SSD",desktop:true,pi:false,w:5},
-  {id:"hdd",name:"3.5-inch SATA HDD",desktop:true,pi:false,w:12},{id:"microsd",name:"microSD card",desktop:false,pi:true,w:1},
-  {id:"usbssd",name:"USB SSD",desktop:true,pi:true,w:7}
- ],
- gpus:[
-  {id:"integrated",name:"Integrated graphics / no add-in GPU",desktop:true,pi:true,w:0,psu:0},
-  {id:"gpu75",name:"Entry PCIe GPU • up to 75 W",desktop:true,pi:false,w:75,psu:450},
-  {id:"gpu200",name:"Midrange PCIe GPU • ~200 W",desktop:true,pi:false,w:200,psu:650},
-  {id:"gpu320",name:"High-power PCIe GPU • ~320 W",desktop:true,pi:false,w:320,psu:850}
- ],
- coolers:[
-  {id:"air65",name:"Compact air cooler • 65 W class",desktop:true,max:75,w:3},
-  {id:"tower180",name:"Tower air cooler • up to 180 W class",desktop:true,max:180,w:5},
-  {id:"aio250",name:"Liquid/AIO cooler • up to 250 W class",desktop:true,max:250,w:12},
-  {id:"pi-active",name:"Pi 5 active cooler / case fan",desktop:false,max:99,w:3}
- ]
-};
-
-function opt(sel,items,placeholder){
- sel.innerHTML='<option value="">'+placeholder+'</option>'+items.map(x=>'<option value="'+x.id+'">'+x.name+'</option>').join("");
- sel.disabled=items.length===0; sel.closest(".compat-field")?.classList.toggle("locked",items.length===0);
-}
-function get(arr,id){return arr.find(x=>x.id===id)}
-function resetAfter(which){
- const order=[board,cpu,ram,storage,gpu,cooling],i=order.indexOf(which);
- order.slice(i+1).forEach(x=>{x.innerHTML='<option value="">Complete the earlier selection…</option>';x.disabled=true;x.closest(".compat-field")?.classList.add("locked")});
-}
-function loadBoards(){
- const p=DB.platforms[platform.value]; if(!p){opt(board,[],"Choose the case first…"); resetAfter(board); report(); return;}
- const list=DB.boards.filter(b=>p.forms.includes(b.form)); opt(board,list,"Choose a compatible board…"); resetAfter(board); report();
-}
-function loadCPU(){
- const b=get(DB.boards,board.value); if(!b){resetAfter(board); report(); return;}
- opt(cpu,DB.cpus.filter(x=>x.socket===b.socket),"Choose a compatible processor…");
- opt(ram,DB.rams.filter(x=>x.type===b.mem),"Choose compatible memory…");
- const isPi=b.form==="Pi5";
- opt(storage,DB.storage.filter(x=>isPi?x.pi:x.desktop),"Choose storage…");
- opt(gpu,DB.gpus.filter(x=>isPi?x.pi:x.desktop),"Choose graphics…");
- report();
-}
-function loadCooling(){
- const c=get(DB.cpus,cpu.value), b=get(DB.boards,board.value); if(!c||!b){opt(cooling,[],"Choose a CPU first…");report();return;}
- opt(cooling,DB.coolers.filter(x=>b.form==="Pi5"?!x.desktop:(x.desktop&&x.max>=c.w)),"Choose compatible cooling…"); report();
-}
-function report(){
- const p=DB.platforms[platform.value], b=get(DB.boards,board.value), c=get(DB.cpus,cpu.value), r=get(DB.rams,ram.value), st=get(DB.storage,storage.value), g=get(DB.gpus,gpu.value), cool=get(DB.coolers,cooling.value);
- const status=$("cb-status"), title=$("cb-title"), list=$("cb-list");
- if(!p){status.className="compat-status";status.textContent="Start with a platform";title.textContent="Your compatibility report will appear here.";$("cb-load").textContent="—";$("cb-power").textContent="—";$("cb-form").textContent="—";list.innerHTML="<li>Choose the case/platform to begin filtering compatible parts.</li>";return;}
- const chosen=[b,c,r,st,g,cool].filter(Boolean);
- let load=p.base+chosen.reduce((sum,x)=>sum+(x.w||0),0);
- let power="Continue selecting parts";
- let form=p.power;
- let issues=[];
- if(b&&c&&r&&st&&g&&cool){
-   if(b.form==="Pi5"){load=Math.max(12,load); power="USB-C 5V/5A • 27 W recommended supply"; form="USB-C power"; }
-   else{
-     let headroom=Math.ceil((load*1.35)/50)*50;
-     let floor=Math.max(450,g.psu||0);
-     let rec=Math.max(headroom,floor);
-     power=rec+" W PSU class";
-     form=p.power;
-     if(cool.max<c.w) issues.push("Selected cooler is below the processor power class.");
-   }
- }
- $("cb-load").textContent=b&&c&&r&&st&&g&&cool ? "~"+load+" W" : "building…";
- $("cb-power").textContent=power; $("cb-form").textContent=form;
- let lines=[];
- if(b) lines.push("Board: "+b.name+" fits the selected platform.");
- if(c) lines.push("CPU: "+c.name+" matches the board's "+b.socket+" requirement.");
- if(r) lines.push("Memory: "+r.name+" matches the board's "+b.mem+" memory type.");
- if(st) lines.push("Storage: "+st.name+" is supported by this training platform.");
- if(g) lines.push("Graphics: "+g.name+".");
- if(cool) lines.push("Cooling: "+cool.name+".");
- lines.push(p.note);
- if(b&&b.form!=="Pi5") lines.push("Before a real purchase/build, also verify BIOS/UEFI CPU support, exact RAM QVL/specifications, M.2 key/interface, case clearances, PSU connectors, and GPU/cooler dimensions.");
- else if(b&&b.form==="Pi5") lines.push("Pi 5 power is not selected like a desktop ATX PSU. A suitable USB-C supply must meet the board/peripheral power needs; the commonly recommended Pi 5 supply is 5 V / 5 A (27 W).");
- list.innerHTML=lines.map(x=>"<li>"+x+"</li>").join("");
- const complete=b&&c&&r&&st&&g&&cool&&!issues.length;
- status.className="compat-status"+(complete?" ready":"");
- status.textContent=complete?"Compatible training configuration":"Configuration in progress";
- title.textContent=complete?"Your selections pass the simplified compatibility checks.":"Keep selecting compatible parts.";
-}
-platform.addEventListener("change",loadBoards);
-board.addEventListener("change",()=>{loadCPU();loadCooling()});
-cpu.addEventListener("change",loadCooling);
-[ram,storage,gpu,cooling].forEach(x=>x.addEventListener("change",report));
-$("cb-reset").addEventListener("click",()=>{platform.value="";loadBoards();window.location.hash="compatibility-builder"});
-report();
-})();
 </script>
 </body></html>
