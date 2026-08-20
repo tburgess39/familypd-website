@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mission 03: Motherboards, Connectors & PC Hardware | FamilyPD A+</title>
+<meta name="description" content="FamilyPD A+ Mission 03: safely disassemble a training desktop, identify common PC parts and connectors, compare implementations, verify compatibility, and begin a PC build."/>
+<link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.m3-shell{max-width:1020px;margin:auto} .m3-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.m3-card,.m3-callout,.m3-check,.m3-notebook,.m3-build{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:16px;padding:1rem;box-shadow:0 5px 16px rgba(15,48,74,.04)}
+.m3-card h3,.m3-check h3,.m3-build h3{font-size:1.08rem;line-height:1.25;margin:.15rem 0 .5rem}
+.m3-card p,.m3-card li,.m3-check p,.m3-build p,.m3-build li,.m3-notebook p,.m3-notebook li{color:#111;line-height:1.48}
+.m3-callout{border-left:5px solid #d16a2d;background:#fff9ec} .m3-notebook{border-left:5px solid #2d7f83;background:#f6fbfb}
+.m3-check{margin:1rem 0} .m3-qnum{font-weight:900;color:#2d7f83;margin:0 0 .25rem}
+.m3-choices{display:grid;gap:.48rem} .m3-choice{font:inherit;text-align:left;color:#111;background:#fff;border:2px solid #b9cad6;border-radius:10px;padding:.7rem;cursor:pointer}
+.m3-choice:hover{background:#f5f9fb} .m3-choice.good{border-color:#2f7d32;background:#edf8ee} .m3-choice.bad{border-color:#b23a3a;background:#fff0f0}
+.m3-feedback{display:none;background:#f5f8fa;border-left:4px solid #2d6f8e;border-radius:8px;padding:.7rem;margin-top:.55rem;color:#111} .m3-feedback.show{display:block}
+.m3-steps{counter-reset:step;display:grid;gap:.65rem} .m3-step{display:grid;grid-template-columns:42px 1fr;gap:.65rem;align-items:start;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:14px;padding:.85rem}
+.m3-step:before{counter-increment:step;content:counter(step);width:36px;height:36px;border-radius:50%;background:#163f61;color:#fff;display:grid;place-items:center;font-weight:900}
+.m3-tag{display:inline-block;background:#e9f4f4;color:#16575b;border-radius:999px;padding:.25rem .55rem;font-size:.78rem;font-weight:800;margin:.1rem .2rem .1rem 0}
+.m3-table-wrap{overflow-x:auto} .m3-table{width:100%;border-collapse:collapse;background:#fff} .m3-table th,.m3-table td{border:1px solid #cbd8e0;padding:.65rem;text-align:left;vertical-align:top;color:#111} .m3-table th{background:#edf5f7;color:#163f61}
+.m3-notebook-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem} .m3-svg{background:#f4f8fa;border-radius:16px;padding:.7rem} .m3-svg svg{width:100%;height:auto;display:block}
+.m3-score{font-weight:900;background:#edf5f7;border:1px solid #9fb6c5;border-radius:12px;padding:.7rem;margin:1rem 0}
+.mission-bottom{display:flex;gap:.55rem;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #d6e1e7;padding-top:1rem;margin-top:1rem}
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto} .aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;align-items:center;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;font-size:.84rem;color:#163f61} .aplus-quick-strip .button{font-size:12.5px!important;line-height:1.1!important;padding:7px 10px!important;min-height:32px!important;width:auto!important}
+.page-hero h1{font-size:clamp(1.85rem,3.5vw,2.65rem)!important;line-height:1.08!important} .section-heading h2,.m3-shell h2{font-size:clamp(1.22rem,2vw,1.55rem)!important;line-height:1.2!important}
+.m3-shell .button,.page-hero .button,.mission-bottom .button{font-size:14px!important;line-height:1.15!important;padding:9px 13px!important;min-height:35px!important;width:auto!important}
+@media(max-width:760px){.m3-grid,.m3-notebook-layout{grid-template-columns:1fr}.aplus-quick-wrap{width:min(100% - 1.2rem,980px)}.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important;white-space:normal!important;font-size:12px!important}.page-hero h1{font-size:1.8rem!important}}
+</style>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
+<nav class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav>
+</div></header>
+
+<main id="main-content">
+<section class="page-hero"><div class="container m3-shell">
+<nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/">Learning Center</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 03</span></nav>
+<p class="eyebrow">CompTIA A+ • Mission 03</p>
+<h1>Motherboards, Connectors &amp; PC Hardware</h1>
+<p class="page-lead">Use one training desktop to learn safe disassembly and another set of compatible parts to practice assembly. The goal is not to memorize one computer—it is to recognize the <strong>common standards, functions, connectors, and compatibility checks</strong> that transfer to many PCs.</p>
+<div class="button-row"><a class="button" href="#start">Begin Mission 03</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Acronyms</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook Guide</a></div>
+</div></section>
+
+<div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
+<strong>A+ quick links</strong>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Acronyms</a>
+<a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+</div></div>
+
+<section class="section" id="start"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">A+ alignment • Module 2</p><h2>What you are learning in this mission</h2><p>This mission reinforces cable types and connectors, motherboard installation/configuration, legacy connections, electrical/ESD safety, form factors, storage/expansion connectors, headers, power connections, display interfaces, and common expansion devices.</p></div>
+<div class="m3-grid">
+<article class="m3-card"><h3>Recognize</h3><p>Identify common desktop components and connectors by <strong>shape, function, labels, and standards</strong> rather than by brand or color.</p></article>
+<article class="m3-card"><h3>Compare</h3><p>Compare desktops with laptops, phones/tablets, and Raspberry Pi systems. The jobs are similar, but packaging, power, cooling, expansion, and serviceability differ.</p></article>
+<article class="m3-card"><h3>Disassemble</h3><p>Document a complete training PC, remove parts in a safe order, identify power/data paths, and preserve screws/cables for reassembly.</p></article>
+<article class="m3-card"><h3>Build</h3><p>Plan and begin a PC assembly only after checking form factor, CPU/socket, memory, power, storage, expansion, cooling, and case compatibility.</p></article>
+</div>
+<div class="m3-callout"><strong>Technician rule:</strong> Do not memorize where a connector appears on one motherboard. A connector may be on a different edge or in a different orientation on another board. Learn <strong>what it is, what it does, what plugs into it, and how to verify it.</strong></div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Many manufacturers • common standards</p><h2>Expect variation without losing the fundamentals.</h2></div>
+<p>A computer may come from a major OEM, a local/custom builder, a school or business deployment, or a home build. The motherboard, memory, storage, power supply, case, cooling, and expansion devices can also come from different manufacturers and may be manufactured or assembled in different countries.</p>
+<div class="m3-grid">
+<article class="m3-card"><h3>Common standards help</h3><p>ATX/microATX/mini-ITX, PCIe, SATA, M.2, USB, HDMI/DisplayPort, DIMM, Ethernet, and common power connections give technicians a shared vocabulary.</p></article>
+<article class="m3-card"><h3>But implementations differ</h3><p>Some systems use proprietary motherboard shapes, power connections, front-panel wiring, cooling assemblies, drive mounts, or service procedures. Always inspect and verify before assuming.</p></article>
+</div>
+<div class="m3-callout"><strong>Country of manufacture is not a compatibility specification.</strong> Compatibility comes from the technical requirements: form factor, electrical connection, interface, socket, protocol, dimensions, firmware support, and documentation.</div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Component field guide</p><h2>Learn the common parts you can carry to almost any PC.</h2></div>
+<div class="m3-table-wrap"><table class="m3-table">
+<thead><tr><th>Part / connection</th><th>Desktop PC</th><th>Laptop / mobile comparison</th><th>What to verify</th></tr></thead>
+<tbody>
+<tr><td><strong>Motherboard / system board</strong></td><td>Main board connecting CPU, RAM, storage, expansion, power, and I/O.</td><td>Laptops and phones also have system boards, but many parts are more integrated or soldered.</td><td>Form factor, mounting, ports, socket/CPU support, RAM, storage, power, case connections.</td></tr>
+<tr><td><strong>CPU / processor</strong></td><td>Often a replaceable socketed Intel/AMD-style x86-64 processor in serviceable desktops.</td><td>Many laptops use soldered processors; phones/tablets commonly use Arm-based SoCs. Pi 5 uses a soldered Arm-based SoC.</td><td>Socket, chipset/firmware support, cooler, thermal solution, architecture.</td></tr>
+<tr><td><strong>RAM</strong></td><td>Usually removable full-size DIMMs.</td><td>Serviceable laptops may use SO-DIMMs; many thin laptops, phones, tablets, and SBCs use soldered low-power memory.</td><td>DDR generation, capacity, speed/support, slot population, soldered vs. replaceable.</td></tr>
+<tr><td><strong>Storage</strong></td><td>SATA HDD/SSD and M.2 NVMe are common.</td><td>Laptops commonly use M.2 NVMe; phones/tablets often use soldered flash; Pi commonly uses microSD or supported USB/PCIe storage.</td><td>Interface, form factor, capacity, mounting, boot support, available ports/lanes.</td></tr>
+<tr><td><strong>Power</strong></td><td>Internal PSU supplies motherboard, CPU, GPU, drives, and fans.</td><td>Laptops use an external adapter plus battery; phones/tablets use a charger/battery system; Pi uses external DC power.</td><td>Connector type, voltage/power requirements, wattage, PSU capacity, proprietary vs. standard connectors.</td></tr>
+<tr><td><strong>Expansion</strong></td><td>PCIe slots may accept GPU, NIC, capture, storage, or other cards.</td><td>Laptops rely more on M.2 modules, USB-C/Thunderbolt, docks, and integrated devices; phones/tablets have very limited internal expansion.</td><td>Slot type/lane width, physical clearance, power, drivers, system support.</td></tr>
+<tr><td><strong>Display</strong></td><td>HDMI/DisplayPort common; older systems may expose DVI/VGA.</td><td>Laptop/tablet/phone displays are built in, with internal panel connectors; external outputs vary by device.</td><td>Connector, cable capability, resolution/refresh support, GPU/display support.</td></tr>
+<tr><td><strong>Cooling</strong></td><td>Heat sinks, fans, case airflow; sometimes liquid cooling.</td><td>Laptops use compact fans/heat pipes; phones/tablets rely heavily on passive heat spreading and thermal management.</td><td>Clearance, mounting, fan header, airflow direction, thermal interface, dust.</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Hands-on Lab A</p><h2>Disassemble a training PC like a technician—not like a scavenger hunt.</h2><p>An older working or non-working desktop is useful because it may expose optical drives, SATA cabling, larger drive bays, legacy display connectors, expansion cards, and other hardware you may still encounter.</p></div>
+<div class="m3-steps">
+<div class="m3-step"><div><h3>Power down and isolate</h3><p>Shut the system down. Disconnect external power and peripherals. Follow appropriate ESD precautions. Never open a PSU enclosure.</p></div></div>
+<div class="m3-step"><div><h3>Document the outside</h3><p>Identify power, USB, network, audio, display, optical/removable media, vents, and expansion openings. Photograph or sketch what you see.</p></div></div>
+<div class="m3-step"><div><h3>Open and photograph BEFORE unplugging</h3><p>Take clear photos of cable routing, motherboard connections, drive connections, front-panel wiring, fans, and expansion cards. These become reassembly evidence.</p></div></div>
+<div class="m3-step"><div><h3>Create a parts/screw system</h3><p>Use labeled cups, bags, or a parts tray. Keep screws with the component or location they came from. Avoid mixing motherboard, drive, case, and expansion-card screws.</p></div></div>
+<div class="m3-step"><div><h3>Trace power vs. data</h3><p>For each major component, identify which connection supplies power and which carries data. Some interfaces can carry both power and data; document the difference.</p></div></div>
+<div class="m3-step"><div><h3>Remove easy-access components first</h3><p>Depending on the system: expansion cards, storage/optical drives, and removable cables may come out before the motherboard. Do not force clips, latches, or keyed connectors.</p></div></div>
+<div class="m3-step"><div><h3>Remove RAM and cooling carefully</h3><p>Release memory latches correctly. If removing a CPU cooler, follow the hardware's procedure; thermal material can make an old cooler feel stuck. Do not pry aggressively.</p></div></div>
+<div class="m3-step"><div><h3>Motherboard last</h3><p>Verify all cables/cards are free, locate every motherboard screw, support the board, then lift it without scraping the underside across metal standoffs.</p></div></div>
+<div class="m3-step"><div><h3>Inventory what you learned</h3><p>Name each major part, identify its connector(s), describe its function, and classify it as current/common, older/legacy, or system-specific.</p></div></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Before assembly</p><h2>Compatibility first. Installation second.</h2></div>
+<div class="m3-grid">
+<article class="m3-card"><h3>Case ↔ motherboard</h3><p>Confirm supported motherboard form factor and mounting-hole/standoff pattern. Check rear I/O opening and expansion-slot alignment.</p></article>
+<article class="m3-card"><h3>CPU ↔ socket ↔ firmware</h3><p>A CPU physically fitting is not enough. Verify the exact socket, chipset/platform support, firmware/UEFI requirements, and cooler compatibility.</p></article>
+<article class="m3-card"><h3>RAM ↔ motherboard</h3><p>Verify DDR generation, supported capacity/speed, module type, and recommended slot population. DDR generations are physically keyed differently.</p></article>
+<article class="m3-card"><h3>Storage ↔ interface</h3><p>Check SATA versus M.2, and for M.2 determine whether the slot supports the drive's interface/protocol and physical length.</p></article>
+<article class="m3-card"><h3>PSU ↔ system</h3><p>Verify physical PSU form factor, required motherboard/CPU/GPU/storage connectors, total power needs, and any proprietary system connections.</p></article>
+<article class="m3-card"><h3>GPU / expansion ↔ case</h3><p>Verify PCIe slot support, card length/height/thickness, power connectors, cooling clearance, and available expansion slots.</p></article>
+</div>
+<div class="m3-callout"><strong>Do not build by logo.</strong> A case, motherboard, CPU, memory kit, PSU, or GPU do not need matching manufacturer names. They need compatible <strong>standards and specifications.</strong></div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Hands-on Lab B</p><h2>Build with a repeatable technician workflow.</h2></div>
+<div class="m3-steps">
+<div class="m3-step"><div><h3>Read the manuals and inspect every part</h3><p>Before installation, identify motherboard form factor, socket, DIMM slots, M.2/SATA, PCIe, main power, CPU power, fan headers, front-panel header, USB/audio headers, rear I/O, and case mounting points.</p></div></div>
+<div class="m3-step"><div><h3>Prepare the case and standoffs</h3><p>Remove both side panels when possible. Match standoffs to motherboard mounting holes. <strong>Remove any standoff that does not correspond to a motherboard hole.</strong></p></div></div>
+<div class="m3-step"><div><h3>Install the I/O shield if the board uses a separate one</h3><p>Some boards have an integrated shield; others use a separate shield. Install the correct shield before the motherboard if required.</p></div></div>
+<div class="m3-step"><div><h3>Pre-install accessible components</h3><p>When appropriate, install CPU, cooler mounting hardware, RAM, and M.2 storage before the motherboard goes into the case. This can provide better access and reduce awkward pressure on the installed board.</p></div></div>
+<div class="m3-step"><div><h3>CPU: align—never force</h3><p>Use the socket's alignment indicator/notches and the manufacturer's procedure. If orientation is correct, the CPU should seat without being pushed into place.</p></div></div>
+<div class="m3-step"><div><h3>RAM: verify the notch and recommended slots</h3><p>Open the latches as designed, align the module notch, apply even pressure, and verify the module is fully seated. Use the board documentation for preferred slots when installing fewer modules than available slots.</p></div></div>
+<div class="m3-step"><div><h3>M.2: confirm interface and length</h3><p>Insert the module at the specified angle, secure it with the correct mounting hardware, and use a heat spreader/thermal pad only as instructed.</p></div></div>
+<div class="m3-step"><div><h3>Lower the motherboard onto the standoffs</h3><p>Align rear I/O and mounting holes. Start screws loosely, confirm alignment, then secure evenly. Tighten until secure—not excessively.</p></div></div>
+<div class="m3-step"><div><h3>Connect power correctly</h3><p>Identify the motherboard's main ATX power and the CPU/EPS power connection. Do not confuse CPU/EPS and PCIe/GPU power just because connectors may look similar.</p></div></div>
+<div class="m3-step"><div><h3>Connect case headers using the diagram</h3><p>Front power/reset switches, LEDs, USB, audio, and fans may use separate headers. Front-panel layouts vary—use motherboard labels/manuals rather than guessing.</p></div></div>
+<div class="m3-step"><div><h3>Install drives and expansion cards</h3><p>Mount storage securely, connect required power/data, and install PCIe cards into the correct slot. Verify latch engagement, case clearance, and supplemental power if required.</p></div></div>
+<div class="m3-step"><div><h3>Manage cables for serviceability and airflow</h3><p>Keep cables away from fan blades, avoid excessive tension, and route them so future troubleshooting or upgrades do not require dismantling the entire computer.</p></div></div>
+<div class="m3-step"><div><h3>Perform a pre-power inspection</h3><p>Check motherboard/CPU power, RAM seating, storage, fan connections, GPU power, front-panel wiring, loose screws, tools, and cables touching fans. Do not rush this step.</p></div></div>
+<div class="m3-step"><div><h3>First power: observe before celebrating</h3><p>Watch for fans, LEDs/diagnostic indicators, POST behavior, display output, unusual sounds, smells, or shutdowns. If it fails, stop and troubleshoot from evidence rather than repeatedly power-cycling.</p></div></div>
+</div>
+<div class="m3-callout"><strong>The simplest build rule:</strong> If a part or connector does not fit easily, <strong>STOP.</strong> Check orientation, keying, compatibility, and documentation before applying more force.</div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Connector thinking</p><h2>Ask three questions every time you touch a cable.</h2></div>
+<div class="m3-grid">
+<article class="m3-card"><h3>1. What is it?</h3><p>Name the connector or header. Use the shape, key, latch, pin arrangement, board label, and documentation.</p></article>
+<article class="m3-card"><h3>2. What does it connect?</h3><p>Motherboard? CPU? drive? GPU? fan? front panel? external peripheral? display? network?</p></article>
+<article class="m3-card"><h3>3. What does it carry?</h3><p><strong>Power, data, signal, or a combination?</strong> Knowing this speeds up troubleshooting when something is not detected or not receiving power.</p></article>
+<article class="m3-card"><h3>4. Is it current or legacy?</h3><p>A technician may still encounter SATA, optical drives, VGA/DVI, serial connections, older PCI hardware, or adapters. Recognize them even if your new build does not use them.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Mission checks</p><h2>Practice the decisions technicians actually make.</h2></div>
+<div class="m3-score">Progress: <span id="m3-score">0 / 8 correct</span></div>
+<article class="m3-check" data-answer="1"><p class="m3-qnum">Check 1</p><h3>You open a desktop you have never worked on before. What should you do BEFORE disconnecting internal cables?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">Start removing cables so you can identify them later.</button><button class="m3-choice" type="button" data-choice="1">Photograph or sketch the original layout, inspect labels, and locate documentation when available.</button><button class="m3-choice" type="button" data-choice="2">Remove the motherboard first because all other parts connect to it.</button><button class="m3-choice" type="button" data-choice="3">Turn the system on while touching each connector to see what it does.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>Documenting the original state gives you evidence for reassembly and troubleshooting. Technicians should not rely on memory when layouts and proprietary connections can vary.</p></article><article class="m3-check" data-answer="2"><p class="m3-qnum">Check 2</p><h3>What is the BEST reason to verify motherboard standoff locations before installing a board?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">Extra standoffs improve cooling.</button><button class="m3-choice" type="button" data-choice="1">Standoffs determine the operating system.</button><button class="m3-choice" type="button" data-choice="2">A misplaced standoff can contact the board where no mounting hole exists and create a short.</button><button class="m3-choice" type="button" data-choice="3">Every case uses the same standoff pattern.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>Only use standoffs that line up with motherboard mounting holes. Extra metal under the board can create an electrical short.</p></article><article class="m3-check" data-answer="2"><p class="m3-qnum">Check 3</p><h3>A power connector will not seat easily. What should you do FIRST?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">Push harder until the latch clicks.</button><button class="m3-choice" type="button" data-choice="1">Trim the plastic keying so it fits.</button><button class="m3-choice" type="button" data-choice="2">Stop and verify the connector type, orientation, and destination.</button><button class="m3-choice" type="button" data-choice="3">Move it to any connector with the same number of wires.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>Most PC connectors are keyed. Resistance is a clue to stop and recheck orientation or compatibility instead of forcing the connection.</p></article><article class="m3-check" data-answer="2"><p class="m3-qnum">Check 4</p><h3>Which statement is most accurate about a laptop memory upgrade?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">Every laptop uses SO-DIMMs.</button><button class="m3-choice" type="button" data-choice="1">Laptops always use full-size desktop DIMMs.</button><button class="m3-choice" type="button" data-choice="2">A serviceable laptop may use SO-DIMMs, but some systems use soldered memory, so specifications should be checked first.</button><button class="m3-choice" type="button" data-choice="3">Laptop RAM is stored on the SSD.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>SO-DIMMs are common in serviceable laptops, but many thin/mobile systems use soldered memory. The technician should verify the exact model specifications.</p></article><article class="m3-check" data-answer="1"><p class="m3-qnum">Check 5</p><h3>You are replacing a motherboard in an unfamiliar desktop. Which information matters MOST before installation?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">The color of the PCB.</button><button class="m3-choice" type="button" data-choice="1">Case/form-factor compatibility, CPU/socket support, RAM generation, power connectors, storage/expansion interfaces, and required front-panel connections.</button><button class="m3-choice" type="button" data-choice="2">Whether the new board was manufactured in the same country as the old board.</button><button class="m3-choice" type="button" data-choice="3">Whether the brand name matches the case logo.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>Compatibility is determined by technical standards and the system design—not matching logos or country of manufacture.</p></article><article class="m3-check" data-answer="0"><p class="m3-qnum">Check 6</p><h3>Which connection is intended primarily to carry DATA to a SATA storage drive?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">SATA data cable</button><button class="m3-choice" type="button" data-choice="1">24-pin ATX motherboard power</button><button class="m3-choice" type="button" data-choice="2">CPU/EPS power</button><button class="m3-choice" type="button" data-choice="3">Front-panel power-switch lead</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>A typical SATA drive uses separate SATA data and SATA power connections. Knowing which connection carries data versus power is important for both installation and troubleshooting.</p></article><article class="m3-check" data-answer="1"><p class="m3-qnum">Check 7</p><h3>A desktop has an optical drive and large internal drive bays that newer systems may not use. What is the BEST technician conclusion?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">The computer cannot teach anything useful because it is old.</button><button class="m3-choice" type="button" data-choice="1">Older systems can expose legacy hardware and connectors that help you recognize technology you may still encounter.</button><button class="m3-choice" type="button" data-choice="2">All new computers require an optical drive.</button><button class="m3-choice" type="button" data-choice="3">Older hardware should always be replaced before inspection.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>Older PCs are useful training systems because they show how standards and designs evolve. A+ learners need to recognize both common current technologies and older interfaces they may encounter.</p></article><article class="m3-check" data-answer="2"><p class="m3-qnum">Check 8</p><h3>Which statement BEST describes how different manufacturers affect PC service work?</h3><div class="m3-choices"><button class="m3-choice" type="button" data-choice="0">All PCs place every connector in the same location.</button><button class="m3-choice" type="button" data-choice="1">Only one manufacturer uses industry standards.</button><button class="m3-choice" type="button" data-choice="2">Common standards exist, but layout, proprietary parts, cooling, front-panel wiring, and service procedures can vary, so inspect and verify instead of assuming.</button><button class="m3-choice" type="button" data-choice="3">If a case accepts ATX, every motherboard and power supply is automatically compatible.</button></div><div class="m3-feedback" aria-live="polite"></div><p class="m3-explain" hidden>A technician learns the standard first, then verifies how the specific system implements it. Some systems use proprietary designs even when they look similar to standard PCs.</p></article>
+</div></section>
+
+<section class="section" id="notebook"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">A+ notebook build</p><h2>Create an “Anatomy of a PC” reference you will actually study.</h2><p>Your notebook should help you identify and compare hardware—not become a handwritten copy of this page.</p></div>
+<div class="m3-notebook-layout">
+<div class="m3-notebook">
+<h3>Mission 03 notebook requirements</h3>
+<p><strong>Page 1 — Motherboard Field Map</strong></p>
+<ul>
+<li>CPU socket</li><li>DIMM slots</li><li>PCIe x16 / smaller PCIe slots</li><li>M.2</li><li>SATA</li><li>24-pin main power</li><li>CPU/EPS power</li><li>fan headers</li><li>front-panel header</li><li>USB/audio headers</li><li>rear I/O</li>
+</ul>
+<p>For each major connection, add: <strong>what connects here • what it carries • one troubleshooting clue.</strong></p>
+<p><strong>Page 2 — Desktop / Laptop / Phone-Tablet / Raspberry Pi comparison</strong></p>
+<ul>
+<li>Processor: socketed vs. soldered; x86-64 vs. Arm examples</li>
+<li>Memory: DIMM vs. SO-DIMM vs. soldered LPDDR</li>
+<li>Storage: SATA/M.2 vs. mobile flash vs. microSD/PCIe</li>
+<li>Power: desktop PSU vs. laptop adapter+battery vs. phone/tablet battery vs. Pi external DC</li>
+<li>Expansion/cooling/display/networking differences</li>
+</ul>
+<p><strong>Page 3 — Build/Disassembly Evidence</strong></p>
+<ul><li>One before photo/sketch</li><li>One labeled internal photo/sketch</li><li>Three connectors you physically handled</li><li>One older/legacy component you found</li><li>One compatibility check you made before installation</li><li>One mistake/question you want Future You to remember</li></ul>
+</div>
+<div class="m3-svg">
+<svg viewBox="0 0 650 700" role="img" aria-label="Notebook example comparing common computer components across device types">
+<rect x="25" y="25" width="600" height="650" rx="22" fill="#fffdf6" stroke="#d8c992" stroke-width="3"/>
+<text x="325" y="68" text-anchor="middle" font-size="25" font-weight="800" fill="#163f61">ANATOMY OF A PC</text>
+<text x="70" y="112" font-size="18" font-weight="800" fill="#2d7f83">MOTHERBOARD MAP</text>
+<rect x="70" y="132" width="510" height="225" rx="18" fill="#163f61"/>
+<rect x="105" y="170" width="100" height="78" rx="10" fill="#f4c84a"/><text x="155" y="215" text-anchor="middle" font-weight="800" font-size="18" fill="#163f61">CPU</text>
+<rect x="245" y="155" width="25" height="125" rx="5" fill="#5fd1c7"/><rect x="285" y="155" width="25" height="125" rx="5" fill="#5fd1c7"/><text x="277" y="308" text-anchor="middle" font-size="15" fill="#fff">DIMM</text>
+<rect x="365" y="165" width="145" height="30" rx="7" fill="#fff"/><text x="438" y="186" text-anchor="middle" font-size="14" fill="#163f61">M.2</text>
+<rect x="115" y="300" width="330" height="20" rx="6" fill="#d16a2d"/><text x="470" y="316" font-size="14" fill="#fff">PCIe</text>
+<rect x="485" y="225" width="65" height="22" rx="4" fill="#8fb3cc"/><rect x="485" y="255" width="65" height="22" rx="4" fill="#8fb3cc"/><text x="518" y="212" text-anchor="middle" font-size="13" fill="#fff">SATA</text>
+<text x="70" y="402" font-size="18" font-weight="800" fill="#2d7f83">COMPARE THE SAME JOB</text>
+<g font-size="15" fill="#163f61">
+<text x="85" y="445" font-weight="800">Desktop</text><text x="220" y="445" font-weight="800">Laptop</text><text x="355" y="445" font-weight="800">Phone/Tablet</text><text x="505" y="445" font-weight="800">Pi/SBC</text>
+<text x="85" y="480">DIMM</text><text x="220" y="480">SO-DIMM*</text><text x="355" y="480">soldered LPDDR</text><text x="505" y="480">soldered LPDDR</text>
+<text x="85" y="515">socket CPU*</text><text x="220" y="515">often soldered</text><text x="355" y="515">Arm SoC</text><text x="505" y="515">Arm SoC</text>
+<text x="85" y="550">PSU</text><text x="220" y="550">adapter+battery</text><text x="355" y="550">battery</text><text x="505" y="550">external DC</text>
+</g>
+<text x="70" y="605" font-size="17" font-weight="800" fill="#d16a2d">*VERIFY THE SPECIFIC SYSTEM — do not assume.</text>
+<text x="70" y="638" font-size="15" fill="#163f61">Add: connector → purpose → power/data → troubleshooting clue</text>
+</svg>
+</div></div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Build success tips</p><h2>Small habits prevent big problems.</h2></div>
+<div class="m3-grid">
+<article class="m3-card"><h3>Use your phone as documentation</h3><p>Take photos before disassembly, before hiding cables, and before closing the case. Photos make troubleshooting and reassembly easier.</p></article>
+<article class="m3-card"><h3>Never mix screws casually</h3><p>A wrong screw can damage a component or fail to secure it. Label parts and mounting hardware as you work.</p></article>
+<article class="m3-card"><h3>Keep packaging until POST</h3><p>Boxes, anti-static bags, socket covers, screws, adapters, and manuals may be needed if a part must be exchanged or rechecked.</p></article>
+<article class="m3-card"><h3>Do not cable-manage too early</h3><p>Route neatly, but avoid fully tightening/tie-wrapping everything until the system successfully POSTs and major devices are detected.</p></article>
+<article class="m3-card"><h3>Test one change at a time</h3><p>If troubleshooting, avoid changing five things simultaneously. A controlled test makes it easier to know what actually fixed the issue.</p></article>
+<article class="m3-card"><h3>Check the simple things first</h3><p>Power switch, PSU switch, display input, motherboard power, CPU power, RAM seating, GPU power/display connection, and front-panel header mistakes are common first-build issues.</p></article>
+</div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="m3-callout"><strong>Certification connection:</strong> The instructor-provided A+ Module 2 material covers cables/connectors, USB, display interfaces, SATA/eSATA, motherboard functions, ESD, CPU/memory connectors, M.2, PCI/PCIe, form factors, motherboard installation, headers/power connectors, video/capture/sound/network cards, and legacy interfaces such as DVI/VGA/serial. Mission 03 turns those topics into identification, compatibility, disassembly, assembly, and troubleshooting practice.</div>
+<div class="mission-bottom">
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">← Previous: Mission 02</a>
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">More Practice</a>
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Acronym Reference</a>
+<span class="button disabled" aria-disabled="true">Next: Memory &amp; Storage — coming next</span>
+</div></div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+const checks=[...document.querySelectorAll('.m3-check')], score=document.getElementById('m3-score'); const completed=new Set();
+function updateScore(){score.textContent=completed.size+' / '+checks.length+' correct';}
+checks.forEach((box,i)=>{
+  box.querySelectorAll('.m3-choice').forEach(btn=>btn.addEventListener('click',()=>{
+    if(completed.has(i)) return;
+    const correct=Number(box.dataset.answer);
+    const picked=Number(btn.dataset.choice);
+    const fb=box.querySelector('.m3-feedback');
+    box.querySelectorAll('.m3-choice').forEach(b=>b.classList.remove('bad'));
+    if(picked===correct){
+      btn.classList.add('good'); completed.add(i);
+      box.querySelectorAll('.m3-choice').forEach(b=>b.disabled=true);
+      fb.innerHTML='<strong>Correct.</strong> '+box.querySelector('.m3-explain').textContent;
+    } else {
+      btn.classList.add('bad');
+      const answer=box.querySelector('.m3-choice[data-choice="'+correct+'"]').textContent;
+      fb.innerHTML='<strong>Not quite.</strong> Correct answer: <strong>'+answer+'</strong><br>'+box.querySelector('.m3-explain').textContent;
+    }
+    fb.classList.add('show'); updateScore();
+  }));
+});
+updateScore();
+</script>
+</body></html>
