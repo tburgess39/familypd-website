@@ -62,7 +62,6 @@
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
@@ -91,7 +90,7 @@
 <tr><td><strong>Arch family</strong></td><td>Arch Linux, Manjaro</td><td><code>pacman</code></td><td>Flexible, current packages, strong documentation culture, good for learners who want to understand system configuration deeply.</td><td>Arch itself expects more manual setup and maintenance; rolling releases can require more attention.</td></tr>
 <tr><td><strong>SUSE family</strong></td><td>openSUSE Leap, Tumbleweed, SUSE Linux Enterprise</td><td><code>.rpm</code>, <code>zypper</code></td><td>Strong system administration tools, enterprise options, stable and rolling-release choices.</td><td>Smaller beginner ecosystem than Ubuntu-based distributions in some communities.</td></tr>
 <tr><td><strong>Alpine Linux</strong></td><td>Alpine</td><td><code>apk</code></td><td>Very small and lightweight; widely used in containers and minimal systems.</td><td>Uses a different libc/tooling approach than many mainstream desktop distros; can be less beginner-friendly for general desktop use.</td></tr>
-</tbody></table></div>
+<tr><td><strong>Cybersecurity distributions</strong></td><td>Kali Linux, Parrot Security, BlackArch</td><td>Varies by family: APT/DEB for Kali &amp; Parrot; pacman/Arch tooling for BlackArch</td><td>Security testing, forensics, network analysis, privacy, research, and training tools prepackaged.</td><td>Large toolsets can overwhelm beginners; use only with authorization and learn the underlying Linux/networking concepts first.</td></tr></tbody></table></div>
 <div class="linux-callout"><strong>Do not ask “Which Linux is best?” without context.</strong> Ask: best for what—desktop learning, older hardware, Raspberry Pi, enterprise server, cloud VM, container, security lab, development, or everyday use?</div>
 </div></section>
 
@@ -144,11 +143,67 @@ sudo zypper install package-name</div></article>
 <article class="linux-card"><h3>Servers &amp; data centers</h3><p>Linux is widely used for web servers, databases, file services, networking, virtualization hosts, containers, and cloud infrastructure.</p></article>
 <article class="linux-card"><h3>Cloud &amp; virtual machines</h3><p>Linux images are common choices for cloud VMs because they can be lightweight, automated, remotely administered, and customized for specific workloads.</p></article>
 <article class="linux-card"><h3>Raspberry Pi &amp; SBCs</h3><p>Raspberry Pi OS is Debian-based. Many single-board computers and maker/embedded systems use Linux because it supports flexible hardware and software development.</p></article>
-<article class="linux-card"><h3>Network &amp; security appliances</h3><p>Routers, firewalls, NAS devices, monitoring tools, and security appliances often use Linux or Linux-based operating systems internally.</p></article>
+<article class="linux-card"><h3>Network &amp; cybersecurity environments</h3><p>Routers, firewalls, NAS devices, monitoring tools, and security appliances often use Linux or Linux-based operating systems internally. Security professionals also use Linux distributions such as Kali Linux and Parrot Security in authorized testing and training environments.</p></article>
 <article class="linux-card"><h3>Embedded / IoT devices</h3><p>Smart devices, industrial systems, kiosks, media boxes, and appliances may use embedded Linux.</p></article>
 <article class="linux-card"><h3>Phones &amp; mobile technology</h3><p>Android uses the Linux kernel, although Android is not a traditional desktop Linux distribution and has a different user-space/application environment.</p></article>
 <article class="linux-card"><h3>Developer workstations</h3><p>Linux is common for software development, DevOps, cybersecurity labs, scripting, containers, and programming environments.</p></article>
 <article class="linux-card"><h3>Older / lower-resource hardware</h3><p>Lightweight distributions can sometimes extend the useful life of older computers, although hardware compatibility should still be checked.</p></article>
+</div>
+</div></section>
+
+
+<section class="section section-tinted" id="cyber-linux"><div class="container linux-shell">
+<div class="section-heading">
+<p class="eyebrow">Cybersecurity-focused Linux</p>
+<h2>Some Linux distributions are built specifically for security work.</h2>
+<p>These distributions package many security, forensics, networking, privacy, and penetration-testing tools together. They are useful in authorized labs and professional environments, but the tools themselves do not replace learning Linux fundamentals, networking, permissions, logs, scripting, and ethical/legal boundaries.</p>
+</div>
+
+<div class="linux-grid">
+<article class="linux-card">
+<span class="pill">Debian family</span>
+<h3>Kali Linux</h3>
+<p>A Debian-based cybersecurity distribution maintained by Offensive Security. Kali is designed for penetration testing, security research, digital forensics, reverse engineering, and training.</p>
+<p><strong>Commonly includes or supports tools such as:</strong> Nmap, Wireshark, Burp Suite, Metasploit Framework, John the Ripper, Aircrack-ng, Hashcat, and many others.</p>
+<p><strong>Good for:</strong> cybersecurity labs, network discovery, web testing, packet analysis, digital forensics, and learning security tools in an authorized environment.</p>
+<p><strong>Tradeoff:</strong> it is not automatically the best everyday beginner desktop just because it has more security tools. Students should first understand what each tool does and use it only where they have permission.</p>
+<a class="button button-secondary" href="https://www.kali.org/docs/" target="_blank" rel="noopener noreferrer">Kali documentation</a>
+</article>
+
+<article class="linux-card">
+<span class="pill">Debian family</span>
+<h3>Parrot Security</h3>
+<p>A Debian-based distribution focused on security, privacy, development, and digital forensics. Parrot provides editions aimed at security professionals as well as lighter general-purpose use.</p>
+<p><strong>Good for:</strong> penetration-testing labs, privacy-focused workflows, development, digital forensics, and security research.</p>
+<p><strong>Tradeoff:</strong> like Kali, the large security toolkit can overwhelm a new Linux user if the underlying networking and operating-system concepts are not understood first.</p>
+<a class="button button-secondary" href="https://parrotsec.org/docs/" target="_blank" rel="noopener noreferrer">Parrot documentation</a>
+</article>
+
+<article class="linux-card">
+<span class="pill">Arch family</span>
+<h3>BlackArch Linux</h3>
+<p>An Arch-based penetration-testing distribution and repository with a very large collection of security tools.</p>
+<p><strong>Good for:</strong> experienced Linux users who want an Arch-based environment and a broad security-testing toolkit.</p>
+<p><strong>Tradeoff:</strong> it assumes more Linux administration comfort than most beginner-focused distributions.</p>
+<a class="button button-secondary" href="https://blackarch.org/guide.html" target="_blank" rel="noopener noreferrer">BlackArch guide</a>
+</article>
+
+<article class="linux-card">
+<span class="pill">Forensics / incident response</span>
+<h3>Security-focused live systems</h3>
+<p>Some Linux environments are designed around digital forensics, incident response, privacy, or live investigation rather than general desktop use. Examples include forensic-focused distributions and specialized rescue environments.</p>
+<p><strong>Technician habit:</strong> choose the distribution based on the task. A security lab, a forensic workstation, a Raspberry Pi, a production server, and an everyday laptop may all benefit from different Linux choices.</p>
+</article>
+</div>
+
+<div class="linux-callout">
+<strong>Cybersecurity does not mean “attack everything.”</strong>
+Use security-focused distributions and tools only on systems, networks, applications, and data you own or are explicitly authorized to test. The same tools used for legitimate auditing can be misused when permission is absent.
+</div>
+
+<div class="linux-callout">
+<strong>FamilyPD learning connection:</strong>
+Kali and other security-focused distributions are especially useful after students understand core Linux commands, IP addressing, ports/protocols, packet capture, permissions, processes, logs, and troubleshooting. Think of the distro as a <em>toolbox</em>; the skill is knowing which tool fits the problem and what the output means.
 </div>
 </div></section>
 
