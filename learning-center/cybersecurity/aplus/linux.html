@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Linux Families, Commands & Uses | FamilyPD A+</title>
+<meta name="description" content="Learn Linux distribution families, package managers, common commands, hardware uses, benefits, and ways to access or install Linux."/>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+
+<style>
+.linux-shell{max-width:1020px;margin:auto}
+.linux-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.linux-card,.linux-callout,.cmd-card,.install-card{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:15px;padding:1rem}
+.linux-card h3,.cmd-card h3,.install-card h3{font-size:1.08rem;line-height:1.22;margin:.15rem 0 .45rem}
+.linux-card p,.linux-card li,.cmd-card p,.install-card p,.install-card li{color:#111;line-height:1.48}
+.linux-callout{background:#fff9ec;border-left:5px solid #d16a2d}
+.family-table{width:100%;border-collapse:collapse;background:#fff}
+.family-table th,.family-table td{border:1px solid #cbd8e0;padding:.65rem;text-align:left;vertical-align:top;color:#111}
+.family-table th{background:#edf5f7;color:#163f61}
+.table-wrap{overflow-x:auto}
+.code{background:#0d1b2a;color:#fff;border-radius:11px;padding:.75rem;font-family:ui-monospace,monospace;overflow:auto;white-space:pre-wrap}
+.cmd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.cmd{background:#f7fafc;border:1px solid #d7e1e7;border-radius:12px;padding:.7rem}
+.cmd code{font-weight:800;color:#163f61}
+.pill{display:inline-block;background:#e9f4f4;color:#16575b;border-radius:999px;padding:.22rem .5rem;font-size:.77rem;font-weight:800;margin:.1rem}
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto}
+.aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;font-size:.84rem}
+.aplus-quick-strip .button{font-size:12.5px!important;padding:7px 10px!important;min-height:32px!important;width:auto!important}
+.page-hero h1{font-size:clamp(1.85rem,3.5vw,2.65rem)!important}
+.linux-shell h2{font-size:clamp(1.22rem,2vw,1.55rem)!important}
+.linux-shell .button,.page-hero .button{font-size:14px!important;padding:9px 13px!important;min-height:35px!important;width:auto!important}
+@media(max-width:760px){
+ .linux-grid,.cmd-grid{grid-template-columns:1fr}
+ .aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .aplus-quick-strip .button{width:100%!important;white-space:normal!important}
+ .page-hero h1{font-size:1.8rem!important}
+}
+</style>
+
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
+<nav class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav>
+</div></header>
+
+<main id="main-content">
+<section class="page-hero"><div class="container linux-shell">
+<nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Linux</span></nav>
+<p class="eyebrow">Operating systems • A+ / IT foundations</p>
+<h1>Linux: Families, Packages, Commands &amp; Real-World Uses</h1>
+<p class="page-lead">Linux is not one single operating system. It is a family of operating systems built around the Linux kernel, with many distributions (“distros”) designed for different users, hardware, support models, and workloads.</p>
+<div class="button-row"><a class="button" href="#families">Compare Linux families</a><a class="button button-secondary" href="#commands">Practice common commands</a></div>
+</div></section>
+
+<div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip"><strong>A+ quick links</strong>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
+</div></div>
+
+<section class="section"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Start with the concept</p><h2>Kernel, distribution, desktop environment, package manager—what is the difference?</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Linux kernel</h3><p>The kernel is the core part of the operating system that manages hardware, memory, processes, devices, and system resources.</p></article>
+<article class="linux-card"><h3>Distribution (distro)</h3><p>A distro combines the Linux kernel with system tools, libraries, package management, installers, applications, configuration, and often a desktop environment.</p></article>
+<article class="linux-card"><h3>Desktop environment</h3><p>The graphical desktop experience. Common examples include GNOME, KDE Plasma, Xfce, Cinnamon, and others.</p></article>
+<article class="linux-card"><h3>Package manager</h3><p>A tool used to install, update, remove, and track software packages. Different Linux families use different package formats and package-management tools.</p></article>
+</div>
+<div class="linux-callout"><strong>A+ connection:</strong> A technician should recognize that Linux systems may look very different while still sharing common concepts: files/directories, permissions, users, services, processes, networking, package installation, logs, command-line tools, and hardware drivers.</div>
+</div></section>
+
+<section class="section section-tinted" id="families"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Linux families</p><h2>Different families make different tradeoffs.</h2></div>
+<div class="table-wrap"><table class="family-table">
+<thead><tr><th>Family</th><th>Examples</th><th>Packages / tools</th><th>Strengths</th><th>Tradeoffs</th></tr></thead>
+<tbody>
+<tr><td><strong>Debian family</strong></td><td>Debian, Ubuntu, Linux Mint, Raspberry Pi OS</td><td><code>.deb</code>, <code>apt</code>, <code>dpkg</code></td><td>Large software ecosystem, broad community support, many beginner-friendly options, common on desktops/servers/SBCs.</td><td>Package versions may prioritize stability over being newest; behavior varies among Debian-derived distros.</td></tr>
+<tr><td><strong>Red Hat family</strong></td><td>Red Hat Enterprise Linux, Fedora, Rocky Linux, AlmaLinux</td><td><code>.rpm</code>, <code>dnf</code>/<code>yum</code>, <code>rpm</code></td><td>Strong enterprise/server presence, mature administration/security ecosystem, common in professional IT environments.</td><td>Enterprise editions/support can involve subscriptions; Fedora moves faster than enterprise-focused relatives.</td></tr>
+<tr><td><strong>Arch family</strong></td><td>Arch Linux, Manjaro</td><td><code>pacman</code></td><td>Flexible, current packages, strong documentation culture, good for learners who want to understand system configuration deeply.</td><td>Arch itself expects more manual setup and maintenance; rolling releases can require more attention.</td></tr>
+<tr><td><strong>SUSE family</strong></td><td>openSUSE Leap, Tumbleweed, SUSE Linux Enterprise</td><td><code>.rpm</code>, <code>zypper</code></td><td>Strong system administration tools, enterprise options, stable and rolling-release choices.</td><td>Smaller beginner ecosystem than Ubuntu-based distributions in some communities.</td></tr>
+<tr><td><strong>Alpine Linux</strong></td><td>Alpine</td><td><code>apk</code></td><td>Very small and lightweight; widely used in containers and minimal systems.</td><td>Uses a different libc/tooling approach than many mainstream desktop distros; can be less beginner-friendly for general desktop use.</td></tr>
+</tbody></table></div>
+<div class="linux-callout"><strong>Do not ask “Which Linux is best?” without context.</strong> Ask: best for what—desktop learning, older hardware, Raspberry Pi, enterprise server, cloud VM, container, security lab, development, or everyday use?</div>
+</div></section>
+
+<section class="section"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Packages &amp; software</p><h2>Linux software can come from several places.</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Distribution repositories</h3><p>The distro’s package manager downloads software from configured repositories. This is usually the preferred method for system-integrated packages.</p><div class="code">sudo apt update
+sudo apt install package-name</div></article>
+<article class="linux-card"><h3>RPM-based systems</h3><p>Red Hat/Fedora/SUSE families use RPM packages, but the higher-level package manager differs.</p><div class="code">sudo dnf install package-name
+sudo zypper install package-name</div></article>
+<article class="linux-card"><h3>Universal app formats</h3><p>Some systems also use formats such as Flatpak, Snap, or AppImage to distribute applications across multiple distributions.</p></article>
+<article class="linux-card"><h3>Source / scripts</h3><p>Software can also be compiled from source or installed with scripts, but this requires more care. Always verify the source, instructions, permissions, and security implications.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted" id="commands"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Common commands</p><h2>Learn what the command tells you—not just the spelling.</h2></div>
+<div class="cmd-grid">
+<div class="cmd"><code>pwd</code><p>Show the current working directory.</p></div>
+<div class="cmd"><code>ls / ls -la</code><p>List files; <code>-la</code> includes hidden files and details.</p></div>
+<div class="cmd"><code>cd</code><p>Change directories.</p></div>
+<div class="cmd"><code>mkdir</code><p>Create a directory.</p></div>
+<div class="cmd"><code>touch</code><p>Create an empty file or update a timestamp.</p></div>
+<div class="cmd"><code>cp / mv / rm</code><p>Copy, move/rename, and remove files.</p></div>
+<div class="cmd"><code>cat / less</code><p>Read file contents.</p></div>
+<div class="cmd"><code>grep</code><p>Search text for matching patterns.</p></div>
+<div class="cmd"><code>find</code><p>Search the filesystem for files/directories.</p></div>
+<div class="cmd"><code>chmod</code><p>Change file permissions.</p></div>
+<div class="cmd"><code>whoami</code><p>Show the current user.</p></div>
+<div class="cmd"><code>uname -a</code><p>Show kernel/system information.</p></div>
+<div class="cmd"><code>cat /etc/os-release</code><p>Identify the installed distribution/version.</p></div>
+<div class="cmd"><code>ip addr</code><p>Show network interfaces and IP addresses.</p></div>
+<div class="cmd"><code>ip route</code><p>Show routing information/default gateway.</p></div>
+<div class="cmd"><code>ping</code><p>Test IP reachability and observe response time.</p></div>
+<div class="cmd"><code>ss</code><p>Inspect sockets/connections/listening services.</p></div>
+<div class="cmd"><code>ps / top</code><p>Inspect running processes and resource use.</p></div>
+<div class="cmd"><code>free -h</code><p>Show memory usage in human-readable units.</p></div>
+<div class="cmd"><code>lsblk</code><p>Show block storage devices and partitions.</p></div>
+<div class="cmd"><code>df -h</code><p>Show filesystem space usage.</p></div>
+<div class="cmd"><code>systemctl</code><p>Manage/view systemd services on systems that use systemd.</p></div>
+<div class="cmd"><code>journalctl</code><p>View systemd journal logs on systems that use systemd.</p></div>
+<div class="cmd"><code>man</code><p>Open manual pages for commands.</p></div>
+</div>
+<div class="linux-callout"><strong>Command-line habit:</strong> Use <code>man command</code>, <code>command --help</code>, or trusted documentation when you do not know an option. Do not paste administrative commands from random sources without understanding what they do.</div>
+</div></section>
+
+<section class="section"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Where Linux appears</p><h2>Linux is much bigger than a desktop operating system.</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Servers &amp; data centers</h3><p>Linux is widely used for web servers, databases, file services, networking, virtualization hosts, containers, and cloud infrastructure.</p></article>
+<article class="linux-card"><h3>Cloud &amp; virtual machines</h3><p>Linux images are common choices for cloud VMs because they can be lightweight, automated, remotely administered, and customized for specific workloads.</p></article>
+<article class="linux-card"><h3>Raspberry Pi &amp; SBCs</h3><p>Raspberry Pi OS is Debian-based. Many single-board computers and maker/embedded systems use Linux because it supports flexible hardware and software development.</p></article>
+<article class="linux-card"><h3>Network &amp; security appliances</h3><p>Routers, firewalls, NAS devices, monitoring tools, and security appliances often use Linux or Linux-based operating systems internally.</p></article>
+<article class="linux-card"><h3>Embedded / IoT devices</h3><p>Smart devices, industrial systems, kiosks, media boxes, and appliances may use embedded Linux.</p></article>
+<article class="linux-card"><h3>Phones &amp; mobile technology</h3><p>Android uses the Linux kernel, although Android is not a traditional desktop Linux distribution and has a different user-space/application environment.</p></article>
+<article class="linux-card"><h3>Developer workstations</h3><p>Linux is common for software development, DevOps, cybersecurity labs, scripting, containers, and programming environments.</p></article>
+<article class="linux-card"><h3>Older / lower-resource hardware</h3><p>Lightweight distributions can sometimes extend the useful life of older computers, although hardware compatibility should still be checked.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Why people choose Linux</p><h2>Benefits—and realistic tradeoffs.</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Benefits</h3><ul><li>Open-source ecosystem and strong transparency/community involvement</li><li>Large choice of distributions and desktop environments</li><li>Powerful command-line and automation tools</li><li>Strong server/cloud/container presence</li><li>Can be lightweight and highly customizable</li><li>Excellent environment for learning operating-system and networking concepts</li></ul></article>
+<article class="linux-card"><h3>Tradeoffs</h3><ul><li>Some commercial applications/games may target Windows/macOS first</li><li>Hardware/vendor support can vary</li><li>Different distros use different tools, package formats, and defaults</li><li>Advanced troubleshooting can require command-line confidence</li><li>Users may face a learning curve when moving from familiar Windows/macOS workflows</li></ul></article>
+</div></div></section>
+
+<section class="section"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Ways to access or install Linux</p><h2>You do not have to erase your current computer.</h2></div>
+<div class="linux-grid">
+<article class="install-card"><h3>Raspberry Pi / SBC</h3><p>Install a supported Linux image such as Raspberry Pi OS to microSD or other supported storage and boot the device.</p></article>
+<article class="install-card"><h3>Virtual machine</h3><p>Run Linux inside virtualization software on a Windows, macOS, or Linux host. Good for safe practice and snapshots.</p></article>
+<article class="install-card"><h3>Live USB</h3><p>Boot many Linux distributions from USB without immediately installing to the internal drive. Good for testing hardware compatibility.</p></article>
+<article class="install-card"><h3>Dual boot</h3><p>Install Linux alongside another operating system and choose which OS to start at boot. Backups and careful partition planning are essential.</p></article>
+<article class="install-card"><h3>Full installation</h3><p>Install Linux as the main operating system on a physical computer. Verify backups, boot mode, storage selection, drivers, and recovery needs first.</p></article>
+<article class="install-card"><h3>Cloud VM / remote Linux</h3><p>Connect to a remote Linux server or cloud VM, often with SSH. Useful for server administration without local installation.</p></article>
+<article class="install-card"><h3>Windows Subsystem for Linux (WSL)</h3><p>On supported Windows systems, WSL provides a Linux environment integrated with Windows. It is useful for command-line learning and development, but it is not identical to installing Linux directly on bare hardware.</p></article>
+<article class="install-card"><h3>Container</h3><p>Containers commonly use Linux user-space environments. Containers are useful for applications and labs, but they are not the same as booting a complete Linux desktop/VM.</p></article>
+</div>
+<div class="linux-callout"><strong>Before changing a real computer:</strong> back up important data, verify system requirements/hardware support, know how to restore the original system, and understand which disk/partition the installer will modify.</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Notebook</p><h2>Create a Linux quick-reference page.</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Family comparison</h3><p>Create four columns: <strong>Debian / Red Hat / Arch / SUSE</strong>. Add example distros, package format, package manager, and one likely use.</p></article>
+<article class="linux-card"><h3>Command foldable</h3><p>Group commands into: navigation, files, permissions, processes, networking, storage, services/logs, and help. Put the command on the outside and its purpose underneath.</p></article>
+<article class="linux-card"><h3>Installation map</h3><p>Draw: <strong>VM • live USB • dual boot • full install • Pi/SBC • cloud/SSH • WSL</strong>. Mark which options change the computer's internal disk and which do not.</p></article>
+<article class="linux-card"><h3>A+ exam clue</h3><p>Do not only memorize commands. Be ready to choose the command or tool that matches a scenario: check IP address, inspect disk space, identify the OS, review processes, or change permissions.</p></article>
+</div></div></section>
+
+<section class="section"><div class="container linux-shell">
+<div class="section-heading"><p class="eyebrow">Official learning resources</p><h2>Continue with trustworthy documentation.</h2></div>
+<div class="linux-grid">
+<article class="linux-card"><h3>Linux kernel</h3><p><a href="https://www.kernel.org/" target="_blank" rel="noopener noreferrer">kernel.org</a> — official Linux kernel project resources.</p></article>
+<article class="linux-card"><h3>Debian</h3><p><a href="https://www.debian.org/doc/" target="_blank" rel="noopener noreferrer">Debian documentation</a></p></article>
+<article class="linux-card"><h3>Ubuntu</h3><p><a href="https://help.ubuntu.com/" target="_blank" rel="noopener noreferrer">Ubuntu documentation</a></p></article>
+<article class="linux-card"><h3>Fedora</h3><p><a href="https://docs.fedoraproject.org/" target="_blank" rel="noopener noreferrer">Fedora documentation</a></p></article>
+<article class="linux-card"><h3>Arch Linux</h3><p><a href="https://wiki.archlinux.org/" target="_blank" rel="noopener noreferrer">ArchWiki</a></p></article>
+<article class="linux-card"><h3>Raspberry Pi OS</h3><p><a href="https://www.raspberrypi.com/documentation/computers/os.html" target="_blank" rel="noopener noreferrer">Raspberry Pi OS documentation</a></p></article>
+</div>
+<p class="small-note"><strong>External-resource notice:</strong> These documentation sites are maintained by their respective projects/organizations. FamilyPD does not own or control their content.</p>
+</div></section>
+
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a></div></div></footer>
+<script src="/assets/js/main.js"></script>
+</body></html>
