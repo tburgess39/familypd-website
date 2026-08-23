@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberPatriot | FamilyPD Cybersecurity Learning</title>
+<meta name="description" content="A clear, detailed guide to CyberPatriot for students, families, schools, nonprofits, and youth organizations. Includes how the competition works, skills, team setup, 2026-27 dates, technical requirements, costs, training, and official references.">
+<style>
+:root{
+  --fp-burgundy:#6f1322;
+  --fp-orange:#e56f2d;
+  --fp-gold:#f3b64b;
+  --fp-teal:#176d78;
+  --fp-navy:#12253f;
+  --ink:#1d2633;
+  --muted:#5d6876;
+  --line:#d9e0e7;
+  --soft:#f6f8fa;
+  --cream:#fff8ee;
+  --white:#fff;
+  --green:#237a52;
+  --red:#a63838;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:var(--fp-teal)}
+.cp-page{max-width:1180px;margin:0 auto;padding:0 22px 70px}
+.cp-breadcrumb{font-size:.88rem;color:var(--muted);padding:22px 0 10px}
+.cp-breadcrumb a{text-decoration:none;font-weight:700}
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(125deg,var(--fp-navy),#153b5b 63%,var(--fp-teal));
+  color:#fff;border-radius:22px;padding:42px;
+  box-shadow:0 16px 40px rgba(18,37,63,.16)
+}
+.hero:after{
+  content:"";position:absolute;width:330px;height:330px;border:55px solid rgba(243,182,75,.12);
+  border-radius:50%;right:-90px;top:-95px
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;position:relative;z-index:2}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;color:#ffd98a;margin-bottom:8px}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:.96;letter-spacing:-2px;margin:0 0 18px}
+.hero p{margin:0 0 22px;color:#e8f1f6;font-size:1.08rem;max-width:690px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:9px;text-decoration:none;font-weight:900;border:2px solid transparent}
+.btn.primary{background:var(--fp-gold);color:#312207}
+.btn.secondary{border-color:#9ed8df;color:#fff;background:rgba(255,255,255,.06)}
+.quick-screen{background:#09131f;border:1px solid rgba(255,255,255,.18);border-radius:16px;overflow:hidden;box-shadow:0 14px 35px rgba(0,0,0,.28)}
+.screen-bar{background:#111d2c;padding:10px 13px;color:#91a9bf;font-size:.82rem;border-bottom:1px solid #23364b}
+.screen-body{padding:17px;font-family:Consolas,Monaco,monospace;font-size:.89rem}
+.screen-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1b2d40}
+.screen-row:last-child{border-bottom:0}
+.ok{color:#7fe1ad}.pts{color:#f6c95b}.bad{color:#ff8c8c}
+.hero-note{font-size:.76rem;color:#9eb1c5;margin-top:9px}
+
+.align-band{
+  margin:20px 0 36px;padding:17px 20px;background:var(--cream);border:1px solid #f0d7ad;
+  border-left:6px solid var(--fp-orange);border-radius:12px
+}
+.align-band b{color:var(--fp-burgundy)}
+
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px}
+.jump a{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:8px 11px;text-decoration:none;font-size:.86rem;font-weight:800;color:var(--fp-navy)}
+
+section{margin-top:48px}
+.section-head{margin-bottom:18px}
+.kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:1.4px;font-weight:900;color:var(--fp-orange)}
+h2{font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.04;letter-spacing:-.7px;margin:4px 0 8px;color:var(--fp-navy)}
+.section-head p{margin:0;max-width:830px;color:var(--muted)}
+.source-line{font-size:.79rem;color:var(--muted);margin-top:8px}
+.source-line a{font-weight:800}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 7px 20px rgba(26,47,70,.05)}
+.card h3{margin:0 0 7px;color:var(--fp-navy);font-size:1.03rem}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+.icon{width:39px;height:39px;border-radius:10px;background:#eef7f8;color:var(--fp-teal);display:grid;place-items:center;font-weight:900;margin-bottom:11px;font-size:.82rem}
+
+.callout{border-radius:13px;padding:17px 19px;margin-top:18px}
+.callout.defense{background:#fff6df;border:1px solid #ebcd83;border-left:6px solid var(--fp-gold)}
+.callout.update{background:#eef7fb;border:1px solid #b9dbe8;border-left:6px solid var(--fp-teal)}
+.callout strong{color:var(--fp-navy)}
+
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.flow-step{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px 12px;min-height:125px}
+.flow-step .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--fp-burgundy);color:#fff;font-weight:900;margin-bottom:9px}
+.flow-step b{display:block;color:var(--fp-navy);font-size:.91rem;line-height:1.25}
+.flow-step span{display:block;color:var(--muted);font-size:.82rem;margin-top:5px}
+
+.comp-example{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.readme{background:#fff9e6;border:1px solid #eadca9;border-radius:13px;padding:19px}
+.readme h3{color:var(--fp-burgundy);margin:0 0 8px}
+.readme ul{margin:9px 0 0;padding-left:20px}
+.readme li{margin:6px 0}
+.scorebox{background:#101d2d;color:#ecf2f7;border-radius:13px;padding:18px}
+.scorebox h3{color:#fff;margin:0 0 8px}
+.scoretotal{font-size:2.25rem;font-weight:900;color:#7fe1ad;margin:4px 0 10px}
+.scoreline{display:flex;justify-content:space-between;gap:9px;border-top:1px solid #283b50;padding:9px 0;font-size:.87rem}
+.scorebox small{color:#9fb1c4}
+
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--fp-navy);color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.55px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:800;color:var(--fp-navy)}
+.table-wrap{overflow-x:auto;border-radius:14px}
+
+.timeline{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.date-row{display:grid;grid-template-columns:180px 1fr 120px;gap:16px;padding:14px 17px;align-items:center;border-top:1px solid var(--line)}
+.date-row:first-child{border-top:0}
+.date{font-weight:900;color:var(--fp-burgundy)}
+.event b{display:block;color:var(--fp-navy)}
+.event span{font-size:.88rem;color:var(--muted)}
+.tag{justify-self:end;background:#eef4f8;color:var(--fp-teal);padding:5px 8px;border-radius:999px;font-size:.7rem;font-weight:900;text-transform:uppercase}
+.tag.scored{background:#eaf6ef;color:var(--green)}
+.tag.deadline{background:#fff0e6;color:#a44c19}
+.tag.final{background:#fff5d9;color:#865b00}
+
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:900;color:var(--fp-navy);padding:14px 17px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;color:var(--fp-orange);font-size:1.25rem}
+details[open] summary:after{content:"–"}
+.detail-body{padding:0 17px 17px;color:var(--muted)}
+.detail-body ul{margin:8px 0;padding-left:20px}
+.detail-body li{margin:5px 0}
+
+.org-steps{counter-reset:org;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.org-step{counter-increment:org;border:1px solid var(--line);border-radius:13px;padding:16px 16px 16px 54px;position:relative;background:#fff}
+.org-step:before{content:counter(org);position:absolute;left:15px;top:15px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:var(--fp-teal);color:#fff;font-weight:900}
+.org-step b{color:var(--fp-navy)}
+.org-step span{color:var(--muted);font-size:.9rem}
+
+.ref-list{display:grid;gap:9px}
+.ref{padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:#fff}
+.ref b{color:var(--fp-navy)}
+.ref span{display:block;color:var(--muted);font-size:.86rem}
+.ref a{font-size:.85rem;font-weight:800}
+
+.footer-note{margin-top:45px;background:var(--fp-navy);color:#dce6ef;border-radius:14px;padding:18px 20px;font-size:.86rem}
+.footer-note b{color:#fff}
+
+@media(max-width:950px){
+ .hero-grid,.comp-example,.grid-3,.grid-2{grid-template-columns:1fr}
+ .flow{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:680px){
+ .cp-page{padding:0 14px 48px}
+ .hero{padding:27px 20px;border-radius:15px}
+ .flow{grid-template-columns:1fr 1fr}
+ .date-row{grid-template-columns:1fr;gap:3px}
+ .tag{justify-self:start}
+ .org-steps{grid-template-columns:1fr}
+ h1{letter-spacing:-1px}
+}
+@media(max-width:430px){.flow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cp-page">
+
+  <div class="cp-breadcrumb">FamilyPD Learning Center &nbsp;›&nbsp; Cybersecurity &nbsp;›&nbsp; <b>CyberPatriot</b></div>
+
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Skill-Building Option • Middle + High School</div>
+        <h1>CyberPatriot</h1>
+        <p>
+          CyberPatriot is the Air &amp; Space Forces Association's National Youth Cyber Defense Competition.
+          Student teams secure virtual computers and networks by finding vulnerabilities, fixing security
+          problems, protecting required services, completing networking challenges, and answering forensics questions.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#dates">2026–27 Dates</a>
+          <a class="btn secondary" href="https://www.uscyberpatriot.org/interactive-demo/" target="_blank" rel="noopener">Try the Official Demo</a>
+        </div>
+      </div>
+      <div>
+        <div class="quick-screen" aria-label="Illustrative CyberPatriot scoring example">
+          <div class="screen-bar">Illustrative competition image • student team view</div>
+          <div class="screen-body">
+            <div class="screen-row"><span>Authorized users reviewed</span><span class="ok">✓</span></div>
+            <div class="screen-row"><span>Weak password policy fixed</span><span class="pts">+ points</span></div>
+            <div class="screen-row"><span>Firewall/security settings</span><span class="pts">+ points</span></div>
+            <div class="screen-row"><span>Required service disabled</span><span class="bad">− penalty</span></div>
+            <div class="screen-row"><span>Forensics question</span><span class="pts">+ points</span></div>
+          </div>
+        </div>
+        <div class="hero-note">Example only. Actual vulnerabilities, systems, and scoring vary by round.</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="align-band">
+    <b>Why this is part of FamilyPD Cybersecurity Learning:</b>
+    CyberPatriot gives students another structured way to strengthen education and career-ready skills through
+    hands-on practice, teamwork, troubleshooting, documentation, networking, and repeated training. Students can
+    use it alongside courses, labs, certifications, clubs, or independent study—not as a replacement for them.
+  </div>
+
+  <nav class="jump" aria-label="CyberPatriot page navigation">
+    <a href="#pathways">Ways to Participate + Learn</a>
+    <a href="#overview">Overview</a>
+    <a href="#looks">What It Looks Like</a>
+    <a href="#skills">Skills Built</a>
+    <a href="#team">Team Setup</a>
+    <a href="#dates">Dates</a>
+    <a href="#challenges">2026–27 Challenges</a>
+    <a href="#prepare">Preparation</a>
+    <a href="#tech">Technical Setup</a>
+    <a href="#rules">Rules</a>
+    <a href="#organizations">Organization Guide</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+
+  <section id="pathways">
+    <div class="section-head">
+      <div class="kicker">Choose your path</div>
+      <h2>Ways to participate, learn, or support a team</h2>
+      <p>
+        CyberPatriot is built around middle- and high-school student competitors, but adults can participate
+        as coaches, technical mentors, or team assistants. People who are not yet on a team can still use
+        official CyberPatriot learning resources to understand the competition and strengthen related skills.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="icon">MS</div>
+        <h3>Middle school students</h3>
+        <p>
+          Students in middle school or junior-high-level programs can compete through an eligible fielding
+          organization in the Middle School Division. The competition uses the same defensive mindset:
+          inspect systems, identify security problems, make approved fixes, and complete networking work.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">HS</div>
+        <h3>High school students</h3>
+        <p>
+          High-school students can compete in the Open Division through eligible schools and youth
+          organizations, or in the All Service Division when they meet the applicable JROTC, Civil Air Patrol,
+          or U.S. Naval Sea Cadet Corps requirements.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">18+</div>
+        <h3>Adults: become a technical mentor</h3>
+        <p>
+          Yes. Adults can serve as CyberPatriot technical mentors. The latest posted rules define mentors as
+          optional technical advisors who help teach cyber-defense skills and ethics during training.
+          Mentors must be adults over 18, cannot be competitors or high-school-level students, must complete
+          CyberPatriot's required background-check process, and must be officially linked to the team.
+          Mentor and team-assistant registration is available year-round.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">CO</div>
+        <h3>Adults: coach or support a team</h3>
+        <p>
+          Every team needs one adult coach of record. The coach handles team registration, receives official
+          competition communication, supervises the team, and protects competition integrity. Adults can also
+          register as team assistants to provide nontechnical support. Coaches and mentors train students
+          before a round but may not provide answers or technical assistance during an official competition period.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout update">
+      <strong>Mentor vs. coach:</strong>
+      A <b>coach</b> owns the official team registration and supervision responsibilities. A <b>technical mentor</b>
+      focuses on helping students learn defensive cybersecurity skills during preparation. A <b>team assistant</b>
+      provides nontechnical support. A team can participate without a technical mentor, but it cannot compete
+      without its required coach and student competitors.
+    </div>
+
+    <div class="table-wrap" style="margin-top:18px">
+      <table>
+        <thead>
+          <tr><th>Learning option</th><th>Best for</th><th>How to use it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Official Interactive Demo</td>
+            <td>Students, families, educators, mentors, organization leaders</td>
+            <td>See a partial competition-image simulation with a built-in tutorial before joining a team.</td>
+          </tr>
+          <tr>
+            <td>CyberPatriot Training Materials</td>
+            <td>Beginning and returning competitors</td>
+            <td>Use official Windows, Linux, networking, and competition-preparation materials to build skills.</td>
+          </tr>
+          <tr>
+            <td>Exhibition + Training Rounds</td>
+            <td>Registered teams</td>
+            <td>Practice the real image workflow before scored competition begins.</td>
+          </tr>
+          <tr>
+            <td>Practice Round</td>
+            <td>Registered teams preparing for scored rounds</td>
+            <td>Test the computers, networking, virtualization software, scoring connection, and team workflow.</td>
+          </tr>
+          <tr>
+            <td>Cisco Networking Academy self-paced learning</td>
+            <td>Students and adults who want more networking/cyber practice</td>
+            <td>Use free self-paced Cisco learning to strengthen networking and cybersecurity foundations.</td>
+          </tr>
+          <tr>
+            <td>Independent lab practice</td>
+            <td>Students who want extra repetition</td>
+            <td>Practice legal defensive administration skills in personal or organization-approved lab systems; never use restricted competition images or material outside the rules.</td>
+          </tr>
+          <tr>
+            <td>Technical mentoring</td>
+            <td>Adults 18+ with useful technical knowledge</td>
+            <td>Register, complete the required background check, connect with an approved team, and help teach defensive skills during training.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="source-line">
+      Sources:
+      <a href="https://author.uscyberpatriot.org/Pages/Get%20Involved/Volunteer-Registration-Form.aspx" target="_blank" rel="noopener">CyberPatriot Volunteer Registration</a> •
+      <a href="https://www.uscyberpatriot.org/training-materials/" target="_blank" rel="noopener">Training Materials</a> •
+      <a href="https://www.uscyberpatriot.org/interactive-demo/" target="_blank" rel="noopener">Interactive Demo</a>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="section-head">
+      <div class="kicker">Competition overview</div>
+      <h2>What students actually do</h2>
+      <p>
+        Teams are placed in the role of cybersecurity defenders. During online rounds, they work through one or more
+        virtual operating-system images and Cisco networking activities. The objective is to improve security while
+        keeping the systems and services required by the scenario working.
+      </p>
+      <div class="source-line">Source: <a href="https://www.uscyberpatriot.org/how-the-competition-works/" target="_blank" rel="noopener">CyberPatriot — How the Competition Works</a></div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card"><div class="icon">VM</div><h3>Secure virtual computers</h3><p>Inspect Windows and Linux systems, find security weaknesses, and harden the operating system.</p></div>
+      <div class="card"><div class="icon">NET</div><h3>Complete networking work</h3><p>Use Cisco Networking Academy content, quizzes, and Packet Tracer exercises tied to the competition round.</p></div>
+      <div class="card"><div class="icon">IR</div><h3>Investigate + explain</h3><p>Answer forensics questions, interpret evidence, and make security decisions without breaking required services.</p></div>
+    </div>
+
+    <div class="callout defense">
+      <strong>Important: CyberPatriot is defensive cybersecurity.</strong>
+      The official rules emphasize ethical conduct and cyber defense. It is not an offensive hacking competition and does not authorize attacks on real systems.
+    </div>
+  </section>
+
+  <section id="looks">
+    <div class="section-head">
+      <div class="kicker">Competition day</div>
+      <h2>What a round looks like</h2>
+      <p>Students need both technical skill and disciplined teamwork. A strong team reads first, assigns work, verifies changes, and watches the score without making random fixes.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><b>Download</b><span>The coach receives image download links and instructions before the round.</span></div>
+      <div class="flow-step"><div class="n">2</div><b>Start</b><span>The team opens its first image during an official competition window.</span></div>
+      <div class="flow-step"><div class="n">3</div><b>Read</b><span>Review the README/scenario for authorized users, required software, and critical services.</span></div>
+      <div class="flow-step"><div class="n">4</div><b>Secure</b><span>Find and remediate vulnerabilities. Avoid changes that conflict with the scenario.</span></div>
+      <div class="flow-step"><div class="n">5</div><b>Network</b><span>Complete the assigned Cisco NetAcad quiz and Packet Tracer activities.</span></div>
+      <div class="flow-step"><div class="n">6</div><b>Verify</b><span>Monitor scoring, finish all tasks, and stop when the team's competition period ends.</span></div>
+    </div>
+
+    <div class="comp-example" style="margin-top:18px">
+      <div class="readme">
+        <h3>Example scenario thinking</h3>
+        <ul>
+          <li>Which user accounts are authorized?</li>
+          <li>Which services must stay available?</li>
+          <li>Are password, update, firewall, sharing, and permission settings secure?</li>
+          <li>Is unauthorized software or malware present?</li>
+          <li>Do we need to answer forensics questions before changing evidence?</li>
+          <li>Did our fix improve security without breaking the business need?</li>
+        </ul>
+      </div>
+      <div class="scorebox">
+        <h3>Scoring behavior</h3>
+        <div class="scoretotal">LIVE</div>
+        <div class="scoreline"><span>Scored vulnerability fixed</span><span class="ok">+ points</span></div>
+        <div class="scoreline"><span>Forensics question correct</span><span class="ok">+ points</span></div>
+        <div class="scoreline"><span>Security weakened / scenario conflict</span><span class="bad">− points</span></div>
+        <small>Official scores are reviewed after the round; the live scoreboard is unofficial.</small>
+      </div>
+    </div>
+
+    <div class="source-line">Sources: <a href="https://www.uscyberpatriot.org/how-the-competition-works/" target="_blank" rel="noopener">Competition Overview</a> • <a href="https://www.uscyberpatriot.org/training-materials/" target="_blank" rel="noopener">Training Materials</a></div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head">
+      <div class="kicker">Student benefit</div>
+      <h2>Skills students strengthen</h2>
+      <p>CyberPatriot is useful because students repeatedly apply skills instead of only reading about them.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>Windows administration</h3><p>Accounts, groups, security policy, updates, services, firewall, permissions, malware, and system hardening.</p></div>
+      <div class="card"><h3>Linux administration</h3><p>Users/groups, sudo access, packages, permissions, services, logs, firewall settings, and command-line troubleshooting.</p></div>
+      <div class="card"><h3>Networking</h3><p>IP addressing, subnetting, routing/switching concepts, network configuration, and Packet Tracer.</p></div>
+      <div class="card"><h3>Cyber defense</h3><p>Risk identification, remediation, verification, evidence awareness, secure configuration, and maintaining availability.</p></div>
+      <div class="card"><h3>Teamwork</h3><p>Task assignment, communication, change tracking, time management, decision-making, and working under pressure.</p></div>
+      <div class="card"><h3>Career preparation</h3><p>Experience connected to system administration, networking, cybersecurity operations, IT support, and related certification topics.</p></div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="section-head">
+      <div class="kicker">Who participates</div>
+      <h2>Team structure + divisions</h2>
+      <p>The posted CyberPatriot 18 rules define teams as 2–6 registered student competitors, with up to five competing at one time. Organizations should confirm the CyberPatriot 19 rules when the CP19 rules book is posted.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Area</th><th>Current / latest published guidance</th></tr></thead>
+        <tbody>
+          <tr><td>Open High School Division</td><td>High-school teams from eligible schools and approved youth organizations.</td></tr>
+          <tr><td>All Service Division</td><td>High-school JROTC, Civil Air Patrol, and U.S. Naval Sea Cadet Corps teams.</td></tr>
+          <tr><td>Middle School Division</td><td>Teams composed of middle-school students through eligible organizations.</td></tr>
+          <tr><td>Registered competitors</td><td>Latest posted rules: 2–6 students per team; up to five may compete at one time.</td></tr>
+          <tr><td>Coach</td><td>One adult coach of record. CyberPatriot states a coach can register up to five teams.</td></tr>
+          <tr><td>Technical mentor</td><td>Optional but recommended adult technical advisor. Latest posted rules require mentors to be over 18, not competitors or high-school-level students, to complete the CyberPatriot background-check process, and to be officially linked with the team. Mentors help teach cyber-defense skills during training but cannot provide outside assistance during official competition.</td></tr>
+          <tr><td>Team assistant</td><td>Optional adult who provides nontechnical/administrative support.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-line">Sources: <a href="https://www.uscyberpatriot.org/how-the-competition-works/" target="_blank" rel="noopener">Competition Overview</a> • <a href="https://www.uscyberpatriot.org/join-the-competition/" target="_blank" rel="noopener">Join the Competition</a> • <a href="https://www.uscyberpatriot.org/rules-book/" target="_blank" rel="noopener">Rules Book page</a></div>
+  </section>
+
+  <section id="dates">
+    <div class="section-head">
+      <div class="kicker">CyberPatriot 19 • 2026–2027</div>
+      <h2>Important dates</h2>
+      <p>Competition dates and times may change. Use the official CyberPatriot schedule before committing facilities, transportation, staffing, or student attendance.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="date-row"><div class="date">June 3 – Aug. 24, 2026</div><div class="event"><b>Exhibition Round</b><span>Recruiting and practice; unscored.</span></div><div class="tag">Training</div></div>
+      <div class="date-row"><div class="date">Sept. 3 – Oct. 5, 2026</div><div class="event"><b>Training Round 1</b><span>Basic-level practice images with answer keys.</span></div><div class="tag">Training</div></div>
+      <div class="date-row"><div class="date">Sept. 24, 2026</div><div class="event"><b>Sneak Preview</b><span>Optional one-day software/practice test; unscored.</span></div><div class="tag">Optional</div></div>
+      <div class="date-row"><div class="date">Oct. 1, 2026</div><div class="event"><b>Team Registration Deadline</b><span>Last day to create a CyberPatriot 19 team.</span></div><div class="tag deadline">Deadline</div></div>
+      <div class="date-row"><div class="date">Oct. 7 – 20, 2026</div><div class="event"><b>Practice Round</b><span>Critical software/image test before scored competition.</span></div><div class="tag">Practice</div></div>
+      <div class="date-row"><div class="date">Oct. 21, 2026</div><div class="event"><b>Competitor Roster Deadline</b><span>Students must be added to team rosters by this date.</span></div><div class="tag deadline">Deadline</div></div>
+      <div class="date-row"><div class="date">Oct. 22 – 25, 2026</div><div class="event"><b>High School Round 1</b><span>First scored round for Open and All Service high-school teams.</span></div><div class="tag scored">Scored</div></div>
+      <div class="date-row"><div class="date">Nov. 5, 2026</div><div class="event"><b>Payment Deadline</b><span>Registration fees are due unless waived.</span></div><div class="tag deadline">Deadline</div></div>
+      <div class="date-row"><div class="date">Nov. 12 – 15, 2026</div><div class="event"><b>High School Round 2 + Middle School Introductory Round</b><span>High school difficulty increases; middle school begins scored competition.</span></div><div class="tag scored">Scored</div></div>
+      <div class="date-row"><div class="date">Dec. 10 – 13, 2026</div><div class="event"><b>State Round</b><span>High-school teams compete by skill tier; high-school teams start the round with a clean slate.</span></div><div class="tag scored">Scored</div></div>
+      <div class="date-row"><div class="date">Jan. 21 – 23, 2027</div><div class="event"><b>Semifinals</b><span>Qualifying teams only; three-day window.</span></div><div class="tag scored">Qualifying</div></div>
+      <div class="date-row"><div class="date">Mar. 12 – 16, 2027</div><div class="event"><b>National Finals</b><span>National finalist teams compete for division championships.</span></div><div class="tag final">Finals</div></div>
+    </div>
+
+    <div class="callout update">
+      <strong>Competition time:</strong> the current CyberPatriot 19 schedule requires each team to choose one continuous <b>4-hour block</b> within the official competition window. The schedule lists Thursday–Sunday windows in U.S. Eastern Time.
+    </div>
+
+    <div class="source-line">Source: <a href="https://www.uscyberpatriot.org/competition-schedule/" target="_blank" rel="noopener">Official CyberPatriot 19 Competition Schedule</a></div>
+  </section>
+
+  <section id="challenges">
+    <div class="section-head">
+      <div class="kicker">Current season</div>
+      <h2>CyberPatriot 19 challenge progression</h2>
+      <p>The exact image mix and point values can change. This table helps students understand how the challenge grows across the season.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Round</th><th>Listed systems / tasks</th><th>What changes</th></tr></thead>
+        <tbody>
+          <tr><td>Training Round 1</td><td>Windows 11, Server 2022, Mint 21</td><td>Basic practice; answer keys available.</td></tr>
+          <tr><td>Practice Round</td><td>Windows 11, Server 2022, Mint 21 + Cisco quiz/Packet Tracer</td><td>Test the competition software and networking workflow.</td></tr>
+          <tr><td>High School Round 1</td><td>Windows 11, Mint 21 + Cisco</td><td>230 total possible points currently listed.</td></tr>
+          <tr><td>Middle School Intro</td><td>Windows 11, Debian 12 + Cisco</td><td>230 total possible points currently listed.</td></tr>
+          <tr><td>High School Round 2</td><td>Windows 11, Server 2022, Debian 12 + Cisco</td><td>330 total possible points currently listed.</td></tr>
+          <tr><td>State Round</td><td>Server 2022, Mint 21, Debian 12 + Cisco</td><td>High school: Platinum/Gold/Silver tiers; 400 possible points currently listed.</td></tr>
+          <tr><td>Semifinals</td><td>Mint 21, Server 2022, Debian 12; FreeBSD for Platinum; Cisco; web-based challenge for some tiers</td><td>Difficulty and task variety increase substantially.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-line">Source: <a href="https://www.uscyberpatriot.org/challenges-and-scoring-values/" target="_blank" rel="noopener">CyberPatriot 19 Challenges and Scoring Values</a></div>
+  </section>
+
+  <section id="prepare">
+    <div class="section-head">
+      <div class="kicker">Training plan</div>
+      <h2>How students should prepare</h2>
+      <p>Do not wait for Round 1. Use the official unscored rounds and build repeatable habits before scores count.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Phase 1 — Foundations</h3>
+        <p>Learn users/groups, strong passwords, permissions, updates, services, firewall basics, malware awareness, Linux commands, IP addressing, subnetting, and Packet Tracer navigation.</p>
+      </div>
+      <div class="card">
+        <h3>Phase 2 — Guided practice</h3>
+        <p>Use Training Round images with answer keys. Require students to explain why each change matters instead of only copying steps.</p>
+      </div>
+      <div class="card">
+        <h3>Phase 3 — Team practice</h3>
+        <p>Run timed practices. Assign focus areas, maintain a change log, watch score changes, and rotate students so everyone develops more than one skill.</p>
+      </div>
+      <div class="card">
+        <h3>Phase 4 — Competition rehearsal</h3>
+        <p>Use the Practice Round to test computers, network access, VMware, Cisco NetAcad, image downloads, passwords, and the full 4-hour workflow.</p>
+      </div>
+    </div>
+
+    <details>
+      <summary>Recommended student roles during practice</summary>
+      <div class="detail-body">
+        <ul>
+          <li><b>Windows lead:</b> focuses on Windows/Server hardening and documents changes.</li>
+          <li><b>Linux lead:</b> focuses on Linux users, permissions, packages, services, logs, and firewall.</li>
+          <li><b>Networking lead:</b> manages Cisco content and Packet Tracer tasks.</li>
+          <li><b>Forensics/research lead:</b> tracks questions, evidence, documentation, and permissible research.</li>
+          <li><b>Coordinator/change logger:</b> monitors time, score, dependencies, and team communication.</li>
+        </ul>
+        Roles are a training strategy, not official CyberPatriot roles. Rotate responsibilities so students develop broader skills.
+      </div>
+    </details>
+
+    <details>
+      <summary>What students should record in a change log</summary>
+      <div class="detail-body">
+        Record the time, system/image, change made, reason for the change, who made it, score change/result, and whether the change was reversed. A log helps prevent duplicate work and makes post-round review more useful.
+      </div>
+    </details>
+
+    <div class="source-line">Source for official training structure: <a href="https://www.uscyberpatriot.org/training-materials/" target="_blank" rel="noopener">CyberPatriot Training Materials</a></div>
+  </section>
+
+  <section id="tech">
+    <div class="section-head">
+      <div class="kicker">Before registering students</div>
+      <h2>Technical requirements organizations should check</h2>
+      <p>CyberPatriot keeps requirements relatively modest, but virtualization and network filtering can become major problems if they are not tested early.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Requirement</th><th>Current official guidance</th></tr></thead>
+        <tbody>
+          <tr><td>Host computer</td><td>64-bit host computer and 64-bit operating system.</td></tr>
+          <tr><td>Processor</td><td>Minimum guidance lists 64-bit Intel i3 Sandy Bridge generation or better, or AMD Bulldozer generation or better.</td></tr>
+          <tr><td>Virtualization</td><td>CPU virtualization extensions such as Intel VT-x / AMD-V must be enabled in BIOS/UEFI when required.</td></tr>
+          <tr><td>Memory</td><td>8 GB RAM minimum.</td></tr>
+          <tr><td>Storage</td><td>40 GB free disk space minimum per host computer.</td></tr>
+          <tr><td>VM software</td><td>CyberPatriot currently lists VMware Workstation Pro 17.6.4 or later; verify the season-specific required version before competition.</td></tr>
+          <tr><td>Cisco</td><td>CyberPatriot 19 lists Cisco Packet Tracer 9.0.0.</td></tr>
+          <tr><td>Internet</td><td>DSL or faster; outbound HTTP port 80 and HTTPS port 443 access to competition servers is required.</td></tr>
+          <tr><td>Common issue</td><td>School/organization firewalls, filters, and proxies can block competition traffic. Run the official connection test before scored rounds.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-line">Source: <a href="https://www.uscyberpatriot.org/technical-specifications/" target="_blank" rel="noopener">CyberPatriot Technical Specifications</a></div>
+  </section>
+
+  <section id="rules">
+    <div class="section-head">
+      <div class="kicker">Competition integrity</div>
+      <h2>Rules students need to understand before competing</h2>
+      <p>Training is the time for coaching. During an official round, competitors are responsible for their own team's work and must follow CyberPatriot's resource and assistance rules.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card"><h3>No outside assistance during the round</h3><p>Coaches, mentors, team assistants, other teams, and non-team members cannot give competitors answers, suggestions, or hands-on help during the official competition period.</p></div>
+      <div class="card"><h3>Use only permitted resources</h3><p>CyberPatriot rules allow specified internet, printed, electronic, and software resources under defined conditions. Students must know the current rules before competition.</p></div>
+      <div class="card"><h3>Do not share competition material</h3><p>Teams may not share active competition vulnerabilities, screenshots, answers, documents, or other restricted round information with other teams or online.</p></div>
+      <div class="card"><h3>Do not perform offensive activity</h3><p>The competition is defensive. Attempts to attack competition infrastructure, perform unauthorized entry, or manipulate the scoring environment can lead to penalties or disqualification.</p></div>
+    </div>
+
+    <div class="callout update">
+      <strong>Season-rule note:</strong> As of August 22, 2026, CyberPatriot's Rules Book page still links the CyberPatriot 18 (2025–26) Rules Book while CyberPatriot 19 registration and schedules are active. Use the latest posted rules for preparation, but re-check the official Rules Book page before every scored CP19 round so any new CP19 rules take priority.
+    </div>
+
+    <div class="source-line">Sources: <a href="https://www.uscyberpatriot.org/rules-book/" target="_blank" rel="noopener">Current CyberPatriot Rules Book page</a> • CyberPatriot 18 Rules Book, Ch. 3–4 (latest rules currently posted by CyberPatriot at the time this page was verified)</div>
+  </section>
+
+  <section id="cost">
+    <div class="section-head">
+      <div class="kicker">Registration planning</div>
+      <h2>CyberPatriot 19 registration + cost</h2>
+      <p>Organizations should budget early, but fee waivers make participation more accessible for several team types.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>CyberPatriot 19 information</th></tr></thead>
+        <tbody>
+          <tr><td>Open Division high school</td><td>$225 per team.</td></tr>
+          <tr><td>Middle School Division</td><td>$175 per team.</td></tr>
+          <tr><td>Early registration discount</td><td>Teams created before July 15 received a 20% discount for CP19.</td></tr>
+          <tr><td>Title I schools</td><td>Fee waiver available upon request with required proof/status documentation.</td></tr>
+          <tr><td>All-girl teams</td><td>Fee waiver available upon request after competitors are added to the roster.</td></tr>
+          <tr><td>JROTC / Civil Air Patrol</td><td>Fees are automatically waived according to the current Join the Competition page.</td></tr>
+          <tr><td>Payment deadline</td><td>November 5, 2026.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="source-line">Source: <a href="https://www.uscyberpatriot.org/join-the-competition/" target="_blank" rel="noopener">CyberPatriot — Join the Competition</a></div>
+  </section>
+
+  <section id="organizations">
+    <div class="section-head">
+      <div class="kicker">Schools • nonprofits • youth programs • community organizations</div>
+      <h2>How an organization can implement CyberPatriot</h2>
+      <p>This model is intentionally organization-neutral so it can be used by any eligible program. Always check CyberPatriot eligibility and current rules for your organization type.</p>
+    </div>
+
+    <div class="org-steps">
+      <div class="org-step"><b>Confirm eligibility + division.</b><br><span>Determine whether the team belongs in Open High School, All Service, or Middle School Division and identify the fielding organization.</span></div>
+      <div class="org-step"><b>Select an adult coach.</b><br><span>The coach creates the team, manages registration, receives official communications, supervises competition, and protects competition integrity.</span></div>
+      <div class="org-step"><b>Recruit a balanced team.</b><br><span>Look for students interested in Windows, Linux, networking, troubleshooting, investigation, and teamwork—not only students who already consider themselves “cyber experts.”</span></div>
+      <div class="org-step"><b>Register on time.</b><br><span>Create CP19 teams by Oct. 1, add competitors by Oct. 21, and pay/request waivers by the published payment deadline.</span></div>
+      <div class="org-step"><b>Validate technology early.</b><br><span>Check 64-bit systems, RAM/storage, virtualization, VMware, Packet Tracer, required websites, port access, downloads, and the CyberPatriot connection test.</span></div>
+      <div class="org-step"><b>Use a weekly training system.</b><br><span>Teach one skill block, practice it, document it, then use official images to apply the skill. Rotate student responsibilities.</span></div>
+      <div class="org-step"><b>Use official unscored rounds.</b><br><span>Exhibition, Training, and Practice rounds let teams learn the real workflow before scored rounds.</span></div>
+      <div class="org-step"><b>Debrief every practice and round.</b><br><span>Review what the team fixed, missed, broke, researched, and learned. Turn the results into the next training plan.</span></div>
+    </div>
+
+    <details>
+      <summary>Suggested weekly practice structure</summary>
+      <div class="detail-body">
+        <b>60–90 minutes:</b> 10-minute goal/briefing → 20-minute skill lesson → 30–45-minute hands-on practice → 10-minute team debrief/change-log review. Increase to longer timed simulations as competition approaches.
+      </div>
+    </details>
+    <details>
+      <summary>Suggested evidence of student growth</summary>
+      <div class="detail-body">
+        Keep student-safe records such as skill checklists, change logs from practice images, networking exercises, team reflection notes, screenshots from approved training work, attendance, practice scores, and individual reflections. Do not publicly post restricted competition materials.
+      </div>
+    </details>
+    <details>
+      <summary>Safety + supervision</summary>
+      <div class="detail-body">
+        Follow the organization's youth-protection, technology-use, privacy, and facility rules. The latest posted CyberPatriot rules emphasize competitor safety, coach supervision, fair competition, and protection of competition materials.
+      </div>
+    </details>
+  </section>
+
+  <section id="sources">
+    <div class="section-head">
+      <div class="kicker">Reference everything</div>
+      <h2>Official sources + verification</h2>
+      <p>Use these pages as the source of truth. CyberPatriot can update dates, systems, software versions, rules, point values, and registration information during the season.</p>
+    </div>
+
+    <div class="ref-list">
+      <div class="ref"><b>CyberPatriot — How the Competition Works</b><span>Competition structure, virtual images, scoring, Cisco tasks, support, and the general round workflow.</span><a href="https://www.uscyberpatriot.org/how-the-competition-works/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot 19 Competition Schedule</b><span>2026–27 training dates, scored-round dates, competition windows, 4-hour team period, and coach email schedule.</span><a href="https://www.uscyberpatriot.org/competition-schedule/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot 19 Challenges and Scoring Values</b><span>Current operating-system images, Cisco modules, skill tiers, advancement percentages, web-based challenge, and published point totals.</span><a href="https://www.uscyberpatriot.org/challenges-and-scoring-values/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot Training Materials</b><span>Network Security Challenge, Cisco Networking Challenge, self-paced training, official unscored rounds, and example skill areas.</span><a href="https://www.uscyberpatriot.org/training-materials/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot Technical Specifications</b><span>64-bit requirement, RAM/storage minimums, virtualization, VMware, Packet Tracer, software, website access, ports, and network requirements.</span><a href="https://www.uscyberpatriot.org/technical-specifications/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot — Join the Competition</b><span>CP19 coach/team registration, team and roster deadlines, fees, waivers, payment deadline, mentors, and student registration process.</span><a href="https://www.uscyberpatriot.org/join-the-competition/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot Rules Book page</b><span>Latest rules book published by CyberPatriot. Re-check before each official round.</span><a href="https://www.uscyberpatriot.org/rules-book/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot Interactive Demo</b><span>Official partial simulation for students who want to see what a competition image feels like before joining a team.</span><a href="https://www.uscyberpatriot.org/interactive-demo/" target="_blank" rel="noopener">Open official source ↗</a></div>
+      <div class="ref"><b>CyberPatriot Volunteer Registration</b><span>Current CP19 coach/team registration plus year-round technical mentor and team-assistant registration. Approved mentors can search for coaches/teams after completing the required background-check process.</span><a href="https://author.uscyberpatriot.org/Pages/Get%20Involved/Volunteer-Registration-Form.aspx" target="_blank" rel="noopener">Open official source ↗</a></div>
+    </div>
+
+    <div class="callout update">
+      <strong>Source conflict to know:</strong> the current general “How the Competition Works” page still contains six-hour wording, while the dedicated CyberPatriot 19 Competition Schedule states a four-hour competition block for CP19. This page follows the season-specific CP19 schedule. When official pages conflict, verify with the current season schedule/rules or contact CyberPatriot directly.
+    </div>
+  </section>
+
+  <div class="footer-note">
+    <b>Last source check: August 22, 2026.</b> Adult coach/mentor registration details were also verified against CyberPatriot's current CP19 volunteer-registration page.
+    This FamilyPD learning page is an educational guide and is not an official CyberPatriot publication.
+    CyberPatriot and Air &amp; Space Forces Association names and program materials belong to their respective owners.
+    For official competition decisions, always follow the current CyberPatriot website, coach communications, and rules.
+  </div>
+
+</div>
+</body>
+</html>
