@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="FamilyPD CompTIA A+ Mission 04: safely assemble a new desktop PC while learning CPUs, cooling, RAM, storage, power supplies, expansion devices, compatibility, POST, and troubleshooting." name="description"/>
+<title>Mission 04: Build the PC | FamilyPD A+</title>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.m4-shell{max-width:1120px;margin:auto}
+.quick-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.75rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.quick-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.38rem .65rem;font-size:.82rem;font-weight:800;color:#163f61;background:#fff}
+.quick-nav a.current{background:#163f61;color:#fff;border-color:#163f61}
+.m4-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.cardx{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:18px;padding:1rem;box-shadow:0 8px 20px rgba(15,48,74,.05)}
+.cardx h3{margin:.15rem 0 .45rem;color:#163f61}
+.step{display:grid;grid-template-columns:54px 1fr;gap:.8rem;align-items:start;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:17px;padding:1rem;margin:.7rem 0}
+.stepnum{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:#fff;font-weight:900;font-size:1.05rem}
+.safety{background:#071c2c;color:#fff;border-radius:20px;padding:1.25rem} .safety h2,.safety h3{color:#fff}
+.stop{border:2px solid #b42318;background:#fff4f2;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.go{border:2px solid #247449;background:#f1fbf5;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.examtip{border-left:5px solid #d39222;background:#fff7df;border-radius:12px;padding:.85rem 1rem;margin:.75rem 0}
+.pbq{border-left:5px solid #2d7f83;background:#eff8f7;border-radius:12px;padding:.85rem 1rem;margin:.75rem 0}
+.memory{border:2px dashed #163f61;border-radius:14px;padding:.85rem 1rem;background:#fff}
+.checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem .8rem}
+.check{display:flex;gap:.5rem;align-items:flex-start;background:#fff;border:1px solid rgba(15,48,74,.12);border-radius:11px;padding:.65rem}
+.box{flex:0 0 19px;height:19px;border:2px solid #163f61;border-radius:4px;margin-top:.1rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem;margin:.75rem 0}
+.flow span{border:2px solid #163f61;border-radius:12px;padding:.6rem .8rem;background:#fff;font-weight:800;color:#163f61}
+.flow b{color:#d39222;font-size:1.4rem}
+.source-note{font-size:.83rem;color:#485661}
+.source-list{background:#f5f8fa;border:1px solid rgba(15,48,74,.15);border-radius:18px;padding:1rem}
+.source-list li{margin:.5rem 0}
+.q{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:16px;padding:1rem;margin:.8rem 0}
+.choice{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd8e1;border-radius:10px;padding:.7rem;margin:.45rem 0;font:inherit;cursor:pointer}
+.choice.correct{border-color:#2f7d32;background:#edf8ee}.choice.wrong{border-color:#b43d3d;background:#fff0f0}
+.why{display:none;background:#f4f8fa;border-left:5px solid #163f61;padding:.8rem;border-radius:10px;margin-top:.6rem}.why.show{display:block}
+@media(max-width:850px){.m4-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.m4-grid,.checkgrid{grid-template-columns:1fr}.step{grid-template-columns:44px 1fr}}
+@media print{.site-header,.site-footer,.quick-nav,.aplus-actions,.choice{display:none!important}}
+</style>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
+<main id="main-content">
+<section class="page-hero"><div class="container m4-shell">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 04</span></nav>
+<p class="eyebrow">CompTIA A+ • Mission 04 • Week 4</p>
+<h1>Build the PC: From Parts to POST</h1>
+<p class="page-lead">This week you will assemble a brand-new desktop PC. The goal is not to race. Work like an IT technician: protect components, verify compatibility, install one system at a time, inspect your work, and prove the computer can complete POST before you call the build successful.</p>
+<div class="aplus-actions"><a class="button" href="#safety">Start with safety</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-work-order.html">Open build work order</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook builder</a></div>
+</div></section>
+
+<section class="section compact-info-section"><div class="container m4-shell">
+<p class="eyebrow">A+ quick navigation</p>
+<nav class="quick-nav" aria-label="A+ quick navigation">
+<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">M2 • Inside Machine</a>
+<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html">M3 • Motherboards</a>
+<a class="current" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">M4 • Build PC</a>
+<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
+<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+</nav>
+</div></section>
+
+<section class="section"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Mission outcomes</p><h2>What you should be able to do by the end.</h2></div>
+<div class="m4-grid">
+<article class="cardx"><h3>Build safely</h3><p>Use ESD controls, proper component handling, power-off procedures, organized tools, and teacher safety checkpoints.</p></article>
+<article class="cardx"><h3>Build compatibly</h3><p>Match CPU/socket, RAM generation, storage interface, case/motherboard form factor, PSU capacity/connectors, cooling, and expansion requirements.</p></article>
+<article class="cardx"><h3>Build logically</h3><p>Install CPU/cooling, RAM, storage, motherboard, power supply, expansion devices, internal connections, and case wiring in a controlled sequence.</p></article>
+<article class="cardx"><h3>Explain the system</h3><p>Explain what each installed device does and how power, data, heat, and physical connections work together.</p></article>
+<article class="cardx"><h3>Reach POST</h3><p>Inspect the machine before first power, observe POST/UEFI behavior, and distinguish a hardware-startup problem from an operating-system problem.</p></article>
+<article class="cardx"><h3>Think like A+</h3><p>Recognize parts by sight, compare options, select BEST/NEXT actions, and troubleshoot symptoms using evidence instead of random replacement.</p></article>
+</div>
+<p class="source-note">Week 4 in the CSEC 114 syllabus is Module 3: Installing System Devices—storage, power supplies, cooling, expansion devices, peripherals, and compatibility. CompTIA Module 3 also includes installing/configuring power, storage, system memory, and CPUs. [Sources 1–2]</p>
+</div></section>
+
+<section class="section section-tinted" id="safety"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Safety gate</p><h2>Protect the person. Protect the parts.</h2></div>
+<div class="safety">
+<h3>Memory trick: ESD protects the PARTS. Electrical safety protects the PERSON.</h3>
+<p>Electrostatic discharge (ESD) can damage sensitive electronic components. CompTIA identifies ESD straps, ESD mats, equipment grounding, antistatic bags, proper component handling, and disconnecting power before PC repair as common safety practices. CompTIA Module 2 also states that learners should not work on energized equipment. [Sources 3–4]</p>
+</div>
+
+<h3>For our BRAND-NEW, never-powered build</h3>
+<div class="checkgrid">
+<div class="check"><span class="box"></span><div><strong>Clean workspace.</strong> Remove unnecessary plastic, loose packaging, drinks, and clutter.</div></div>
+<div class="check"><span class="box"></span><div><strong>Wear the ESD wrist strap on bare skin.</strong> It should make reliable contact with your wrist.</div></div>
+<div class="check"><span class="box"></span><div><strong>Connect only to the instructor-approved ESD grounding point.</strong> Use the designated ESD mat/workstation connection or other approved point.</div></div>
+<div class="check"><span class="box"></span><div><strong>Keep sensitive parts protected.</strong> Leave RAM, CPU, M.2 devices, GPUs, and boards in antistatic packaging until needed.</div></div>
+<div class="check"><span class="box"></span><div><strong>Handle boards by the edges.</strong> Avoid touching gold contacts, socket pins, chips, and exposed connector contacts. Intel gives the same handling guidance for M.2 devices. [Source 5]</div></div>
+<div class="check"><span class="box"></span><div><strong>Build de-energized.</strong> In this class, connect AC power only after the build passes the pre-power inspection and the instructor authorizes first power.</div></div>
+</div>
+<div class="stop"><strong>STOP:</strong> An ESD strap is not protection from hazardous electrical current. For this classroom build, ESD straps are used while the computer is disconnected from mains power and students are handling de-energized components.</div>
+
+<h3>FYI: If you later service a PC that HAS been powered before</h3>
+<div class="flow"><span>Shut down</span><b>→</b><span>Disconnect AC power</span><b>→</b><span>Follow model service procedure</span><b>→</b><span>Verify de-energized</span><b>→</b><span>Apply ESD controls</span></div>
+<p>Some manufacturer service manuals direct technicians to hold the power button after external power is disconnected to drain residual system power. Dell, for example, documents a 15–20 second procedure on several desktop models. <strong>Do not assume the exact procedure is identical for every system:</strong> use the manufacturer service manual for the model you are servicing. [Source 6]</p>
+<div class="stop"><strong>Never open a PSU enclosure in this class.</strong> Unplugging the computer does not make the inside of a power-supply unit student-serviceable. Treat the PSU as a replaceable module.</div>
+</div></section>
+
+<section class="section"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Phase 1</p><h2>Compatibility check before installation.</h2><p>A component can look right and still be wrong for the system. Your work order should record the actual parts in your build.</p></div>
+<div class="m4-grid">
+<article class="cardx"><h3>CPU ↔ motherboard</h3><p>The motherboard socket/platform must support the CPU. Do not force a processor into a socket.</p><div class="memory"><strong>Memory:</strong> CPU <em>SITS</em> in a <strong>SOCKET</strong>.</div></article>
+<article class="cardx"><h3>RAM ↔ motherboard</h3><p>Match the supported DDR generation, module type, capacity, and recommended slot/channel arrangement.</p><div class="memory"><strong>Memory:</strong> RAM <em>SLIDES</em> into a <strong>SLOT</strong>.</div></article>
+<article class="cardx"><h3>Storage ↔ interface</h3><p>Know whether the drive needs SATA data + SATA power or uses an M.2 slot. M.2 and NVMe are not synonyms.</p><div class="memory"><strong>M.2 = SHAPE. NVMe = TALK.</strong></div></article>
+<article class="cardx"><h3>PSU ↔ load</h3><p>Verify capacity, form factor, and required connectors. CompTIA emphasizes matching power needs to the PSU and recognizing efficiency ratings. [Source 2]</p></article>
+<article class="cardx"><h3>Cooler ↔ CPU/case</h3><p>Verify cooler mounting compatibility, thermal-interface material, fan/pump connection, and physical clearance.</p></article>
+<article class="cardx"><h3>Case ↔ motherboard</h3><p>Verify form factor, standoff positions, expansion clearance, airflow, drive mounting, and cable routing.</p></article>
+</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Phase 2</p><h2>Build one subsystem at a time.</h2></div>
+
+<div class="step"><span class="stepnum">1</span><div><h3>Install the CPU</h3><p>Identify the socket, verify orientation/alignment marks, open the retention mechanism, lower/place the CPU without force, then secure it according to the board/socket design. CompTIA Module 3 covers CPU architecture, socket types, and motherboard compatibility. [Source 2]</p><div class="stop"><strong>Teacher checkpoint:</strong> verify CPU model, socket, and orientation before securing the retention mechanism.</div></div></div>
+
+<div class="step"><span class="stepnum">2</span><div><h3>Install the thermal solution</h3><p>Use the cooler/manufacturer instructions. Thermal paste or a pre-applied thermal interface fills microscopic gaps so heat transfers more effectively from CPU to cooler. A heat sink provides surface area; fans provide active airflow. [Source 2]</p><div class="memory"><strong>Memory:</strong> CPU makes HEAT → thermal material improves CONTACT → heat sink SPREADS heat → fan MOVES heat away.</div></div></div>
+
+<div class="step"><span class="stepnum">3</span><div><h3>Install RAM</h3><p>Confirm the DDR generation and DIMM orientation. Open the latches as designed, align the notch, and press evenly until the module is fully seated. Use the motherboard manual for the recommended slots when installing a matched pair. CompTIA notes DDR generation incompatibility and multi-channel slot arrangement. [Source 2]</p><div class="examtip"><strong>A+ clue:</strong> a module that is partly seated can create no-POST or memory-related symptoms. Do not force incompatible memory.</div></div></div>
+
+<div class="step"><span class="stepnum">4</span><div><h3>Install storage</h3><p><strong>M.2:</strong> use the correct slot/standoff and secure the module level without excessive pressure. <strong>SATA drive:</strong> mount the drive securely; later it needs SATA DATA to the motherboard and SATA POWER from the PSU. CompTIA compares SSD, HDD, SATA, PCIe/M.2/NVMe, removable storage, optical drives, and RAID. [Sources 2, 5]</p><div class="memory"><strong>Memory:</strong> Motherboard TALKS to SATA drive through DATA. PSU FEEDS it through POWER.</div></div></div>
+
+<div class="step"><span class="stepnum">5</span><div><h3>Mount the motherboard</h3><p>Check the case standoffs before lowering the board into place. Align rear I/O as required by the case/board design and secure the motherboard without overtightening. Keep loose screws out from under the board.</p><div class="stop"><strong>STOP and inspect:</strong> incorrect standoff placement can physically damage the board or create an unwanted electrical contact.</div></div></div>
+
+<div class="step"><span class="stepnum">6</span><div><h3>Install the power supply</h3><p>Mount the PSU in the supported orientation and consider airflow. CompTIA Module 3 covers AC-to-DC conversion, wattage, 80 PLUS efficiency, 20+4/24-pin motherboard power, SATA power, Molex, and other 4/6/8/16-pin power connectors, as well as modular and redundant designs. [Source 2]</p></div></div>
+
+<div class="step"><span class="stepnum">7</span><div><h3>Install expansion devices</h3><p>Install the GPU or other required PCIe device in the appropriate slot, secure the bracket, and connect supplemental power if the device requires it. PCIe is the expansion highway; the number of lanes affects available bandwidth.</p><div class="memory"><strong>Memory:</strong> PCIe = <strong>EXPANSION HIGHWAY</strong>. A GPU commonly uses the long x16 physical slot.</div></div></div>
+
+<div class="step"><span class="stepnum">8</span><div><h3>Connect power, data, headers, and fans</h3><p>Use the motherboard and component manuals. Typical connections include 24-pin motherboard power, CPU power, GPU power when required, SATA power/data, CPU fan, case fans, front-panel power/reset/LED connections, front USB, and front audio.</p><div class="memory"><strong>Distinction trick:</strong> PORT = portal outside • HEADER = hidden inside • CONNECTOR = broad connection term • INTERFACE = connection/communication system.</div></div></div>
+
+<div class="step"><span class="stepnum">9</span><div><h3>Manage airflow and cables</h3><p>Keep cables away from fans and airflow pathways. CompTIA describes cool air entering from front/side locations and hot exhaust leaving the rear/top as a common airflow model. [Source 2]</p><div class="flow"><span>Cool air IN</span><b>→</b><span>Components absorb/use power</span><b>→</b><span>Heat moves to cooler/air</span><b>→</b><span>Hot air OUT</span></div></div></div>
+</div></section>
+
+<section class="section"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Phase 3</p><h2>Pre-power inspection: do not press the button yet.</h2></div>
+<div class="checkgrid">
+<div class="check"><span class="box"></span><div>CPU is seated and retention mechanism is secured.</div></div>
+<div class="check"><span class="box"></span><div>Cooler is mounted correctly; CPU fan/pump connection is correct.</div></div>
+<div class="check"><span class="box"></span><div>RAM is fully seated in the intended slots.</div></div>
+<div class="check"><span class="box"></span><div>M.2/storage device is secured; SATA data/power are present if required.</div></div>
+<div class="check"><span class="box"></span><div>24-pin motherboard power is fully seated.</div></div>
+<div class="check"><span class="box"></span><div>CPU power connector is fully seated.</div></div>
+<div class="check"><span class="box"></span><div>GPU is secured and supplemental power is connected if required.</div></div>
+<div class="check"><span class="box"></span><div>Front-panel and internal headers are checked against the motherboard manual.</div></div>
+<div class="check"><span class="box"></span><div>No loose screws or conductive debris are under/on the motherboard.</div></div>
+<div class="check"><span class="box"></span><div>No cable can contact a fan blade.</div></div>
+<div class="check"><span class="box"></span><div>Monitor is connected to the correct video output for this build.</div></div>
+<div class="check"><span class="box"></span><div>Peer inspection is complete and instructor authorization is received.</div></div>
+</div>
+<div class="stop"><strong>Teacher Safety Gate:</strong> first AC connection and first power-on happen only after the instructor approves the build.</div>
+<p><a class="button" href="/learning-center/cybersecurity/aplus/mission-04-build-work-order.html">Open / print the build work order</a></p>
+</div></section>
+
+<section class="section section-tinted"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Phase 4</p><h2>First power: POST before operating system.</h2></div>
+<div class="flow"><span>Power applied</span><b>→</b><span>Fans / indicators</span><b>→</b><span>POST</span><b>→</b><span>Display</span><b>→</b><span>UEFI/BIOS</span><b>→</b><span>Boot device</span></div>
+<p><strong>POST = Power-On Self-Test.</strong> A machine can successfully reach firmware setup even if no operating system is installed yet. The first build goal is a stable hardware startup and useful display/firmware access—not an immediate Windows desktop.</p>
+<div class="go"><strong>During first power:</strong> keep hands out of the case. Observe fans, LEDs, display, POST/diagnostic indicators, and firmware behavior.</div>
+<div class="stop"><strong>If something is wrong:</strong> power down, disconnect external AC power, follow the correct de-energizing procedure, then troubleshoot. Do not reach into an energized build and start reseating components.</div>
+</div></section>
+
+<section class="section"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Troubleshooting bridge</p><h2>If it does not POST, use evidence.</h2></div>
+<div class="m4-grid">
+<article class="cardx"><h3>No power at all</h3><p>Check external AC, PSU switch if present, case power-switch header, 24-pin power, CPU power, and installation evidence before replacing major parts.</p></article>
+<article class="cardx"><h3>Power but no display</h3><p>Check monitor power/input/cable, correct display output, GPU seating/power if used, RAM seating, and POST indicators.</p></article>
+<article class="cardx"><h3>Starts then overheats/shuts down</h3><p>Investigate cooler contact, thermal interface, CPU fan/pump operation, and airflow before blaming storage or networking.</p></article>
+<article class="cardx"><h3>Storage not detected</h3><p>Check the correct M.2 slot/support or SATA data/power connections, firmware detection, and physical installation.</p></article>
+<article class="cardx"><h3>Memory problem</h3><p>Verify compatibility, correct slots, full seating, and one-change-at-a-time testing.</p></article>
+<article class="cardx"><h3>Document it</h3><p>Record symptom → evidence → theory → action → result. Mission 5 will turn this build into a formal hardware-troubleshooting investigation.</p></article>
+</div>
+<div class="pbq"><strong>PBQ mindset:</strong> an A+ task may ask you to identify a component from an image, match a cable to a connector, select compatible hardware, arrange installation steps, or choose the BEST/NEXT response to a symptom.</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Memory tricks</p><h2>Keep the high-value distinctions.</h2></div>
+<div class="m4-grid">
+<article class="cardx"><h3>Socket vs. slot</h3><p><strong>CPU SITS in a SOCKET.</strong><br/><strong>RAM/cards SLIDE into SLOTS.</strong></p></article>
+<article class="cardx"><h3>M.2 vs. NVMe</h3><p><strong>M.2 = SHAPE.</strong><br/><strong>NVMe = TALK.</strong><br/>M.2 is a form factor; NVMe is a storage protocol commonly using PCIe.</p></article>
+<article class="cardx"><h3>SATA</h3><p><strong>S = STORAGE.</strong><br/>Motherboard talks through SATA DATA; PSU feeds through SATA POWER.</p></article>
+<article class="cardx"><h3>Power connectors</h3><p><strong>24-pin = MAIN MEAL</strong> for the motherboard.<br/><strong>CPU power = BRAIN FOOD.</strong></p></article>
+<article class="cardx"><h3>Cooling</h3><p><strong>CONTACT → SPREAD → MOVE.</strong><br/>Thermal material improves contact, heat sink spreads heat, fan/liquid system moves it away.</p></article>
+<article class="cardx"><h3>First startup</h3><p><strong>POST before OS.</strong><br/>Prove the hardware can initialize before troubleshooting Windows that is not installed yet.</p></article>
+</div>
+</div></section>
+
+<section class="section"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">A+ notebook evidence</p><h2>Capture the system—not every sentence.</h2></div>
+<div class="pbq"><strong>Recommended Mission 4 spread:</strong> draw or paste one large image of your completed PC. Use arrows to label CPU, cooler, RAM, storage, motherboard, PSU, GPU/expansion, intake, exhaust, 24-pin power, CPU power, and one internal header. Add a tiny compatibility chain and one box titled <strong>How could A+ ask this?</strong></div>
+<div class="examtip"><strong>Do not make a copied spec sheet.</strong> Record the facts you need to recognize, compare, install, troubleshoot, and retrieve quickly.</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m4-shell">
+<div class="section-heading"><p class="eyebrow">Mission check</p><h2>Try the decision before reading the explanation.</h2></div>
+
+<div class="q" data-answer="b"><h3>1. A new PC powers on, but the display remains blank. The build uses a discrete GPU. What is the BEST early check?</h3>
+<button class="choice" data-choice="a">Replace the CPU immediately.</button>
+<button class="choice" data-choice="b">Verify the monitor input/cable and that the display is connected to the intended GPU output.</button>
+<button class="choice" data-choice="c">Format the storage drive.</button>
+<button class="choice" data-choice="d">Replace the power supply without testing.</button>
+<div class="why"><strong>Best answer: B.</strong> Start with the evidence and simple display-path checks before replacing major hardware.</div></div>
+
+<div class="q" data-answer="c"><h3>2. A technician is installing a 2.5-inch SATA SSD. Which connections are normally required?</h3>
+<button class="choice" data-choice="a">PCIe x16 and CPU power</button>
+<button class="choice" data-choice="b">M.2 slot and fan header</button>
+<button class="choice" data-choice="c">SATA data to the motherboard and SATA power from the PSU</button>
+<button class="choice" data-choice="d">24-pin ATX power and front audio</button>
+<div class="why"><strong>Best answer: C.</strong> The motherboard communicates with a SATA drive over SATA data; the PSU supplies SATA power.</div></div>
+
+<div class="q" data-answer="d"><h3>3. CPU temperature rises quickly immediately after first startup. What should the technician investigate FIRST?</h3>
+<button class="choice" data-choice="a">Network configuration</button>
+<button class="choice" data-choice="b">RAID level</button>
+<button class="choice" data-choice="c">USB port version</button>
+<button class="choice" data-choice="d">Cooler mounting/contact, thermal interface, and fan/pump operation</button>
+<div class="why"><strong>Best answer: D.</strong> The symptom directly points to the cooling path.</div></div>
+</div></section>
+
+<section class="section"><div class="container m4-shell" id="sources">
+<div class="source-list">
+<h2>Sources &amp; alignment</h2>
+<ol>
+<li><strong>CSEC 114: IT Essentials syllabus (Fall 2026).</strong> Week 4 is Module 3, Installing System Devices, focused on storage, power supplies, cooling, expansion devices, peripherals, and compatibility. Instructor-provided course document.</li>
+<li><strong>CompTIA A+ Core 1 (220-1201), Module 3: Installing System Devices.</strong> Instructor-provided CompTIA materials cover power supplies/cooling, storage devices, system memory, CPUs, installation, compatibility, RAID, and related labs. CompTIA and A+ are trademarks of CompTIA, Inc.</li>
+<li><strong>CompTIA A+ Core 2 (220-1202) V15 objectives, 4.4 Common Safety Procedures.</strong> Lists ESD straps/mats, equipment grounding, proper handling/storage, cable management, antistatic bags, and disconnecting power before PC repair. Instructor-provided objective document.</li>
+<li><strong>CompTIA A+ Core 1 Module 2 instructor materials.</strong> Electrical Safety and ESD slides identify ESD, grounding straps/mats, ESD bags, an electrically safe workbench, and state that learners should not work on energized equipment.</li>
+<li><a href="https://www.intel.com/content/www/us/en/support/articles/000023979/technologies/memory-and-storage.html" target="_blank" rel="noopener noreferrer"><strong>Intel: Proper Handling Techniques and Precautions for Your M.2 Device</strong></a>. Intel recommends antistatic storage, grounding/ESD precautions, handling devices by the sides, avoiding gold contacts, and using the correct standoff/installation method.</li>
+<li><a href="https://www.dell.com/support/manuals/en-us/xps-8960-desktop/xps-8960-service-manual/drain-residual-flea-power-perform-hard-reset" target="_blank" rel="noopener noreferrer"><strong>Dell XPS 8960 Service Manual: Drain residual flea power</strong></a>. Example manufacturer procedure for a previously powered desktop: shut down, disconnect power, and hold the power button for a documented interval. Always use the service manual for the actual model being serviced.</li>
+</ol>
+<p class="source-note">FamilyPD independently creates its explanations, memory tricks, activities, and original practice questions. This page is a study aid and classroom build guide, not an official CompTIA product. Hardware procedures vary by model; motherboard, CPU, cooler, case, PSU, storage, and GPU manufacturer instructions take priority for the actual equipment in use.</p>
+</div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+document.querySelectorAll('.q').forEach(q=>q.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+ if(q.dataset.done)return;
+ q.dataset.done='1';
+ const ok=b.dataset.choice===q.dataset.answer;
+ b.classList.add(ok?'correct':'wrong');
+ if(!ok)q.querySelector('[data-choice="'+q.dataset.answer+'"]').classList.add('correct');
+ q.querySelectorAll('.choice').forEach(x=>x.disabled=true);
+ q.querySelector('.why').classList.add('show');
+})));
+</script>
+</body></html>
