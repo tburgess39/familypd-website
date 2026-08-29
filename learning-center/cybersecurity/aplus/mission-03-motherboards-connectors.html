@@ -1,37 +1,67 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Mission 03: Motherboards & Connectors | FamilyPD A+</title><link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/>
-<style>.m3{max-width:1050px;margin:auto}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.card{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:17px;padding:1rem}.tip{border-left:5px solid #d39222;background:#fff7df;border-radius:10px;padding:.8rem}.qnav{display:flex;flex-wrap:wrap;gap:.4rem}.qnav a{border:1px solid #9db3c1;border-radius:999px;padding:.35rem .6rem;text-decoration:none;font-size:.82rem;font-weight:800}@media(max-width:750px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid{grid-template-columns:1fr}}
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Build a desktop PC while learning CompTIA A+ Core 1 hardware concepts: RAM, storage, motherboards, CPUs, cooling, power supplies, compatibility, safe installation, and scenario-based decisions." name="description"/>
+<title>Mission 03: Motherboards &amp; Connectors | FamilyPD A+</title>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.m3-shell{max-width:1080px;margin:auto}
+.m3-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.m3-card{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:18px;padding:1.15rem;box-shadow:0 8px 22px rgba(15,48,74,.05)}
+.m3-card h3{margin:.15rem 0 .55rem;color:#163f61}
+.part-visual{display:grid;place-items:center;min-height:110px;border:2px solid #163f61;border-radius:14px;background:#fff;font-size:2.6rem;margin-bottom:.8rem}
+.build-step{display:grid;grid-template-columns:52px 1fr;gap:.8rem;align-items:start;background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:16px;padding:1rem;margin:.8rem 0}
+.step-no{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:#fff;font-weight:900}
+.exam-tip{border-left:5px solid #d39222;background:#fff7df;border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+.pbq{border-left:5px solid #2d7f83;background:#eff8f7;border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+.lab{background:#071c2c;color:#fff;border-radius:20px;padding:1.25rem}.lab h2,.lab h3{color:#fff}
+.compare{width:100%;border-collapse:collapse;background:#fff}.compare th,.compare td{border:1px solid #cbd8e1;padding:.7rem;vertical-align:top;text-align:left}.compare th{background:#edf4f8;color:#163f61}
+.q{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:16px;padding:1rem;margin:.8rem 0}
+.choice{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd8e1;border-radius:10px;padding:.7rem;margin:.45rem 0;font:inherit;cursor:pointer}
+.choice.correct{border-color:#2f7d32;background:#edf8ee}.choice.wrong{border-color:#b43d3d;background:#fff0f0}.why{display:none;background:#f4f8fa;border-left:5px solid #163f61;padding:.8rem;border-radius:10px;margin-top:.6rem}.why.show{display:block}
+@media(max-width:850px){.m3-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.m3-grid{grid-template-columns:1fr}}
+
 /* Shared A+ mission navigation */
 .aplus-mission-nav-shell{max-width:1120px;margin:auto}
 .aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
 .aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
 .aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
 .aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
-.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+.page-hero h1{font-size:clamp(2rem,4vw,3.05rem)!important;line-height:1.07!important}
+.lab p,.lab strong,.lab li,.lab .eyebrow{color:#fff!important}
 @media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
 
-
-/* Mission 03 cleanup */
-.m3{max-width:1120px;margin:auto}
-.page-hero .m3 h1{font-size:clamp(2rem,4vw,3.05rem)!important;line-height:1.08!important}
-.aplus-mission-nav-section + .section{padding-top:1.25rem}
-
 </style>
-</head><body class="learning-center-page"><a class="skip-link" href="#main-content">Skip to content</a>
-<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header><main id="main-content">
-<section class="page-hero"><div class="container m3"><nav class="breadcrumb"><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><span>Mission 03</span></nav><p class="eyebrow">CompTIA A+ • Mission 03</p><h1>Motherboards &amp; Connectors</h1><p class="page-lead">Learn the motherboard as a connection system: what sits, slides, plugs, and communicates where. Use a Raspberry Pi only as a supplemental architecture comparison—not as A+ trivia.</p></div></section>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
+<main id="main-content">
+<section class="page-hero"><div class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 03</span></nav>
+<p class="eyebrow">CompTIA A+ • Mission 03 • Core 1 Hardware</p>
+<h1>Motherboards &amp; Connectors: Build Readiness</h1>
+<p class="page-lead">You already explored how power and data move through a computer. Now prepare for the hands-on PC build by learning the motherboard as a connection system, verifying component compatibility, explaining each part's job, and thinking about how A+ could turn the same concept into a scenario or performance-based task. The physical build happens in Mission 04.</p>
+<div class="aplus-actions" style="display:flex;flex-wrap:wrap;gap:.65rem">
+<a class="button" href="#build">Begin Mission 03</a>
+<a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Open notebook builder</a>
+<a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice questions</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04: Build the PC</a>
+</div>
+</div></section>
 
 <section class="section compact-info-section aplus-mission-nav-section">
 <div class="container aplus-mission-nav-shell">
 <p class="eyebrow">A+ quick navigation</p>
 <nav class="aplus-mission-nav" aria-label="A+ mission quick navigation">
 <a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
-<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html" data-mission="m1">M1 • First Shift</a>
-<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html" data-mission="m2">M2 • Inside the Machine</a>
-<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html" data-mission="m3" class="current">M3 • Motherboards &amp; Connectors</a>
-<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html" data-mission="m4">M4 • Build the PC</a>
-<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html" data-mission="guide">Practice PC Build Guide</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">M2 • Inside the Machine</a>
+<a class="current" href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html">M3 • Motherboards &amp; Connectors</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">M4 • Build the PC</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html">Practice PC Build Guide</a>
 <a href="/learning/a-plus-interactive-notebook.html">Notebook Builder</a>
 <a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
 <a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
@@ -39,11 +69,82 @@
 </div>
 </section>
 
-<section class="section"><div class="container m3"><div class="grid">
-<div class="card"><h3>Socket</h3><p>CPU <strong>SITS</strong> in a socket.</p></div><div class="card"><h3>Slot</h3><p>RAM/cards <strong>SLIDE</strong> into slots.</p></div><div class="card"><h3>Port</h3><p>A <strong>portal to the outside</strong>: USB, HDMI, Ethernet.</p></div>
-<div class="card"><h3>Header</h3><p><strong>Hidden inside</strong>: front panel, internal USB/audio, fan headers.</p></div><div class="card"><h3>Connector</h3><p>Broad term for a physical electrical connection.</p></div><div class="card"><h3>Interface</h3><p>The connection/communication system: SATA, PCIe, USB.</p></div>
-</div><div class="tip"><strong>A+ goal:</strong> identify CPU socket, DIMM slots, M.2, SATA, PCIe, 24-pin power, CPU power, fan/front-panel headers, rear I/O, and form-factor/compatibility relationships before Mission 04 assembly.</div>
-<p><a class="button" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi comparison</a> <a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Next: Build the PC</a></p>
-<p class="small">A+ exam objective alignment: Core 1 objective 3.5 prepares you to identify and install motherboards, CPUs, add-on cards, cooling, connectors, and compatible components. Mission 3 builds the recognition skills you will use in Mission 4.</p></div></section>
-</main><footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
-<script src="/assets/js/main.js"></script></body></html>
+
+<section class="section compact-info-section"><div class="container m3-shell">
+<div class="lab"><p class="eyebrow">Mission briefing</p><h2>A technician does not build by shape alone.</h2>
+<p>A working PC depends on compatibility. The CPU must match the motherboard socket/platform. The motherboard must support the RAM generation and form factor. Storage needs the correct interface and slot/connector. The PSU needs appropriate capacity and connectors. Cooling must make proper contact and move heat away from the CPU.</p>
+<p><strong>Your job:</strong> install carefully, explain why each part belongs, and record evidence in the A+ notebook rather than copying every specification.</p></div>
+</div></section>
+
+<section class="section" id="build"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Meet the build</p><h2>Know the job of each component before installation.</h2></div>
+<div class="m3-grid">
+<article class="m3-card"><div class="part-visual">BOARD</div><h3>Motherboard</h3><p>The main circuit board provides physical and electrical connections for CPU, RAM, storage, expansion, firmware, power, and I/O.</p><div class="pbq"><strong>PBQ:</strong> Could you identify the CPU socket, DIMM slots, M.2 slot, PCIe slot, SATA ports, and main power connector on a board image?</div></article>
+<article class="m3-card"><div class="part-visual">CPU</div><h3>CPU</h3><p>Executes instructions. Compatibility depends on platform/socket and motherboard support. A+ also expects awareness of x86/x64, ARM, core configurations, and cooling considerations.</p><div class="exam-tip"><strong>Scenario clue:</strong> Fits physically does not automatically mean supported. Verify motherboard and CPU compatibility.</div></article>
+<article class="m3-card"><div class="part-visual">RAM</div><h3>RAM</h3><p>Fast volatile working memory. A+ compares DIMM vs. SODIMM, DDR iterations, ECC vs. non-ECC, and channel configurations.</p><div class="exam-tip"><strong>Memory:</strong> DIMM = desktop-size module; SODIMM = smaller module commonly used in laptops and compact systems.</div></article>
+<article class="m3-card"><div class="part-visual">SSD</div><h3>Storage</h3><p>A+ compares HDDs and SSDs, including SATA and NVMe/PCIe interfaces, M.2 form factor, removable storage, optical drives, and RAID concepts.</p><div class="pbq"><strong>PBQ:</strong> Could you select the correct storage device for a given slot and requirement?</div></article>
+<article class="m3-card"><div class="part-visual">PSU</div><h3>Power Supply</h3><p>Converts incoming AC to regulated DC outputs used by the computer. A+ expects input/output voltage awareness, 20+4-pin motherboard power, wattage, modular/redundant concepts, and efficiency.</p><div class="exam-tip"><strong>Safety:</strong> Do not open a PSU enclosure. Hazardous energy can remain inside.</div></article>
+<article class="m3-card"><div class="part-visual">COOL</div><h3>Cooling</h3><p>Fans, heat sinks, thermal paste/pads, and liquid cooling move heat away from components. Poor contact or airflow can cause overheating, throttling, or shutdown symptoms.</p><div class="pbq"><strong>Scenario:</strong> What evidence would make you investigate cooling before replacing the CPU?</div></article>
+</div>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Build-readiness sequence</p><h2>Know the reason for every step before you install.</h2><div class="exam-tip"><strong>Important:</strong> Mission 03 prepares you to recognize the parts, connections, compatibility rules, and installation logic. <strong>The actual hands-on PC assembly happens in Mission 04.</strong></div></div>
+<div class="build-step"><span class="step-no">1</span><div><h3>Prepare &amp; protect</h3><p>Before the Mission 04 build, know the safety setup: power disconnected as appropriate, ESD controls in place, screws/stand-offs/tools organized, and sensitive parts handled correctly.</p><strong>Exam thinking:</strong> identify the safest NEXT action before touching an internal component.</div></div>
+<div class="build-step"><span class="step-no">2</span><div><h3>Verify compatibility</h3><p>Check case/motherboard form factor, CPU socket/platform, RAM support, storage interfaces, PSU wattage/connectors, and cooler compatibility.</p><strong>Notebook:</strong> make a must-match compatibility chain instead of copying full spec sheets.</div></div>
+<div class="build-step"><span class="step-no">3</span><div><h3>CPU + thermal solution</h3><p>Preview the correct logic: align the CPU correctly, secure it according to the socket mechanism, use the approved thermal interface material, and mount the cooler evenly. Never force the CPU. You will perform this in Mission 04.</p></div></div>
+<div class="build-step"><span class="step-no">4</span><div><h3>RAM</h3><p>Preview the correct logic: match the DDR generation and notch, use the recommended slots/channel configuration, open latches as designed, and press evenly until seated. You will perform this in Mission 04.</p></div></div>
+<div class="build-step"><span class="step-no">5</span><div><h3>Storage</h3><p>Identify whether the drive uses an M.2 slot, SATA data/power, or another supported interface. Know what will need to be secured and connected before Mission 04.</p></div></div>
+<div class="build-step"><span class="step-no">6</span><div><h3>Mount board + PSU + cooling</h3><p>Use the correct case stand-offs, install the PSU in the supported orientation, consider airflow, and keep cables clear of fans.</p><strong>Stop point:</strong> the next mission can finish power/data connections, front-panel headers, expansion, firmware, POST, and boot configuration.</div></div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Compare devices you actually use</p><h2>Same computing jobs, different packaging.</h2></div>
+<table class="compare">
+<thead><tr><th>Function</th><th>Desktop gaming PC</th><th>Laptop</th><th>Raspberry Pi / SBC</th></tr></thead>
+<tbody>
+<tr><td><strong>Processor</strong></td><td>Socketed desktop CPU in many systems</td><td>Often integrated or soldered in modern systems</td><td>SoC integrates major functions</td></tr>
+<tr><td><strong>Working memory</strong></td><td>DIMMs</td><td>Often SODIMMs or soldered memory</td><td>Board-mounted RAM</td></tr>
+<tr><td><strong>Storage</strong></td><td>M.2 NVMe, SATA SSD/HDD, and other supported drives</td><td>M.2/SATA or soldered storage depending on model</td><td>Commonly microSD; accessories/models may support other storage</td></tr>
+<tr><td><strong>Power</strong></td><td>Internal PSU with multiple DC outputs/connectors</td><td>External adapter/USB-C plus battery</td><td>External low-voltage supply</td></tr>
+<tr><td><strong>A+ use</strong></td><td>Direct Core 1 hardware installation practice</td><td>Direct Mobile Devices/hardware comparison</td><td>Architecture/Linux learning comparison; do not memorize Pi trivia for A+</td></tr>
+</tbody>
+</table>
+</div></section>
+
+<section class="section section-tinted"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">A+ scenario practice</p><h2>Make the build exam-ready.</h2></div>
+<div class="q" data-answer="b"><h3>1. A desktop motherboard supports a specific DDR generation. Which memory choice is BEST?</h3>
+<button class="choice" data-choice="a">Any DIMM that looks similar.</button>
+<button class="choice" data-choice="b">A supported DIMM using the motherboard-compatible DDR generation and configuration.</button>
+<button class="choice" data-choice="c">A SODIMM because it is smaller.</button>
+<button class="choice" data-choice="d">Any ECC module regardless of platform support.</button>
+<div class="why"><strong>Best answer: B.</strong> Compatibility matters: form factor, DDR generation, platform support, and channel/configuration requirements.</div></div>
+
+<div class="q" data-answer="c"><h3>2. Which choice describes an SSD using NVMe over PCIe in a common compact motherboard form factor?</h3>
+<button class="choice" data-choice="a">3.5-inch SATA HDD</button><button class="choice" data-choice="b">Optical drive</button><button class="choice" data-choice="c">M.2 NVMe SSD</button><button class="choice" data-choice="d">USB flash drive</button>
+<div class="why"><strong>Best answer: C.</strong> Keep form factor and interface/protocol separate: M.2 describes the physical form factor/slot, while NVMe commonly communicates over PCIe.</div></div>
+
+<div class="q" data-answer="d"><h3>3. CPU temperature rises rapidly after a new cooler installation. What should the technician investigate FIRST?</h3>
+<button class="choice" data-choice="a">Replace storage.</button><button class="choice" data-choice="b">Reinstall the OS.</button><button class="choice" data-choice="c">Replace the NIC.</button><button class="choice" data-choice="d">Check cooler contact, thermal material, fan/pump operation, and airflow.</button>
+<div class="why"><strong>Best answer: D.</strong> The evidence points to the thermal solution. Investigate the most relevant cause before replacing unrelated parts.</div></div>
+</div></section>
+
+<section class="section"><div class="container m3-shell">
+<div class="section-heading"><p class="eyebrow">Notebook evidence</p><h2>Build a quick-reference spread, not a copied spec sheet.</h2></div>
+<div class="pbq"><strong>Recommended notebook spread:</strong> one large labeled motherboard/PC-build image; six short callouts for CPU, RAM, storage, PSU, cooling, and motherboard; a compatibility chain; and one box titled <strong>How could A+ ask this?</strong></div>
+<div class="exam-tip"><strong>Memory vs. application:</strong> memorize fixed associations such as DIMM/SODIMM and important connector identities. Practice compatibility, installation order, symptom clues, and BEST/NEXT questions.</div>
+<p><strong>Certification alignment:</strong> CompTIA A+ Core 1 Domain 3 Hardware, especially 3.3 RAM characteristics, 3.4 storage devices, 3.5 motherboard/CPU/add-on-card installation and cooling, and 3.6 power supplies. This matches the class gaming-PC build focus on CPU, thermal solution, RAM, storage, motherboard, PSU, cooling, and compatibility.</p>
+<p class="small">CompTIA and A+ are trademarks of CompTIA, Inc. FamilyPD independently creates its explanations, activities, and original practice questions and is not affiliated with or endorsed by CompTIA.</p>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+document.querySelectorAll('.q').forEach(q=>q.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+ if(q.dataset.done)return;q.dataset.done='1';const ok=b.dataset.choice===q.dataset.answer;b.classList.add(ok?'correct':'wrong');
+ if(!ok)q.querySelector('[data-choice="'+q.dataset.answer+'"]').classList.add('correct');
+ q.querySelectorAll('.choice').forEach(x=>x.disabled=true);q.querySelector('.why').classList.add('show');
+})));
+</script>
+</body></html>
