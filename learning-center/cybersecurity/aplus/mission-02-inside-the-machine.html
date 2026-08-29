@@ -3,244 +3,48 @@
 <style>
 .m2{max-width:1050px;margin:auto}.m2-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card,.activity,.notebook,.resource{background:#fff;color:#111;border:1px solid #c8d7e2;border-radius:16px;padding:1.1rem;box-shadow:0 6px 18px rgba(15,48,74,.05)}.card p,.activity p,.notebook p,.resource p,.feedback{color:#111}.activity{margin:1rem 0}.choices{display:grid;gap:.6rem;margin:.8rem 0}.choice{font:inherit;text-align:left;background:#fff;color:#111;border:2px solid #9db8ca;border-radius:12px;padding:.75rem .9rem;cursor:pointer}.choice:hover{background:#f3f8fb}.choice.correct{border-color:#2e7d32;background:#edf8ee}.choice.wrong{border-color:#b23a3a;background:#fff0f0}.feedback{display:none;background:#f5f8fa;border-left:4px solid #2d6f8e;border-radius:8px;padding:.75rem;margin-top:.6rem}.feedback.show{display:block}.notebook{border-left:6px solid #2d7f83;background:#f7fbfb}.cert{border-left:6px solid #173b63;background:#f4f8fb}.flow{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin:.8rem 0}.flow span{background:#f3f7fa;color:#111;border:1px solid #aac0cf;border-radius:10px;padding:.55rem .7rem;font-weight:800}.bitbox{font-family:ui-monospace,monospace;font-size:1.15rem;letter-spacing:.12em;background:#071c2c;color:#fff;border-radius:12px;padding:.8rem;display:inline-block}.score{background:#f2f7fa;color:#111;border:2px solid #173b63;border-radius:14px;padding:.8rem 1rem;margin-bottom:1rem;font-weight:800}.small{font-size:.92rem}.resource a{font-weight:800}.mission-done{display:none;background:#edf8ee;color:#111;border-left:5px solid #2e7d32;border-radius:12px;padding:1rem;margin-top:1rem}.mission-done.show{display:block}@media(max-width:760px){.m2-grid{grid-template-columns:1fr}}
 
-/* FamilyPD A+ compact mission navigation */
-.page-hero h1{font-size:clamp(2rem,5vw,3.25rem)!important;line-height:1.04}.section-heading h2,.mission-shell h2,.m2 h2,.pi-shell h2{font-size:clamp(1.45rem,3.3vw,2.05rem)!important;line-height:1.16}.mission-card h3,.card h3,.pi-card h3{font-size:1.12rem!important}.mission-nav{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}.mission-nav .button{padding:.72rem 1rem}.resource-strip{background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:16px;padding:.85rem 1rem;margin:1rem 0;display:flex;gap:.55rem;flex-wrap:wrap}.resource-strip strong{width:100%;color:#163f61}.notebook-lab{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:20px;padding:1.15rem;margin-top:1rem}.notebook-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:1rem;align-items:start}.notebook-example{background:#fffdf6;border:2px solid #d9c998;border-radius:16px;padding:1rem}.notebook-example h3{margin-top:0}.notebook-graphic{background:#eef7f7;border-radius:16px;padding:.8rem;overflow:hidden}.notebook-graphic svg{width:100%;height:auto;display:block}.mission-bottom{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(15,48,74,.14)}.button.disabled{opacity:.55;pointer-events:none}.small-note{font-size:.92rem;color:#243746}@media(max-width:760px){.notebook-layout{grid-template-columns:1fr}.page-hero h1{font-size:2rem!important}.section-heading h2,.mission-shell h2,.m2 h2,.pi-shell h2{font-size:1.45rem!important}}
+/* Shared A+ mission navigation */
+.aplus-mission-nav-shell{max-width:1120px;margin:auto}
+.aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
+.aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
+.aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+@media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
 
-</style>
-<style id="familypd-aplus-compact-type-fix">
-/* FamilyPD A+ compact typography: keeps actions readable without letting buttons/headings dominate cards. */
-.aplus-shell .button, .mission-shell .button, .pi-shell .button, .page-hero .button, .mission-nav .button, .resource-strip .button, a.button {
-  font-size: 0.94rem !important; line-height: 1.2 !important; padding: 0.62rem 0.88rem !important; min-height: 0 !important;
-}
-.button.button-small, .mission-nav .button-small, .resource-strip .button-small {font-size:0.88rem !important;padding:0.52rem 0.75rem !important;}
-.page-hero h1 {font-size:clamp(1.85rem,4.2vw,2.65rem)!important;line-height:1.08!important;}
-.section-heading h2,.mission-shell h2,.pi-shell h2 {font-size:clamp(1.35rem,2.8vw,1.8rem)!important;line-height:1.15!important;}
-.mission-card h3,.card h3,.pi-card h3,.resource-card h3 {font-size:clamp(1.08rem,2vw,1.35rem)!important;line-height:1.18!important;}
-@media(max-width:760px){
- .aplus-shell .button,.mission-shell .button,.pi-shell .button,.page-hero .button,.mission-nav .button,.resource-strip .button,a.button{font-size:.88rem!important;padding:.56rem .72rem!important;}
- .button.button-small,.resource-strip .button-small{font-size:.84rem!important;padding:.48rem .66rem!important;}
- .page-hero h1{font-size:1.75rem!important}.section-heading h2,.mission-shell h2,.pi-shell h2{font-size:1.32rem!important}
-}
-</style>
-
-<style id="familypd-aplus-final-button-size">
-/* Compact FamilyPD A+ actions: intentionally overrides shared site button sizing. */
-body.learning-center-page a.button,
-body.learning-center-page button.button,
-.aplus-shell a.button,
-.mission-shell a.button,
-.pi-shell a.button,
-.mission-nav a.button,
-.resource-strip a.button,
-.pi-jump a.button,
-.mission-bottom a.button {
-  font-size: 14px !important;
-  line-height: 1.15 !important;
-  font-weight: 700 !important;
-  padding: 9px 14px !important;
-  min-height: 36px !important;
-  width: auto !important;
-  max-width: 100% !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 10px !important;
-}
-body.learning-center-page a.button.button-small,
-body.learning-center-page button.button.button-small {
-  font-size: 13px !important;
-  padding: 8px 12px !important;
-  min-height: 34px !important;
-}
-@media (max-width: 760px) {
-  body.learning-center-page a.button,
-  body.learning-center-page button.button,
-  .aplus-shell a.button,
-  .mission-shell a.button,
-  .pi-shell a.button,
-  .mission-nav a.button,
-  .resource-strip a.button,
-  .pi-jump a.button,
-  .mission-bottom a.button {
-    font-size: 13px !important;
-    padding: 8px 12px !important;
-    min-height: 34px !important;
-  }
-}
-</style>
-
-
-<style id="familypd-aplus-quick-links">
-.aplus-quick-strip{display:flex;flex-wrap:wrap;gap:.45rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px;padding:.75rem;margin:1rem 0}
-.aplus-quick-strip strong{width:100%;color:#163f61;font-size:.92rem}
-.aplus-quick-strip .button{font-size:13px!important;line-height:1.1!important;padding:8px 11px!important;min-height:33px!important;width:auto!important}
-@media(max-width:620px){.aplus-quick-strip{gap:.35rem}.aplus-quick-strip .button{font-size:12.5px!important;padding:7px 9px!important}}
-</style>
-
-<style id="familypd-aplus-quick-alignment-v2">
-.aplus-quick-strip{
-  display:flex!important;
-  flex-wrap:wrap!important;
-  gap:.42rem!important;
-  align-items:center!important;
-  justify-content:flex-start!important;
-}
-.aplus-quick-strip>strong{
-  flex:0 0 100%!important;
-  margin:0 0 .15rem!important;
-}
-.aplus-quick-strip .button{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  align-self:center!important;
-  margin:0!important;
-  white-space:normal!important;
-}
-</style>
-
-
-<style id="familypd-aplus-layout-type-final">
-/* Keep the A+ quick-link bar aligned with the same content column as each page. */
-.aplus-quick-wrap{
-  width:min(100% - 2rem, 980px);
-  margin:0 auto;
-}
-.aplus-quick-strip{
-  box-sizing:border-box!important;
-  width:100%!important;
-  margin:.8rem 0!important;
-  padding:.65rem .75rem!important;
-  display:grid!important;
-  grid-template-columns:repeat(auto-fit,minmax(105px,max-content))!important;
-  justify-content:start!important;
-  align-items:center!important;
-  gap:.42rem!important;
-}
-.aplus-quick-strip>strong{
-  grid-column:1/-1!important;
-  width:auto!important;
-  margin:0 0 .1rem!important;
-  font-size:.84rem!important;
-  line-height:1.15!important;
-}
-.aplus-quick-strip .button{
-  box-sizing:border-box!important;
-  width:auto!important;
-  min-width:0!important;
-  min-height:32px!important;
-  margin:0!important;
-  padding:7px 10px!important;
-  font-size:12.5px!important;
-  line-height:1.1!important;
-  white-space:nowrap!important;
-}
-
-/* Keep supporting resource headings subordinate to the actual lesson content. */
-.aplus-card h2,
-.resource-card h2,
-.source-box h2,
-.notebook-example h2,
-.pi-card h2{
-  font-size:clamp(1.15rem,1.7vw,1.42rem)!important;
-  line-height:1.18!important;
-  margin:.3rem 0 .65rem!important;
-}
-.aplus-card h3,
-.resource-card h3,
-.mission-card h3,
-.pi-card h3,
-.card h3{
-  font-size:clamp(1rem,1.45vw,1.2rem)!important;
-  line-height:1.2!important;
-}
-.source-box h2{
-  font-size:clamp(1.12rem,1.55vw,1.32rem)!important;
-}
-.aplus-card .aplus-label,
-.aplus-label{
-  font-size:.78rem!important;
-}
-
-/* Landing-page study cards were visually competing with the course itself. */
-.aplus-shell .aplus-grid .aplus-card h2{
-  font-size:clamp(1.2rem,1.75vw,1.48rem)!important;
-}
-
-/* Mission page headings: readable, but not poster-sized. */
-.mission-shell .section-heading h2,
-.m2 .section-heading h2,
-.pi-shell .section-heading h2{
-  font-size:clamp(1.22rem,2vw,1.55rem)!important;
-  line-height:1.2!important;
-}
-.success-check h2{
-  font-size:clamp(1.2rem,1.8vw,1.45rem)!important;
-}
-.page-hero h1{
-  font-size:clamp(1.85rem,3.5vw,2.65rem)!important;
-  line-height:1.08!important;
-}
-
-@media(max-width:700px){
-  .aplus-quick-wrap{width:min(100% - 1.2rem,980px)}
-  .aplus-quick-strip{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    padding:.55rem!important;
-  }
-  .aplus-quick-strip .button{
-    width:100%!important;
-    white-space:normal!important;
-    font-size:12px!important;
-    padding:7px 8px!important;
-  }
-  .page-hero h1{font-size:1.8rem!important}
-  .mission-shell .section-heading h2,
-  .m2 .section-heading h2,
-  .pi-shell .section-heading h2{font-size:1.24rem!important}
-}
-</style>
-
-</head><body class="learning-center-page"><a class="skip-link" href="#main-content">Skip to content</a>
+</style></head><body class="learning-center-page"><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></nav></div></header>
-<main id="main-content"><section class="page-hero"><div class="container m2"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 02</span></nav><p class="eyebrow">CompTIA A+ • Mission 02</p><h1>Inside the Machine</h1><p class="page-lead">Before you replace or upgrade computer parts, understand what the parts do together. Investigate power, data, the motherboard, CPU, RAM, storage, bits and bytes, and safe hardware handling.</p><div class="mission-nav"><a class="button" href="#mission">Begin Mission 02</a><a class="button button-secondary" href="#practice">Practice questions</a><a class="button button-secondary" href="#notebook">Notebook guide</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi 5 lab</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ home</a></div></div></section><div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
-<strong>A+ quick links</strong>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Terms</a>
-<a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
-</div></div>
+<main id="main-content"><section class="page-hero"><div class="container m2"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/learning-center/cybersecurity/">Cybersecurity</a><span>/</span><a href="/learning-center/cybersecurity/aplus/">CompTIA A+</a><span>/</span><span>Mission 02</span></nav><p class="eyebrow">CompTIA A+ • Mission 02</p><h1>Inside the Machine</h1><p class="page-lead">Before you replace or upgrade computer parts, understand what the parts do together. Investigate power, data, the motherboard, CPU, RAM, storage, bits and bytes, and safe hardware handling.</p><div class="aplus-jump"><a class="button" href="#mission">Begin mission</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Open A+ notebook builder</a></div></div></section>
 
-<section class="section section-tinted"><div class="container m2">
-<div class="section-heading"><p class="eyebrow">Mission 02 hands-on system</p><h2>Use a Raspberry Pi 5 to make the hardware concepts real.</h2><p>The Raspberry Pi 5 is part of Mission 02 because it gives you a complete computer you can identify, assemble, boot, inspect, and troubleshoot before moving to the larger desktop PC build.</p></div>
-<div class="m2-grid">
-<article class="card"><h3>Learn first</h3><p>Identify the Pi processor/SoC, soldered LPDDR memory, microSD and other storage options, USB-C power, HDMI, USB, Ethernet, Wi-Fi/Bluetooth, cooling, and GPIO. Compare each part with desktops, laptops, phones, and tablets.</p><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Understand the Raspberry Pi 5</a></article>
-<article class="card"><h3>Then build</h3><p>Use the separate build guide for the physical assembly, boot-media preparation, first startup, verification, and troubleshooting steps. Separating the pages keeps the learning concepts from getting mixed up with the build procedure.</p><a class="button" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Open the Pi 5 build guide</a></article>
-</div></div></section>
-<section class="section" id="mission2-start"><div class="container m2"><div class="success"><h2>Before you begin Mission 02</h2><p>By now, you should have reviewed the full A+ exam objectives, prepared your notebook area, started taking notes, and reviewed the course success information. Keep doing that work while you learn hardware.</p></div><aside class="notebook" style="margin-top:1rem"><h3>📓 Example Mission 02 notebook entry</h3><p><strong>RAM — Random-Access Memory</strong></p><p><strong>Job:</strong> fast, temporary working memory used by active programs and data. <strong>Volatile:</strong> contents are lost when power is removed. <strong>Desktop:</strong> commonly DIMM. <strong>Laptop:</strong> commonly SODIMM. <strong>Exam clue:</strong> several programs open + very little available memory + slowdown → investigate RAM capacity/use before unrelated parts.</p><p><strong>Draw:</strong> a small RAM module and label the contacts/notch. Add “RAM ≠ storage.”</p></aside><div class="pi-card" style="margin-top:1rem"><h3>🥧 Raspberry Pi 5 bridge to the full PC build</h3><p>Use the Pi 5 during this mission as a smaller computer you can inspect, assemble, boot, configure, and troubleshoot before Mission 03's full computer build. Compare its CPU, RAM, storage, power, display, USB, and network connections with the desktop components you are learning.</p><p><strong>Notebook idea:</strong> make a two-column <em>Pi 5 vs. desktop PC</em> comparison. Focus on what performs the same function even when the form factor or connector is different.</p><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Open the Raspberry Pi 5 build/use guide</a></div></div></section>
-<section class="section" id="mission"><div class="container m2"><div class="resource-strip"><strong>Mission tools</strong><a class="button button-small" href="/learning/a-plus-interactive-notebook.html">A+ Notebook Ideaser</a><a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Build Lab</a><a class="button button-small button-secondary" href="http://Wctacyber.org" target="_blank" rel="noopener noreferrer">WCTA Cyber</a></div><div class="section-heading"><p class="eyebrow">Mission briefing</p><h2>Power makes the hardware work. Data gives it something to work on.</h2><p>A computer uses electrical power and electrical signaling, but those ideas are not interchangeable. In this mission you will connect the physical machine to the bits, bytes, files, and speeds you see in A+.</p></div><div class="m2-grid"><article class="card"><h3>Power</h3><p>The power supply converts incoming AC power into regulated DC outputs used by computer hardware. Motherboard voltage-regulation circuitry then provides the voltages required by specific components.</p></article><article class="card"><h3>Data</h3><p>Digital hardware represents information with binary states. A bit is a 0 or 1. Hardware detects valid LOW and HIGH voltage ranges as logic states; the exact thresholds depend on the device and its electrical specification.</p></article></div><aside class="notebook"><h3>📓 Add to your A+ notebook</h3><p>Create a two-flap <strong>POWER / DATA</strong> comparison. Under POWER, write volts, amps, watts, PSU, and DC rails. Under DATA, write bits, bytes, binary, files, storage, and transfer speed.</p><p><strong>Study reason:</strong> When troubleshooting, you need to distinguish a system that is not receiving proper power from a system that has power but cannot correctly process, store, display, or transmit data.</p></aside></div></section>
-<section class="section section-tinted"><div class="container m2"><h2>1. Power is not data</h2><div id="practice"></div><div class="activity" data-answer="b"><h3>Which statement is most accurate?</h3><div class="choices"><button class="choice" data-choice="a">A bit is a small amount of electricity sent by the power supply.</button><button class="choice" data-choice="b">A bit is a binary value represented by a physical state that digital hardware can distinguish.</button><button class="choice" data-choice="c">A byte is the voltage used to power RAM.</button></div><div class="feedback">A bit is information: 0 or 1. Digital circuits use physical states, commonly voltage ranges, to represent those values. A bit is not a unit of electrical power.</div></div>
+<section class="section compact-info-section aplus-mission-nav-section">
+<div class="container aplus-mission-nav-shell">
+<p class="eyebrow">A+ quick navigation</p>
+<nav class="aplus-mission-nav" aria-label="A+ mission quick navigation">
+<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html" data-mission="m1">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html" data-mission="m2" class="current">M2 • Inside the Machine</a>
+<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html" data-mission="m3">M3 • Motherboards &amp; Connectors</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html" data-mission="m4">M4 • Build the PC</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html" data-mission="guide">Practice PC Build Guide</a>
+<a href="/learning/a-plus-interactive-notebook.html">Notebook Builder</a>
+<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
+</nav>
+</div>
+</section>
+
+<section class="section" id="mission"><div class="container m2"><div class="section-heading"><p class="eyebrow">Mission briefing</p><h2>Power makes the hardware work. Data gives it something to work on.</h2><p>A computer uses electrical power and electrical signaling, but those ideas are not interchangeable. In this mission you will connect the physical machine to the bits, bytes, files, and speeds you see in A+.</p></div><div class="m2-grid"><article class="card"><h3>Power</h3><p>The power supply converts incoming AC power into regulated DC outputs used by computer hardware. Motherboard voltage-regulation circuitry then provides the voltages required by specific components.</p></article><article class="card"><h3>Data</h3><p>Digital hardware represents information with binary states. A bit is a 0 or 1. Hardware detects valid LOW and HIGH voltage ranges as logic states; the exact thresholds depend on the device and its electrical specification.</p></article></div><aside class="notebook"><h3>📓 Add to your A+ notebook</h3><p>Create a two-flap <strong>POWER / DATA</strong> comparison. Under POWER, write volts, amps, watts, PSU, and DC rails. Under DATA, write bits, bytes, binary, files, storage, and transfer speed.</p><p><strong>Study reason:</strong> When troubleshooting, you need to distinguish a system that is not receiving proper power from a system that has power but cannot correctly process, store, display, or transmit data.</p></aside></div></section>
+<section class="section section-tinted"><div class="container m2"><h2>1. Power is not data</h2><div class="activity" data-answer="b"><h3>Which statement is most accurate?</h3><div class="choices"><button class="choice" data-choice="a">A bit is a small amount of electricity sent by the power supply.</button><button class="choice" data-choice="b">A bit is a binary value represented by a physical state that digital hardware can distinguish.</button><button class="choice" data-choice="c">A byte is the voltage used to power RAM.</button></div><div class="feedback">A bit is information: 0 or 1. Digital circuits use physical states, commonly voltage ranges, to represent those values. A bit is not a unit of electrical power.</div></div>
 <div class="card cert"><h3>A+ connection</h3><p>Core 1 hardware study includes power supplies, motherboards, CPUs, RAM, storage, connectors, and safe technician tools. Understanding their roles makes hardware installation and troubleshooting questions easier to reason through.</p></div></div></section>
 <section class="section"><div class="container m2"><h2>2. Follow the power</h2><p>Use this simplified model. After the PSU and motherboard, power is distributed to multiple components; it does <strong>not</strong> have to pass through the CPU before reaching RAM or storage.</p><div class="flow"><span>Wall AC</span><b>→</b><span>Power supply</span><b>→</b><span>Motherboard / regulators</span><b>→</b><span>CPU • RAM • storage • cards • fans</span></div><div class="m2-grid"><article class="card"><h3>Voltage (V)</h3><p>Electrical potential difference. PC power supplies commonly provide 12 V, 5 V, and 3.3 V DC rails, while onboard regulators create additional voltages needed by components.</p></article><article class="card"><h3>Current (A)</h3><p>Rate of electric charge flow. A device draws current according to the work it is doing and its electrical design.</p></article><article class="card"><h3>Power (W)</h3><p>Rate of energy use. For a DC load, power relates to voltage and current: <strong>watts = volts × amps</strong>.</p></article><article class="card"><h3>Logic levels</h3><p>Do not memorize one universal voltage for binary 0 and 1. Valid LOW/HIGH thresholds vary by technology, supply voltage, and component datasheet.</p></article></div><aside class="notebook"><h3>📓 Notebook build: V / A / W mini-card</h3><p>Make a lift-up card: <strong>V = electrical potential</strong>, <strong>A = current</strong>, <strong>W = power</strong>, and <strong>W = V × A</strong>. Add a reminder: <em>PSU wattage is capacity, not a tank that stays full.</em></p></aside></div></section>
-<section class="section section-tinted"><div class="container m2"><h2>3. Meet the motherboard</h2><p>The motherboard connects the components and provides pathways for power, data, and control signals.</p><div class="m2-grid"><article class="card"><h3>CPU socket</h3><p>Holds a compatible processor and provides electrical connections between the CPU and motherboard.</p></article><article class="card"><h3>DIMM slots</h3><p>Hold system RAM. Motherboard and CPU specifications determine supported memory type, capacity, speed, and channel configuration.</p></article><article class="card"><h3>PCIe slots</h3><p>High-speed expansion connections for devices such as graphics, network, storage, and other adapter cards.</p></article><article class="card"><h3>Storage connections</h3><p>SATA connects many drives and optical devices. M.2 slots can support devices such as NVMe SSDs depending on the motherboard.</p></article></div><aside class="notebook"><h3>📓 Notebook build: motherboard map</h3><p>Use the FamilyPD <a href="/assets/images/learning/a-plus-notebook/4-pc-hardware.png" target="_blank" rel="noopener">PC Hardware image</a>, draw a motherboard, photograph classroom hardware, or use another accurate image. Label the CPU socket, DIMM slots, PCIe slots, storage connections, and main power connections. Add arrows showing <strong>power</strong> and <strong>data</strong> as different ideas.</p></aside><div class="pi-card" style="margin-top:1rem"><strong>Pi 5 connection:</strong> Locate the Pi 5 processor package, RAM package, microSD storage, USB ports, HDMI connections, GPIO header, Ethernet port, USB-C power input, and cooling solution. Ask: which desktop component serves the same function?</div></div></section>
+<section class="section section-tinted"><div class="container m2"><h2>3. Meet the motherboard</h2><p>The motherboard connects the components and provides pathways for power, data, and control signals.</p><div class="m2-grid"><article class="card"><h3>CPU socket</h3><p>Holds a compatible processor and provides electrical connections between the CPU and motherboard.</p></article><article class="card"><h3>DIMM slots</h3><p>Hold system RAM. Motherboard and CPU specifications determine supported memory type, capacity, speed, and channel configuration.</p></article><article class="card"><h3>PCIe slots</h3><p>High-speed expansion connections for devices such as graphics, network, storage, and other adapter cards.</p></article><article class="card"><h3>Storage connections</h3><p>SATA connects many drives and optical devices. M.2 slots can support devices such as NVMe SSDs depending on the motherboard.</p></article></div><aside class="notebook"><h3>📓 Notebook build: motherboard map</h3><p>Use the FamilyPD <a href="/assets/images/learning/a-plus-notebook/4-pc-hardware.png" target="_blank" rel="noopener">PC Hardware image</a>, draw a motherboard, photograph classroom hardware, or use another accurate image. Label the CPU socket, DIMM slots, PCIe slots, storage connections, and main power connections. Add arrows showing <strong>power</strong> and <strong>data</strong> as different ideas.</p></aside></div></section>
 <section class="section"><div class="container m2"><h2>4. CPU, RAM, and storage: different jobs</h2><div class="m2-grid"><article class="card"><h3>CPU — process</h3><p>Executes instructions and performs calculations. Clock rate, cores, cache, architecture, workload, and other factors affect performance.</p></article><article class="card"><h3>RAM — active workspace</h3><p>Fast, volatile working memory used for data and instructions needed by running processes. Its contents are lost when power is removed.</p></article><article class="card"><h3>Storage — keep it</h3><p>Nonvolatile storage keeps files when power is off. Common A+ examples include HDDs, SATA SSDs, and NVMe SSDs.</p></article><article class="card"><h3>Example: open a saved picture</h3><div class="flow"><span>Storage</span><b>→</b><span>RAM</span><b>→</b><span>CPU</span><b>→</b><span>graphics/display</span></div><p class="small">This is a teaching model. Modern systems can use caching, DMA, integrated graphics, and other optimizations, so real data paths can be more complex.</p></article></div>
 <div class="activity" data-answer="c"><h3>A program is open and actively using data. Where is much of that working data kept temporarily?</h3><div class="choices"><button class="choice" data-choice="a">Power supply</button><button class="choice" data-choice="b">Long-term storage only</button><button class="choice" data-choice="c">RAM</button><button class="choice" data-choice="d">Case fan</button></div><div class="feedback">RAM is the system's fast, temporary working area for active programs and data.</div></div><aside class="notebook"><h3>📓 Notebook build: three-part foldable</h3><p>Create CPU / RAM / STORAGE flaps. Put the job on the outside and key facts underneath. Add a self-test question to each flap, such as “Which one is volatile?” or “Which one keeps files after shutdown?”</p></aside></div></section>
-<section class="section section-tinted"><div class="container m2"><h2>5. Bits become bytes — and bytes become files</h2><p>A bit stores one binary value. Eight bits form one byte. Bytes are grouped into larger units used to describe file and storage capacity.</p><p class="bitbox">01000001</p><p><strong>8 bits = 1 byte.</strong> In ASCII, this byte represents the capital letter A. Text encodings such as Unicode can require different numbers of bytes for different characters.</p><div class="flow"><span>bit</span><b>→</b><span>8 bits = byte</span><b>→</b><span>KB</span><b>→</b><span>MB</span><b>→</b><span>GB</span><b>→</b><span>TB</span></div><div class="m2-grid"><article class="card"><h3>Capacity</h3><p>Storage and memory capacity are commonly described in bytes and larger byte-based units: MB, GB, TB.</p></article><article class="card"><h3>Transfer rate</h3><p>Network speeds are commonly stated in bits per second: Mb/s or Gb/s. File-copy speeds may be shown in bytes per second: MB/s or GB/s.</p></article></div><div class="activity" data-answer="b"><h3>Why does capitalization matter in speed labels?</h3><div class="choices"><button class="choice" data-choice="a">b and B both mean byte.</button><button class="choice" data-choice="b">b means bit; B means byte.</button><button class="choice" data-choice="c">b means binary; B means bandwidth.</button></div><div class="feedback"><strong>b = bit</strong> and <strong>B = byte</strong>. Because 8 bits make 1 byte, 800 Mb/s is a theoretical 100 MB/s before accounting for protocol overhead and other real-world limits.</div></div><aside class="notebook"><h3>📓 Notebook build: bit/byte ladder</h3><p>Make a pull-tab or ladder showing <strong>bit → byte → KB → MB → GB → TB</strong>. Add <strong>b = bit</strong> and <strong>B = byte</strong>. Include one speed conversion you can cover and solve later.</p></aside><div class="pi-card" style="margin-top:1rem"><strong>Pi 5 connection:</strong> After booting Raspberry Pi OS, check memory/storage information and move a file. Connect the visible GB of capacity and transfer activity back to bits, bytes, storage, and working memory.</div></div></section>
-<section class="section"><div class="container m2"><h2>6. Safe hardware handling</h2><div class="m2-grid"><article class="card"><h3>ESD</h3><p>Electrostatic discharge can damage sensitive electronics. Use appropriate ESD controls and handle components by their edges when possible.</p></article><article class="card"><h3>Power safety</h3><p>Shut down and disconnect equipment before internal service when appropriate. Do not open a power supply enclosure; hazardous energy can remain inside.</p></article></div><div class="activity" data-answer="a"><h3>Which is the best practice before installing RAM in a desktop?</h3><div class="choices"><button class="choice" data-choice="a">Power down, disconnect power as appropriate, use ESD precautions, and handle the module by its edges.</button><button class="choice" data-choice="b">Leave the system running so the slot stays energized.</button><button class="choice" data-choice="c">Touch the memory contacts to confirm they are clean.</button></div><div class="feedback">Protect both yourself and the hardware: follow shutdown/power procedures, use ESD precautions, and avoid touching contacts or chips unnecessarily.</div></div><aside class="notebook"><h3>📓 Notebook build: safety pocket</h3><p>Create a small pocket with removable cards: <strong>ESD</strong>, <strong>power</strong>, <strong>tools</strong>, and <strong>handling</strong>. On the back of each card, write one mistake you want to remember not to make.</p></aside><div class="pi-card" style="margin-top:1rem"><strong>Pi 5 connection:</strong> Practice safe handling while installing the Pi in its case/cooling solution and inserting/removing boot media with power disconnected as appropriate. The Pi is real hardware—treat it with the same ESD awareness and careful handling you will use during the PC build.</div></div></section>
+<section class="section section-tinted"><div class="container m2"><h2>5. Bits become bytes — and bytes become files</h2><p>A bit stores one binary value. Eight bits form one byte. Bytes are grouped into larger units used to describe file and storage capacity.</p><p class="bitbox">01000001</p><p><strong>8 bits = 1 byte.</strong> In ASCII, this byte represents the capital letter A. Text encodings such as Unicode can require different numbers of bytes for different characters.</p><div class="flow"><span>bit</span><b>→</b><span>8 bits = byte</span><b>→</b><span>KB</span><b>→</b><span>MB</span><b>→</b><span>GB</span><b>→</b><span>TB</span></div><div class="m2-grid"><article class="card"><h3>Capacity</h3><p>Storage and memory capacity are commonly described in bytes and larger byte-based units: MB, GB, TB.</p></article><article class="card"><h3>Transfer rate</h3><p>Network speeds are commonly stated in bits per second: Mb/s or Gb/s. File-copy speeds may be shown in bytes per second: MB/s or GB/s.</p></article></div><div class="activity" data-answer="b"><h3>Why does capitalization matter in speed labels?</h3><div class="choices"><button class="choice" data-choice="a">b and B both mean byte.</button><button class="choice" data-choice="b">b means bit; B means byte.</button><button class="choice" data-choice="c">b means binary; B means bandwidth.</button></div><div class="feedback"><strong>b = bit</strong> and <strong>B = byte</strong>. Because 8 bits make 1 byte, 800 Mb/s is a theoretical 100 MB/s before accounting for protocol overhead and other real-world limits.</div></div><aside class="notebook"><h3>📓 Notebook build: bit/byte ladder</h3><p>Make a pull-tab or ladder showing <strong>bit → byte → KB → MB → GB → TB</strong>. Add <strong>b = bit</strong> and <strong>B = byte</strong>. Include one speed conversion you can cover and solve later.</p></aside></div></section>
+<section class="section"><div class="container m2"><h2>6. Safe hardware handling</h2><div class="m2-grid"><article class="card"><h3>ESD</h3><p>Electrostatic discharge can damage sensitive electronics. Use appropriate ESD controls and handle components by their edges when possible.</p></article><article class="card"><h3>Power safety</h3><p>Shut down and disconnect equipment before internal service when appropriate. Do not open a power supply enclosure; hazardous energy can remain inside.</p></article></div><div class="activity" data-answer="a"><h3>Which is the best practice before installing RAM in a desktop?</h3><div class="choices"><button class="choice" data-choice="a">Power down, disconnect power as appropriate, use ESD precautions, and handle the module by its edges.</button><button class="choice" data-choice="b">Leave the system running so the slot stays energized.</button><button class="choice" data-choice="c">Touch the memory contacts to confirm they are clean.</button></div><div class="feedback">Protect both yourself and the hardware: follow shutdown/power procedures, use ESD precautions, and avoid touching contacts or chips unnecessarily.</div></div><aside class="notebook"><h3>📓 Notebook build: safety pocket</h3><p>Create a small pocket with removable cards: <strong>ESD</strong>, <strong>power</strong>, <strong>tools</strong>, and <strong>handling</strong>. On the back of each card, write one mistake you want to remember not to make.</p></aside></div></section>
 <section class="section section-tinted"><div class="container m2"><h2>7. Put the pieces together</h2><div class="activity" data-answer="d"><h3>A computer powers on, but opening several applications causes severe slowdown. Storage is healthy and the system has very little available memory. What component should you investigate first?</h3><div class="choices"><button class="choice" data-choice="a">Power cord</button><button class="choice" data-choice="b">Case fan color</button><button class="choice" data-choice="c">Monitor cable</button><button class="choice" data-choice="d">RAM capacity and memory use</button></div><div class="feedback">The evidence points toward memory pressure. A technician should verify RAM capacity, utilization, compatibility, and upgrade options before replacing unrelated hardware.</div></div><div class="score">Knowledge check: <span id="score">0 / 5 complete</span></div><div class="mission-done" id="done"><strong>Mission complete.</strong> You connected electrical power, logic states, bits/bytes, motherboard pathways, CPU, RAM, storage, and safe hardware handling. Keep the notebook pieces: later missions will build on them.</div></div></section>
-
-<section class="section section-tinted" id="notebook"><div class="container m2"><div class="section-heading"><p class="eyebrow">Build your study system</p><h2>What should Mission 02 add to your notebook?</h2><p>Mission 02 is where your notebook should become visual. Focus on what connects, where it connects, what it does, and the clues that help you distinguish similar hardware.</p></div><div class="notebook-layout"><div class="notebook-example"><h3>Example Mission 02 notebook page</h3><p><strong>Title:</strong> Motherboard + CPU / RAM / Storage</p><p><strong>Motherboard:</strong> Main circuit board. Connects hardware through power and data pathways. Label CPU socket, DIMM slots, M.2 slot, SATA ports, PCIe slots, main power connector, and rear I/O.</p><p><strong>CPU:</strong> Executes instructions. Desktop Intel/AMD CPUs are typically socketed and replaceable; Raspberry Pi 5 uses a Broadcom BCM2712 Arm-based SoC soldered to the board.</p><p><strong>RAM:</strong> Temporary/volatile working memory. Desktop systems use replaceable DIMMs; Pi 5 uses soldered LPDDR4X memory.</p><p><strong>Storage:</strong> Keeps data after power is removed. Desktop PCs may use SATA or M.2/NVMe drives; Pi 5 commonly boots from microSD and can use PCIe-connected storage with the appropriate adapter.</p><p><strong>Exam clue:</strong> Learn the connector + purpose together. A+ often describes the job or physical connection instead of simply naming the component.</p><p><strong>Physical add-on:</strong> Tape in a safe short sample of an old cable, create a flap over a connector drawing, or add a removable label card.</p></div><div class="notebook-graphic" aria-label="Motherboard notebook graphic"><svg viewBox="0 0 620 440" role="img"><rect x="35" y="35" width="550" height="355" rx="22" fill="#163f61"/><rect x="90" y="90" width="125" height="105" rx="12" fill="#f4c84a"/><text x="152" y="145" text-anchor="middle" font-size="20" font-weight="700" fill="#17334d">CPU</text><g fill="#5fd1c7"><rect x="260" y="75" width="34" height="175" rx="8"/><rect x="310" y="75" width="34" height="175" rx="8"/></g><text x="302" y="278" text-anchor="middle" font-size="17" fill="#fff">RAM / DIMM</text><rect x="410" y="88" width="120" height="45" rx="8" fill="#fff"/><text x="470" y="116" text-anchor="middle" font-size="16" fill="#163f61">M.2</text><g fill="#d16a2d"><rect x="95" y="280" width="360" height="25" rx="7"/><rect x="95" y="325" width="260" height="25" rx="7"/></g><text x="470" y="298" font-size="16" fill="#fff">PCIe</text><g fill="#8fb3cc"><rect x="470" y="180" width="65" height="25" rx="5"/><rect x="470" y="215" width="65" height="25" rx="5"/><rect x="470" y="250" width="65" height="25" rx="5"/></g><text x="502" y="166" text-anchor="middle" font-size="15" fill="#fff">SATA</text><rect x="55" y="215" width="105" height="40" rx="8" fill="#fff"/><text x="108" y="240" text-anchor="middle" font-size="14" fill="#163f61">24-pin Power</text><text x="45" y="420" font-size="18" font-weight="700" fill="#163f61">Label what it is • what it does • what connects here</text></svg></div></div></div></section>
-<section class="section"><div class="container m2"><div class="m2-grid"><aside class="notebook"><h2>Mission 02 notebook check</h2><p>You do not need every item. Choose pieces that will help <strong>you</strong> study.</p><ul><li>Power vs. Data flap</li><li>V/A/W mini-card</li><li>Annotated motherboard map</li><li>CPU/RAM/Storage foldable</li><li>Bit/byte/capacity ladder</li><li>ESD and safety pocket</li><li>Pi 5 vs. desktop PC comparison</li><li>One missed-question clue from Mission 02 practice</li></ul><p>You may print FamilyPD images, draw them, use another accurate image, use a magazine/catalog cutout, photograph real hardware, attach a safe short piece of an old cable, or build a simple paper mechanism.</p><a class="button" href="/learning/a-plus-interactive-notebook.html">See notebook-building ideas and images</a></aside><aside class="resource"><h2>Community learning resource</h2><p><strong>WCTA Cyber</strong> is an independently created cybersecurity education resource shared by another cybersecurity educator. FamilyPD is linking to the original site so learners can explore the creator's work directly.</p><p><strong>Credit:</strong> WCTA Cyber and its original creator(s). Family Personal Development did not create, reproduce, or claim ownership of this external resource.</p><p class="small"><strong>External resource notice:</strong> The site is independently maintained and may change over time. Follow its instructions, terms, and applicable school or household technology rules.</p><a class="button button-secondary" href="http://Wctacyber.org" target="_blank" rel="noopener noreferrer">Explore WCTA Cyber</a></aside></div></div></section>
-<section class="section section-tinted"><div class="container m2"><div class="resource"><h2>Certification alignment &amp; educational notice</h2><p>This independent FamilyPD activity supports study of CompTIA A+ Core 1 hardware concepts, including motherboards, RAM, storage, power supplies, CPUs, connectors, tools, and hardware troubleshooting. It is a study aid, not an official CompTIA course or exam.</p><p>CompTIA and A+ are trademarks of CompTIA, Inc. Family Personal Development, Inc. is not affiliated with or endorsed by CompTIA unless expressly stated. Certification requirements and objectives can change; learners should compare study materials with the current official CompTIA exam objectives.</p><p><strong>Next:</strong> Return to the <a href="/learning-center/cybersecurity/aplus/">A+ Learning Path</a> and continue building your notebook as new missions are released.</p></div></div></section><section class="section"><div class="container m2"><div class="mission-bottom"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">← Previous: Mission 01</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Acronyms</a><a class="button" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Next: Mission 03 →</a></div></div></section>
-</main>
+<section class="section"><div class="container m2"><div class="m2-grid"><aside class="notebook"><h2>Mission 02 notebook check</h2><p>You do not need every item. Choose pieces that will help <strong>you</strong> study.</p><ul><li>Power vs. Data flap</li><li>V/A/W mini-card</li><li>Annotated motherboard map</li><li>CPU/RAM/Storage foldable</li><li>Bit/byte/capacity ladder</li><li>ESD and safety pocket</li></ul><p>You may print FamilyPD images, draw them, use another accurate image, use a magazine/catalog cutout, photograph real hardware, attach a safe short piece of an old cable, or build a simple paper mechanism.</p><a class="button" href="/learning/a-plus-interactive-notebook.html">See notebook-building ideas and images</a></aside><aside class="resource"><h2>Community learning resource</h2><p><strong>WCTA Cyber</strong> is an independently created cybersecurity education resource shared by another cybersecurity educator. FamilyPD is linking to the original site so learners can explore the creator's work directly.</p><p><strong>Credit:</strong> WCTA Cyber and its original creator(s). Family Personal Development did not create, reproduce, or claim ownership of this external resource.</p><p class="small"><strong>External resource notice:</strong> The site is independently maintained and may change over time. Follow its instructions, terms, and applicable school or household technology rules.</p><a class="button button-secondary" href="http://Wctacyber.org" target="_blank" rel="noopener noreferrer">Explore WCTA Cyber</a></aside></div></div></section>
+<section class="section section-tinted"><div class="container m2"><div class="resource"><h2>Certification alignment &amp; educational notice</h2><p>This independent FamilyPD activity supports study of CompTIA A+ Core 1 hardware concepts, including motherboards, RAM, storage, power supplies, CPUs, connectors, tools, and hardware troubleshooting. It is a study aid, not an official CompTIA course or exam.</p><p>CompTIA and A+ are trademarks of CompTIA, Inc. Family Personal Development, Inc. is not affiliated with or endorsed by CompTIA unless expressly stated. Certification requirements and objectives can change; learners should compare study materials with the current official CompTIA exam objectives.</p><p><strong>Next:</strong> Return to the <a href="/learning-center/cybersecurity/aplus/">A+ Learning Path</a> and continue building your notebook as new missions are released.</p></div></div></section></main>
 <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer><script src="/assets/js/main.js"></script><script>
 (function(){const acts=[...document.querySelectorAll('.activity[data-answer]')];let done=0;const score=document.getElementById('score');acts.forEach(a=>{const ans=a.dataset.answer;let locked=false;a.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{if(locked)return;const ok=btn.dataset.choice===ans;btn.classList.add(ok?'correct':'wrong');const fb=a.querySelector('.feedback');if(ok){locked=true;done++;a.querySelectorAll('.choice').forEach(b=>b.disabled=true);fb.innerHTML='<strong>Correct.</strong> '+fb.innerHTML;}else{fb.innerHTML='<strong>Not quite. Try again.</strong> '+fb.innerHTML;}fb.classList.add('show');score.textContent=done+' / '+acts.length+' complete';if(done===acts.length)document.getElementById('done').classList.add('show');}));});})();
 </script></body></html>

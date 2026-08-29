@@ -29,208 +29,19 @@
 .progress span{display:block;height:100%;width:0;background:#62d5db}
 .mission-complete{display:none;background:#eaf7eb;border-left:5px solid #3b8b40;border-radius:14px;padding:1rem;margin-top:1rem}
 .mission-complete.show{display:block}
-.source-box{background:#f4f8fa;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.2rem}.success-check{background:#fff8e7;border-left:5px solid #d16a2d;border-radius:14px;padding:1rem 1.2rem}.notebook{background:#eef8f8;border-left:5px solid #2d7f83;border-radius:14px;padding:1rem 1.2rem}.exam-tip{background:#f4f1fb;border-left:5px solid #6849a8;border-radius:14px;padding:1rem 1.2rem}.pi-link{background:#eef6ff;border:1px solid #a8c9e8;border-radius:16px;padding:1rem 1.2rem}.mini-check{margin:1rem 0;background:#fff;border:1px solid #c9d9e5;border-radius:16px;padding:1rem}.mini-check button{display:block;width:100%;margin:.45rem 0;padding:.7rem;text-align:left;border:2px solid #c9d9e5;border-radius:10px;background:#fff;font:inherit;cursor:pointer}.mini-check button.good{border-color:#2f7d32;background:#edf8ee}.mini-check button.bad{border-color:#b23a3a;background:#fff0f0}.mini-feedback{display:none;padding:.7rem;margin-top:.5rem;background:#f4f8fa;border-radius:10px}.mini-feedback.show{display:block}
+.source-box{background:#f4f8fa;border:1px solid rgba(15,48,74,.14);border-radius:18px;padding:1.2rem}
 @media(max-width:760px){.mission-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-/* FamilyPD A+ compact mission navigation */
-.page-hero h1{font-size:clamp(2rem,5vw,3.25rem)!important;line-height:1.04}.section-heading h2,.mission-shell h2,.m2 h2,.pi-shell h2{font-size:clamp(1.45rem,3.3vw,2.05rem)!important;line-height:1.16}.mission-card h3,.card h3,.pi-card h3{font-size:1.12rem!important}.mission-nav{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}.mission-nav .button{padding:.72rem 1rem}.resource-strip{background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:16px;padding:.85rem 1rem;margin:1rem 0;display:flex;gap:.55rem;flex-wrap:wrap}.resource-strip strong{width:100%;color:#163f61}.notebook-lab{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:20px;padding:1.15rem;margin-top:1rem}.notebook-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:1rem;align-items:start}.notebook-example{background:#fffdf6;border:2px solid #d9c998;border-radius:16px;padding:1rem}.notebook-example h3{margin-top:0}.notebook-graphic{background:#eef7f7;border-radius:16px;padding:.8rem;overflow:hidden}.notebook-graphic svg{width:100%;height:auto;display:block}.mission-bottom{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(15,48,74,.14)}.button.disabled{opacity:.55;pointer-events:none}.small-note{font-size:.92rem;color:#243746}@media(max-width:760px){.notebook-layout{grid-template-columns:1fr}.page-hero h1{font-size:2rem!important}.section-heading h2,.mission-shell h2,.m2 h2,.pi-shell h2{font-size:1.45rem!important}}
+/* Shared A+ mission navigation */
+.aplus-mission-nav-shell{max-width:1120px;margin:auto}
+.aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
+.aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
+.aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+@media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
 
 </style>
-
-<style id="familypd-aplus-compact-type-fix">
-/* FamilyPD A+ compact typography: keeps actions readable without letting buttons/headings dominate cards. */
-.aplus-shell .button, .mission-shell .button, .pi-shell .button, .page-hero .button, .mission-nav .button, .resource-strip .button, a.button {
-  font-size: 0.94rem !important; line-height: 1.2 !important; padding: 0.62rem 0.88rem !important; min-height: 0 !important;
-}
-.button.button-small, .mission-nav .button-small, .resource-strip .button-small {font-size:0.88rem !important;padding:0.52rem 0.75rem !important;}
-.page-hero h1 {font-size:clamp(1.85rem,4.2vw,2.65rem)!important;line-height:1.08!important;}
-.section-heading h2,.mission-shell h2,.pi-shell h2 {font-size:clamp(1.35rem,2.8vw,1.8rem)!important;line-height:1.15!important;}
-.mission-card h3,.card h3,.pi-card h3,.resource-card h3 {font-size:clamp(1.08rem,2vw,1.35rem)!important;line-height:1.18!important;}
-@media(max-width:760px){
- .aplus-shell .button,.mission-shell .button,.pi-shell .button,.page-hero .button,.mission-nav .button,.resource-strip .button,a.button{font-size:.88rem!important;padding:.56rem .72rem!important;}
- .button.button-small,.resource-strip .button-small{font-size:.84rem!important;padding:.48rem .66rem!important;}
- .page-hero h1{font-size:1.75rem!important}.section-heading h2,.mission-shell h2,.pi-shell h2{font-size:1.32rem!important}
-}
-</style>
-
-<style id="familypd-aplus-final-button-size">
-/* Compact FamilyPD A+ actions: intentionally overrides shared site button sizing. */
-body.learning-center-page a.button,
-body.learning-center-page button.button,
-.aplus-shell a.button,
-.mission-shell a.button,
-.pi-shell a.button,
-.mission-nav a.button,
-.resource-strip a.button,
-.pi-jump a.button,
-.mission-bottom a.button {
-  font-size: 14px !important;
-  line-height: 1.15 !important;
-  font-weight: 700 !important;
-  padding: 9px 14px !important;
-  min-height: 36px !important;
-  width: auto !important;
-  max-width: 100% !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 10px !important;
-}
-body.learning-center-page a.button.button-small,
-body.learning-center-page button.button.button-small {
-  font-size: 13px !important;
-  padding: 8px 12px !important;
-  min-height: 34px !important;
-}
-@media (max-width: 760px) {
-  body.learning-center-page a.button,
-  body.learning-center-page button.button,
-  .aplus-shell a.button,
-  .mission-shell a.button,
-  .pi-shell a.button,
-  .mission-nav a.button,
-  .resource-strip a.button,
-  .pi-jump a.button,
-  .mission-bottom a.button {
-    font-size: 13px !important;
-    padding: 8px 12px !important;
-    min-height: 34px !important;
-  }
-}
-</style>
-
-
-<style id="familypd-aplus-quick-links">
-.aplus-quick-strip{display:flex;flex-wrap:wrap;gap:.45rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px;padding:.75rem;margin:1rem 0}
-.aplus-quick-strip strong{width:100%;color:#163f61;font-size:.92rem}
-.aplus-quick-strip .button{font-size:13px!important;line-height:1.1!important;padding:8px 11px!important;min-height:33px!important;width:auto!important}
-@media(max-width:620px){.aplus-quick-strip{gap:.35rem}.aplus-quick-strip .button{font-size:12.5px!important;padding:7px 9px!important}}
-</style>
-
-<style id="familypd-aplus-quick-alignment-v2">
-.aplus-quick-strip{
-  display:flex!important;
-  flex-wrap:wrap!important;
-  gap:.42rem!important;
-  align-items:center!important;
-  justify-content:flex-start!important;
-}
-.aplus-quick-strip>strong{
-  flex:0 0 100%!important;
-  margin:0 0 .15rem!important;
-}
-.aplus-quick-strip .button{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  align-self:center!important;
-  margin:0!important;
-  white-space:normal!important;
-}
-</style>
-
-
-<style id="familypd-aplus-layout-type-final">
-/* Keep the A+ quick-link bar aligned with the same content column as each page. */
-.aplus-quick-wrap{
-  width:min(100% - 2rem, 980px);
-  margin:0 auto;
-}
-.aplus-quick-strip{
-  box-sizing:border-box!important;
-  width:100%!important;
-  margin:.8rem 0!important;
-  padding:.65rem .75rem!important;
-  display:grid!important;
-  grid-template-columns:repeat(auto-fit,minmax(105px,max-content))!important;
-  justify-content:start!important;
-  align-items:center!important;
-  gap:.42rem!important;
-}
-.aplus-quick-strip>strong{
-  grid-column:1/-1!important;
-  width:auto!important;
-  margin:0 0 .1rem!important;
-  font-size:.84rem!important;
-  line-height:1.15!important;
-}
-.aplus-quick-strip .button{
-  box-sizing:border-box!important;
-  width:auto!important;
-  min-width:0!important;
-  min-height:32px!important;
-  margin:0!important;
-  padding:7px 10px!important;
-  font-size:12.5px!important;
-  line-height:1.1!important;
-  white-space:nowrap!important;
-}
-
-/* Keep supporting resource headings subordinate to the actual lesson content. */
-.aplus-card h2,
-.resource-card h2,
-.source-box h2,
-.notebook-example h2,
-.pi-card h2{
-  font-size:clamp(1.15rem,1.7vw,1.42rem)!important;
-  line-height:1.18!important;
-  margin:.3rem 0 .65rem!important;
-}
-.aplus-card h3,
-.resource-card h3,
-.mission-card h3,
-.pi-card h3,
-.card h3{
-  font-size:clamp(1rem,1.45vw,1.2rem)!important;
-  line-height:1.2!important;
-}
-.source-box h2{
-  font-size:clamp(1.12rem,1.55vw,1.32rem)!important;
-}
-.aplus-card .aplus-label,
-.aplus-label{
-  font-size:.78rem!important;
-}
-
-/* Landing-page study cards were visually competing with the course itself. */
-.aplus-shell .aplus-grid .aplus-card h2{
-  font-size:clamp(1.2rem,1.75vw,1.48rem)!important;
-}
-
-/* Mission page headings: readable, but not poster-sized. */
-.mission-shell .section-heading h2,
-.m2 .section-heading h2,
-.pi-shell .section-heading h2{
-  font-size:clamp(1.22rem,2vw,1.55rem)!important;
-  line-height:1.2!important;
-}
-.success-check h2{
-  font-size:clamp(1.2rem,1.8vw,1.45rem)!important;
-}
-.page-hero h1{
-  font-size:clamp(1.85rem,3.5vw,2.65rem)!important;
-  line-height:1.08!important;
-}
-
-@media(max-width:700px){
-  .aplus-quick-wrap{width:min(100% - 1.2rem,980px)}
-  .aplus-quick-strip{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    padding:.55rem!important;
-  }
-  .aplus-quick-strip .button{
-    width:100%!important;
-    white-space:normal!important;
-    font-size:12px!important;
-    padding:7px 8px!important;
-  }
-  .page-hero h1{font-size:1.8rem!important}
-  .mission-shell .section-heading h2,
-  .m2 .section-heading h2,
-  .pi-shell .section-heading h2{font-size:1.24rem!important}
-}
-</style>
-
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -241,38 +52,51 @@ body.learning-center-page button.button.button-small {
 <p class="eyebrow">CompTIA A+ • Mission 01</p>
 <h1>Your First Shift</h1>
 <p class="page-lead"><strong>Role:</strong> Junior IT Support Specialist. You are three minutes into your first shift when the first ticket arrives. Your job is not to randomly try fixes. Ask, observe, test, verify, and document.</p>
-<div class="mission-nav"><a class="button" href="#briefing">Begin Mission 01</a><a class="button button-secondary" href="#practice">Practice questions</a><a class="button button-secondary" href="#notebook">Notebook guide</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">More practice</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Acronym reference</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">A+ home</a></div>
-</div></section><div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
-<strong>A+ quick links</strong>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Terms</a>
-<a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
-</div></div>
+<div class="cyber-jump"><a class="button" href="#briefing">Begin mission</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-technician-case-file.html">Open the Technician Case File</a></div>
+</div></section>
+
+<section class="section compact-info-section aplus-mission-nav-section">
+<div class="container aplus-mission-nav-shell">
+<p class="eyebrow">A+ quick navigation</p>
+<nav class="aplus-mission-nav" aria-label="A+ mission quick navigation">
+<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html" data-mission="m1" class="current">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html" data-mission="m2">M2 • Inside the Machine</a>
+<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html" data-mission="m3">M3 • Motherboards &amp; Connectors</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html" data-mission="m4">M4 • Build the PC</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html" data-mission="guide">Practice PC Build Guide</a>
+<a href="/learning/a-plus-interactive-notebook.html">Notebook Builder</a>
+<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
+</nav>
+</div>
+</section>
+
 
 <section class="section" id="briefing"><div class="container mission-shell">
-<div class="success-check"><p class="eyebrow">Before Mission 01</p><h2>A+ Success Check</h2><p>You are not expected to know every answer yet. You <strong>are</strong> expected to know what you are preparing for and to build study habits now.</p><ul><li>Reviewed the complete CompTIA A+ Core 1 and Core 2 exam objectives so you know the destination.</li><li>Prepared an A+ notebook area with room for diagrams, comparisons, commands, troubleshooting clues, and missed-question notes.</li><li>Started taking notes instead of waiting until exam week.</li><li>Reviewed the course success information, certification pathway, study expectations, and available learning resources.</li><li>Started asking: <em>How could this appear in a scenario? What clue would separate the correct answer from a tempting wrong answer?</em></li></ul></div>
-<div class="resource-strip"><strong>Mission tools</strong><a class="button button-small" href="/learning-center/cybersecurity/aplus/mission-01-technician-case-file.html">Technician Case File</a><a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">A+ Notebook Ideaser</a><a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice &amp; External Resources</a><a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">Terms Reference</a></div><div class="section-heading" style="margin-top:1.4rem"><p class="eyebrow">Mission briefing • Module 1</p><h2>What does an IT specialist actually do?</h2><p>CompTIA Module 1 begins with a simple idea: IT support is a problem-solving job. The daily routine can change constantly because different users, systems, devices, and organizations use technology differently.</p></div>
-<div class="mission-grid"><article class="mission-card"><h3>Problem solver</h3><p>An IT specialist receives problems that may involve hardware, software, accounts, networks, printers, mobile devices, cloud services, security, or user configuration. Your first responsibility is to understand the problem before trying to fix it.</p></article><article class="mission-card"><h3>Range of responsibilities</h3><p>There may be no single predictable routine. One request may involve email, the next a disconnected server, and the next a device that will not power on. Broad knowledge and the ability to learn are part of the job.</p></article><article class="mission-card"><h3>Communication</h3><p>Written and oral communication both matter. Ask useful questions, listen to the user, explain what you are doing, and write notes another technician can understand. Technical skill without clear communication can still produce poor support.</p></article><article class="mission-card"><h3>Organization</h3><p>A clean workspace makes tools and parts easier to locate and reduces mistakes. Mental organization matters too: arrange your evidence and thoughts before communicating findings to users or other stakeholders.</p></article><article class="mission-card"><h3>Technical knowledge</h3><p>A+ develops knowledge across <strong>hardware, software and operating systems, networking, cloud, security, and troubleshooting</strong>. You do not need to memorize everything today; you need to build connections as the course progresses.</p></article><article class="mission-card"><h3>Certifications</h3><p>Certification preparation gives you a defined body of knowledge and a way to demonstrate technical readiness. Use the exam objectives as a checklist—not as something to discover a week before the exam.</p></article></div>
-<aside class="notebook" style="margin-top:1rem"><h3>📓 Example Mission 01 notebook entry</h3><p><strong>IT Specialist = problem solver + communicator + organized learner.</strong></p><p><strong>Skills:</strong> problem solving; written/oral communication; organization; hardware; software/OS; networking; cloud; security.</p><p><strong>My exam clue:</strong> If a scenario gives symptoms, do not jump to the biggest repair. Gather evidence, isolate the scope, question the obvious, then choose the BEST next action.</p><p><strong>Draw:</strong> a small six-step troubleshooting arrow or flow. Under it, leave room for examples you miss in practice.</p></aside>
-<aside class="exam-tip" style="margin-top:1rem"><h3>🎯 A+ exam habit</h3><p>Watch for words such as <strong>BEST, FIRST, NEXT, MOST likely</strong>. Those words tell you the question is testing judgment, not only vocabulary. Read the final sentence first, identify what the question is asking, then use the scenario clues.</p></aside>
+<div class="section-heading"><p class="eyebrow">Mission briefing</p><h2>What does an IT specialist do?</h2><p>The job changes from ticket to ticket, but strong technicians rely on the same core habits.</p></div>
+<div class="mission-grid">
+<article class="mission-card"><h3>Problem solving</h3><p>Identify what is actually wrong, gather evidence, isolate causes, and choose an appropriate response.</p></article>
+<article class="mission-card"><h3>Communication</h3><p>Listen carefully, ask useful questions, explain clearly, and document information so others can understand it.</p></article>
+<article class="mission-card"><h3>Organization</h3><p>Keep tools, parts, notes, and work areas organized so support work can be performed safely and efficiently.</p></article>
+<article class="mission-card"><h3>Technical knowledge</h3><p>Build broad knowledge across hardware, software, operating systems, networking, cloud technologies, security, and troubleshooting.</p></article>
+</div>
 </div></section>
+
 <section class="section section-tinted"><div class="container mission-shell">
-<div class="section-heading"><p class="eyebrow">Lesson 1.2 • Troubleshooting methodology</p><h2>Use a consistent process when the answer is not obvious.</h2><p>Before choosing a fix, determine the cause, symptoms, consequences, priority, and severity. Critical systems and severe issues may need attention before lower-impact problems.</p></div>
+<div class="section-heading"><p class="eyebrow">Technician method</p><h2>Use a consistent troubleshooting process.</h2><p>The instructor-provided CompTIA Module 1 material teaches a repeatable best-practice methodology for approaching unfamiliar problems.</p></div>
 <div class="steps"><div>1<br/>Identify</div><div>2<br/>Theory</div><div>3<br/>Test</div><div>4<br/>Plan &amp; Fix</div><div>5<br/>Verify</div><div>6<br/>Document</div></div>
-<div class="mission-grid"><article class="mission-card"><h3>1. Identify the problem</h3><p>Gather information from the user. Capture exact error messages or sounds, determine who else is affected, how long the issue has occurred, and what changed recently. Before risky work, protect critical information with an appropriate backup or verify that the responsible person has done so.</p></article><article class="mission-card"><h3>2. Establish a theory</h3><p>Research when appropriate, physically inspect the system, and reproduce the problem when safe and useful. Decide whether evidence points toward hardware, software, a physical issue, or a logical/configuration issue.</p></article><article class="mission-card"><h3>3. Test the theory</h3><p>Test theories individually so you know what the evidence actually proves. Do not change five things at once and then guess which one fixed the problem.</p></article><article class="mission-card"><h3>Question the obvious</h3><p>Check simple causes: power, plugs, cables, switches, input source, Wi-Fi state, mute settings, or other basic configuration. A simple cause can produce a dramatic symptom.</p></article><article class="mission-card"><h3>New theory or escalate</h3><p>If the first theory fails, use the new evidence to form another. Escalate when the issue is beyond your skill or knowledge, or outside your authorization because of policy, warranty, or scope.</p></article><article class="mission-card"><h3>4. Plan and implement</h3><p>After identifying the cause, choose an authorized solution. Consider risk, policy, warranty, cost, downtime, user impact, and whether a workaround is needed before making the change.</p></article><article class="mission-card"><h3>5. Verify full functionality</h3><p>Do not stop because the original symptom disappeared. Confirm the solution resolved the issue, make sure the full system works, and implement reasonable preventive measures when appropriate.</p></article><article class="mission-card"><h3>6. Document</h3><p>Record findings, actions, outcomes, parts used (including useful cost/purchase information), steps taken, software or physical tools used, and lessons learned. Good notes help the next technician and your future self.</p></article></div>
-<aside class="exam-tip" style="margin-top:1rem"><h3>Important certification note</h3><p>For the current A+ 220-1200 series, CompTIA identifies this troubleshooting methodology as an important best practice, but the <strong>methodology itself is not a formal tested objective</strong>. Troubleshooting is still a major part of the job and Core 1: <strong>Hardware and Network Troubleshooting is 28%</strong> of the exam. Learn the process because it helps you solve the scenario questions that are tested.</p></aside>
-<aside class="pi-link" style="margin-top:1rem"><h3>🥧 Coming in Mission 02: Raspberry Pi 5</h3><p>Mission 02 adds hands-on Raspberry Pi 5 work so you can connect motherboard, processor, memory, storage, power, ports, operating systems, Linux, and networking to a real computer before the full desktop build.</p><p>If you are exploring independently, the Pi learning and build pages are always available from the A+ quick links above.</p><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Continue to Mission 02</a></aside>
-<aside class="notebook" style="margin-top:1rem"><h3>📓 What to add now</h3><p>Create a troubleshooting quick-reference page. Include the six steps, a box labeled <strong>QUESTION THE OBVIOUS</strong>, and an <strong>ESCALATE WHEN...</strong> box. Under each step, add one example from a practice ticket or a real troubleshooting situation you observe.</p><p><strong>Do not copy the whole page.</strong> Your notebook should become your memory system: diagrams, differences, clues, mistakes, and facts you personally need to remember.</p></aside>
+<div class="mission-grid">
+<article class="mission-card"><h3>Identify the problem</h3><p>Gather exact symptoms and error messages. Ask who is affected, when it began, and what changed recently. Protect important data before risky repair work.</p></article>
+<article class="mission-card"><h3>Establish a theory</h3><p>Inspect the system, reproduce the issue when appropriate, consult documentation, and consider likely causes—including obvious ones.</p></article>
+<article class="mission-card"><h3>Test the theory</h3><p>Test one theory at a time so the evidence can confirm or reject your cause. If needed, create a new theory or escalate.</p></article>
+<article class="mission-card"><h3>Plan and implement</h3><p>Choose an authorized repair, replacement, or workaround. Consider policy, warranty, cost, risk, and the effect on the user.</p></article>
+<article class="mission-card"><h3>Verify functionality</h3><p>Confirm the original issue is resolved and the system is fully functional. Apply sensible preventive measures when appropriate.</p></article>
+<article class="mission-card"><h3>Document</h3><p>Record findings, actions, outcomes, tools or parts used, and lessons learned so the work can be understood later.</p></article>
+</div>
+<aside class="cyber-disclaimer" style="margin-top:1rem"><h2>Question the obvious.</h2><p>Power, cables, input sources, Wi-Fi switches, airplane mode, muted audio, and simple settings can create symptoms that look much more serious. Check simple, safe causes before replacing major hardware.</p></aside>
 </div></section>
+
 <section class="section"><div class="container mission-shell">
 <div class="section-heading"><p class="eyebrow">Support queue</p><h2>Choose the BEST next action.</h2><p>After each choice, explain your reasoning on the Technician Case File.</p></div>
 <div class="score"><strong>Ticket score: <span id="score">0 / 0</span></strong><div class="progress"><span id="progress"></span></div></div>
@@ -330,24 +154,13 @@ body.learning-center-page button.button.button-small {
 <div class="mission-complete" id="missionComplete"><h3>Queue complete.</h3><p>Your score: <strong id="finalScore"></strong>. Now finish the Technician Case File by explaining why each action belonged at that point in the troubleshooting process.</p><a class="button" href="/learning-center/cybersecurity/aplus/mission-01-technician-case-file.html">Open the Case File</a></div>
 </div></section>
 
-<section class="section section-tinted"><div class="container mission-shell"><div class="section-heading"><p class="eyebrow">Module 1 certification practice</p><h2>Check the ideas from the presentation.</h2><p>These are original FamilyPD practice questions aligned to the concepts in Module 1—not CompTIA exam questions.</p></div>
-<div id="practice"></div><div class="mini-check" data-mini="b"><h3>1. A user says, “The internet is down.” What information is MOST useful first?</h3><button data-v="a">Replace the router.</button><button data-v="b">Ask who is affected, when it started, and what changed.</button><button data-v="c">Reinstall the operating system.</button><div class="mini-feedback">Correct: first define the problem and its scope. One affected device suggests a different path than an organization-wide outage.</div></div>
-<div class="mini-check" data-mini="c"><h3>2. Your first theory does not match the evidence. What should you do NEXT?</h3><button data-v="a">Implement the original fix anyway.</button><button data-v="b">Close the ticket.</button><button data-v="c">Establish a new theory or escalate if the issue is outside your ability or authority.</button><div class="mini-feedback">Correct: failed theories are useful evidence. Adjust the theory or escalate appropriately.</div></div>
-<div class="mini-check" data-mini="a"><h3>3. A device is under a warranty that prohibits you from opening it. You know how to repair it. What is the BEST action?</h3><button data-v="a">Document the findings and follow the approved escalation/warranty process.</button><button data-v="b">Open it because technical knowledge overrides policy.</button><button data-v="c">Ask the user to open it.</button><div class="mini-feedback">Correct: authorization, policy, warranty, and scope are part of professional support.</div></div>
-<div class="mini-check" data-mini="b"><h3>4. The original symptom disappears after a change. What must happen before closure?</h3><button data-v="a">Nothing; the symptom is gone.</button><button data-v="b">Verify full functionality, consider prevention, and document the result.</button><button data-v="c">Replace the component anyway.</button><div class="mini-feedback">Correct: symptom removal is not enough. Verify the system and document the work.</div></div>
-<div class="mini-check" data-mini="c"><h3>5. Which set BEST represents the broad technical knowledge highlighted for an IT specialist?</h3><button data-v="a">Only hardware and printers.</button><button data-v="b">Only programming and databases.</button><button data-v="c">Hardware, software/OS, networking, cloud, and security.</button><div class="mini-feedback">Correct: A+ develops broad support knowledge across these areas.</div></div>
-<aside class="notebook"><h3>📓 Missed-question rule</h3><p>For every question you miss, add <strong>one line</strong> to your notebook: <em>What clue did I miss?</em> Example: “Only one user affected → isolate the client before assuming a network-wide outage.” This is more valuable than copying the entire question.</p></aside>
-</div></section>
-
-<section class="section section-tinted" id="notebook"><div class="container mission-shell"><div class="section-heading"><p class="eyebrow">Build your study system</p><h2>What should Mission 01 add to your A+ notebook?</h2><p>Your notebook should help Future You recognize exam clues quickly. Do not copy every paragraph. Capture the ideas, decisions, and visual cues you need to remember.</p></div><div class="notebook-layout"><div class="notebook-example"><h3>Example Mission 01 notebook page</h3><p><strong>Title:</strong> IT Specialist + Troubleshooting Mindset</p><p><strong>Key idea:</strong> An IT specialist is a problem solver, communicator, organized learner, and technician who works across hardware, software/OS, networking, cloud, and security.</p><p><strong>Troubleshooting flow:</strong> Identify → Theory → Test → Plan/Implement → Verify → Document.</p><p><strong>Exam clues:</strong> Circle or highlight words such as <em>FIRST, NEXT, BEST, MOST likely</em>. Note that a scenario may be testing judgment rather than a definition.</p><p><strong>Missed-question note:</strong> Write the clue you missed—not the whole question. Example: “User says issue started after a change → ask what changed before replacing hardware.”</p><p><strong>Add a real example:</strong> After using the Raspberry Pi 5, record one symptom, one theory you tested, what fixed it, and how you verified the result.</p></div><div class="notebook-graphic" aria-label="Example notebook layout graphic"><svg viewBox="0 0 620 440" role="img"><rect x="20" y="20" width="280" height="400" rx="18" fill="#fffdf6" stroke="#163f61" stroke-width="4"/><rect x="320" y="20" width="280" height="400" rx="18" fill="#fffdf6" stroke="#163f61" stroke-width="4"/><line x1="310" y1="35" x2="310" y2="405" stroke="#d16a2d" stroke-width="5"/><text x="45" y="65" font-size="25" font-weight="700" fill="#163f61">MISSION 01</text><text x="45" y="102" font-size="19" fill="#222">IT Specialist</text><text x="45" y="135" font-size="17" fill="#222">• Problem solver</text><text x="45" y="165" font-size="17" fill="#222">• Communicator</text><text x="45" y="195" font-size="17" fill="#222">• Organized</text><text x="45" y="225" font-size="17" fill="#222">• Technical learner</text><rect x="45" y="260" width="220" height="110" rx="12" fill="#eef7f7"/><text x="60" y="292" font-size="17" font-weight="700" fill="#163f61">EXAM CLUE</text><text x="60" y="322" font-size="15" fill="#222">FIRST / NEXT / BEST</text><text x="60" y="349" font-size="15" fill="#222">Gather evidence first.</text><text x="345" y="65" font-size="23" font-weight="700" fill="#163f61">Troubleshooting Flow</text><g fill="#2d7f83"><rect x="350" y="95" width="200" height="40" rx="10"/><rect x="350" y="150" width="200" height="40" rx="10"/><rect x="350" y="205" width="200" height="40" rx="10"/><rect x="350" y="260" width="200" height="40" rx="10"/><rect x="350" y="315" width="200" height="40" rx="10"/></g><g fill="#fff" font-size="15" font-weight="700" text-anchor="middle"><text x="450" y="121">Identify</text><text x="450" y="176">Theory + Test</text><text x="450" y="231">Plan + Implement</text><text x="450" y="286">Verify</text><text x="450" y="341">Document</text></g><text x="345" y="390" font-size="15" fill="#222">Add your own examples →</text></svg></div></div></div></section>
 <section class="section"><div class="container mission-shell">
 <div class="source-box"><h2>Sources, alignment &amp; credit</h2>
-<p><strong>Primary source used for this lesson:</strong> CompTIA A+ 220-1201 Module 1 presentation, “What Does an IT Specialist Do?” including Lesson 1.1 “The Hero of Problem Solving” and Lesson 1.2 “The Troubleshooting Methodology,” © CompTIA, Inc.</p>
+<p><strong>Primary source used for this lesson:</strong> instructor-provided CompTIA A+ 220-1201 Module 1 materials, including “What Does an IT Specialist Do?” and “The Troubleshooting Methodology,” © CompTIA, Inc.</p>
 <p><strong>Certification alignment:</strong> CompTIA A+ Core 1 (220-1201) V15 Exam Objectives and Core 2 (220-1202) V15 Exam Objectives.</p>
 <p>This page uses independently written FamilyPD explanations, scenarios, interface design, and practice questions. It does not reproduce CompTIA exam questions or the supplied presentation slides.</p>
 <p>CompTIA and A+ are trademarks of CompTIA, Inc. Family Personal Development, Inc. is not affiliated with or endorsed by CompTIA unless expressly stated.</p></div>
 </div></section>
-<section class="section"><div class="container mission-shell"><div class="mission-bottom"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/">← Back to A+ Home</a><a class="button" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Next: Mission 02 →</a></div></div></section>
 </main>
 <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
 <script src="/assets/js/main.js"></script>
@@ -378,7 +191,6 @@ body.learning-center-page button.button.button-small {
       });
     });
   });
-document.querySelectorAll('.mini-check').forEach(function(q){q.querySelectorAll('button[data-v]').forEach(function(b){b.addEventListener('click',function(){if(q.dataset.done)return;q.dataset.done='1';var ok=b.dataset.v===q.dataset.mini;b.classList.add(ok?'good':'bad');if(!ok){var r=q.querySelector('[data-v="'+q.dataset.mini+'"]');if(r)r.classList.add('good');}q.querySelectorAll('button[data-v]').forEach(function(x){x.disabled=true});q.querySelector('.mini-feedback').classList.add('show');});});});
 })();
 </script>
 </body></html>

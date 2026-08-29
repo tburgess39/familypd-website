@@ -17,7 +17,7 @@
 .cardx h3{margin:.15rem 0 .45rem;color:#163f61}
 .step{display:grid;grid-template-columns:54px 1fr;gap:.8rem;align-items:start;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:17px;padding:1rem;margin:.7rem 0}
 .stepnum{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:#fff;font-weight:900;font-size:1.05rem}
-.safety{background:#071c2c;color:#fff;border-radius:20px;padding:1.25rem}.safety h2,.safety h3,.safety p,.safety strong{color:#fff!important}
+.safety{background:#071c2c;color:#fff;border-radius:20px;padding:1.25rem}.safety h2,.safety h3,.safety p,.safety strong,.safety li,.safety .eyebrow{color:#fff!important}
 .stop{border:2px solid #b42318;background:#fff4f2;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
 .go{border:2px solid #247449;background:#f1fbf5;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
 .examtip{border-left:5px solid #d39222;background:#fff7df;border-radius:12px;padding:.85rem 1rem;margin:.75rem 0}
@@ -39,6 +39,18 @@
 @media(max-width:850px){.m4-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.m4-grid,.checkgrid{grid-template-columns:1fr}.step{grid-template-columns:44px 1fr}}
 @media print{.site-header,.site-footer,.quick-nav,.aplus-actions,.choice{display:none!important}}
+
+/* Shared A+ mission navigation */
+.aplus-mission-nav-shell{max-width:1120px;margin:auto}
+.aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
+.aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
+.aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+@media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
+
+.safety p,.safety strong,.safety li,.safety .eyebrow{color:#fff!important}
+
 </style>
 </head>
 <body class="learning-center-page">
@@ -53,22 +65,29 @@
 <div class="aplus-actions"><a class="button" href="#safety">Start with safety</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html">Practice PC Build Guide</a><a class="button button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook builder</a></div>
 </div></section>
 
+<section class="section compact-info-section aplus-mission-nav-section">
+<div class="container aplus-mission-nav-shell">
+<p class="eyebrow">A+ quick navigation</p>
+<nav class="aplus-mission-nav" aria-label="A+ mission quick navigation">
+<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html" data-mission="m1">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html" data-mission="m2">M2 • Inside the Machine</a>
+<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html" data-mission="m3">M3 • Motherboards &amp; Connectors</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html" data-mission="m4" class="current">M4 • Build the PC</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html" data-mission="guide">Practice PC Build Guide</a>
+<a href="/learning/a-plus-interactive-notebook.html">Notebook Builder</a>
+<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
+</nav>
+</div>
+</section>
+
+
 <section class="section compact-info-section"><div class="container m4-shell">
 <div class="examtip"><strong>About the Practice PC Build Guide:</strong> this is a learning checklist and documentation guide for your classroom PC build. It is <strong>not</strong> a customer work order, repair request, or ticket. Use it to slow down, verify each step, and capture evidence of what you installed.</div>
 </div></section>
 
-<section class="section compact-info-section"><div class="container m4-shell">
-<p class="eyebrow">A+ quick navigation</p>
-<nav class="quick-nav" aria-label="A+ quick navigation">
-<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
-<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">M1 • First Shift</a>
-<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">M2 • Inside Machine</a>
-<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html">M3 • Motherboards</a>
-<a class="current" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">M4 • Build PC</a>
-<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
-<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
-</nav>
-</div></section>
+
 
 <section class="section"><div class="container m4-shell">
 <div class="section-heading"><p class="eyebrow">Mission outcomes</p><h2>What you should be able to do by the end.</h2></div>

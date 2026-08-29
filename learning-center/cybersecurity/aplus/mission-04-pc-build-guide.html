@@ -22,6 +22,16 @@ textarea{min-height:70px;resize:vertical}
 .memory{border-left:5px solid #d39222;background:#fff7df;border-radius:10px;padding:.75rem 1rem}
 @media(max-width:650px){.grid2,.grid3,.sign{grid-template-columns:1fr}}
 @media print{.site-header,.site-footer,.toolrow,.breadcrumb{display:none!important} body{background:#fff} .section{padding:.3rem 0} .sheet{break-inside:avoid;box-shadow:none} input,textarea{border:0;border-bottom:1px solid #555;border-radius:0}}
+
+/* Shared A+ mission navigation */
+.aplus-mission-nav-shell{max-width:1120px;margin:auto}
+.aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
+.aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
+.aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+@media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
+
 </style>
 </head>
 <body class="learning-center-page">
@@ -29,11 +39,29 @@ textarea{min-height:70px;resize:vertical}
 <header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
 <main id="main-content">
 <section class="page-hero"><div class="container wo">
-<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a><span>/</span><span>Build Build Guide</span></nav>
-<p class="eyebrow">TechWorks • A+ Mission 04</p><h1>Practice PC Build Guide</h1>
-<p class="page-lead">Use this guided checklist while you practice building the PC. It helps you verify each step and document what you installed. It is not a customer build guide, service request, or repair ticket.</p>
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/learning-center/cybersecurity/aplus/">A+</a><span>/</span><a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a><span>/</span><span>Practice Build Guide</span></nav>
+<p class="eyebrow">CompTIA A+ • Mission 04 Practice Guide</p><h1>Practice PC Build Guide</h1>
+<p class="page-lead">Use this guided checklist while you practice building the PC. It helps you verify each step and document what you installed. It is not a customer work order, service request, or repair ticket.</p>
 <div class="toolrow"><button class="button" onclick="window.print()">Print / Save PDF</button><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Return to Mission 04</a></div>
 </div></section>
+
+<section class="section compact-info-section aplus-mission-nav-section">
+<div class="container aplus-mission-nav-shell">
+<p class="eyebrow">A+ quick navigation</p>
+<nav class="aplus-mission-nav" aria-label="A+ mission quick navigation">
+<a href="/learning-center/cybersecurity/aplus/">A+ Hub</a>
+<a href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html" data-mission="m1">M1 • First Shift</a>
+<a href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html" data-mission="m2">M2 • Inside the Machine</a>
+<a href="/learning-center/cybersecurity/aplus/mission-03-motherboards-connectors.html" data-mission="m3">M3 • Motherboards &amp; Connectors</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html" data-mission="m4">M4 • Build the PC</a>
+<a href="/learning-center/cybersecurity/aplus/mission-04-pc-build-guide.html" data-mission="guide" class="current">Practice PC Build Guide</a>
+<a href="/learning/a-plus-interactive-notebook.html">Notebook Builder</a>
+<a href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+<a href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Raspberry Pi</a>
+</nav>
+</div>
+</section>
+
 
 <section class="section"><div class="container wo">
 <div class="memory"><strong>What this page is:</strong> a practice build guide for learning and documenting your classroom PC assembly. <strong>What it is not:</strong> a customer request, repair ticket, or real service work order.</div><div class="notice"><strong>Safety Gate:</strong> Do not connect AC power until the instructor has inspected and authorized the build. Use the instructor-approved ESD setup when handling sensitive components.</div>
