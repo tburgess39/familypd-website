@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FamilyPD CompTIA A+ Mission 05: troubleshoot PC hardware, BIOS/UEFI, power, POST, boot, storage, overheating, system, and display issues through interactive technician scenarios.">
+<title>Mission 05: Troubleshoot the Hardware | FamilyPD A+</title>
+<link href="/assets/images/favicon.ico" rel="icon">
+<link href="/assets/css/styles.css" rel="stylesheet">
+<style>
+:root{
+  --m5-navy:#123b5d;--m5-blue:#236f9d;--m5-teal:#247c79;--m5-gold:#e2a63b;
+  --m5-red:#a73b3b;--m5-green:#26734d;--m5-ink:#14212b;--m5-muted:#536574;
+  --m5-line:#cbd9e2;--m5-soft:#f3f8fb;--m5-warn:#fff8e8;--m5-ok:#eef8f2;
+}
+body.learning-center-page{background:#f7fafc;color:var(--m5-ink)}
+.m5-shell{max-width:1100px;margin:auto}
+.page-hero h1{font-size:clamp(1.95rem,4.2vw,2.8rem)!important;line-height:1.06!important}
+.page-hero p{max-width:850px}
+.mission-nav,.resource-strip,.button-row{display:flex;gap:.55rem;flex-wrap:wrap}
+.mission-nav{margin-top:1rem}
+.resource-strip{background:#fff;border:1px solid var(--m5-line);border-radius:16px;padding:.9rem 1rem;margin:1rem 0}
+.resource-strip strong{width:100%;color:var(--m5-navy)}
+.m5-progress-wrap{background:#fff;border:1px solid var(--m5-line);border-radius:16px;padding:1rem;margin:1rem 0}
+.m5-progress-head{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.m5-progress{height:12px;background:#e6eef3;border-radius:999px;overflow:hidden;margin-top:.65rem}
+.m5-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--m5-teal),var(--m5-blue));transition:width .25s}
+.m5-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.m5-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.m5-card,.m5-activity,.m5-ticket,.m5-note,.m5-summary{
+  background:#fff;border:1px solid var(--m5-line);border-radius:18px;padding:1.1rem;
+  box-shadow:0 7px 20px rgba(15,48,74,.05)
+}
+.m5-card h3,.m5-activity h3,.m5-ticket h3{margin:.1rem 0 .5rem;color:var(--m5-navy);font-size:1.15rem}
+.m5-card p,.m5-activity p,.m5-ticket p,.m5-note p{color:var(--m5-ink)}
+.m5-activity{margin:1rem 0}
+.m5-kicker{font-size:.79rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--m5-teal)}
+.m5-chip-row{display:flex;gap:.45rem;flex-wrap:wrap;margin:.6rem 0}
+.m5-chip{background:#eaf4f6;color:#184f57;border-radius:999px;padding:.35rem .65rem;font-size:.82rem;font-weight:800}
+.m5-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;margin:.85rem 0}
+.m5-flow div{border:1px solid #a9c1d1;background:#f3f8fb;border-radius:12px;padding:.7rem;text-align:center;font-weight:800}
+.m5-flow small{display:block;color:var(--m5-muted);font-weight:500;margin-top:.25rem}
+.m5-memory{border-left:6px solid var(--m5-gold);background:#fff9ed;border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+.m5-safety{border-left:6px solid var(--m5-red);background:#fff3f3;border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+.m5-good{border-left:6px solid var(--m5-green);background:var(--m5-ok);border-radius:12px;padding:.9rem 1rem;margin:.8rem 0}
+.m5-choices{display:grid;gap:.55rem;margin:.75rem 0}
+.m5-choice{
+  text-align:left;background:#fff;color:var(--m5-ink);border:2px solid #9db8ca;
+  border-radius:12px;padding:.72rem .85rem;cursor:pointer;font:inherit
+}
+.m5-choice:hover{background:#f3f8fb}.m5-choice.correct{border-color:var(--m5-green);background:#edf8f0}
+.m5-choice.wrong{border-color:var(--m5-red);background:#fff0f0}
+.m5-choice:disabled{cursor:default;opacity:.92}
+.m5-feedback{display:none;border-left:4px solid var(--m5-blue);background:#f5f8fa;border-radius:8px;padding:.75rem;margin-top:.55rem}
+.m5-feedback.show{display:block}
+.m5-lab-board{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);gap:1rem}
+.m5-console{background:#091b29;color:#d9f2ff;border-radius:14px;padding:1rem;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.m5-console strong{color:#7bd8ff}.m5-console .warn{color:#ffd770}.m5-console .ok{color:#8ce0a9}
+.m5-select-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.m5-select-row label,.m5-ticket label,.m5-note label{font-weight:800;color:#29445d}
+.m5-select-row select,.m5-ticket select,.m5-ticket input,.m5-ticket textarea,.m5-note input,.m5-note textarea{
+  width:100%;margin-top:.35rem;border:1px solid #b9c9d4;border-radius:9px;padding:.7rem;background:#fff;color:var(--m5-ink);font:inherit
+}
+.m5-symptom-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.m5-symptom{border:1px solid var(--m5-line);border-radius:13px;padding:.8rem;background:#fbfdff}
+.m5-symptom strong{display:block;color:var(--m5-navy);margin-bottom:.35rem}
+.m5-ticket-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.65rem}
+.m5-score{font-weight:900;color:var(--m5-navy)}
+.m5-case-output{display:none;margin-top:.8rem}.m5-case-output.show{display:block}
+.m5-note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.m5-note-grid .full{grid-column:1/-1}
+.m5-copy-status{font-weight:800;color:var(--m5-green);min-height:1.2em}
+.m5-optional{border:2px dashed #b7c9d5;background:#fafcfd;border-radius:16px;padding:1rem}
+.m5-source{font-size:.9rem;color:var(--m5-muted)}
+.m5-done{display:none;background:#edf8ee;border-left:6px solid var(--m5-green);border-radius:14px;padding:1rem;margin-top:1rem}
+.m5-done.show{display:block}
+.m5-section-title{font-size:clamp(1.35rem,2.8vw,1.8rem)!important;margin-bottom:.45rem}
+.m5-mini{font-size:.9rem;color:var(--m5-muted)}
+.mission-bottom{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(15,48,74,.14)}
+body.learning-center-page a.button,
+body.learning-center-page button.button,
+.m5-shell a.button,.m5-shell button.button{
+  font-size:14px!important;line-height:1.15!important;font-weight:700!important;
+  padding:9px 14px!important;min-height:36px!important;width:auto!important;max-width:100%!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:10px!important
+}
+@media(max-width:900px){
+  .m5-grid.three{grid-template-columns:1fr 1fr}.m5-flow{grid-template-columns:1fr 1fr}.m5-symptom-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .m5-grid,.m5-grid.three,.m5-lab-board,.m5-select-row,.m5-note-grid,.m5-symptom-grid{grid-template-columns:1fr}
+  .m5-note-grid .full{grid-column:auto}.m5-flow{grid-template-columns:1fr}
+  .m5-progress-head{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href="/" aria-label="Family Personal Development home">
+      <img class="brand-logo" src="/assets/images/familypd.png" alt="Family Personal Development">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <nav aria-label="Main navigation" class="site-nav" id="site-nav">
+      <a href="/about/">About</a>
+      <a href="/approach/">Our Approach</a>
+      <a href="/resources/">Resources</a>
+      <a href="/learning-center/">Learning Center</a>
+      <a href="/programs/">Programs</a>
+      <a href="/impact/">Impact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+<section class="page-hero">
+  <div class="container m5-shell">
+    <p class="eyebrow">CompTIA A+ • Mission 05</p>
+    <h1>Troubleshoot the Hardware</h1>
+    <p><strong>Your build powered on. Now something is wrong.</strong> In this mission you will diagnose firmware, power, POST, boot, storage, heat, system, and display problems the way a technician should: follow evidence, isolate the failing stage, test safely, verify the fix, and document what happened.</p>
+
+    <div class="mission-nav" aria-label="A+ mission navigation">
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a>
+      <a class="button button-small" href="#mission-start" aria-current="page">Mission 05</a>
+    </div>
+
+    <div class="resource-strip">
+      <strong>A+ Quick Links</strong>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/acronyms.html">Glossary</a>
+      <a class="button button-secondary button-small" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
+      <a class="button button-secondary button-small" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+      <a class="button button-secondary button-small" href="https://apps.wctacyber.org/" target="_blank" rel="noopener">WCTA Cyber Apps</a>
+    </div>
+
+    <div class="m5-progress-wrap">
+      <div class="m5-progress-head">
+        <div><strong>Mission progress</strong><div class="m5-mini">Your progress is saved in this browser.</div></div>
+        <div class="m5-score"><span id="progressCount">0</span>/8 checkpoints</div>
+      </div>
+      <div class="m5-progress" aria-label="Mission progress"><span id="progressBar"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mission-start">
+<div class="container m5-shell">
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 1</p>
+    <h2 class="m5-section-title">Start with the troubleshooting process</h2>
+    <p>Hardware troubleshooting is not “swap parts until it works.” A good technician narrows the problem using evidence.</p>
+  </div>
+
+  <div class="m5-flow" aria-label="Troubleshooting sequence">
+    <div>1. Identify<small>Symptoms, scope, recent changes</small></div>
+    <div>2. Theory<small>Most likely cause first</small></div>
+    <div>3. Test<small>Prove or reject the theory</small></div>
+    <div>4. Fix<small>Plan and implement safely</small></div>
+    <div>5–6. Verify + Document<small>Full function, prevention, ticket notes</small></div>
+  </div>
+
+  <div class="m5-memory"><strong>Memory trick:</strong> <b>SEE → THINK → TEST → FIX → VERIFY → WRITE.</b> Never skip from “I see a symptom” straight to “replace a part.”</div>
+
+  <div class="m5-activity" data-checkpoint="workflow">
+    <div class="m5-kicker">Quick decision</div>
+    <h3>A desktop stopped booting after someone installed a new NVMe drive.</h3>
+    <p>What should the technician do first?</p>
+    <div class="m5-choices" data-question="q1">
+      <button class="m5-choice" data-correct="false">Replace the motherboard.</button>
+      <button class="m5-choice" data-correct="true">Identify the exact symptom and verify the recent change.</button>
+      <button class="m5-choice" data-correct="false">Reinstall the operating system immediately.</button>
+      <button class="m5-choice" data-correct="false">Order a larger power supply before testing.</button>
+    </div>
+    <div class="m5-feedback" id="q1-feedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 2</p>
+    <h2 class="m5-section-title">Find the stage where the computer stops</h2>
+    <p>A symptom becomes easier to troubleshoot when you identify how far the system gets.</p>
+  </div>
+
+  <div class="m5-grid">
+    <article class="m5-card">
+      <h3>Power → POST → Firmware → Boot device → OS</h3>
+      <p>Think of startup as a chain. If the chain breaks early, later steps cannot happen.</p>
+      <div class="m5-chip-row">
+        <span class="m5-chip">No power</span><span class="m5-chip">No POST</span><span class="m5-chip">No boot device</span><span class="m5-chip">OS crash</span>
+      </div>
+    </article>
+    <article class="m5-card">
+      <h3>Display is a separate clue</h3>
+      <p>A computer can be running while the display path fails. Check monitor power, source/input, cable, GPU/port, and display settings before assuming the whole PC is dead.</p>
+    </article>
+  </div>
+
+  <div class="m5-activity" data-checkpoint="stage">
+    <div class="m5-kicker">Fault-stage sorter</div>
+    <h3>Choose the best stage for each symptom.</h3>
+    <div class="m5-select-row">
+      <label>Fans spin, but there is no POST screen and beep/diagnostic codes appear.
+        <select data-stage-answer="POST">
+          <option value="">Choose stage</option><option>Power</option><option>POST</option><option>Boot device</option><option>Operating system</option><option>Display only</option>
+        </select>
+      </label>
+      <label>Firmware says “boot device not found.”
+        <select data-stage-answer="Boot device">
+          <option value="">Choose stage</option><option>Power</option><option>POST</option><option>Boot device</option><option>Operating system</option><option>Display only</option>
+        </select>
+      </label>
+      <label>Windows begins loading and then shows a crash screen.
+        <select data-stage-answer="Operating system">
+          <option value="">Choose stage</option><option>Power</option><option>POST</option><option>Boot device</option><option>Operating system</option><option>Display only</option>
+        </select>
+      </label>
+      <label>PC sounds normal, keyboard lights respond, but monitor says “No Signal.”
+        <select data-stage-answer="Display only">
+          <option value="">Choose stage</option><option>Power</option><option>POST</option><option>Boot device</option><option>Operating system</option><option>Display only</option>
+        </select>
+      </label>
+    </div>
+    <div class="button-row" style="margin-top:.8rem"><button class="button" type="button" id="checkStages">Check answers</button></div>
+    <div class="m5-feedback" id="stageFeedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 3</p>
+    <h2 class="m5-section-title">BIOS/UEFI is part of the diagnosis</h2>
+    <p>Firmware settings can decide what boots, which devices are available, how fans behave, and which security features are active.</p>
+  </div>
+
+  <div class="m5-lab-board">
+    <div class="m5-console" aria-label="simulated UEFI screen">
+      <strong>TECHWORKS UEFI DIAGNOSTIC</strong><br><br>
+      Boot mode: <span class="ok">UEFI</span><br>
+      Boot #1: <span id="consoleBoot">Windows Boot Manager</span><br>
+      USB ports: <span id="consoleUsb">Enabled</span><br>
+      Secure Boot: <span id="consoleSecure">Enabled</span><br>
+      TPM: <span id="consoleTpm">Enabled</span><br>
+      CPU temp: <span class="ok">41°C</span><br>
+      Fan profile: <span id="consoleFan">Balanced</span>
+    </div>
+    <div class="m5-card">
+      <h3>Firmware settings you should recognize</h3>
+      <div class="m5-symptom-grid">
+        <div class="m5-symptom"><strong>Boot order</strong>Fixed disk, optical, USB, or network/PXE can be prioritized.</div>
+        <div class="m5-symptom"><strong>USB permissions</strong>Controllers, ports, or individual devices may be enabled/disabled.</div>
+        <div class="m5-symptom"><strong>Fan controls</strong>Firmware may balance acoustics, power, temperature, and performance.</div>
+        <div class="m5-symptom"><strong>Security</strong>Administrator/system passwords, Secure Boot, and TPM settings may be present.</div>
+      </div>
+      <div class="m5-memory"><strong>Know the difference:</strong> Secure Boot checks trusted digital signatures during startup. A TPM is hardware-backed storage for cryptographic secrets and measurements. A BIOS/UEFI password restricts firmware or system access.</div>
+    </div>
+  </div>
+
+  <div class="m5-activity" data-checkpoint="firmware">
+    <div class="m5-kicker">Firmware cases</div>
+    <h3>Choose the setting you would inspect first.</h3>
+    <div class="m5-select-row">
+      <label>You need to boot a trusted technician USB one time.
+        <select data-fw-answer="Boot order">
+          <option value="">Choose</option><option>Boot order</option><option>Fan profile</option><option>TPM</option><option>System date</option>
+        </select>
+      </label>
+      <label>A front USB port works in the OS only after firmware settings are changed.
+        <select data-fw-answer="USB permissions">
+          <option value="">Choose</option><option>Secure Boot</option><option>USB permissions</option><option>Fan profile</option><option>TPM</option>
+        </select>
+      </label>
+      <label>The machine repeatedly forgets date/time after being unplugged.
+        <select data-fw-answer="System date">
+          <option value="">Choose</option><option>Boot order</option><option>USB permissions</option><option>System date</option><option>Secure Boot</option>
+        </select>
+      </label>
+      <label>A security feature needs hardware-backed key support.
+        <select data-fw-answer="TPM">
+          <option value="">Choose</option><option>Boot order</option><option>TPM</option><option>Fan profile</option><option>USB permissions</option>
+        </select>
+      </label>
+    </div>
+    <button class="button" type="button" id="checkFirmware" style="margin-top:.8rem">Check firmware choices</button>
+    <div class="m5-feedback" id="firmwareFeedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 4</p>
+    <h2 class="m5-section-title">Power and POST: trace the path</h2>
+    <p>For a no-power or no-POST ticket, verify simple external causes before replacing internal components.</p>
+  </div>
+
+  <div class="m5-grid">
+    <article class="m5-card">
+      <h3>Power path</h3>
+      <p><strong>Outlet → power cable → PSU → motherboard/components.</strong></p>
+      <p>A PSU tester can help verify power-supply output. Check cables and recent hardware changes before declaring a board or CPU dead.</p>
+    </article>
+    <article class="m5-card">
+      <h3>POST clues</h3>
+      <p>POST problems can involve loose power/data connections, RAM or expansion-card seating, a faulty PSU, CPU/firmware issues, or vendor-specific beep/diagnostic codes.</p>
+    </article>
+  </div>
+
+  <div class="m5-safety">
+    <strong>Hardware safety:</strong> Shut down, unplug AC power, and use ESD precautions before reseating components. Never open a power-supply enclosure; capacitors can retain dangerous charge. Test the PSU externally with appropriate tools or replace it as a unit.
+  </div>
+
+  <div class="m5-activity" data-checkpoint="power">
+    <div class="m5-kicker">No-power ticket</div>
+    <h3>The user says, “Nothing happens when I press the power button.”</h3>
+    <p>Select the best first sequence.</p>
+    <div class="m5-choices" data-question="qPower">
+      <button class="m5-choice" data-correct="true">Verify outlet/power strip → cable/PSU switch → PSU output → motherboard power connections.</button>
+      <button class="m5-choice" data-correct="false">Replace CPU → replace motherboard → reinstall Windows.</button>
+      <button class="m5-choice" data-correct="false">Reset BIOS password → clear TPM → reinstall GPU drivers.</button>
+    </div>
+    <div class="m5-feedback" id="qPower-feedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 5</p>
+    <h2 class="m5-section-title">Storage and boot problems leave clues</h2>
+    <p>A missing or failing drive can show up before the OS, inside the OS, or through performance/reliability symptoms.</p>
+  </div>
+
+  <div class="m5-grid three">
+    <article class="m5-card"><h3>Availability</h3><p>Boot device not found, missing drive in the OS, read/write failures, drive/activity LEDs, unusual mechanical noise, or alarms can point to storage trouble.</p></article>
+    <article class="m5-card"><h3>Reliability</h3><p>S.M.A.R.T. data can report drive health indicators. Bad sectors and growing error counts are warnings; protect data before experimenting.</p></article>
+    <article class="m5-card"><h3>Performance</h3><p>IOPS describes input/output operations per second. A slow system is not automatically a bad drive—rule out heat, memory pressure, software, and other bottlenecks.</p></article>
+  </div>
+
+  <div class="m5-activity" data-checkpoint="storage">
+    <div class="m5-kicker">Storage diagnostic</div>
+    <h3>Ticket: The NVMe drive appears in UEFI, but Windows will not start.</h3>
+    <p>Which evidence is most useful next?</p>
+    <div class="m5-choices" data-question="qStorage">
+      <button class="m5-choice" data-correct="false">Assume the monitor is defective.</button>
+      <button class="m5-choice" data-correct="true">Check boot order/boot entry, partition/boot configuration, and repair options before replacing the drive.</button>
+      <button class="m5-choice" data-correct="false">Disable all USB ports.</button>
+      <button class="m5-choice" data-correct="false">Replace the CPU fan.</button>
+    </div>
+    <div class="m5-feedback" id="qStorage-feedback"></div>
+
+    <div class="m5-memory"><strong>RAID warning:</strong> A controller alert or failed member does not mean “initialize the array.” Identify the RAID level, failed device, controller status, and backup state first. A wrong rebuild action can make recovery harder.</div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 6</p>
+    <h2 class="m5-section-title">Heat and physical symptoms are evidence</h2>
+    <p>Component failures are not always invisible. Inspect before you assume.</p>
+  </div>
+
+  <div class="m5-symptom-grid">
+    <div class="m5-symptom"><strong>Overheating</strong>Check temperature sensors, CPU/case fans, heat sink contact, airflow, dust, blanking plates, and ambient temperature.</div>
+    <div class="m5-symptom"><strong>Physical damage</strong>Look for liquid damage, scorch marks, swollen capacitors, broken connectors, dirt, and signs of ESD/power events.</div>
+    <div class="m5-symptom"><strong>Performance</strong>Verify the complaint. Rule out software/network causes and misconfiguration before replacing hardware.</div>
+    <div class="m5-symptom"><strong>Date/time resets</strong>A weak RTC/CMOS battery can cause persistent time/configuration loss on systems that use one; CR2032 is common.</div>
+  </div>
+
+  <div class="m5-activity" data-checkpoint="heat">
+    <div class="m5-kicker">Pattern recognition</div>
+    <h3>A PC works for 15–20 minutes, then slows dramatically and sometimes shuts down.</h3>
+    <div class="m5-choices" data-question="qHeat">
+      <button class="m5-choice" data-correct="false">The first action should be formatting the SSD.</button>
+      <button class="m5-choice" data-correct="true">Check temperatures, fans, heat-sink installation, dust, and airflow while reproducing the issue.</button>
+      <button class="m5-choice" data-correct="false">Change the monitor color profile.</button>
+    </div>
+    <div class="m5-feedback" id="qHeat-feedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 7</p>
+    <h2 class="m5-section-title">Display problem or system problem?</h2>
+    <p>Separate “the computer is not working” from “I cannot see what the computer is doing.”</p>
+  </div>
+
+  <div class="m5-grid">
+    <article class="m5-card">
+      <h3>No image</h3>
+      <p>Check display power, cable condition, correct input/source, correct GPU/port, and whether the system itself reached POST. For projectors, overheating and lamp/bulb failure can also remove the image.</p>
+    </article>
+    <article class="m5-card">
+      <h3>Poor image</h3>
+      <p>Dim/fuzzy image, flicker, dead pixels, burn-in/image retention, or incorrect color may involve cable/port quality, display settings, calibration, panel damage, or the display itself.</p>
+    </article>
+  </div>
+
+  <div class="m5-activity" data-checkpoint="display">
+    <div class="m5-kicker">Display triage</div>
+    <h3>The desktop powers on and POST beeps normally, but the monitor shows “No Signal.”</h3>
+    <div class="m5-choices" data-question="qDisplay">
+      <button class="m5-choice" data-correct="true">Check monitor power/input, cable, and correct display port/GPU connection first.</button>
+      <button class="m5-choice" data-correct="false">Replace the storage drive first.</button>
+      <button class="m5-choice" data-correct="false">Clear the TPM first.</button>
+    </div>
+    <div class="m5-feedback" id="qDisplay-feedback"></div>
+  </div>
+
+  <div class="section-heading">
+    <p class="eyebrow">Checkpoint 8</p>
+    <h2 class="m5-section-title">Final support queue</h2>
+    <p>Use the symptom, evidence, and recent changes. Choose the best next technician action—not the most expensive action.</p>
+  </div>
+
+  <article class="m5-ticket" data-checkpoint="final">
+    <div class="m5-ticket-meta">
+      <span class="m5-chip">TechWorks Service Desk</span>
+      <span class="m5-chip" id="caseNumber">Case 1 of 6</span>
+      <span class="m5-chip m5-score">Score: <span id="caseScore">0</span>/6</span>
+    </div>
+    <h3 id="caseTitle">Loading case…</h3>
+    <p id="caseBody"></p>
+    <label>Best next action
+      <select id="caseChoice"></select>
+    </label>
+    <div class="button-row" style="margin-top:.8rem">
+      <button class="button" type="button" id="submitCase">Submit decision</button>
+      <button class="button button-secondary" type="button" id="nextCase" disabled>Next case</button>
+    </div>
+    <div class="m5-feedback" id="caseFeedback"></div>
+  </article>
+
+  <article class="m5-note" style="margin-top:1rem">
+    <div class="m5-kicker">Technician ticket note</div>
+    <h3>Document what you found</h3>
+    <p>Use this after a lab or real practice machine. Nothing here is submitted automatically. You can copy the finished note.</p>
+    <div class="m5-note-grid">
+      <label>Symptom<input id="noteSymptom" placeholder="What did the user/system report?"></label>
+      <label>Evidence<input id="noteEvidence" placeholder="What did you observe or measure?"></label>
+      <label>Theory<input id="noteTheory" placeholder="Most likely cause"></label>
+      <label>Action<input id="noteAction" placeholder="What did you test/change?"></label>
+      <label>Result<input id="noteResult" placeholder="What happened after the action?"></label>
+      <label>Preventive / next step<input id="noteNext" placeholder="Any prevention, escalation, or follow-up?"></label>
+      <label class="full">Generated ticket note<textarea id="noteOutput" rows="6" readonly></textarea></label>
+    </div>
+    <div class="button-row">
+      <button class="button" type="button" id="buildNote">Build ticket note</button>
+      <button class="button button-secondary" type="button" id="copyNote">Copy note</button>
+      <button class="button button-secondary" type="button" id="clearNote">Clear</button>
+    </div>
+    <div class="m5-copy-status" id="copyStatus" aria-live="polite"></div>
+  </article>
+
+  <div class="m5-done" id="missionDone">
+    <strong>Mission 05 complete.</strong> You have practiced firmware, power, POST, boot/storage, heat, display, and technician decision-making. Keep using the process: identify → theory → test → fix → verify → document.
+  </div>
+
+  <section class="section" style="padding-left:0;padding-right:0">
+    <div class="section-heading">
+      <p class="eyebrow">Optional notebook support</p>
+      <h2 class="m5-section-title">Suggested notebook additions</h2>
+      <p>These are suggestions—not required pages. Add only what helps you remember and troubleshoot.</p>
+    </div>
+    <div class="m5-optional">
+      <div class="m5-grid">
+        <div><strong>Startup chain</strong><br>Power → POST → UEFI/BIOS → boot device → OS → display/user session.</div>
+        <div><strong>Symptom map</strong><br>No power • no POST • no boot • BSOD • overheating • missing drive • no video.</div>
+        <div><strong>Firmware reminders</strong><br>Boot order • USB permissions • Secure Boot • TPM • fan/thermal settings.</div>
+        <div><strong>Drive reminders</strong><br>S.M.A.R.T. • IOPS • bad sectors • MBR/GPT/boot configuration • RAID alerts.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="m5-summary">
+    <h2 class="m5-section-title">Mission 05 debrief</h2>
+    <div class="m5-grid">
+      <div><strong>I can…</strong><ul><li>Use a troubleshooting process instead of guessing.</li><li>Recognize BIOS/UEFI settings that affect boot, devices, cooling, and security.</li><li>Trace power and separate power, POST, boot, OS, and display faults.</li></ul></div>
+      <div><strong>I can…</strong><ul><li>Use storage symptoms, S.M.A.R.T., performance clues, and RAID alerts carefully.</li><li>Recognize overheating and physical-damage clues.</li><li>Verify a solution and document findings, actions, and outcomes.</li></ul></div>
+    </div>
+    <p class="m5-source"><strong>Source alignment:</strong> CompTIA A+ 220-1201, Module 4: Troubleshooting PC Hardware—BIOS/UEFI; power and disk issues; system and display issues. This FamilyPD page is an independent learning aid and does not reproduce the CompTIA slide deck.</p>
+  </section>
+
+  <div class="mission-bottom">
+    <a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">← Mission 04: Build the PC</a>
+    <a class="button" href="/learning-center/cybersecurity/aplus/">Back to A+ Home</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><strong>Family Personal Development</strong><p>Independent learning resources that help families and learners build practical skills.</p></div>
+    <div><a href="/learning-center/">Learning Center</a><br><a href="/learning-center/cybersecurity/">Cybersecurity</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const STORAGE_KEY='familypd-aplus-mission05-v1';
+  let saved={};
+  try{ saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'); }catch(e){saved={};}
+  saved.checkpoints=saved.checkpoints||{};
+  let finalCompleted=!!saved.checkpoints.final;
+
+  function save(){
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify(saved));}catch(e){}
+    updateProgress();
+  }
+  function markCheckpoint(key){
+    if(!key)return;
+    saved.checkpoints[key]=true;
+    save();
+  }
+  function updateProgress(){
+    const keys=['workflow','stage','firmware','power','storage','heat','display','final'];
+    const count=keys.filter(k=>saved.checkpoints[k]).length;
+    document.getElementById('progressCount').textContent=count;
+    document.getElementById('progressBar').style.width=(count/keys.length*100)+'%';
+    document.getElementById('missionDone').classList.toggle('show',count===keys.length);
+  }
+
+  document.querySelectorAll('.m5-choices').forEach(group=>{
+    group.addEventListener('click',e=>{
+      const btn=e.target.closest('.m5-choice'); if(!btn)return;
+      const correct=btn.dataset.correct==='true';
+      group.querySelectorAll('.m5-choice').forEach(b=>b.disabled=true);
+      btn.classList.add(correct?'correct':'wrong');
+      if(!correct){
+        const right=group.querySelector('[data-correct="true"]'); if(right) right.classList.add('correct');
+      }
+      const q=group.dataset.question;
+      const fb=document.getElementById(q+'-feedback');
+      fb.textContent=correct
+        ? 'Correct. Start with the safest evidence-based action that isolates the failure.'
+        : 'Not the best first action. Use the symptom and startup stage to narrow the fault before replacing parts.';
+      fb.classList.add('show');
+      const checkpoint=group.closest('[data-checkpoint]');
+      if(correct && checkpoint) markCheckpoint(checkpoint.dataset.checkpoint);
+    });
+  });
+
+  function checkSelectGroup(selector,answerAttr,feedbackId,checkpoint,msgGood,msgBad){
+    const selects=[...document.querySelectorAll(selector)];
+    const complete=selects.every(s=>s.value);
+    if(!complete){showFeedback(feedbackId,'Choose an answer for every item first.',false);return;}
+    const right=selects.filter(s=>s.value===s.dataset[answerAttr]).length;
+    const ok=right===selects.length;
+    showFeedback(feedbackId,ok?msgGood:(msgBad+' '+right+'/'+selects.length+' correct.'),ok);
+    if(ok)markCheckpoint(checkpoint);
+  }
+  function showFeedback(id,msg,ok){
+    const el=document.getElementById(id); el.textContent=msg; el.classList.add('show');
+    el.style.borderLeftColor=ok?'#26734d':'#a73b3b';
+  }
+
+  document.getElementById('checkStages').addEventListener('click',()=>{
+    checkSelectGroup('[data-stage-answer]','stageAnswer','stageFeedback','stage',
+      'Correct. Startup-stage thinking helps prevent random part swapping.',
+      'Review where startup stops. Power comes before POST; POST before boot; the OS loads after a boot device is found.');
+  });
+  document.getElementById('checkFirmware').addEventListener('click',()=>{
+    checkSelectGroup('[data-fw-answer]','fwAnswer','firmwareFeedback','firmware',
+      'Correct. Firmware settings can directly affect boot devices, USB access, time/configuration, and hardware-backed security.',
+      'One or more settings do not match the symptom.');
+  });
+
+  const cases=[
+    {
+      title:'Case 1 — No power after desk move',
+      body:'Desktop was moved to another desk. No LEDs, no fans, no sound. Other devices at the desk work.',
+      options:['Replace motherboard','Verify outlet/power strip, cable, PSU switch, then continue inward','Reinstall Windows','Replace SSD'],
+      correct:1,
+      why:'With no power symptoms, trace the power path from the wall inward before opening the case.'
+    },
+    {
+      title:'Case 2 — Fans spin, no POST',
+      body:'A RAM upgrade was installed. Fans spin, but there is no normal POST and the board reports a memory-related diagnostic code.',
+      options:['Reseat/test the new RAM and verify compatibility','Replace monitor first','Format the boot drive','Disable Secure Boot'],
+      correct:0,
+      why:'Recent change + POST memory clue makes RAM seating/compatibility the first theory to test.'
+    },
+    {
+      title:'Case 3 — Boot device not found',
+      body:'The SSD is physically installed. Firmware can see the drive, but the system says no boot device is available.',
+      options:['Check boot entry/order and boot/partition configuration','Replace CPU fan','Change color calibration','Disable all USB ports'],
+      correct:0,
+      why:'The drive is detected, so investigate the boot path before replacing storage.'
+    },
+    {
+      title:'Case 4 — Random slowdowns and shutdowns',
+      body:'System becomes very slow under load and sometimes powers off. CPU temperature rises quickly.',
+      options:['Check cooling, heat sink, fans, dust, and airflow','Replace keyboard','Clear TPM','Change DNS server'],
+      correct:0,
+      why:'Thermal pattern + measured high temperature points to cooling first.'
+    },
+    {
+      title:'Case 5 — Drive warning',
+      body:'An older drive reports health warnings and read/write errors. The user has important files.',
+      options:['Stress-test repeatedly before doing anything else','Protect/back up data, review S.M.A.R.T./errors, then plan replacement or recovery','Initialize the disk','Rebuild Windows immediately'],
+      correct:1,
+      why:'Data protection comes before risky testing when drive failure is suspected.'
+    },
+    {
+      title:'Case 6 — No video, system appears alive',
+      body:'PC powers on, POST indicators look normal, and keyboard LEDs respond. Monitor says No Signal.',
+      options:['Check monitor power/input, display cable, and correct GPU/port','Replace PSU immediately','Repartition the SSD','Change RAID level'],
+      correct:0,
+      why:'The system appears to be running; isolate the display path first.'
+    }
+  ];
+  let caseIndex=0,caseScore=0,caseAnswered=false;
+  const title=document.getElementById('caseTitle'),body=document.getElementById('caseBody'),
+        choice=document.getElementById('caseChoice'),caseNum=document.getElementById('caseNumber'),
+        score=document.getElementById('caseScore'),feedback=document.getElementById('caseFeedback'),
+        submit=document.getElementById('submitCase'),next=document.getElementById('nextCase');
+
+  function renderCase(){
+    const c=cases[caseIndex]; caseAnswered=false;
+    caseNum.textContent='Case '+(caseIndex+1)+' of '+cases.length;
+    title.textContent=c.title; body.textContent=c.body;
+    choice.innerHTML='<option value="">Choose the best next action</option>'+c.options.map((o,i)=>'<option value="'+i+'">'+escapeHtml(o)+'</option>').join('');
+    feedback.classList.remove('show');feedback.textContent='';submit.disabled=false;next.disabled=true;
+    next.textContent=caseIndex===cases.length-1?'Finish queue':'Next case';
+  }
+  submit.addEventListener('click',()=>{
+    if(caseAnswered)return;
+    if(choice.value===''){showFeedback('caseFeedback','Choose an action first.',false);return;}
+    caseAnswered=true;
+    const c=cases[caseIndex],ok=Number(choice.value)===c.correct;
+    if(ok){caseScore++;score.textContent=caseScore;}
+    feedback.innerHTML='<strong>'+(ok?'Good call.':'Reconsider the evidence.')+'</strong> '+escapeHtml(c.why);
+    feedback.classList.add('show');feedback.style.borderLeftColor=ok?'#26734d':'#a73b3b';
+    submit.disabled=true;next.disabled=false;
+  });
+  next.addEventListener('click',()=>{
+    if(!caseAnswered)return;
+    if(caseIndex<cases.length-1){caseIndex++;renderCase();return;}
+    feedback.innerHTML='<strong>Queue complete.</strong> You scored '+caseScore+'/'+cases.length+'. Review any missed cases, then use the ticket-note builder to document a practice repair.';
+    feedback.classList.add('show');
+    next.disabled=true;markCheckpoint('final');finalCompleted=true;
+  });
+  renderCase();
+
+  const ids=['noteSymptom','noteEvidence','noteTheory','noteAction','noteResult','noteNext'];
+  document.getElementById('buildNote').addEventListener('click',()=>{
+    const v=Object.fromEntries(ids.map(id=>[id,document.getElementById(id).value.trim()]));
+    const note=[
+      'SYMPTOM: '+(v.noteSymptom||'—'),
+      'EVIDENCE: '+(v.noteEvidence||'—'),
+      'THEORY: '+(v.noteTheory||'—'),
+      'ACTION: '+(v.noteAction||'—'),
+      'RESULT: '+(v.noteResult||'—'),
+      'PREVENTIVE / NEXT STEP: '+(v.noteNext||'—')
+    ].join('\n');
+    document.getElementById('noteOutput').value=note;
+  });
+  document.getElementById('copyNote').addEventListener('click',async()=>{
+    const out=document.getElementById('noteOutput');
+    if(!out.value)document.getElementById('buildNote').click();
+    try{
+      await navigator.clipboard.writeText(out.value);
+      document.getElementById('copyStatus').textContent='Ticket note copied.';
+    }catch(e){
+      out.select();document.execCommand('copy');
+      document.getElementById('copyStatus').textContent='Ticket note copied.';
+    }
+  });
+  document.getElementById('clearNote').addEventListener('click',()=>{
+    ids.forEach(id=>document.getElementById(id).value='');
+    document.getElementById('noteOutput').value='';
+    document.getElementById('copyStatus').textContent='';
+  });
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
