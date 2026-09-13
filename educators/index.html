@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Search and browse every public FamilyPD tool, learning page, school-system guide, community resource, youth resource, media asset, and specialized educator resource." name="description"/><title>Educator Resources | Family Personal Development</title><link href="/assets/images/favicon.ico" rel="icon"/><link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+  .educator-hero{padding:64px 0 44px;background:linear-gradient(135deg,#fff8ec,#fff 58%);border-bottom:1px solid var(--line)}
+  .educator-hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:14px}
+  .educator-hero .lede{max-width:780px;font-size:1.1rem;color:var(--muted)}
+  .location-tools{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-top:24px}
+  .location-tools label{font-weight:800;color:var(--navy)}
+  .location-tools select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:white;font:inherit}
+  .educator-section{padding:52px 0}
+  .district-card{border:1px solid var(--line);border-radius:18px;padding:24px;background:white;box-shadow:var(--shadow)}
+  .district-card.featured{border:2px solid var(--teal);background:linear-gradient(180deg,#f4fbfb,#fff)}
+  .resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+  .edu-resource{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}
+  .edu-resource h3{font-size:1.2rem;margin-bottom:8px}
+  .edu-resource p{margin:0 0 14px;color:var(--muted)}
+  .button-row{display:flex;gap:10px;flex-wrap:wrap}
+  .pgs-quick{border-left:6px solid var(--gold);padding:18px 20px;background:#fff8ec;border-radius:12px;margin:16px 0}
+  .state-label{display:inline-block;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--orange);margin-bottom:8px}
+  .coming{border:1px dashed var(--line);border-radius:14px;padding:18px;background:var(--soft);margin-top:18px}
+  @media(max-width:760px){.location-tools,.resource-grid{grid-template-columns:1fr}.location-tools .button{width:100%}}
+</style>
+
+</head><body class="resources-page resource-directory-page"><header class="site-header"><div class="container header-inner">
+<a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button>
+<nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/approach/">Our Approach</a><a aria-current="page" href="/resources/">Resources</a><a aria-current="page" href="/educators/">Educators</a><a href="/programs/">Programs</a><a href="/impact/">Impact</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav>
+</div></header>
+<main id="main-content">
+  <section class="educator-hero">
+    <div class="container">
+      <p class="eyebrow">Educator Resources</p>
+      <h1>Find the tools for your state and school district.</h1>
+      <p class="lede">FamilyPD organizes educator resources by location so you can get to the tools that apply to you without searching through unrelated information.</p>
+      <div class="location-tools" aria-label="Educator resource locator">
+        <label>State
+          <select id="eduState">
+            <option value="NV" selected>Nevada</option>
+          </select>
+        </label>
+        <label>School district
+          <select id="eduDistrict">
+            <option value="CCSD" selected>Clark County School District (CCSD)</option>
+          </select>
+        </label>
+        <button class="button" type="button" onclick="document.getElementById('ccsd-resources').scrollIntoView({behavior:'smooth'})">Show My Resources</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="educator-section">
+    <div class="container">
+      <span class="state-label">Nevada</span>
+      <article class="district-card featured" id="ccsd-resources">
+        <p class="eyebrow">Clark County School District</p>
+        <h2>CCSD Educator Resources</h2>
+        <p>Quick access to FamilyPD tools that support CCSD educators with Professional Growth System planning, Contact Units, evidence organization, and salary advancement.</p>
+
+        <div class="pgs-quick">
+          <h3>Looking for PGS?</h3>
+          <p><strong>Start here:</strong> open the FamilyPD Unofficial PGS Assistant to track projected and approved CUs, organize evidence, review rule changes, and prepare your ELMS-ready submission files.</p>
+          <div class="button-row">
+            <a class="button" href="https://script.google.com/a/macros/nv.ccsd.net/s/AKfycbzGMjeetSJCAg1XitBFZUEOfwOZW7Wempr5x8OQhru9rLe_7msCof-UAt2xXZTSsDXV/exec" target="_blank" rel="noopener noreferrer">Open PGS Assistant</a>
+            <a class="button button-secondary" href="/pgs/">PGS Guide &amp; Resources</a>
+          </div>
+        </div>
+
+        <div class="resource-grid">
+          <article class="edu-resource">
+            <h3>PGS Assistant</h3>
+            <p>Plan CU activities, estimate progress, track ELMS-approved CUs, organize evidence, and build final PDF submission files.</p>
+            <a class="button" href="https://script.google.com/a/macros/nv.ccsd.net/s/AKfycbzGMjeetSJCAg1XitBFZUEOfwOZW7Wempr5x8OQhru9rLe_7msCof-UAt2xXZTSsDXV/exec" target="_blank" rel="noopener noreferrer">Open Assistant</a>
+          </article>
+
+          <article class="edu-resource">
+            <h3>FamilyPD PGS Guide</h3>
+            <p>Review CU categories, deadlines, PGS explanations, videos, and supporting resources before or while using the assistant.</p>
+            <a class="button button-secondary" href="/pgs/">View PGS Guide</a>
+          </article>
+
+          <article class="edu-resource">
+            <h3>Contact Units Learning Center</h3>
+            <p>Use the FamilyPD learning-center page for Contact Unit planning and educator-friendly guidance.</p>
+            <a class="button button-secondary" href="/learning-center/pgs-contact-units/">Open CU Learning Center</a>
+          </article>
+
+          <article class="edu-resource">
+            <h3>Official CCSD PGS Information</h3>
+            <p>Use the official CCSD Professional Growth System page for district forms, reference guides, and official requirements.</p>
+            <a class="button button-secondary" href="https://www.ccsd.net/resources/ccsd-professional-growth-system-pgs" target="_blank" rel="noopener noreferrer">Open CCSD PGS</a>
+          </article>
+        </div>
+
+        <p class="small-note" style="margin-top:18px;color:var(--muted)"><strong>Note:</strong> FamilyPD tools are unofficial support resources. CCSD/CCEA guidance and ELMS approval control official Contact Unit eligibility and approval.</p>
+      </article>
+
+      <div class="coming">
+        <h3>More states and districts</h3>
+        <p>Additional educator resource collections can be added here as FamilyPD expands. Resources will stay organized by <strong>state → school district</strong> so educators only see the guidance that applies to them.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-grid">
+<div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div>
+<div><strong>Explore</strong><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/media-bank/">Media Bank</a><a href="/kids/">Kids &amp; Teens</a><a href="/app/">About FamilyPD OS</a></div>
+<div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div>
+</div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer><script src="/assets/js/main.js"></script><script src="/assets/js/resource-directory.js"></script></body></html>
