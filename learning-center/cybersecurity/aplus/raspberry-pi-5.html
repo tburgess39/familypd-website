@@ -211,6 +211,15 @@ body.learning-center-page button.button.button-small {
 }
 </style>
 
+
+<style id="familypd-aplus-quick-reconciled">
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto}
+.aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;color:#163f61;font-size:.84rem}
+.aplus-quick-strip .button{font-size:12.5px!important;line-height:1.15!important;padding:7px 10px!important;min-height:32px!important;width:auto!important;white-space:normal!important}
+@media(max-width:700px){.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important}}
+</style>
+
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -221,11 +230,18 @@ body.learning-center-page button.button.button-small {
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/acronyms.html">A+ Acronyms</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
 <a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+<a class="button button-small button-secondary" href="https://apps.wctacyber.org/" target="_blank" rel="noopener noreferrer">WCTA Cyber Apps ↗</a>
 </div></div>
 
 <section class="section compact-info-section"><div class="container pi-shell"><div class="pi-callout"><strong>Before you start</strong><p>Power the board off and disconnect USB-C power before installing or removing hardware. Handle the board by its edges, work on a clean nonconductive surface, and avoid touching exposed contacts unnecessarily.</p></div><div class="pi-grid"><article class="pi-card"><h3>What is a Raspberry Pi 5?</h3><p>It is a single-board computer: the processor, memory, storage connections, network interfaces, USB, display connections, and other I/O are concentrated on one compact board instead of spread across a full-size desktop motherboard.</p></article><article class="pi-card"><h3>Why use it for A+?</h3><p>You can identify real components, prepare boot media, install an operating system, configure peripherals, use Linux commands, connect to a network, inspect an IP address, troubleshoot boot and power problems, and document what you changed.</p></article></div></div></section>
@@ -403,6 +419,29 @@ touch notes.txt</div></article></div><div class="pi-note"><strong>Windows connec
 
 <section class="section section-tinted"><div class="container pi-shell"><div class="section-heading"><p class="eyebrow">Notebook example</p><h2>Turn the Pi build into a study page.</h2></div><div class="notebook-layout"><div class="notebook-example"><h3>Example Pi 5 notebook entry</h3><p><strong>Pi 5 = single-board computer (SBC).</strong></p><p><strong>CPU:</strong> Broadcom BCM2712, 4-core Arm Cortex-A76, 2.4 GHz. The four cores are inside one processor package; they are not four visible chips. The SoC is soldered to the Pi board rather than installed in a replaceable desktop CPU socket.</p><p><strong>RAM:</strong> LPDDR4X soldered to board. Compare: desktop = DIMM; serviceable laptop = SO-DIMM; many thin laptops/phones/tablets = soldered low-power memory.</p><p><strong>Storage:</strong> microSD is common; PCIe/M.2 storage is possible with appropriate adapter/HAT.</p><p><strong>Power:</strong> USB-C. Pi 5 recommendation: 27 W supply; connect power last during assembly.</p><p><strong>A+ comparison:</strong> Make four columns—Pi 5, desktop, laptop, phone/tablet. For CPU, RAM, storage, power, display, and networking, write what performs the same job and what changes in packaging or serviceability.</p><p><strong>Troubleshooting log:</strong> Symptom → Evidence → Test → Fix → Verify.</p></div><div class="pi-note-graphic"><svg viewBox="0 0 620 420" role="img" aria-label="Raspberry Pi 5 notebook map"><rect x="70" y="55" width="480" height="290" rx="28" fill="#2d7f83"/><rect x="210" y="135" width="120" height="90" rx="14" fill="#f4c84a"/><text x="270" y="184" text-anchor="middle" font-size="20" font-weight="700" fill="#163f61">BCM2712</text><rect x="360" y="120" width="90" height="125" rx="12" fill="#8ed9d2"/><text x="405" y="187" text-anchor="middle" font-size="18" fill="#163f61">RAM</text><g fill="#fff"><rect x="105" y="105" width="60" height="35" rx="6"/><rect x="105" y="155" width="60" height="35" rx="6"/><rect x="105" y="205" width="60" height="35" rx="6"/><rect x="105" y="255" width="60" height="35" rx="6"/></g><text x="135" y="327" text-anchor="middle" font-size="16" fill="#fff">USB</text><rect x="465" y="105" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="136" text-anchor="middle" font-size="14" fill="#163f61">ETH</text><rect x="465" y="205" width="55" height="55" rx="6" fill="#fff"/><text x="493" y="237" text-anchor="middle" font-size="14" fill="#163f61">HDMI</text><text x="310" y="383" text-anchor="middle" font-size="19" font-weight="700" fill="#163f61">Label → Compare → Troubleshoot → Review</text></svg></div></div></div></section>
 <section class="section"><div class="container pi-shell"><div class="pi-source"><h2>Official Raspberry Pi references</h2><p>This FamilyPD learning page is independently created. Raspberry Pi and related marks belong to Raspberry Pi Ltd. Family Personal Development is not affiliated with or endorsed by Raspberry Pi Ltd.</p><ul class="resource-list"><li><a href="https://www.raspberrypi.com/documentation/computers/processors.html" rel="noopener noreferrer" target="_blank">Processor reference: BCM2712 and Arm Cortex-A76 details</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" rel="noopener noreferrer" target="_blank">Raspberry Pi Getting Started documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/os.html" rel="noopener noreferrer" target="_blank">Raspberry Pi OS documentation</a></li><li><a href="https://www.raspberrypi.com/products/raspberry-pi-5/" rel="noopener noreferrer" target="_blank">Raspberry Pi 5 product information</a></li><li><a href="https://www.raspberrypi.com/products/27w-power-supply/" rel="noopener noreferrer" target="_blank">Raspberry Pi 27 W USB-C Power Supply</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html" rel="noopener noreferrer" target="_blank">Raspberry Pi hardware documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/processors.html" rel="noopener noreferrer" target="_blank">Raspberry Pi processor documentation</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/configuration.html" rel="noopener noreferrer" target="_blank">Raspberry Pi configuration documentation</a></li></ul></div><div class="mission-bottom"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a><a class="button" href="/learning-center/cybersecurity/aplus/">Back to A+ Home</a></div></div></section>
+
+<section class="section section-tinted" id="pi-nvme"><div class="container pi-shell">
+<div class="section-heading"><p class="eyebrow">Storage expansion</p><h2>Raspberry Pi 5 can use an M.2 NVMe SSD—with an adapter.</h2>
+<p>The NVMe drive does not plug directly into the Pi 5 board. Pi 5 exposes PCIe through a small FPC connector. A compatible M.2 HAT+/PCIe-to-M.2 adapter and ribbon cable provide the M.2 slot.</p></div>
+<div class="pi-callout"><strong>Connection path:</strong><p>Raspberry Pi 5 → PCIe FPC connector → ribbon cable → M.2 HAT+/adapter → M.2 NVMe SSD</p></div>
+<div class="pi-grid">
+<article class="pi-card"><h3>M.2</h3><p>The physical card/connector form factor. An M.2 device is not automatically an NVMe SSD.</p></article>
+<article class="pi-card"><h3>NVMe</h3><p><strong>Non-Volatile Memory Express.</strong> A storage protocol designed for solid-state storage communicating over PCIe.</p></article>
+<article class="pi-card"><h3>PCIe</h3><p><strong>Peripheral Component Interconnect Express.</strong> The high-speed interface carrying data between the Pi and the compatible adapter/device.</p></article>
+</div></div></section>
+<section class="section" id="pi-terms"><div class="container pi-shell">
+<div class="section-heading"><p class="eyebrow">Pi vocabulary</p><h2>Know the small-board connectors and add-ons.</h2></div>
+<div class="pi-grid">
+<article class="pi-card"><h3>HAT</h3><p><strong>Hardware Attached on Top.</strong> An add-on board designed for Raspberry Pi systems. HATs can add hardware functions and commonly use the GPIO header.</p></article>
+<article class="pi-card"><h3>HAT+</h3><p>An updated Raspberry Pi add-on-board specification. An M.2 HAT+ can adapt the Pi 5 PCIe connection for compatible M.2 devices such as NVMe SSDs.</p></article>
+<article class="pi-card"><h3>FPC connector</h3><p><strong>Flexible Printed Circuit connector.</strong> Pi 5 exposes PCIe through a compact FPC connector used with a thin ribbon-style cable.</p></article>
+<article class="pi-card"><h3>FFC / ribbon cable</h3><p><strong>Flat Flexible Cable.</strong> A thin flat interconnect used in compact electronics. Similar-looking cables are not automatically interchangeable; verify the specification and pinout.</p></article>
+<article class="pi-card"><h3>GPIO</h3><p><strong>General-Purpose Input/Output.</strong> Programmable electrical pins used to interact with LEDs, sensors, buttons, and other electronics.</p></article>
+<article class="pi-card"><h3>GPIO header</h3><p>The physical group of GPIO pins on the board where compatible HATs and jumper wires can connect.</p></article>
+<article class="pi-card"><h3>microSD</h3><p>A very small removable flash-memory card commonly used as Raspberry Pi boot and storage media.</p></article>
+<article class="pi-card"><h3>HDMI sizes</h3><p><strong>Standard HDMI = Type A • Mini-HDMI = Type C • Micro-HDMI = Type D.</strong> Raspberry Pi 5 uses two <strong>Micro-HDMI</strong> ports—not Mini-HDMI.</p></article>
+</div></div></section>
+
 </main>
 <footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
 <script src="/assets/js/main.js"></script>

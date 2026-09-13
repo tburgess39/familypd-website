@@ -48,6 +48,15 @@
 .compat-reset{margin-top:.65rem}
 @media(max-width:760px){.compat-grid,.compat-summary{grid-template-columns:1fr}}
 </style>
+
+<style id="familypd-aplus-quick-reconciled">
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto}
+.aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;color:#163f61;font-size:.84rem}
+.aplus-quick-strip .button{font-size:12.5px!important;line-height:1.15!important;padding:7px 10px!important;min-height:32px!important;width:auto!important;white-space:normal!important}
+@media(max-width:700px){.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important}}
+</style>
+
 </head>
 <body class="learning-center-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -72,15 +81,17 @@
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice Questions</a>
-<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">A+ Terms</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
 <a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
 <a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+<a class="button button-small button-secondary" href="https://apps.wctacyber.org/" target="_blank" rel="noopener noreferrer">WCTA Cyber Apps ↗</a>
 </div></div>
 
 <section class="section" id="start"><div class="container m3-shell">
@@ -355,7 +366,7 @@ const DB={
   {id:"pi4",name:"Integrated 4 GB LPDDR4X",type:"LPDDR4X",w:0},{id:"pi8",name:"Integrated 8 GB LPDDR4X",type:"LPDDR4X",w:0}
  ],
  storage:[
-  {id:"nvme",name:"M.2 NVMe SSD",desktop:true,pi:true,w:8},{id:"sata-ssd",name:"2.5-inch SATA SSD",desktop:true,pi:false,w:5},
+  {id:"nvme",name:"M.2 NVMe SSD + PCIe/M.2 HAT/adapter",desktop:true,pi:true,w:8},{id:"sata-ssd",name:"2.5-inch SATA SSD",desktop:true,pi:false,w:5},
   {id:"hdd",name:"3.5-inch SATA HDD",desktop:true,pi:false,w:12},{id:"microsd",name:"microSD card",desktop:false,pi:true,w:1},
   {id:"usbssd",name:"USB SSD",desktop:true,pi:true,w:7}
  ],
@@ -430,6 +441,7 @@ function report(){
  if(cool) lines.push("Cooling: "+cool.name+".");
  lines.push(p.note);
  if(b&&b.form!=="Pi5") lines.push("Before a real purchase/build, also verify BIOS/UEFI CPU support, exact RAM QVL/specifications, M.2 key/interface, case clearances, PSU connectors, and GPU/cooler dimensions.");
+ else if(b&&b.form==="Pi5" && st && st.id==="nvme") lines.push("NVMe storage on Pi 5 requires an M.2 HAT+/compatible PCIe-to-M.2 adapter and ribbon-cable connection; the SSD does not plug directly into the Pi board.");
  else if(b&&b.form==="Pi5") lines.push("Pi 5 power is not selected like a desktop ATX PSU. A suitable USB-C supply must meet the board/peripheral power needs; the commonly recommended Pi 5 supply is 5 V / 5 A (27 W).");
  list.innerHTML=lines.map(x=>"<li>"+x+"</li>").join("");
  const complete=b&&c&&r&&st&&g&&cool&&!issues.length;
