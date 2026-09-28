@@ -1,0 +1,15 @@
+FamilyPD Mission 06 — Magic Number Chart subnetting update
+
+Based on the user-provided MAGIC NUMBER CHARTS.xlsx teaching method.
+
+Changes:
+- Expanded CIDR dropdown from /24-/30 to /1-/32.
+- Added the classroom Magic Number Chart mapping /1-/32 across Octets 1-4.
+- Added changing mask values 128,192,224,240,248,252,254,255.
+- Added subnet counts and address-jump/magic-number values 128,64,32,16,8,4,2,1.
+- Teaches: find slash -> identify changing octet -> read mask -> 256-mask = jump -> count ranges from 0.
+- Added binary place-value connection 128 64 32 16 8 4 2 1.
+- Added worked example 192.168.2.3/20 from the uploaded chart.
+- Interactive tool now works across /1-/32 and highlights the matching chart row/cell.
+- Tool identifies changing octet, magic number, containing range, network/top address, total addresses, and host-bit equation.
+- /31 and /32 are handled separately rather than applying the traditional network/broadcast subtraction rule.
