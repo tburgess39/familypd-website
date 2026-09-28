@@ -6478,3 +6478,22 @@ body.home-page .donation-callout p { margin: 0; }
   body.home-page .card,
   body.home-page .pillar-card { padding: .95rem; }
 }
+
+/* FamilyPD readability update — wider desktop reading canvas (2026-09-27)
+   Keeps mobile/tablet spacing intact while reducing premature line wrapping
+   on larger screens. */
+@media (min-width: 1100px) {
+  :root {
+    --content: 1320px;
+  }
+
+  /* Learning Center / A+ pages historically used narrower local shells.
+     Widen those shells while keeping cards, grids, and responsive rules intact. */
+  .mission-shell,
+  .aplus-quick-wrap,
+  .aplus-mission-nav-shell,
+  .m4-shell {
+    width: min(calc(100% - 48px), 1240px) !important;
+    max-width: 1240px !important;
+  }
+}
