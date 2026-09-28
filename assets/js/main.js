@@ -819,3 +819,105 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   window.addEventListener("load", applyFix);
 })();
+
+/* FamilyPD contextual vocabulary helper
+   Adds lightweight hover/focus definitions to selected instructional terms.
+   It intentionally skips navigation, controls, code, headings, and existing links. */
+(function () {
+  const terms = {
+    "APIPA": "Automatic Private IP Addressing — an IPv4 address in 169.254.x.x commonly used when a device cannot obtain normal IPv4 configuration from DHCP.",
+    "CIDR": "Classless Inter-Domain Routing — slash notation such as /24 that tells how many bits are in the network prefix.",
+    "DHCP": "Dynamic Host Configuration Protocol — automatically supplies network settings such as an IP address, subnet information, gateway, and DNS servers.",
+    "DNS": "Domain Name System — translates names such as websites into IP addresses and provides other naming records.",
+    "NAT": "Network Address Translation — translates between address spaces, commonly allowing private IPv4 devices to communicate through a router's Internet-facing address.",
+    "TCP": "Transmission Control Protocol — connection-oriented transport that uses sequencing and acknowledgments.",
+    "UDP": "User Datagram Protocol — connectionless transport with lower overhead and no built-in delivery acknowledgment.",
+    "VLAN": "Virtual Local Area Network — logically separates devices into different broadcast domains on network infrastructure.",
+    "VPN": "Virtual Private Network — creates a protected tunnel for traffic across another network.",
+    "IPv4": "Internet Protocol version 4 — a 32-bit address normally written as four decimal octets, such as 192.168.1.25.",
+    "IPv6": "Internet Protocol version 6 — a 128-bit address written in hexadecimal groups separated by colons.",
+    "IP": "Internet Protocol — provides logical addressing used to identify interfaces and route traffic between networks.",
+    "MAC": "Media Access Control address — a link-layer hardware/interface identifier used on a local network segment.",
+    "LAN": "Local Area Network — a network covering a limited area such as a home, classroom, or office.",
+    "WAN": "Wide Area Network — a network spanning large geographic areas or connecting multiple local networks.",
+    "WLAN": "Wireless Local Area Network — a local network that uses wireless connectivity such as Wi-Fi.",
+    "NIC": "Network Interface Card/Controller — hardware that connects a device to a network.",
+    "SSID": "Service Set Identifier — the name used to identify a Wi-Fi network.",
+    "PoE": "Power over Ethernet — carries electrical power and network data over compatible Ethernet cabling.",
+    "UEFI": "Unified Extensible Firmware Interface — modern firmware used to initialize hardware and start the boot process.",
+    "POST": "Power-On Self-Test — startup checks performed as a computer initializes hardware.",
+    "RAM": "Random Access Memory — fast working memory used for data and programs currently in use.",
+    "CPU": "Central Processing Unit — the processor that executes instructions.",
+    "GPU": "Graphics Processing Unit — processor specialized for graphics and highly parallel workloads.",
+    "SSD": "Solid-State Drive — storage that uses flash memory and has no mechanical spinning platters.",
+    "HDD": "Hard Disk Drive — storage that uses magnetic spinning platters and mechanical read/write heads.",
+    "NVMe": "Non-Volatile Memory Express — a protocol commonly used by high-speed SSDs over PCI Express.",
+    "PCIe": "PCI Express — a high-speed expansion interface used by devices such as graphics cards and NVMe storage.",
+    "ESD": "Electrostatic Discharge — a sudden transfer of static electricity that can damage electronic components.",
+    "OSI": "Open Systems Interconnection model — a seven-layer reference model used to describe network communication.",
+    "subnet mask": "A 32-bit IPv4 value that marks which address bits belong to the network portion and which belong to the host portion.",
+    "network prefix": "The leading bits of an IP address that identify the network or subnet; CIDR notation shows its length.",
+    "default gateway": "The router address a device normally sends traffic to when the destination is outside its local subnet.",
+    "private IPv4": "IPv4 space reserved for internal networks: 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.",
+    "public IP": "An Internet-routable IP address, unlike private IPv4 addresses used only inside local networks.",
+    "octet": "One group of 8 bits. IPv4 contains four octets, each represented as a decimal value from 0 through 255.",
+    "binary": "A base-2 number system using only 0 and 1. IP addresses and subnet masks are stored as bits even when displayed in decimal or hexadecimal.",
+    "hexadecimal": "A base-16 number system using 0–9 and A–F. One hexadecimal digit represents four binary bits."
+  };
+
+  const ordered = Object.keys(terms).sort((a,b) => b.length - a.length);
+  const escaped = ordered.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const pattern = new RegExp("\\b(" + escaped.join("|") + ")\\b", "g");
+  const seen = new WeakMap();
+
+  function sectionFor(node) {
+    return node.parentElement.closest("article, section, .card, .panel, .mission-shell, main") || document.body;
+  }
+  function shouldSkip(el) {
+    return !el || el.closest("nav, header, footer, a, button, input, select, textarea, code, pre, script, style, h1, h2, h3, h4, h5, h6, .fpd-vocab-tip, [data-no-vocab-tooltips]");
+  }
+  function addTips() {
+    const root = document.querySelector("main");
+    if (!root) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim() || shouldSkip(node.parentElement)) return NodeFilter.FILTER_REJECT;
+        pattern.lastIndex = 0;
+        return pattern.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const section = sectionFor(node);
+      if (!seen.has(section)) seen.set(section, new Set());
+      const used = seen.get(section);
+      const text = node.nodeValue;
+      pattern.lastIndex = 0;
+      let match, last = 0, changed = false;
+      const frag = document.createDocumentFragment();
+      while ((match = pattern.exec(text))) {
+        const key = ordered.find(k => k.toLowerCase() === match[0].toLowerCase());
+        if (!key || used.has(key.toLowerCase())) continue;
+        frag.appendChild(document.createTextNode(text.slice(last, match.index)));
+        const span = document.createElement("span");
+        span.className = "fpd-vocab-tip";
+        span.tabIndex = 0;
+        span.setAttribute("role", "definition");
+        span.setAttribute("aria-label", match[0] + ": " + terms[key]);
+        span.dataset.tip = terms[key];
+        span.textContent = match[0];
+        frag.appendChild(span);
+        used.add(key.toLowerCase());
+        last = match.index + match[0].length;
+        changed = true;
+      }
+      if (changed) {
+        frag.appendChild(document.createTextNode(text.slice(last)));
+        node.parentNode.replaceChild(frag, node);
+      }
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", addTips);
+  else addTips();
+})();

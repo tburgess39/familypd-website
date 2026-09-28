@@ -6497,3 +6497,61 @@ body.home-page .donation-callout p { margin: 0; }
     max-width: 1240px !important;
   }
 }
+
+/* FamilyPD contextual vocabulary tooltips */
+.fpd-vocab-tip {
+  position: relative;
+  display: inline;
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+  text-decoration: none;
+}
+.fpd-vocab-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(320px, 80vw);
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #102f43;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: left;
+  white-space: normal;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity .14s ease, transform .14s ease;
+}
+.fpd-vocab-tip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #102f43;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+}
+.fpd-vocab-tip:hover::after,
+.fpd-vocab-tip:focus::after,
+.fpd-vocab-tip:hover::before,
+.fpd-vocab-tip:focus::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.fpd-vocab-tip:focus { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
+@media (hover:none) {
+  .fpd-vocab-tip { cursor: pointer; }
+}
