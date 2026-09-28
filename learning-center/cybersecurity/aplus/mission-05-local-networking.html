@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="FamilyPD CompTIA A+ Mission 04: safely assemble a new desktop PC while learning CPUs, cooling, RAM, storage, power supplies, expansion devices, compatibility, POST, and troubleshooting." name="description"/>
+<title>Mission 05 - Connect the Network | Mission 04: Build the PC | FamilyPD A+</title>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+<style>
+.m4-shell{max-width:1120px;margin:auto}
+.quick-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.75rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.quick-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.38rem .65rem;font-size:.82rem;font-weight:800;color:#163f61;background:#fff}
+.quick-nav a.current{background:#163f61;color:#fff;border-color:#163f61}
+.m4-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.cardx{background:#fff;border:1px solid rgba(15,48,74,.16);border-radius:18px;padding:1rem;box-shadow:0 8px 20px rgba(15,48,74,.05)}
+.cardx h3{margin:.15rem 0 .45rem;color:#163f61}
+.step{display:grid;grid-template-columns:54px 1fr;gap:.8rem;align-items:start;background:#fff;border:1px solid rgba(15,48,74,.14);border-radius:17px;padding:1rem;margin:.7rem 0}
+.stepnum{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#163f61;color:#fff;font-weight:900;font-size:1.05rem}
+.safety{background:#071c2c;color:#fff;border-radius:20px;padding:1.25rem}.safety h2,.safety h3,.safety p,.safety strong,.safety li,.safety .eyebrow{color:#fff!important}
+.stop{border:2px solid #b42318;background:#fff4f2;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.go{border:2px solid #247449;background:#f1fbf5;border-radius:14px;padding:.9rem 1rem;margin:.8rem 0}
+.examtip{border-left:5px solid #d39222;background:#fff7df;border-radius:12px;padding:.85rem 1rem;margin:.75rem 0}
+.pbq{border-left:5px solid #2d7f83;background:#eff8f7;border-radius:12px;padding:.85rem 1rem;margin:.75rem 0}
+.memory{border:2px dashed #163f61;border-radius:14px;padding:.85rem 1rem;background:#fff}
+.checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem .8rem}
+.check{display:flex;gap:.5rem;align-items:flex-start;background:#fff;border:1px solid rgba(15,48,74,.12);border-radius:11px;padding:.65rem}
+.box{flex:0 0 19px;height:19px;border:2px solid #163f61;border-radius:4px;margin-top:.1rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem;margin:.75rem 0}
+.flow span{border:2px solid #163f61;border-radius:12px;padding:.6rem .8rem;background:#fff;font-weight:800;color:#163f61}
+.flow b{color:#d39222;font-size:1.4rem}
+.source-note{font-size:.83rem;color:#485661}
+.source-list{background:#f5f8fa;border:1px solid rgba(15,48,74,.15);border-radius:18px;padding:1rem}
+.source-list li{margin:.5rem 0}
+.q{background:#fff;border:1px solid rgba(15,48,74,.15);border-radius:16px;padding:1rem;margin:.8rem 0}
+.choice{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd8e1;border-radius:10px;padding:.7rem;margin:.45rem 0;font:inherit;cursor:pointer}
+.choice.correct{border-color:#2f7d32;background:#edf8ee}.choice.wrong{border-color:#b43d3d;background:#fff0f0}
+.why{display:none;background:#f4f8fa;border-left:5px solid #163f61;padding:.8rem;border-radius:10px;margin-top:.6rem}.why.show{display:block}
+@media(max-width:850px){.m4-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.m4-grid,.checkgrid{grid-template-columns:1fr}.step{grid-template-columns:44px 1fr}}
+@media print{.site-header,.site-footer,.quick-nav,.aplus-actions,.choice{display:none!important}}
+
+/* Shared A+ mission navigation */
+.aplus-mission-nav-shell{max-width:1120px;margin:auto}
+.aplus-mission-nav{display:flex;flex-wrap:wrap;gap:.45rem;padding:.72rem;border:1px solid rgba(15,48,74,.16);border-radius:16px;background:#fff;box-shadow:0 7px 18px rgba(15,48,74,.05)}
+.aplus-mission-nav a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #9db3c1;border-radius:999px;padding:.4rem .68rem;font-size:.82rem;font-weight:800;color:#163f61!important;background:#fff}
+.aplus-mission-nav a.current{background:#163f61;color:#fff!important;border-color:#163f61}
+.aplus-mission-nav-section{padding-top:.75rem;padding-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,4vw,3.15rem)!important;line-height:1.06!important}
+@media(max-width:650px){.page-hero h1{font-size:clamp(1.75rem,9vw,2.35rem)!important}.aplus-mission-nav a{font-size:.78rem;padding:.36rem .58rem}}
+
+.safety p,.safety strong,.safety li,.safety .eyebrow{color:#fff!important}
+
+</style>
+
+<style id="familypd-aplus-quick-reconciled">
+.aplus-quick-wrap{width:min(100% - 2rem,980px);margin:0 auto}
+.aplus-quick-strip{box-sizing:border-box;width:100%;margin:.8rem 0;padding:.65rem .75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,max-content));justify-content:start;gap:.42rem;background:#f8fbfc;border:1px solid rgba(15,48,74,.14);border-radius:14px}
+.aplus-quick-strip>strong{grid-column:1/-1;color:#163f61;font-size:.84rem}
+.aplus-quick-strip .button{font-size:12.5px!important;line-height:1.15!important;padding:7px 10px!important;min-height:32px!important;width:auto!important;white-space:normal!important}
+@media(max-width:700px){.aplus-quick-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.aplus-quick-strip .button{width:100%!important}}
+</style>
+
+
+<style>
+.mission-shell{width:min(100% - 2rem,1080px);margin:0 auto}.mission-hero{padding:2rem 0 1.2rem}.mission-hero h1{font-size:clamp(1.85rem,3.5vw,2.65rem);line-height:1.05;margin:.25rem 0}.mission-kicker{font-weight:800;color:#2b5f7d;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+.mission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.mission-card{border:1px solid #d6e0e6;border-radius:14px;padding:1rem;background:#fff}.mission-card h2,.mission-card h3{margin-top:0}.mission-card h2{font-size:1.35rem}.mission-card h3{font-size:1.08rem}.mission-card p,.mission-card li{line-height:1.5}.mission-card ul{padding-left:1.2rem}
+.lesson-strip{display:flex;flex-wrap:wrap;gap:.45rem;margin:.7rem 0}.lesson-strip a{font-size:.82rem}.callout{border-left:5px solid #2b5f7d;background:#f4f8fa;padding:.8rem 1rem;border-radius:8px;margin:.8rem 0}.exam-tip{border-left-color:#b67814;background:#fff8e8}.practice{background:#f7fafc}
+.toolbox{border:2px solid #bfd0da;border-radius:16px;padding:1rem;background:#f8fbfc}.toolbox h2{margin-top:0}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.toolbox label{font-weight:700;display:block;margin-bottom:.25rem}.toolbox input,.toolbox select{width:100%;box-sizing:border-box;padding:.65rem;border:1px solid #9fb2bd;border-radius:8px;font-size:1rem;background:#fff}.toolbox button{margin-top:.5rem;padding:.65rem .9rem;border:0;border-radius:8px;background:#173f61;color:#fff;font-weight:800;cursor:pointer}.tool-result{margin-top:.75rem;padding:.8rem;background:#fff;border:1px solid #d6e0e6;border-radius:10px;min-height:2.5rem}.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.result-grid div{background:#f5f8fa;padding:.55rem;border-radius:8px}.result-grid strong{display:block;color:#173f61;font-size:.78rem;text-transform:uppercase}.binary{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.check-grid details{border:1px solid #d6e0e6;border-radius:10px;padding:.65rem;background:#fff}.check-grid summary{font-weight:800;cursor:pointer}.quick-compare{width:100%;border-collapse:collapse}.quick-compare th,.quick-compare td{border:1px solid #d6e0e6;padding:.55rem;text-align:left;vertical-align:top}.quick-compare th{background:#eef4f7}.mission-nav{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin:1.2rem 0}
+@media(max-width:720px){.mission-grid,.tool-grid,.check-grid,.result-grid{grid-template-columns:1fr}.quick-compare{font-size:.88rem}}
+</style>
+
+</head>
+<body class="learning-center-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a aria-label="Family Personal Development home" class="brand" href="/"><img alt="" class="brand-logo" src="/assets/images/android-chrome-512x512.png"/><span class="brand-text"><strong>Family Personal Development</strong><small>Growth starts at home.</small></span></a><button aria-controls="site-nav" aria-expanded="false" class="nav-toggle"><span class="sr-only">Toggle navigation</span>☰</button><nav aria-label="Main navigation" class="site-nav" id="site-nav"><a href="/about/">About</a><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a class="button button-small donate-nav-button" href="https://www.zeffy.com/en-US/donation-form/fuel-a-familys-future" rel="noopener noreferrer" target="_blank">Donate</a><a aria-label="Open FamilyPD OS" class="button button-small family-pd-os-nav-button" href="https://app.familypd.org/" rel="noopener noreferrer" target="_blank">FamilyPD OS</a></nav></div></header>
+
+<main>
+<section class="mission-hero"><div class="mission-shell">
+<p class="mission-kicker">A+ Core 1 • Mission 05 • Module 5</p>
+<h1>Connect the Network</h1>
+<p><strong>Comparing Local Networking Hardware</strong> — learn what builds a local network, how devices connect, which cable/tool fits the job, and how Wi-Fi choices affect performance.</p>
+<div class="aplus-quick-wrap"><div class="resource-strip aplus-quick-strip">
+<strong>A+ quick links</strong>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/">A+ Home</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-01-first-shift.html">Mission 01</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-02-inside-the-machine.html">Mission 02</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-03-pc-hardware.html">Mission 03</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">Mission 04</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-05-local-networking.html">Mission 05</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/mission-06-network-addressing.html">Mission 06</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/test-readiness.html">Test Readiness</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/ports-memory-tricks.html">Ports</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/osi-tcpip.html">OSI / TCP-IP</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/linux.html">Linux</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/practice-questions.html">Practice</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/glossary.html">Glossary</a>
+<a class="button button-small button-secondary" href="/learning/a-plus-interactive-notebook.html">Notebook</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5.html">Pi 5 Learn</a>
+<a class="button button-small button-secondary" href="/learning-center/cybersecurity/aplus/raspberry-pi-5-build.html">Pi 5 Build</a>
+<a class="button button-small button-secondary" href="https://apps.wctacyber.org/" target="_blank" rel="noopener noreferrer">WCTA Cyber Apps ↗</a>
+</div></div>
+<div class="lesson-strip"><a class="button button-small button-secondary" href="#types">5.1 Network Types</a><a class="button button-small button-secondary" href="#hardware">5.2 Hardware</a><a class="button button-small button-secondary" href="#cables">5.3 Cabling</a><a class="button button-small button-secondary" href="#wireless">5.4 Wireless</a><a class="button button-small button-secondary" href="#practice">Practice</a></div>
+</div></section>
+
+<section><div class="mission-shell mission-grid">
+<article class="mission-card"><h2>Mission goal</h2><p>By the end, you should be able to look at a small network and explain <strong>what each device does, how it connects, and why a technician would choose it.</strong></p>
+<ul><li>Compare LAN, WAN, WLAN, MAN, PAN, SAN, SOHO, enterprise, and datacenter environments.</li><li>Identify NICs, patch panels, switches, PoE equipment, and common cable tools.</li><li>Compare copper, fiber, and coaxial media and connectors.</li><li>Compare Wi-Fi generations, frequency bands, APs, Bluetooth, RFID, and NFC.</li></ul></article>
+<article class="mission-card"><h2>Technician mindset</h2><p>Do not memorize a picture of one classroom network. Ask four questions:</p><ol><li><strong>What must communicate?</strong></li><li><strong>How far?</strong></li><li><strong>Wired or wireless?</strong></li><li><strong>What speed, power, interference, security, or management constraints matter?</strong></li></ol>
+<div class="callout exam-tip"><strong>A+ clue:</strong> the BEST answer usually fits the scenario—not simply the newest or fastest technology.</div></article>
+</div></section>
+
+<section id="types"><div class="mission-shell"><article class="mission-card">
+<h2>5.1 • Network types</h2>
+<table class="quick-compare"><tr><th>Type</th><th>Plain-language meaning</th><th>Example</th></tr>
+<tr><td>LAN</td><td>Network in one local geographic area.</td><td>School lab, home, office floor.</td></tr>
+<tr><td>WLAN</td><td>A LAN using IEEE 802.11 wireless networking.</td><td>Devices connected through a Wi-Fi AP.</td></tr>
+<tr><td>WAN</td><td>Connects networks across large geographic areas.</td><td>Company sites connected between cities.</td></tr>
+<tr><td>MAN</td><td>Network spanning a metropolitan area.</td><td>Multiple sites across a city.</td></tr>
+<tr><td>PAN</td><td>Very short-range personal network.</td><td>Phone + Bluetooth headset.</td></tr>
+<tr><td>SAN</td><td>Dedicated network for storage access.</td><td>Servers accessing centralized storage.</td></tr>
+<tr><td>SOHO</td><td>Small office/home office; often one appliance combines several network roles.</td><td>Home router with routing, switching, Wi-Fi, DHCP.</td></tr>
+<tr><td>Enterprise</td><td>Larger environment with separate, managed network devices.</td><td>Dedicated routers, switches, APs, firewalls.</td></tr></table>
+<div class="callout"><strong>Datacenter:</strong> a site housing server resources with dedicated networking, power, climate control, and physical access controls.</div>
+</article></div></section>
+
+<section id="hardware"><div class="mission-shell mission-grid">
+<article class="mission-card"><h2>5.2 • Networking hardware</h2>
+<h3>NIC</h3><p>A network interface card/adapter connects a device to Ethernet, fiber, or wireless networking. A MAC address is a hardware address represented as 48 bits / hexadecimal.</p>
+<h3>Patch panel</h3><p>Organizes permanent building cable runs. Rear wires are commonly terminated with a <strong>punchdown tool</strong>; front RJ-45 ports patch to a switch.</p>
+<h3>Switch</h3><p>Connects endpoint nodes on a LAN. An unmanaged switch is plug-and-play; a managed switch provides a management interface and configurable features.</p></article>
+<article class="mission-card"><h2>Power over Ethernet</h2><p>PoE can carry power and network data over Ethernet to compatible devices such as APs and cameras.</p>
+<ul><li>802.3af — PoE / Type 1</li><li>802.3at — PoE+ / Type 2</li><li>802.3bt — PoE++ / Type 3 or 4</li></ul>
+<p>A <strong>PoE-enabled switch</strong> can provide power directly. A <strong>PoE injector</strong> can add power when the switch itself does not provide PoE.</p>
+<div class="callout exam-tip"><strong>Scenario:</strong> An AP needs network + power but no outlet is nearby. Think PoE.</div></article>
+</div></section>
+
+<section id="cables"><div class="mission-shell"><article class="mission-card">
+<h2>5.3 • Network cable types & tools</h2>
+<table class="quick-compare"><tr><th>Medium</th><th>Key idea</th><th>Common connector / clue</th></tr>
+<tr><td>UTP</td><td>Copper twisted pair; typical Ethernet; up to 100 m for common Ethernet runs.</td><td>RJ-45</td></tr>
+<tr><td>STP</td><td>Twisted-pair copper with shielding for EMI protection.</td><td>RJ-45</td></tr>
+<tr><td>Fiber</td><td>Higher bandwidth and longer-distance signaling; single-mode vs multimode.</td><td>ST, SC, LC</td></tr>
+<tr><td>Coaxial</td><td>Radio-grade coax used in cable systems.</td><td>F-type</td></tr></table>
+<div class="mission-grid">
+<div><h3>Installation tools</h3><ul><li><strong>Stripper:</strong> removes outer jacket.</li><li><strong>Snips/cutter:</strong> trims wire/cable.</li><li><strong>Punchdown:</strong> terminates individual wires to IDC/keystone.</li><li><strong>Crimper:</strong> attaches RJ-11/RJ-45 plugs.</li></ul></div>
+<div><h3>Test / trace tools</h3><ul><li><strong>Cable tester:</strong> checks individual pairs/connections.</li><li><strong>Toner probe:</strong> traces/locates a cable.</li><li><strong>Loopback plug:</strong> tests transmit/receive pathways.</li><li><strong>Network tap:</strong> creates/accesses a copy of network traffic for monitoring.</li></ul></div>
+</div>
+<p><strong>Installation considerations:</strong> know when plenum-rated or direct-burial cable is required.</p>
+</article></div></section>
+
+<section id="wireless"><div class="mission-shell mission-grid">
+<article class="mission-card"><h2>5.4 • Wireless networking</h2>
+<p>An <strong>access point (AP)</strong> provides IEEE 802.11 wireless connectivity. The BSSID identifies the AP radio using a MAC address.</p>
+<table class="quick-compare"><tr><th>Standard</th><th>Band(s)</th><th>Remember</th></tr>
+<tr><td>802.11a</td><td>5 GHz</td><td>54 Mbps; DFS context.</td></tr>
+<tr><td>802.11b/g</td><td>2.4 GHz</td><td>11 / 54 Mbps.</td></tr>
+<tr><td>802.11n / Wi-Fi 4</td><td>2.4 & 5 GHz</td><td>MIMO; channel bonding.</td></tr>
+<tr><td>802.11ac / Wi-Fi 5</td><td>5 GHz</td><td>MU-MIMO; higher throughput.</td></tr>
+<tr><td>802.11ax / Wi-Fi 6/6E</td><td>2.4 / 5 / 6 GHz</td><td>OFDMA; MU-MIMO.</td></tr>
+<tr><td>802.11be / Wi-Fi 7</td><td>2.4 / 5 / 6 GHz</td><td>Newest generation covered in the module.</td></tr></table></article>
+<article class="mission-card"><h2>Wireless choices</h2><p><strong>2.4 GHz:</strong> generally longer range / more congestion. <strong>5 GHz:</strong> higher-capacity use with shorter practical range. <strong>6 GHz:</strong> newer spectrum requiring compatible devices.</p>
+<p>When installing WLANs, think about <strong>SSID, frequency band, channel selection, signal strength, and interference.</strong> A Wi-Fi analyzer can help inspect signal strength/interference.</p>
+<h3>Other wireless</h3><ul><li><strong>Bluetooth:</strong> pairing / personal devices.</li><li><strong>RFID:</strong> inventory tracking and badge access.</li><li><strong>NFC:</strong> very short-range contactless payment/badge use.</li><li><strong>Long-range fixed wireless:</strong> licensed/unlicensed links using higher-powered antennas.</li></ul></article>
+</div></section>
+
+<section id="practice"><div class="mission-shell"><article class="mission-card practice">
+<h2>Mission 05 • Quick check</h2>
+<div class="check-grid">
+<details><summary>1. Wall jack cables terminate in a closet. What organizes them before short patch cables connect to the switch?</summary><p><strong>Patch panel.</strong> Rear cabling is typically punched down; front ports patch to the switch.</p></details>
+<details><summary>2. Which tool attaches an RJ-45 plug to a cable?</summary><p><strong>Crimper.</strong> A punchdown tool is for IDC/keystone-style terminations.</p></details>
+<details><summary>3. An AP needs power but no nearby outlet. What technology should you consider?</summary><p><strong>Power over Ethernet (PoE).</strong></p></details>
+<details><summary>4. Which medium is strongest for long distance and high bandwidth?</summary><p><strong>Fiber optic cabling.</strong></p></details>
+<details><summary>5. A technician needs to locate one unknown cable in a bundle. Which tool?</summary><p><strong>Toner probe.</strong></p></details>
+<details><summary>6. What should you evaluate when Wi-Fi is weak or unstable?</summary><p>Signal strength, interference, band, channels, AP placement, and device compatibility.</p></details>
+</div>
+<div class="callout"><strong>Notebook suggestion:</strong> create one page called “Network Hardware Decision Map”: device → connection → cable/medium → tool → one troubleshooting clue.</div>
+</article>
+<div class="mission-nav"><a class="button button-secondary" href="/learning-center/cybersecurity/aplus/mission-04-build-the-pc.html">← Mission 04</a><a class="button" href="/learning-center/cybersecurity/aplus/mission-06-network-addressing.html">Mission 06: Network Addressing →</a></div>
+</div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div><strong>Family Personal Development</strong><p>We build tools that help families thrive.</p></div><div><strong>Explore</strong><a href="/learning-center/">Learning Center</a><a href="/resources/">Resources</a><a href="/toolkit/">Family Toolkit</a><a href="/app/">About FamilyPD OS</a></div><div><strong>Connect</strong><a href="mailto:admin@familypd.org">admin@familypd.org</a><a href="/get-involved/">Get involved</a><a href="/privacy/">Privacy</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Family Personal Development. All rights reserved.</span></div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+document.querySelectorAll('.q').forEach(q=>q.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+ if(q.dataset.done)return;
+ q.dataset.done='1';
+ const ok=b.dataset.choice===q.dataset.answer;
+ b.classList.add(ok?'correct':'wrong');
+ if(!ok)q.querySelector('[data-choice="'+q.dataset.answer+'"]').classList.add('correct');
+ q.querySelectorAll('.choice').forEach(x=>x.disabled=true);
+ q.querySelector('.why').classList.add('show');
+})));
+</script>
+</body></html>
