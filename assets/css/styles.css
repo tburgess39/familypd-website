@@ -4,7 +4,7 @@
   --navy-2: #0d2334;
   --teal: #2c7a78;
   --gold: #e0a33b;
-  --orange: #c86632;
+  --orange: #a84d23;
   --cream: #fff8ec;
   --paper: #ffffff;
   --ink: #1f2933;
@@ -5806,7 +5806,7 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
 .hero-card .pillar-list a { background:rgba(255,255,255,.08) !important; }
 .hero-card .pillar-list a:hover,
 .hero-card .pillar-list a:focus-visible { background:rgba(255,255,255,.18) !important; outline:2px solid #ffffff; outline-offset:2px; }
-.hero-card .pillar-list span { background:#c86632 !important; }
+.hero-card .pillar-list span { background:var(--orange) !important; }
 
 /* Main-page five-pillar cards must always use dark copy on white cards. */
 .linked-pillar-grid .pillar-card,
@@ -5820,7 +5820,7 @@ body,p,li,label,input,select,textarea,.page-lead,.section-heading p,.card-kicker
   -webkit-text-fill-color:#102f47 !important;
   opacity:1 !important;
 }
-.linked-pillar-grid .pillar-card .icon { color:#ffffff !important; -webkit-text-fill-color:#ffffff !important; }
+.linked-pillar-grid .pillar-card .icon { color:#173c60 !important; -webkit-text-fill-color:#173c60 !important; }
 
 /* Do not allow low-contrast gray text on light backgrounds. */
 .page-lead,.section-heading p,.card p,.source-note,.helper-text,.field-help,.form-help,.muted,
@@ -6507,6 +6507,7 @@ body.home-page .donation-callout p { margin: 0; }
   text-decoration: none;
 }
 .fpd-vocab-tip::after {
+  display: none;
   content: attr(data-tip);
   position: absolute;
   left: 50%;
@@ -6532,6 +6533,7 @@ body.home-page .donation-callout p { margin: 0; }
   transition: opacity .14s ease, transform .14s ease;
 }
 .fpd-vocab-tip::before {
+  display: none;
   content: "";
   position: absolute;
   left: 50%;
@@ -6547,6 +6549,7 @@ body.home-page .donation-callout p { margin: 0; }
 .fpd-vocab-tip:focus::after,
 .fpd-vocab-tip:hover::before,
 .fpd-vocab-tip:focus::before {
+  display: block;
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -6555,3 +6558,4 @@ body.home-page .donation-callout p { margin: 0; }
 @media (hover:none) {
   .fpd-vocab-tip { cursor: pointer; }
 }
+

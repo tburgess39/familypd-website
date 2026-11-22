@@ -68,7 +68,7 @@
       return response.json();
     })
     .then((data) => {
-      items = Array.isArray(data.items) ? data.items : [];
+      items = Array.isArray(data.items) ? data.items.filter(item => typeof item?.url === 'string' && /^\/(?![/\\])/.test(item.url) && !/[\\\u0000-\u0020]/.test(item.url)) : [];
       const categories = [...new Set(items.map((item) => item.category))].sort();
       category.innerHTML = '<option value="All">All page types</option>' +
         categories.map((name) => `<option value="${esc(name)}">${esc(name)}</option>`).join("");

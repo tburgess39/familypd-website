@@ -197,6 +197,14 @@ function getMeetingTopics() {
   return [...selected, ...custom];
 }
 
+function approvedArticleUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' && !url.username && !url.password ? url.href : '';
+  } catch {
+    return '';
+  }
+}
 function createTopicCard(topic) {
   const card = document.createElement('article');
   card.className = 'selected-topic-card';
@@ -206,24 +214,25 @@ function createTopicCard(topic) {
   const notesKey = `meeting-discussion-${safeId(topic.id)}-notes`;
   const savedPrompt = readSavedValue(promptKey) || topic.prompts || '';
   const savedNotes = readSavedValue(notesKey);
+  const articleUrl = approvedArticleUrl(topic.url);
 
   card.innerHTML = `
     <div class="selected-topic-header">
       <div>
-        <span class="selected-topic-pillar">${topic.pillar}</span>
-        <h3>${topic.title}</h3>
-        ${topic.news ? `<a class="news-source-link" href="${topic.url}" target="_blank" rel="noopener noreferrer">View ${topic.source} article ↗</a>` : ''}
+        <span class="selected-topic-pillar">${escapeHtml(topic.pillar)}</span>
+        <h3>${escapeHtml(topic.title)}</h3>
+        ${topic.news && articleUrl ? `<a class="news-source-link" href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener noreferrer">View ${escapeHtml(topic.source)} article ↗</a>` : ''}
       </div>
-      ${topic.custom ? `<button class="remove-custom-topic" type="button" data-remove-custom-topic="${topic.id}">Remove</button>` : ''}
+      ${topic.custom ? `<button class="remove-custom-topic" type="button" data-remove-custom-topic="${escapeHtml(topic.id)}">Remove</button>` : ''}
     </div>
     <div class="topic-editor-grid">
       <label>
         Editable discussion prompts
-        <textarea rows="5" data-save="${promptKey}">${savedPrompt}</textarea>
+        <textarea rows="5" data-save="${promptKey}">${escapeHtml(savedPrompt)}</textarea>
       </label>
       <label>
         Discussion notes, decisions, or concerns
-        <textarea rows="5" data-save="${notesKey}" placeholder="Record the most important points…">${savedNotes}</textarea>
+        <textarea rows="5" data-save="${notesKey}" placeholder="Record the most important points…">${escapeHtml(savedNotes)}</textarea>
       </label>
     </div>
   `;
@@ -248,7 +257,7 @@ function renderSelectedNewsSummary() {
     <div class="selected-news-story">
       <span>${story.pillar} · ${story.source} · ${formatDate(story.published)}</span>
       <strong>${story.title}</strong>
-      <a class="inline-link" href="${story.url}" target="_blank" rel="noopener noreferrer">View original article ↗</a>
+      <a class="inline-link" href="${escapeHtml(approvedArticleUrl(story.url) || '#')}" target="_blank" rel="noopener noreferrer">View original article ↗</a>
       <button class="text-button" type="button" id="remove-selected-news">Remove story</button>
     </div>
   `;
@@ -503,7 +512,7 @@ function renderNewsCard(story) {
     </div>
     <div class="news-card-actions">
       <a class="button button-secondary" href="${story.url}" target="_blank" rel="noopener noreferrer">View Original Article ↗</a>
-      <button class="button" type="button" data-use-news-story="${story.id}">Add to Meeting Planner</button>
+      <button class="button" type="button" data-use-news-story="${escapeHtml(story.id)}">Add to Meeting Planner</button>
     </div>
   `;
 

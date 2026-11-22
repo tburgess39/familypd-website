@@ -384,6 +384,94 @@
       "audience": "Everyone",
       "description": "Review FamilyPD privacy practices and reminders for using public and browser-based tools.",
       "keywords": "privacy data security"
+    },
+    {
+      "title": "A+ Mission 12 — Configuring Windows",
+      "url": "/learning-center/cybersecurity/aplus/mission-12-configuring-windows.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 1.6 Windows settings, 1.10 application installation, 1.11 cloud productivity.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 12"
+    },
+    {
+      "title": "A+ Mission 13 — Managing Windows",
+      "url": "/learning-center/cybersecurity/aplus/mission-13-managing-windows.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 1.4 Windows tools, 1.5 command-line tools, 1.7 Windows networking.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 13"
+    },
+    {
+      "title": "A+ Mission 14 — Supporting Windows",
+      "url": "/learning-center/cybersecurity/aplus/mission-14-supporting-windows.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 1.7 Windows networking, 3.1 Windows troubleshooting, 4.9 remote access.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 14"
+    },
+    {
+      "title": "A+ Mission 15 — Securing Windows",
+      "url": "/learning-center/cybersecurity/aplus/mission-15-securing-windows.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 2.1 security measures, 2.2 Windows security.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 15"
+    },
+    {
+      "title": "A+ Mission 16 — Installing Operating Systems",
+      "url": "/learning-center/cybersecurity/aplus/mission-16-installing-operating-systems.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 1.2 OS installation, 1.3 Windows editions.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 16"
+    },
+    {
+      "title": "A+ Mission 17 — Supporting Other OS",
+      "url": "/learning-center/cybersecurity/aplus/mission-17-supporting-other-os.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 1.8 macOS, 1.9 Linux.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 17"
+    },
+    {
+      "title": "A+ Mission 18 — Configuring SOHO Network Security",
+      "url": "/learning-center/cybersecurity/aplus/mission-18-configuring-soho-network-security.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 2.1 security measures, 2.3 wireless authentication, 2.5 social engineering, 2.10 SOHO security.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 18"
+    },
+    {
+      "title": "A+ Mission 19 — Managing Security Settings",
+      "url": "/learning-center/cybersecurity/aplus/mission-19-managing-security-settings.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 2.4 malware, 2.6 malware response, 2.7 workstation hardening, 2.11 browser security, 3.4 PC security.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 19"
+    },
+    {
+      "title": "A+ Mission 20 — Supporting Mobile Software",
+      "url": "/learning-center/cybersecurity/aplus/mission-20-supporting-mobile-software.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 2.8 mobile device security, 3.2 mobile troubleshooting, 3.3 mobile security troubleshooting.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 20"
+    },
+    {
+      "title": "A+ Mission 21 — Using Data Security",
+      "url": "/learning-center/cybersecurity/aplus/mission-21-using-data-security.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 2.9 disposal, 4.3 backup and recovery, 4.6 privacy and policy, 4.10 AI concepts.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 21"
+    },
+    {
+      "title": "A+ Mission 22 — Implementing Operational Procedures",
+      "url": "/learning-center/cybersecurity/aplus/mission-22-implementing-operational-procedures.html",
+      "category": "Learning Center",
+      "audience": "CompTIA A+ learners",
+      "description": "Core 2 lesson, technician case, and practice. Objectives 4.2 change management, 4.4 safety, 4.5 environmental controls, 4.8 scripting.",
+      "keywords": "CompTIA A+ 220-1202 Core 2 mission 22"
     }
   ]
 }

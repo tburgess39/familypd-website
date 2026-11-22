@@ -1,0 +1,17 @@
+.breadcrumb { flex-wrap: wrap; white-space: normal; }
+.page-hero-grid > *, .aplus-grid > *, .mission-shell > *, .m3-shell > * { min-width: 0; }
+.aplus-scroll-table, .magic-chart-wrap { width: 100%; max-width: 100%; overflow-x: auto; }
+.aplus-scroll-table:focus-visible, .magic-chart-wrap:focus-visible { outline: 3px solid #135b88; outline-offset: 2px; }
+.binary-lesson .bit-row { overflow-x: auto; }
+main { overflow-wrap: anywhere; }
+@media (max-width: 59rem) {
+  .aplus-quick-strip { grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr)) !important; }
+  .aplus-quick-strip a.button { white-space: normal !important; }
+  .fpd-vocab-tip:hover::after, .fpd-vocab-tip:focus::after {
+    position: fixed;
+    inset: auto auto 1rem 50%;
+    box-sizing: border-box;
+    width: min(22rem, calc(100vw - 2rem));
+  }
+  .fpd-vocab-tip:hover::before, .fpd-vocab-tip:focus::before { display: none; }
+}
