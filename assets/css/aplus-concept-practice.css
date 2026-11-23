@@ -1,0 +1,38 @@
+.concept-demo, .case-response {
+  margin: .9rem 0;
+  padding: .8rem;
+  border: 1px solid #adc5d7;
+  border-radius: .65rem;
+  color: #18283a;
+  background: #fff;
+}
+.concept-demo h3 { margin: 0 0 .45rem; color: #173c60; }
+.concept-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.concept-actions button, .case-response button {
+  min-height: 44px;
+  max-width: 100%;
+  text-align: start;
+  white-space: normal;
+}
+.concept-actions button[aria-pressed="true"] { background: #143c5d; color: #fff; }
+.concept-result { padding: .55rem .7rem; border-inline-start: 4px solid #135b88; background: #edf7fd; color: #18283a; }
+.concept-tip { color: #38516a; }
+.case-response-grid { display: grid; gap: .65rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-block: .65rem; }
+.case-response label { min-width: 0; font-weight: 700; }
+.case-response textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 5rem;
+  margin-top: .35rem;
+  resize: vertical;
+  padding: .45rem .55rem;
+  color: #18283a;
+  background: #fff;
+  border: 1px solid #527891;
+  border-radius: .35rem;
+  font: inherit;
+}
+.case-response [data-case-status]:empty { display: none; }
+.concept-demo :focus-visible, .case-response :focus-visible { outline: 3px solid #135b88; outline-offset: 2px; }
+@media (max-width: 48rem) { .case-response-grid { grid-template-columns: 1fr; } }
