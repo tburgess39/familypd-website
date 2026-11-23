@@ -2,11 +2,16 @@
 
 const simulations = {
   15: {
-    initial: () => ({editor: 'Read', reader: 'Read', editorTest: false, readerTest: false}),
+    initial: () => ({editor: 'Read', reader: 'Read', ntfs: 'Modify', editorTest: false, readerTest: false}),
     status: s => 'Share permissions — Editors: ' + s.editor + '. Readers: ' + s.reader +
-      '. Network verification — Editor: ' + (s.editorTest ? 'tested' : 'pending') +
+      '. Editor NTFS: ' + s.ntfs + '. Network verification — Editor: ' + (s.editorTest ? 'tested' : 'pending') +
       '. Reader: ' + (s.readerTest ? 'tested' : 'pending') + '.',
     change(s, control, value) {
+      if (control === 'editor-ntfs') {
+        s.ntfs = value;
+        s.editorTest = false;
+        return 'NTFS permission saved. Retest an editor over the network.';
+      }
       const editor = control === 'edit-grant';
       s[editor ? 'editor' : 'reader'] = value;
       s[editor ? 'editorTest' : 'readerTest'] = false;
@@ -17,12 +22,12 @@ const simulations = {
       s[editor ? 'editorTest' : 'readerTest'] = true;
       const grant = editor ? s.editor : s.reader;
       const result = editor
-        ? (grant === 'Read' ? 'Editor: open succeeded; save was blocked.' : 'Editor: open and save succeeded.')
+        ? (grant === 'Read' || s.ntfs === 'Read & execute' ? 'Editor: open succeeded; save was blocked.' : 'Editor: open and save succeeded.')
         : 'Reader: open succeeded; NTFS Read blocked saving.';
-      if (s.editor === 'Full Control' || s.reader !== 'Read') {
+      if (s.editor === 'Full Control' || s.reader !== 'Read' || s.ntfs === 'Full Control') {
         return result + ' Review least privilege. Both permission layers matter even when the current NTFS rules prevent an unwanted action.';
       }
-      return s.editorTest && s.readerTest && s.editor === 'Change'
+      return s.editorTest && s.readerTest && s.editor === 'Change' && s.ntfs === 'Modify'
         ? result + ' Both identities meet the ticket and the share follows least privilege.'
         : result;
     }
@@ -131,7 +136,9 @@ for (const lab of document.querySelectorAll('[data-bench]')) {
   }
   lab.querySelector('[data-bench-reset]').addEventListener('click', () => {
     state = model.initial();
-    for (const control of controls) control.selectedIndex = 0;
+    for (const control of controls) {
+      for (const option of control.options) option.selected = option.defaultSelected;
+    }
     stateText.textContent = model.status(state);
     result.textContent = 'Simulation reset.';
     const entry = document.createElement('li');

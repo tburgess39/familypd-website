@@ -12,18 +12,3 @@ for (const demo of document.querySelectorAll('[data-concept-demo]')) {
   }
 }
 
-for (const response of document.querySelectorAll('[data-case-response]')) {
-  const status = response.querySelector('[data-case-status]');
-  const rubric = response.querySelector('[data-case-rubric]');
-  const fields = [...response.querySelectorAll('textarea')];
-  response.querySelector('[data-review-response]').addEventListener('click', () => {
-    const incomplete = fields.find(field => !field.value.trim());
-    if (incomplete) {
-      status.textContent = 'Complete the evidence, action, and verification fields first.';
-      incomplete.focus();
-      return;
-    }
-    rubric.open = true;
-    status.textContent = 'Your response is ready for self-review. Compare it with the criteria below.';
-  });
-}
